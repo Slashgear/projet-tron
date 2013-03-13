@@ -1,7 +1,9 @@
 #ifndef MUR_H_INCLUDED
 #define MUR_H_INCLUDED
+
 #include<stdlib.h>
 #include<stdio.h>
+
 
 /**
 *\file [Grid.h]
@@ -16,7 +18,7 @@ typedef struct{
     unsigned int positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    bool obstacle;
+    char obstacle;
     unsigned int duree;
 }Mur;
 
@@ -29,7 +31,7 @@ unsigned int gettailleX(Mur m);
 /** assesseur de tailleY*/
 unsigned int gettailleY(Mur m);
 /** assesseur de obstacle*/
-bool getobstacle(Mur m);
+char getobstacle(Mur m);
 /** assesseur de duree*/
 unsigned int getduree(Mur m);
 
@@ -43,7 +45,7 @@ void settailleX(Mur m,unsigned int X);
 /** mutateur de tailleY*/
 void settailleY(Mur m,unsigned int X);
 /** mutateur de obstacle*/
-void setobstacle(Mur m,bool X);
+void setobstacle(Mur m,char X);
 /** mutateur de duree*/
 void setduree(Mur m,unsigned int X);
 
