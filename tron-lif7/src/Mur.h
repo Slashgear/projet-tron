@@ -20,6 +20,32 @@ typedef struct{
     unsigned int duree;
 }Mur;
 
+/** assesseur de positionX*/
+unsigned int getpositionX(Mur m);
+/** assesseur de positionY*/
+unsigned int getpositionY(Mur m);
+/** assesseur de tailleX*/
+unsigned int gettailleX(Mur m);
+/** assesseur de tailleY*/
+unsigned int gettailleY(Mur m);
+/** assesseur de obstacle*/
+bool getobstacle(Mur m);
+/** assesseur de duree*/
+unsigned int getduree(Mur m);
+
+
+/** mutateur de positionX*/
+void setpositionX(Mur m,unsigned int X);
+/** mutateur de positionY*/
+void setpositionY(Mur m,unsigned int X);
+/** mutateur de tailleX*/
+void settailleX(Mur m,unsigned int X);
+/** mutateur de tailleY*/
+void settailleY(Mur m,unsigned int X);
+/** mutateur de obstacle*/
+void setobstacle(Mur m,bool X);
+/** mutateur de duree*/
+void setduree(Mur m,unsigned int X);
 
 
 

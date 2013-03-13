@@ -36,7 +36,17 @@
 		<Linker>
 			<Add option="`sdl-config --libs`" />
 		</Linker>
+		<Unit filename="src/Controle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Controle.h" />
+		<Unit filename="src/Grid.h" />
 		<Unit filename="src/Moto.h" />
+		<Unit filename="src/Mur.h" />
+		<Unit filename="src/Vecteur2D.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Vecteur2D.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

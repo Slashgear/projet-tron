@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="src/Controle.c" open="1" top="0" tabpos="8">
+		<Cursor position="561" topLine="2" />
+	</File>
+	<File name="src/Controle.h" open="1" top="0" tabpos="7">
+		<Cursor position="890" topLine="11" />
+	</File>
+	<File name="src/Moto.h" open="1" top="0" tabpos="2">
+		<Cursor position="380" topLine="0" />
+	</File>
+	<File name="src/Mur.h" open="1" top="0" tabpos="5">
+		<Cursor position="1059" topLine="23" />
+	</File>
+	<File name="src/Vecteur2D.h" open="1" top="1" tabpos="3">
+		<Cursor position="596" topLine="6" />
+	</File>
+	<File name="src/main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1015" topLine="0" />
+	</File>
 </CodeBlocks_layout_file>
