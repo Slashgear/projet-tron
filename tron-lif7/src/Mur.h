@@ -12,11 +12,12 @@
 */
 
 typedef struct{
-    unsigned int positionX; //positionX de la première case
-    unsigned int positionY; //positionY de la première case
+    unsigned int positionX;
+    unsigned int positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    Mur * tab_terrain;
+    bool obstacle;
+    unsigned int duree;
 }Mur;
 
 

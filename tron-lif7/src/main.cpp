@@ -22,11 +22,11 @@ int main ( int argc, char** argv )
     atexit(SDL_Quit);
 
     // create a new window
-    SDL_Surface* screen = SDL_SetVideoMode(1366, 768, 16,
+    SDL_Surface* screen = SDL_SetVideoMode(1024, 640, 16,
                                            SDL_HWSURFACE|SDL_DOUBLEBUF);
     if ( !screen )
     {
-        printf("Unable to set 1366x768 video: %s\n", SDL_GetError());
+        printf("Unable to set 1024x640 video: %s\n", SDL_GetError());
         return 1;
     }
 

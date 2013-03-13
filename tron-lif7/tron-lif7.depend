@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1363186832 source:/home/antoine/Projets/tron-lif7/src/main.cpp
+1363191309 source:/home/antoine/Projets/tron-lif7/src/main.cpp
 	<cstdlib>
 	<stdlib.h>
 	<SDL/SDL.h>
@@ -185,4 +185,14 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1363193134 source:/home/antoine/Projets/tron-lif7/src/Vecteur2D.c
+	"Vecteur2D.h"
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
+1363193133 /home/antoine/Projets/tron-lif7/src/Vecteur2D.h
+	<stdlib.h>
+	<stdio.h>
 
