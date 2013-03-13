@@ -22,22 +22,22 @@ int main ( int argc, char** argv )
     atexit(SDL_Quit);
 
     // create a new window
-    SDL_Surface* screen = SDL_SetVideoMode(640, 480, 16,
+    SDL_Surface* screen = SDL_SetVideoMode(1366, 768, 16,
                                            SDL_HWSURFACE|SDL_DOUBLEBUF);
     if ( !screen )
     {
-        printf("Unable to set 640x480 video: %s\n", SDL_GetError());
+        printf("Unable to set 1366x768 video: %s\n", SDL_GetError());
         return 1;
     }
 
     // load an image
-    SDL_Surface* bmp = SDL_LoadBMP("cb.bmp");
+    SDL_Surface* bmp = SDL_LoadBMP("./data/cb.bmp");
     if (!bmp)
     {
         printf("Unable to load bitmap: %s\n", SDL_GetError());
         return 1;
     }
-    
+
     // centre the bitmap on screen
     SDL_Rect dstrect;
     dstrect.x = (screen->w - bmp->w) / 2;
@@ -71,7 +71,7 @@ int main ( int argc, char** argv )
         } // end of message processing
 
         // DRAWING STARTS HERE
-        
+
         // clear screen
         SDL_FillRect(screen, 0, SDL_MapRGB(screen->format, 0, 0, 0));
 
