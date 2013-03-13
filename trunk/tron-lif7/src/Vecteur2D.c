@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<math.h>
 
-float norme (Vector2D vecteur){
+float norme(Vector2D vecteur){
     return sqrt((vecteur.X)*(vecteur.X)+(vecteur.Y)*(vecteur.Y));
 }
 
