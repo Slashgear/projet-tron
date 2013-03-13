@@ -16,24 +16,24 @@ typedef struct{
     char touche_haut;
     char touche_bas;
     char touche_gauche;
-}Controls;
+}Controle;
 
 /** assesseur de touche_droite*/
-char gettouche_droite(touche_droite d);
+char gettouche_droite(Controle C);
 /** assesseur de touche_haut*/
-char gettouche_haut(touche_haut h);
+char gettouche_haut(Controle C);
 /** assesseur de touche_bas*/
-char gettouche_bas(touche_bas b);
+char gettouche_bas(Controle C);
 /** assesseur de touche_gauche*/
-char gettouche_gauche(touche_gauche g);
+char gettouche_gauche(Controle C);
 
 /** mutateur de touche_droite*/
-void setX(touche_droite d,char x);
+void settouche_droite(Controle C,char x);
 /** mutateur de touche_haut*/
-void setY(touche_haut h,char x);
+void settouche_haut(Controle C,char x);
 /** mutateur de touche_bas*/
-void setY(touche_bas b,char x);
+void settouche_bas(Controle C,char x);
 /**mutateur de touche_gauche*/
-void setY(touche_gauche g,char x);
+void settouche_gauche(Controle C,char x);
 
 #endif // CONTROLE_H_INCLUDED
