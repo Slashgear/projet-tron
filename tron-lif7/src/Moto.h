@@ -20,6 +20,23 @@ typedef struct{
         Vector2D vitesse;
 } Moto;
 
+/** assesseur position X moto*/
+unsigned int motopositionX(Moto m);
+
+/** assesseur position Y moto*/
+unsigned int motopositionX(Moto m);
+
+/** assesseur dimX moto*/
+unsigned int motodimX(Moto m);
+
+/** assesseur dimX moto*/
+unsigned int motodimX(Moto m);
+
+/** assesseur vitesse de moto*/
+Vector2D getvitesse(Moto m);
+
+
+
 
 
 #endif // MOTOS_H_INCLUDED

@@ -30,8 +30,9 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="`sdl-config --cflags`" />
 			<Add option="-Wall" />
+			<Add option="-ansi" />
+			<Add option="`sdl-config --cflags`" />
 		</Compiler>
 		<Linker>
 			<Add option="`sdl-config --libs`" />
@@ -40,14 +41,21 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Controle.h" />
+		<Unit filename="src/Grid.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/Grid.h" />
+		<Unit filename="src/Jeu.h" />
 		<Unit filename="src/Moto.h" />
 		<Unit filename="src/Mur.h" />
 		<Unit filename="src/Vecteur2D.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Vecteur2D.h" />
-		<Unit filename="src/main.cpp" />
+		<Unit filename="src/bool.h" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
