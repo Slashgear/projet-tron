@@ -17,7 +17,7 @@ typedef struct{
     unsigned int positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    Mur * tab_cases;
+    Mur * mesMurs;
 }Grid;
 
 /**assesseur de positionX*/
@@ -28,6 +28,23 @@ unsigned int GridgetpositionY(Grid g);
 unsigned int GridgettailleX(Grid g);
 /**assesseur de tailleY*/
 unsigned int GridgettailleY(Grid g);
+/**assesseur de mesMurs*/
+Mur* GridgetmesMurs(Grid g);
+
+
+/**mutateur de positionX*/
+void GridsetpositionX(Grid ,unsigned int p);
+/**mutateur de positionY*/
+void GridsetpositionY(Grid g,unsigned int p);
+/**mutateur de tailleX*/
+void GridsettailleX(Grid g,unsigned int t);
+/**mutateur de tailleY*/
+void GridsettailleY(Grid g,unsigned int t);
+/**mutateur de mesMurs*/
+void GridsetmesMurs(Grid g,Mur* m);
+
+/** Constructeur de grille*/
+void constructeurGrid(unsigned int positionX,unsigned int positionY,unsigned int tailleX,unsigned int tailleY,Mur * mesMurs)
 
 
 #endif // GRID_H_INCLUDED
