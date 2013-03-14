@@ -3,22 +3,22 @@
 #include<stdio.h>
 #include<math.h>
 
-float norme(Vector2D vecteur){
+float norme(Vecteur2D vecteur){
     return sqrt((vecteur.X)*(vecteur.X)+(vecteur.Y)*(vecteur.Y));
 }
 
-float getX(Vector2D vecteur){
+float getX(Vecteur2D vecteur){
     return vecteur.X;
 }
 
-float getY(Vector2D vecteur){
+float getY(Vecteur2D vecteur){
     return vecteur.Y;
 }
 
-void setX(Vector2D vecteur,float x){
+void setX(Vecteur2D vecteur,float x){
     vecteur.X=x;
 }
 
-void setY(Vector2D vecteur,float y){
+void setY(Vecteur2D vecteur,float y){
     vecteur.Y=y;
 }
