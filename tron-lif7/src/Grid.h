@@ -33,7 +33,7 @@ Mur* GridgetmesMurs(Grid g);
 
 
 /**mutateur de positionX*/
-void GridsetpositionX(Grid ,unsigned int p);
+void GridsetpositionX(Grid g,unsigned int p);
 /**mutateur de positionY*/
 void GridsetpositionY(Grid g,unsigned int p);
 /**mutateur de tailleX*/
