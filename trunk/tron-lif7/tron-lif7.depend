@@ -226,3 +226,12 @@
 
 1363203920 /home/antoine/Projets/tron-lif7/src/bool.h
 
+1363435003 source:/home/matthieu/Projet/tron-lif7/src/Controle.c
+	"Controle.h"
+	<stdlib.h>
+	<stdio.h>
+
+1363435003 /home/matthieu/Projet/tron-lif7/src/Controle.h
+	<stdlib.h>
+	<stdio.h>
+
