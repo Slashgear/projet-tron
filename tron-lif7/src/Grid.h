@@ -47,4 +47,4 @@ void GridsetmesMurs(Grid g,Mur* m);
 void constructeurGrid(unsigned int positionX,unsigned int positionY,unsigned int tailleX,unsigned int tailleY,Mur * mesMurs)
 
 
-#endif // GRID_H_INCLUDED
+#endif /* GRID_H_INCLUDED */

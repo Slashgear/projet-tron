@@ -24,13 +24,13 @@ typedef struct{
 unsigned int motogetpositionX(Moto m);
 
 /** assesseur position Y moto*/
-unsigned int motogetpositionX(Moto m);
+unsigned int motogetpositionY(Moto m);
 
 /** assesseur dimX moto*/
 unsigned int motogetdimX(Moto m);
 
-/** assesseur dimX moto*/
-unsigned int motogetdimX(Moto m);
+/** assesseur dimY moto*/
+unsigned int motogetdimY(Moto m);
 
 /** assesseur vitesse de moto*/
 Vector2D motogetvitesse(Moto m);
@@ -43,7 +43,7 @@ Vector2D motogetvitesse(Moto m);
 void motosetpositionX(Moto m,unsigned int X);
 
 /** mutateur de positionY de moto*/
-void motosetpositionX(Moto m,unsigned int Y);
+void motosetpositionY(Moto m,unsigned int Y);
 
 /**mutateur de dimX moto*/
 void motosetdimX(Moto m,unsigned int X);
