@@ -42,7 +42,7 @@ void MotoSetDimX(Moto m,unsigned float X);
 /**mutateur de dimY moto*/
 void MotoSetDimY(Moto m,unsigned float Y);
 /**mutateur de vitesse*/
-void MotoSetVitesse(Moto m,float vecteur);
+void MotoSetVitesse(Moto m,float v);
 /**mutateur de direction*/
 void MotoSetDirection(Moto m, enum{HAUT,BAS,GAUCHE,BAS} direction);
 
