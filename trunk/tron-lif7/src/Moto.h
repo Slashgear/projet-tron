@@ -13,46 +13,38 @@
 */
 
 typedef struct{
-        unsigned int positionX;
-        unsigned int positionY;
-        unsigned int dimX;
-        unsigned int dimY;
-        Vecteur2D vitesse;
+        unsigned float positionX;
+        unsigned float positionY;
+        unsigned float dimX;
+        unsigned float dimY;
+        float vitesse;
+        enum {HAUT,BAS,GAUCHE,DROITE}direction;
 } Moto;
-
 /** assesseur position X moto*/
-unsigned int motogetpositionX(Moto m);
-
+unsigned float MotoGetPositionX(Moto m);
 /** assesseur position Y moto*/
-unsigned int motogetpositionY(Moto m);
-
+unsigned float MotoGetPositionY(Moto m);
 /** assesseur dimX moto*/
-unsigned int motogetdimX(Moto m);
-
+unsigned float MotoGetDimX(Moto m);
 /** assesseur dimY moto*/
-unsigned int motogetdimY(Moto m);
-
+unsigned float MotoGetDimY(Moto m);
 /** assesseur vitesse de moto*/
-Vector2D motogetvitesse(Moto m);
-
-
-
-
+float MotoGetVitesse(Moto m);
+/** assesseur de direction*/
+enum{HAUT,BAS,GAUCHE,DROITE} MotoGetDirection(Moto m);
 
 /** mutateur de positionX de moto*/
-void motosetpositionX(Moto m,unsigned int X);
-
+void MotoSetPositionX(Moto m,unsigned float X);
 /** mutateur de positionY de moto*/
-void motosetpositionY(Moto m,unsigned int Y);
-
+void MotoSetPositionY(Moto m,unsigned float Y);
 /**mutateur de dimX moto*/
-void motosetdimX(Moto m,unsigned int X);
-
+void MotoSetDimX(Moto m,unsigned float X);
 /**mutateur de dimY moto*/
-void motosetdimY(Moto m,unsigned int Y);
-
+void MotoSetDimY(Moto m,unsigned float Y);
 /**mutateur de vitesse*/
-void motosetvitesse(Moto m,Vector2D vecteur);
+void MotoSetVitesse(Moto m,float vecteur);
+/**mutateur de direction*/
+void MotoSetDirection(Moto m, enum{HAUT,BAS,GAUCHE,BAS} direction);
 
 
 

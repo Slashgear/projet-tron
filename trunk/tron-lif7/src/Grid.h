@@ -13,38 +13,37 @@
 */
 
 typedef struct{
-    unsigned int positionX;
-    unsigned int positionY;
+    unsigned float positionX;
+    unsigned float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
     Mur * mesMurs;
 }Grid;
 
 /**assesseur de positionX*/
-unsigned int GridgetpositionX(Grid g);
+unsigned float GridGetPositionX(Grid g);
 /**assesseur de positionY*/
-unsigned int GridgetpositionY(Grid g);
+unsigned float GridGetPositionY(Grid g);
 /**assesseur de tailleX*/
-unsigned int GridgettailleX(Grid g);
+unsigned int GridGetTailleX(Grid g);
 /**assesseur de tailleY*/
-unsigned int GridgettailleY(Grid g);
+unsigned int GridGetTailleY(Grid g);
 /**assesseur de mesMurs*/
-Mur* GridgetmesMurs(Grid g);
+Mur* GridGetMesMurs(Grid g);
 
 
 /**mutateur de positionX*/
-void GridsetpositionX(Grid g,unsigned int p);
+void GridSetPositionX(Grid g,unsigned float p);
 /**mutateur de positionY*/
-void GridsetpositionY(Grid g,unsigned int p);
+void GridSetPositionY(Grid g,unsigned float p);
 /**mutateur de tailleX*/
-void GridsettailleX(Grid g,unsigned int t);
+void GridSetTailleX(Grid g,unsigned int t);
 /**mutateur de tailleY*/
-void GridsettailleY(Grid g,unsigned int t);
+void GridSetTailleY(Grid g,unsigned int t);
 /**mutateur de mesMurs*/
-void GridsetmesMurs(Grid g,Mur* m);
+void GridSetMesMurs(Grid g,Mur* m);
 
 /** Constructeur de grille*/
-void constructeurGrid(unsigned int positionX,unsigned int positionY,unsigned int tailleX,unsigned int tailleY,Mur * mesMurs)
 
 
 #endif /* GRID_H_INCLUDED */

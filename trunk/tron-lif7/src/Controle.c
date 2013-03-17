@@ -2,27 +2,27 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-char gettouche_droite(Controle C){
+char ControlGetDroite(Controle C){
     return C.touche_droite;
 }
-char gettouche_haut(Controle C){
+char ControlGetHaut(Controle C){
     return C.touche_haut;
 }
-char gettouche_gauche(Controle C){
+char ControlGetGauche(Controle C){
     return C.touche_gauche;
 }
-char gettouche_bas(Controle C){
+char ControlGetBas(Controle C){
     return C.touche_bas;
 }
-void settouche_droite(Controle C,char x){
+void ControlSetDroite(Controle C,char x){
     C.touche_droite=x;
 }
-void settouche_haut(Controle C,char x){
+void ControlSethaut(Controle C,char x){
     C.touche_haut=x;
 }
-void settouche_bas(Controle C,char x){
+void ControlSetBas(Controle C,char x){
     C.touche_bas=x;
 }
-void settouche_gauche(Controle C,char x){
+void ControlSetGauche(Controle C,char x){
     C.touche_gauche=x;
 }
