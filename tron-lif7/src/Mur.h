@@ -14,8 +14,8 @@
 */
 
 typedef struct{
-    unsigned int positionX;
-    unsigned int positionY;
+    unsigned float positionX;
+    unsigned float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
     char obstacle;
@@ -23,9 +23,9 @@ typedef struct{
 }Mur;
 
 /** assesseur de positionX*/
-unsigned int getpositionX(Mur m);
+unsigned float getpositionX(Mur m);
 /** assesseur de positionY*/
-unsigned int getpositionY(Mur m);
+unsigned float getpositionY(Mur m);
 /** assesseur de tailleX*/
 unsigned int gettailleX(Mur m);
 /** assesseur de tailleY*/
@@ -37,9 +37,9 @@ unsigned int getduree(Mur m);
 
 
 /** mutateur de positionX*/
-void setpositionX(Mur m,unsigned int X);
+void setpositionX(Mur m,unsigned float X);
 /** mutateur de positionY*/
-void setpositionY(Mur m,unsigned int X);
+void setpositionY(Mur m,unsigned float X);
 /** mutateur de tailleX*/
 void settailleX(Mur m,unsigned int X);
 /** mutateur de tailleY*/
