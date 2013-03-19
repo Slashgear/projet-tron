@@ -87,14 +87,7 @@ void modifierValeurIemeElementTabDyn(TableauDynamique *t, ElementTD e, unsigned 
 }
 
 
-void afficherTabDyn(const TableauDynamique *t)
-{
-	int i;
-	for (i=0; i<(t-> taille_utilisee);i++)
-	{
-		printf("%d \n", (t->ad)[i]);
-	}
-}
+
 
 
 
