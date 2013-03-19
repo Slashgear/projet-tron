@@ -14,9 +14,8 @@
 				<Option projectCompilerOptionsRelation="0" />
 				<Compiler>
 					<Add option="-pedantic" />
-					<Add option="-std=c++0x" />
-					<Add option="-std=c++98" />
 					<Add option="-Wall" />
+					<Add option="-ansi" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -45,6 +44,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Controle.h" />
+		<Unit filename="src/Couleur.h" />
 		<Unit filename="src/Grid.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -56,6 +56,8 @@
 		</Unit>
 		<Unit filename="src/Moto.h" />
 		<Unit filename="src/Mur.h" />
+		<Unit filename="src/SDL.h" />
+		<Unit filename="src/TableauDynamique.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>

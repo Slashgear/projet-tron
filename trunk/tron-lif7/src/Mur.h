@@ -56,7 +56,7 @@ void MurConstructeur(Mur* mur,float posX, float posY, unsigned int TailleX, unsi
 void MurDestructeur(Mur* mur);
 
 /** Procedure qui teste le module Mur*/
- void ControleTestRegression();
+ void MurTestRegression();
 
 
 
