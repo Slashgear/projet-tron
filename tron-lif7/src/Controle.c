@@ -2,27 +2,43 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-char ControlGetDroite(Controle C){
-    return C.touche_droite;
+char ControleGetDroite(const Controle* controle){
+    return controle->droite;
 }
-char ControlGetHaut(Controle C){
-    return C.touche_haut;
+char ControleGetHaut(const Controle* controle){
+    return controle->haut;
 }
-char ControlGetGauche(Controle C){
-    return C.touche_gauche;
+char ControleGetGauche(const Controle* controle){
+    return controle->gauche;
 }
-char ControlGetBas(Controle C){
-    return C.touche_bas;
+char ControleGetBas(const Controle* controle){
+    return controle->bas;
 }
-void ControlSetDroite(Controle C,char x){
-    C.touche_droite=x;
+
+void ControleSetDroite(Controle* controle,char x){
+    controle->droite=x;
 }
-void ControlSethaut(Controle C,char x){
-    C.touche_haut=x;
+void ControleSetHaut(Controle* controle,char x){
+    controle->haut=x;
 }
-void ControlSetBas(Controle C,char x){
-    C.touche_bas=x;
+
+void ControleSetGauche(Controle* controle,char x){
+    controle->gauche=x;
 }
-void ControlSetGauche(Controle C,char x){
-    C.touche_gauche=x;
+void ControleSetBas(Controle* controle,char x){
+    controle->bas=x;
 }
+
+/** Constructeur de Controle*/
+void ControleConstructeur(Controle* controle){
+    controle->droite=NULL;
+    controle->gauche=NULL;
+    controle->haut=NULL;
+    controle->bas=NULL;
+}
+/** Destructeur de Controle*/
+void ControleDestructeur(Controle* controle){}
+
+/** Procedure qui teste le module Controle*/
+ void ControleTestRegression(){}
+

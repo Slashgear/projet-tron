@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include "src/Grid.h"
-#include "src/Mur.h"
+#include "Grid.h"
+#include "Mur.h"
 
 
 unsigned float GridGetPositionX(Grid g){
