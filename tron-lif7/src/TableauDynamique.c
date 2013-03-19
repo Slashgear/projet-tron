@@ -48,7 +48,7 @@ void testamentTabDyn (TableauDynamique *t)
 	{
 		free(t -> ad);
 		t -> capacite = 0;
-		t -> taille_utilisee = 0;	
+		t -> taille_utilisee = 0;
 	}
 }
 
@@ -59,9 +59,9 @@ void ajouterElementTabDyn(TableauDynamique *t, Mur *e)
 	if((t-> taille_utilisee) == (t-> capacite))
 	{
 		int i;
-		ElementTD * temp = t-> ad;
-		(t->ad) = (Mur**) malloc(2*(t->capacite)*sizeof(Mur*)); 
-		for(i=0;i<(t-> capacite);i++)	
+		Mur ** temp = t-> ad;
+		(t->ad) = (Mur**) malloc(2*(t->capacite)*sizeof(Mur*));
+		for(i=0;i<(t-> capacite);i++)
 		{
 			(t-> ad) [i] = temp[i];
 		}
@@ -74,7 +74,7 @@ void ajouterElementTabDyn(TableauDynamique *t, Mur *e)
 
 
 
-ElementTD valeurIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
+Mur * valeurIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
 {
 	return (t-> ad)[i];
 }
@@ -94,7 +94,7 @@ void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur *e, unsigned int i
 void supprimerElementTabDyn( TableauDynamique *t, int position )
 {
 	int i;
-	ElementTD* temp;
+	Mur** temp;
 	if((t-> capacite)/3 > (t-> taille_utilisee))
 	{
 		(t-> capacite) = (t-> capacite)/2;

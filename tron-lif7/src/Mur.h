@@ -24,31 +24,31 @@ typedef struct{
 }Mur;
 
 /** assesseur de positionX*/
-float MurGetPositionX(const Mur* mur);
+float MurGetPositionX(const Mur*);
 /** assesseur de positionY*/
-float MurGetPositionY(const Mur* mur);
+float MurGetPositionY(const Mur*);
 /** assesseur de tailleX*/
-unsigned int MurGetTailleX(const Mur* mur);
+unsigned int MurGetTailleX(const Mur* );
 /** assesseur de tailleY*/
-unsigned int GetTailleY(const Mur* mur);
+unsigned int GetTailleY(const Mur* );
 /** assesseur de couleur*/
-Couleur MurGetCouleur(const Mur* mur);
+Couleur MurGetCouleur(const Mur* );
 /** assesseur de dureeVie*/
-float MurGetDureeVie(const Mur* mur);
+float MurGetDureeVie(const Mur* );
 
 
 /** mutateur de positionX*/
-void MurSetpositionX(Mur* mur,float posX);
+void MurSetpositionX(Mur* ,float );
 /** mutateur de positionY*/
-void MurSetpositionY(Mur* mur,float posY);
+void MurSetpositionY(Mur* ,float );
 /** mutateur de tailleX*/
-void MurSetTailleX(Mur* mur,unsigned int tailleX);
+void MurSetTailleX(Mur* ,unsigned int );
 /** mutateur de tailleY*/
-void MurSetTailleY(Mur* mur,unsigned int tailleY);
+void MurSetTailleY(Mur* ,unsigned int );
 /** mutateur de couleur*/
-void MurSetCouleur(Mur* mur,Couleur couleur);
+void MurSetCouleur(Mur* ,Couleur );
 /** mutateur de dureeVie*/
-void MurSetDureeVie(Mur* mur,float dureeVie);
+void MurSetDureeVie(Mur* ,float );
 
 /** Constructeur de Mur*/
 void MurConstructeur(Mur* mur,float posX, float posY, unsigned int TailleX, unsigned int TailleY,Couleur couleur, float dureeVie);

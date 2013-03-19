@@ -36,7 +36,7 @@ void testamentTabDyn(TableauDynamique *t);
 
 /** Precondition : t1 et t2 initialises
 		 Postcondition : l'ancien contenu de t1 est perdu. t1 et t2 contiennent
-   des sequences d'ElementTD identiques (t1 correspond a une copie de t2,
+   des sequences d'ElementTD identiques t1 correspond a une copie de t2,
    les 2 tableaux ont meme capacite, meme taille utilisee, mais sont
    independants) */
 void affecterTabDyn(TableauDynamique *t1, const TableauDynamique *t2);

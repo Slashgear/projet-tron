@@ -55,8 +55,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Moto.h" />
+		<Unit filename="src/Mur.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/Mur.h" />
 		<Unit filename="src/SDL.h" />
+		<Unit filename="src/TableauDynamique.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/TableauDynamique.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
