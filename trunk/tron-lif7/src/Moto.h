@@ -13,40 +13,46 @@
 */
 
 typedef struct{
-        unsigned float positionX;
-        unsigned float positionY;
-        unsigned float dimX;
-        unsigned float dimY;
+        float positionX;
+        float positionY;
+        unsigned int tailleX;
+        unsigned int tailleY;
         float vitesse;
-        enum {HAUT,BAS,GAUCHE,DROITE}direction;
+        enum {HAUT,BAS,GAUCHE,DROITE} direction;
 } Moto;
 /** assesseur position X moto*/
-unsigned float MotoGetPositionX(Moto m);
+float MotoGetPositionX(Moto moto);
 /** assesseur position Y moto*/
-unsigned float MotoGetPositionY(Moto m);
-/** assesseur dimX moto*/
-unsigned float MotoGetDimX(Moto m);
-/** assesseur dimY moto*/
-unsigned float MotoGetDimY(Moto m);
+float MotoGetPositionY(Moto moto);
+/** assesseur tailleX moto*/
+unsigned int MotoGetTailleX(Moto moto);
+/** assesseur tailleY moto*/
+unsigned int MotoGetTailleY(Moto moto);
 /** assesseur vitesse de moto*/
-float MotoGetVitesse(Moto m);
+float MotoGetVitesse(Moto moto);
 /** assesseur de direction*/
-enum{HAUT,BAS,GAUCHE,DROITE} MotoGetDirection(Moto m);
+enum{HAUT,BAS,GAUCHE,DROITE} MotoGetDirection(Moto moto);
 
 /** mutateur de positionX de moto*/
-void MotoSetPositionX(Moto m,unsigned float X);
+void MotoSetPositionX(Moto m,float posX);
 /** mutateur de positionY de moto*/
-void MotoSetPositionY(Moto m,unsigned float Y);
+void MotoSetPositionY(Moto m,float posY);
 /**mutateur de dimX moto*/
-void MotoSetDimX(Moto m,unsigned float X);
+void MotoSetTailleX(Moto m,unsigned int tailleX);
 /**mutateur de dimY moto*/
-void MotoSetDimY(Moto m,unsigned float Y);
+void MotoSetTailleY(Moto m,unsigned int tailleY);
 /**mutateur de vitesse*/
-void MotoSetVitesse(Moto m,float v);
+void MotoSetVitesse(Moto m,float vitesse);
 /**mutateur de direction*/
-void MotoSetDirection(Moto m, enum{HAUT,BAS,GAUCHE,BAS} direction);
+void MotoSetDirection(Moto m, enum{HAUT,BAS,GAUCHE,DROITE} direction);
+
+/** Constructeur de Moto*/
+void MotoConstructeur(Moto* moto);
+/** Destructeur de Moto*/
+void MotoDestructeur(Moto* moto);
+
+/** Procedure qui teste le module Moto*/
+ void MotoTestRegression();
 
 
-
-
-#endif // MOTOS_H_INCLUDED
+#endif /* MOTOS_H_INCLUDED */

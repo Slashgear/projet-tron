@@ -18,22 +18,30 @@ typedef struct{
     char gauche;
 }Controle;
 
-/** assesseur de touche_droite*/
-char ControlGetDroite(Controle C);
-/** assesseur de touche_haut*/
-char ControlGetHaut(Controle C);
-/** assesseur de touche_bas*/
-char ControlGetBas(Controle C);
-/** assesseur de touche_gauche*/
-char ControlGetGauche(Controle C);
+/** assesseur de touche droite*/
+char ControleGetDroite(const Controle* controle);
+/** assesseur de touche haut*/
+char ControlGetHaut(const Controle* controle);
+/** assesseur de touche bas*/
+char ControlGetBas(const Controle* controle);
+/** assesseur de touche gauche*/
+char ControlGetGauche(const Controle* controle);
 
-/** mutateur de touche_droite*/
-void ControlSetDroite(Controle C,char x);
-/** mutateur de touche_haut*/
-void ControlSetHaut(Controle C,char x);
-/** mutateur de touche_bas*/
-void ControlSetBas(Controle C,char x);
-/**mutateur de touche_gauche*/
-void ControlSetGauche(Controle C,char x);
+/** mutateur de touche droite*/
+void ControleSetDroite(const Controle* controle,char x);
+/** mutateur de touche haut*/
+void ControleSetHaut(const Controle* controle,char x);
+/** mutateur de touche bas*/
+void ControleSetBas(const Controle* controle,char x);
+/**mutateur de touche gauche*/
+void ControleSetGauche(const Controle* controle,char x);
 
-#endif // CONTROLE_H_INCLUDED
+/** Constructeur de Controle*/
+void ControleConstructeur(Controle* controle);
+/** Destructeur de Controle*/
+void ControleDestructeur(Controle* controle);
+
+/** Procedure qui teste le module Controle*/
+ void ControleTestRegression();
+
+#endif /* CONTROLE_H_INCLUDED */

@@ -13,37 +13,49 @@
 */
 
 typedef struct{
-    unsigned float positionX;
-    unsigned float positionY;
+    float positionX;
+    float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    Mur * mesMurs;
+    TableauDynamique mesMurs;
 }Grid;
 
 /**assesseur de positionX*/
-unsigned float GridGetPositionX(Grid g);
+float GridGetPositionX(const Grid* grille);
 /**assesseur de positionY*/
-unsigned float GridGetPositionY(Grid g);
+float GridGetPositionY(const Grid* grille);
 /**assesseur de tailleX*/
-unsigned int GridGetTailleX(Grid g);
+unsigned int GridGetTailleX(const Grid* grille);
 /**assesseur de tailleY*/
-unsigned int GridGetTailleY(Grid g);
+unsigned int GridGetTailleY(const Grid* grille);
 /**assesseur de mesMurs*/
-Mur* GridGetMesMurs(Grid g);
+TableauDynamique* GridGetMesMurs(const Grid* grille);
 
 
 /**mutateur de positionX*/
-void GridSetPositionX(Grid g,unsigned float p);
+void GridSetPositionX(Grid* grille,float posX);
 /**mutateur de positionY*/
-void GridSetPositionY(Grid g,unsigned float p);
+void GridSetPositionY(Grid* grille,float posY);
 /**mutateur de tailleX*/
-void GridSetTailleX(Grid g,unsigned int t);
+void GridSetTailleX(Grid* grille,unsigned int tailleX);
 /**mutateur de tailleY*/
-void GridSetTailleY(Grid g,unsigned int t);
+void GridSetTailleY(Grid* grille,unsigned int tailleY);
 /**mutateur de mesMurs*/
-void GridSetMesMurs(Grid g,Mur* m);
+void GridSetMesMurs(Grid* grille,const TableauDynamique* mesMurs);
 
-/** Constructeur de grille*/
+ /** Constructeur de Grid*/
+ void GridConstructeur(Grid* grille);
+ /** Destructeur de Grid*/
+ void GridDestructeur(Grid* grille);
+ /** Ajoute un mur*/
+ void ajouteMur(TableauDynamique* mesMurs, Mur mur);
+ /** Efface un mur*/
+ void ajouteMur(TableauDynamique* mesMurs, Mur mur);
+ /** Nettoie tous les murs de la Grid*/
+ void nettoieGrid(TableauDynamique* mesMurs);
+
+ /** Procedure qui teste le module Grid*/
+ void GridTestRegression();
 
 
 #endif /* GRID_H_INCLUDED */
