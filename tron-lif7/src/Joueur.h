@@ -1,23 +1,41 @@
 #ifndef JOUEUR_H_INCLUDED
 #define JOUEUR_H_INCLUDED
-#include "src/Controle.h"
-#include "src/Moto.h"
-#include <stdlib.h>
-#include <stdio.h>
 
-typedef struct{
-    Moto uneMoto;
-    Controle unControle;
+/**
+\file [Moto.h]
+\brief Module des Motos du jeu
+\author {Antoine.C,Matthieu.B}
+\version 0.1
+\date 19 mars 2013
+*/
+
+typedef struct {
+    Moto moto;
+    Controle controle;
+    enum{ORANGE, BLEU} couleur;
 }Joueur;
 
 /** assesseur de moto*/
-Moto setMotoJoueur(Joueur joueur);
+Moto JoueurGetMoto(const Joueur* joueur);
 /** assesseur de controle*/
-Controle setControleJoueur(Joueur joueur);
+Controle JoueurGetControle(const Joueur* joueur);
+/** assesseur de couleur*/
+Couleur JoueurGetCouleur(const Joueur* joueur);
 
-/**mutateur de Moto*/
-void getMotoJoueur(Joueur joueur,Moto uneMoto);
-/**mutateur de Control*/
-void getMotoJoueur(Joueur joueur,Controle unControle);
+/** mutateur de moto*/
+void JoueurSetMoto(Joueur* joueur, Moto moto);
+/** mutateur de controle*/
+void JoueurSetMoto(Joueur* joueur, Controle controle);
+/** mutateur de couleur*/
+void JoueurSetMoto(Joueur* joueur, enum{ORANGE, BLEU} moto);
 
-#endif // JOUEUR_H_INCLUDED
+/** Constructeur de Joueur*/
+void JoueurConstructeur(Joueur* joueur);
+/** Destructeur de Joueur*/
+void JoueurDestructeur(Joueur* joueur);
+
+/** Procedure qui teste le module Joueur*/
+ void JoueurTestRegression();
+
+
+#endif /* JOUEUR_H_INCLUDED */
