@@ -3,7 +3,7 @@
 
 #include<stdlib.h>
 #include<stdio.h>
-
+#include"Couleur.h"
 
 /**
 *\file [Grid.h]
@@ -13,7 +13,6 @@
 *\date 13 mars 2013
 */
 
-typedef enum{ORANGE,BLEU} Couleur;
 
 typedef struct{
     float positionX;
@@ -39,9 +38,9 @@ float MurGetDureeVie(const Mur* mur);
 
 
 /** mutateur de positionX*/
-void MurSetpositionX(Mur mur,float posX);
+void MurSetpositionX(Mur* mur,float posX);
 /** mutateur de positionY*/
-void MurSetpositionY(Mur mur,float posY);
+void MurSetpositionY(Mur* mur,float posY);
 /** mutateur de tailleX*/
 void MurSetTailleX(Mur* mur,unsigned int tailleX);
 /** mutateur de tailleY*/
@@ -49,7 +48,15 @@ void MurSetTailleY(Mur* mur,unsigned int tailleY);
 /** mutateur de couleur*/
 void MurSetCouleur(Mur* mur,Couleur couleur);
 /** mutateur de dureeVie*/
-void MurSetDureeVie(Mur* mur,unsigned int tailleX);
+void MurSetDureeVie(Mur* mur,Mur mur);
+
+/** Constructeur de Controle*/
+void ControleConstructeur(Controle* controle);
+/** Destructeur de Controle*/
+void ControleDestructeur(Controle* controle);
+
+/** Procedure qui teste le module Controle*/
+ void ControleTestRegression();
 
 
 
