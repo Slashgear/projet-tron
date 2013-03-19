@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,7 +83,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Moto.h File Reference</div>  </div>
 </div><!--header-->
@@ -92,24 +95,450 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Module des Motos du jeu.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &quot;Vecteur2D&quot;</code><br/>
 </div>
 <p><a href="Moto_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html">Moto</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a224b9163917ac32fc95a60d8c1eec3aa"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> { <a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2">HAUT</a>, 
+<a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa">BAS</a>, 
+<a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86">GAUCHE</a>, 
+<a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343">DROITE</a>
+ }</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a164193c5a6d142b45c5def90ab65a773"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a164193c5a6d142b45c5def90ab65a773">MotoGetPositionX</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a76ec100b33f79b9d13673598a7a2c06a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a76ec100b33f79b9d13673598a7a2c06a">MotoGetPositionY</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a94a64fe5ce747a45ff2dd8446306ec86"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a94a64fe5ce747a45ff2dd8446306ec86">MotoGetTailleX</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a4232efbeedac6bc8904dd146f6cf0b3b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a4232efbeedac6bc8904dd146f6cf0b3b">MotoGetTailleY</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a04605f2aa2ef6090d2cb47428996f659"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a04605f2aa2ef6090d2cb47428996f659">MotoGetVitesse</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a387195d2ca2de5a35b1cb1cfd80157dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a387195d2ca2de5a35b1cb1cfd80157dd">MotoGetDirection</a> (<a class="el" href="structMoto.html">Moto</a> moto)</td></tr>
+<tr class="memitem:a8eb54ab5db12da4eb1d9149cb101bceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a8eb54ab5db12da4eb1d9149cb101bceb">MotoSetPositionX</a> (<a class="el" href="structMoto.html">Moto</a> m, float posX)</td></tr>
+<tr class="memitem:adfd697d684c0a7c1cff5de5baa4f12fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#adfd697d684c0a7c1cff5de5baa4f12fe">MotoSetPositionY</a> (<a class="el" href="structMoto.html">Moto</a> m, float posY)</td></tr>
+<tr class="memitem:a34538c0df9894fe9075d6c772b4e9d8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a34538c0df9894fe9075d6c772b4e9d8b">MotoSetTailleX</a> (<a class="el" href="structMoto.html">Moto</a> m, unsigned int tailleX)</td></tr>
+<tr class="memitem:a8e47919c2baa00ca57a78f5b53a3455b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a8e47919c2baa00ca57a78f5b53a3455b">MotoSetTailleY</a> (<a class="el" href="structMoto.html">Moto</a> m, unsigned int tailleY)</td></tr>
+<tr class="memitem:af05231ae7a4811035e39f6a4c3bc1490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#af05231ae7a4811035e39f6a4c3bc1490">MotoSetVitesse</a> (<a class="el" href="structMoto.html">Moto</a> m, float vitesse)</td></tr>
+<tr class="memitem:aa449c9412c8d0c611d6ebc59a4f35d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#aa449c9412c8d0c611d6ebc59a4f35d83">MotoSetDirection</a> (<a class="el" href="structMoto.html">Moto</a> m, <a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="memitem:adaa34f67eeb029811b895f62c48e1e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#adaa34f67eeb029811b895f62c48e1e37">MotoConstructeur</a> (<a class="el" href="structMoto.html">Moto</a> *moto, float posX, float posY, unsigned int tailleX, unsigned int tailleY, float vitesse, <a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="memitem:a8c1f41e71c00d38b29d1b8ab0e93d542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#a8c1f41e71c00d38b29d1b8ab0e93d542">MotoDestructeur</a> (<a class="el" href="structMoto.html">Moto</a> *moto)</td></tr>
+<tr class="memitem:aee18c911ddc26580170985f506538dcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#aee18c911ddc26580170985f506538dcb">MotoTestRegression</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af09d932afcb6805fd2fcf9d337dfc744"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Moto_8h.html#af09d932afcb6805fd2fcf9d337dfc744">MotoGetDirection</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Module des Motos du jeu. </p>
 <p>] </p>
 <dl class="section author"><dt>Author</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>19 mars 2013</dd></dl>
+<p>] </p>
+<dl class="section author"><dt>Author</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>13 mars 2013 </dd></dl>
-</div></div><!-- contents -->
+</div><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2"></a>HAUT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa"></a>BAS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86"></a>GAUCHE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343"></a>DROITE</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<h2>Function Documentation</h2>
+<a class="anchor" id="adaa34f67eeb029811b895f62c48e1e37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vitesse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur de <a class="el" href="structMoto.html">Moto</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a8c1f41e71c00d38b29d1b8ab0e93d542"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destructeur de <a class="el" href="structMoto.html">Moto</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a387195d2ca2de5a35b1cb1cfd80157dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> MotoGetDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de direction </p>
+
+</div>
+</div>
+<a class="anchor" id="a164193c5a6d142b45c5def90ab65a773"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetPositionX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur position X moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a76ec100b33f79b9d13673598a7a2c06a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetPositionY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur position Y moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a94a64fe5ce747a45ff2dd8446306ec86"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MotoGetTailleX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur tailleX moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a4232efbeedac6bc8904dd146f6cf0b3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MotoGetTailleY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur tailleY moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a04605f2aa2ef6090d2cb47428996f659"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetVitesse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur vitesse de moto </p>
+
+</div>
+</div>
+<a class="anchor" id="aa449c9412c8d0c611d6ebc59a4f35d83"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de direction </p>
+
+</div>
+</div>
+<a class="anchor" id="a8eb54ab5db12da4eb1d9149cb101bceb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetPositionX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de positionX de moto </p>
+
+</div>
+</div>
+<a class="anchor" id="adfd697d684c0a7c1cff5de5baa4f12fe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetPositionY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de positionY de moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a34538c0df9894fe9075d6c772b4e9d8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetTailleX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de dimX moto </p>
+
+</div>
+</div>
+<a class="anchor" id="a8e47919c2baa00ca57a78f5b53a3455b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetTailleY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de dimY moto </p>
+
+</div>
+</div>
+<a class="anchor" id="af05231ae7a4811035e39f6a4c3bc1490"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetVitesse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMoto.html">Moto</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vitesse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de vitesse </p>
+
+</div>
+</div>
+<a class="anchor" id="aee18c911ddc26580170985f506538dcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Procedure qui teste le module <a class="el" href="structMoto.html">Moto</a> </p>
+
+</div>
+</div>
+<h2>Variable Documentation</h2>
+<a class="anchor" id="af09d932afcb6805fd2fcf9d337dfc744"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef    MotoGetDirection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 13 2013 18:24:56 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

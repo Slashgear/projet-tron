@@ -7,11 +7,57 @@ Module des Motos du jeu.
 
 
 {\ttfamily \#include $<$stdlib.\-h$>$}\\*
-{\ttfamily \#include \char`\"{}Vecteur2\-D\char`\"{}}\\*
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structMoto}{Moto}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \{ \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2}{H\-A\-U\-T}, 
+\hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa}{B\-A\-S}, 
+\hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86}{G\-A\-U\-C\-H\-E}, 
+\hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343}{D\-R\-O\-I\-T\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{Moto_8h_a164193c5a6d142b45c5def90ab65a773}{Moto\-Get\-Position\-X} (\hyperlink{structMoto}{Moto} moto)
+\item 
+float \hyperlink{Moto_8h_a76ec100b33f79b9d13673598a7a2c06a}{Moto\-Get\-Position\-Y} (\hyperlink{structMoto}{Moto} moto)
+\item 
+unsigned int \hyperlink{Moto_8h_a94a64fe5ce747a45ff2dd8446306ec86}{Moto\-Get\-Taille\-X} (\hyperlink{structMoto}{Moto} moto)
+\item 
+unsigned int \hyperlink{Moto_8h_a4232efbeedac6bc8904dd146f6cf0b3b}{Moto\-Get\-Taille\-Y} (\hyperlink{structMoto}{Moto} moto)
+\item 
+float \hyperlink{Moto_8h_a04605f2aa2ef6090d2cb47428996f659}{Moto\-Get\-Vitesse} (\hyperlink{structMoto}{Moto} moto)
+\item 
+\hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{Moto_8h_a387195d2ca2de5a35b1cb1cfd80157dd}{Moto\-Get\-Direction} (\hyperlink{structMoto}{Moto} moto)
+\item 
+void \hyperlink{Moto_8h_a8eb54ab5db12da4eb1d9149cb101bceb}{Moto\-Set\-Position\-X} (\hyperlink{structMoto}{Moto} m, float pos\-X)
+\item 
+void \hyperlink{Moto_8h_adfd697d684c0a7c1cff5de5baa4f12fe}{Moto\-Set\-Position\-Y} (\hyperlink{structMoto}{Moto} m, float pos\-Y)
+\item 
+void \hyperlink{Moto_8h_a34538c0df9894fe9075d6c772b4e9d8b}{Moto\-Set\-Taille\-X} (\hyperlink{structMoto}{Moto} m, unsigned int taille\-X)
+\item 
+void \hyperlink{Moto_8h_a8e47919c2baa00ca57a78f5b53a3455b}{Moto\-Set\-Taille\-Y} (\hyperlink{structMoto}{Moto} m, unsigned int taille\-Y)
+\item 
+void \hyperlink{Moto_8h_af05231ae7a4811035e39f6a4c3bc1490}{Moto\-Set\-Vitesse} (\hyperlink{structMoto}{Moto} m, float vitesse)
+\item 
+void \hyperlink{Moto_8h_aa449c9412c8d0c611d6ebc59a4f35d83}{Moto\-Set\-Direction} (\hyperlink{structMoto}{Moto} m, \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\item 
+void \hyperlink{Moto_8h_adaa34f67eeb029811b895f62c48e1e37}{Moto\-Constructeur} (\hyperlink{structMoto}{Moto} $\ast$moto, float pos\-X, float pos\-Y, unsigned int taille\-X, unsigned int taille\-Y, float vitesse, \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\item 
+void \hyperlink{Moto_8h_a8c1f41e71c00d38b29d1b8ab0e93d542}{Moto\-Destructeur} (\hyperlink{structMoto}{Moto} $\ast$moto)
+\item 
+void \hyperlink{Moto_8h_aee18c911ddc26580170985f506538dcb}{Moto\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{Moto_8h_af09d932afcb6805fd2fcf9d337dfc744}{Moto\-Get\-Direction}
 \end{DoxyCompactItemize}
 
 
@@ -23,5 +69,160 @@ Module des Motos du jeu. \mbox{]} \begin{DoxyAuthor}{Author}
 0.\-1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
+19 mars 2013
+\end{DoxyDate}
+\mbox{]} \begin{DoxyAuthor}{Author}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
 13 mars 2013 
 \end{DoxyDate}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{\index{Moto.\-h@{Moto.\-h}!Direction@{Direction}}
+\index{Direction@{Direction}!Moto.h@{Moto.\-h}}
+\subsubsection[{Direction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Direction}}}\label{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}
+\begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{H\-A\-U\-T@{H\-A\-U\-T}!Moto.\-h@{Moto.\-h}}\index{Moto.\-h@{Moto.\-h}!H\-A\-U\-T@{H\-A\-U\-T}}\item[{\em 
+\hypertarget{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2}{H\-A\-U\-T}\label{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2}
+}]\index{B\-A\-S@{B\-A\-S}!Moto.\-h@{Moto.\-h}}\index{Moto.\-h@{Moto.\-h}!B\-A\-S@{B\-A\-S}}\item[{\em 
+\hypertarget{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa}{B\-A\-S}\label{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4b07baad9e862178efeac3e522475caa}
+}]\index{G\-A\-U\-C\-H\-E@{G\-A\-U\-C\-H\-E}!Moto.\-h@{Moto.\-h}}\index{Moto.\-h@{Moto.\-h}!G\-A\-U\-C\-H\-E@{G\-A\-U\-C\-H\-E}}\item[{\em 
+\hypertarget{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86}{G\-A\-U\-C\-H\-E}\label{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa4ee960d97b04a1f22ed7ff81c7aa2e86}
+}]\index{D\-R\-O\-I\-T\-E@{D\-R\-O\-I\-T\-E}!Moto.\-h@{Moto.\-h}}\index{Moto.\-h@{Moto.\-h}!D\-R\-O\-I\-T\-E@{D\-R\-O\-I\-T\-E}}\item[{\em 
+\hypertarget{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343}{D\-R\-O\-I\-T\-E}\label{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aaa79f680205087956546ae263797bd1343}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{Moto_8h_adaa34f67eeb029811b895f62c48e1e37}{\index{Moto.\-h@{Moto.\-h}!Moto\-Constructeur@{Moto\-Constructeur}}
+\index{Moto\-Constructeur@{Moto\-Constructeur}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{float}]{pos\-X, }
+\item[{float}]{pos\-Y, }
+\item[{unsigned int}]{taille\-X, }
+\item[{unsigned int}]{taille\-Y, }
+\item[{float}]{vitesse, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_adaa34f67eeb029811b895f62c48e1e37}
+Constructeur de \hyperlink{structMoto}{Moto} \hypertarget{Moto_8h_a8c1f41e71c00d38b29d1b8ab0e93d542}{\index{Moto.\-h@{Moto.\-h}!Moto\-Destructeur@{Moto\-Destructeur}}
+\index{Moto\-Destructeur@{Moto\-Destructeur}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a8c1f41e71c00d38b29d1b8ab0e93d542}
+Destructeur de \hyperlink{structMoto}{Moto} \hypertarget{Moto_8h_a387195d2ca2de5a35b1cb1cfd80157dd}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Direction@{Moto\-Get\-Direction}}
+\index{Moto\-Get\-Direction@{Moto\-Get\-Direction}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Direction} Moto\-Get\-Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a387195d2ca2de5a35b1cb1cfd80157dd}
+assesseur de direction \hypertarget{Moto_8h_a164193c5a6d142b45c5def90ab65a773}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Position\-X@{Moto\-Get\-Position\-X}}
+\index{Moto\-Get\-Position\-X@{Moto\-Get\-Position\-X}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a164193c5a6d142b45c5def90ab65a773}
+assesseur position X moto \hypertarget{Moto_8h_a76ec100b33f79b9d13673598a7a2c06a}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Position\-Y@{Moto\-Get\-Position\-Y}}
+\index{Moto\-Get\-Position\-Y@{Moto\-Get\-Position\-Y}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a76ec100b33f79b9d13673598a7a2c06a}
+assesseur position Y moto \hypertarget{Moto_8h_a94a64fe5ce747a45ff2dd8446306ec86}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Taille\-X@{Moto\-Get\-Taille\-X}}
+\index{Moto\-Get\-Taille\-X@{Moto\-Get\-Taille\-X}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Moto\-Get\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a94a64fe5ce747a45ff2dd8446306ec86}
+assesseur taille\-X moto \hypertarget{Moto_8h_a4232efbeedac6bc8904dd146f6cf0b3b}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Taille\-Y@{Moto\-Get\-Taille\-Y}}
+\index{Moto\-Get\-Taille\-Y@{Moto\-Get\-Taille\-Y}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Moto\-Get\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a4232efbeedac6bc8904dd146f6cf0b3b}
+assesseur taille\-Y moto \hypertarget{Moto_8h_a04605f2aa2ef6090d2cb47428996f659}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Vitesse@{Moto\-Get\-Vitesse}}
+\index{Moto\-Get\-Vitesse@{Moto\-Get\-Vitesse}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Vitesse}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Vitesse (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{moto}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a04605f2aa2ef6090d2cb47428996f659}
+assesseur vitesse de moto \hypertarget{Moto_8h_aa449c9412c8d0c611d6ebc59a4f35d83}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Direction@{Moto\-Set\-Direction}}
+\index{Moto\-Set\-Direction@{Moto\-Set\-Direction}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_aa449c9412c8d0c611d6ebc59a4f35d83}
+mutateur de direction \hypertarget{Moto_8h_a8eb54ab5db12da4eb1d9149cb101bceb}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Position\-X@{Moto\-Set\-Position\-X}}
+\index{Moto\-Set\-Position\-X@{Moto\-Set\-Position\-X}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{float}]{pos\-X}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a8eb54ab5db12da4eb1d9149cb101bceb}
+mutateur de position\-X de moto \hypertarget{Moto_8h_adfd697d684c0a7c1cff5de5baa4f12fe}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Position\-Y@{Moto\-Set\-Position\-Y}}
+\index{Moto\-Set\-Position\-Y@{Moto\-Set\-Position\-Y}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{float}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_adfd697d684c0a7c1cff5de5baa4f12fe}
+mutateur de position\-Y de moto \hypertarget{Moto_8h_a34538c0df9894fe9075d6c772b4e9d8b}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Taille\-X@{Moto\-Set\-Taille\-X}}
+\index{Moto\-Set\-Taille\-X@{Moto\-Set\-Taille\-X}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{unsigned int}]{taille\-X}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a34538c0df9894fe9075d6c772b4e9d8b}
+mutateur de dim\-X moto \hypertarget{Moto_8h_a8e47919c2baa00ca57a78f5b53a3455b}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Taille\-Y@{Moto\-Set\-Taille\-Y}}
+\index{Moto\-Set\-Taille\-Y@{Moto\-Set\-Taille\-Y}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{unsigned int}]{taille\-Y}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_a8e47919c2baa00ca57a78f5b53a3455b}
+mutateur de dim\-Y moto \hypertarget{Moto_8h_af05231ae7a4811035e39f6a4c3bc1490}{\index{Moto.\-h@{Moto.\-h}!Moto\-Set\-Vitesse@{Moto\-Set\-Vitesse}}
+\index{Moto\-Set\-Vitesse@{Moto\-Set\-Vitesse}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Set\-Vitesse}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Vitesse (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto}}]{m, }
+\item[{float}]{vitesse}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_af05231ae7a4811035e39f6a4c3bc1490}
+mutateur de vitesse \hypertarget{Moto_8h_aee18c911ddc26580170985f506538dcb}{\index{Moto.\-h@{Moto.\-h}!Moto\-Test\-Regression@{Moto\-Test\-Regression}}
+\index{Moto\-Test\-Regression@{Moto\-Test\-Regression}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Moto_8h_aee18c911ddc26580170985f506538dcb}
+Procedure qui teste le module \hyperlink{structMoto}{Moto} 
+
+\subsection{Variable Documentation}
+\hypertarget{Moto_8h_af09d932afcb6805fd2fcf9d337dfc744}{\index{Moto.\-h@{Moto.\-h}!Moto\-Get\-Direction@{Moto\-Get\-Direction}}
+\index{Moto\-Get\-Direction@{Moto\-Get\-Direction}!Moto.h@{Moto.\-h}}
+\subsubsection[{Moto\-Get\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}typedef    Moto\-Get\-Direction}}\label{Moto_8h_af09d932afcb6805fd2fcf9d337dfc744}

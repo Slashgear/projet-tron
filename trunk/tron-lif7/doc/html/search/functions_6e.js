@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['norme',['norme',['../Vecteur2D_8c.html#a68e3ecc6cf8978cf783d8587caf84181',1,'norme(Vector2D vecteur):&#160;Vecteur2D.c'],['../Vecteur2D_8h.html#a68e3ecc6cf8978cf783d8587caf84181',1,'norme(Vector2D vecteur):&#160;Vecteur2D.c']]]
+  ['nettoiegrid',['nettoieGrid',['../Grid_8h.html#a7039c57fd5f28be9ea79cc4ef904d4bb',1,'Grid.h']]]
 ];

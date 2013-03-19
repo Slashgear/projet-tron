@@ -1,0 +1,125 @@
+\hypertarget{Jeu_8h}{\section{/home/antoine/\-Projets/tron-\/lif7/src/\-Jeu.h File Reference}
+\label{Jeu_8h}\index{/home/antoine/\-Projets/tron-\/lif7/src/\-Jeu.\-h@{/home/antoine/\-Projets/tron-\/lif7/src/\-Jeu.\-h}}
+}
+{\ttfamily \#include \char`\"{}Joueur.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Grid.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structJeu}{Jeu}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structGrid}{Grid} $\ast$ \hyperlink{Jeu_8h_a426d1cc64f94c46cdd2e47df779685f2}{Jeu\-Get\-Grille} (const \hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+\hyperlink{structJoueur}{Joueur} $\ast$ \hyperlink{Jeu_8h_a4817d9bcffabb76995d07f7078748803}{Jeu\-Get\-Mes\-Joueurs} (const \hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8h_a1bf65411167b8a237922f98d7084aa99}{Jeu\-Set\-Grille} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structGrid}{Grid} \hyperlink{Jeu_8h_a22d74b3de3cb04106d7efc6d4ba05c1a}{grille})
+\item 
+void \hyperlink{Jeu_8h_a3c9edf85f9faf8a1754744926734e81b}{Jeu\-Set\-Mes\-Joueurs} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structJoueur}{Joueur} joueur) void Jeu\-Constructeur(\hyperlink{structJeu}{Jeu} $\ast$jeu
+\item 
+void \hyperlink{Jeu_8h_a8bcba1ef69f19fb2db2610e0391cfd51}{Jeu\-Destructeur} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8h_a4f3416f4c6aad05a23f61e36f3bc2c10}{Jeu\-Evolue} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8h_ae9aea37de526ff14b337bc50f756b532}{Bouge\-Moto} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+char \hyperlink{Jeu_8h_a58545cd689d6b35f014880eaffa965c9}{test\-Collision\-Mur} (const \hyperlink{structMoto}{Moto} $\ast$moto, const \hyperlink{structGrid}{Grid} $\ast$\hyperlink{Jeu_8h_a22d74b3de3cb04106d7efc6d4ba05c1a}{grille})
+\item 
+void \hyperlink{Jeu_8h_a94e134e8e4c930d637f39e56ff29c441}{Jeu\-Action\-Clavier} (\hyperlink{structJoueur}{Joueur} $\ast$\hyperlink{Jeu_8h_a28fad92d4a258b99755b5cd7ef00ea90}{mes\-Joueurs})
+\item 
+void \hyperlink{Jeu_8h_a9ab460d3c45562a77699da8015b3039c}{Jeu\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structGrid}{Grid} $\ast$ \hyperlink{Jeu_8h_a22d74b3de3cb04106d7efc6d4ba05c1a}{grille}
+\item 
+void \hyperlink{structGrid}{Grid} \hyperlink{structJoueur}{Joueur} $\ast$ \hyperlink{Jeu_8h_a28fad92d4a258b99755b5cd7ef00ea90}{mes\-Joueurs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{Jeu_8h_ae9aea37de526ff14b337bc50f756b532}{\index{Jeu.\-h@{Jeu.\-h}!Bouge\-Moto@{Bouge\-Moto}}
+\index{Bouge\-Moto@{Bouge\-Moto}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Bouge\-Moto}]{\setlength{\rightskip}{0pt plus 5cm}void Bouge\-Moto (
+\begin{DoxyParamCaption}
+\item[{{\bf Jeu} $\ast$}]{jeu}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_ae9aea37de526ff14b337bc50f756b532}
+procédure qui gère le mouvement de toutes les motos \hypertarget{Jeu_8h_a94e134e8e4c930d637f39e56ff29c441}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Action\-Clavier@{Jeu\-Action\-Clavier}}
+\index{Jeu\-Action\-Clavier@{Jeu\-Action\-Clavier}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Action\-Clavier}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Action\-Clavier (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{mes\-Joueurs}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a94e134e8e4c930d637f39e56ff29c441}
+procédure qui gère les actions des motos en fonction des touches saisies \hypertarget{Jeu_8h_a8bcba1ef69f19fb2db2610e0391cfd51}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Destructeur@{Jeu\-Destructeur}}
+\index{Jeu\-Destructeur@{Jeu\-Destructeur}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Jeu} $\ast$}]{jeu}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a8bcba1ef69f19fb2db2610e0391cfd51}
+destructeur du jeu \hypertarget{Jeu_8h_a4f3416f4c6aad05a23f61e36f3bc2c10}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Evolue@{Jeu\-Evolue}}
+\index{Jeu\-Evolue@{Jeu\-Evolue}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Evolue}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Evolue (
+\begin{DoxyParamCaption}
+\item[{{\bf Jeu} $\ast$}]{jeu}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a4f3416f4c6aad05a23f61e36f3bc2c10}
+Boucle d'évolutions du jeu \hypertarget{Jeu_8h_a426d1cc64f94c46cdd2e47df779685f2}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Get\-Grille@{Jeu\-Get\-Grille}}
+\index{Jeu\-Get\-Grille@{Jeu\-Get\-Grille}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Get\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grid}$\ast$ Jeu\-Get\-Grille (
+\begin{DoxyParamCaption}
+\item[{const {\bf Jeu} $\ast$}]{jeu}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a426d1cc64f94c46cdd2e47df779685f2}
+assesseur de grille \hypertarget{Jeu_8h_a4817d9bcffabb76995d07f7078748803}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Get\-Mes\-Joueurs@{Jeu\-Get\-Mes\-Joueurs}}
+\index{Jeu\-Get\-Mes\-Joueurs@{Jeu\-Get\-Mes\-Joueurs}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Get\-Mes\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Joueur}$\ast$ Jeu\-Get\-Mes\-Joueurs (
+\begin{DoxyParamCaption}
+\item[{const {\bf Jeu} $\ast$}]{jeu}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a4817d9bcffabb76995d07f7078748803}
+assesseur de mesjoueurs \hypertarget{Jeu_8h_a1bf65411167b8a237922f98d7084aa99}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Set\-Grille@{Jeu\-Set\-Grille}}
+\index{Jeu\-Set\-Grille@{Jeu\-Set\-Grille}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Set\-Grille}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Set\-Grille (
+\begin{DoxyParamCaption}
+\item[{{\bf Jeu} $\ast$}]{jeu, }
+\item[{{\bf Grid}}]{grille}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a1bf65411167b8a237922f98d7084aa99}
+mutateur de grille \hypertarget{Jeu_8h_a3c9edf85f9faf8a1754744926734e81b}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Set\-Mes\-Joueurs@{Jeu\-Set\-Mes\-Joueurs}}
+\index{Jeu\-Set\-Mes\-Joueurs@{Jeu\-Set\-Mes\-Joueurs}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Set\-Mes\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Set\-Mes\-Joueurs (
+\begin{DoxyParamCaption}
+\item[{{\bf Jeu} $\ast$}]{jeu, }
+\item[{{\bf Joueur}}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a3c9edf85f9faf8a1754744926734e81b}
+mutateur de mesjoueurs constructeur du jeu \hypertarget{Jeu_8h_a9ab460d3c45562a77699da8015b3039c}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Test\-Regression@{Jeu\-Test\-Regression}}
+\index{Jeu\-Test\-Regression@{Jeu\-Test\-Regression}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{Jeu\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Jeu\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a9ab460d3c45562a77699da8015b3039c}
+procédure de test \hypertarget{Jeu_8h_a58545cd689d6b35f014880eaffa965c9}{\index{Jeu.\-h@{Jeu.\-h}!test\-Collision\-Mur@{test\-Collision\-Mur}}
+\index{test\-Collision\-Mur@{test\-Collision\-Mur}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{test\-Collision\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}char test\-Collision\-Mur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto, }
+\item[{const {\bf Grid} $\ast$}]{grille}
+\end{DoxyParamCaption}
+)}}\label{Jeu_8h_a58545cd689d6b35f014880eaffa965c9}
+fonction qui teste les collisions avec le murs 
+
+\subsection{Variable Documentation}
+\hypertarget{Jeu_8h_a22d74b3de3cb04106d7efc6d4ba05c1a}{\index{Jeu.\-h@{Jeu.\-h}!grille@{grille}}
+\index{grille@{grille}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{grille}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Grid}$\ast$ grille}}\label{Jeu_8h_a22d74b3de3cb04106d7efc6d4ba05c1a}
+\hypertarget{Jeu_8h_a28fad92d4a258b99755b5cd7ef00ea90}{\index{Jeu.\-h@{Jeu.\-h}!mes\-Joueurs@{mes\-Joueurs}}
+\index{mes\-Joueurs@{mes\-Joueurs}!Jeu.h@{Jeu.\-h}}
+\subsubsection[{mes\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Grid} {\bf Joueur}$\ast$ mes\-Joueurs}}\label{Jeu_8h_a28fad92d4a258b99755b5cd7ef00ea90}
