@@ -3,6 +3,7 @@
 #include"Mur.h"
 #include<stdlib.h>
 #include<stdio.h>
+#include"TableauDynamique.h"
 
 /**
 *\file [Grid.h]
