@@ -6,7 +6,7 @@
 /**
 *\file [Controle.h]
 *\brief Module des vecteurs
-*\author {Antoine.C,Matthieu.B}
+*\author {Antoine.Caron,Matthieu.Billet}
 *\version 0.1
 *\date 13 mars 2013 
 */
