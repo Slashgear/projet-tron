@@ -33,11 +33,11 @@ void ControleSetDroite(Controle* controle,char x);
 void ControleSetHaut(Controle* controle,char x);
 /** mutateur de touche bas*/
 void ControleSetBas(Controle* controle,char x);
-/**mutateur de touche gauche*/
+/** mutateur de touche gauche*/
 void ControleSetGauche(Controle* controle,char x);
 
 /** Constructeur de Controle*/
-void ControleConstructeur(Controle* controle);
+void ControleConstructeur(Controle* controle, char droite,char gauche,char haut,char bas);
 /** Destructeur de Controle*/
 void ControleDestructeur(Controle* controle);
 

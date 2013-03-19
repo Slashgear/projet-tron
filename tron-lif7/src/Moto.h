@@ -49,7 +49,7 @@ void MotoSetVitesse(Moto m,float vitesse);
 void MotoSetDirection(Moto m, Direction direction);
 
 /** Constructeur de Moto*/
-void MotoConstructeur(Moto* moto);
+void MotoConstructeur(Moto* moto,float posX,float posY,unsigned int tailleX, unsigned int tailleY,float vitesse,Direction direction);
 /** Destructeur de Moto*/
 void MotoDestructeur(Moto* moto);
 

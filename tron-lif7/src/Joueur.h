@@ -1,6 +1,8 @@
 #ifndef JOUEUR_H_INCLUDED
 #define JOUEUR_H_INCLUDED
-
+#include "Controle.h"
+#include "Moto.h"
+#include "Couleur.h"
 /**
 \file [Moto.h]
 \brief Module des Motos du jeu
@@ -12,7 +14,7 @@
 typedef struct {
     Moto moto;
     Controle controle;
-    enum{ORANGE, BLEU} couleur;
+    Couleur couleur;
 }Joueur;
 
 /** assesseur de moto*/
