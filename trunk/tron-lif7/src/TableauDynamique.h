@@ -3,14 +3,13 @@
 #define _TAB_DYN
 
 #include "Mur.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 
 
-typedef struct {
-  /*   donnees membres  */
-  /*   (ne sont pas censees etre connues par l'utilisateur d'un module :  */
-  /*   SI ON AVAIT PU NE PAS LES FAIRE FIGURER DANS L'INTERFACE,
-       on l'aurait fait!) */
+typedef struct
+{
   unsigned int capacite;
   unsigned int taille_utilisee;
   Mur** ad;
