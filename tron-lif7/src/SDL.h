@@ -67,7 +67,7 @@ void SDLSetMoto2G(SDL* sdl,SDL_Surface * moto);
 void SDLSetMoto2D(SDL* sdl,SDL_Surface * moto);
 
 /** Constructeur de SDL, initialise les différents champs*/
-void SDLConstructeur(SDL *sdl);
+void SDLConstructeur(SDL *sdl, const Jeu* jeu);
 /**Destructeur de SDl,remise à zero des champs de SDL et free des allocations*/
 void SDLDestructeur(SDL *sdl);
 /** Procédure d'affichage du jeu*/

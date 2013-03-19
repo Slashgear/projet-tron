@@ -24,7 +24,7 @@ void JeuSetGrille(Jeu * jeu,Grid grille);
 void JeuSetMesJoueurs(Jeu * jeu,Joueur joueur)
 
 /**constructeur du jeu*/
-void JeuConstructeur(Jeu *jeu, Grid* grille, Joueur* mesJoueurs);
+void JeuConstructeur(Jeu *jeu, const Grid* grille, const Joueur* mesJoueurs);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu *jeu);
 /**Boucle d'évolutions du jeu*/

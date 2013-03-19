@@ -45,7 +45,7 @@ void GridSetTailleY(Grid* grille,unsigned int tailleY);
 void GridSetMesMurs(Grid* grille,const TableauDynamique* mesMurs);
 
  /** Constructeur de Grid*/
- void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY, TableauDynamique* mesMurs);
+ void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY, const TableauDynamique* mesMurs);
  /** Destructeur de Grid*/
  void GridDestructeur(Grid* grille);
  /** Ajoute un mur*/
