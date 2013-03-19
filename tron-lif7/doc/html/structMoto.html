@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,67 +91,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8fb2706203929b02c7c37fe4fef32ca2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a8fb2706203929b02c7c37fe4fef32ca2">positionX</a></td></tr>
-<tr class="memitem:ae2f9cc8d1f0cf2fb58b14d827138e11e"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#ae2f9cc8d1f0cf2fb58b14d827138e11e">positionY</a></td></tr>
-<tr class="memitem:aeff28579dc6195025dec40699a1ab8bf"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#aeff28579dc6195025dec40699a1ab8bf">dimX</a></td></tr>
-<tr class="memitem:a4078dd1449ea7b14d9edf4f2faf71c62"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a4078dd1449ea7b14d9edf4f2faf71c62">dimY</a></td></tr>
-<tr class="memitem:aa5fe56a5edee7ea8f7501e4ed05de8cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVector2D.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#aa5fe56a5edee7ea8f7501e4ed05de8cc">vitesse</a></td></tr>
+<tr class="memitem:a7d9695eb69a7161d1a6800e4b8bc4170"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a7d9695eb69a7161d1a6800e4b8bc4170">positionX</a></td></tr>
+<tr class="memitem:a68859bbff76786aedccab8093a9de5a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a68859bbff76786aedccab8093a9de5a8">positionY</a></td></tr>
+<tr class="memitem:a15d1b56209aba6ea0bc8eeaac82ae625"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a15d1b56209aba6ea0bc8eeaac82ae625">tailleX</a></td></tr>
+<tr class="memitem:ab7b358839b7d20f16a4a17e5eabad5a4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#ab7b358839b7d20f16a4a17e5eabad5a4">tailleY</a></td></tr>
+<tr class="memitem:a561dfc3e54a534dfa92ccecbea8dbe71"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#a561dfc3e54a534dfa92ccecbea8dbe71">vitesse</a></td></tr>
+<tr class="memitem:ace42f991dc2d223029ca7f7162a10e9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoto.html#ace42f991dc2d223029ca7f7162a10e9b">direction</a></td></tr>
 </table>
 <h2>Member Data Documentation</h2>
-<a class="anchor" id="aeff28579dc6195025dec40699a1ab8bf"></a>
+<a class="anchor" id="ace42f991dc2d223029ca7f7162a10e9b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Moto::dimX</td>
+          <td class="memname"><a class="el" href="Moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> Moto::direction</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a4078dd1449ea7b14d9edf4f2faf71c62"></a>
+<a class="anchor" id="a7d9695eb69a7161d1a6800e4b8bc4170"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Moto::dimY</td>
+          <td class="memname">float Moto::positionX</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a8fb2706203929b02c7c37fe4fef32ca2"></a>
+<a class="anchor" id="a68859bbff76786aedccab8093a9de5a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Moto::positionX</td>
+          <td class="memname">float Moto::positionY</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="ae2f9cc8d1f0cf2fb58b14d827138e11e"></a>
+<a class="anchor" id="a15d1b56209aba6ea0bc8eeaac82ae625"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int Moto::positionY</td>
+          <td class="memname">unsigned int Moto::tailleX</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="aa5fe56a5edee7ea8f7501e4ed05de8cc"></a>
+<a class="anchor" id="ab7b358839b7d20f16a4a17e5eabad5a4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structVector2D.html">Vector2D</a> Moto::vitesse</td>
+          <td class="memname">unsigned int Moto::tailleY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a561dfc3e54a534dfa92ccecbea8dbe71"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Moto::vitesse</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -164,7 +177,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 13 2013 18:24:56 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

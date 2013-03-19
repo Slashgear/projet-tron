@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,24 +83,382 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Mur.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="Couleur_8h_source.html">Couleur.h</a>&quot;</code><br/>
 </div>
 <p><a href="Mur_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMur.html">Mur</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a242796bbf2bac8399f38a190f18edfbc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a> (const <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:a97acc9d9bb325986a464ee05db5e6fbe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a> (const <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:abeddf3763bcdb728a7e3bac665a64552"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a> (const <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:a12730a23faf5a9b29f6d47a6fb1df766"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a12730a23faf5a9b29f6d47a6fb1df766">GetTailleY</a> (const <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:a670358e81b7d4967bccddc1db4ac7f49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a670358e81b7d4967bccddc1db4ac7f49">MurGetCouleur</a> (const <a class="el" href="structMur.html">Mur</a> *mur) float MurGetDureeVie(const <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:acb2de98963fd9efb11558297aa1991c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#acb2de98963fd9efb11558297aa1991c3">MurSetpositionX</a> (<a class="el" href="structMur.html">Mur</a> *mur, float posX)</td></tr>
+<tr class="memitem:a2ae5b096aa2c6b1ca7c7fcf003c28e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a2ae5b096aa2c6b1ca7c7fcf003c28e37">MurSetpositionY</a> (<a class="el" href="structMur.html">Mur</a> *mur, float posY)</td></tr>
+<tr class="memitem:a12cb4b9c7117a03037cb836ce53864dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a> (<a class="el" href="structMur.html">Mur</a> *mur, unsigned int tailleX)</td></tr>
+<tr class="memitem:a0749cb2928457b9738b542c3e83f3176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a> (<a class="el" href="structMur.html">Mur</a> *mur, unsigned int tailleY)</td></tr>
+<tr class="memitem:a363d065942b92543a4cd0324531a7aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a> (<a class="el" href="structMur.html">Mur</a> *mur, <a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur)</td></tr>
+<tr class="memitem:a7c8ffaab1a81e082767ee865573f6813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a7c8ffaab1a81e082767ee865573f6813">MurSetDureeVie</a> (<a class="el" href="structMur.html">Mur</a> *mur, float dureeVie)</td></tr>
+<tr class="memitem:a9dcd2e9e16e770c133f7c508cbff6aa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a9dcd2e9e16e770c133f7c508cbff6aa4">MurConstructeur</a> (<a class="el" href="structMur.html">Mur</a> *mur, float posX, float posY, unsigned int TailleX, unsigned int TailleY, <a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur, float dureeVie)</td></tr>
+<tr class="memitem:a1661630a97686483f104c48fd06dec8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a1661630a97686483f104c48fd06dec8e">MurDestructeur</a> (<a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:a49d6667e80a116e40db1741c08616600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mur_8h.html#a49d6667e80a116e40db1741c08616600">ControleTestRegression</a> ()</td></tr>
 </table>
+<h2>Function Documentation</h2>
+<a class="anchor" id="a49d6667e80a116e40db1741c08616600"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControleTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Procedure qui teste le module <a class="el" href="structMur.html">Mur</a></p>
+<p>Procedure qui teste le module <a class="el" href="structControle.html">Controle</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a12730a23faf5a9b29f6d47a6fb1df766"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int GetTailleY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de tailleY </p>
+
+</div>
+</div>
+<a class="anchor" id="a9dcd2e9e16e770c133f7c508cbff6aa4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>TailleX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>TailleY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dureeVie</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur de <a class="el" href="structMur.html">Mur</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a1661630a97686483f104c48fd06dec8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destructeur de <a class="el" href="structMur.html">Mur</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a670358e81b7d4967bccddc1db4ac7f49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> MurGetCouleur </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de couleur assesseur de dureeVie </p>
+
+</div>
+</div>
+<a class="anchor" id="a242796bbf2bac8399f38a190f18edfbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MurGetPositionX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de positionX </p>
+
+</div>
+</div>
+<a class="anchor" id="a97acc9d9bb325986a464ee05db5e6fbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MurGetPositionY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de positionY </p>
+
+</div>
+</div>
+<a class="anchor" id="abeddf3763bcdb728a7e3bac665a64552"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MurGetTailleX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de tailleX </p>
+
+</div>
+</div>
+<a class="anchor" id="a363d065942b92543a4cd0324531a7aa6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetCouleur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de couleur </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c8ffaab1a81e082767ee865573f6813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetDureeVie </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dureeVie</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de dureeVie </p>
+
+</div>
+</div>
+<a class="anchor" id="acb2de98963fd9efb11558297aa1991c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetpositionX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de positionX </p>
+
+</div>
+</div>
+<a class="anchor" id="a2ae5b096aa2c6b1ca7c7fcf003c28e37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetpositionY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de positionY </p>
+
+</div>
+</div>
+<a class="anchor" id="a12cb4b9c7117a03037cb836ce53864dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetTailleX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de tailleX </p>
+
+</div>
+</div>
+<a class="anchor" id="a0749cb2928457b9738b542c3e83f3176"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetTailleY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de tailleY </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Mar 13 2013 18:24:56 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
