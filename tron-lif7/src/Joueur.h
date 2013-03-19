@@ -12,8 +12,8 @@
 */
 
 typedef struct {
-    Moto moto;
-    Controle controle;
+    Moto* moto;
+    Controle* controle;
     Couleur couleur;
 }Joueur;
 
@@ -27,12 +27,12 @@ Couleur JoueurGetCouleur(const Joueur* joueur);
 /** mutateur de moto*/
 void JoueurSetMoto(Joueur* joueur, Moto moto);
 /** mutateur de controle*/
-void JoueurSetMoto(Joueur* joueur, Controle controle);
+void JoueurSetControle(Joueur* joueur, Controle controle);
 /** mutateur de couleur*/
-void JoueurSetMoto(Joueur* joueur, enum{ORANGE, BLEU} moto);
+void JoueurSetCouleur(Joueur* joueur, Couleur couleur);
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 
