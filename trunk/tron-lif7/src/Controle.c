@@ -30,11 +30,13 @@ void ControleSetBas(Controle* controle,char x){
 }
 
 /** Constructeur de Controle*/
-void ControleConstructeur(Controle* controle){
-    controle->droite=NULL;
-    controle->gauche=NULL;
-    controle->haut=NULL;
-    controle->bas=NULL;
+void ControleConstructeur(Controle* controle, char droite, char gauche, char haut, char bas){
+    controle = (Controle*) malloc(sizeof(Controle));
+    ControleSetDroite(controle, droite);
+    ControleSetGauche(controle, gauche);
+    ControleSetHaut(controle, haut);
+    ControleSetBas(controle, bas);
+
 }
 /** Destructeur de Controle*/
 void ControleDestructeur(Controle* controle){}

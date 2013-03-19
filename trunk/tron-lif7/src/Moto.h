@@ -1,7 +1,7 @@
 #ifndef MOTOS_H_INCLUDED
 #define MOTOS_H_INCLUDED
 #include<stdlib.h>
-#include"Vecteur2D"
+
 
 
 /**
@@ -12,13 +12,15 @@
 \date 13 mars 2013
 */
 
+typedef enum{HAUT,BAS,GAUCHE,DROITE} Direction;
+
 typedef struct{
         float positionX;
         float positionY;
         unsigned int tailleX;
         unsigned int tailleY;
         float vitesse;
-        enum {HAUT,BAS,GAUCHE,DROITE} direction;
+        Direction direction;
 } Moto;
 /** assesseur position X moto*/
 float MotoGetPositionX(Moto moto);
@@ -31,7 +33,7 @@ unsigned int MotoGetTailleY(Moto moto);
 /** assesseur vitesse de moto*/
 float MotoGetVitesse(Moto moto);
 /** assesseur de direction*/
-enum{HAUT,BAS,GAUCHE,DROITE} MotoGetDirection(Moto moto);
+Direction MotoGetDirection(Moto moto);
 
 /** mutateur de positionX de moto*/
 void MotoSetPositionX(Moto m,float posX);
@@ -44,7 +46,7 @@ void MotoSetTailleY(Moto m,unsigned int tailleY);
 /**mutateur de vitesse*/
 void MotoSetVitesse(Moto m,float vitesse);
 /**mutateur de direction*/
-void MotoSetDirection(Moto m, enum{HAUT,BAS,GAUCHE,DROITE} direction);
+void MotoSetDirection(Moto m, Direction direction);
 
 /** Constructeur de Moto*/
 void MotoConstructeur(Moto* moto);

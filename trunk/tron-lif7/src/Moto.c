@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include"src/Moto.h"
+#include"Moto.h"
+
 unsigned float MotoGetPositionX(Moto m){
     return m.positionX;
 }

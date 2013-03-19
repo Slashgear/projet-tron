@@ -13,42 +13,44 @@
 *\date 13 mars 2013
 */
 
+typedef enum{ORANGE,BLEU} Couleur;
+
 typedef struct{
-    unsigned float positionX;
-    unsigned float positionY;
+    float positionX;
+    float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    char obstacle;
-    unsigned int duree;
+    Couleur couleur;
+    float dureeVie;
 }Mur;
 
 /** assesseur de positionX*/
-unsigned float getpositionX(Mur m);
+float MurGetPositionX(const Mur* mur);
 /** assesseur de positionY*/
-unsigned float getpositionY(Mur m);
+float MurGetPositionY(const Mur* mur);
 /** assesseur de tailleX*/
-unsigned int gettailleX(Mur m);
+unsigned int MurGetTailleX(const Mur* mur);
 /** assesseur de tailleY*/
-unsigned int gettailleY(Mur m);
-/** assesseur de obstacle*/
-char getobstacle(Mur m);
-/** assesseur de duree*/
-unsigned int getduree(Mur m);
+unsigned int GetTailleY(const Mur* mur);
+/** assesseur de couleur*/
+Couleur MurGetCouleur(const Mur* mur)
+/** assesseur de dureeVie*/
+float MurGetDureeVie(const Mur* mur);
 
 
 /** mutateur de positionX*/
-void setpositionX(Mur m,unsigned float X);
+void MurSetpositionX(Mur mur,float posX);
 /** mutateur de positionY*/
-void setpositionY(Mur m,unsigned float X);
+void MurSetpositionY(Mur mur,float posY);
 /** mutateur de tailleX*/
-void settailleX(Mur m,unsigned int X);
+void MurSetTailleX(Mur* mur,unsigned int tailleX);
 /** mutateur de tailleY*/
-void settailleY(Mur m,unsigned int X);
-/** mutateur de obstacle*/
-void setobstacle(Mur m,char X);
-/** mutateur de duree*/
-void setduree(Mur m,unsigned int X);
+void MurSetTailleY(Mur* mur,unsigned int tailleY);
+/** mutateur de couleur*/
+void MurSetCouleur(Mur* mur,Couleur couleur);
+/** mutateur de dureeVie*/
+void MurSetDureeVie(Mur* mur,unsigned int tailleX);
 
 
 
-#endif // MUR_H_INCLUDED
+#endif /* MUR_H_INCLUDED*/

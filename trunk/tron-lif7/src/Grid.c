@@ -4,11 +4,11 @@
 #include "Mur.h"
 
 
-unsigned float GridGetPositionX(Grid g){
+float GridGetPositionX(Grid g){
     return g.positionX;
 }
 
-unsigned float GridGetPositionY(Grid g){
+float GridGetPositionY(Grid g){
     return g.positionY;
 }
 
@@ -20,11 +20,11 @@ unsigned int GridGetTailleY(Grid g){
     return g.tailleY;
 }
 
-void GridSetPositionX(Grid g,unsigned float p){
+void GridSetPositionX(Grid g,float p){
     //assert(p>=0);
     g.positionX=p;
 }
-void GridSetPositionY(Grid g,unsigned float p){
+void GridSetPositionY(Grid g,float p){
     //assert(p>=0);
     g.positionX=p;
 }
