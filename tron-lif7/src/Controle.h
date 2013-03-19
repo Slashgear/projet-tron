@@ -28,13 +28,13 @@ char ControlGetBas(const Controle* controle);
 char ControlGetGauche(const Controle* controle);
 
 /** mutateur de touche droite*/
-void ControleSetDroite(const Controle* controle,char x);
+void ControleSetDroite(Controle* controle,char x);
 /** mutateur de touche haut*/
-void ControleSetHaut(const Controle* controle,char x);
+void ControleSetHaut(Controle* controle,char x);
 /** mutateur de touche bas*/
-void ControleSetBas(const Controle* controle,char x);
+void ControleSetBas(Controle* controle,char x);
 /**mutateur de touche gauche*/
-void ControleSetGauche(const Controle* controle,char x);
+void ControleSetGauche(Controle* controle,char x);
 
 /** Constructeur de Controle*/
 void ControleConstructeur(Controle* controle);
