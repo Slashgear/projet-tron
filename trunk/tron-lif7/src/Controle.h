@@ -9,7 +9,7 @@
 *\author {Antoine.C,Matthieu.B}
 *\version 0.1
 *\date 13 mars 2013
- */
+*/
 
 typedef struct{
     char droite;
