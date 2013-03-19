@@ -2,7 +2,7 @@
 #ifndef _JEU_H
 #define _JEU_H
 
-#include "Moto.h"
+#include "Joueur.h"
 #include "Grid.h"
 
 
@@ -10,18 +10,33 @@
 typedef struct
 {
 	Grid grille;
-	Fantome *tab_motos;
+	Joueur mesJoueurs[2];
 } Jeu;
 
-void jeuInit(Jeu *);
-void jeuLibere(Jeu *);
-Terrain *jeuGetTerrainPtr(Jeu *);
-Pacman *jeuGetPacmanPtr(Jeu *);
-const Terrain *jeuGetConstTerrainPtr(const Jeu *);
-const Pacman *jeuGetConstPacmanPtr(const Jeu *);
+/**assesseur de grille*/
+Grid * JeuGetGrille(const Jeu * jeu);
+/**assesseur de mesjoueurs*/
+Joueur * JeuGetMesJoueurs(const Jeu * jeu);
 
+/**mutateur de grille*/
+void JeuSetGrille(Jeu * jeu,Grid grille);
+/**mutateur de mesjoueurs*/
+void JeuSetMesJoueurs(Jeu * jeu,Joueur j)
 
-void jeuActionClavier(Jeu *j, const char);
-void jeuEvolue(Jeu *pJeu);
+/**constructeur du jeu*/
+void JeuConstructeur(Jeu *jeu);
+/**destructeur du jeu*/
+void JeuDestructeur(Jeu *jeu);
+/**Boucle d'évolutions du jeu*/
+void JeuEvolue(Jeu *jeu);
+/**procédure qui gère le mouvement de toutes les motos*/
+void BougeMoto(Jeu *jeu);
+/**fonction qui teste les collisions avec le murs*/
+char testCollisionMur(const Moto * moto,const Grid * grille);
+/**procédure qui gère les actions des motos en fonction des touches saisies*/
+void JeuActionClavier(Joueur * mesJoueurs);
+
+/**procédure de test*/
+void JeuTestRegression();
 
 #endif
