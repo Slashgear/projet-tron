@@ -1,11 +1,11 @@
 #include "TableauDynamique.h"
-#include "ElementTD.h"
 #include <stdio.h>
+#include "Mur.h"
 #include <stdlib.h>
 
 void initialiserTabDyn (TableauDynamique * t)
 {
-	t -> ad = (ElementTD*)malloc(sizeof(ElementTD));
+	t -> ad = (Mur **)malloc(sizeof(Mur*));
 	t -> capacite = 1;
 	t -> taille_utilisee = 0;
 }
@@ -54,13 +54,13 @@ void testamentTabDyn (TableauDynamique *t)
 
 
 
-void ajouterElementTabDyn(TableauDynamique *t, ElementTD e)
+void ajouterElementTabDyn(TableauDynamique *t, Mur *e)
 {
 	if((t-> taille_utilisee) == (t-> capacite))
 	{
 		int i;
 		ElementTD * temp = t-> ad;
-		(t->ad) = (ElementTD*) malloc(2*(t->capacite)*sizeof(ElementTD)); 
+		(t->ad) = (Mur**) malloc(2*(t->capacite)*sizeof(Mur*)); 
 		for(i=0;i<(t-> capacite);i++)	
 		{
 			(t-> ad) [i] = temp[i];
@@ -81,7 +81,7 @@ ElementTD valeurIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
 
 
 
-void modifierValeurIemeElementTabDyn(TableauDynamique *t, ElementTD e, unsigned int i)
+void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur *e, unsigned int i)
 {
 	(t-> ad)[i] = e;
 }
@@ -99,7 +99,7 @@ void supprimerElementTabDyn( TableauDynamique *t, int position )
 	{
 		(t-> capacite) = (t-> capacite)/2;
 		temp = (t-> ad);
-		(t-> ad) = (ElementTD*) malloc((t-> capacite) * sizeof(ElementTD));
+		(t-> ad) = (Mur**) malloc((t-> capacite) * sizeof(Mur*));
 		for(i=0;i<position;i++)
 		{
 			(t-> ad)[i] = temp [i];
