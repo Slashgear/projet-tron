@@ -40,5 +40,6 @@ void ControleConstructeur(Controle* controle){
 void ControleDestructeur(Controle* controle){}
 
 /** Procedure qui teste le module Controle*/
- void ControleTestRegression(){}
+ void ControleTestRegression(){
+ }
 
