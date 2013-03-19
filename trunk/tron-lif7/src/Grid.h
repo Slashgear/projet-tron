@@ -13,13 +13,13 @@
 *\date 13 mars 2013
 */
 
-typedef struct{
+typedef struct {
     float positionX;
     float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    TableauDynamique mesMurs;
-}Grid;
+    TableauDynamique* mesMurs;
+} Grid;
 
 /**assesseur de positionX*/
 float GridGetPositionX(const Grid* grille);
@@ -45,7 +45,7 @@ void GridSetTailleY(Grid* grille,unsigned int tailleY);
 void GridSetMesMurs(Grid* grille,const TableauDynamique* mesMurs);
 
  /** Constructeur de Grid*/
- void GridConstructeur(Grid* grille);
+ void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY, TableauDynamique* mesMurs);
  /** Destructeur de Grid*/
  void GridDestructeur(Grid* grille);
  /** Ajoute un mur*/

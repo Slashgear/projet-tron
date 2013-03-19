@@ -48,14 +48,14 @@ void MurSetTailleY(Mur* mur,unsigned int tailleY);
 /** mutateur de couleur*/
 void MurSetCouleur(Mur* mur,Couleur couleur);
 /** mutateur de dureeVie*/
-void MurSetDureeVie(Mur* mur,Mur mur);
+void MurSetDureeVie(Mur* mur,float dureeVie);
 
-/** Constructeur de Controle*/
-void ControleConstructeur(Controle* controle);
-/** Destructeur de Controle*/
-void ControleDestructeur(Controle* controle);
+/** Constructeur de Mur*/
+void MurConstructeur(Mur* mur,float posX, float posY, unsigned int TailleX, unsigned int TailleY,Couleur couleur, float dureeVie);
+/** Destructeur de Mur*/
+void MurDestructeur(Mur* mur);
 
-/** Procedure qui teste le module Controle*/
+/** Procedure qui teste le module Mur*/
  void ControleTestRegression();
 
 

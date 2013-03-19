@@ -9,8 +9,8 @@
 
 typedef struct
 {
-	Grid grille;
-	Joueur mesJoueurs[2];
+	Grid* grille;
+	Joueur* mesJoueurs[2];
 } Jeu;
 
 /**assesseur de grille*/
@@ -21,10 +21,10 @@ Joueur * JeuGetMesJoueurs(const Jeu * jeu);
 /**mutateur de grille*/
 void JeuSetGrille(Jeu * jeu,Grid grille);
 /**mutateur de mesjoueurs*/
-void JeuSetMesJoueurs(Jeu * jeu,Joueur j)
+void JeuSetMesJoueurs(Jeu * jeu,Joueur joueur)
 
 /**constructeur du jeu*/
-void JeuConstructeur(Jeu *jeu);
+void JeuConstructeur(Jeu *jeu, Grid* grille, Joueur* mesJoueurs);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu *jeu);
 /**Boucle d'évolutions du jeu*/
