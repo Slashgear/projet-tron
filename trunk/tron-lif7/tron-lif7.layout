@@ -4,40 +4,46 @@
 	<File name="src/Controle.c" open="0" top="0" tabpos="5">
 		<Cursor position="816" topLine="0" />
 	</File>
-	<File name="src/Controle.h" open="1" top="0" tabpos="2">
+	<File name="src/Controle.h" open="0" top="0" tabpos="2">
 		<Cursor position="1108" topLine="6" />
 	</File>
-	<File name="src/Couleur.h" open="1" top="0" tabpos="3">
+	<File name="src/Couleur.h" open="0" top="0" tabpos="3">
 		<Cursor position="127" topLine="0" />
 	</File>
-	<File name="src/Grid.c" open="1" top="0" tabpos="11">
+	<File name="src/Grid.c" open="0" top="0" tabpos="11">
 		<Cursor position="74" topLine="0" />
 	</File>
-	<File name="src/Grid.h" open="1" top="0" tabpos="7">
+	<File name="src/Grid.h" open="0" top="0" tabpos="7">
 		<Cursor position="503" topLine="14" />
 	</File>
-	<File name="src/Jeu.h" open="1" top="0" tabpos="8">
+	<File name="src/Jeu.h" open="0" top="0" tabpos="8">
 		<Cursor position="498" topLine="3" />
 	</File>
-	<File name="src/Joueur.h" open="1" top="0" tabpos="4">
+	<File name="src/Joueur.h" open="0" top="0" tabpos="4">
 		<Cursor position="890" topLine="2" />
 	</File>
-	<File name="src/Moto.c" open="1" top="1" tabpos="12">
+	<File name="src/Moto.c" open="0" top="0" tabpos="12">
 		<Cursor position="55" topLine="0" />
 	</File>
-	<File name="src/Moto.h" open="1" top="0" tabpos="1">
+	<File name="src/Moto.h" open="0" top="0" tabpos="1">
 		<Cursor position="1237" topLine="19" />
 	</File>
-	<File name="src/Mur.h" open="1" top="0" tabpos="5">
-		<Cursor position="725" topLine="27" />
+	<File name="src/Mur.c" open="1" top="1" tabpos="2">
+		<Cursor position="1467" topLine="49" />
 	</File>
-	<File name="src/SDL.h" open="1" top="0" tabpos="9">
+	<File name="src/Mur.h" open="1" top="0" tabpos="1">
+		<Cursor position="1378" topLine="36" />
+	</File>
+	<File name="src/SDL.h" open="0" top="0" tabpos="9">
 		<Cursor position="1953" topLine="48" />
 	</File>
-	<File name="src/TableauDynamique.h" open="1" top="0" tabpos="6">
-		<Cursor position="181" topLine="3" />
+	<File name="src/TableauDynamique.c" open="1" top="0" tabpos="5">
+		<Cursor position="1628" topLine="98" />
 	</File>
-	<File name="src/main.c" open="1" top="0" tabpos="10">
-		<Cursor position="0" topLine="0" />
+	<File name="src/TableauDynamique.h" open="1" top="0" tabpos="6">
+		<Cursor position="1212" topLine="38" />
+	</File>
+	<File name="src/main.c" open="1" top="0" tabpos="7">
+		<Cursor position="50" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
