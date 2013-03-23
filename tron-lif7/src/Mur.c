@@ -76,6 +76,6 @@ void MurTestRegression(){
     printf("La valeur tailleX est %u et dans Mur est de %u \n",tailleX,MurGetTailleX(&mur));
     printf("La valeur tailleY est %u et dans Mur est de %u \n",tailleY,MurGetTailleY(&mur));
     printf("La valeur couleur est %d et dans Mur est de %d \n",couleur,MurGetCouleur(&mur));
-    printf("La durée de vie est de %f et dans Mur est de %f \n",dureeVie,MurGetDureeVie(&mur));
+    printf("La durée de vie est de %f et dans Mur est de %f \n\n",dureeVie,MurGetDureeVie(&mur));
     MurDestructeur(&mur);
 }
