@@ -4,5 +4,7 @@
 
 int main(){
     MurTestRegression();
+    ControleTestRegression();
+    MotoTestRegression();
 return 0;
 }
