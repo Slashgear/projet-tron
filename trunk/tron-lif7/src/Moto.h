@@ -12,7 +12,7 @@
 \date 13 mars 2013
 */
 
-typedef enum{HAUT=0,BAS=1,GAUCHE=2,DROITE=3} Direction;
+typedef enum{NON_DIRIGE=0,HAUT=1,BAS=2,GAUCHE=3,DROITE=4} Direction;
 
 typedef struct{
         float positionX;
