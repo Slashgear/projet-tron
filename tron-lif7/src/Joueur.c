@@ -2,6 +2,8 @@
 #include<stdio.h>
 #include "Joueur.h"
 #include "Moto.h"
+#include "Couleur.h"
+
 
 Moto* JoueurGetMoto(const Joueur* joueur){
     return joueur->moto;
@@ -26,9 +28,15 @@ void JoueurSetCouleur(Joueur* joueur, Couleur couleur){
 /** Constructeur de Joueur*/
 void JoueurConstructeur(Joueur* joueur,const Moto* moto,const Controle* controle, Couleur couleur){
     JoueurSetMoto(joueur,*moto);
+    JoueurSetControle(joueur,*controle);
+    JoueurSetCouleur(joueur,couleur);
 }
 /** Destructeur de Joueur*/
-void JoueurDestructeur(Joueur* joueur);
+void JoueurDestructeur(Joueur* joueur){
+
+}
 
 /** Procedure qui teste le module Joueur*/
- void JoueurTestRegression();
+ void JoueurTestRegression(){
+
+ }
