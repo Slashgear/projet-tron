@@ -60,6 +60,6 @@ void ControleDestructeur(Controle* controle){
      printf("Le caractere de la touche droite est %c ,et après destruction est %c\n",touchedroite,ControleGetDroite(&unControle));
      printf("Le caractere de la touche gauche est %c ,et après destruction est %c\n",touchegauche,ControleGetGauche(&unControle));
      printf("Le caractere de la touche haut est %c ,et après destruction est %c\n",touchehaut,ControleGetHaut(&unControle));
-     printf("Le caractere de la touche bas est %c ,et après destruction est %c\n",touchebas,ControleGetBas(&unControle));
+     printf("Le caractere de la touche bas est %c ,et après destruction est %c\n\n",touchebas,ControleGetBas(&unControle));
  }
 
