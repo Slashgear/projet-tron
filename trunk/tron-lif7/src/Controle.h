@@ -21,11 +21,11 @@ typedef struct{
 /** assesseur de touche droite*/
 char ControleGetDroite(const Controle* controle);
 /** assesseur de touche haut*/
-char ControlGetHaut(const Controle* controle);
+char ControleGetHaut(const Controle* controle);
 /** assesseur de touche bas*/
-char ControlGetBas(const Controle* controle);
+char ControleGetBas(const Controle* controle);
 /** assesseur de touche gauche*/
-char ControlGetGauche(const Controle* controle);
+char ControleGetGauche(const Controle* controle);
 
 /** mutateur de touche droite*/
 void ControleSetDroite(Controle* controle,char x);

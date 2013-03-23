@@ -25,14 +25,14 @@ Controle* JoueurGetControle(const Joueur* joueur);
 Couleur JoueurGetCouleur(const Joueur* joueur);
 
 /** mutateur de moto*/
-void JoueurSetMoto(Joueur* joueur, Moto moto);
+void JoueurSetMoto(Joueur* joueur, Moto* moto);
 /** mutateur de controle*/
-void JoueurSetControle(Joueur* joueur, Controle controle);
+void JoueurSetControle(Joueur* joueur, Controle* controle);
 /** mutateur de couleur*/
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur);
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur,const Moto* moto,const Controle* controle, Couleur couleur);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 
