@@ -23,30 +23,30 @@ typedef struct{
         Direction direction;
 } Moto;
 /** assesseur position X moto*/
-float MotoGetPositionX(Moto moto);
+float MotoGetPositionX(const Moto* moto);
 /** assesseur position Y moto*/
-float MotoGetPositionY(Moto moto);
+float MotoGetPositionY(const Moto* moto);
 /** assesseur tailleX moto*/
-unsigned int MotoGetTailleX(Moto moto);
+unsigned int MotoGetTailleX(const Moto* moto);
 /** assesseur tailleY moto*/
-unsigned int MotoGetTailleY(Moto moto);
+unsigned int MotoGetTailleY(const Moto* moto);
 /** assesseur vitesse de moto*/
-float MotoGetVitesse(Moto moto);
+float MotoGetVitesse(const Moto* moto);
 /** assesseur de direction*/
-Direction MotoGetDirection(Moto moto);
+Direction MotoGetDirection(const Moto* moto);
 
 /** mutateur de positionX de moto*/
-void MotoSetPositionX(Moto m,float posX);
+void MotoSetPositionX(Moto* m,float posX);
 /** mutateur de positionY de moto*/
-void MotoSetPositionY(Moto m,float posY);
+void MotoSetPositionY(Moto* m,float posY);
 /**mutateur de dimX moto*/
-void MotoSetTailleX(Moto m,unsigned int tailleX);
+void MotoSetTailleX(Moto* m,unsigned int tailleX);
 /**mutateur de dimY moto*/
-void MotoSetTailleY(Moto m,unsigned int tailleY);
+void MotoSetTailleY(Moto* m,unsigned int tailleY);
 /**mutateur de vitesse*/
-void MotoSetVitesse(Moto m,float vitesse);
+void MotoSetVitesse(Moto* m,float vitesse);
 /**mutateur de direction*/
-void MotoSetDirection(Moto m, Direction direction);
+void MotoSetDirection(Moto* m, Direction direction);
 
 /** Constructeur de Moto*/
 void MotoConstructeur(Moto* moto,float posX,float posY,unsigned int tailleX, unsigned int tailleY,float vitesse,Direction direction);
