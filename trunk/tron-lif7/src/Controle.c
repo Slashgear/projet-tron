@@ -29,19 +29,37 @@ void ControleSetBas(Controle* controle,char x){
     controle->bas=x;
 }
 
-/** Constructeur de Controle*/
 void ControleConstructeur(Controle* controle, char droite, char gauche, char haut, char bas){
-    controle = (Controle*) malloc(sizeof(Controle));
     ControleSetDroite(controle, droite);
     ControleSetGauche(controle, gauche);
     ControleSetHaut(controle, haut);
     ControleSetBas(controle, bas);
 
 }
-/** Destructeur de Controle*/
-void ControleDestructeur(Controle* controle){}
 
-/** Procedure qui teste le module Controle*/
+void ControleDestructeur(Controle* controle){
+    ControleSetDroite(controle, 'n');
+    ControleSetGauche(controle, 'n');
+    ControleSetHaut(controle, 'n');
+    ControleSetBas(controle, 'n');
+}
+
+
  void ControleTestRegression(){
+     Controle unControle;
+     char touchedroite='d';
+     char touchegauche='g';
+     char touchehaut='h';
+     char touchebas='b';
+     ControleConstructeur(&unControle,touchedroite,touchegauche,touchehaut,touchebas);
+     printf("Le caractere de la touche droite est %c ,et dans le Controle est %c\n",touchedroite,ControleGetDroite(&unControle));
+     printf("Le caractere de la touche gauche est %c ,et dans le Controle est %c\n",touchegauche,ControleGetGauche(&unControle));
+     printf("Le caractere de la touche haut est %c ,et dans le Controle est %c\n",touchehaut,ControleGetHaut(&unControle));
+     printf("Le caractere de la touche bas est %c ,et dans le Controle est %c\n",touchebas,ControleGetBas(&unControle));
+     ControleDestructeur(&unControle);
+     printf("Le caractere de la touche droite est %c ,et après destruction est %c\n",touchedroite,ControleGetDroite(&unControle));
+     printf("Le caractere de la touche gauche est %c ,et après destruction est %c\n",touchegauche,ControleGetGauche(&unControle));
+     printf("Le caractere de la touche haut est %c ,et après destruction est %c\n",touchehaut,ControleGetHaut(&unControle));
+     printf("Le caractere de la touche bas est %c ,et après destruction est %c\n",touchebas,ControleGetBas(&unControle));
  }
 
