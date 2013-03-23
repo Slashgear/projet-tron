@@ -72,8 +72,14 @@ void MotoDestructeur(Moto* moto){
     printf("La valeur tailleX est %u et dans Moto est de %u \n",tailleX,MotoGetTailleX(&moto));
     printf("La valeur tailleY est %u et dans Moto est de %u \n",tailleY,MotoGetTailleY(&moto));
     printf("La valeur vitesse est %f et dans Moto est de %f \n",vitesse,MotoGetVitesse(&moto));
-    printf("La valeur de direction est de %d et dans Moto est de %d \n\n",direction,MotoGetDirection(&moto));
+    printf("La valeur de direction est de %d et dans Moto est de %d \n",direction,MotoGetDirection(&moto));
     MotoDestructeur(&moto);
+    printf("Après destruction la posX Moto est de %f \n",MotoGetPositionX(&moto));
+    printf("Après destruction la posY Moto est de %f \n",MotoGetPositionY(&moto));
+    printf("Après destruction tailleX  Moto est de %u \n",MotoGetTailleX(&moto));
+    printf("Après destruction tailleY  Moto est de %u \n",MotoGetTailleY(&moto));
+    printf("Après destruction vitesse  Moto est de %f \n",MotoGetVitesse(&moto));
+    printf("Après destruction de direction  Moto est de %d \n\n",MotoGetDirection(&moto));
 }
 
 
