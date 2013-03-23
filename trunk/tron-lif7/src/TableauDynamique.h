@@ -8,12 +8,10 @@
 
 
 
-typedef struct
-{
+typedef struct{
   unsigned int capacite;
   unsigned int taille_utilisee;
-  Mur** ad;
-} TableauDynamique;
+  Mur** ad;}TableauDynamique;
 
 /** Precondition : t non prealablement initialise
  Postcondition : t initialise a une alveole vide (taille utilisee nulle) */
