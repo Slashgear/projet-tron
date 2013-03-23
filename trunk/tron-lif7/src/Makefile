@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -ggdb -pedantic
 EXEC_NAME= ../bin/jeu
 LIBS= #-lSDL
-OBJ_FILES= TableauDynamique.o Grid.o Control.o Jeu.o Moto.o Mur.o
+OBJ_FILES= Mur.o main.o
 
 all: $(EXEC_NAME)
 
