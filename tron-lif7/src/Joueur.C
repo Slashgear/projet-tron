@@ -1,21 +1,7 @@
-#ifndef JOUEUR_H_INCLUDED
-#define JOUEUR_H_INCLUDED
-#include "Controle.h"
+#include<stdlib.h>
+#include<stdio.h>
+#include "Joueur.h"
 #include "Moto.h"
-#include "Couleur.h"
-/**
-\file [Moto.h]
-\brief Module des Motos du jeu
-\author {Antoine.C,Matthieu.B}
-\version 0.1
-\date 19 mars 2013
-*/
-
-typedef struct {
-    Moto* moto;
-    Controle* controle;
-    Couleur couleur;
-}Joueur;
 
 /** assesseur de moto*/
 Moto* JoueurGetMoto(const Joueur* joueur);
@@ -38,6 +24,3 @@ void JoueurDestructeur(Joueur* joueur);
 
 /** Procedure qui teste le module Joueur*/
  void JoueurTestRegression();
-
-
-#endif /* JOUEUR_H_INCLUDED */
