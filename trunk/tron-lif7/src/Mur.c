@@ -43,7 +43,6 @@ void MurSetDureeVie(Mur* mur,float duree){
 
 
 void MurConstructeur(Mur* mur,float posX, float posY, unsigned int tailleX, unsigned int tailleY,Couleur couleur, float dureeVie){
-  /*  mur=(Mur*)malloc(sizeof(Mur));*/
     MurSetPositionX(mur,posX);
     MurSetPositionY(mur,posY);
     MurSetTailleX(mur,tailleX);
@@ -52,7 +51,6 @@ void MurConstructeur(Mur* mur,float posX, float posY, unsigned int tailleX, unsi
     MurSetDureeVie(mur,dureeVie);
 }
 void MurDestructeur(Mur* mur){
-  /*  free(mur);*/
     MurSetPositionX(mur,0);
     MurSetPositionY(mur,0);
     MurSetTailleX(mur,0);
