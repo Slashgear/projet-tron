@@ -33,8 +33,8 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
 }
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur){
-    MotoDestructeur(joueur->moto);
-    ControleDestructeur(joueur->controle);
+    MotoDestructeur(JoueurGetMoto(joueur));
+    ControleDestructeur(JoueurGetControle(joueur));
     JoueurSetMoto(joueur,NULL);
     JoueurSetControle(joueur,NULL);
     JoueurSetCouleur(joueur,NOIR);
@@ -52,12 +52,14 @@ void JoueurDestructeur(Joueur* joueur){
     unsigned int tailleY=10;
     float vitesse=20;
     Direction direction=HAUT;
-    MotoConstructeur(&moto,posX,posY,tailleX,tailleY,vitesse,direction);
 
     char touchedroite='d';
     char touchegauche='g';
     char touchehaut='h';
     char touchebas='b';
+
+    MotoConstructeur(&moto,posX,posY,tailleX,tailleY,vitesse,direction);
+
     ControleConstructeur(&controle,touchedroite,touchegauche,touchehaut,touchebas);
 
     JoueurConstructeur(&joueur,&moto,&controle,couleur);
@@ -75,7 +77,7 @@ void JoueurDestructeur(Joueur* joueur){
 
     JoueurDestructeur(&joueur);
 
-    printf("Après destruction le pointeur de moto est %p \n", JoueurGetMoto(&joueur));
-    printf("Après destruction le pointeur de controle est %p \n \n", JoueurGetControle(&joueur));
+    printf("Après destruction le pointeur de moto du joueur est %p \n", JoueurGetMoto(&joueur));
+    printf("Après destruction le pointeur de controle du joueur est %p \n \n", JoueurGetControle(&joueur));
 
  }

@@ -5,6 +5,7 @@
 #include "Controle.h"
 #include "Joueur.h"
 #include "Grid.h"
+#include "Jeu.h"
 
 int main(){
     MurTestRegression();
@@ -12,5 +13,6 @@ int main(){
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
+    JeuTestRegression();
 return 0;
 }
