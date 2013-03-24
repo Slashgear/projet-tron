@@ -3,24 +3,24 @@
 #include "Mur.h"
 #include <stdlib.h>
 
-unsigned int TabDynGetCapacite(TableauDynamique* TabDyn){
-    return TabDyn->capacite;
+unsigned int TabDynGetCapacite(const TableauDynamique* tabDyn){
+    return tabDyn->capacite;
 }
-unsigned int TabDynGetTaille_utilisee(TableauDynamique* TabDyn){
-    return TabDyn->taille_utilisee;
+unsigned int TabDynGetTaille_utilisee(const TableauDynamique* tabDyn){
+    return tabDyn->taille_utilisee;
 }
-Mur** TabDynGetAd(TableauDynamique* TabDyn){
-    return TabDyn->ad;
+Mur* TabDynGetAd(const TableauDynamique* tabDyn){
+    return tabDyn->ad;
 }
 
-void TabDynSetCapacite(TableauDynamique TabDyn, unsigned int capacite){
-    TabDyn->capacite=capacite;
+void TabDynSetCapacite(TableauDynamique* tabDyn, unsigned int capacite){
+    tabDyn->capacite=capacite;
 }
-void TabDynSetTaille_utilisee(TableauDynamique TabDyn,unsigned int taille){
-    TabDyn->taille_utilisee=taille;
+void TabDynSetTaille_utilisee(TableauDynamique* tabDyn,unsigned int taille){
+    tabDyn->taille_utilisee=taille;
 }
-void TabDynSetAd(TableauDynamique TabDyn,Mur** ad){
-    TabDyn->ad=ad;
+void TabDynSetAd(TableauDynamique* tabDyn,Mur* ad){
+    tabDyn->ad=ad;
 }
 
 
@@ -28,42 +28,11 @@ void TabDynSetAd(TableauDynamique TabDyn,Mur** ad){
 
 void initialiserTabDyn (TableauDynamique * t)
 {
-	t -> ad = (Mur **)malloc(sizeof(Mur*));
+	t -> ad = (Mur *)malloc(sizeof(Mur));
 	t -> capacite = 1;
 	t -> taille_utilisee = 0;
 }
 
-void fusionnerTabDyn(const TableauDynamique * t1, const TableauDynamique * t2, TableauDynamique * t3)
-{
-	int i=0, j=0, k=0;
-	while((i != (t1 -> taille_utilisee)) && (j != (t2 -> taille_utilisee)))
-	{
-	if((t1 -> ad)[i] <= (t2 -> ad)[j])
-	{
-		ajouterElementTabDyn(t3, (t1 -> ad)[i]);
-		i++;
-	}
-	else
-	{
-		ajouterElementTabDyn(t3, (t2 -> ad)[j]);
-		j++;
-	}
-	}
-	if (i != (t1 -> taille_utilisee))
-	{
-		for(k=j;k<(t2 -> taille_utilisee);k++)
-		{
-			ajouterElementTabDyn(t3, (t2 -> ad)[i]);
-		}
-	}
-	else
-	{
-		for(k=i;k<(t1 -> taille_utilisee);k++)
-		{
-			ajouterElementTabDyn(t3, (t1 -> ad)[i]);
-		}
-	}
-}
 
 void testamentTabDyn (TableauDynamique *t)
 {
@@ -77,13 +46,13 @@ void testamentTabDyn (TableauDynamique *t)
 
 
 
-void ajouterElementTabDyn(TableauDynamique *t, Mur *e)
+void ajouterElementTabDyn(TableauDynamique *t, Mur e)
 {
 	if((t-> taille_utilisee) == (t-> capacite))
 	{
 		int i;
-		Mur ** temp = t-> ad;
-		(t->ad) = (Mur**) malloc(2*(t->capacite)*sizeof(Mur*));
+		Mur * temp = t-> ad;
+		(t->ad) = (Mur*) malloc(2*(t->capacite)*sizeof(Mur));
 		for(i=0;i<(t-> capacite);i++)
 		{
 			(t-> ad) [i] = temp[i];
@@ -97,14 +66,19 @@ void ajouterElementTabDyn(TableauDynamique *t, Mur *e)
 
 
 
-Mur * valeurIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
+Mur valeurIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
 {
 	return (t-> ad)[i];
 }
 
+Mur* adresseIemeElementTabDyn (const TableauDynamique *t, unsigned int i)
+{
+	return &((t-> ad)[i]);
+}
 
 
-void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur *e, unsigned int i)
+
+void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur e, unsigned int i)
 {
 	(t-> ad)[i] = e;
 }
@@ -117,12 +91,12 @@ void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur *e, unsigned int i
 void supprimerElementTabDyn( TableauDynamique *t, int position )
 {
 	int i;
-	Mur** temp;
+	Mur* temp;
 	if((t-> capacite)/3 > (t-> taille_utilisee))
 	{
 		(t-> capacite) = (t-> capacite)/2;
 		temp = (t-> ad);
-		(t-> ad) = (Mur**) malloc((t-> capacite) * sizeof(Mur*));
+		(t-> ad) = (Mur*) malloc((t-> capacite) * sizeof(Mur));
 		for(i=0;i<position;i++)
 		{
 			(t-> ad)[i] = temp [i];

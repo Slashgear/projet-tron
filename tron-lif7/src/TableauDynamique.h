@@ -11,33 +11,25 @@
 typedef struct{
   unsigned int capacite;
   unsigned int taille_utilisee;
-  Mur** ad;}TableauDynamique;
+  Mur* ad;}TableauDynamique;
 
 /**assesseur de capacite*/
-unsigned int TabDynGetCapacite(TableauDynamique);
+unsigned int TabDynGetCapacite(const TableauDynamique* tabDyn);
 /**assesseur de taille_utilisee*/
-unsigned int TabDynGetTaille_utilisee(TableauDynamique);
+unsigned int TabDynGetTaille_utilisee(const TableauDynamique* tabDyn);
 /**assesseur de ad*/
-Mur** TabDynGetAd(TableauDynamique);
+Mur* TabDynGetAd(const TableauDynamique* tabDyn);
 
 /**mutateur de capacite*/
-void TabDynSetCapacite(TableauDynamique, unsigned int);
+void TabDynSetCapacite(TableauDynamique* tabDyn, unsigned int capacite);
 /**mutateur de taille_utilisee*/
-void TabDynSetTaille_utilisee(TableauDynamique,unsigned int);
+void TabDynSetTaille_utilisee(TableauDynamique* tabDyn,unsigned int taille);
 /**mutateur de ad*/
-void TabDynSetAd(TableauDynamique,Mur**);
+void TabDynSetAd(TableauDynamique* tabDyn,Mur* ad);
 
 /** Precondition : t non prealablement initialise
  Postcondition : t initialise a une alveole vide (taille utilisee nulle) */
 void initialiserTabDyn(TableauDynamique * t);
-
-/**Preconditions :
--t1 et t2 sont initialisés et, s'ils sont non vides, sont triés dans l'ordre croissant
--t3 est initialisé (capacite non nulle mais set vide (taiile utilisee nulle),
-Postconditions
--t3 contient l'union des éléments de t1 et t2, triés dans l'odre croissant,
--t1 et t2 sont inchangés.*/
-void fusionnerTabDyn(const TableauDynamique * t1, const TableauDynamique * t2, TableauDynamique * t3);
 
 /** Precondition : t prealablement initialise
 Postcondition : t pret a disparaitre. La memoire allouee dynamiquement
@@ -61,15 +53,17 @@ unsigned int tailleUtiliseeTabDyn(const TableauDynamique *t);
 
 /** Precondition : t prealablement initialise, 0 <= i < tailleUtilisee(t)
  Resultat : retourne le i+1eme ElementTD de t */
-Mur* valeurIemeElementTabDyn(const TableauDynamique *t, unsigned int i);
+Mur valeurIemeElementTabDyn(const TableauDynamique *t, unsigned int i);
 
-
+/** Precondition : t prealablement initialise, 0 <= i < tailleUtilisee(t)
+ Resultat : retourne l'adresse du i+1eme ElementTD de t */
+Mur* adresseIemeElementTabDyn(const TableauDynamique *t, unsigned int i);
 
 /** Precondition : t prealablement initialise
  Postcondition : L'element e est ajoute dans la premiere alveole inutilisee
    du tableau, la taille utilisee est incrementee de 1. Doublement de la
    capacite de t, si necessaire. */
-void ajouterElementTabDyn(TableauDynamique *t, Mur* e);
+void ajouterElementTabDyn(TableauDynamique *t, Mur e);
 
 
 /** Precondition : t prealablement initialise et non vide
@@ -80,13 +74,12 @@ void supprimerElementTabDyn( TableauDynamique *t, int position );
 
 /** Precondition : t prealablement initialise et 0 <= i < tailleUtilisee(t)
    Postcondition : le i+1eme ElementTD de t vaut e */
-void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur* e, unsigned int i);
+void modifierValeurIemeElementTabDyn(TableauDynamique *t, Mur e, unsigned int i);
 
 
 /** Precondition : t prealablement initialise et 0 <= i < tailleUtilisee(t)
    Postcondition : e est insere en i+1eme position et tailleUtilisee est incrementee de 1 */
-void insererElementTabDyn(TableauDynamique *t, Mur* e, unsigned int i);
-
+void insererElementTabDyn(TableauDynamique *t, Mur e, unsigned int i);
 
 
 

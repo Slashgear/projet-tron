@@ -49,7 +49,7 @@ void GridSetMesMurs(Grid* ,TableauDynamique* );
  /** Destructeur de Grid*/
  void GridDestructeur(Grid* grille);
  /** Ajoute un mur*/
- void ajouteMur(TableauDynamique* mesMurs, Mur* mur);
+ void ajouteMur(TableauDynamique* mesMurs, Mur mur);
  /** Efface un mur*/
  void effaceMur(TableauDynamique* mesMurs);
  /** Nettoie tous les murs de la Grid*/

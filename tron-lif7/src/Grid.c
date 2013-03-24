@@ -33,7 +33,7 @@ void GridSetTailleY(Grid* grille,unsigned int tailleY){
     grille->tailleY=tailleY;
 }
 void GridSetMesMurs(Grid* grille,TableauDynamique* mesMurs){
-    grille->mesMurs=mesMurs;
+    (grille->mesMurs)=mesMurs;
 }
 void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY,TableauDynamique* mesMurs){
     GridSetPositionX(grille,posX);
@@ -52,14 +52,14 @@ void GridDestructeur(Grid* grille){
     GridSetMesMurs(grille,NULL);
 }
 
- void ajouteMur(TableauDynamique* mesMurs, Mur* mur){
+ void ajouteMur(TableauDynamique* mesMurs, Mur mur){
     ajouterElementTabDyn(mesMurs,mur);
  }
 
 void effaceMur(TableauDynamique* mesMurs){
     int i;
-    for(i=0;i<=TabDynGetTaille_utilisee(&mesMurs);i++){
-        if(MurGetDureeVie(&valeurIemeElementTabDyn(mesMurs,i))==0)
+    for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
+        if(MurGetDureeVie(adresseIemeElementTabDyn(mesMurs,i))==0)
         {
             supprimerElementTabDyn(mesMurs,i);
         }
@@ -67,37 +67,37 @@ void effaceMur(TableauDynamique* mesMurs){
 }
 void nettoieGrid(TableauDynamique* mesMurs){
     int i;
-    for(i=0;i<=TabDynGetTaille_utilisee(&mesMurs);i++){
+    for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
     supprimerElementTabDyn(mesMurs,i);
     }
 }
 
  void GridTestRegression(){
     Grid grille;
-    float posX=10
-    float posY=5
-    unsigned int tailleX=3
-    unsigned int tailleY=4
+    float posX=10;
+    float posY=5;
+    unsigned int tailleX=3;
+    unsigned int tailleY=4;
     TableauDynamique mesMurs;
     Mur unMur;
-    GridConstructeur(&grille,posX,posY,tailleX,tailleY,mesMurs);
+    MurSetDureeVie(&unMur,0);
+    GridConstructeur(&grille,posX,posY,tailleX,tailleY,&mesMurs);
     printf("La valeur de PosX saisie est %f et dans Grid est %f\n",posX,GridGetPositionX(&grille));
     printf("La valeur de PosY saisie est %f et dans Grid est %f\n",posY,GridGetPositionY(&grille));
     printf("La valeur de tailleX saisie est %u et dans Grid est %u\n",tailleX,GridGetTailleX(&grille));
     printf("La valeur de tailleY saisie est %u et dans Grid est %u\n",tailleY,GridGetTailleY(&grille));
-    ajouteMur(mesMur,Mur);
-    assert(TabDynGetTaille_utilisee(mesMurs)!=1);
-    MurSetDureeVie(&unMur,0);
-    effaceMur(&mesMurs);
-    assert(TabDynGetTaille_utilisee(mesMurs)!=0);
-    ajouteMur(mesMur,Mur);
-    nettoieGrid(mesMurs);
-    assert(TabDynGetTaille_utilisee(mesMurs)!=0);
+    ajouteMur(GridGetMesMurs(&grille),unMur);
+    assert(TabDynGetTaille_utilisee(GridGetMesMurs(&grille))==1);
+    effaceMur(GridGetMesMurs(&grille));
+    assert(TabDynGetTaille_utilisee(GridGetMesMurs(&grille))==0);
+    ajouteMur(GridGetMesMurs(&grille),unMur);
+    nettoieGrid(GridGetMesMurs(&grille));
+    assert(TabDynGetTaille_utilisee(GridGetMesMurs(&grille))==0);
     GridDestructeur(&grille);
-    printf("Après destruction la valeur de PosX est %f\n",GridGetPositionX(&grille));
-    printf("Après destruction la valeur de PosY est %f\n",GridGetPositionY(&grille));
-    printf("Après destruction la valeur de tailleX  est %u\n",GridGetTailleX(&grille));
-    printf("Après destruction la valeur de tailleY est %u\n",GridGetTailleY(&grille));
-    printf("Après destruction la valeur du pointeur de TabDyn est %u\n",GridGetMesMurs(&grille));
+    printf("Après destruction la valeur de PosX dans Grid est %f\n",GridGetPositionX(&grille));
+    printf("Après destruction la valeur de PosY dans Grid est %f\n",GridGetPositionY(&grille));
+    printf("Après destruction la valeur de tailleX dans Grid  est %u\n",GridGetTailleX(&grille));
+    printf("Après destruction la valeur de tailleY dans Grid est %u\n",GridGetTailleY(&grille));
+    printf("Après destruction la valeur du pointeur de TabDyn dans Grid est %p \n \n",GridGetMesMurs(&grille));
  }
 
