@@ -80,13 +80,15 @@ void nettoieGrid(TableauDynamique* mesMurs){
     unsigned int tailleY=4;
     TableauDynamique mesMurs;
     Mur unMur;
-    MurSetDureeVie(&unMur,0);
+    MurConstructeur(&unMur,31,32,33,34,ORANGE,0);
+    initialiserTabDyn(&mesMurs);
     GridConstructeur(&grille,posX,posY,tailleX,tailleY,&mesMurs);
     printf("La valeur de PosX saisie est %f et dans Grid est %f\n",posX,GridGetPositionX(&grille));
     printf("La valeur de PosY saisie est %f et dans Grid est %f\n",posY,GridGetPositionY(&grille));
     printf("La valeur de tailleX saisie est %u et dans Grid est %u\n",tailleX,GridGetTailleX(&grille));
     printf("La valeur de tailleY saisie est %u et dans Grid est %u\n",tailleY,GridGetTailleY(&grille));
     ajouteMur(GridGetMesMurs(&grille),unMur);
+    printf("La valeur de PosX du mur ajouté saisie est 31 et dans Grid est %f\n",MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(&grille),0)));
     assert(TabDynGetTaille_utilisee(GridGetMesMurs(&grille))==1);
     effaceMur(GridGetMesMurs(&grille));
     assert(TabDynGetTaille_utilisee(GridGetMesMurs(&grille))==0);
