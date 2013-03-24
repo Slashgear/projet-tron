@@ -3,6 +3,29 @@
 #include "Mur.h"
 #include <stdlib.h>
 
+unsigned int TabDynGetCapacite(TableauDynamique* TabDyn){
+    return TabDyn->capacite;
+}
+unsigned int TabDynGetTaille_utilisee(TableauDynamique* TabDyn){
+    return TabDyn->taille_utilisee;
+}
+Mur** TabDynGetAd(TableauDynamique* TabDyn){
+    return TabDyn->ad;
+}
+
+void TabDynSetCapacite(TableauDynamique TabDyn, unsigned int capacite){
+    TabDyn->capacite=capacite;
+}
+void TabDynSetTaille_utilisee(TableauDynamique TabDyn,unsigned int taille){
+    TabDyn->taille_utilisee=taille;
+}
+void TabDynSetAd(TableauDynamique TabDyn,Mur** ad){
+    TabDyn->ad=ad;
+}
+
+
+
+
 void initialiserTabDyn (TableauDynamique * t)
 {
 	t -> ad = (Mur **)malloc(sizeof(Mur*));

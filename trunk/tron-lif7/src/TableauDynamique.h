@@ -13,6 +13,20 @@ typedef struct{
   unsigned int taille_utilisee;
   Mur** ad;}TableauDynamique;
 
+/**assesseur de capacite*/
+unsigned int TabDynGetCapacite(TableauDynamique);
+/**assesseur de taille_utilisee*/
+unsigned int TabDynGetTaille_utilisee(TableauDynamique);
+/**assesseur de ad*/
+Mur** TabDynGetAd(TableauDynamique);
+
+/**mutateur de capacite*/
+void TabDynSetCapacite(TableauDynamique, unsigned int);
+/**mutateur de taille_utilisee*/
+void TabDynSetTaille_utilisee(TableauDynamique,unsigned int);
+/**mutateur de ad*/
+void TabDynSetAd(TableauDynamique,Mur**);
+
 /** Precondition : t non prealablement initialise
  Postcondition : t initialise a une alveole vide (taille utilisee nulle) */
 void initialiserTabDyn(TableauDynamique * t);
