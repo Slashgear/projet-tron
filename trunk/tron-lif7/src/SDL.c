@@ -1,74 +1,28 @@
 #include "Jeu.h"
 #include "SDL.h"
+#include <assert.h>
 #include <SDL/SDL.h>
 
 Jeu* SDLGetJeu(const SDL* sdl){
     return sdl->jeu;
 }
-SDL_Surface * SDLGetFond(const SDL* sdl){
-    return sdl->fond;
+SDL_Surface * SDLGetIemeTexture(const SDL* sdl,unsigned int i){
+    return sdl->textures[i];
 }
-SDL_Surface * SDLGetMoto1H(const SDL* sdl){
-    return sdl->moto1H;
+SDL_Surface * SDLGetTextures(const SDL* sdl){
+    return sdl->textures[0];
 }
-SDL_Surface * SDLGetMoto1B(const SDL* sdl){
-    return sdl->moto1B;
-}
-SDL_Surface * SDLGetMoto1G(const SDL* sdl){
-    return sdl->moto1G;
-}
-SDL_Surface * SDLGetMoto1D(const SDL* sdl){
-    return sdl->moto1D;
-}
-SDL_Surface * SDLGetMoto2H(const SDL* sdl){
-    return sdl->moto2H;
-}
-SDL_Surface * SDLGetMoto2B(const SDL* sdl){
-    return sdl->moto2B;
-}
-SDL_Surface * SDLGetMoto2G(const SDL* sdl){
-    return sdl->moto2G;
-}
-SDL_Surface * SDLGetMoto2D(const SDL* sdl){
-    return sdl->moto2D;
-}
-
 
 void SDLSetJeu(SDL * sdl,Jeu* jeu){
     sdl->jeu=jeu;
 }
-void SDLSetMotoFond(SDL* sdl,SDL_Surface * fond){
-    sdl->fond=fond;
+void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture){
+    sdl->textures[i]=texture;
 }
-void SDLSetMoto1H(SDL* sdl,SDL_Surface * moto){
-    sdl->moto1H=moto;
-}
-void SDLSetMoto1B(SDL* sdl,SDL_Surface * moto){
-    sdl->moto1B=moto;
-}
-void SDLSetMoto1G(SDL* sdl,SDL_Surface * moto){
-    sdl->moto1G=moto;
-}
-void SDLSetMoto1D(SDL* sdl,SDL_Surface * moto){
-    sdl->moto1D=moto;
-}
-void SDLSetMoto2H(SDL* sdl,SDL_Surface * moto){
-    sdl->moto2H=moto;
-}
-void SDLSetMoto2B(SDL* sdl,SDL_Surface * moto){
-    sdl->moto2B=moto;
-}
-void SDLSetMoto2G(SDL* sdl,SDL_Surface * moto){
-    sdl->moto2G=moto;
-}
-void SDLSetMoto2D(SDL* sdl,SDL_Surface * moto){
-    sdl->moto2D=moto;
-}
-/*
-void SDLConstructeur(SDL *sdl, const Jeu* jeu){
 
-}
-*/
+
+
+
 SDL_Surface* SDLChargeImage(const char* nomfichier){
 	/* Temporary storage for the image that's loaded */
 	SDL_Surface* loadedImage = NULL;
@@ -87,7 +41,10 @@ SDL_Surface* SDLChargeImage(const char* nomfichier){
 
 		/* Free the old image */
 		SDL_FreeSurface( loadedImage );
+
 	}
+    else printf("image non chargée ! \n");
+
 
 	/* Return the optimized image */
 	return optimizedImage;
@@ -108,9 +65,25 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const flo
 
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu){
-       SDLSetJeu(sdl,jeu);
-       /*SDLSetFond(sdl,fond);
-       SDLChargeImage();*/
+    SDLSetJeu(sdl,jeu);
+    SDLSetIemeTexture(sdl,0,SDLChargeImage("/data/fond.bmp"));
+    SDLSetIemeTexture(sdl,1,SDLChargeImage("/data/moto1H.bmp"));
+    SDLSetIemeTexture(sdl,2,SDLChargeImage("/data/moto1B.bmp"));
+    SDLSetIemeTexture(sdl,3,SDLChargeImage("/data/moto1G.bmp"));
+    SDLSetIemeTexture(sdl,4,SDLChargeImage("/data/moto1D.bmp"));
+    SDLSetIemeTexture(sdl,5,SDLChargeImage("/data/moto2H.bmp"));
+    SDLSetIemeTexture(sdl,6,SDLChargeImage("/data/moto2B.bmp"));
+    SDLSetIemeTexture(sdl,7,SDLChargeImage("/data/moto2G.bmp"));
+    SDLSetIemeTexture(sdl,8,SDLChargeImage("/data/moto2D.bmp"));
+
 }
 
+void SDLTestRegression(){
+    assert(   SDL_Init( SDL_INIT_EVERYTHING )!= -1 );
+    SDL sdl;
+    SDL_Surface* uneSurface = SDLChargeImage("data/fond.bmp");
+    SDLSetIemeTexture(&sdl,0,uneSurface);
+    printf("pointeur de l'image chargée : %p %p \n",SDLGetIemeTexture(&sdl,0),uneSurface);
+    SDL_Quit();
+}
 

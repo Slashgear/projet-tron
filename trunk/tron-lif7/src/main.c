@@ -6,6 +6,7 @@
 #include "Joueur.h"
 #include "Grid.h"
 #include "Jeu.h"
+#include "SDL.h"
 
 int main(){
     MurTestRegression();
@@ -14,5 +15,6 @@ int main(){
     JoueurTestRegression();
     GridTestRegression();
     JeuTestRegression();
+    SDLTestRegression();
 return 0;
 }
