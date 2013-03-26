@@ -84,4 +84,4 @@ void SDLAppliqueSurface(Const SDL_Surface * surfaceA, SDL_Surface * surfaceB,con
 /** Pocédure qui teste le Module*/
 void SDLTestRegression(SDL* sdl);
 
-#endif // SDL_H_INCLUDED
+#endif /* SDL_H_INCLUDED */

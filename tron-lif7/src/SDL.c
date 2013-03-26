@@ -1,2 +1,3 @@
-#include "jeu.h"
+/*#include "jeu.h"
 #include <sdl.h>
+*/
