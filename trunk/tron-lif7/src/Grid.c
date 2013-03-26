@@ -59,7 +59,7 @@ void GridDestructeur(Grid* grille){
 void effaceMur(TableauDynamique* mesMurs){
     int i;
     for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
-        if(MurGetDureeVie(adresseIemeElementTabDyn(mesMurs,i))==0)
+        if(MurGetDureeVie(adresseIemeElementTabDyn(mesMurs,i))<=0)
         {
             supprimerElementTabDyn(mesMurs,i);
         }
