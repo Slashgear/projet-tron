@@ -54,6 +54,8 @@ void GridSetMesMurs(Grid* ,TableauDynamique* );
  void effaceMur(TableauDynamique* mesMurs);
  /** Nettoie tous les murs de la Grid*/
  void nettoieGrid(TableauDynamique* mesMurs);
+ /** décrementation de la durée de vie des murs*/
+ void decrementeVieMur(TableauDynamique* mesMurs);
 
  /** Procedure qui teste le module Grid*/
  void GridTestRegression();
