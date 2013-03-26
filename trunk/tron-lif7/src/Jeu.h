@@ -28,9 +28,9 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu* jeu);
 /**Boucle d'évolutions du jeu*/
-void JeuEvolue(Jeu* jeu);
+void JeuEvolue(Jeu* jeu,char jeuFini);
 /**procédure qui gère le mouvement de toutes les motos*/
-void BougeMoto(Jeu* jeu);
+void bougeMoto(Jeu* jeu);
 /**fonction qui teste les collisions avec le murs*/
 char testCollisionMur(const Moto * moto,const Grid * grille);
 /**procédure qui gère les actions des motos en fonction des touches saisies*/

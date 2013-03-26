@@ -71,10 +71,11 @@ void nettoieGrid(TableauDynamique* mesMurs){
     supprimerElementTabDyn(mesMurs,i);
     }
 }
-void decrementeVieMur(TableauDynamique* mesMurs){
+void decrementeVieMur(Grid* grille){
     int i;
-    for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
-        MurSetDureeVie(adresseIemeElementTabDyn(mesMurs,i),MurGetDureeVie(adresseIemeElementTabDyn(mesMurs,i))-1);
+    for(i=0;i<=TabDynGetTaille_utilisee(GridGetMesMurs(grille));i++){
+        MurSetDureeVie(adresseIemeElementTabDyn(GridGetMesMurs(grille),i),
+                       MurGetDureeVie(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))-1);
     }
 }
 
