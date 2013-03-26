@@ -30,7 +30,7 @@ float MurGetPositionY(const Mur* mur);
 /** assesseur de tailleX*/
 unsigned int MurGetTailleX(const Mur* mur);
 /** assesseur de tailleY*/
-unsigned int GetTailleY(const Mur* mur);
+unsigned int MurGetTailleY(const Mur* mur);
 /** assesseur de couleur*/
 Couleur MurGetCouleur(const Mur* mur);
 /** assesseur de dureeVie*/

@@ -34,7 +34,7 @@ void BougeMoto(Jeu* jeu);
 /**fonction qui teste les collisions avec le murs*/
 char testCollisionMur(const Moto * moto,const Grid * grille);
 /**procédure qui gère les actions des motos en fonction des touches saisies*/
-void JeuActionClavier(Joueur* mesJoueurs);
+void JeuActionClavier(Joueur* joueur, const char touche);
 
 /**procédure de test*/
 void JeuTestRegression();
