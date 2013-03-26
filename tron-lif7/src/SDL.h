@@ -13,9 +13,9 @@
 
 typedef struct{
     Jeu *jeu;
-    SDL_Surface * textures[9];
+    SDL_Surface * textures[10];
 }SDL;
-/** La 0ieme texture est le fond, les textures 1 à 4 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
+/** La texture 0 est le fond, la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
 /**assesseur de jeu*/
 Jeu * SDLGetJeu(const SDL* sdl);
@@ -29,6 +29,25 @@ SDL_Surface * SDLGetTextures(const SDL* sdl);
 void SDLSetJeu(SDL * sdl,Jeu* jeu);
 /**mutateur de ieme texture*/
 void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture);
+
+
+
+/** Constructeur de SDL, initialise les différents champs*/
+void SDLConstructeur(SDL *sdl,Jeu* jeu);
+/**Destructeur de SDl,remise à zero des champs de SDL et free des allocations*/
+void SDLDestructeur(SDL *sdl);
+/**Procédure qui applique la surface A sur la B*/
+void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const float positionX,const float positionY);
+/** Procédure d'affichage du jeu*/
+void SDLAfficheJeu(SDL *sdl);
+/**Procédure Init*/
+void SDLJeuInit(SDL *sdl);
+/**Procédure d'affichage de la grille*/
+void SDLAfficheGrid(SDL *sdl);
+/** Boucle d'affichage du Jeu */
+void SDLBoucleJeu(SDL* sdl);
+/** Procédure de chargement des images*/
+SDL_Surface* SDLChargeImage(const char *nomfichier);
 
 
 /** Pocédure qui teste le Module*/

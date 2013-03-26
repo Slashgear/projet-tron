@@ -29,7 +29,7 @@ void ControleSetBas(Controle* controle,char x){
     controle->bas=x;
 }
 
-void ControleConstructeur(Controle* controle, char droite, char gauche, char haut, char bas){
+void ControleConstructeur(Controle* controle, char haut,char bas,char gauche,char droite){
     ControleSetDroite(controle, droite);
     ControleSetGauche(controle, gauche);
     ControleSetHaut(controle, haut);

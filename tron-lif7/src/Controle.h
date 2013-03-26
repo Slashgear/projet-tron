@@ -37,7 +37,7 @@ void ControleSetBas(Controle* controle,char x);
 void ControleSetGauche(Controle* controle,char x);
 
 /** Constructeur de Controle*/
-void ControleConstructeur(Controle* controle, char droite,char gauche,char haut,char bas);
+void ControleConstructeur(Controle* controle, char haut,char bas,char gauche,char droite);
 /** Destructeur de Controle*/
 void ControleDestructeur(Controle* controle);
 
