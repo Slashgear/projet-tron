@@ -71,6 +71,12 @@ void nettoieGrid(TableauDynamique* mesMurs){
     supprimerElementTabDyn(mesMurs,i);
     }
 }
+void decrementeVieMur(TableauDynamique* mesMurs){
+    int i;
+    for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
+        MurSetDureeVie(adresseIemeElementTabDyn(mesMurs,i),MurGetDureeVie(adresseIemeElementTabDyn(mesMurs,i))-1);
+    }
+}
 
  void GridTestRegression(){
     Grid grille;
