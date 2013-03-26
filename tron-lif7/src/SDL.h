@@ -1,7 +1,7 @@
 #ifndef SDL_H_INCLUDED
 #define SDL_H_INCLUDED
-#include "jeu.h"
-#include <sdl.h>
+#include "Jeu.h"
+#include <SDL/SDL.h>
 
 /**
 *\file [SDL.h]
@@ -12,7 +12,7 @@
 */
 
 typedef struct{
-    Jeu jeu;
+    Jeu *jeu;
     SDL_Surface * fond;
     SDL_Surface * moto1H;
     SDL_Surface * moto1B;
@@ -25,7 +25,7 @@ typedef struct{
 }SDL;
 
 /**assesseur de jeu*/
-Jeu SDLGetJeu(const SDL* sdl);
+Jeu * SDLGetJeu(const SDL* sdl);
 /** assesseur de fond*/
 SDL_Surface * SDLGetFond(const SDL* sdl);
 /** assesseur de moto1H*/
@@ -46,9 +46,9 @@ SDL_Surface * SDLGetMoto2G(const SDL* sdl);
 SDL_Surface * SDLGetMoto2D(const SDL* sdl);
 
 /**mutateur de jeu*/
-void SDLSetJeu(SDL * sdl,Jeu jeu);
+void SDLSetJeu(SDL * sdl,Jeu* jeu);
 /**mutateur de fond*/
-void SDLSetMoto1D(SDL* sdl,SDL_Surface * fond);
+void SDLSetFond(SDL* sdl,SDL_Surface * fond);
 /**mutateur de moto1H*/
 void SDLSetMoto1H(SDL* sdl,SDL_Surface * moto);
 /**mutateur de moto1B*/
@@ -67,7 +67,7 @@ void SDLSetMoto2G(SDL* sdl,SDL_Surface * moto);
 void SDLSetMoto2D(SDL* sdl,SDL_Surface * moto);
 
 /** Constructeur de SDL, initialise les différents champs*/
-void SDLConstructeur(SDL *sdl, const Jeu* jeu);
+void SDLConstructeur(SDL *sdl,Jeu* jeu);
 /**Destructeur de SDl,remise à zero des champs de SDL et free des allocations*/
 void SDLDestructeur(SDL *sdl);
 /** Procédure d'affichage du jeu*/
@@ -77,9 +77,9 @@ void SDLAfficheGrid(SDL *sdl);
 /** Boucle d'affichage du Jeu */
 void SDLBoucleJeu(SDL* sdl);
 /** Procédure de chargement des images*/
-SDL_Surface* SDLChargeImage(const char nomfichier);
+SDL_Surface* SDLChargeImage(const char *nomfichier);
 /**Procédure qui applique la surface A sur la B*/
-void SDLAppliqueSurface(Const SDL_Surface * surfaceA, SDL_Surface * surfaceB,const float positionX,const float positionY);
+void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const float positionX,const float positionY);
 
 /** Pocédure qui teste le Module*/
 void SDLTestRegression(SDL* sdl);
