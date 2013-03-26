@@ -159,7 +159,7 @@ void bougeMoto(Jeu* jeu){
                         MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
                         }
         ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
-        MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+0.1f);
+        MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+0.1);
         }
 }
 
@@ -179,28 +179,28 @@ void JeuEvolue(Jeu* jeu,short int* jeuContinue){
 
 void JeuTestRegression(){
     Grid grille;
-    float posXg=10;
-    float posYg=5;
+    float posXg=1.;
+    float posYg=1.;
     unsigned int tailleXg=300;
     unsigned int tailleYg=400;
     TableauDynamique mesMurs;
 
     Mur unMur;
-    float posXm=10;
-    float posYm=20;
+    float posXm=50.;
+    float posYm=70.;
     unsigned int tailleXm=3;
     unsigned int tailleYm=3;
-    float dureeVie=5;
+    float dureeVie=5.;
 
     Joueur joueur1;
     Moto moto1;
     Controle controle1;
     Couleur couleur1=ORANGE;
-    float posX1=12;
-    float posY1=22;
+    float posX1=52.;
+    float posY1=72.;
     unsigned int tailleX1=2;
     unsigned int tailleY1=5;
-    float vitesse1=20;
+    float vitesse1=1.;
     Direction direction1=HAUT;
     char touchedroite1='d';
     char touchegauche1='q';
@@ -211,12 +211,12 @@ void JeuTestRegression(){
     Moto moto2;
     Controle controle2;
     Couleur couleur2=BLEU;
-    float posX2=20;
-    float posY2=30;
+    float posX2=100.;
+    float posY2=5.;
     unsigned int tailleX2=2;
     unsigned int tailleY2=5;
-    float vitesse2=30;
-    Direction direction2=BAS;
+    float vitesse2=2.;
+    Direction direction2=HAUT;
     char touchedroite2='m';
     char touchegauche2='k';
     char touchehaut2='o';
@@ -245,13 +245,18 @@ void JeuTestRegression(){
     JeuConstructeur(&jeu,&grille,(Joueur*)&mesJoueurs);
     printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",vitesse2,MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
 
+    assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[0]),JeuGetGrille(&jeu)));
+    assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[1]),JeuGetGrille(&jeu)));
+
     ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
     assert(0== testCollisionMur(JoueurGetMoto(&mesJoueurs[0]),JeuGetGrille(&jeu)));
     assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[1]),JeuGetGrille(&jeu)));
 
     bougeMoto(&jeu);
-    printf("La vitesse de la moto1 (30 avant) après bougeMoto est %f \n",MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
-    printf("La positionY de la moto2 (30avant + 30vitesse) après bougeMoto est %f \n",MotoGetPositionY(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
+    printf("La vitesse de la moto1 (1 avant) après bougeMoto est %f \n",MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[0])));
+    printf("La positionY de la moto2 (30avant + 2vitesse) après bougeMoto est %f \n",MotoGetPositionY(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
+
+    nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
 
     JeuEvolue(&jeu,&jeuContinue);
 
