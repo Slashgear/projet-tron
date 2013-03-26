@@ -131,7 +131,7 @@ void JeuActionClavier(Joueur* joueur,const char touche){
                 }
 }
 
-void BougeMoto(Jeu* jeu){
+void bougeMoto(Jeu* jeu){
     int i;
     float dureeVieMur = 1000;
     Moto* uneMoto;
@@ -163,16 +163,18 @@ void BougeMoto(Jeu* jeu){
         }
 }
 
-/**Boucle d'évolutions du jeu*/
-void JeuEvolue(Jeu* jeu){
+void JeuEvolue(Jeu* jeu,char jeuContinue){
     int i;
-    TableauDynamique* tabDyn=GridGetMesMurs(JeuGetGrille(jeu));
-    BougeMoto(jeu);
+    Grid* grille=JeuGetGrille(jeu);
+    bougeMoto(jeu);
     for(i=0;i<2;i++){
-        if(testCollisionMur(JoueurGetMoto(&JeuGetMesJoueurs(jeu)[j]),)){
-
+        if(testCollisionMur(JoueurGetMoto(&JeuGetMesJoueurs(jeu)[i]),grille)){
+            printf("Le joueur %d a perdu ! \n",i+1);
+            jeuContinue=i+1;
         }
     }
+    decrementeVieMur(grille);
+    effaceMur(GridGetMesMurs(grille));
 }
 
 void JeuTestRegression(){
@@ -246,7 +248,7 @@ void JeuTestRegression(){
     assert(0== testCollisionMur(JoueurGetMoto(&mesJoueurs[0]),JeuGetGrille(&jeu)));
     assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[1]),JeuGetGrille(&jeu)));
 
-    BougeMoto(&jeu);
+    bougeMoto(&jeu);
     printf("La vitesse de la moto1 (30 avant) après bougeMoto est %f \n",MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
     printf("La positionY de la moto2 (30avant + 30vitesse) après bougeMoto est %f \n",MotoGetPositionY(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
 

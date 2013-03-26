@@ -57,7 +57,6 @@ void MotoDestructeur(Moto* moto){
     MotoSetDirection(moto,NON_DIRIGE);
 }
 
-/** Procedure qui teste le module Moto*/
  void MotoTestRegression(){
     Moto moto;
     float posX=1;
