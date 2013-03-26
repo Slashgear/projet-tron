@@ -1,9 +1,9 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include <assert.h>
 #include "Grid.h"
 #include "Mur.h"
 #include "TableauDynamique.h"
-#include "assert.h"
 
 float GridGetPositionX(const Grid* grille){
     return grille->positionX;
