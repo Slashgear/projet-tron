@@ -4,27 +4,28 @@
 
 #include "Joueur.h"
 #include "Grid.h"
+#include "Constantes.h"
 
 
 
 typedef struct
 {
 	Grid* grille;
-	Joueur* mesJoueurs;
+	Joueur* mesJoueurs[_Nombre_de_Joueur];
 } Jeu;
 
 /**assesseur de grille*/
 Grid* JeuGetGrille(const Jeu* jeu);
 /**assesseur de mesjoueurs*/
-Joueur* JeuGetMesJoueurs(const Jeu* jeu);
+Joueur* JeuGetIemeJoueurs(const Jeu* jeu,int i);
 
 /**mutateur de grille*/
 void JeuSetGrille(Jeu* jeu,Grid* grille);
 /**mutateur de mesjoueurs*/
-void JeuSetMesJoueurs(Jeu* jeu,Joueur* mesJoueurs);
+void JeuSetIemeJoueurs(Jeu* jeu,Joueur* mesJoueurs,int i);
 
 /**constructeur du jeu*/
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs);
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs[_Nombre_de_Joueur]);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu* jeu);
 /**Boucle d'évolutions du jeu*/

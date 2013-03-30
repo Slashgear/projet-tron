@@ -103,11 +103,11 @@ void SDLJeuInit(SDL *sdl){
     Controle controle1;
     Controle controle2;
     TableauDynamique tabDynMurs;
-    Joueur mesJoueurs[2]={joueur1,joueur2};
+    Joueur* mesJoueurs[2]={&joueur1,&joueur2};
     SDL_Surface* ecran;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO |SDL_INIT_TIMER)!= -1 );
-    JeuConstructeur(&jeu,&grille,(Joueur*)&mesJoueurs);
+    JeuConstructeur(&jeu,&grille,(Joueur**)&mesJoueurs);
     GridConstructeur(&grille,5,5,1000,1000,&tabDynMurs);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
     MotoConstructeur(&moto1,333,500,5,10,1,HAUT);
@@ -120,7 +120,8 @@ void SDLJeuInit(SDL *sdl){
     SDLConstructeur(sdl,&jeu);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
-    SDLAfficheJeu(sdl);
+    SDLSetIemeTexture(sdl,0,ecran);
+
     SDL_Flip(ecran);
 
     pause();
@@ -147,8 +148,8 @@ void SDLAfficheJeu(SDL *sdl){
             }
         SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),MurGetPositionX(mur),MurGetPositionY(mur));
     }
-    for(i=0;i<2;i++){
-        moto=JoueurGetMoto((Joueur*)&(JeuGetMesJoueurs(SDLGetJeu(sdl))[i]));
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
         if(MotoGetDirection(moto)==HAUT){
             surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4));
         }
@@ -169,17 +170,15 @@ void SDLAfficheJeu(SDL *sdl){
 
 void SDLTestRegression(){
     SDL sdl;
+
     SDLJeuInit(&sdl);
-  /*  bougeMoto(SDLGetJeu(&sdl));
+    /*bougeMoto(SDLGetJeu(&sdl));
     bougeMoto(SDLGetJeu(&sdl));
-    bougeMoto(SDLGetJeu(&sdl));
+    bougeMoto(SDLGetJeu(&sdl));*/
     SDLAfficheJeu(&sdl);
-    SDL_Flip(ecran);
-    SDLConstructeur(&sdl,&jeu);
-    printf("pointeur de l'image chargée : %p %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
+
     SDLDestructeur(&sdl);
     printf("pointeur de l'image chargée après destruction : %p %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
-    atexit(MurTestRegression());*/
     SDL_Quit();
 }
 

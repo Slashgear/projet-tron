@@ -8,28 +8,36 @@
 Grid* JeuGetGrille(const Jeu* jeu){
     return jeu->grille;
 }
-Joueur* JeuGetMesJoueurs(const Jeu* jeu){
-    return jeu->mesJoueurs;
+Joueur* JeuGetIemeJoueurs(const Jeu* jeu,int i){
+    return jeu->mesJoueurs[i];
 }
+
 void JeuSetGrille(Jeu* jeu,Grid* grille){
     jeu->grille=grille;
 }
-void JeuSetMesJoueurs(Jeu* jeu,Joueur* mesJoueurs){
-    jeu->mesJoueurs=mesJoueurs;
+void JeuSetIemeJoueurs(Jeu* jeu,Joueur* joueur,int i){
+    jeu->mesJoueurs[i]=joueur;
 }
 
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs){
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs[_Nombre_de_Joueur]){
+    int i;
     JeuSetGrille(jeu,grille);
-    JeuSetMesJoueurs(jeu,mesJoueurs);
+    for(i=0;i<_Nombre_de_Joueur;i++){
+         JeuSetIemeJoueurs(jeu,mesJoueurs[i],i);
+    }
+
 }
 void JeuDestructeur(Jeu* jeu){
     int i;
     GridDestructeur(JeuGetGrille(jeu));
-    for(i=0;i<2;i++){
-    JoueurDestructeur(&(JeuGetMesJoueurs(jeu)[i]));
+    for(i=0;i<_Nombre_de_Joueur;i++){
+    JoueurDestructeur(JeuGetIemeJoueurs(jeu,i));
     }
     JeuSetGrille(jeu,NULL);
-    JeuSetMesJoueurs(jeu,NULL);
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        JeuSetIemeJoueurs(jeu,NULL,i);
+    }
+
 }
 
 char testCollisionMur(const Moto * moto,const Grid * grille){
@@ -137,25 +145,25 @@ void bougeMoto(Jeu* jeu){
     Moto* uneMoto;
     Mur unMur;
     for(i=0;i<2;i++){
-        uneMoto = JoueurGetMoto(&JeuGetMesJoueurs(jeu)[i]);
+        uneMoto = JoueurGetMoto(JeuGetIemeJoueurs(jeu,i));
         if(MotoGetDirection(uneMoto)==HAUT){
             MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto)+MotoGetTailleY(uneMoto)-MotoGetVitesse(uneMoto)+1,
-                            MotoGetTailleX(uneMoto),MotoGetVitesse(uneMoto),JoueurGetCouleur(&JeuGetMesJoueurs(jeu)[i]),dureeVieMur);
+                            MotoGetTailleX(uneMoto),MotoGetVitesse(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
             MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)-MotoGetVitesse(uneMoto));
         }
         else if(MotoGetDirection(uneMoto)==BAS){
                 MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto)-1,
-                                MotoGetTailleX(uneMoto),MotoGetVitesse(uneMoto),JoueurGetCouleur(&JeuGetMesJoueurs(jeu)[i]),dureeVieMur);
+                                MotoGetTailleX(uneMoto),MotoGetVitesse(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                 MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+MotoGetVitesse(uneMoto));
                 }
             else if(MotoGetDirection(uneMoto)==GAUCHE){
                     MurConstructeur(&unMur,MotoGetPositionX(uneMoto)+MotoGetTailleX(uneMoto)-MotoGetVitesse(uneMoto)+1,MotoGetPositionY(uneMoto),
-                                    MotoGetVitesse(uneMoto),MotoGetTailleY(uneMoto),JoueurGetCouleur(&JeuGetMesJoueurs(jeu)[i]),dureeVieMur);
+                                    MotoGetVitesse(uneMoto),MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                     MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
                     }
                 else if(MotoGetDirection(uneMoto)==DROITE){
                         MurConstructeur(&unMur,MotoGetPositionX(uneMoto)-1,MotoGetPositionY(uneMoto),
-                                        MotoGetVitesse(uneMoto),MotoGetTailleY(uneMoto),JoueurGetCouleur(&JeuGetMesJoueurs(jeu)[i]),dureeVieMur);
+                                        MotoGetVitesse(uneMoto),MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                         MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
                         }
         ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
@@ -168,7 +176,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuContinue){
     Grid* grille=JeuGetGrille(jeu);
     bougeMoto(jeu);
     for(i=0;i<2;i++){
-        if(testCollisionMur(JoueurGetMoto(&JeuGetMesJoueurs(jeu)[i]),grille)){
+        if(testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),grille)){
             printf("Le joueur %d a perdu ! \n",i+1);
             *jeuContinue=i+1;
         }
@@ -224,7 +232,7 @@ void JeuTestRegression(){
 
     short int jeuContinue=0;
     Jeu jeu;
-    Joueur mesJoueurs[2];
+    Joueur * mesJoueurs[_Nombre_de_Joueur];
 
     MurConstructeur(&unMur,posXm,posYm,tailleXm,tailleYm,couleur2,dureeVie);
 
@@ -233,28 +241,35 @@ void JeuTestRegression(){
     MotoConstructeur(&moto1,posX1,posY1,tailleX1,tailleY1,vitesse1,direction1);
     ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1);
     JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1);
-    mesJoueurs[0] = joueur1;
-    printf("La valeur posX1 est %f et dans la Moto1 du joueur1 est de %f \n",posX1,MotoGetPositionX(JoueurGetMoto(&mesJoueurs[0])));
+    mesJoueurs[0] = &joueur1;
+    printf("La valeur posX1 est %f et dans la Moto1 du joueur1 est de %f \n",posX1,
+           MotoGetPositionX(JoueurGetMoto(&joueur1)));
 
     MotoConstructeur(&moto2,posX2,posY2,tailleX2,tailleY2,vitesse2,direction2);
     ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2);
     JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2);
-    mesJoueurs[1] = joueur2;
-    printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",posX2,MotoGetPositionX(JoueurGetMoto(&mesJoueurs[1])));
+    mesJoueurs[1] = &joueur2;
+    printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",
+           posX2,MotoGetPositionX(JoueurGetMoto(&joueur2)));
 
-    JeuConstructeur(&jeu,&grille,(Joueur*)&mesJoueurs);
-    printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",vitesse2,MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
+    JeuConstructeur(&jeu,&grille,(Joueur **)&mesJoueurs);
 
-    assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[0]),JeuGetGrille(&jeu)));
-    assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[1]),JeuGetGrille(&jeu)));
+
+    printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",
+           vitesse2,MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
+
+    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
+    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
 
     ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
-    assert(0== testCollisionMur(JoueurGetMoto(&mesJoueurs[0]),JeuGetGrille(&jeu)));
-    assert(1== testCollisionMur(JoueurGetMoto(&mesJoueurs[1]),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
+    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
 
     bougeMoto(&jeu);
-    printf("La vitesse de la moto1 (1 avant) après bougeMoto est %f \n",MotoGetVitesse(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[0])));
-    printf("La positionY de la moto2 (30avant + 2vitesse) après bougeMoto est %f \n",MotoGetPositionY(JoueurGetMoto(&JeuGetMesJoueurs(&jeu)[1])));
+    printf("La vitesse de la moto1 (1 avant) après bougeMoto est %f \n",
+           MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0))));
+    printf("La positionY de la moto2 (30avant + 2vitesse) après bougeMoto est %f \n",
+           MotoGetPositionY(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
 
     nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
 
@@ -262,7 +277,7 @@ void JeuTestRegression(){
 
     JeuDestructeur(&jeu);
     printf("Après destruction, le pointeur de grille du jeu est %p \n",JeuGetGrille(&jeu));
-    printf("Après destruction, le pointeur de mesJoueurs du jeu est %p \n \n",JeuGetMesJoueurs(&jeu));
+    printf("Après destruction, le pointeur du joueur 2 de mesJoueurs du jeu est %p \n \n",JeuGetIemeJoueurs(&jeu,1));
 
 
 }
