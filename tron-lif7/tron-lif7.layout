@@ -10,20 +10,20 @@
 	<File name="src/Couleur.h" open="0" top="0" tabpos="3">
 		<Cursor position="127" topLine="0" />
 	</File>
-	<File name="src/Grid.c" open="1" top="1" tabpos="3">
-		<Cursor position="487" topLine="8" />
+	<File name="src/Grid.c" open="1" top="0" tabpos="3">
+		<Cursor position="1827" topLine="42" />
 	</File>
 	<File name="src/Grid.h" open="1" top="0" tabpos="4">
 		<Cursor position="742" topLine="18" />
 	</File>
-	<File name="src/Jeu.c" open="0" top="0" tabpos="6">
-		<Cursor position="175" topLine="2" />
+	<File name="src/Jeu.c" open="1" top="0" tabpos="6">
+		<Cursor position="8017" topLine="179" />
 	</File>
-	<File name="src/Jeu.h" open="0" top="0" tabpos="9">
-		<Cursor position="578" topLine="0" />
+	<File name="src/Jeu.h" open="1" top="0" tabpos="7">
+		<Cursor position="697" topLine="15" />
 	</File>
-	<File name="src/Joueur.c" open="0" top="0" tabpos="7">
-		<Cursor position="189" topLine="6" />
+	<File name="src/Joueur.c" open="1" top="0" tabpos="8">
+		<Cursor position="604" topLine="14" />
 	</File>
 	<File name="src/Joueur.h" open="0" top="0" tabpos="8">
 		<Cursor position="890" topLine="2" />
@@ -40,14 +40,14 @@
 	<File name="src/Mur.h" open="0" top="0" tabpos="1">
 		<Cursor position="1378" topLine="38" />
 	</File>
-	<File name="src/SDL.c" open="0" top="0" tabpos="10">
-		<Cursor position="2845" topLine="94" />
+	<File name="src/SDL.c" open="1" top="1" tabpos="5">
+		<Cursor position="3500" topLine="118" />
 	</File>
 	<File name="src/SDL.h" open="0" top="0" tabpos="9">
 		<Cursor position="1953" topLine="48" />
 	</File>
 	<File name="src/TableauDynamique.c" open="1" top="0" tabpos="2">
-		<Cursor position="711" topLine="97" />
+		<Cursor position="997" topLine="41" />
 	</File>
 	<File name="src/TableauDynamique.h" open="1" top="0" tabpos="1">
 		<Cursor position="886" topLine="8" />

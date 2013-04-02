@@ -29,7 +29,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs[_Nombre_de_Joueu
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu* jeu);
 /**Boucle d'évolutions du jeu*/
-void JeuEvolue(Jeu* jeu,short int* jeuContinue);
+void JeuEvolue(Jeu* jeu,short int* jeuFini);
 /**procédure qui gère le mouvement de toutes les motos*/
 void bougeMoto(Jeu* jeu);
 /**fonction qui teste les collisions avec le murs*/
