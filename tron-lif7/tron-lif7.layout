@@ -17,7 +17,7 @@
 		<Cursor position="742" topLine="18" />
 	</File>
 	<File name="src/Jeu.c" open="1" top="0" tabpos="6">
-		<Cursor position="8017" topLine="179" />
+		<Cursor position="8150" topLine="48" />
 	</File>
 	<File name="src/Jeu.h" open="1" top="0" tabpos="7">
 		<Cursor position="697" topLine="15" />
@@ -41,7 +41,7 @@
 		<Cursor position="1378" topLine="38" />
 	</File>
 	<File name="src/SDL.c" open="1" top="1" tabpos="5">
-		<Cursor position="3500" topLine="118" />
+		<Cursor position="4454" topLine="141" />
 	</File>
 	<File name="src/SDL.h" open="0" top="0" tabpos="9">
 		<Cursor position="1953" topLine="48" />

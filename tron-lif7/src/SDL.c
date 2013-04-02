@@ -56,7 +56,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const flo
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu){
     SDLSetJeu(sdl,jeu);
-    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(800,600,32,SDL_HWSURFACE));
+    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(710,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/moto1H.bmp"));
     SDLSetIemeTexture(sdl,3,SDLChargeImage("data/moto1B.bmp"));
@@ -112,10 +112,10 @@ void SDLJeuInit(SDL *sdl){
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
 
     ControleConstructeur(&controle2,'o','l','k','m');
-    MotoConstructeur(&moto2,500,500,5,10,1,BAS);
+    MotoConstructeur(&moto2,500,500,5,10,1,HAUT);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
 
-    GridConstructeur(&grille,100,5,500,700,&tabDynMurs);
+    GridConstructeur(&grille,5,5,700,700,&tabDynMurs);
 
     JeuConstructeur(&jeu,&grille,mesJoueurs);
 
@@ -146,7 +146,30 @@ void SDLBoucleJeu(SDL* sdl){
             JeuEvolue(SDLGetJeu(sdl),&jeuFini);
             affAJour = 0;
             horloge_precedente = horloge_courante;
-            /*while controle*/
+        }
+        while ( SDL_PollEvent( &evenement ) ){
+            if ( evenement.type == SDL_QUIT )
+				affAJour = 0;
+				switch ( evenement.key.keysym.sym )
+				{
+				case SDLK_z:
+					JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'h');
+					affAJour = 1;
+					break;
+				case SDLK_s:
+					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'b');
+					affAJour = 1;
+					break;
+				case SDLK_q:
+					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'g');
+					affAJour = 1;
+					break;
+				case SDLK_d:
+					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'd');
+					affAJour = 1;
+					break;
+				default: break;
+				}
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
