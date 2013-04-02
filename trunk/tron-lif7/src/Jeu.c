@@ -151,14 +151,14 @@ void bougeMoto(Jeu* jeu){
                 MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+MotoGetVitesse(uneMoto));
                 }
             else if(MotoGetDirection(uneMoto)==GAUCHE){
-                    MurConstructeur(&unMur,MotoGetPositionX(uneMoto)+MotoGetTailleX(uneMoto)-MotoGetVitesse(uneMoto)+1,MotoGetPositionY(uneMoto),
-                                    MotoGetVitesse(uneMoto)+1,MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
+                    MurConstructeur(&unMur,MotoGetPositionX(uneMoto)+MotoGetTailleY(uneMoto)-MotoGetVitesse(uneMoto)+1,MotoGetPositionY(uneMoto),
+                                    MotoGetVitesse(uneMoto)+1,MotoGetTailleX(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                     MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
                     }
                 else if(MotoGetDirection(uneMoto)==DROITE){
                         MurConstructeur(&unMur,MotoGetPositionX(uneMoto)-1,MotoGetPositionY(uneMoto),
-                                        MotoGetVitesse(uneMoto)+1,MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
-                        MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
+                                        MotoGetVitesse(uneMoto)+1,MotoGetTailleX(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
+                        MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                         }
         ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
         MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+0.1);
