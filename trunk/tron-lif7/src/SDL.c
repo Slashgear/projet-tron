@@ -56,7 +56,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const flo
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu){
     SDLSetJeu(sdl,jeu);
-    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1005,1005,32,SDL_HWSURFACE));
+    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(800,600,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/moto1H.bmp"));
     SDLSetIemeTexture(sdl,3,SDLChargeImage("data/moto1B.bmp"));
@@ -115,7 +115,7 @@ void SDLJeuInit(SDL *sdl){
     MotoConstructeur(&moto2,500,500,5,10,1,BAS);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
 
-    GridConstructeur(&grille,100,5,1000,1000,&tabDynMurs);
+    GridConstructeur(&grille,100,5,500,700,&tabDynMurs);
 
     JeuConstructeur(&jeu,&grille,mesJoueurs);
 
@@ -129,7 +129,7 @@ void SDLJeuInit(SDL *sdl){
 
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl){
-    short int jeuContinue = 0;
+    short int jeuFini = 0;
     SDL_Event evenement;
     float horloge_courante, horloge_precedente;
     float intervalle_horloge=0.1f;
@@ -139,12 +139,12 @@ void SDLBoucleJeu(SDL* sdl){
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
 
-    while(jeuContinue){
-        affAJour = 0;
+    while(!jeuFini){
+        affAJour = 1;
         horloge_courante = (float)clock()/(float) CLOCKS_PER_SEC;
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
-            JeuEvolue(SDLGetJeu(sdl),&jeuContinue);
-            affAJour = 1;
+            JeuEvolue(SDLGetJeu(sdl),&jeuFini);
+            affAJour = 0;
             horloge_precedente = horloge_courante;
             /*while controle*/
         }
@@ -169,7 +169,7 @@ void SDLAfficheJeu(SDL *sdl){
         if(MurGetCouleur(mur)==ORANGE){
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,255,204,51));
         }
-        else if(MurGetCouleur(mur)==BLEU){
+        else /*if(MurGetCouleur(mur)==BLEU)*/{
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,51,204,255));
             }
         SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),MurGetPositionX(mur),MurGetPositionY(mur));
@@ -192,7 +192,7 @@ void SDLAfficheJeu(SDL *sdl){
         SDLAppliqueSurface(surfaceMoto,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
     }
 
-        SDL_Flip(SDLGetIemeTexture(sdl,0));
+    SDL_Flip(SDLGetIemeTexture(sdl,0));
 
 }
 
