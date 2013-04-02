@@ -12,15 +12,15 @@
 */
 
 typedef struct {
-    Moto* moto;
-    Controle* controle;
+    Moto moto;
+    Controle controle;
     Couleur couleur;
 }Joueur;
 
 /** assesseur de moto*/
-Moto* JoueurGetMoto(const Joueur* joueur);
+Moto* JoueurGetMoto(Joueur* joueur);
 /** assesseur de controle*/
-Controle* JoueurGetControle(const Joueur* joueur);
+Controle* JoueurGetControle(Joueur* joueur);
 /** assesseur de couleur*/
 Couleur JoueurGetCouleur(const Joueur* joueur);
 

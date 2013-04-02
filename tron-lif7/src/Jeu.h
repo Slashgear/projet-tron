@@ -10,14 +10,14 @@
 
 typedef struct
 {
-	Grid* grille;
-	Joueur* mesJoueurs[_Nombre_de_Joueur];
+	Grid grille;
+	Joueur mesJoueurs[_Nombre_de_Joueur];
 } Jeu;
 
 /**assesseur de grille*/
-Grid* JeuGetGrille(const Jeu* jeu);
+Grid* JeuGetGrille(Jeu* jeu);
 /**assesseur de mesjoueurs*/
-Joueur* JeuGetIemeJoueurs(const Jeu* jeu,int i);
+Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i);
 
 /**mutateur de grille*/
 void JeuSetGrille(Jeu* jeu,Grid* grille);
@@ -33,7 +33,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuContinue);
 /**procédure qui gère le mouvement de toutes les motos*/
 void bougeMoto(Jeu* jeu);
 /**fonction qui teste les collisions avec le murs*/
-char testCollisionMur(const Moto * moto,const Grid * grille);
+char testCollisionMur(const Moto * moto, Grid * grille);
 /**procédure qui gère les actions des motos en fonction des touches saisies*/
 void JeuActionClavier(Joueur* joueur, const char touche);
 

@@ -17,8 +17,8 @@ unsigned int GridGetTailleX(const Grid* grille){
 unsigned int GridGetTailleY(const Grid* grille){
     return grille->tailleY;
 }
-TableauDynamique* GridGetMesMurs(const Grid* grille){
-    return grille->mesMurs;
+TableauDynamique* GridGetMesMurs(Grid* grille){
+    return &(grille->mesMurs);
 }
 void GridSetPositionX(Grid* grille,float posX){
     grille->positionX=posX;
@@ -33,16 +33,15 @@ void GridSetTailleY(Grid* grille,unsigned int tailleY){
     grille->tailleY=tailleY;
 }
 void GridSetMesMurs(Grid* grille,TableauDynamique* mesMurs){
-    (grille->mesMurs)=mesMurs;
+    grille->mesMurs = *mesMurs;
 }
 void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY,TableauDynamique* mesMurs){
     GridSetPositionX(grille,posX);
     GridSetPositionY(grille,posY);
     GridSetTailleX(grille,TailleX);
     GridSetTailleY(grille,TailleY);
+    initialiserTabDyn(mesMurs);
     GridSetMesMurs(grille,mesMurs);
-    /*malloc*/
-    initialiserTabDyn(grille->mesMurs);
 }
 void GridDestructeur(Grid* grille){
     GridSetPositionX(grille,0);
@@ -50,8 +49,6 @@ void GridDestructeur(Grid* grille){
     GridSetTailleX(grille,0);
     GridSetTailleY(grille,0);
     testamentTabDyn(GridGetMesMurs(grille));
-    /*free*/
-    GridSetMesMurs(grille,NULL);
 }
 
  void ajouteMur(TableauDynamique* mesMurs, Mur mur){

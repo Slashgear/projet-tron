@@ -3,9 +3,10 @@
 #include <assert.h>
 #include <SDL/SDL.h>
 #include <SDL/SDL_image.h>
+#include <time.h>
 
-Jeu* SDLGetJeu(const SDL* sdl){
-    return sdl->jeu;
+Jeu* SDLGetJeu(SDL* sdl){
+    return &(sdl->jeu);
 }
 SDL_Surface * SDLGetIemeTexture(const SDL* sdl,unsigned int i){
     return sdl->textures[i];
@@ -15,7 +16,7 @@ SDL_Surface * SDLGetTextures(const SDL* sdl){
 }
 
 void SDLSetJeu(SDL * sdl,Jeu* jeu){
-    sdl->jeu=jeu;
+    sdl->jeu= *jeu;
 }
 void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture){
     sdl->textures[i]=texture;
@@ -65,7 +66,6 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu){
     SDLSetIemeTexture(sdl,7,SDLChargeImage("data/moto2B.bmp"));
     SDLSetIemeTexture(sdl,8,SDLChargeImage("data/moto2G.bmp"));
     SDLSetIemeTexture(sdl,9,SDLChargeImage("data/moto2D.bmp"));
-
 }
 
 void SDLDestructeur(SDL *sdl){
@@ -75,7 +75,7 @@ void SDLDestructeur(SDL *sdl){
         SDLSetIemeTexture(sdl,i,NULL);
     }
     JeuDestructeur(SDLGetJeu(sdl));
-    SDLSetJeu(sdl,NULL);
+    SDL_Quit();
 }
 
 void pause()
@@ -106,29 +106,55 @@ void SDLJeuInit(SDL *sdl){
     Joueur* mesJoueurs[2]={&joueur1,&joueur2};
     SDL_Surface* ecran;
 
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO |SDL_INIT_TIMER)!= -1 );
-    JeuConstructeur(&jeu,&grille,(Joueur**)&mesJoueurs);
-    GridConstructeur(&grille,5,5,1000,1000,&tabDynMurs);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
-    MotoConstructeur(&moto1,333,500,5,10,1,HAUT);
+    assert(   SDL_Init( SDL_INIT_EVERYTHING)!= -1 );
     ControleConstructeur(&controle1,'z','s','q','d');
-    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
-    ControleConstructeur(&controle1,'o','l','k','m');
+    MotoConstructeur(&moto1,333,500,5,10,1,HAUT);
+    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
+
+    ControleConstructeur(&controle2,'o','l','k','m');
     MotoConstructeur(&moto2,500,500,5,10,1,BAS);
+    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
+
+    GridConstructeur(&grille,100,5,1000,1000,&tabDynMurs);
+
+    JeuConstructeur(&jeu,&grille,mesJoueurs);
+
     SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
 
     SDLConstructeur(sdl,&jeu);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
+}
 
-    SDL_Flip(ecran);
+/** Boucle principale du Jeu */
+void SDLBoucleJeu(SDL* sdl){
+    short int jeuContinue = 0;
+    SDL_Event evenement;
+    float horloge_courante, horloge_precedente;
+    float intervalle_horloge=0.1f;
+    int affAJour;
 
+    SDLAfficheJeu(sdl);
+    assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
+    horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
+
+    while(jeuContinue){
+        affAJour = 0;
+        horloge_courante = (float)clock()/(float) CLOCKS_PER_SEC;
+        if(horloge_courante-horloge_precedente >= intervalle_horloge){
+            JeuEvolue(SDLGetJeu(sdl),&jeuContinue);
+            affAJour = 1;
+            horloge_precedente = horloge_courante;
+            /*while controle*/
+        }
+        if(!affAJour){
+            SDLAfficheJeu(sdl);
+        }
+    }
 
 
 }
-
-
 
 void SDLAfficheJeu(SDL *sdl){
     SDL_Surface * surfaceMur;
@@ -166,6 +192,8 @@ void SDLAfficheJeu(SDL *sdl){
         SDLAppliqueSurface(surfaceMoto,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
     }
 
+        SDL_Flip(SDLGetIemeTexture(sdl,0));
+
 }
 
 void SDLTestRegression(){
@@ -173,13 +201,13 @@ void SDLTestRegression(){
 
     SDLJeuInit(&sdl);
     SDLAfficheJeu(&sdl);
-    /*bougeMoto(SDLGetJeu(&sdl));
     bougeMoto(SDLGetJeu(&sdl));
-    bougeMoto(SDLGetJeu(&sdl));*/
+
+
+
     pause();
 
     SDLDestructeur(&sdl);
     printf("pointeur de l'image chargée après destruction : %p %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
-    SDL_Quit();
 }
 
