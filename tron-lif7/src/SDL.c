@@ -124,7 +124,7 @@ void SDLJeuInit(SDL *sdl){
 
     SDL_Flip(ecran);
 
-    pause();
+
 
 }
 
@@ -172,10 +172,11 @@ void SDLTestRegression(){
     SDL sdl;
 
     SDLJeuInit(&sdl);
+    SDLAfficheJeu(&sdl);
     /*bougeMoto(SDLGetJeu(&sdl));
     bougeMoto(SDLGetJeu(&sdl));
     bougeMoto(SDLGetJeu(&sdl));*/
-    SDLAfficheJeu(&sdl);
+    pause();
 
     SDLDestructeur(&sdl);
     printf("pointeur de l'image chargée après destruction : %p %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));

@@ -41,7 +41,8 @@ void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX
     GridSetTailleX(grille,TailleX);
     GridSetTailleY(grille,TailleY);
     GridSetMesMurs(grille,mesMurs);
-    initialiserTabDyn(GridGetMesMurs(grille));
+    /*malloc*/
+    initialiserTabDyn(grille->mesMurs);
 }
 void GridDestructeur(Grid* grille){
     GridSetPositionX(grille,0);
@@ -49,6 +50,7 @@ void GridDestructeur(Grid* grille){
     GridSetTailleX(grille,0);
     GridSetTailleY(grille,0);
     testamentTabDyn(GridGetMesMurs(grille));
+    /*free*/
     GridSetMesMurs(grille,NULL);
 }
 
