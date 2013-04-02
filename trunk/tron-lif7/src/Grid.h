@@ -18,7 +18,7 @@ typedef struct {
     float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    TableauDynamique* mesMurs;
+    TableauDynamique mesMurs;
 } Grid;
 
 /**assesseur de positionX*/
