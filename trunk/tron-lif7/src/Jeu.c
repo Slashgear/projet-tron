@@ -5,18 +5,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Grid* JeuGetGrille(const Jeu* jeu){
-    return jeu->grille;
+Grid* JeuGetGrille(Jeu* jeu){
+    return &(jeu->grille);
 }
-Joueur* JeuGetIemeJoueurs(const Jeu* jeu,int i){
-    return jeu->mesJoueurs[i];
+Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i){
+    return &(jeu->mesJoueurs[i]);
 }
 
 void JeuSetGrille(Jeu* jeu,Grid* grille){
-    jeu->grille=grille;
+    jeu->grille= *grille;
 }
 void JeuSetIemeJoueurs(Jeu* jeu,Joueur* joueur,int i){
-    jeu->mesJoueurs[i]=joueur;
+    jeu->mesJoueurs[i]= *joueur;
 }
 
 void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs[_Nombre_de_Joueur]){
@@ -25,7 +25,6 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur* mesJoueurs[_Nombre_de_Joueu
     for(i=0;i<_Nombre_de_Joueur;i++){
          JeuSetIemeJoueurs(jeu,mesJoueurs[i],i);
     }
-
 }
 void JeuDestructeur(Jeu* jeu){
     int i;
@@ -33,14 +32,9 @@ void JeuDestructeur(Jeu* jeu){
     for(i=0;i<_Nombre_de_Joueur;i++){
     JoueurDestructeur(JeuGetIemeJoueurs(jeu,i));
     }
-    JeuSetGrille(jeu,NULL);
-    for(i=0;i<_Nombre_de_Joueur;i++){
-        JeuSetIemeJoueurs(jeu,NULL,i);
-    }
-
 }
 
-char testCollisionMur(const Moto * moto,const Grid * grille){
+char testCollisionMur(const Moto * moto, Grid * grille){
     int i=0;
     char boolCollision = 1;
     float boundingBoxMur[4];

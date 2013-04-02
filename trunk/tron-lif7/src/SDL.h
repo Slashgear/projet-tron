@@ -12,13 +12,13 @@
 */
 
 typedef struct{
-    Jeu *jeu;
+    Jeu jeu;
     SDL_Surface * textures[10];
 }SDL;
-/** La texture 0 est le fond, la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
+/** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
 /**assesseur de jeu*/
-Jeu * SDLGetJeu(const SDL* sdl);
+Jeu * SDLGetJeu(SDL* sdl);
 /** assesseur de ieme texture*/
 SDL_Surface * SDLGetIemeTexture(const SDL* sdl,unsigned int i);
 /** assesseur de textures*/
@@ -30,8 +30,8 @@ void SDLSetJeu(SDL * sdl,Jeu* jeu);
 /**mutateur de ieme texture*/
 void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture);
 
-
-
+/**Procedure qui met le jeu en pause jusqu'à ce qu'on quitte le jeu */
+void pause();
 /** Constructeur de SDL, initialise les différents champs*/
 void SDLConstructeur(SDL *sdl,Jeu* jeu);
 /**Destructeur de SDl,remise à zero des champs de SDL et free des allocations*/
@@ -42,9 +42,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const flo
 void SDLAfficheJeu(SDL *sdl);
 /**Procédure Init*/
 void SDLJeuInit(SDL *sdl);
-/**Procédure d'affichage de la grille*/
-void SDLAfficheGrid(SDL *sdl);
-/** Boucle d'affichage du Jeu */
+/** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl);
 /** Procédure de chargement des images*/
 SDL_Surface* SDLChargeImage(const char *nomfichier);

@@ -6,21 +6,21 @@
 #include "Couleur.h"
 
 
-Moto* JoueurGetMoto(const Joueur* joueur){
-    return joueur->moto;
+Moto* JoueurGetMoto(Joueur* joueur){
+    return &(joueur->moto);
 }
-Controle* JoueurGetControle(const Joueur* joueur){
-    return joueur->controle;
+Controle* JoueurGetControle(Joueur* joueur){
+    return &(joueur->controle);
 }
 Couleur JoueurGetCouleur(const Joueur* joueur){
     return joueur->couleur;
 }
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
-    joueur->moto=moto;
+    joueur->moto= *moto;
 }
 void JoueurSetControle(Joueur* joueur, Controle* controle){
-    joueur->controle=controle;
+    joueur->controle= *controle;
 }
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur){
     joueur->couleur=couleur;
@@ -35,8 +35,6 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
     ControleDestructeur(JoueurGetControle(joueur));
-    JoueurSetMoto(joueur,NULL);
-    JoueurSetControle(joueur,NULL);
     JoueurSetCouleur(joueur,NOIR);
 }
 

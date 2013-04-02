@@ -30,7 +30,7 @@ unsigned int GridGetTailleX(const Grid* );
 /**assesseur de tailleY*/
 unsigned int GridGetTailleY(const Grid*);
 /**assesseur de mesMurs*/
-TableauDynamique* GridGetMesMurs(const Grid* );
+TableauDynamique* GridGetMesMurs(Grid*);
 
 
 /**mutateur de positionX*/
