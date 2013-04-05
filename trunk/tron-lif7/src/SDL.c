@@ -153,15 +153,15 @@ void SDLBoucleJeu(SDL* sdl){
 				switch ( evenement.key.keysym.sym )
 				{
 				case SDLK_z:
-					JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'h');
+					JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'z');
 					affAJour = 1;
 					break;
 				case SDLK_s:
-					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'b');
+					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 's');
 					affAJour = 1;
 					break;
 				case SDLK_q:
-					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'g');
+					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'q');
 					affAJour = 1;
 					break;
 				case SDLK_d:
