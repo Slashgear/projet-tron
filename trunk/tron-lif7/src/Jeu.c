@@ -71,7 +71,7 @@ void JeuActionClavier(Joueur* joueur,const char touche){
     if(MotoGetDirection(uneMoto)==HAUT){
         if(touche==ControleGetGauche(unControle)){
             MotoSetDirection(uneMoto,GAUCHE);
-            MotoSetPositionX(uneMoto,(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
+            MotoSetPositionX(uneMoto,(MotoGetPositionX(uneMoto)+(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto))));
             tailleTemp=MotoGetTailleX(uneMoto);
             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
             MotoSetTailleY(uneMoto,tailleTemp);
@@ -86,8 +86,8 @@ void JeuActionClavier(Joueur* joueur,const char touche){
     else if(MotoGetDirection(uneMoto)==BAS){
             if(touche==ControleGetGauche(unControle)){
                 MotoSetDirection(uneMoto,GAUCHE);
-                MotoSetPositionX(uneMoto,(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
-                MotoSetPositionY(uneMoto,(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
+                MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
+                MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
                 tailleTemp=MotoGetTailleX(uneMoto);
                 MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
                 MotoSetTailleY(uneMoto,tailleTemp);
@@ -102,7 +102,7 @@ void JeuActionClavier(Joueur* joueur,const char touche){
         else if(MotoGetDirection(uneMoto)==GAUCHE){
                     if(touche==ControleGetHaut(unControle)){
                         MotoSetDirection(uneMoto,HAUT);
-                        MotoSetPositionY(uneMoto,(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
+                        MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
                         tailleTemp=MotoGetTailleX(uneMoto);
                         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
                         MotoSetTailleY(uneMoto,tailleTemp);
@@ -117,15 +117,15 @@ void JeuActionClavier(Joueur* joueur,const char touche){
             else if(MotoGetDirection(uneMoto)==DROITE){
                     if(touche==ControleGetHaut(unControle)){
                         MotoSetDirection(uneMoto,HAUT);
-                        MotoSetPositionX(uneMoto,(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
-                        MotoSetPositionY(uneMoto,(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
+                        MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
+                        MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
                         tailleTemp=MotoGetTailleX(uneMoto);
                         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
                         MotoSetTailleY(uneMoto,tailleTemp);
                     }
                     else if(touche==ControleGetBas(unControle)){
                             MotoSetDirection(uneMoto,BAS);
-                            MotoSetPositionX(uneMoto,(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
+                            MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
                             tailleTemp=MotoGetTailleX(uneMoto);
                             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
                             MotoSetTailleY(uneMoto,tailleTemp);
@@ -152,12 +152,12 @@ void bougeMoto(Jeu* jeu){
                 }
             else if(MotoGetDirection(uneMoto)==GAUCHE){
                     MurConstructeur(&unMur,MotoGetPositionX(uneMoto)+MotoGetTailleY(uneMoto)-MotoGetVitesse(uneMoto)+1,MotoGetPositionY(uneMoto),
-                                    MotoGetVitesse(uneMoto)+1,MotoGetTailleX(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
+                                    MotoGetVitesse(uneMoto)+1,MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                     MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)-MotoGetVitesse(uneMoto));
                     }
                 else if(MotoGetDirection(uneMoto)==DROITE){
                         MurConstructeur(&unMur,MotoGetPositionX(uneMoto)-1,MotoGetPositionY(uneMoto),
-                                        MotoGetVitesse(uneMoto)+1,MotoGetTailleX(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
+                                        MotoGetVitesse(uneMoto)+1,MotoGetTailleY(uneMoto),JoueurGetCouleur(JeuGetIemeJoueurs(jeu,i)),dureeVieMur);
                         MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                         }
         ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
