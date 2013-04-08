@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,12 +102,12 @@ Functions</h2></td></tr>
 <tr class="memitem:abdb66ba3b897da4a9ddf691e3c2b960b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#abdb66ba3b897da4a9ddf691e3c2b960b">ControleSetHaut</a> (<a class="el" href="structControle.html">Controle</a> *controle, char x)</td></tr>
 <tr class="memitem:a47a6d88b2907e99c0eae94afd4280d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#a47a6d88b2907e99c0eae94afd4280d7c">ControleSetGauche</a> (<a class="el" href="structControle.html">Controle</a> *controle, char x)</td></tr>
 <tr class="memitem:a7be283f827e7710848bdb1c3e99ac160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#a7be283f827e7710848bdb1c3e99ac160">ControleSetBas</a> (<a class="el" href="structControle.html">Controle</a> *controle, char x)</td></tr>
-<tr class="memitem:ae0cb665674b2ea1dde59c1b4b00ca836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#ae0cb665674b2ea1dde59c1b4b00ca836">ControleConstructeur</a> (<a class="el" href="structControle.html">Controle</a> *controle, char droite, char gauche, char haut, char bas)</td></tr>
+<tr class="memitem:a424b4a12727182760968e72658f279eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#a424b4a12727182760968e72658f279eb">ControleConstructeur</a> (<a class="el" href="structControle.html">Controle</a> *controle, char haut, char bas, char gauche, char droite)</td></tr>
 <tr class="memitem:af1bb24fb9790dc018f7396c15e7b47a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#af1bb24fb9790dc018f7396c15e7b47a0">ControleDestructeur</a> (<a class="el" href="structControle.html">Controle</a> *controle)</td></tr>
 <tr class="memitem:a49d6667e80a116e40db1741c08616600"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Controle_8c.html#a49d6667e80a116e40db1741c08616600">ControleTestRegression</a> ()</td></tr>
 </table>
 <h2>Function Documentation</h2>
-<a class="anchor" id="ae0cb665674b2ea1dde59c1b4b00ca836"></a>
+<a class="anchor" id="a424b4a12727182760968e72658f279eb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -121,7 +121,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>droite</em>, </td>
+          <td class="paramname"><em>haut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>bas</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -133,13 +139,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>haut</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>bas</em>&#160;</td>
+          <td class="paramname"><em>droite</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -182,6 +182,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>assesseur de touche bas </p>
 
 </div>
 </div>
@@ -215,6 +216,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>assesseur de touche gauche </p>
 
 </div>
 </div>
@@ -231,6 +233,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>assesseur de touche haut </p>
 
 </div>
 </div>
@@ -361,7 +364,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 6 2013 13:49:24 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

@@ -34,6 +34,9 @@ void JeuDestructeur(Jeu* jeu){
     }
 }
 
+
+
+
 char testCollisionMur(const Moto * moto, Grid * grille){
     int i=0;
     char boolCollision = 0;
@@ -42,10 +45,10 @@ char testCollisionMur(const Moto * moto, Grid * grille){
                                 (float)MotoGetTailleY(moto) + MotoGetPositionY(moto)};
     float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
-    if((boundingBoxMoto[0]<=borduresGrid[0])||
-       (boundingBoxMoto[2]>=borduresGrid[2])||
-       (boundingBoxMoto[1]<=borduresGrid[1])||
-       (boundingBoxMoto[3]>=borduresGrid[3]))
+    if((boundingBoxMoto[0]<borduresGrid[0])||
+       (boundingBoxMoto[2]>borduresGrid[2])||
+       (boundingBoxMoto[1]<borduresGrid[1])||
+       (boundingBoxMoto[3]>borduresGrid[3]))
     {boolCollision = 1;}
     else while((i<TabDynGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
                 boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
@@ -115,7 +118,7 @@ void JeuActionClavier(Joueur* joueur,const char touche){
                         }
             }
             else if(MotoGetDirection(uneMoto)==DROITE){
-                    if(touche==ControleGetHaut(unControle)){
+                    if(touche==ControleGetGauche(unControle)){
                         MotoSetDirection(uneMoto,HAUT);
                         MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
                         MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)(MotoGetTailleX(uneMoto)-MotoGetTailleY(uneMoto)));
@@ -123,8 +126,8 @@ void JeuActionClavier(Joueur* joueur,const char touche){
                         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
                         MotoSetTailleY(uneMoto,tailleTemp);
                     }
-                    else if(touche==ControleGetBas(unControle)){
-                            MotoSetDirection(uneMoto,BAS);
+                    else if(touche==ControleGetDroite(unControle)){
+                            MotoSetDirection(uneMoto,DROITE);
                             MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)(MotoGetTailleY(uneMoto)-MotoGetTailleX(uneMoto)));
                             tailleTemp=MotoGetTailleX(uneMoto);
                             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));

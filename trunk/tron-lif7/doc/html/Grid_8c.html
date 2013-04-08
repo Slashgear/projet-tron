@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,100 +90,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;assert.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="Grid_8h_source.html">Grid.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="Mur_8h_source.html">Mur.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="TableauDynamique_8h_source.html">TableauDynamique.h</a>&quot;</code><br/>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8b29a07e0230bfda7a0a76c4ea2d1348"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a8b29a07e0230bfda7a0a76c4ea2d1348">GridGetPositionX</a> (<a class="el" href="structGrid.html">Grid</a> g)</td></tr>
-<tr class="memitem:a273c556352fe53c7fa882f61332bfdc4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a273c556352fe53c7fa882f61332bfdc4">GridGetPositionY</a> (<a class="el" href="structGrid.html">Grid</a> g)</td></tr>
-<tr class="memitem:ae709eab2eb4cd436f0ce9888041b5e39"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#ae709eab2eb4cd436f0ce9888041b5e39">GridGetTailleX</a> (<a class="el" href="structGrid.html">Grid</a> g)</td></tr>
-<tr class="memitem:a7082c877c7276fd3d67678ec6b807510"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a7082c877c7276fd3d67678ec6b807510">GridGetTailleY</a> (<a class="el" href="structGrid.html">Grid</a> g)</td></tr>
-<tr class="memitem:a68846f43c0e64da3d3e086f6263e3e3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a68846f43c0e64da3d3e086f6263e3e3d">GridSetPositionX</a> (<a class="el" href="structGrid.html">Grid</a> g, float p)</td></tr>
-<tr class="memitem:ab3fd20f6fcc2a28eb22f83b1f4ea1e7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#ab3fd20f6fcc2a28eb22f83b1f4ea1e7b">GridSetPositionY</a> (<a class="el" href="structGrid.html">Grid</a> g, float p)</td></tr>
-<tr class="memitem:a4b4eed97ed7b9954056771b0acc465b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a4b4eed97ed7b9954056771b0acc465b4">GridSetTailleX</a> (<a class="el" href="structGrid.html">Grid</a> g, unsigned int t)</td></tr>
-<tr class="memitem:aa3b3fbe9c39085e6835ec7d3942693dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#aa3b3fbe9c39085e6835ec7d3942693dc">GridSetTailleY</a> (<a class="el" href="structGrid.html">Grid</a> g, unsigned int t)</td></tr>
-<tr class="memitem:aa8468bcbc9e9c538cdbdda98ff35ae42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#aa8468bcbc9e9c538cdbdda98ff35ae42">GridSetMesMurs</a> (<a class="el" href="structGrid.html">Grid</a> g, <a class="el" href="structMur.html">Mur</a> *mur)</td></tr>
+<tr class="memitem:ad6474a4bd1b2abc33aed83f04ed4f0de"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#ad6474a4bd1b2abc33aed83f04ed4f0de">GridGetPositionX</a> (const <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a7d16dec935d3ea2ea49a5ad80139ad63"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a7d16dec935d3ea2ea49a5ad80139ad63">GridGetPositionY</a> (const <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a402ec8dcb2070fdc1ca02d9f68b0d61f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a402ec8dcb2070fdc1ca02d9f68b0d61f">GridGetTailleX</a> (const <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a6b28340c1a4dd9456ba5853963986cd2"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a6b28340c1a4dd9456ba5853963986cd2">GridGetTailleY</a> (const <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a13fe9af4eda2113d4a4772afbeb8d0d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a13fe9af4eda2113d4a4772afbeb8d0d3">GridGetMesMurs</a> (<a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a55dea47bf264d8c4c5f7ddf2584b3ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a55dea47bf264d8c4c5f7ddf2584b3ec8">GridSetPositionX</a> (<a class="el" href="structGrid.html">Grid</a> *grille, float posX)</td></tr>
+<tr class="memitem:a1cdd44b889afbe59b178f6f256c4b32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a1cdd44b889afbe59b178f6f256c4b32b">GridSetPositionY</a> (<a class="el" href="structGrid.html">Grid</a> *grille, float posY)</td></tr>
+<tr class="memitem:aa2af4ce645afe349bc5f7d448fa8d488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#aa2af4ce645afe349bc5f7d448fa8d488">GridSetTailleX</a> (<a class="el" href="structGrid.html">Grid</a> *grille, unsigned int tailleX)</td></tr>
+<tr class="memitem:a9778c91a23c761a7b0872611e24efc30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a9778c91a23c761a7b0872611e24efc30">GridSetTailleY</a> (<a class="el" href="structGrid.html">Grid</a> *grille, unsigned int tailleY)</td></tr>
+<tr class="memitem:a22e04695e5a0639420ec00004d3080f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a22e04695e5a0639420ec00004d3080f1">GridSetMesMurs</a> (<a class="el" href="structGrid.html">Grid</a> *grille, <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *mesMurs)</td></tr>
+<tr class="memitem:a461a27961b09a135aff353618d352552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a461a27961b09a135aff353618d352552">GridConstructeur</a> (<a class="el" href="structGrid.html">Grid</a> *grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY, <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *mesMurs)</td></tr>
+<tr class="memitem:a5055e1bc05a5a03b8974301f64541ce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a5055e1bc05a5a03b8974301f64541ce5">GridDestructeur</a> (<a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:ad2a848ed5c5bc881d6fc40e4b9ee60dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#ad2a848ed5c5bc881d6fc40e4b9ee60dd">ajouteMur</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *mesMurs, <a class="el" href="structMur.html">Mur</a> mur)</td></tr>
+<tr class="memitem:a7d40a30819a9035485ea233e6ca447a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a7d40a30819a9035485ea233e6ca447a8">effaceMur</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *mesMurs)</td></tr>
+<tr class="memitem:a7039c57fd5f28be9ea79cc4ef904d4bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a7039c57fd5f28be9ea79cc4ef904d4bb">nettoieGrid</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *mesMurs)</td></tr>
+<tr class="memitem:a84ff8aa0929298d2570fd909d90c7a17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a84ff8aa0929298d2570fd909d90c7a17">decrementeVieMur</a> (<a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a0c7fd37261e2118a2233698fb898f52a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Grid_8c.html#a0c7fd37261e2118a2233698fb898f52a">GridTestRegression</a> ()</td></tr>
 </table>
 <h2>Function Documentation</h2>
-<a class="anchor" id="a8b29a07e0230bfda7a0a76c4ea2d1348"></a>
+<a class="anchor" id="ad2a848ed5c5bc881d6fc40e4b9ee60dd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float GridGetPositionX </td>
+          <td class="memname">void ajouteMur </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a273c556352fe53c7fa882f61332bfdc4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float GridGetPositionY </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae709eab2eb4cd436f0ce9888041b5e39"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int GridGetTailleX </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7082c877c7276fd3d67678ec6b807510"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int GridGetTailleY </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa8468bcbc9e9c538cdbdda98ff35ae42"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GridSetMesMurs </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>mesMurs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a>&#160;</td>
           <td class="paramname"><em>mur</em>&#160;</td>
         </tr>
         <tr>
@@ -193,24 +139,239 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Ajoute un mur </p>
 
 </div>
 </div>
-<a class="anchor" id="a68846f43c0e64da3d3e086f6263e3e3d"></a>
+<a class="anchor" id="a84ff8aa0929298d2570fd909d90c7a17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decrementeVieMur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>décrementation de la durée de vie des murs </p>
+
+</div>
+</div>
+<a class="anchor" id="a7d40a30819a9035485ea233e6ca447a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void effaceMur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>mesMurs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Efface un mur </p>
+
+</div>
+</div>
+<a class="anchor" id="a461a27961b09a135aff353618d352552"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur de <a class="el" href="structGrid.html">Grid</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a5055e1bc05a5a03b8974301f64541ce5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Destructeur de <a class="el" href="structGrid.html">Grid</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a13fe9af4eda2113d4a4772afbeb8d0d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTableauDynamique.html">TableauDynamique</a>* GridGetMesMurs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de mesMurs </p>
+
+</div>
+</div>
+<a class="anchor" id="ad6474a4bd1b2abc33aed83f04ed4f0de"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GridGetPositionX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de positionX </p>
+
+</div>
+</div>
+<a class="anchor" id="a7d16dec935d3ea2ea49a5ad80139ad63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float GridGetPositionY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de positionY </p>
+
+</div>
+</div>
+<a class="anchor" id="a402ec8dcb2070fdc1ca02d9f68b0d61f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int GridGetTailleX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de tailleX </p>
+
+</div>
+</div>
+<a class="anchor" id="a6b28340c1a4dd9456ba5853963986cd2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int GridGetTailleY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de tailleY </p>
+
+</div>
+</div>
+<a class="anchor" id="a22e04695e5a0639420ec00004d3080f1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridSetMesMurs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de mesMurs </p>
+
+</div>
+</div>
+<a class="anchor" id="a55dea47bf264d8c4c5f7ddf2584b3ec8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GridSetPositionX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramname"><em>posX</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -219,24 +380,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mutateur de positionX </p>
 
 </div>
 </div>
-<a class="anchor" id="ab3fd20f6fcc2a28eb22f83b1f4ea1e7b"></a>
+<a class="anchor" id="a1cdd44b889afbe59b178f6f256c4b32b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GridSetPositionY </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -245,24 +407,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mutateur de positionY </p>
 
 </div>
 </div>
-<a class="anchor" id="a4b4eed97ed7b9954056771b0acc465b4"></a>
+<a class="anchor" id="aa2af4ce645afe349bc5f7d448fa8d488"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GridSetTailleX </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -271,24 +434,25 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mutateur de tailleX </p>
 
 </div>
 </div>
-<a class="anchor" id="aa3b3fbe9c39085e6835ec7d3942693dc"></a>
+<a class="anchor" id="a9778c91a23c761a7b0872611e24efc30"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GridSetTailleY </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
-          <td class="paramname"><em>g</em>, </td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>int</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -297,13 +461,47 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>mutateur de tailleY </p>
+
+</div>
+</div>
+<a class="anchor" id="a0c7fd37261e2118a2233698fb898f52a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GridTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Procedure qui teste le module <a class="el" href="structGrid.html">Grid</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a7039c57fd5f28be9ea79cc4ef904d4bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nettoieGrid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>mesMurs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Nettoie tous les murs de la <a class="el" href="structGrid.html">Grid</a> </p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 6 2013 13:49:24 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

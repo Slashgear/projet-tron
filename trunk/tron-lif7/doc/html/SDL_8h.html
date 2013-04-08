@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Module des vecteurs.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;jeu.h&quot;</code><br/>
-<code>#include &lt;sdl.h&gt;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="Jeu_8h_source.html">Jeu.h</a>&quot;</code><br/>
+<code>#include &lt;SDL/SDL.h&gt;</code><br/>
 </div>
 <p><a href="SDL_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -103,33 +103,20 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4d4fae0e6962a699d622e3eabf49df9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJeu.html">Jeu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a4d4fae0e6962a699d622e3eabf49df9c">SDLGetJeu</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a3317851d821e8348385fefb69cdf553c"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a3317851d821e8348385fefb69cdf553c">SDLGetFond</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a5a9bbcdd72a7dd352e5e7c0eb37a2ad2"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a5a9bbcdd72a7dd352e5e7c0eb37a2ad2">SDLGetMoto1H</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:ad5acd10da62cedd917e678a04e19661f"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ad5acd10da62cedd917e678a04e19661f">SDLGetMoto1B</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a7f6142f5591d90403e53fd2c114abf8f"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a7f6142f5591d90403e53fd2c114abf8f">SDLGetMoto1G</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a411f1d65375b6b3dab89350fe1a8a2c3"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a411f1d65375b6b3dab89350fe1a8a2c3">SDLGetMoto1D</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a85cccce873e535011471ea2032b197ee"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a85cccce873e535011471ea2032b197ee">SDLGetMoto2H</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:af8ddfc4a7e03a7a2f61b7502e54dadf3"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#af8ddfc4a7e03a7a2f61b7502e54dadf3">SDLGetMoto2B</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:af777a93323b228b440874ab7b0cfc28c"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#af777a93323b228b440874ab7b0cfc28c">SDLGetMoto2G</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:ae41d2ca80b4fe1826dfec03649aec4f8"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ae41d2ca80b4fe1826dfec03649aec4f8">SDLGetMoto2D</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:af5c2db88160240ffce72663db203faa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#af5c2db88160240ffce72663db203faa5">SDLSetJeu</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, <a class="el" href="structJeu.html">Jeu</a> jeu)</td></tr>
-<tr class="memitem:a161a4ce0f118b92cbbea5bfc624c9e26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a161a4ce0f118b92cbbea5bfc624c9e26">SDLSetMoto1D</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *fond)</td></tr>
-<tr class="memitem:ad6eda9d0349b888c87ee9b16ee2798c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ad6eda9d0349b888c87ee9b16ee2798c7">SDLSetMoto1H</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:a0b37d5541aeeea4338583bb0927e54c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a0b37d5541aeeea4338583bb0927e54c4">SDLSetMoto1B</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:a3b6e16209f36b3ce24553059137e404c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a3b6e16209f36b3ce24553059137e404c">SDLSetMoto1G</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:a987b9239d8f8fcba2ac90cf173af6081"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a987b9239d8f8fcba2ac90cf173af6081">SDLSetMoto2H</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:ab2e15c9f139be3c7e954bbda7105ab68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ab2e15c9f139be3c7e954bbda7105ab68">SDLSetMoto2B</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:a8c1499f7ce1aec5ce900acc991b24c3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a8c1499f7ce1aec5ce900acc991b24c3a">SDLSetMoto2G</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:a20847dd28418c132408fd9f772da2970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a20847dd28418c132408fd9f772da2970">SDLSetMoto2D</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, SDL_Surface *moto)</td></tr>
-<tr class="memitem:abcabb53542084aded391c95ab47905b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#abcabb53542084aded391c95ab47905b3">SDLConstructeur</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:aa7223cb3ce4fe6f4c83d6a01adc66cbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#aa7223cb3ce4fe6f4c83d6a01adc66cbd">SDLGetJeu</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:acca01b95fb78179e3051d8d411b8a9cd"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#acca01b95fb78179e3051d8d411b8a9cd">SDLGetIemeTexture</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl, unsigned int i)</td></tr>
+<tr class="memitem:a7596bb1c6890b99a64e59f6b732a2fe1"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a7596bb1c6890b99a64e59f6b732a2fe1">SDLGetTextures</a> (const <a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:a29faea1dc4bb87f4538e14d944b55a5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a29faea1dc4bb87f4538e14d944b55a5e">SDLSetJeu</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, <a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
+<tr class="memitem:ad7897b59aff5363840beb85766e25e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ad7897b59aff5363840beb85766e25e47">SDLSetIemeTexture</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, unsigned int i, SDL_Surface *texture)</td></tr>
+<tr class="memitem:a7167f5c196fc5e167bfabde1a730e81d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a7167f5c196fc5e167bfabde1a730e81d">pause</a> ()</td></tr>
+<tr class="memitem:a388e62fa59095a03fed7d12b97e89b8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a388e62fa59095a03fed7d12b97e89b8f">SDLConstructeur</a> (<a class="el" href="structSDL.html">SDL</a> *sdl, <a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
 <tr class="memitem:a18f1617d8034417cd2f06cc9c4dbedf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:a5d08610e68e48a5fc1b40b3ed835b17e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a5d08610e68e48a5fc1b40b3ed835b17e">SDLAppliqueSurface</a> (SDL_Surface *surfaceA, SDL_Surface *surfaceB, const float positionX, const float positionY)</td></tr>
 <tr class="memitem:abcc23c44c3c837b312d055a71e1c93d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#abcc23c44c3c837b312d055a71e1c93d5">SDLAfficheJeu</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:a0adbb7fda5e7e5ba6305af5cefd22f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a0adbb7fda5e7e5ba6305af5cefd22f31">SDLAfficheGrid</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:a9af2a8faac33405c916c5758a054e93d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a9af2a8faac33405c916c5758a054e93d">SDLJeuInit</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
 <tr class="memitem:adcfe74a444d989748d0c1682ddbcb0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#adcfe74a444d989748d0c1682ddbcb0e7">SDLBoucleJeu</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
-<tr class="memitem:ac701df23502940629a0ff968e20fa806"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ac701df23502940629a0ff968e20fa806">SDLChargeImage</a> (const char nomfichier)</td></tr>
-<tr class="memitem:ae4e38498332fadb7c9760aa3ea0ac364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#ae4e38498332fadb7c9760aa3ea0ac364">SDLAppliqueSurface</a> (Const SDL_Surface *surfaceA, SDL_Surface *surfaceB, const float positionX, const float positionY)</td></tr>
-<tr class="memitem:a7e4e6ff4da16876db7378edf722ae5b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a7e4e6ff4da16876db7378edf722ae5b9">SDLTestRegression</a> (<a class="el" href="structSDL.html">SDL</a> *sdl)</td></tr>
+<tr class="memitem:a36684beb5e5ec3f9397a2976415141b7"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a36684beb5e5ec3f9397a2976415141b7">SDLChargeImage</a> (const char *nomfichier)</td></tr>
+<tr class="memitem:a0de41957ce76d79bc06145340f5d2766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SDL_8h.html#a0de41957ce76d79bc06145340f5d2766">SDLTestRegression</a> ()</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Module des vecteurs. </p>
@@ -138,20 +125,19 @@ Functions</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>19 mars 2013 </dd></dl>
 </div><h2>Function Documentation</h2>
-<a class="anchor" id="a0adbb7fda5e7e5ba6305af5cefd22f31"></a>
+<a class="anchor" id="a7167f5c196fc5e167bfabde1a730e81d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SDLAfficheGrid </td>
+          <td class="memname">void pause </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Procédure d'affichage de la grille </p>
+<p>Procedure qui met le jeu en pause jusqu'à ce qu'on quitte le jeu </p>
 
 </div>
 </div>
@@ -172,14 +158,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae4e38498332fadb7c9760aa3ea0ac364"></a>
+<a class="anchor" id="a5d08610e68e48a5fc1b40b3ed835b17e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void SDLAppliqueSurface </td>
           <td>(</td>
-          <td class="paramtype">Const SDL_Surface *&#160;</td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
           <td class="paramname"><em>surfaceA</em>, </td>
         </tr>
         <tr>
@@ -224,18 +210,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Boucle d'affichage du <a class="el" href="structJeu.html">Jeu</a> </p>
+<p>Boucle principale du <a class="el" href="structJeu.html">Jeu</a> </p>
 
 </div>
 </div>
-<a class="anchor" id="ac701df23502940629a0ff968e20fa806"></a>
+<a class="anchor" id="a36684beb5e5ec3f9397a2976415141b7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">SDL_Surface* SDLChargeImage </td>
           <td>(</td>
-          <td class="paramtype">const char&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>nomfichier</em></td><td>)</td>
           <td></td>
         </tr>
@@ -245,7 +231,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abcabb53542084aded391c95ab47905b3"></a>
+<a class="anchor" id="a388e62fa59095a03fed7d12b97e89b8f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -253,8 +239,18 @@ Functions</h2></td></tr>
           <td class="memname">void SDLConstructeur </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -279,12 +275,56 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3317851d821e8348385fefb69cdf553c"></a>
+<a class="anchor" id="acca01b95fb78179e3051d8d411b8a9cd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SDL_Surface* SDLGetFond </td>
+          <td class="memname">SDL_Surface* SDLGetIemeTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de ieme texture </p>
+
+</div>
+</div>
+<a class="anchor" id="aa7223cb3ce4fe6f4c83d6a01adc66cbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structJeu.html">Jeu</a>* SDLGetJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc.. assesseur de jeu </p>
+
+</div>
+</div>
+<a class="anchor" id="a7596bb1c6890b99a64e59f6b732a2fe1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Surface* SDLGetTextures </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
           <td class="paramname"><em>sdl</em></td><td>)</td>
@@ -292,164 +332,61 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>assesseur de fond </p>
+<p>assesseur de textures </p>
 
 </div>
 </div>
-<a class="anchor" id="a4d4fae0e6962a699d622e3eabf49df9c"></a>
+<a class="anchor" id="a9af2a8faac33405c916c5758a054e93d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structJeu.html">Jeu</a> SDLGetJeu </td>
+          <td class="memname">void SDLJeuInit </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
           <td class="paramname"><em>sdl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>assesseur de jeu </p>
+<p>Procédure Init </p>
 
 </div>
 </div>
-<a class="anchor" id="ad5acd10da62cedd917e678a04e19661f"></a>
+<a class="anchor" id="ad7897b59aff5363840beb85766e25e47"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto1B </td>
+          <td class="memname">void SDLSetIemeTexture </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
-          <td></td>
+          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto1B </p>
-
-</div>
-</div>
-<a class="anchor" id="a411f1d65375b6b3dab89350fe1a8a2c3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto1D </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto1D </p>
-
-</div>
-</div>
-<a class="anchor" id="a7f6142f5591d90403e53fd2c114abf8f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto1G </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>texture</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto1G </p>
-
-</div>
-</div>
-<a class="anchor" id="a5a9bbcdd72a7dd352e5e7c0eb37a2ad2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto1H </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>assesseur de moto1H </p>
+<p>mutateur de ieme texture </p>
 
 </div>
 </div>
-<a class="anchor" id="af8ddfc4a7e03a7a2f61b7502e54dadf3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto2B </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto2B </p>
-
-</div>
-</div>
-<a class="anchor" id="ae41d2ca80b4fe1826dfec03649aec4f8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto2D </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto2D </p>
-
-</div>
-</div>
-<a class="anchor" id="af777a93323b228b440874ab7b0cfc28c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto2G </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto2G </p>
-
-</div>
-</div>
-<a class="anchor" id="a85cccce873e535011471ea2032b197ee"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SDL_Surface* SDLGetMoto2H </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>assesseur de moto2H </p>
-
-</div>
-</div>
-<a class="anchor" id="af5c2db88160240ffce72663db203faa5"></a>
+<a class="anchor" id="a29faea1dc4bb87f4538e14d944b55a5e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -462,7 +399,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
           <td class="paramname"><em>jeu</em>&#160;</td>
         </tr>
         <tr>
@@ -476,232 +413,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a0b37d5541aeeea4338583bb0927e54c4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto1B </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto1B </p>
-
-</div>
-</div>
-<a class="anchor" id="a161a4ce0f118b92cbbea5bfc624c9e26"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto1D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>fond</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de fond</p>
-<p>mutateur de moto1D </p>
-
-</div>
-</div>
-<a class="anchor" id="a3b6e16209f36b3ce24553059137e404c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto1G </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto1G </p>
-
-</div>
-</div>
-<a class="anchor" id="ad6eda9d0349b888c87ee9b16ee2798c7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto1H </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto1H </p>
-
-</div>
-</div>
-<a class="anchor" id="ab2e15c9f139be3c7e954bbda7105ab68"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto2B </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto2B </p>
-
-</div>
-</div>
-<a class="anchor" id="a20847dd28418c132408fd9f772da2970"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto2D </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto1D </p>
-
-</div>
-</div>
-<a class="anchor" id="a8c1499f7ce1aec5ce900acc991b24c3a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto2G </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto2G </p>
-
-</div>
-</div>
-<a class="anchor" id="a987b9239d8f8fcba2ac90cf173af6081"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SDLSetMoto2H </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>moto</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>mutateur de moto2H </p>
-
-</div>
-</div>
-<a class="anchor" id="a7e4e6ff4da16876db7378edf722ae5b9"></a>
+<a class="anchor" id="a0de41957ce76d79bc06145340f5d2766"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void SDLTestRegression </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structSDL.html">SDL</a> *&#160;</td>
-          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -713,7 +432,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 6 2013 13:49:24 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

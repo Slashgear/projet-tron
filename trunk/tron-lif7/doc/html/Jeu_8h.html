@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,14 +84,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Jeu.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Joueur_8h_source.html">Joueur.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="Grid_8h_source.html">Grid.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="Constantes_8h_source.html">Constantes.h</a>&quot;</code><br/>
 </div>
 <p><a href="Jeu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -101,29 +101,25 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a426d1cc64f94c46cdd2e47df779685f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGrid.html">Grid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a426d1cc64f94c46cdd2e47df779685f2">JeuGetGrille</a> (const <a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
-<tr class="memitem:a4817d9bcffabb76995d07f7078748803"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJoueur.html">Joueur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a4817d9bcffabb76995d07f7078748803">JeuGetMesJoueurs</a> (const <a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
-<tr class="memitem:a1bf65411167b8a237922f98d7084aa99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a1bf65411167b8a237922f98d7084aa99">JeuSetGrille</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, <a class="el" href="structGrid.html">Grid</a> <a class="el" href="Jeu_8h.html#a22d74b3de3cb04106d7efc6d4ba05c1a">grille</a>)</td></tr>
-<tr class="memitem:a3c9edf85f9faf8a1754744926734e81b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a3c9edf85f9faf8a1754744926734e81b">JeuSetMesJoueurs</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, <a class="el" href="structJoueur.html">Joueur</a> joueur) void JeuConstructeur(<a class="el" href="structJeu.html">Jeu</a> *jeu</td></tr>
+<tr class="memitem:a9cd710c657af64a74c7cc26a4e726d14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGrid.html">Grid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a9cd710c657af64a74c7cc26a4e726d14">JeuGetGrille</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
+<tr class="memitem:a00cab8b79f7ac548749dd29b6a3dcefd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structJoueur.html">Joueur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a00cab8b79f7ac548749dd29b6a3dcefd">JeuGetIemeJoueurs</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, int i)</td></tr>
+<tr class="memitem:a76c474e2d5c7de3fc3f4878346c33f6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a76c474e2d5c7de3fc3f4878346c33f6d">JeuSetGrille</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a311bab655ee16843487cf7ba7b3ceb49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a311bab655ee16843487cf7ba7b3ceb49">JeuSetIemeJoueurs</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, <a class="el" href="structJoueur.html">Joueur</a> *mesJoueurs, int i)</td></tr>
+<tr class="memitem:a4cc6fd0a8801ebd8c1db5d64a8cf2239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a4cc6fd0a8801ebd8c1db5d64a8cf2239">JeuConstructeur</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, <a class="el" href="structGrid.html">Grid</a> *grille, <a class="el" href="structJoueur.html">Joueur</a> *mesJoueurs[<a class="el" href="Constantes_8h.html#a505b3b803482fbd73a5eafac78db730f">_Nombre_de_Joueur</a>])</td></tr>
 <tr class="memitem:a8bcba1ef69f19fb2db2610e0391cfd51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a8bcba1ef69f19fb2db2610e0391cfd51">JeuDestructeur</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
-<tr class="memitem:a4f3416f4c6aad05a23f61e36f3bc2c10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a4f3416f4c6aad05a23f61e36f3bc2c10">JeuEvolue</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
-<tr class="memitem:ae9aea37de526ff14b337bc50f756b532"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#ae9aea37de526ff14b337bc50f756b532">BougeMoto</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
-<tr class="memitem:a58545cd689d6b35f014880eaffa965c9"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a58545cd689d6b35f014880eaffa965c9">testCollisionMur</a> (const <a class="el" href="structMoto.html">Moto</a> *moto, const <a class="el" href="structGrid.html">Grid</a> *<a class="el" href="Jeu_8h.html#a22d74b3de3cb04106d7efc6d4ba05c1a">grille</a>)</td></tr>
-<tr class="memitem:a94e134e8e4c930d637f39e56ff29c441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a94e134e8e4c930d637f39e56ff29c441">JeuActionClavier</a> (<a class="el" href="structJoueur.html">Joueur</a> *<a class="el" href="Jeu_8h.html#a28fad92d4a258b99755b5cd7ef00ea90">mesJoueurs</a>)</td></tr>
+<tr class="memitem:af4f670019888e4a14d814e61c5186b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#af4f670019888e4a14d814e61c5186b04">JeuEvolue</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu, short int *jeuFini)</td></tr>
+<tr class="memitem:ac2310df2f749aa58dc111b1bf906f2a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#ac2310df2f749aa58dc111b1bf906f2a8">bougeMoto</a> (<a class="el" href="structJeu.html">Jeu</a> *jeu)</td></tr>
+<tr class="memitem:a9b44b7658dd29635806f3278917c191b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a9b44b7658dd29635806f3278917c191b">testCollisionMur</a> (const <a class="el" href="structMoto.html">Moto</a> *moto, <a class="el" href="structGrid.html">Grid</a> *grille)</td></tr>
+<tr class="memitem:a02081e21ad603a232dd0d552be35cb64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a02081e21ad603a232dd0d552be35cb64">JeuActionClavier</a> (<a class="el" href="structJoueur.html">Joueur</a> *joueur, const char touche)</td></tr>
 <tr class="memitem:a9ab460d3c45562a77699da8015b3039c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a9ab460d3c45562a77699da8015b3039c">JeuTestRegression</a> ()</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a22d74b3de3cb04106d7efc6d4ba05c1a"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="structGrid.html">Grid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a22d74b3de3cb04106d7efc6d4ba05c1a">grille</a></td></tr>
-<tr class="memitem:a28fad92d4a258b99755b5cd7ef00ea90"><td class="memItemLeft" align="right" valign="top">void <a class="el" href="structGrid.html">Grid</a> <a class="el" href="structJoueur.html">Joueur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Jeu_8h.html#a28fad92d4a258b99755b5cd7ef00ea90">mesJoueurs</a></td></tr>
 </table>
 <h2>Function Documentation</h2>
-<a class="anchor" id="ae9aea37de526ff14b337bc50f756b532"></a>
+<a class="anchor" id="ac2310df2f749aa58dc111b1bf906f2a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BougeMoto </td>
+          <td class="memname">void bougeMoto </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
           <td class="paramname"><em>jeu</em></td><td>)</td>
@@ -135,7 +131,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a94e134e8e4c930d637f39e56ff29c441"></a>
+<a class="anchor" id="a02081e21ad603a232dd0d552be35cb64"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -143,12 +139,55 @@ Variables</h2></td></tr>
           <td class="memname">void JeuActionClavier </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structJoueur.html">Joueur</a> *&#160;</td>
-          <td class="paramname"><em>mesJoueurs</em></td><td>)</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>touche</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>procédure qui gère les actions des motos en fonction des touches saisies </p>
+
+</div>
+</div>
+<a class="anchor" id="a4cc6fd0a8801ebd8c1db5d64a8cf2239"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JeuConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structJoueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>mesJoueurs</em>[_Nombre_de_Joueur]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>constructeur du jeu </p>
 
 </div>
 </div>
@@ -169,7 +208,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4f3416f4c6aad05a23f61e36f3bc2c10"></a>
+<a class="anchor" id="af4f670019888e4a14d814e61c5186b04"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -177,8 +216,18 @@ Variables</h2></td></tr>
           <td class="memname">void JeuEvolue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
-          <td class="paramname"><em>jeu</em></td><td>)</td>
+          <td class="paramname"><em>jeu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">short int *&#160;</td>
+          <td class="paramname"><em>jeuFini</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,14 +235,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a426d1cc64f94c46cdd2e47df779685f2"></a>
+<a class="anchor" id="a9cd710c657af64a74c7cc26a4e726d14"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structGrid.html">Grid</a>* JeuGetGrille </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
           <td class="paramname"><em>jeu</em></td><td>)</td>
           <td></td>
         </tr>
@@ -203,16 +252,26 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4817d9bcffabb76995d07f7078748803"></a>
+<a class="anchor" id="a00cab8b79f7ac548749dd29b6a3dcefd"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structJoueur.html">Joueur</a>* JeuGetMesJoueurs </td>
+          <td class="memname"><a class="el" href="structJoueur.html">Joueur</a>* JeuGetIemeJoueurs </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
-          <td class="paramname"><em>jeu</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -220,7 +279,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a1bf65411167b8a237922f98d7084aa99"></a>
+<a class="anchor" id="a76c474e2d5c7de3fc3f4878346c33f6d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -233,7 +292,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
           <td class="paramname"><em>grille</em>&#160;</td>
         </tr>
         <tr>
@@ -247,12 +306,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3c9edf85f9faf8a1754744926734e81b"></a>
+<a class="anchor" id="a311bab655ee16843487cf7ba7b3ceb49"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void JeuSetMesJoueurs </td>
+          <td class="memname">void JeuSetIemeJoueurs </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structJeu.html">Jeu</a> *&#160;</td>
           <td class="paramname"><em>jeu</em>, </td>
@@ -260,8 +319,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structJoueur.html">Joueur</a>&#160;</td>
-          <td class="paramname"><em>joueur</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="structJoueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>mesJoueurs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -270,7 +335,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>mutateur de mesjoueurs constructeur du jeu </p>
+<p>mutateur de mesjoueurs </p>
 
 </div>
 </div>
@@ -290,7 +355,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a58545cd689d6b35f014880eaffa965c9"></a>
+<a class="anchor" id="a9b44b7658dd29635806f3278917c191b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -303,7 +368,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structGrid.html">Grid</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structGrid.html">Grid</a> *&#160;</td>
           <td class="paramname"><em>grille</em>&#160;</td>
         </tr>
         <tr>
@@ -317,35 +382,10 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2>Variable Documentation</h2>
-<a class="anchor" id="a22d74b3de3cb04106d7efc6d4ba05c1a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structGrid.html">Grid</a>* grille</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a28fad92d4a258b99755b5cd7ef00ea90"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="structGrid.html">Grid</a> <a class="el" href="structJoueur.html">Joueur</a>* mesJoueurs</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 6 2013 13:49:24 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>
