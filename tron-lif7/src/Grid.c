@@ -78,6 +78,11 @@ void decrementeVieMur(Grid* grille){
     }
 }
 
+
+
+
+
+
  void GridTestRegression(){
     Grid grille;
     float posX=10;

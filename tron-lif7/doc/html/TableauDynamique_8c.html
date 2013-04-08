@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,16 +95,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a5d99cce0e2fa7264c4f3720733265ee8"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a5d99cce0e2fa7264c4f3720733265ee8">TabDynGetCapacite</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn)</td></tr>
+<tr class="memitem:a334deff5c3a02d2edcbfe3a3f3ff268c"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a334deff5c3a02d2edcbfe3a3f3ff268c">TabDynGetTaille_utilisee</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn)</td></tr>
+<tr class="memitem:a97652ca47cabac75b55c4f903426829f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMur.html">Mur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a97652ca47cabac75b55c4f903426829f">TabDynGetAd</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn)</td></tr>
+<tr class="memitem:ac3727554725b9dbecddb71139dc5e30d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#ac3727554725b9dbecddb71139dc5e30d">TabDynSetCapacite</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn, unsigned int capacite)</td></tr>
+<tr class="memitem:a10623d69df4ce5b6456f98fda9365ae3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a10623d69df4ce5b6456f98fda9365ae3">TabDynSetTaille_utilisee</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn, unsigned int taille)</td></tr>
+<tr class="memitem:a7639e87e155a70b5e5dc9966be1aa824"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a7639e87e155a70b5e5dc9966be1aa824">TabDynSetAd</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *tabDyn, <a class="el" href="structMur.html">Mur</a> *ad)</td></tr>
 <tr class="memitem:a7518cb6d43b8202ba9a00bfe99fc3276"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a7518cb6d43b8202ba9a00bfe99fc3276">initialiserTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t)</td></tr>
-<tr class="memitem:a1c1d6b7d54a42f80b6307274f375f9c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a1c1d6b7d54a42f80b6307274f375f9c1">fusionnerTabDyn</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t1, const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t2, <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t3)</td></tr>
 <tr class="memitem:a23c700cab62fac5e751c347b9248dc18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a23c700cab62fac5e751c347b9248dc18">testamentTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t)</td></tr>
-<tr class="memitem:aa4452e8d3a182d348364dbd3a564b3f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#aa4452e8d3a182d348364dbd3a564b3f8">ajouterElementTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, <a class="el" href="structMur.html">Mur</a> *e)</td></tr>
-<tr class="memitem:a8801ebbe316e3da8e164162fa410466c"><td class="memItemLeft" align="right" valign="top">ElementTD&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a8801ebbe316e3da8e164162fa410466c">valeurIemeElementTabDyn</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, unsigned int i)</td></tr>
-<tr class="memitem:a00573c173bd94263f44ecfab992d2385"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a00573c173bd94263f44ecfab992d2385">modifierValeurIemeElementTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, <a class="el" href="structMur.html">Mur</a> *e, unsigned int i)</td></tr>
+<tr class="memitem:a9e22637742e9add76172325982bf25e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a9e22637742e9add76172325982bf25e8">ajouterElementTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, <a class="el" href="structMur.html">Mur</a> e)</td></tr>
+<tr class="memitem:a4613ebad51d49ffd47fcf53c829fa40e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMur.html">Mur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a4613ebad51d49ffd47fcf53c829fa40e">valeurIemeElementTabDyn</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, unsigned int i)</td></tr>
+<tr class="memitem:a541b35328a4b170e0dd9a42b8d33d47a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMur.html">Mur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a541b35328a4b170e0dd9a42b8d33d47a">adresseIemeElementTabDyn</a> (const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, unsigned int i)</td></tr>
+<tr class="memitem:aada509c790300e62cbf3178d939efc3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#aada509c790300e62cbf3178d939efc3e">modifierValeurIemeElementTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, <a class="el" href="structMur.html">Mur</a> e, unsigned int i)</td></tr>
 <tr class="memitem:a0d10365670f81c1e95814816e88ddcbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TableauDynamique_8c.html#a0d10365670f81c1e95814816e88ddcbf">supprimerElementTabDyn</a> (<a class="el" href="structTableauDynamique.html">TableauDynamique</a> *t, int position)</td></tr>
 </table>
 <h2>Function Documentation</h2>
-<a class="anchor" id="aa4452e8d3a182d348364dbd3a564b3f8"></a>
+<a class="anchor" id="a541b35328a4b170e0dd9a42b8d33d47a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMur.html">Mur</a>* adresseIemeElementTabDyn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise, 0 &lt;= i &lt; tailleUtilisee(t) Resultat : retourne l'adresse du i+1eme ElementTD de t </p>
+
+</div>
+</div>
+<a class="anchor" id="a9e22637742e9add76172325982bf25e8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -117,7 +150,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a>&#160;</td>
           <td class="paramname"><em>e</em>&#160;</td>
         </tr>
         <tr>
@@ -128,39 +161,6 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Precondition : t prealablement initialise Postcondition : L'element e est ajoute dans la premiere alveole inutilisee du tableau, la taille utilisee est incrementee de 1. Doublement de la capacite de t, si necessaire. </p>
-
-</div>
-</div>
-<a class="anchor" id="a1c1d6b7d54a42f80b6307274f375f9c1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fusionnerTabDyn </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
-          <td class="paramname"><em>t1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
-          <td class="paramname"><em>t2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
-          <td class="paramname"><em>t3</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Preconditions : -t1 et t2 sont initialisés et, s'ils sont non vides, sont triés dans l'ordre croissant -t3 est initialisé (capacite non nulle mais set vide (taiile utilisee nulle), Postconditions -t3 contient l'union des éléments de t1 et t2, triés dans l'odre croissant, -t1 et t2 sont inchangés. </p>
 
 </div>
 </div>
@@ -181,7 +181,7 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a00573c173bd94263f44ecfab992d2385"></a>
+<a class="anchor" id="aada509c790300e62cbf3178d939efc3e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -194,7 +194,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a>&#160;</td>
           <td class="paramname"><em>e</em>, </td>
         </tr>
         <tr>
@@ -241,6 +241,138 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a97652ca47cabac75b55c4f903426829f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMur.html">Mur</a>* TabDynGetAd </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de ad </p>
+
+</div>
+</div>
+<a class="anchor" id="a5d99cce0e2fa7264c4f3720733265ee8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TabDynGetCapacite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de capacite </p>
+
+</div>
+</div>
+<a class="anchor" id="a334deff5c3a02d2edcbfe3a3f3ff268c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TabDynGetTaille_utilisee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de taille_utilisee </p>
+
+</div>
+</div>
+<a class="anchor" id="a7639e87e155a70b5e5dc9966be1aa824"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynSetAd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structMur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de ad </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3727554725b9dbecddb71139dc5e30d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynSetCapacite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>capacite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de capacite </p>
+
+</div>
+</div>
+<a class="anchor" id="a10623d69df4ce5b6456f98fda9365ae3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynSetTaille_utilisee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
+          <td class="paramname"><em>tabDyn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>taille</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de taille_utilisee </p>
+
+</div>
+</div>
 <a class="anchor" id="a23c700cab62fac5e751c347b9248dc18"></a>
 <div class="memitem">
 <div class="memproto">
@@ -259,12 +391,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8801ebbe316e3da8e164162fa410466c"></a>
+<a class="anchor" id="a4613ebad51d49ffd47fcf53c829fa40e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ElementTD valeurIemeElementTabDyn </td>
+          <td class="memname"><a class="el" href="structMur.html">Mur</a> valeurIemeElementTabDyn </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTableauDynamique.html">TableauDynamique</a> *&#160;</td>
           <td class="paramname"><em>t</em>, </td>
@@ -289,7 +421,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 19 2013 16:14:43 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 6 2013 13:49:24 for TRON-SDL by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

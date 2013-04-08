@@ -58,7 +58,12 @@ void MurDestructeur(Mur* mur){
     MurSetCouleur(mur,NOIR);
     MurSetDureeVie(mur,0);
 }
-
+void AfficheStatsMur(Mur* mur){
+    printf("PositionX du Mur:%f\n",MurGetPositionX(mur));
+    printf("PositionY du Mur:%f\n",MurGetPositionY(mur));
+    printf("TailleX du Mur:%u\n",MurGetTailleX(mur));
+    printf("TailleY du Mur:%u\n\n",MurGetTailleY(mur));
+}
 
 
 void MurTestRegression(){

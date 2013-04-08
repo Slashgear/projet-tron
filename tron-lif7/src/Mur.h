@@ -49,11 +49,15 @@ void MurSetTailleY(Mur* mur,unsigned int tailleY);
 void MurSetCouleur(Mur* mur,Couleur couleur);
 /** mutateur de dureeVie*/
 void MurSetDureeVie(Mur* mur,float dureeVie);
+/** affiche les stats des murs crée*/
+void AfficheStatsMur(Mur* mur);
+
 
 /** Constructeur de Mur*/
 void MurConstructeur(Mur* mur,float posX, float posY, unsigned int tailleX, unsigned int tailleY,Couleur couleur, float dureeVie);
 /** Destructeur de Mur*/
 void MurDestructeur(Mur* mur);
+
 
 /** Procedure qui teste le module Mur*/
  void MurTestRegression();

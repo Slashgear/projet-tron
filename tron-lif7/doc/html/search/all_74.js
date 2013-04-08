@@ -1,5 +1,11 @@
 var searchData=
 [
+  ['tabdyngetad',['TabDynGetAd',['../TableauDynamique_8c.html#a97652ca47cabac75b55c4f903426829f',1,'TabDynGetAd(const TableauDynamique *tabDyn):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a97652ca47cabac75b55c4f903426829f',1,'TabDynGetAd(const TableauDynamique *tabDyn):&#160;TableauDynamique.c']]],
+  ['tabdyngetcapacite',['TabDynGetCapacite',['../TableauDynamique_8c.html#a5d99cce0e2fa7264c4f3720733265ee8',1,'TabDynGetCapacite(const TableauDynamique *tabDyn):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a5d99cce0e2fa7264c4f3720733265ee8',1,'TabDynGetCapacite(const TableauDynamique *tabDyn):&#160;TableauDynamique.c']]],
+  ['tabdyngettaille_5futilisee',['TabDynGetTaille_utilisee',['../TableauDynamique_8c.html#a334deff5c3a02d2edcbfe3a3f3ff268c',1,'TabDynGetTaille_utilisee(const TableauDynamique *tabDyn):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a334deff5c3a02d2edcbfe3a3f3ff268c',1,'TabDynGetTaille_utilisee(const TableauDynamique *tabDyn):&#160;TableauDynamique.c']]],
+  ['tabdynsetad',['TabDynSetAd',['../TableauDynamique_8c.html#a7639e87e155a70b5e5dc9966be1aa824',1,'TabDynSetAd(TableauDynamique *tabDyn, Mur *ad):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a7639e87e155a70b5e5dc9966be1aa824',1,'TabDynSetAd(TableauDynamique *tabDyn, Mur *ad):&#160;TableauDynamique.c']]],
+  ['tabdynsetcapacite',['TabDynSetCapacite',['../TableauDynamique_8c.html#ac3727554725b9dbecddb71139dc5e30d',1,'TabDynSetCapacite(TableauDynamique *tabDyn, unsigned int capacite):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#ac3727554725b9dbecddb71139dc5e30d',1,'TabDynSetCapacite(TableauDynamique *tabDyn, unsigned int capacite):&#160;TableauDynamique.c']]],
+  ['tabdynsettaille_5futilisee',['TabDynSetTaille_utilisee',['../TableauDynamique_8c.html#a10623d69df4ce5b6456f98fda9365ae3',1,'TabDynSetTaille_utilisee(TableauDynamique *tabDyn, unsigned int taille):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a10623d69df4ce5b6456f98fda9365ae3',1,'TabDynSetTaille_utilisee(TableauDynamique *tabDyn, unsigned int taille):&#160;TableauDynamique.c']]],
   ['tableaudynamique',['TableauDynamique',['../structTableauDynamique.html',1,'']]],
   ['tableaudynamique_2ec',['TableauDynamique.c',['../TableauDynamique_8c.html',1,'']]],
   ['tableaudynamique_2eh',['TableauDynamique.h',['../TableauDynamique_8h.html',1,'']]],
@@ -8,5 +14,6 @@ var searchData=
   ['taillex',['tailleX',['../structGrid.html#ad6ec58066a6303fbc2aa5443840cf067',1,'Grid::tailleX()'],['../structMoto.html#a15d1b56209aba6ea0bc8eeaac82ae625',1,'Moto::tailleX()'],['../structMur.html#a83d5a0639f49e58cfb805a91702d6701',1,'Mur::tailleX()']]],
   ['tailley',['tailleY',['../structGrid.html#adc12ffc8da211af2444db8a2007e5a7d',1,'Grid::tailleY()'],['../structMoto.html#ab7b358839b7d20f16a4a17e5eabad5a4',1,'Moto::tailleY()'],['../structMur.html#ad0c6b841ae4069d6b4e6559d7e88cf47',1,'Mur::tailleY()']]],
   ['testamenttabdyn',['testamentTabDyn',['../TableauDynamique_8c.html#a23c700cab62fac5e751c347b9248dc18',1,'testamentTabDyn(TableauDynamique *t):&#160;TableauDynamique.c'],['../TableauDynamique_8h.html#a23c700cab62fac5e751c347b9248dc18',1,'testamentTabDyn(TableauDynamique *t):&#160;TableauDynamique.c']]],
-  ['testcollisionmur',['testCollisionMur',['../Jeu_8h.html#a58545cd689d6b35f014880eaffa965c9',1,'Jeu.h']]]
+  ['testcollisionmur',['testCollisionMur',['../Jeu_8c.html#a9b44b7658dd29635806f3278917c191b',1,'testCollisionMur(const Moto *moto, Grid *grille):&#160;Jeu.c'],['../Jeu_8h.html#a9b44b7658dd29635806f3278917c191b',1,'testCollisionMur(const Moto *moto, Grid *grille):&#160;Jeu.c']]],
+  ['textures',['textures',['../structSDL.html#afa10c1c04f5aab98a52ad375fd6b9c8c',1,'SDL']]]
 ];

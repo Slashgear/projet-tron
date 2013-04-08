@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bougemoto',['BougeMoto',['../Jeu_8h.html#ae9aea37de526ff14b337bc50f756b532',1,'Jeu.h']]]
+  ['bougemoto',['bougeMoto',['../Jeu_8c.html#ac2310df2f749aa58dc111b1bf906f2a8',1,'bougeMoto(Jeu *jeu):&#160;Jeu.c'],['../Jeu_8h.html#ac2310df2f749aa58dc111b1bf906f2a8',1,'bougeMoto(Jeu *jeu):&#160;Jeu.c']]]
 ];

@@ -18,11 +18,11 @@ struct \hyperlink{structControle}{Controle}
 \item 
 char \hyperlink{Controle_8h_a7da8ed500506c0ff01f7ec13fa080af7}{Controle\-Get\-Droite} (const \hyperlink{structControle}{Controle} $\ast$controle)
 \item 
-char \hyperlink{Controle_8h_a6433e8528f10e46ef2b495f12934da78}{Control\-Get\-Haut} (const \hyperlink{structControle}{Controle} $\ast$controle)
+char \hyperlink{Controle_8h_a58ce1f5ae0dd2e4d1c4d5ac8d22b7d8b}{Controle\-Get\-Haut} (const \hyperlink{structControle}{Controle} $\ast$controle)
 \item 
-char \hyperlink{Controle_8h_afed1ff7fc8b7bdbd6ee165bca3e1a57a}{Control\-Get\-Bas} (const \hyperlink{structControle}{Controle} $\ast$controle)
+char \hyperlink{Controle_8h_a3e28027b3d8b1bbdb7b4fbec3b401c1d}{Controle\-Get\-Bas} (const \hyperlink{structControle}{Controle} $\ast$controle)
 \item 
-char \hyperlink{Controle_8h_aced3f3f630e02d194da0607da3c3b872}{Control\-Get\-Gauche} (const \hyperlink{structControle}{Controle} $\ast$controle)
+char \hyperlink{Controle_8h_ae2698a50aacf5c08ebae8162e6fbb187}{Controle\-Get\-Gauche} (const \hyperlink{structControle}{Controle} $\ast$controle)
 \item 
 void \hyperlink{Controle_8h_aa5c5ca72e86d08f5b8b64e131ff46246}{Controle\-Set\-Droite} (\hyperlink{structControle}{Controle} $\ast$controle, char x)
 \item 
@@ -32,7 +32,7 @@ void \hyperlink{Controle_8h_a7be283f827e7710848bdb1c3e99ac160}{Controle\-Set\-Ba
 \item 
 void \hyperlink{Controle_8h_a47a6d88b2907e99c0eae94afd4280d7c}{Controle\-Set\-Gauche} (\hyperlink{structControle}{Controle} $\ast$controle, char x)
 \item 
-void \hyperlink{Controle_8h_ae0cb665674b2ea1dde59c1b4b00ca836}{Controle\-Constructeur} (\hyperlink{structControle}{Controle} $\ast$controle, char droite, char gauche, char haut, char bas)
+void \hyperlink{Controle_8h_a424b4a12727182760968e72658f279eb}{Controle\-Constructeur} (\hyperlink{structControle}{Controle} $\ast$controle, char haut, char bas, char gauche, char droite)
 \item 
 void \hyperlink{Controle_8h_af1bb24fb9790dc018f7396c15e7b47a0}{Controle\-Destructeur} (\hyperlink{structControle}{Controle} $\ast$controle)
 \item 
@@ -53,17 +53,17 @@ Module des vecteurs. \mbox{]} \begin{DoxyAuthor}{Author}
 
 
 \subsection{Function Documentation}
-\hypertarget{Controle_8h_ae0cb665674b2ea1dde59c1b4b00ca836}{\index{Controle.\-h@{Controle.\-h}!Controle\-Constructeur@{Controle\-Constructeur}}
+\hypertarget{Controle_8h_a424b4a12727182760968e72658f279eb}{\index{Controle.\-h@{Controle.\-h}!Controle\-Constructeur@{Controle\-Constructeur}}
 \index{Controle\-Constructeur@{Controle\-Constructeur}!Controle.h@{Controle.\-h}}
 \subsubsection[{Controle\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Constructeur (
 \begin{DoxyParamCaption}
 \item[{{\bf Controle} $\ast$}]{controle, }
-\item[{char}]{droite, }
-\item[{char}]{gauche, }
 \item[{char}]{haut, }
-\item[{char}]{bas}
+\item[{char}]{bas, }
+\item[{char}]{gauche, }
+\item[{char}]{droite}
 \end{DoxyParamCaption}
-)}}\label{Controle_8h_ae0cb665674b2ea1dde59c1b4b00ca836}
+)}}\label{Controle_8h_a424b4a12727182760968e72658f279eb}
 Constructeur de \hyperlink{structControle}{Controle} \hypertarget{Controle_8h_af1bb24fb9790dc018f7396c15e7b47a0}{\index{Controle.\-h@{Controle.\-h}!Controle\-Destructeur@{Controle\-Destructeur}}
 \index{Controle\-Destructeur@{Controle\-Destructeur}!Controle.h@{Controle.\-h}}
 \subsubsection[{Controle\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Destructeur (
@@ -71,14 +71,35 @@ Constructeur de \hyperlink{structControle}{Controle} \hypertarget{Controle_8h_af
 \item[{{\bf Controle} $\ast$}]{controle}
 \end{DoxyParamCaption}
 )}}\label{Controle_8h_af1bb24fb9790dc018f7396c15e7b47a0}
-Destructeur de \hyperlink{structControle}{Controle} \hypertarget{Controle_8h_a7da8ed500506c0ff01f7ec13fa080af7}{\index{Controle.\-h@{Controle.\-h}!Controle\-Get\-Droite@{Controle\-Get\-Droite}}
+Destructeur de \hyperlink{structControle}{Controle} \hypertarget{Controle_8h_a3e28027b3d8b1bbdb7b4fbec3b401c1d}{\index{Controle.\-h@{Controle.\-h}!Controle\-Get\-Bas@{Controle\-Get\-Bas}}
+\index{Controle\-Get\-Bas@{Controle\-Get\-Bas}!Controle.h@{Controle.\-h}}
+\subsubsection[{Controle\-Get\-Bas}]{\setlength{\rightskip}{0pt plus 5cm}char Controle\-Get\-Bas (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{Controle_8h_a3e28027b3d8b1bbdb7b4fbec3b401c1d}
+assesseur de touche bas \hypertarget{Controle_8h_a7da8ed500506c0ff01f7ec13fa080af7}{\index{Controle.\-h@{Controle.\-h}!Controle\-Get\-Droite@{Controle\-Get\-Droite}}
 \index{Controle\-Get\-Droite@{Controle\-Get\-Droite}!Controle.h@{Controle.\-h}}
 \subsubsection[{Controle\-Get\-Droite}]{\setlength{\rightskip}{0pt plus 5cm}char Controle\-Get\-Droite (
 \begin{DoxyParamCaption}
 \item[{const {\bf Controle} $\ast$}]{controle}
 \end{DoxyParamCaption}
 )}}\label{Controle_8h_a7da8ed500506c0ff01f7ec13fa080af7}
-assesseur de touche droite \hypertarget{Controle_8h_a7be283f827e7710848bdb1c3e99ac160}{\index{Controle.\-h@{Controle.\-h}!Controle\-Set\-Bas@{Controle\-Set\-Bas}}
+assesseur de touche droite \hypertarget{Controle_8h_ae2698a50aacf5c08ebae8162e6fbb187}{\index{Controle.\-h@{Controle.\-h}!Controle\-Get\-Gauche@{Controle\-Get\-Gauche}}
+\index{Controle\-Get\-Gauche@{Controle\-Get\-Gauche}!Controle.h@{Controle.\-h}}
+\subsubsection[{Controle\-Get\-Gauche}]{\setlength{\rightskip}{0pt plus 5cm}char Controle\-Get\-Gauche (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{Controle_8h_ae2698a50aacf5c08ebae8162e6fbb187}
+assesseur de touche gauche \hypertarget{Controle_8h_a58ce1f5ae0dd2e4d1c4d5ac8d22b7d8b}{\index{Controle.\-h@{Controle.\-h}!Controle\-Get\-Haut@{Controle\-Get\-Haut}}
+\index{Controle\-Get\-Haut@{Controle\-Get\-Haut}!Controle.h@{Controle.\-h}}
+\subsubsection[{Controle\-Get\-Haut}]{\setlength{\rightskip}{0pt plus 5cm}char Controle\-Get\-Haut (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{Controle_8h_a58ce1f5ae0dd2e4d1c4d5ac8d22b7d8b}
+assesseur de touche haut \hypertarget{Controle_8h_a7be283f827e7710848bdb1c3e99ac160}{\index{Controle.\-h@{Controle.\-h}!Controle\-Set\-Bas@{Controle\-Set\-Bas}}
 \index{Controle\-Set\-Bas@{Controle\-Set\-Bas}!Controle.h@{Controle.\-h}}
 \subsubsection[{Controle\-Set\-Bas}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Bas (
 \begin{DoxyParamCaption}
@@ -117,25 +138,4 @@ mutateur de touche haut \hypertarget{Controle_8h_a49d6667e80a116e40db1741c086166
 {}
 \end{DoxyParamCaption}
 )}}\label{Controle_8h_a49d6667e80a116e40db1741c08616600}
-Procedure qui teste le module \hyperlink{structControle}{Controle} \hypertarget{Controle_8h_afed1ff7fc8b7bdbd6ee165bca3e1a57a}{\index{Controle.\-h@{Controle.\-h}!Control\-Get\-Bas@{Control\-Get\-Bas}}
-\index{Control\-Get\-Bas@{Control\-Get\-Bas}!Controle.h@{Controle.\-h}}
-\subsubsection[{Control\-Get\-Bas}]{\setlength{\rightskip}{0pt plus 5cm}char Control\-Get\-Bas (
-\begin{DoxyParamCaption}
-\item[{const {\bf Controle} $\ast$}]{controle}
-\end{DoxyParamCaption}
-)}}\label{Controle_8h_afed1ff7fc8b7bdbd6ee165bca3e1a57a}
-assesseur de touche bas \hypertarget{Controle_8h_aced3f3f630e02d194da0607da3c3b872}{\index{Controle.\-h@{Controle.\-h}!Control\-Get\-Gauche@{Control\-Get\-Gauche}}
-\index{Control\-Get\-Gauche@{Control\-Get\-Gauche}!Controle.h@{Controle.\-h}}
-\subsubsection[{Control\-Get\-Gauche}]{\setlength{\rightskip}{0pt plus 5cm}char Control\-Get\-Gauche (
-\begin{DoxyParamCaption}
-\item[{const {\bf Controle} $\ast$}]{controle}
-\end{DoxyParamCaption}
-)}}\label{Controle_8h_aced3f3f630e02d194da0607da3c3b872}
-assesseur de touche gauche \hypertarget{Controle_8h_a6433e8528f10e46ef2b495f12934da78}{\index{Controle.\-h@{Controle.\-h}!Control\-Get\-Haut@{Control\-Get\-Haut}}
-\index{Control\-Get\-Haut@{Control\-Get\-Haut}!Controle.h@{Controle.\-h}}
-\subsubsection[{Control\-Get\-Haut}]{\setlength{\rightskip}{0pt plus 5cm}char Control\-Get\-Haut (
-\begin{DoxyParamCaption}
-\item[{const {\bf Controle} $\ast$}]{controle}
-\end{DoxyParamCaption}
-)}}\label{Controle_8h_a6433e8528f10e46ef2b495f12934da78}
-assesseur de touche haut 
+Procedure qui teste le module \hyperlink{structControle}{Controle} 
