@@ -132,7 +132,7 @@ void SDLBoucleJeu(SDL* sdl){
     short int jeuFini = 0;
     SDL_Event evenement;
     float horloge_courante, horloge_precedente;
-    float intervalle_horloge=0.1f;
+    float intervalle_horloge=0.01f;
     int affAJour;
 
     SDLAfficheJeu(sdl);
@@ -150,33 +150,51 @@ void SDLBoucleJeu(SDL* sdl){
         while ( SDL_PollEvent( &evenement ) ){
             if ( evenement.type == SDL_QUIT )
 				affAJour = 0;
-				switch ( evenement.key.keysym.sym )
-				{
-				case SDLK_z:
-					JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'z');
-					affAJour = 1;
-					break;
-				case SDLK_s:
-					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 's');
-					affAJour = 1;
-					break;
-				case SDLK_q:
-					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'q');
-					affAJour = 1;
-					break;
-				case SDLK_d:
-					JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'd');
-					affAJour = 1;
-					break;
-				default: break;
+				if (evenement.type == SDL_KEYDOWN){
+                    switch ( evenement.key.keysym.sym )
+                    {
+                    case SDLK_z:
+                        JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'z',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_s:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 's',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_q:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'q',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_d:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'd',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+
+                    case SDLK_o:
+                        JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),1),'o',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_l:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'l',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_k:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'k',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    case SDLK_m:
+                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'm',JeuGetGrille(SDLGetJeu(sdl)));
+                        affAJour = 1;
+                        break;
+                    default: break;
+                    }
 				}
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
         }
     }
-
-
+    SDLDestructeur(sdl);
 }
 
 void SDLAfficheJeu(SDL *sdl){

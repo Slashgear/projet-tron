@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="src/Constantes.h" open="1" top="0" tabpos="11">
+		<Cursor position="117" topLine="0" />
+	</File>
 	<File name="src/Controle.c" open="0" top="0" tabpos="5">
 		<Cursor position="816" topLine="0" />
 	</File>
@@ -11,46 +14,46 @@
 		<Cursor position="127" topLine="0" />
 	</File>
 	<File name="src/Grid.c" open="1" top="0" tabpos="3">
-		<Cursor position="1827" topLine="42" />
+		<Cursor position="1457" topLine="31" />
 	</File>
 	<File name="src/Grid.h" open="1" top="0" tabpos="4">
-		<Cursor position="742" topLine="18" />
+		<Cursor position="1658" topLine="27" />
 	</File>
 	<File name="src/Jeu.c" open="1" top="0" tabpos="6">
-		<Cursor position="8150" topLine="48" />
+		<Cursor position="772" topLine="14" />
 	</File>
 	<File name="src/Jeu.h" open="1" top="0" tabpos="7">
-		<Cursor position="697" topLine="15" />
+		<Cursor position="1035" topLine="15" />
 	</File>
 	<File name="src/Joueur.c" open="1" top="0" tabpos="8">
-		<Cursor position="604" topLine="14" />
+		<Cursor position="1004" topLine="0" />
 	</File>
 	<File name="src/Joueur.h" open="0" top="0" tabpos="8">
 		<Cursor position="890" topLine="2" />
 	</File>
-	<File name="src/Moto.c" open="0" top="0" tabpos="12">
-		<Cursor position="55" topLine="0" />
+	<File name="src/Moto.c" open="1" top="0" tabpos="12">
+		<Cursor position="494" topLine="3" />
 	</File>
 	<File name="src/Moto.h" open="0" top="0" tabpos="1">
 		<Cursor position="1237" topLine="19" />
 	</File>
-	<File name="src/Mur.c" open="0" top="0" tabpos="2">
-		<Cursor position="1467" topLine="49" />
+	<File name="src/Mur.c" open="1" top="0" tabpos="9">
+		<Cursor position="1686" topLine="35" />
 	</File>
-	<File name="src/Mur.h" open="0" top="0" tabpos="1">
-		<Cursor position="1378" topLine="38" />
+	<File name="src/Mur.h" open="1" top="0" tabpos="10">
+		<Cursor position="1284" topLine="27" />
 	</File>
 	<File name="src/SDL.c" open="1" top="1" tabpos="5">
-		<Cursor position="4454" topLine="141" />
+		<Cursor position="2367" topLine="86" />
 	</File>
 	<File name="src/SDL.h" open="0" top="0" tabpos="9">
 		<Cursor position="1953" topLine="48" />
 	</File>
 	<File name="src/TableauDynamique.c" open="1" top="0" tabpos="2">
-		<Cursor position="997" topLine="41" />
+		<Cursor position="846" topLine="23" />
 	</File>
 	<File name="src/TableauDynamique.h" open="1" top="0" tabpos="1">
-		<Cursor position="886" topLine="8" />
+		<Cursor position="886" topLine="0" />
 	</File>
 	<File name="src/main.c" open="0" top="0" tabpos="5">
 		<Cursor position="367" topLine="0" />
