@@ -40,7 +40,7 @@ SDL_Surface* SDLChargeImage(const char* nomfichier){
 	return loadedImage;
 }
 
-void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const float positionX,const float positionY){
+void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int positionX,const int positionY){
 	/* Make a temporary rectangle to hold the offsets */
 	SDL_Rect offset;
 
@@ -212,7 +212,7 @@ void SDLAfficheJeu(SDL *sdl){
         else{
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,51,204,255));
             }
-        SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),MurGetPositionX(mur),MurGetPositionY(mur));
+        SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),(int)(MurGetPositionX(mur)/1),(int)(MurGetPositionY(mur)/1));
         SDL_FreeSurface(surfaceMur);
     }
     for(i=0;i<_Nombre_de_Joueur;i++){

@@ -37,7 +37,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu);
 /**Destructeur de SDl,remise à zero des champs de SDL et free des allocations*/
 void SDLDestructeur(SDL *sdl);
 /**Procédure qui applique la surface A sur la B*/
-void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const float positionX,const float positionY);
+void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,int positionX,int positionY);
 /** Procédure d'affichage du jeu*/
 void SDLAfficheJeu(SDL *sdl);
 /**Procédure Init*/
