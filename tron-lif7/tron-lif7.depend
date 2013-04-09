@@ -196,16 +196,18 @@
 	<stdlib.h>
 	<stdio.h>
 
-1364321669 source:/home/antoine/Projets/tron-lif7/src/Controle.c
+1365506271 source:/home/antoine/Projets/tron-lif7/src/Controle.c
 	"Controle.h"
 	<stdlib.h>
 	<stdio.h>
+	<SDL/SDL.h>
 
-1364321669 /home/antoine/Projets/tron-lif7/src/Controle.h
+1365506175 /home/antoine/Projets/tron-lif7/src/Controle.h
 	<stdlib.h>
 	<stdio.h>
+	<SDL/SDL.h>
 
-1364893252 source:/home/antoine/Projets/tron-lif7/src/main.c
+1365519306 source:/home/antoine/Projets/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	"Mur.h"
@@ -216,7 +218,7 @@
 	"Jeu.h"
 	"SDL.h"
 
-1365257381 source:/home/antoine/Projets/tron-lif7/src/Grid.c
+1365504518 source:/home/antoine/Projets/tron-lif7/src/Grid.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -273,7 +275,7 @@
 1363694279 /home/matthieu/Projet/tron-lif7/src/ElementTD.h
 	"Mur.h"
 
-1364059502 /home/antoine/Projets/tron-lif7/src/Couleur.h
+1365516805 /home/antoine/Projets/tron-lif7/src/Couleur.h
 
 1364652045 /home/antoine/Projets/tron-lif7/src/TableauDynamique.h
 	"Mur.h"
@@ -294,7 +296,7 @@
 	"Mur.h"
 	<stdlib.h>
 
-1365257773 source:/home/antoine/Projets/tron-lif7/src/Mur.c
+1365496765 source:/home/antoine/Projets/tron-lif7/src/Mur.c
 	<stdlib.h>
 	<stdio.h>
 	"Couleur.h"
@@ -369,7 +371,7 @@
 	"Jeu.h"
 	<SDL/SDL.h>
 
-1364893252 source:/home/antoine/Projets/tron-lif7/src/Joueur.c
+1365524185 source:/home/antoine/Projets/tron-lif7/src/Joueur.c
 	<stdlib.h>
 	<stdio.h>
 	"Joueur.h"
@@ -377,12 +379,12 @@
 	"Controle.h"
 	"Couleur.h"
 
-1364893252 /home/antoine/Projets/tron-lif7/src/Joueur.h
+1365524140 /home/antoine/Projets/tron-lif7/src/Joueur.h
 	"Controle.h"
 	"Moto.h"
 	"Couleur.h"
 
-1365434979 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
+1365530040 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
@@ -390,22 +392,21 @@
 	<stdio.h>
 	<stdlib.h>
 
-1365431160 /home/antoine/Projets/tron-lif7/src/Jeu.h
+1365526680 /home/antoine/Projets/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
 	"Constantes.h"
 
-1365431864 /home/antoine/Projets/tron-lif7/src/Constantes.h
+1365530107 /home/antoine/Projets/tron-lif7/src/Constantes.h
 
-1365435372 source:/home/antoine/Projets/tron-lif7/src/SDL.c
+1365529772 source:/home/antoine/Projets/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
 	<SDL/SDL.h>
-	<SDL/SDL_image.h>
 	<time.h>
 
-1364893252 /home/antoine/Projets/tron-lif7/src/SDL.h
+1365519364 /home/antoine/Projets/tron-lif7/src/SDL.h
 	"Jeu.h"
 	<SDL/SDL.h>
 

@@ -19,7 +19,12 @@ int main(){
     SDLTestRegression();
 #else
     SDL sdl;
-    SDLJeuInit(&sdl);
+    if(_Nombre_de_Joueur==2){
+        SDLJeuInit2(&sdl);
+    }
+    else if(_Nombre_de_Joueur==4){
+        SDLJeuInit4(&sdl);
+    }
     SDLBoucleJeu(&sdl);
     SDLDestructeur(&sdl);
 #endif

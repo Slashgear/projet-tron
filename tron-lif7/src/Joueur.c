@@ -15,6 +15,10 @@ Controle* JoueurGetControle(Joueur* joueur){
 Couleur JoueurGetCouleur(const Joueur* joueur){
     return joueur->couleur;
 }
+char JoueurGetEnJeu(const Joueur* joueur){
+    return joueur->enJeu;
+}
+
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
     joueur->moto= *moto;
@@ -25,20 +29,23 @@ void JoueurSetControle(Joueur* joueur, Controle* controle){
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur){
     joueur->couleur=couleur;
 }
+void JoueurSetEnJeu(Joueur* joueur, char enJeu){
+    joueur->enJeu=enJeu;
+}
 
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur){
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu){
     JoueurSetMoto(joueur,moto);
     JoueurSetControle(joueur,controle);
     JoueurSetCouleur(joueur,couleur);
+    JoueurSetEnJeu(joueur,enJeu);
 }
-/** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
     ControleDestructeur(JoueurGetControle(joueur));
     JoueurSetCouleur(joueur,NOIR);
+    JoueurSetEnJeu(joueur,0);
 }
 
-/** Procedure qui teste le module Joueur*/
  void JoueurTestRegression(){
     Joueur joueur;
     Moto moto;
@@ -61,7 +68,7 @@ void JoueurDestructeur(Joueur* joueur){
 
     ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 
-    JoueurConstructeur(&joueur,&moto,&controle,couleur);
+    JoueurConstructeur(&joueur,&moto,&controle,couleur,1);
     printf("La valeur posX est %f et dans la Moto du joueur est de %f \n",posX,MotoGetPositionX(JoueurGetMoto(&joueur)));
     printf("La valeur posY est %f et dans la Moto du joueur est de %f \n",posY,MotoGetPositionY(JoueurGetMoto(&joueur)));
     printf("La valeur tailleX est %u et dans la Moto du joueur est de %u \n",tailleX,MotoGetTailleX(JoueurGetMoto(&joueur)));

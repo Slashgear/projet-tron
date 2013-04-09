@@ -13,7 +13,7 @@
 
 typedef struct{
     Jeu jeu;
-    SDL_Surface * textures[10];
+    SDL_Surface * textures[2+4*_Nombre_de_Joueur];
 }SDL;
 /** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
@@ -40,8 +40,10 @@ void SDLDestructeur(SDL *sdl);
 void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,int positionX,int positionY);
 /** Procédure d'affichage du jeu*/
 void SDLAfficheJeu(SDL *sdl);
-/**Procédure Init*/
-void SDLJeuInit(SDL *sdl);
+/**Procédure Init à 2 joueurs*/
+void SDLJeuInit2(SDL *sdl);
+/**Procédure Init à 4 joueurs*/
+void SDLJeuInit4(SDL *sdl);
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl);
 /** Procédure de chargement des images*/
