@@ -194,7 +194,7 @@ void SDLBoucleJeu(SDL* sdl){
             SDLAfficheJeu(sdl);
         }
     }
-    SDLDestructeur(sdl);
+
 }
 
 void SDLAfficheJeu(SDL *sdl){
