@@ -48,10 +48,10 @@ void ControleDestructeur(Controle* controle){
  void ControleTestRegression(){
      Controle unControle;
      char touchedroite='d';
-     char touchegauche='g';
-     char touchehaut='h';
-     char touchebas='b';
-     ControleConstructeur(&unControle,touchedroite,touchegauche,touchehaut,touchebas);
+     char touchegauche='q';
+     char touchehaut='z';
+     char touchebas='s';
+     ControleConstructeur(&unControle,touchehaut,touchebas,touchegauche,touchedroite);
      printf("Le caractere de la touche droite est %c ,et dans le Controle est %c\n",touchedroite,ControleGetDroite(&unControle));
      printf("Le caractere de la touche gauche est %c ,et dans le Controle est %c\n",touchegauche,ControleGetGauche(&unControle));
      printf("Le caractere de la touche haut est %c ,et dans le Controle est %c\n",touchehaut,ControleGetHaut(&unControle));

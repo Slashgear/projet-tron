@@ -106,13 +106,13 @@ void SDLJeuInit(SDL *sdl){
     Joueur* mesJoueurs[2]={&joueur1,&joueur2};
     SDL_Surface* ecran;
 
-    assert(   SDL_Init( SDL_INIT_EVERYTHING)!= -1 );
+    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO )!= -1 );
     ControleConstructeur(&controle1,'z','s','q','d');
-    MotoConstructeur(&moto1,333,20,5,10,1,BAS);
+    MotoConstructeur(&moto1,333,20,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
 
     ControleConstructeur(&controle2,'o','l','k','m');
-    MotoConstructeur(&moto2,339,650,5,10,1,HAUT);
+    MotoConstructeur(&moto2,339,650,5,10,_Vitesse_Initiale,HAUT);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
 
     GridConstructeur(&grille,5,5,700,700,&tabDynMurs);
@@ -132,7 +132,7 @@ void SDLBoucleJeu(SDL* sdl){
     short int jeuFini = 0;
     SDL_Event evenement;
     float horloge_courante, horloge_precedente;
-    float intervalle_horloge=0.01f;
+    float intervalle_horloge=0.03f;
     int affAJour;
 
     SDLAfficheJeu(sdl);
@@ -194,7 +194,6 @@ void SDLBoucleJeu(SDL* sdl){
             SDLAfficheJeu(sdl);
         }
     }
-    SDL_Quit();
 }
 
 void SDLAfficheJeu(SDL *sdl){
@@ -210,10 +209,11 @@ void SDLAfficheJeu(SDL *sdl){
         if(MurGetCouleur(mur)==ORANGE){
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,255,204,51));
         }
-        else /*if(MurGetCouleur(mur)==BLEU)*/{
+        else{
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,51,204,255));
             }
         SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),MurGetPositionX(mur),MurGetPositionY(mur));
+        SDL_FreeSurface(surfaceMur);
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
         moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
