@@ -231,6 +231,6 @@ void SDLTestRegression(){
     SDLAfficheJeu(&sdl);
     bougeMoto(SDLGetJeu(&sdl));
     SDLDestructeur(&sdl);
-    printf("pointeur de l'image chargée après destruction : %p   %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
+    printf("pointeur de l'image chargée après kdestruction : %p   %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
 }
 
