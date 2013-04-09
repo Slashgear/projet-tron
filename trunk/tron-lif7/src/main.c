@@ -20,7 +20,6 @@ int main(){
     SDL sdl;
     SDLJeuInit(&sdl);
     SDLBoucleJeu(&sdl);
-    pause();
     SDLDestructeur(&sdl);
 
 return 0;
