@@ -194,7 +194,7 @@ void SDLBoucleJeu(SDL* sdl){
             SDLAfficheJeu(sdl);
         }
     }
-
+    SDL_Quit();
 }
 
 void SDLAfficheJeu(SDL *sdl){
