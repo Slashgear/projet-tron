@@ -9,13 +9,13 @@
 #include "SDL.h"
 
 int main(){
-#if 0
-    MurTestRegression();
+#if 1
+   /* MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
-    JeuTestRegression();
+    JeuTestRegression();*/
     SDLTestRegression();
 #else
     SDL sdl;

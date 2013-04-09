@@ -89,10 +89,9 @@ void decrementeVieMur(Grid* grille){
     float posY=5;
     unsigned int tailleX=3;
     unsigned int tailleY=4;
-    TableauDynamique mesMurs;
     Mur unMur;
+    TableauDynamique mesMurs;
     MurConstructeur(&unMur,31,32,33,34,ORANGE,0);
-    initialiserTabDyn(&mesMurs);
     GridConstructeur(&grille,posX,posY,tailleX,tailleY,&mesMurs);
     printf("La valeur de PosX saisie est %f et dans Grid est %f\n",posX,GridGetPositionX(&grille));
     printf("La valeur de PosY saisie est %f et dans Grid est %f\n",posY,GridGetPositionY(&grille));
@@ -111,6 +110,6 @@ void decrementeVieMur(Grid* grille){
     printf("Après destruction la valeur de PosY dans Grid est %f\n",GridGetPositionY(&grille));
     printf("Après destruction la valeur de tailleX dans Grid  est %u\n",GridGetTailleX(&grille));
     printf("Après destruction la valeur de tailleY dans Grid est %u\n",GridGetTailleY(&grille));
-    printf("Après destruction la valeur du pointeur de TabDyn dans Grid est %p \n \n",GridGetMesMurs(&grille));
+    printf("Après destruction la taille utilisée par mesMurs est %u \n \n",TabDynGetTaille_utilisee(GridGetMesMurs(&grille)));
  }
 
