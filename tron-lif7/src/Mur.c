@@ -67,7 +67,6 @@ void AfficheStatsMur(Mur* mur){
 
 
 void MurTestRegression(){
-    /*mur est utilisé sans être initialisé*/
     Mur mur;
     float posX=1;
     float posY=1;
