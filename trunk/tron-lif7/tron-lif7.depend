@@ -515,10 +515,11 @@
 	<SDL/SDL_image.h>
 	<time.h>
 
-1365506658 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Controle.c
+1365512656 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Controle.c
 	"Controle.h"
 	<stdlib.h>
 	<stdio.h>
+	<assert.h>
 	<SDL/SDL.h>
 
 1365506658 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Controle.h
@@ -594,12 +595,11 @@
 	"Couleur.h"
 	"Mur.h"
 
-1365507052 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/SDL.c
+1365512967 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
 	<SDL/SDL.h>
-	<SDL/SDL_image.h>
 	<time.h>
 
 1365501381 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/SDL.h
@@ -612,7 +612,7 @@
 	"Mur.h"
 	<stdlib.h>
 
-1365511694 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/main.c
+1365512765 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	"Mur.h"
