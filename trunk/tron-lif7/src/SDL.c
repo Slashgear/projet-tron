@@ -108,7 +108,7 @@ void SDLJeuInit(SDL *sdl){
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO )!= -1 );
     ControleConstructeur(&controle1,'z','s','q','d');
-    MotoConstructeur(&moto1,333,20,5,10,_Vitesse_Initiale,BAS);
+    MotoConstructeur(&moto1,334,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
 
     ControleConstructeur(&controle2,'o','l','k','m');
