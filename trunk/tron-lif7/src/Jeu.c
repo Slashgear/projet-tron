@@ -260,17 +260,17 @@ void JeuTestRegression(){
     printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",
            vitesse2,MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
 
-    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
-    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
 
     ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
-    assert(0== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
-    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
+    assert(1== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0)),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1)),JeuGetGrille(&jeu)));
 
     bougeMoto(&jeu);
     printf("La vitesse de la moto1 (1 avant) après bougeMoto est %f \n",
            MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0))));
-    printf("La positionY de la moto2 (30avant + 2vitesse) après bougeMoto est %f \n",
+    printf("La positionY de la moto2 (2avant + vitesse) après bougeMoto est %f \n",
            MotoGetPositionY(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
 
     nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
@@ -278,8 +278,8 @@ void JeuTestRegression(){
     JeuEvolue(&jeu,&jeuContinue);
 
     JeuDestructeur(&jeu);
-    printf("Après destruction, le pointeur de grille du jeu est %p \n",JeuGetGrille(&jeu));
-    printf("Après destruction, le pointeur du joueur 2 de mesJoueurs du jeu est %p \n \n",JeuGetIemeJoueurs(&jeu,1));
+    printf("Après destruction, la position de la grille grille du jeu est %f \n",GridGetPositionX(JeuGetGrille(&jeu)));
+    printf("Après destruction, la couleur du joueur 2 est %d \n \n",JoueurGetCouleur(JeuGetIemeJoueurs(&jeu,1)));
 
 
 }
