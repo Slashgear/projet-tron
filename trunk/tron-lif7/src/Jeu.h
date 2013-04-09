@@ -37,7 +37,7 @@ char testCollisionMur(const Moto * moto, Grid * grille);
 /**fonction qui teste les collisions entre moto*/
 char testCollisionMoto(Joueur mesJoueurs);
 /**procédure qui gère les actions des motos en fonction des touches saisies*/
-void JeuActionClavier(Joueur* joueur, const char touche,Grid* grille);
+void JeuActionClavier(Joueur* joueur, const SDLKey touche,Grid* grille);
 
 /**procédure de test*/
 void JeuTestRegression();
