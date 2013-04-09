@@ -67,7 +67,7 @@ char testCollisionMur(const Moto * moto, Grid * grille){
     return boolCollision;
 }
 
-void JeuActionClavier(Joueur* joueur,const char touche,Grid* grille){
+void JeuActionClavier(Joueur* joueur,const SDLKey touche,Grid* grille){
     Controle* unControle=JoueurGetControle(joueur);
     Moto* uneMoto=JoueurGetMoto(joueur);
     unsigned int tailleTemp=MotoGetTailleX(uneMoto);
@@ -231,6 +231,8 @@ void JeuTestRegression(){
     char touchegauche2='k';
     char touchehaut2='o';
     char touchebas2='l';
+    char touchebonus1='a';
+    char touchebonus2='i';
 
     short int jeuContinue=0;
     Jeu jeu;
@@ -241,14 +243,14 @@ void JeuTestRegression(){
     GridConstructeur(&grille,posXg,posYg,tailleXg,tailleYg,&mesMurs);
 
     MotoConstructeur(&moto1,posX1,posY1,tailleX1,tailleY1,vitesse1,direction1);
-    ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1);
+    ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1,touchebonus1);
     JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1);
     mesJoueurs[0] = &joueur1;
     printf("La valeur posX1 est %f et dans la Moto1 du joueur1 est de %f \n",posX1,
            MotoGetPositionX(JoueurGetMoto(&joueur1)));
 
     MotoConstructeur(&moto2,posX2,posY2,tailleX2,tailleY2,vitesse2,direction2);
-    ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2);
+    ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2,touchebonus2);
     JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2);
     mesJoueurs[1] = &joueur2;
     printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",

@@ -1,40 +1,48 @@
 #include"Controle.h"
 #include<stdlib.h>
 #include<stdio.h>
+#include<SDL/SDL.h>
 
-char ControleGetDroite(const Controle* controle){
+SDLKey ControleGetDroite(const Controle* controle){
     return controle->droite;
 }
-char ControleGetHaut(const Controle* controle){
+SDLKey ControleGetHaut(const Controle* controle){
     return controle->haut;
 }
-char ControleGetGauche(const Controle* controle){
+SDLKey ControleGetGauche(const Controle* controle){
     return controle->gauche;
 }
-char ControleGetBas(const Controle* controle){
+SDLKey ControleGetBas(const Controle* controle){
     return controle->bas;
 }
 
-void ControleSetDroite(Controle* controle,char x){
+SDLKey ControleGetBonus(const Controle* controle){
+    return controle->bonus;
+}
+
+void ControleSetDroite(Controle* controle,SDLKey x){
     controle->droite=x;
 }
-void ControleSetHaut(Controle* controle,char x){
+void ControleSetHaut(Controle* controle,SDLKey x){
     controle->haut=x;
 }
 
-void ControleSetGauche(Controle* controle,char x){
+void ControleSetGauche(Controle* controle,SDLKey x){
     controle->gauche=x;
 }
-void ControleSetBas(Controle* controle,char x){
+void ControleSetBas(Controle* controle,SDLKey x){
     controle->bas=x;
 }
+void ControleSetBonus(Controle* controle,SDLKey x){
+    controle->bonus=x;
+}
 
-void ControleConstructeur(Controle* controle, char haut,char bas,char gauche,char droite){
+void ControleConstructeur(Controle* controle, SDLKey haut,SDLKey bas,SDLKey gauche,SDLKey droite,SDLKey bonus){
     ControleSetDroite(controle, droite);
     ControleSetGauche(controle, gauche);
     ControleSetHaut(controle, haut);
     ControleSetBas(controle, bas);
-
+    ControleSetBonus(controle, bonus);
 }
 
 void ControleDestructeur(Controle* controle){
@@ -47,11 +55,12 @@ void ControleDestructeur(Controle* controle){
 
  void ControleTestRegression(){
      Controle unControle;
-     char touchedroite='d';
-     char touchegauche='q';
-     char touchehaut='z';
-     char touchebas='s';
-     ControleConstructeur(&unControle,touchehaut,touchebas,touchegauche,touchedroite);
+     SDLKey touchedroite=SDLK_d;
+     SDLKey touchegauche=SDLK_q;
+     SDLKey touchehaut=SDLK_z;
+     SDLKey touchebas=SDLK_s;
+     SDLKey touchebonus=SDLK_a;
+     ControleConstructeur(&unControle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
      printf("Le caractere de la touche droite est %c ,et dans le Controle est %c\n",touchedroite,ControleGetDroite(&unControle));
      printf("Le caractere de la touche gauche est %c ,et dans le Controle est %c\n",touchegauche,ControleGetGauche(&unControle));
      printf("Le caractere de la touche haut est %c ,et dans le Controle est %c\n",touchehaut,ControleGetHaut(&unControle));

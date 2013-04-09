@@ -55,10 +55,11 @@ void JoueurDestructeur(Joueur* joueur){
     char touchegauche='g';
     char touchehaut='h';
     char touchebas='b';
+    char touchebonus='a';
 
     MotoConstructeur(&moto,posX,posY,tailleX,tailleY,vitesse,direction);
 
-    ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite);
+    ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 
     JoueurConstructeur(&joueur,&moto,&controle,couleur);
     printf("La valeur posX est %f et dans la Moto du joueur est de %f \n",posX,MotoGetPositionX(JoueurGetMoto(&joueur)));

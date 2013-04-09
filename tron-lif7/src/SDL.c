@@ -107,11 +107,11 @@ void SDLJeuInit(SDL *sdl){
     SDL_Surface* ecran;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO )!= -1 );
-    ControleConstructeur(&controle1,'z','s','q','d');
+    ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,334,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE);
 
-    ControleConstructeur(&controle2,'o','l','k','m');
+    ControleConstructeur(&controle2,'o','l','k','m','i');
     MotoConstructeur(&moto2,339,650,5,10,_Vitesse_Initiale,HAUT);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU);
 
@@ -130,10 +130,12 @@ void SDLJeuInit(SDL *sdl){
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl){
     short int jeuFini = 0;
+    int i;
     SDL_Event evenement;
     float horloge_courante, horloge_precedente;
     float intervalle_horloge=0.03f;
     int affAJour;
+    Controle* unControle;
 
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
@@ -151,43 +153,29 @@ void SDLBoucleJeu(SDL* sdl){
             if ( evenement.type == SDL_QUIT )
 				affAJour = 0;
 				if (evenement.type == SDL_KEYDOWN){
-                    switch ( evenement.key.keysym.sym )
-                    {
-                    case SDLK_z:
-                        JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),0),'z',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_s:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 's',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_q:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'q',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_d:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),0), 'd',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-
-                    case SDLK_o:
-                        JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),1),'o',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_l:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'l',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_k:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'k',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    case SDLK_m:
-                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),1), 'm',JeuGetGrille(SDLGetJeu(sdl)));
-                        affAJour = 1;
-                        break;
-                    default: break;
-                    }
+                    for(i=0;i<_Nombre_de_Joueur;i++){
+                            unControle=JoueurGetControle(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+                            if(evenement.key.keysym.sym==ControleGetHaut(unControle)){
+                                JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                 ControleGetHaut(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                affAJour = 1;
+                            }
+                            else  if(evenement.key.keysym.sym==ControleGetBas(unControle)){
+                                    JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                     ControleGetBas(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                    affAJour = 1;
+                                }
+                                else if(evenement.key.keysym.sym==ControleGetGauche(unControle)){
+                                        JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                         ControleGetGauche(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                        affAJour = 1;
+                                    }
+                                    else if(evenement.key.keysym.sym==ControleGetDroite(unControle)){
+                                            JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                             ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                            affAJour = 1;
+                                        }
+                        }
 				}
         }
         if(!affAJour){

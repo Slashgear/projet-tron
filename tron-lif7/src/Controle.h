@@ -2,6 +2,7 @@
 #define CONTROLE_H_INCLUDED
 #include<stdlib.h>
 #include<stdio.h>
+#include <SDL/SDL.h>
 
 /**
 *\file [Controle.h]
@@ -12,32 +13,37 @@
 */
 
 typedef struct{
-    char droite;
-    char haut;
-    char bas;
-    char gauche;
+    SDLKey droite;
+    SDLKey haut;
+    SDLKey bas;
+    SDLKey gauche;
+    SDLKey bonus;
 }Controle;
 
 /** assesseur de touche droite*/
-char ControleGetDroite(const Controle* controle);
+SDLKey ControleGetDroite(const Controle* controle);
 /** assesseur de touche haut*/
-char ControleGetHaut(const Controle* controle);
+SDLKey ControleGetHaut(const Controle* controle);
 /** assesseur de touche bas*/
-char ControleGetBas(const Controle* controle);
+SDLKey ControleGetBas(const Controle* controle);
 /** assesseur de touche gauche*/
-char ControleGetGauche(const Controle* controle);
+SDLKey ControleGetGauche(const Controle* controle);
+/** assesseur de touche bonus*/
+SDLKey ControleGetBonus(const Controle* controle);
 
 /** mutateur de touche droite*/
-void ControleSetDroite(Controle* controle,char x);
+void ControleSetDroite(Controle* controle,SDLKey x);
 /** mutateur de touche haut*/
-void ControleSetHaut(Controle* controle,char x);
+void ControleSetHaut(Controle* controle,SDLKey x);
 /** mutateur de touche bas*/
-void ControleSetBas(Controle* controle,char x);
+void ControleSetBas(Controle* controle,SDLKey x);
 /** mutateur de touche gauche*/
-void ControleSetGauche(Controle* controle,char x);
+void ControleSetGauche(Controle* controle,SDLKey x);
+/** mutateur de touche bonus*/
+void ControleSetBonus(Controle* controle,SDLKey x);
 
 /** Constructeur de Controle*/
-void ControleConstructeur(Controle* controle, char haut,char bas,char gauche,char droite);
+void ControleConstructeur(Controle* controle, SDLKey haut,SDLKey bas,SDLKey gauche,SDLKey droite,SDLKey bonus);
 /** Destructeur de Controle*/
 void ControleDestructeur(Controle* controle);
 
