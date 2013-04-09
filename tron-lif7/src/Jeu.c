@@ -169,7 +169,7 @@ void bougeMoto(Jeu* jeu){
                         MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                         }
         ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
-        MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+0.005);
+        MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+_Acceleration);
         }
 }
 

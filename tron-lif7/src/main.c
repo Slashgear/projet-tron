@@ -9,18 +9,19 @@
 #include "SDL.h"
 
 int main(){
-    /*MurTestRegression();
+#if 0
+    MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
     JeuTestRegression();
-    SDLTestRegression();*/
-
+    SDLTestRegression();
+#else
     SDL sdl;
     SDLJeuInit(&sdl);
     SDLBoucleJeu(&sdl);
     SDLDestructeur(&sdl);
-
+#endif
 return 0;
 }

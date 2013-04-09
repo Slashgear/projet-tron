@@ -66,13 +66,13 @@ void effaceMur(TableauDynamique* mesMurs){
 }
 void nettoieGrid(TableauDynamique* mesMurs){
     int i;
-    for(i=0;i<=TabDynGetTaille_utilisee(mesMurs);i++){
+    for(i=0;i<TabDynGetTaille_utilisee(mesMurs);i++){
     supprimerElementTabDyn(mesMurs,i);
     }
 }
 void decrementeVieMur(Grid* grille){
     int i;
-    for(i=0;i<=TabDynGetTaille_utilisee(GridGetMesMurs(grille));i++){
+    for(i=0;i<TabDynGetTaille_utilisee(GridGetMesMurs(grille));i++){
         MurSetDureeVie(adresseIemeElementTabDyn(GridGetMesMurs(grille),i),
                        MurGetDureeVie(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))-1);
     }
