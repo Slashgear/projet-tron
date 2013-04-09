@@ -10,12 +10,12 @@
 
 int main(){
 #if 1
-   /* MurTestRegression();
+    MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
-    JeuTestRegression();*/
+    JeuTestRegression();
     SDLTestRegression();
 #else
     SDL sdl;
