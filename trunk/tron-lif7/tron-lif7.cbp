@@ -41,12 +41,17 @@
 		<Linker>
 			<Add option="`sdl-config --libs`" />
 		</Linker>
+		<Unit filename="src/Bonus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Bonus.h" />
 		<Unit filename="src/Constantes.h" />
 		<Unit filename="src/Controle.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Controle.h" />
 		<Unit filename="src/Couleur.h" />
+		<Unit filename="src/EffetBonus.h" />
 		<Unit filename="src/Grid.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -3,6 +3,8 @@
 #include "Controle.h"
 #include "Moto.h"
 #include "Couleur.h"
+#include "EffetBonus.h"
+
 /**
 \file [Moto.h]
 \brief Module des Motos du jeu
@@ -16,6 +18,7 @@ typedef struct {
     Controle controle;
     Couleur couleur;
     char enJeu;
+    EffetBonus effetActuel;
 }Joueur;
 
 /** assesseur de moto*/
@@ -26,6 +29,9 @@ Controle* JoueurGetControle(Joueur* joueur);
 Couleur JoueurGetCouleur(const Joueur* joueur);
 /** assesseur de enJeu*/
 char JoueurGetEnJeu(const Joueur* joueur);
+/**assesseur du bonus en cours*/
+EffetBonus JoueurGetEffetBonus(const Joueur *Joueur);
+
 
 /** mutateur de moto*/
 void JoueurSetMoto(Joueur* joueur, Moto* moto);
@@ -35,9 +41,12 @@ void JoueurSetControle(Joueur* joueur, Controle* controle);
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur);
 /** mutateur de enJeu*/
 void JoueurSetEnJeu(Joueur* joueur, char enJeu);
+/** mutateur du Bonus en cours*/
+void JoueurSetEffetBoonus(Joueur* joueur,EffetBonus effet);
+
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 
