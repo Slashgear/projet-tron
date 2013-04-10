@@ -11,4 +11,4 @@
 typedef enum{AUCUN=0,NETTOYAGE=1,BOOST=2}EffetBonus;
 
 
-#endif // EFFETBONUS_H_INCLUDED
+#endif

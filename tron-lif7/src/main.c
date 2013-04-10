@@ -7,6 +7,7 @@
 #include "Grid.h"
 #include "Jeu.h"
 #include "SDL.h"
+#include "Bonus.h"
 
 int main(){
 #if 0
@@ -17,6 +18,7 @@ int main(){
     GridTestRegression();
     JeuTestRegression();
     SDLTestRegression();
+    BonusTestRegression();
 #else
     SDL sdl;
     if(_Nombre_de_Joueur==2){
