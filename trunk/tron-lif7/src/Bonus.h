@@ -44,7 +44,7 @@ char BonusTestCollisionMoto(Moto *moto,Bonus* bonus);
 /**Fonction qui teste si un bonus est en Collision avec un Mur*/
 char BonusTestCollisionMurs(Grid *grille,Bonus* bonus);
 /**fonction qui place des bonus sur la grille*/
-Bonus* PlaceBonus(Grid* grid);
+void PlaceBonus(Grid* grid,Bonus *bonus);
 
 /**fonction qui teste le module*/
 void BonusTestRegression();

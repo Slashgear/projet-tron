@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <SDL/SDL.h>
 #include <time.h>
+#include "Joystick.h"
 
 Jeu* SDLGetJeu(SDL* sdl){
     return &(sdl->jeu);
@@ -123,8 +124,12 @@ void SDLJeuInit4(SDL *sdl){
     TableauDynamique tabDynMurs;
     Joueur* mesJoueurs[4]={&joueur1,&joueur2,&joueur3,&joueur4};
     SDL_Surface* ecran;
+    Bonus bonus[_Nombre_de_Bonus];
+    int i;
 
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO )!= -1 );
+    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK)!= -1 );
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
+
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN);
@@ -167,8 +172,12 @@ void SDLJeuInit2(SDL *sdl){
     TableauDynamique tabDynMurs;
     Joueur* mesJoueurs[2]={&joueur1,&joueur2};
     SDL_Surface* ecran;
+    Bonus bonus[_Nombre_de_Bonus];
+    int i;
 
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO )!= -1 );
+    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
+
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN);
@@ -199,6 +208,9 @@ void SDLBoucleJeu(SDL* sdl){
     int affAJour;
     Controle* unControle;
 
+    initialiserInput(sdl->input,0);
+
+    SDL_JoystickEventState(SDL_ENABLE);
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
@@ -239,10 +251,34 @@ void SDLBoucleJeu(SDL* sdl){
                                                              ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
                                             affAJour = 1;
                                         }
+                      /*  updateEvent(sdl->input);
+                         if(sdl->input.chapeaux[0] == SDL_HAT_UP){
+                                JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                ControleGetHaut(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                input.chapeaux[0] = SDL_HAT_CENTERED;
+                            }
+                        else if(sdl->input.chapeaux[0] == SDL_HAT_DOWN){
+                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                ControleGetBas(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                input.chapeaux[0] = SDL_HAT_CENTERED;
+                                }
+                            else if(sdl->input.chapeaux[0] == SDL_HAT_LEFT){
+                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                ControleGetGauche(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                joystick.chapeaux[0] = SDL_HAT_CENTERED;
+                                }
+                                else if(input.chapeaux[0] == SDL_HAT_RIGHT){
+                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
+                                                ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                input.chapeaux[0] = SDL_HAT_CENTERED;
+                                }*/
                     }
 				}
 
-            }
+             }
+
+
+
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
@@ -250,11 +286,35 @@ void SDLBoucleJeu(SDL* sdl){
     }
 }
 
-void SDLAfficheJeu(SDL *sdl){
-    SDL_Surface * surfaceMur;
+
+void SDLAfficheMotos(SDL* sdl){
+    Moto *moto;
     SDL_Surface * surfaceMoto;
+    int i;
+    for(i=0;(i<_Nombre_de_Joueur);i++){
+            if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
+                moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+                if(MotoGetDirection(moto)==HAUT){
+                    surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4));
+                }
+                else if(MotoGetDirection(moto)==BAS){
+                        surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+1);
+                    }
+                    else if(MotoGetDirection(moto)==GAUCHE){
+                            surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+2);
+                        }
+                        else if(MotoGetDirection(moto)==DROITE){
+                                surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+3);
+                            }
+
+                SDLAppliqueSurface(surfaceMoto,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
+            }
+        }
+
+}
+void SDLAfficheMurs(SDL *sdl){
+    SDL_Surface * surfaceMur;
     Mur* mur;
-    Moto* moto;
     int i;
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,1),SDLGetIemeTexture(sdl,0),GridGetPositionX(JeuGetGrille(SDLGetJeu(sdl))),GridGetPositionY(JeuGetGrille(SDLGetJeu(sdl))));
     for(i=0;i<TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(SDLGetJeu(sdl))));i++){
@@ -278,29 +338,17 @@ void SDLAfficheJeu(SDL *sdl){
         SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),(int)(MurGetPositionX(mur)/1),(int)(MurGetPositionY(mur)/1));
         SDL_FreeSurface(surfaceMur);
     }
-    for(i=0;(i<_Nombre_de_Joueur);i++){
-        if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
-            moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
-            if(MotoGetDirection(moto)==HAUT){
-                surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4));
-            }
-            else if(MotoGetDirection(moto)==BAS){
-                    surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+1);
-                }
-                else if(MotoGetDirection(moto)==GAUCHE){
-                        surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+2);
-                    }
-                    else if(MotoGetDirection(moto)==DROITE){
-                            surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+3);
-                        }
+}
+void SDLAfficheJeu(SDL *sdl){
+    SDLAfficheMurs(sdl);
+    SDLAfficheMotos(sdl);
 
-            SDLAppliqueSurface(surfaceMoto,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
-        }
-    }
 
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 
 }
+
+
 
 void SDLTestRegression(){
     SDL sdl;

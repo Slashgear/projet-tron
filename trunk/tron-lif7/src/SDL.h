@@ -2,6 +2,7 @@
 #define SDL_H_INCLUDED
 #include "Jeu.h"
 #include <SDL/SDL.h>
+#include "Joystick.h"
 
 /**
 *\file [SDL.h]
@@ -14,6 +15,7 @@
 typedef struct{
     Jeu jeu;
     SDL_Surface * textures[2+4*_Nombre_de_Joueur];
+    Input* input;
 }SDL;
 /** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
@@ -40,6 +42,10 @@ void SDLDestructeur(SDL *sdl);
 void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,int positionX,int positionY);
 /** Procédure d'affichage du jeu*/
 void SDLAfficheJeu(SDL *sdl);
+/**Procédure d'affichage des motos*/
+void SDLAfficheMotos(SDL *sdl);
+/**Procédure d'affichage des Murs*/
+void SDLAfficheMurs(SDL *sdl);
 /**Procédure Init à 2 joueurs*/
 void SDLJeuInit2(SDL *sdl);
 /**Procédure Init à 4 joueurs*/
