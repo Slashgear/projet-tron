@@ -9,7 +9,7 @@
 \file [Moto.h]
 \brief Module des Motos du jeu
 \author {Antoine.C,Matthieu.B}
-\version 0.1
+\version 1.1
 \date 19 mars 2013
 */
 
@@ -19,6 +19,7 @@ typedef struct {
     Couleur couleur;
     char enJeu;
     EffetBonus effetActuel;
+    short int numeroManette;
 }Joueur;
 
 /** assesseur de moto*/
@@ -31,6 +32,8 @@ Couleur JoueurGetCouleur(const Joueur* joueur);
 char JoueurGetEnJeu(const Joueur* joueur);
 /**assesseur du bonus en cours*/
 EffetBonus JoueurGetEffetBonus(const Joueur *Joueur);
+/**assesseur du numero de la Manette */
+short int JoueurGetNumeroManette(const Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -42,11 +45,13 @@ void JoueurSetCouleur(Joueur* joueur, Couleur couleur);
 /** mutateur de enJeu*/
 void JoueurSetEnJeu(Joueur* joueur, char enJeu);
 /** mutateur du Bonus en cours*/
-void JoueurSetEffetBoonus(Joueur* joueur,EffetBonus effet);
+void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet);
+/** mutateur du numero de manette*/
+void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel,short int numero);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 
