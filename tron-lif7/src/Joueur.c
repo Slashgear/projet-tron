@@ -21,6 +21,9 @@ char JoueurGetEnJeu(const Joueur* joueur){
 EffetBonus JoueurGetEffetBonus(const Joueur* joueur){
     return joueur->effetActuel;
 }
+short int JoueurGetNumeroManette(const Joueur *joueur){
+    return joueur->numeroManette;
+}
 
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
@@ -38,15 +41,18 @@ void JoueurSetEnJeu(Joueur* joueur, char enJeu){
 void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet){
     joueur->effetActuel=effet;
 }
+void JoueurSetNumeroManette(Joueur* joueur,short int numero){
+    joueur->numeroManette=numero;
+}
 
 
-
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel){
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel,short int numero){
     JoueurSetMoto(joueur,moto);
     JoueurSetControle(joueur,controle);
     JoueurSetCouleur(joueur,couleur);
     JoueurSetEnJeu(joueur,enJeu);
     JoueurSetEffetBonus(joueur,effetActuel);
+    JoueurSetNumeroManette(joueur,numero);
 }
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
@@ -54,6 +60,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetCouleur(joueur,NOIR);
     JoueurSetEnJeu(joueur,0);
     JoueurSetEffetBonus(joueur,AUCUN);
+    JoueurSetNumeroManette(joueur,-1);
 }
 
  void JoueurTestRegression(){
@@ -78,7 +85,7 @@ void JoueurDestructeur(Joueur* joueur){
 
     ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 
-    JoueurConstructeur(&joueur,&moto,&controle,couleur,1,AUCUN);
+    JoueurConstructeur(&joueur,&moto,&controle,couleur,1,AUCUN,-1);
     printf("La valeur posX est %f et dans la Moto du joueur est de %f \n",posX,MotoGetPositionX(JoueurGetMoto(&joueur)));
     printf("La valeur posY est %f et dans la Moto du joueur est de %f \n",posY,MotoGetPositionY(JoueurGetMoto(&joueur)));
     printf("La valeur tailleX est %u et dans la Moto du joueur est de %u \n",tailleX,MotoGetTailleX(JoueurGetMoto(&joueur)));
