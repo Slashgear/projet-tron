@@ -2,78 +2,78 @@
 #include <SDL/SDL.h>
 #include "Joystick.h"
 
-void initialiserInput(Input *input,int numeroJoystick)
+void initialiserManette(Manette *manette,int numeroJoystick)
 {
     if(numeroJoystick < SDL_NumJoysticks())
     {
-        input->joystick = SDL_JoystickOpen(numeroJoystick);
-        input->numero = numeroJoystick;
+        manette->joystick = SDL_JoystickOpen(numeroJoystick);
+        manette->numero = numeroJoystick;
         int i;
 
 
-        input->boutons = (char*) malloc(SDL_JoystickNumButtons(input->joystick) * sizeof(char));
-        input->axes = (int*) malloc(SDL_JoystickNumAxes(input->joystick) * sizeof(int));
-        input->chapeaux = (int*) malloc(SDL_JoystickNumHats(input->joystick) * sizeof(int));
+        manette->boutons = (char*) malloc(SDL_JoystickNumButtons(manette->joystick) * sizeof(char));
+        manette->axes = (int*) malloc(SDL_JoystickNumAxes(manette->joystick) * sizeof(int));
+        manette->chapeaux = (int*) malloc(SDL_JoystickNumHats(manette->joystick) * sizeof(int));
 
-        for(i=0;i<SDL_JoystickNumButtons(input->joystick);i++)
-            input->boutons[i] = 0;
-        for(i=0;i<SDL_JoystickNumAxes(input->joystick);i++)
-            input->axes[i] = 0;
-        for(i=0;i<SDL_JoystickNumHats(input->joystick);i++)
-            input->chapeaux[i] = SDL_HAT_CENTERED;
+        for(i=0;i<SDL_JoystickNumButtons(manette->joystick);i++)
+            manette->boutons[i] = 0;
+        for(i=0;i<SDL_JoystickNumAxes(manette->joystick);i++)
+            manette->axes[i] = 0;
+        for(i=0;i<SDL_JoystickNumHats(manette->joystick);i++)
+            manette->chapeaux[i] = SDL_HAT_CENTERED;
            }
 
     else
     {
 
-        input->joystick = NULL;
-        input->boutons = NULL;
-        input->axes = NULL;
-        input->chapeaux = NULL;
+        manette->joystick = NULL;
+        manette->boutons = NULL;
+        manette->axes = NULL;
+        manette->chapeaux = NULL;
 
     }
 }
 
-void detruireInput(Input *input)
+void detruireManette(Manette *manette)
 {
-    if(input->joystick != NULL){
-        input->numero = 0;
+    if(manette->joystick != NULL){
+        manette->numero = 0;
 
-        free(input->boutons);
-        free(input->axes);
-        free(input->chapeaux);
+        free(manette->boutons);
+        free(manette->axes);
+        free(manette->chapeaux);
 
-        SDL_JoystickClose(input->joystick);
+        SDL_JoystickClose(manette->joystick);
     }
 }
 
-void updateEvent(Input *input)
+void updateEvent(Manette *manette)
 {
     static SDL_Event evenements;
     while(SDL_PollEvent(&evenements))
     {
-        if(input->joystick != NULL
-        &&(evenements.jbutton.which == input->numero
-        || evenements.jaxis.which == input->numero
-        || evenements.jhat.which == input->numero
-        || evenements.jball.which == input->numero))
+        if(manette->joystick != NULL
+        &&(evenements.jbutton.which == manette->numero
+        || evenements.jaxis.which == manette->numero
+        || evenements.jhat.which == manette->numero
+        || evenements.jball.which == manette->numero))
         {
             switch(evenements.type)
             {
                 case SDL_JOYBUTTONDOWN:
-                    input->boutons[evenements.jbutton.button] = 1;
+                    manette->boutons[evenements.jbutton.button] = 1;
                     break;
 
                 case SDL_JOYBUTTONUP:
-                    input->boutons[evenements.jbutton.button] = 0;
+                    manette->boutons[evenements.jbutton.button] = 0;
                     break;
 
                 case SDL_JOYAXISMOTION:
-                    input->axes[evenements.jaxis.axis] = evenements.jaxis.value;
+                    manette->axes[evenements.jaxis.axis] = evenements.jaxis.value;
                     break;
 
                 case SDL_JOYHATMOTION:
-                    input->chapeaux[evenements.jhat.hat] = evenements.jhat.value;
+                    manette->chapeaux[evenements.jhat.hat] = evenements.jhat.value;
                     break;
 
                 default:

@@ -10,10 +10,10 @@ typedef struct
     int *axes;
     int *chapeaux;
     int numero;
-}Input;
+}Manette;
 
-void initialiserInput(Input *input,int numeroJoystick);
-void detruireInput(Input *input);
-void updateEvent(Input *input);
+void initialiserInput(Manette *manette,int numeroJoystick);
+void detruireInput(Manette *manette);
+void updateEvent(Manette *manette);
 
 #endif
