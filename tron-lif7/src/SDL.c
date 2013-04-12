@@ -128,23 +128,23 @@ void SDLJeuInit4(SDL *sdl){
     int i;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK)!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN,-1);}
 
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN);
+    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
 
     ControleConstructeur(&controle2,'o','l','k','m','i');
     MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
-    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN);
+    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
 
     ControleConstructeur(&controle3,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
     MotoConstructeur(&moto3,200,355,10,5,_Vitesse_Initiale,DROITE);
-    JoueurConstructeur(&joueur3,&moto3,&controle3,ROUGE,1,AUCUN);
+    JoueurConstructeur(&joueur3,&moto3,&controle3,ROUGE,1,AUCUN,-1);
 
     ControleConstructeur(&controle4,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
     MotoConstructeur(&moto4,800,350,10,5,_Vitesse_Initiale,GAUCHE);
-    JoueurConstructeur(&joueur4,&moto4,&controle4,VERT,1,AUCUN);
+    JoueurConstructeur(&joueur4,&moto4,&controle4,VERT,1,AUCUN,-1);
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
 
@@ -157,8 +157,24 @@ void SDLJeuInit4(SDL *sdl){
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
 }
+/*
+void SDLJeuInitN(SDL *sdl){
+    Jeu jeu;
+    Grid grille;
+    Joueur* mesJoueurs = (Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
 
+    JoueurConstructeur(mesJoueurs,mesJoueurs->moto,mesJoueurs->controle,)
 
+    GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
+    JeuConstructeur(&jeu,&grille,mesJoueurs);
+
+    SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
+    SDLConstructeur(sdl,&jeu);
+    ecran=SDLGetIemeTexture(sdl,0);
+    SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
+    SDLSetIemeTexture(sdl,0,ecran);
+}
+*/
 
 void SDLJeuInit2(SDL *sdl){
     Jeu jeu;
@@ -176,15 +192,15 @@ void SDLJeuInit2(SDL *sdl){
     int i;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN,-1);}
 
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN);
+    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
 
     ControleConstructeur(&controle2,'o','l','k','m','i');
     MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
-    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN);
+    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
 

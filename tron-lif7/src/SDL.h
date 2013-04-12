@@ -49,6 +49,8 @@ void SDLAfficheMurs(SDL *sdl);
 void SDLJeuInit2(SDL *sdl);
 /**Procédure Init à 4 joueurs*/
 void SDLJeuInit4(SDL *sdl);
+/**Procédure Init à N=_Nombre_De_Joueur joueurs*/
+void SDLJeuInitN(SDL *sdl);
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl);
 /** Procédure de chargement des images*/
