@@ -64,6 +64,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Joueur.h" />
+		<Unit filename="src/Joystick.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Joystick.h" />
 		<Unit filename="src/Moto.c">
 			<Option compilerVar="CC" />
 		</Unit>

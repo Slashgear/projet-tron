@@ -208,7 +208,7 @@ void SDLBoucleJeu(SDL* sdl){
     int affAJour;
     Controle* unControle;
 
-    initialiserInput(sdl->input,0);
+
 
     SDL_JoystickEventState(SDL_ENABLE);
     SDLAfficheJeu(sdl);
@@ -251,27 +251,7 @@ void SDLBoucleJeu(SDL* sdl){
                                                              ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
                                             affAJour = 1;
                                         }
-                      /*  updateEvent(sdl->input);
-                         if(sdl->input.chapeaux[0] == SDL_HAT_UP){
-                                JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetHaut(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                input.chapeaux[0] = SDL_HAT_CENTERED;
-                            }
-                        else if(sdl->input.chapeaux[0] == SDL_HAT_DOWN){
-                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetBas(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                input.chapeaux[0] = SDL_HAT_CENTERED;
-                                }
-                            else if(sdl->input.chapeaux[0] == SDL_HAT_LEFT){
-                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetGauche(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                joystick.chapeaux[0] = SDL_HAT_CENTERED;
-                                }
-                                else if(input.chapeaux[0] == SDL_HAT_RIGHT){
-                                JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                input.chapeaux[0] = SDL_HAT_CENTERED;
-                                }*/
+
                     }
 				}
 
@@ -342,8 +322,6 @@ void SDLAfficheMurs(SDL *sdl){
 void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
-
-
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 
 }

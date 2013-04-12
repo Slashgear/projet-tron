@@ -15,7 +15,6 @@
 typedef struct{
     Jeu jeu;
     SDL_Surface * textures[2+4*_Nombre_de_Joueur];
-    Input* input;
 }SDL;
 /** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
