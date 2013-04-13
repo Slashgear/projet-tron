@@ -78,6 +78,31 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu){
         SDLSetIemeTexture(sdl,16,SDLChargeImage("data/moto4G.bmp"));
         SDLSetIemeTexture(sdl,17,SDLChargeImage("data/moto4D.bmp"));
     }
+    if(_Nombre_de_Joueur>=5){
+        SDLSetIemeTexture(sdl,18,SDLChargeImage("data/moto5H.bmp"));
+        SDLSetIemeTexture(sdl,19,SDLChargeImage("data/moto5B.bmp"));
+        SDLSetIemeTexture(sdl,20,SDLChargeImage("data/moto5G.bmp"));
+        SDLSetIemeTexture(sdl,21,SDLChargeImage("data/moto5D.bmp"));
+    }
+    if(_Nombre_de_Joueur>=6){
+        SDLSetIemeTexture(sdl,22,SDLChargeImage("data/moto6H.bmp"));
+        SDLSetIemeTexture(sdl,23,SDLChargeImage("data/moto6B.bmp"));
+        SDLSetIemeTexture(sdl,24,SDLChargeImage("data/moto6G.bmp"));
+        SDLSetIemeTexture(sdl,25,SDLChargeImage("data/moto6D.bmp"));
+    }
+    if(_Nombre_de_Joueur>=7){
+        SDLSetIemeTexture(sdl,26,SDLChargeImage("data/moto7H.bmp"));
+        SDLSetIemeTexture(sdl,27,SDLChargeImage("data/moto7B.bmp"));
+        SDLSetIemeTexture(sdl,28,SDLChargeImage("data/moto7G.bmp"));
+        SDLSetIemeTexture(sdl,29,SDLChargeImage("data/moto7D.bmp"));
+    }
+    if(_Nombre_de_Joueur>=8){
+        SDLSetIemeTexture(sdl,30,SDLChargeImage("data/moto8H.bmp"));
+        SDLSetIemeTexture(sdl,31,SDLChargeImage("data/moto8B.bmp"));
+        SDLSetIemeTexture(sdl,32,SDLChargeImage("data/moto8G.bmp"));
+        SDLSetIemeTexture(sdl,33,SDLChargeImage("data/moto8D.bmp"));
+    }
+
 }
 
 void SDLDestructeur(SDL *sdl){
@@ -106,6 +131,7 @@ void pause()
     }
 }
 
+/*
 void SDLJeuInit4(SDL *sdl){
     Jeu jeu;
     Grid grille;
@@ -122,33 +148,41 @@ void SDLJeuInit4(SDL *sdl){
     Controle controle3;
     Controle controle4;
     TableauDynamique tabDynMurs;
-    Joueur* mesJoueurs[4]={&joueur1,&joueur2,&joueur3,&joueur4};
+    Joueur mesJoueurs[_Nombre_de_Joueur];
     SDL_Surface* ecran;
     Bonus bonus[_Nombre_de_Bonus];
     int i;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK)!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN,-1);}
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
 
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
+    mesJoueurs[0]=joueur1;
 
     ControleConstructeur(&controle2,'o','l','k','m','i');
     MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
+    mesJoueurs[1]=joueur2;
 
     ControleConstructeur(&controle3,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
     MotoConstructeur(&moto3,200,355,10,5,_Vitesse_Initiale,DROITE);
     JoueurConstructeur(&joueur3,&moto3,&controle3,ROUGE,1,AUCUN,-1);
+    mesJoueurs[2]=joueur3;
 
     ControleConstructeur(&controle4,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
     MotoConstructeur(&moto4,800,350,10,5,_Vitesse_Initiale,GAUCHE);
     JoueurConstructeur(&joueur4,&moto4,&controle4,VERT,1,AUCUN,-1);
+    mesJoueurs[3]=joueur4;
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
 
-    JeuConstructeur(&jeu,&grille,mesJoueurs);
+    JeuConstructeur(&jeu,&grille,&mesJoueurs);
+    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur1,0);
+    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur2,1);
+    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur3,2);
+    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur4,3);
 
     SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
 
@@ -156,14 +190,45 @@ void SDLJeuInit4(SDL *sdl){
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
-}
-/*
+}*/
+
 void SDLJeuInitN(SDL *sdl){
+    int i;
     Jeu jeu;
     Grid grille;
-    Joueur* mesJoueurs = (Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
+    TableauDynamique tabDynMurs;
+    Joueur unJoueur;
+    Controle unControle;
+    Moto uneMoto;
+    SDL_Surface *ecran;
+    Joueur (*mesJoueurs)[_Nombre_de_Joueur]=malloc(_Nombre_de_Joueur*sizeof(Joueur));
 
-    JoueurConstructeur(mesJoueurs,mesJoueurs->moto,mesJoueurs->controle,)
+    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
+    for(i=0;i<_Nombre_de_Joueur-_Nombre_de_Manette;i++){
+        if(_Nombre_de_Joueur<=4){
+            if(i==1){
+                ControleConstructeur(&unControle,'z','s','q','d','a');
+                MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
+                JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,-1);
+            }
+            else if(i==2){
+                    ControleConstructeur(&unControle,'o','l','k','m','i');
+                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
+                    JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1);
+                }
+                else if(i==3){
+                        ControleConstructeur(&unControle,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
+                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
+                        JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1);
+                    }
+                    else if(i==4){
+                            ControleConstructeur(&unControle,'t',SDLK_g,SDLK_f,SDLK_h,SDLK_r);
+                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
+                            JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1);
+                        }
+        }
+        *mesJoueurs[i]=unJoueur;
+    }
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs);
@@ -174,8 +239,9 @@ void SDLJeuInitN(SDL *sdl){
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
 }
-*/
 
+
+/*
 void SDLJeuInit2(SDL *sdl){
     Jeu jeu;
     Grid grille;
@@ -186,25 +252,30 @@ void SDLJeuInit2(SDL *sdl){
     Controle controle1;
     Controle controle2;
     TableauDynamique tabDynMurs;
-    Joueur* mesJoueurs[2]={&joueur1,&joueur2};
+    Joueur mesJoueurs[_Nombre_de_Joueur];
     SDL_Surface* ecran;
     Bonus bonus[_Nombre_de_Bonus];
     int i;
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN,-1);}
+    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
+
+    SDL_JoystickEventState(SDL_ENABLE);
+    initialiserManette(sdl->manettes,0);
 
     ControleConstructeur(&controle1,'z','s','q','d','a');
     MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
     JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
+    mesJoueurs[0]=joueur1;
 
     ControleConstructeur(&controle2,'o','l','k','m','i');
     MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
     JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
+    mesJoueurs[1]=joueur2;
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
 
-    JeuConstructeur(&jeu,&grille,mesJoueurs);
+    JeuConstructeur(&jeu,&grille,&mesJoueurs);
 
     SDL_WM_SetCaption( "TRON-The Grid v1.1", NULL );
 
@@ -212,7 +283,7 @@ void SDLJeuInit2(SDL *sdl){
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
-}
+}*/
 
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl){
@@ -226,7 +297,7 @@ void SDLBoucleJeu(SDL* sdl){
 
 
 
-    SDL_JoystickEventState(SDL_ENABLE);
+
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
@@ -268,8 +339,8 @@ void SDLBoucleJeu(SDL* sdl){
                                             affAJour = 1;
                                         }
 
-                    }
-				}
+
+				}       }
 
              }
 
@@ -288,7 +359,7 @@ void SDLAfficheMotos(SDL* sdl){
     SDL_Surface * surfaceMoto;
     int i;
     for(i=0;(i<_Nombre_de_Joueur);i++){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
+            if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==VIVANT){
                 moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
                 if(MotoGetDirection(moto)==HAUT){
                     surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4));
@@ -331,6 +402,15 @@ void SDLAfficheMurs(SDL *sdl){
                     else if(MurGetCouleur(mur)==VIOLET){
                     SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,204,51,255));
                     }
+                        else if(MurGetCouleur(mur)==BLEUF){
+                        SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,13,24,179));
+                        }
+                            else if(MurGetCouleur(mur)==JAUNE){
+                            SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,231,239,11));
+                            }
+                                else if(MurGetCouleur(mur)==BLANC){
+                                SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,255,255,255));
+                                }
         SDLAppliqueSurface(surfaceMur,SDLGetIemeTexture(sdl,0),(int)(MurGetPositionX(mur)/1),(int)(MurGetPositionY(mur)/1));
         SDL_FreeSurface(surfaceMur);
     }
@@ -345,11 +425,11 @@ void SDLAfficheJeu(SDL *sdl){
 
 
 void SDLTestRegression(){
-    SDL sdl;
+    /*SDL sdl;
     SDLJeuInit2(&sdl);
     SDLAfficheJeu(&sdl);
     bougeMoto(SDLGetJeu(&sdl));
     SDLDestructeur(&sdl);
-    printf("pointeur de l'image chargée après kdestruction : %p   %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));
+    printf("pointeur de l'image chargée après kdestruction : %p   %p \n",SDLGetIemeTexture(&sdl,5),SDLGetIemeTexture(&sdl,7));*/
 }
 

@@ -18,15 +18,17 @@ int main(){
     GridTestRegression();
     JeuTestRegression();
     SDLTestRegression();
-    BonusTestRegression();
+   /* BonusTestRegression();
+    JoystickTestRegression();*/
 #else
     SDL sdl;
-    if(_Nombre_de_Joueur==2){
+   /* if(_Nombre_de_Joueur==2){
         SDLJeuInit2(&sdl);
     }
     else if(_Nombre_de_Joueur==4){
         SDLJeuInit4(&sdl);
-    }
+    }*/
+    SDLJeuInitN(&sdl);
     SDLBoucleJeu(&sdl);
     SDLDestructeur(&sdl);
 #endif
