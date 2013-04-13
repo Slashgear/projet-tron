@@ -82,3 +82,39 @@ void updateEvent(Manette *manette)
         }
     }
 }
+
+void JoystickTestRegression(){
+
+SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
+
+    Manette manette;
+    int i;
+    int j;
+    SDL_JoystickEventState(SDL_ENABLE);
+    initialiserManette(&manette,0);
+    int quitter = 0;
+    printf("Nombre de Joystick :%d\n",SDL_NumJoysticks());
+    for(i=0;i<SDL_NumJoysticks();i++){
+    printf("Nom du joystick numero %d : %s\n",i,SDL_JoystickName(i));
+    printf("nombre boutons %d\n ",SDL_JoystickNumButtons(manette.joystick));
+    printf("nombre de chapeaux %d\n",SDL_JoystickGetHat(manette.joystick,0));
+    }
+    while(!quitter)
+    {
+        updateEvent(&manette);
+        for(j=0;j<15;j++){
+        if(manette.boutons[j])
+        {
+            printf("Le bouton %d est appuyé\n",j);
+        }
+        }
+        if(manette.boutons[6]){quitter=1;}
+
+    }
+
+
+    detruireManette(&manette);
+    SDL_Quit();
+
+}
+

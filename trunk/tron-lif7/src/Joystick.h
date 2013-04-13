@@ -20,10 +20,12 @@ typedef struct
 }Manette;
 
 /**fonction qui initialise  une manette*/
-void initialiserInput(Manette *manette,int numeroJoystick);
+void initialiserManette(Manette *manette,int numeroJoystick);
 /**fonction qui détruit une manette*/
-void detruireInput(Manette *manette);
+void detruireManette(Manette *manette);
 /**fonction qui renvoit les inputs d'une manette passé en paramèrtre*/
 void updateEvent(Manette *manette);
+/**fonction qui teste le module*/
+void JoystickTestRegression();
 
 #endif

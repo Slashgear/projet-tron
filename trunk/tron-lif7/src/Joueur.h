@@ -13,11 +13,13 @@
 \date 19 mars 2013
 */
 
+typedef enum{MORT=0,VIVANT=1,MOURANT=2} EnJeu;
+
 typedef struct {
     Moto moto;
     Controle controle;
     Couleur couleur;
-    char enJeu;
+    EnJeu enJeu;
     EffetBonus effetActuel;
     short int numeroManette;
 }Joueur;
@@ -29,7 +31,7 @@ Controle* JoueurGetControle(Joueur* joueur);
 /** assesseur de couleur*/
 Couleur JoueurGetCouleur(const Joueur* joueur);
 /** assesseur de enJeu*/
-char JoueurGetEnJeu(const Joueur* joueur);
+EnJeu JoueurGetEnJeu(const Joueur* joueur);
 /**assesseur du bonus en cours*/
 EffetBonus JoueurGetEffetBonus(const Joueur *Joueur);
 /**assesseur du numero de la Manette */
@@ -43,7 +45,7 @@ void JoueurSetControle(Joueur* joueur, Controle* controle);
 /** mutateur de couleur*/
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur);
 /** mutateur de enJeu*/
-void JoueurSetEnJeu(Joueur* joueur, char enJeu);
+void JoueurSetEnJeu(Joueur* joueur, EnJeu enJeu);
 /** mutateur du Bonus en cours*/
 void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet);
 /** mutateur du numero de manette*/
@@ -51,7 +53,7 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel,short int numero);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 

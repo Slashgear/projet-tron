@@ -15,7 +15,7 @@ Controle* JoueurGetControle(Joueur* joueur){
 Couleur JoueurGetCouleur(const Joueur* joueur){
     return joueur->couleur;
 }
-char JoueurGetEnJeu(const Joueur* joueur){
+EnJeu JoueurGetEnJeu(const Joueur* joueur){
     return joueur->enJeu;
 }
 EffetBonus JoueurGetEffetBonus(const Joueur* joueur){
@@ -35,7 +35,7 @@ void JoueurSetControle(Joueur* joueur, Controle* controle){
 void JoueurSetCouleur(Joueur* joueur, Couleur couleur){
     joueur->couleur=couleur;
 }
-void JoueurSetEnJeu(Joueur* joueur, char enJeu){
+void JoueurSetEnJeu(Joueur* joueur, EnJeu enJeu){
     joueur->enJeu=enJeu;
 }
 void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet){
@@ -46,7 +46,7 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero){
 }
 
 
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, char enJeu,EffetBonus effetActuel,short int numero){
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero){
     JoueurSetMoto(joueur,moto);
     JoueurSetControle(joueur,controle);
     JoueurSetCouleur(joueur,couleur);
@@ -58,7 +58,7 @@ void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
     ControleDestructeur(JoueurGetControle(joueur));
     JoueurSetCouleur(joueur,NOIR);
-    JoueurSetEnJeu(joueur,0);
+    JoueurSetEnJeu(joueur,MORT);
     JoueurSetEffetBonus(joueur,AUCUN);
     JoueurSetNumeroManette(joueur,-1);
 }
@@ -85,7 +85,7 @@ void JoueurDestructeur(Joueur* joueur){
 
     ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 
-    JoueurConstructeur(&joueur,&moto,&controle,couleur,1,AUCUN,-1);
+    JoueurConstructeur(&joueur,&moto,&controle,couleur,VIVANT,AUCUN,-1);
     printf("La valeur posX est %f et dans la Moto du joueur est de %f \n",posX,MotoGetPositionX(JoueurGetMoto(&joueur)));
     printf("La valeur posY est %f et dans la Moto du joueur est de %f \n",posY,MotoGetPositionY(JoueurGetMoto(&joueur)));
     printf("La valeur tailleX est %u et dans la Moto du joueur est de %u \n",tailleX,MotoGetTailleX(JoueurGetMoto(&joueur)));
