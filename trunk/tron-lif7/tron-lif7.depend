@@ -196,7 +196,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1365530281 source:/home/antoine/Projets/tron-lif7/src/Controle.c
+1365933960 source:/home/antoine/Projets/tron-lif7/src/Controle.c
 	"Controle.h"
 	<stdlib.h>
 	<stdio.h>
@@ -208,7 +208,7 @@
 	<stdio.h>
 	<SDL/SDL.h>
 
-1365701033 source:/home/antoine/Projets/tron-lif7/src/main.c
+1365948306 source:/home/antoine/Projets/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	"Mur.h"
@@ -220,7 +220,7 @@
 	"SDL.h"
 	"Bonus.h"
 
-1365504518 source:/home/antoine/Projets/tron-lif7/src/Grid.c
+1365951345 source:/home/antoine/Projets/tron-lif7/src/Grid.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -277,7 +277,7 @@
 1363694279 /home/matthieu/Projet/tron-lif7/src/ElementTD.h
 	"Mur.h"
 
-1365516805 /home/antoine/Projets/tron-lif7/src/Couleur.h
+1365845345 /home/antoine/Projets/tron-lif7/src/Couleur.h
 
 1364652045 /home/antoine/Projets/tron-lif7/src/TableauDynamique.h
 	"Mur.h"
@@ -373,7 +373,7 @@
 	"Jeu.h"
 	<SDL/SDL.h>
 
-1365620844 source:/home/antoine/Projets/tron-lif7/src/Joueur.c
+1365853821 source:/home/antoine/Projets/tron-lif7/src/Joueur.c
 	<stdlib.h>
 	<stdio.h>
 	"Joueur.h"
@@ -381,29 +381,30 @@
 	"Controle.h"
 	"Couleur.h"
 
-1365620685 /home/antoine/Projets/tron-lif7/src/Joueur.h
+1365853821 /home/antoine/Projets/tron-lif7/src/Joueur.h
 	"Controle.h"
 	"Moto.h"
 	"Couleur.h"
 	"EffetBonus.h"
 
-1365702643 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
+1365952011 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
 	<assert.h>
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 
-1365702659 /home/antoine/Projets/tron-lif7/src/Jeu.h
+1365947394 /home/antoine/Projets/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
 	"Constantes.h"
 	"Bonus.h"
 
-1365749736 /home/antoine/Projets/tron-lif7/src/Constantes.h
+1365940417 /home/antoine/Projets/tron-lif7/src/Constantes.h
 
-1365749587 source:/home/antoine/Projets/tron-lif7/src/SDL.c
+1365949847 source:/home/antoine/Projets/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
@@ -411,7 +412,7 @@
 	<time.h>
 	"Joystick.h"
 
-1365749564 /home/antoine/Projets/tron-lif7/src/SDL.h
+1365948785 /home/antoine/Projets/tron-lif7/src/SDL.h
 	"Jeu.h"
 	<SDL/SDL.h>
 	"Joystick.h"
@@ -630,24 +631,23 @@
 	"Jeu.h"
 	"SDL.h"
 
-1365699142 /home/antoine/Projets/tron-lif7/src/EffetBonus.h
+1365941789 /home/antoine/Projets/tron-lif7/src/EffetBonus.h
 
-1365700616 source:/home/antoine/Projets/tron-lif7/src/Bonus.c
-	"Jeu.h"
+1365943154 source:/home/antoine/Projets/tron-lif7/src/Bonus.c
 	"EffetBonus.h"
 	"stdio.h"
 	"Bonus.h"
 	"time.h"
-
-1365698935 /home/antoine/Projets/tron-lif7/src/Bonus.h
 	"Jeu.h"
+
+1365942235 /home/antoine/Projets/tron-lif7/src/Bonus.h
 	"EffetBonus.h"
 
-1365749518 source:/home/antoine/Projets/tron-lif7/src/Joystick.c
+1365939344 source:/home/antoine/Projets/tron-lif7/src/Joystick.c
 	<stdlib.h>
 	<SDL/SDL.h>
 	"Joystick.h"
 
-1365748900 /home/antoine/Projets/tron-lif7/src/Joystick.h
+1365850870 /home/antoine/Projets/tron-lif7/src/Joystick.h
 	<SDL/SDL.h>
 

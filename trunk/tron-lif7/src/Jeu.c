@@ -4,37 +4,57 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 Grid* JeuGetGrille(Jeu* jeu){
     return &(jeu->grille);
 }
 Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i){
-    return &((*jeu->mesJoueurs)[i]);
+    return (jeu->mesJoueurs)+i;
+}
+Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
+    return &((jeu->mesBonus)[i]);
+}
+int JeuGetTempsProchainBonus(Jeu* jeu){
+    return jeu->tempsProchainBonus;
 }
 
 void JeuSetGrille(Jeu* jeu,Grid* grille){
     jeu->grille= *grille;
 }
 void JeuSetIemeJoueurs(Jeu* jeu,Joueur* joueur,int i){
-    (*jeu->mesJoueurs)[i]= *joueur;
+    (jeu->mesJoueurs)[i]= *joueur;
+}
+void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i){
+    (jeu->mesBonus)[i]=*bonus;
+}
+void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
+    jeu->tempsProchainBonus=tempsProchainBonus;
 }
 
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur (*mesJoueurs)[_Nombre_de_Joueur]){
+
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
+    int i;
+    Bonus bonus;
+    srand(time(NULL));
+    JeuSetTempsProchainBonus(jeu,rand()%350);
+    BonusConstructeur(&bonus,0,0,10,10,AUCUN);
     JeuSetGrille(jeu,grille);
     jeu->mesJoueurs=mesJoueurs;
+    for(i=0;i<_Nombre_de_Bonus;i++){
+        JeuSetIemeBonus(jeu,&bonus,i);
+    }
 }
 
 void JeuDestructeur(Jeu* jeu){
     int i;
     GridDestructeur(JeuGetGrille(jeu));
-    for(i=0;i<_Nombre_de_Joueur;i++){
-    JoueurDestructeur(JeuGetIemeJoueurs(jeu,i));
-    }
     free(jeu->mesJoueurs);
     jeu->mesJoueurs=NULL;
+    for(i=0;i<_Nombre_de_Bonus;i++){
+        BonusDestructeur(JeuGetIemeBonus(jeu,i));
+    }
 }
-
-
 
 
 char testCollisionMur(Joueur * joueur, Grid * grille){
@@ -197,7 +217,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     int i,j;
     Grid* grille=JeuGetGrille(jeu);
     bougeMoto(jeu);
+    Bonus* unBonus=NULL;
     short int NbJoueurEnJeu=0;
+    char collisionBonus=0;
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
@@ -249,9 +271,102 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
             JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MORT);
         }
     }
+    if(JeuGetTempsProchainBonus(jeu)==0){
+        i=0;
+        do{
+            unBonus=JeuGetIemeBonus(jeu,i);
+            i++;
+        }
+        while((BonusGetEffetBonus(unBonus)!=AUCUN)&&(i<_Nombre_de_Bonus));
+        if(BonusGetEffetBonus(unBonus)==AUCUN){
+            PlaceBonus(jeu,unBonus);
+        }
+        JeuSetTempsProchainBonus(jeu,(rand()%330)+20);
+    }
+    else {(jeu->tempsProchainBonus)-- ;}
+    for(i=0;i<_Nombre_de_Bonus;i++){
+        unBonus=JeuGetIemeBonus(jeu,i);
+        if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
+            collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
+            if(collisionBonus!=0){
+                nettoieGrid(GridGetMesMurs(JeuGetGrille(jeu)));
+                BonusSetPositionX(unBonus,0);
+                BonusSetPositionY(unBonus,0);
+                BonusSetEffetBonus(unBonus,AUCUN);
+            }
+        }
+    }
     decrementeVieMur(grille);
     effaceMur(GridGetMesMurs(grille));
 }
+
+char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus){
+    Moto* moto;
+    int i;
+    float BoiteMoto[4];
+    float Boitebonus[4];
+    char boolCollision = 0;
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        moto=JoueurGetMoto(mesJoueurs+i);
+        BoiteMoto[0]=MotoGetPositionX(moto);
+        BoiteMoto[1]=MotoGetPositionY(moto);
+        BoiteMoto[2]=MotoGetPositionX(moto)+(float)MotoGetTailleX(moto);
+        BoiteMoto[3]=MotoGetPositionY(moto)+(float)MotoGetTailleY(moto);
+        Boitebonus[0]=BonusGetPositionX(bonus);
+        Boitebonus[1]=BonusGetPositionY(bonus);
+        Boitebonus[2]=BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus);
+        Boitebonus[3]=BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus);
+        if((BoiteMoto[0]<Boitebonus[2])&&
+           (BoiteMoto[2]>Boitebonus[0])&&
+           (BoiteMoto[1]<Boitebonus[3])&&
+           (BoiteMoto[3]>Boitebonus[1]))
+        {boolCollision=i+1;}
+    }
+    return boolCollision;
+}
+
+char testCollisionMursBonus(Grid *grille,Bonus* bonus){
+    int i;
+    char boolCollision=0;
+    float boundingBoxMur[4];
+    float Boitebonus[4]={BonusGetPositionX(bonus),BonusGetPositionY(bonus),BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus),
+    BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus)};
+    float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
+                            (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
+    while((i<TabDynGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
+                boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
+                boundingBoxMur[1]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
+                boundingBoxMur[2]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
+                                +(float)MurGetTailleX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
+                boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
+                                +(float)MurGetTailleY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
+                if( ((Boitebonus[0]<boundingBoxMur[2])||(Boitebonus[0]<borduresGrid[0]))&&
+                    ((Boitebonus[2]>boundingBoxMur[0])||(Boitebonus[2]>borduresGrid[2]))&&
+                    ((Boitebonus[1]<boundingBoxMur[3])||(Boitebonus[1]<borduresGrid[1]))&&
+                    ((Boitebonus[3]>boundingBoxMur[1])||(Boitebonus[3]>borduresGrid[3])))
+                {boolCollision = 1;}
+                i++;
+            }
+    return boolCollision;
+}
+
+void PlaceBonus(Jeu *jeu,Bonus* bonus){
+    float positionX;
+    float positionY;
+    unsigned int effetBonus;
+    Grid *grille=JeuGetGrille(jeu);
+    srand(time(NULL));
+    do{
+        positionX=rand()%(GridGetTailleX(grille)-BonusGetTailleX(bonus))+GridGetPositionX(grille);
+        positionY=rand()%(GridGetTailleY(grille)-BonusGetTailleY(bonus))+GridGetPositionY(grille);
+        BonusSetPositionX(bonus,positionX);
+        BonusSetPositionY(bonus,positionY);
+        effetBonus=rand()%_Nombre_Type_Bonus +1;
+        BonusSetEffetBonus(bonus,effetBonus);
+    }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
+}
+
+
 
 void JeuTestRegression(){
     Grid grille;
@@ -302,7 +417,7 @@ void JeuTestRegression(){
 
     short int jeuContinue=0;
     Jeu jeu;
-    Joueur (*mesJoueurs)[_Nombre_de_Joueur]=malloc(_Nombre_de_Joueur*sizeof(Joueur));
+    Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
 
     MurConstructeur(&unMur,posXm,posYm,tailleXm,tailleYm,couleur2,dureeVie);
 
@@ -311,7 +426,7 @@ void JeuTestRegression(){
     MotoConstructeur(&moto1,posX1,posY1,tailleX1,tailleY1,vitesse1,direction1);
     ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1,touchebonus1);
     JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1,1,AUCUN,-1);
-    (*mesJoueurs)[0]=joueur1;
+    mesJoueurs[0]=joueur1;
 
     printf("La valeur posX1 est %f et dans la Moto1 du joueur1 est de %f \n",posX1,
            MotoGetPositionX(JoueurGetMoto(&joueur1)));
@@ -319,7 +434,7 @@ void JeuTestRegression(){
     MotoConstructeur(&moto2,posX2,posY2,tailleX2,tailleY2,vitesse2,direction2);
     ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2,touchebonus2);
     JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2,1,AUCUN,-1);
-    (*mesJoueurs)[1]=joueur2;
+    mesJoueurs[1]=joueur2;
 
     printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",
            posX2,MotoGetPositionX(JoueurGetMoto(&joueur2)));

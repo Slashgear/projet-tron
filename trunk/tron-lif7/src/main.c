@@ -11,23 +11,18 @@
 
 int main(){
 #if 0
-    MurTestRegression();
+    /*MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
     JeuTestRegression();
-    SDLTestRegression();
-   /* BonusTestRegression();
-    JoystickTestRegression();*/
+    SDLTestRegression();*/
+
+    BonusTestRegression();
+   /* JoystickTestRegression();*/
 #else
     SDL sdl;
-   /* if(_Nombre_de_Joueur==2){
-        SDLJeuInit2(&sdl);
-    }
-    else if(_Nombre_de_Joueur==4){
-        SDLJeuInit4(&sdl);
-    }*/
     SDLJeuInitN(&sdl);
     SDLBoucleJeu(&sdl);
     SDLDestructeur(&sdl);

@@ -67,7 +67,7 @@ void effaceMur(TableauDynamique* mesMurs){
 void nettoieGrid(TableauDynamique* mesMurs){
     int i;
     for(i=0;i<TabDynGetTaille_utilisee(mesMurs);i++){
-    supprimerElementTabDyn(mesMurs,i);
+    MurSetDureeVie(adresseIemeElementTabDyn(mesMurs,i),0);
     }
 }
 void decrementeVieMur(Grid* grille){
