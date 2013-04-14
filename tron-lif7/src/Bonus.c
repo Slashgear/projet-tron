@@ -1,8 +1,8 @@
-#include "Jeu.h"
 #include "EffetBonus.h"
 #include "stdio.h"
 #include "Bonus.h"
 #include "time.h"
+#include "Jeu.h"
 
 float BonusGetPositionX(const Bonus* bonus){
     return bonus->positionX;
@@ -53,71 +53,84 @@ void BonusDestructeur(Bonus* bonus){
     BonusSetEffetBonus(bonus,AUCUN);
 }
 
-char BonusTestCollisionMoto(Moto *moto,Bonus* bonus){
-    float BoiteMoto[4]={MotoGetPositionX(moto),MotoGetPositionY(moto),MotoGetPositionX(moto)+(float)MotoGetTailleX(moto),
-    MotoGetPositionY(moto)+(float)MotoGetTailleY(moto)};
-    float Boitebonus[4]={BonusGetPositionX(bonus),BonusGetPositionY(bonus),BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus),
-    BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus)};
-    char boolCollision = 0;
-    if((BoiteMoto[0]<Boitebonus[2])&&
-       (BoiteMoto[2]>Boitebonus[2])&&
-       (BoiteMoto[1]<Boitebonus[3])&&
-       (BoiteMoto[3]>Boitebonus[1]))
-    {boolCollision=1;}
-    return boolCollision;
-}
 
-char BonusTestCollisionMurs(Grid *grille,Bonus* bonus){
-    int i;
-    char boolCollision=0;
-    float boundingBoxMur[4];
-    float Boitebonus[4]={BonusGetPositionX(bonus),BonusGetPositionY(bonus),BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus),
-    BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus)};
-    float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
-                            (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
-    while((i<TabDynGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
-                boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[1]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[2]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                if( ((Boitebonus[0]<boundingBoxMur[2])||(Boitebonus[0]<borduresGrid[0]))&&
-                    ((Boitebonus[2]>boundingBoxMur[0])||(Boitebonus[2]>borduresGrid[2]))&&
-                    ((Boitebonus[1]<boundingBoxMur[3])||(Boitebonus[1]<borduresGrid[1]))&&
-                    ((Boitebonus[3]>boundingBoxMur[1])||(Boitebonus[3]>borduresGrid[3])))
-                {boolCollision = 1;}
-                i++;
-            }
-    return boolCollision;
-}
-
-void PlaceBonus(Grid* grid,Bonus* bonus){
-    float positionX;
-    float positionY;
-    unsigned int numeroBonus;
-    srand(time(NULL));
-    do{
-        positionX=rand()%(GridGetTailleX(grid)-BonusGetTailleX(bonus))+GridGetPositionX(grid);
-        positionY=rand()%(GridGetTailleY(grid)-BonusGetTailleY(bonus))+GridGetPositionY(grid);
-        BonusSetPositionX(bonus,positionX);
-        BonusSetPositionY(bonus,positionY);
-        numeroBonus=rand()%_Nombre_Type_Bonus +0;
-        BonusSetEffetBonus(bonus,numeroBonus);
-    }while(BonusTestCollisionMurs(grid,bonus)==1);
-}
 
 
 void BonusTestRegression(){
+
+
     Grid grille;
-    TableauDynamique t;
+    float posXg=1.;
+    float posYg=1.;
+    unsigned int tailleXg=300;
+    unsigned int tailleYg=400;
+    TableauDynamique mesMurs;
+
+    Mur unMur;
+    float posXm=50.;
+    float posYm=70.;
+    unsigned int tailleXm=3;
+    unsigned int tailleYm=3;
+    float dureeVie=5.;
+
+    Joueur joueur1;
+    Moto moto1;
+    Controle controle1;
+    Couleur couleur1=ORANGE;
+    float posX1=52.;
+    float posY1=72.;
+    unsigned int tailleX1=2;
+    unsigned int tailleY1=5;
+    float vitesse1=1.;
+    Direction direction1=HAUT;
+    char touchedroite1='d';
+    char touchegauche1='q';
+    char touchehaut1='z';
+    char touchebas1='s';
+
+    Joueur joueur2;
+    Moto moto2;
+    Controle controle2;
+    Couleur couleur2=BLEU;
+    float posX2=100.;
+    float posY2=5.;
+    unsigned int tailleX2=2;
+    unsigned int tailleY2=5;
+    float vitesse2=2.;
+    Direction direction2=HAUT;
+    char touchedroite2='m';
+    char touchegauche2='k';
+    char touchehaut2='o';
+    char touchebas2='l';
+    char touchebonus1='a';
+    char touchebonus2='i';
     Bonus bonus;
-    GridConstructeur(&grille,5,5,1000,700,&t);
+
+    Jeu jeu;
+    Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
+
+    MurConstructeur(&unMur,posXm,posYm,tailleXm,tailleYm,couleur2,dureeVie);
+
+    GridConstructeur(&grille,posXg,posYg,tailleXg,tailleYg,&mesMurs);
+
+    MotoConstructeur(&moto1,posX1,posY1,tailleX1,tailleY1,vitesse1,direction1);
+    ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1,touchebonus1);
+    JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1,1,AUCUN,-1);
+    mesJoueurs[0]=joueur1;
+
+    MotoConstructeur(&moto2,posX2,posY2,tailleX2,tailleY2,vitesse2,direction2);
+    ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2,touchebonus2);
+    JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2,1,AUCUN,-1);
+    mesJoueurs[1]=joueur2;
+
+    JeuConstructeur(&jeu,&grille,mesJoueurs);
+
     BonusConstructeur(&bonus,0,0,5,5,AUCUN);
-    PlaceBonus(&grille,&bonus);
+    PlaceBonus(&jeu,&bonus);
     printf("La position X du bonus %f\n",BonusGetPositionX(&bonus));
     printf("La position Y du bonus %f\n",BonusGetPositionY(&bonus));
     printf("Le numéro du bonus %u \n\n",BonusGetEffetBonus(&bonus));
+
 }
 
 

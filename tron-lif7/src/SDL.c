@@ -11,6 +11,9 @@ Jeu* SDLGetJeu(SDL* sdl){
 SDL_Surface * SDLGetIemeTexture(const SDL* sdl,unsigned int i){
     return sdl->textures[i];
 }
+Manette* SDLGetIemeManette(const SDL* sdl,unsigned int i){
+    return (sdl->mesManettes)+i;
+}
 SDL_Surface * SDLGetTextures(const SDL* sdl){
     return sdl->textures[0];
 }
@@ -54,7 +57,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 
 
-void SDLConstructeur(SDL *sdl,Jeu* jeu){
+void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
     SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1010,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/grid.bmp"));
@@ -102,16 +105,23 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu){
         SDLSetIemeTexture(sdl,32,SDLChargeImage("data/moto8G.bmp"));
         SDLSetIemeTexture(sdl,33,SDLChargeImage("data/moto8D.bmp"));
     }
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/BonusNettoyage.bmp"));
+    sdl->mesManettes=manettes;
 
 }
 
 void SDLDestructeur(SDL *sdl){
     int i;
-    for(i=0;i<(2+4*_Nombre_de_Joueur);i++){
+    for(i=0;i<(2+4*_Nombre_de_Joueur+_Nombre_Type_Bonus);i++){
         SDL_FreeSurface(SDLGetIemeTexture(sdl,i));
         SDLSetIemeTexture(sdl,i,NULL);
     }
     JeuDestructeur(SDLGetJeu(sdl));
+    for(i=0;i<_Nombre_de_Manette;i++){
+        detruireManette(SDLGetIemeManette(sdl,i));
+    }
+    free(sdl->mesManettes);
+    sdl->mesManettes=NULL;
     SDL_Quit();
 }
 
@@ -131,159 +141,93 @@ void pause()
     }
 }
 
-/*
-void SDLJeuInit4(SDL *sdl){
-    Jeu jeu;
-    Grid grille;
-    Joueur joueur1;
-    Joueur joueur2;
-    Joueur joueur3;
-    Joueur joueur4;
-    Moto moto1;
-    Moto moto2;
-    Moto moto3;
-    Moto moto4;
-    Controle controle1;
-    Controle controle2;
-    Controle controle3;
-    Controle controle4;
-    TableauDynamique tabDynMurs;
-    Joueur mesJoueurs[_Nombre_de_Joueur];
-    SDL_Surface* ecran;
-    Bonus bonus[_Nombre_de_Bonus];
-    int i;
 
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK)!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
-
-    ControleConstructeur(&controle1,'z','s','q','d','a');
-    MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
-    mesJoueurs[0]=joueur1;
-
-    ControleConstructeur(&controle2,'o','l','k','m','i');
-    MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
-    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
-    mesJoueurs[1]=joueur2;
-
-    ControleConstructeur(&controle3,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
-    MotoConstructeur(&moto3,200,355,10,5,_Vitesse_Initiale,DROITE);
-    JoueurConstructeur(&joueur3,&moto3,&controle3,ROUGE,1,AUCUN,-1);
-    mesJoueurs[2]=joueur3;
-
-    ControleConstructeur(&controle4,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
-    MotoConstructeur(&moto4,800,350,10,5,_Vitesse_Initiale,GAUCHE);
-    JoueurConstructeur(&joueur4,&moto4,&controle4,VERT,1,AUCUN,-1);
-    mesJoueurs[3]=joueur4;
-
-    GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
-
-    JeuConstructeur(&jeu,&grille,&mesJoueurs);
-    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur1,0);
-    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur2,1);
-    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur3,2);
-    JeuSetIemeJoueurs(SDLGetJeu(sdl),&joueur4,3);
-
-    SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
-
-    SDLConstructeur(sdl,&jeu);
-    ecran=SDLGetIemeTexture(sdl,0);
-    SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
-    SDLSetIemeTexture(sdl,0,ecran);
-}*/
 
 void SDLJeuInitN(SDL *sdl){
     int i;
+    short nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette;
     Jeu jeu;
     Grid grille;
     TableauDynamique tabDynMurs;
-    Joueur unJoueur;
     Controle unControle;
     Moto uneMoto;
     SDL_Surface *ecran;
-    Joueur (*mesJoueurs)[_Nombre_de_Joueur]=malloc(_Nombre_de_Joueur*sizeof(Joueur));
+    Joueur unJoueur;
+    Manette uneManette;
+    Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
+    Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
 
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
-    for(i=0;i<_Nombre_de_Joueur-_Nombre_de_Manette;i++){
+    SDL_JoystickEventState(SDL_ENABLE);
+
+
+    for(i=0;i<nbJoueurClavier;i++){
         if(_Nombre_de_Joueur<=4){
-            if(i==1){
+            if(i==0){
                 ControleConstructeur(&unControle,'z','s','q','d','a');
                 MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,-1);
             }
-            else if(i==2){
+            else if(i==1){
                     ControleConstructeur(&unControle,'o','l','k','m','i');
                     MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1);
                 }
-                else if(i==3){
+                else if(i==2){
                         ControleConstructeur(&unControle,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
                         MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1);
                     }
-                    else if(i==4){
+                    else if(i==3){
                             ControleConstructeur(&unControle,'t',SDLK_g,SDLK_f,SDLK_h,SDLK_r);
                             MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1);
                         }
         }
-        *mesJoueurs[i]=unJoueur;
+        mesJoueurs[i]=unJoueur;
+    }
+    for(i=nbJoueurClavier;i<_Nombre_de_Joueur;i++){
+        if(_Nombre_de_Joueur<=4){
+            if(i==0){
+                ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
+                MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
+                initialiserManette(&uneManette,i);
+                JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,i);
+            }
+            else if(i==1){
+                    ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
+                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
+                    initialiserManette(&uneManette,i);
+                    JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,i);
+                }
+                else if(i==2){
+                        ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
+                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
+                        initialiserManette(&uneManette,i);
+                        JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i);
+                    }
+                    else if(i==3){
+                            ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
+                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
+                            initialiserManette(&uneManette,i);
+                            JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i);
+                        }
+        }
+        mesManettes[i]=uneManette;
+        mesJoueurs[i+nbJoueurClavier]=unJoueur;
     }
 
     GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs);
 
     SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
-    SDLConstructeur(sdl,&jeu);
+    SDLConstructeur(sdl,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
     SDLSetIemeTexture(sdl,0,ecran);
 }
 
 
-/*
-void SDLJeuInit2(SDL *sdl){
-    Jeu jeu;
-    Grid grille;
-    Joueur joueur1;
-    Joueur joueur2;
-    Moto moto1;
-    Moto moto2;
-    Controle controle1;
-    Controle controle2;
-    TableauDynamique tabDynMurs;
-    Joueur mesJoueurs[_Nombre_de_Joueur];
-    SDL_Surface* ecran;
-    Bonus bonus[_Nombre_de_Bonus];
-    int i;
-
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
-    for(i=0;i<_Nombre_de_Bonus;i++){BonusConstructeur(&bonus[i],-10,-10,5,5,AUCUN);}
-
-    SDL_JoystickEventState(SDL_ENABLE);
-    initialiserManette(sdl->manettes,0);
-
-    ControleConstructeur(&controle1,'z','s','q','d','a');
-    MotoConstructeur(&moto1,498,50,5,10,_Vitesse_Initiale,BAS);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,ORANGE,1,AUCUN,-1);
-    mesJoueurs[0]=joueur1;
-
-    ControleConstructeur(&controle2,'o','l','k','m','i');
-    MotoConstructeur(&moto2,503,650,5,10,_Vitesse_Initiale,HAUT);
-    JoueurConstructeur(&joueur2,&moto2,&controle2,BLEU,1,AUCUN,-1);
-    mesJoueurs[1]=joueur2;
-
-    GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
-
-    JeuConstructeur(&jeu,&grille,&mesJoueurs);
-
-    SDL_WM_SetCaption( "TRON-The Grid v1.1", NULL );
-
-    SDLConstructeur(sdl,&jeu);
-    ecran=SDLGetIemeTexture(sdl,0);
-    SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
-    SDLSetIemeTexture(sdl,0,ecran);
-}*/
 
 /** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl){
@@ -294,9 +238,7 @@ void SDLBoucleJeu(SDL* sdl){
     float intervalle_horloge=0.05f;
     int affAJour;
     Controle* unControle;
-
-
-
+    Manette* uneManette;
 
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
@@ -315,37 +257,57 @@ void SDLBoucleJeu(SDL* sdl){
 				affAJour = 0;
             }
             if (evenement.type == SDL_KEYDOWN){
-                for(i=0;(i<_Nombre_de_Joueur);i++){
+                for(i=0;(i<_Nombre_de_Joueur-_Nombre_de_Manette);i++){
                     if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
                         unControle=JoueurGetControle(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
                         if(evenement.key.keysym.sym==ControleGetHaut(unControle)){
                             JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
                                                 ControleGetHaut(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                            affAJour = 1;
+                            affAJour = 0;
                         }
                         else  if(evenement.key.keysym.sym==ControleGetBas(unControle)){
                                 JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
                                                 ControleGetBas(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                affAJour = 1;
+                                affAJour = 0;
                             }
                             else if(evenement.key.keysym.sym==ControleGetGauche(unControle)){
                                     JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
                                                         ControleGetGauche(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                    affAJour = 1;
+                                    affAJour = 0;
                                     }
                                     else if(evenement.key.keysym.sym==ControleGetDroite(unControle)){
                                             JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
                                                              ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
-                                            affAJour = 1;
+                                            affAJour = 0;
                                         }
+                    }
+                }
 
-
-				}       }
-
-             }
-
-
-
+            }
+        }
+        for(i=0;i<_Nombre_de_Manette;i++){
+            uneManette=SDLGetIemeManette(sdl,i);
+            updateEvent(uneManette);
+            if(uneManette->boutons[3]){
+                SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
+                uneManette->boutons[3]=0;
+                affAJour = 0;
+            }
+            if(uneManette->boutons[0]){
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
+                    uneManette->boutons[0]=0;
+                    affAJour = 0;
+                }
+            if((uneManette->boutons[2])==1){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[2]=0;
+                        affAJour = 0;
+                    }
+            if(uneManette->boutons[1]){
+                            SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
+                            uneManette->boutons[1]=0;
+                            affAJour = 0;
+                        }
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
@@ -353,6 +315,78 @@ void SDLBoucleJeu(SDL* sdl){
     }
 }
 
+void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
+    Moto* uneMoto=JoueurGetMoto(joueur);
+    unsigned int tailleTemp=MotoGetTailleX(uneMoto);
+    Mur unMur;
+    float dureeVieMur=_Duree_Vie_Mur;
+    char directionChange=0;
+    if(MotoGetDirection(uneMoto)==HAUT){
+        MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                            MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
+                            JoueurGetCouleur(joueur),dureeVieMur);
+        if(direction==GAUCHE){
+            MotoSetDirection(uneMoto,GAUCHE);
+            MotoSetPositionX(uneMoto,(MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto)));
+            directionChange=1;
+            }
+        else if(direction==DROITE){
+            MotoSetDirection(uneMoto,DROITE);
+            directionChange=1;
+            }
+        }
+    else if(MotoGetDirection(uneMoto)==BAS){
+            MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                            MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
+                            JoueurGetCouleur(joueur),dureeVieMur);
+            if(direction==GAUCHE){
+                MotoSetDirection(uneMoto,GAUCHE);
+                MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
+                MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                directionChange=1;
+            }
+            else if(direction==DROITE){
+                MotoSetDirection(uneMoto,DROITE);
+                MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                directionChange=1;
+                }
+        }
+        else if(MotoGetDirection(uneMoto)==GAUCHE){
+            MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                            MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
+                            JoueurGetCouleur(joueur),dureeVieMur);
+                if(direction==HAUT){
+                    MotoSetDirection(uneMoto,HAUT);
+                    MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                    directionChange=1;
+                }
+                else if(direction==BAS){
+                        MotoSetDirection(uneMoto,BAS);
+                        directionChange=1;
+                    }
+            }
+            else if(MotoGetDirection(uneMoto)==DROITE){
+                    MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                            MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
+                            JoueurGetCouleur(joueur),dureeVieMur);
+                    if(direction==HAUT){
+                        MotoSetDirection(uneMoto,HAUT);
+                        MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
+                        MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                        directionChange=1;
+                    }
+                    else if(direction==BAS){
+                            MotoSetDirection(uneMoto,BAS);
+                            MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
+                            directionChange=1;
+                    }
+                }
+    if(directionChange){
+        MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
+        MotoSetTailleY(uneMoto,tailleTemp);
+        ajouteMur(GridGetMesMurs(grille),unMur);
+    }
+}
 
 void SDLAfficheMotos(SDL* sdl){
     Moto *moto;
@@ -415,9 +449,22 @@ void SDLAfficheMurs(SDL *sdl){
         SDL_FreeSurface(surfaceMur);
     }
 }
+void SDLAfficheBonus(SDL*sdl){
+    int i;
+    Bonus *unBonus;
+    for(i=0;i<_Nombre_de_Bonus;i++){
+        unBonus=JeuGetIemeBonus(SDLGetJeu(sdl),i);
+        if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
+             SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4),SDLGetIemeTexture(sdl,0),
+                                BonusGetPositionX(unBonus),BonusGetPositionY(unBonus));
+        }
+    }
+}
+
 void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
+    SDLAfficheBonus(sdl);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 
 }

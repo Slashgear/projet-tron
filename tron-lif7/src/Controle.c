@@ -47,11 +47,11 @@ void ControleConstructeur(Controle* controle, SDLKey haut,SDLKey bas,SDLKey gauc
 }
 
 void ControleDestructeur(Controle* controle){
-    ControleSetDroite(controle, SDLK_n);
-    ControleSetGauche(controle, SDLK_n);
-    ControleSetHaut(controle, SDLK_n);
-    ControleSetBas(controle, SDLK_n);
-    ControleSetBonus(controle, SDLK_n);
+    ControleSetDroite(controle, SDLK_F7);
+    ControleSetGauche(controle, SDLK_F7);
+    ControleSetHaut(controle, SDLK_F7);
+    ControleSetBas(controle, SDLK_F7);
+    ControleSetBonus(controle, SDLK_F7);
 }
 
 
@@ -65,6 +65,6 @@ void ControleDestructeur(Controle* controle){
     ControleConstructeur(&unControle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 assert(ControleGetDroite(&unControle)==SDLK_d);
     ControleDestructeur(&unControle);
-assert(ControleGetDroite(&unControle)==SDLK_n);
+assert(ControleGetDroite(&unControle)==SDLK_F7);
  }
 

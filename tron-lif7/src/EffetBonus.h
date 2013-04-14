@@ -9,7 +9,7 @@
 \date 10 avril 2013
 */
 typedef enum{AUCUN=0,NETTOYAGE=1,BOOST=2}EffetBonus;
-#define _Nombre_Type_Bonus 2
+#define _Nombre_Type_Bonus 1
 
 
 #endif
