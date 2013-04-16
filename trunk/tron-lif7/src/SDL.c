@@ -123,7 +123,6 @@ void SDLDestructeur(SDL *sdl){
     }
     free(sdl->mesManettes);
     sdl->mesManettes=NULL;
-    SDL_Quit();
 }
 
 void pause()
@@ -158,7 +157,6 @@ void SDLJeuInitN(SDL *sdl){
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
     Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
 
-    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK )!= -1 );
     SDL_JoystickEventState(SDL_ENABLE);
 
 
@@ -231,7 +229,7 @@ void SDLJeuInitN(SDL *sdl){
 
 
 /** Boucle principale du Jeu */
-void SDLBoucleJeu(SDL* sdl){
+void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     short int jeuFini = 0;
     int i;
     SDL_Event evenement;
@@ -314,6 +312,16 @@ void SDLBoucleJeu(SDL* sdl){
         if(!affAJour){
             SDLAfficheJeu(sdl);
         }
+    }
+    printf("Partie terminée ! \nAppuyez sur échap pour quitter ou sur F1 pour rejouer. \n");
+    while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)){
+        SDL_WaitEvent(&evenement);
+    }
+    if(evenement.key.keysym.sym==SDLK_ESCAPE){
+        *jeuReInit=0;
+    }
+    if(evenement.key.keysym.sym==SDLK_F1){
+        *jeuReInit=1;
     }
 }
 
