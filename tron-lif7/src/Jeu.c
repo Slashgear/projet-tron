@@ -229,11 +229,11 @@ void bougeMoto(Jeu* jeu){
 void JeuEvolue(Jeu* jeu,short int* jeuFini){
     int i,j;
     Grid* grille=JeuGetGrille(jeu);
-    bougeMoto(jeu);
     Bonus* unBonus=NULL;
     short int NbJoueurEnJeu=0;
     char collisionBonus=0;
 
+    bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){

@@ -47,38 +47,34 @@ void detruireManette(Manette *manette)
     }
 }
 
-void updateEvent(Manette *manette)
+void updateEvent(Manette *manette, SDL_Event evenements)
 {
-    static SDL_Event evenements;
-    while(SDL_PollEvent(&evenements))
+    if(manette->joystick != NULL
+    &&(evenements.jbutton.which == manette->numero
+    || evenements.jaxis.which == manette->numero
+    || evenements.jhat.which == manette->numero
+    || evenements.jball.which == manette->numero))
     {
-        if(manette->joystick != NULL
-        &&(evenements.jbutton.which == manette->numero
-        || evenements.jaxis.which == manette->numero
-        || evenements.jhat.which == manette->numero
-        || evenements.jball.which == manette->numero))
+        switch(evenements.type)
         {
-            switch(evenements.type)
-            {
-                case SDL_JOYBUTTONDOWN:
-                    manette->boutons[evenements.jbutton.button] = 1;
-                    break;
+            case SDL_JOYBUTTONDOWN:
+                manette->boutons[evenements.jbutton.button] = 1;
+                break;
 
-                case SDL_JOYBUTTONUP:
-                    manette->boutons[evenements.jbutton.button] = 0;
-                    break;
+            case SDL_JOYBUTTONUP:
+                manette->boutons[evenements.jbutton.button] = 0;
+                break;
 
-                case SDL_JOYAXISMOTION:
-                    manette->axes[evenements.jaxis.axis] = evenements.jaxis.value;
-                    break;
+            case SDL_JOYAXISMOTION:
+                manette->axes[evenements.jaxis.axis] = evenements.jaxis.value;
+                break;
 
-                case SDL_JOYHATMOTION:
-                    manette->chapeaux[evenements.jhat.hat] = evenements.jhat.value;
-                    break;
+            case SDL_JOYHATMOTION:
+                manette->chapeaux[evenements.jhat.hat] = evenements.jhat.value;
+                break;
 
-                default:
-                    break;
-            }
+            default:
+                break;
         }
     }
 }
@@ -90,6 +86,7 @@ SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
     Manette manette;
     int i;
     int j;
+    SDL_Event evenement;
     SDL_JoystickEventState(SDL_ENABLE);
     initialiserManette(&manette,0);
     int quitter = 0;
@@ -101,7 +98,7 @@ SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
     }
     while(!quitter)
     {
-        updateEvent(&manette);
+        updateEvent(&manette,evenement);
         for(j=0;j<15;j++){
         if(manette.boutons[j])
         {

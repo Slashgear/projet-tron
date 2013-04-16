@@ -24,7 +24,7 @@ void initialiserManette(Manette *manette,int numeroJoystick);
 /**fonction qui détruit une manette*/
 void detruireManette(Manette *manette);
 /**fonction qui renvoit les inputs d'une manette passé en paramèrtre*/
-void updateEvent(Manette *manette);
+void updateEvent(Manette *manette, SDL_Event evenement);
 /**fonction qui teste le module*/
 void JoystickTestRegression();
 
