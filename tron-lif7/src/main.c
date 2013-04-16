@@ -1,5 +1,6 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include <assert.h>
 #include "Mur.h"
 #include "Moto.h"
 #include "Controle.h"
@@ -18,14 +19,18 @@ int main(){
     GridTestRegression();
     JeuTestRegression();
     SDLTestRegression();*/
-
     BonusTestRegression();
    /* JoystickTestRegression();*/
 #else
     SDL sdl;
-    SDLJeuInitN(&sdl);
-    SDLBoucleJeu(&sdl);
-    SDLDestructeur(&sdl);
+    short int jeuReInit=1;
+    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );
+    while(jeuReInit==1){
+        SDLJeuInitN(&sdl);
+        SDLBoucleJeu(&sdl,&jeuReInit);
+        SDLDestructeur(&sdl);
+    }
+    SDL_Quit();
 #endif
 return 0;
 }

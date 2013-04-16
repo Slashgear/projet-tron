@@ -53,7 +53,7 @@ void SDLAfficheBonus(SDL*sdl);
 /**Procédure Init à N=_Nombre_De_Joueur joueurs*/
 void SDLJeuInitN(SDL *sdl);
 /** Boucle principale du Jeu */
-void SDLBoucleJeu(SDL* sdl);
+void SDLBoucleJeu(SDL* sdl, short int *jeuReInit);
 /** Procédure de chargement des images*/
 SDL_Surface* SDLChargeImage(const char *nomfichier);
 /** procédure qui gère les actions des motos en fonction des touches saisies sur une Manette*/
