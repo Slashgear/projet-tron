@@ -387,7 +387,7 @@
 	"Couleur.h"
 	"EffetBonus.h"
 
-1366091070 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
+1366092866 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
@@ -395,14 +395,12 @@
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
-	"fmod.h"
 
-1366092817 /home/antoine/Projets/tron-lif7/src/Jeu.h
+1366093433 /home/antoine/Projets/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
 	"Constantes.h"
 	"Bonus.h"
-	<FMOD/fmod.h>
 
 1366005936 /home/antoine/Projets/tron-lif7/src/Constantes.h
 
