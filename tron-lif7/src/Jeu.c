@@ -7,6 +7,7 @@
 #include <time.h>
 
 
+
 Grid* JeuGetGrille(Jeu* jeu){
     return &(jeu->grille);
 }
@@ -19,6 +20,11 @@ Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
 int JeuGetTempsProchainBonus(Jeu* jeu){
     return jeu->tempsProchainBonus;
 }
+char JeuGetJouerSon(Jeu*jeu){
+    return jeu->jouerSon;
+}
+
+
 
 void JeuSetGrille(Jeu* jeu,Grid* grille){
     jeu->grille= *grille;
@@ -32,6 +38,9 @@ void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i){
 void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
     jeu->tempsProchainBonus=tempsProchainBonus;
 }
+void JeuSetJouerSon(Jeu*jeu,char jouerSon){
+    jeu->jouerSon=jouerSon;
+}
 
 
 void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
@@ -39,7 +48,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
     Bonus bonus;
 
     srand(time(NULL));
-
+    JeuSetJouerSon(jeu,0);
     JeuSetTempsProchainBonus(jeu,rand()%350);
     BonusConstructeur(&bonus,0,0,10,10,AUCUN);
     JeuSetGrille(jeu,grille);
@@ -53,6 +62,7 @@ void JeuDestructeur(Jeu* jeu){
     int i;
     GridDestructeur(JeuGetGrille(jeu));
     free(jeu->mesJoueurs);
+    JeuSetJouerSon(jeu,0);
     jeu->mesJoueurs=NULL;
     for(i=0;i<_Nombre_de_Bonus;i++){
         BonusDestructeur(JeuGetIemeBonus(jeu,i));
@@ -227,7 +237,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
-
+                JeuSetJouerSon(jeu,1);
                 printf("Le joueur %d a perdu ! \n",i+1);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
             }
@@ -235,6 +245,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
                 for(j=i+1;(j<_Nombre_de_Joueur);j++){
                     if((JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,j))==VIVANT)
                        &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
+                        JeuSetJouerSon(jeu,1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
                         printf("Le joueur %d a perdu ! \n",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
