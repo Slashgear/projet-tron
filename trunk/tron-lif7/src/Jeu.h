@@ -17,8 +17,6 @@ typedef struct
 	Joueur *mesJoueurs;
 	Bonus mesBonus[_Nombre_de_Bonus];
 	int tempsProchainBonus;
-	FMOD_SYSTEM *system;
-	FMOD_SOUND *sons;
 } Jeu;
 
 /**assesseur de grille*/

@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "fmod.h"
+
 
 Grid* JeuGetGrille(Jeu* jeu){
     return &(jeu->grille);
@@ -37,14 +37,9 @@ void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
 void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
     int i;
     Bonus bonus;
-    FMOD_RESULT resultat;
+
     srand(time(NULL));
-    FMOD_System_Create(&(jeu->system));
-    FMOD_System_Init(jeu->system, 2, FMOD_INIT_NORMAL, NULL);
-    resultat=FMOD_System_CreateSound(jeu->system, "data/sonDestruction.wav", FMOD_CREATESAMPLE, 0, &(jeu->sons));
-    if(resultat!=FMOD_OK){
-        printf("erreur de chargement de sons\n");
-    }
+
     JeuSetTempsProchainBonus(jeu,rand()%350);
     BonusConstructeur(&bonus,0,0,10,10,AUCUN);
     JeuSetGrille(jeu,grille);
@@ -62,9 +57,6 @@ void JeuDestructeur(Jeu* jeu){
     for(i=0;i<_Nombre_de_Bonus;i++){
         BonusDestructeur(JeuGetIemeBonus(jeu,i));
     }
-    FMOD_Sound_Release(jeu->sons);
-    FMOD_System_Close(jeu->system);
-    FMOD_System_Release(jeu->system);
 }
 
 
@@ -235,7 +227,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
-                FMOD_System_PlaySound(jeu->system, FMOD_CHANNEL_FREE, jeu->sons, 0, NULL);
+
                 printf("Le joueur %d a perdu ! \n",i+1);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
             }
@@ -247,7 +239,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
                         printf("Le joueur %d a perdu ! \n",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
                         printf("Le joueur %d a perdu ! \n",i+1);
-                        FMOD_System_PlaySound(jeu->system, FMOD_CHANNEL_FREE, jeu->sons, 0, NULL);
+
 
                     }
                 }
