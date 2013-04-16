@@ -158,7 +158,9 @@ void SDLJeuInitN(SDL *sdl){
     Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
 
     SDL_JoystickEventState(SDL_ENABLE);
-
+    assert((_Nombre_de_Joueur<=8)&&(_Nombre_de_Joueur>0)&&(_Nombre_de_Manette<=4)&&(_Nombre_de_Manette>=0)&&
+           (_Nombre_de_Joueur-_Nombre_de_Manette<=4)&&(_Nombre_de_Joueur-_Nombre_de_Manette>=0)&&
+           (_Duree_Vie_Mur>=0)&&(_Acceleration>=0)&&(_Vitesse_Initiale>=0)&&(_Nombre_de_Bonus>=0));
 
     for(i=0;i<nbJoueurClavier;i++){
         if(_Nombre_de_Joueur<=4){
