@@ -1,8 +1,8 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
 
-#define _Nombre_de_Joueur 2
-#define _Nombre_de_Manette 0
+#define _Nombre_de_Joueur 8
+#define _Nombre_de_Manette 4
 
 
 #define _Duree_Vie_Mur 262/(_Nombre_de_Joueur*0.75f)
