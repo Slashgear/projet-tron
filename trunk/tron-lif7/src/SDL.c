@@ -37,7 +37,7 @@ SDL_Surface* SDLChargeImage(const char* nomfichier){
 	loadedImage = SDL_LoadBMP( nomfichier );
 
 	/* If nothing went wrong in loading the image */
-	if ( loadedImage == NULL ) printf("image non chargée ! \n");
+	if ( loadedImage == NULL ) printf("image non chargée ! %s \n",nomfichier);
 
 
 	/* Return the optimized image */
@@ -202,7 +202,7 @@ void SDLJeuInitN(SDL *sdl){
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1);
                     }
                     else if(i==3){
-                            ControleConstructeur(&unControle,'t',SDLK_g,SDLK_f,SDLK_h,SDLK_r);
+                            ControleConstructeur(&unControle,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
                             MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1);
                         }
@@ -219,24 +219,24 @@ void SDLJeuInitN(SDL *sdl){
             }
             else if(i==1){
                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                    MotoConstructeur(&uneMoto,809,253,10,5,_Vitesse_Initiale,GAUCHE);
+                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
                     initialiserManette(&uneManette,i-nbJoueurClavier);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,i-nbJoueurClavier);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                        MotoConstructeur(&uneMoto,603,660,5,10,_Vitesse_Initiale,HAUT);
+                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
                         initialiserManette(&uneManette,i-nbJoueurClavier);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i-nbJoueurClavier);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                            MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
+                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
                             initialiserManette(&uneManette,i-nbJoueurClavier);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier);
                         }
         }
-        else{
+        else {
             if(i==1){
                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                 MotoConstructeur(&uneMoto,809,253,10,5,_Vitesse_Initiale,GAUCHE);
@@ -259,25 +259,25 @@ void SDLJeuInitN(SDL *sdl){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                             MotoConstructeur(&uneMoto,606,50,5,10,_Vitesse_Initiale,BAS);
                             initialiserManette(&uneManette,i-nbJoueurClavier);
-                            JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,i-nbJoueurClavier);
+                            JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VIOLET,VIVANT,AUCUN,i-nbJoueurClavier);
                         }
                         else if(i==5){
                                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                                 MotoConstructeur(&uneMoto,403,660,5,10,_Vitesse_Initiale,HAUT);
                                 initialiserManette(&uneManette,i-nbJoueurClavier);
-                                JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i-nbJoueurClavier);
+                                JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEUF,VIVANT,AUCUN,i-nbJoueurClavier);
                             }
                             else if(i==6){
                                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                                     MotoConstructeur(&uneMoto,200,253,10,5,_Vitesse_Initiale,DROITE);
                                     initialiserManette(&uneManette,i-nbJoueurClavier);
-                                    JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier);
+                                    JoueurConstructeur(&unJoueur,&uneMoto,&unControle,JAUNE,VIVANT,AUCUN,i-nbJoueurClavier);
                                 }
                                 else if(i==7){
                                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                                         MotoConstructeur(&uneMoto,809,456,10,5,_Vitesse_Initiale,GAUCHE);
                                         initialiserManette(&uneManette,i-nbJoueurClavier);
-                                        JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier);
+                                        JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLANC,VIVANT,AUCUN,i-nbJoueurClavier);
                                     }
         }
         mesManettes[i-nbJoueurClavier]=uneManette;
@@ -352,30 +352,31 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                 }
 
             }
-        }
-        for(i=0;i<_Nombre_de_Manette;i++){
-            uneManette=SDLGetIemeManette(sdl,i);
-            updateEvent(uneManette);
-            if(uneManette->boutons[3]){
-                SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
-                uneManette->boutons[3]=0;
-                affAJour = 0;
-            }
-            if(uneManette->boutons[0]){
-                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
-                    uneManette->boutons[0]=0;
+
+            for(i=0;i<_Nombre_de_Manette;i++){
+                uneManette=SDLGetIemeManette(sdl,i);
+                updateEvent(uneManette,evenement);
+                if(uneManette->boutons[3]){
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
+                    uneManette->boutons[3]=0;
                     affAJour = 0;
                 }
-            if((uneManette->boutons[2])==1){
-                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
-                        uneManette->boutons[2]=0;
+                if(uneManette->boutons[0]){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[0]=0;
                         affAJour = 0;
                     }
-            if(uneManette->boutons[1]){
-                            SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
-                            uneManette->boutons[1]=0;
+                if((uneManette->boutons[2])==1){
+                            SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
+                            uneManette->boutons[2]=0;
                             affAJour = 0;
                         }
+                if(uneManette->boutons[1]){
+                                SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
+                                uneManette->boutons[1]=0;
+                                affAJour = 0;
+                            }
+            }
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
