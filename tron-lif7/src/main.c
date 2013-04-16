@@ -9,6 +9,7 @@
 #include "Jeu.h"
 #include "SDL.h"
 #include "Bonus.h"
+#include "Constantes.h"
 
 int main(){
 #if 0
