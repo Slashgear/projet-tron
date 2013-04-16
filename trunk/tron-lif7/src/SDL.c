@@ -5,6 +5,7 @@
 #include <time.h>
 #include "Joystick.h"
 
+
 Jeu* SDLGetJeu(SDL* sdl){
     return &(sdl->jeu);
 }
@@ -239,6 +240,7 @@ void SDLBoucleJeu(SDL* sdl){
     int affAJour;
     Controle* unControle;
     Manette* uneManette;
+
 
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
