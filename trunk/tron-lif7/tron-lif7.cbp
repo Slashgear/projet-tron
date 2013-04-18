@@ -40,7 +40,6 @@
 		</Compiler>
 		<Linker>
 			<Add option="`sdl-config --libs`" />
-			<Add library="../../../../usr/lib/FMOD/libfmodex.so" />
 		</Linker>
 		<Unit filename="src/Bonus.c">
 			<Option compilerVar="CC" />
@@ -91,6 +90,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
