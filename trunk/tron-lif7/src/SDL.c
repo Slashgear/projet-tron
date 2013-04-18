@@ -156,7 +156,7 @@ void SDLJeuInitN(SDL *sdl){
     Manette uneManette;
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
     Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
-
+    printf("nb manette %d \n\n\n",SDL_NumJoysticks());
     SDL_JoystickEventState(SDL_ENABLE);
     assert((_Nombre_de_Joueur<=8)&&(_Nombre_de_Joueur>0)&&(_Nombre_de_Manette<=4)&&(_Nombre_de_Manette>=0)&&
            (nbJoueurClavier<=4)&&(nbJoueurClavier>=0)&&(SDL_NumJoysticks()>=_Nombre_de_Manette)&&
@@ -180,7 +180,7 @@ void SDLJeuInitN(SDL *sdl){
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1);
                     }
                     else if(i==3){
-                            ControleConstructeur(&unControle,'t',SDLK_g,SDLK_f,SDLK_h,SDLK_r);
+                            ControleConstructeur(&unControle,'t',SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT);
                             MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1);
                         }
@@ -250,7 +250,7 @@ void SDLJeuInitN(SDL *sdl){
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i-nbJoueurClavier);
                 }
                 else if(i==3){
-                        ControleConstructeur(&unControle,'t',SDLK_g,SDLK_f,SDLK_h,SDLK_r);
+                        ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
                         MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
                         initialiserManette(&uneManette,i-nbJoueurClavier);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier);

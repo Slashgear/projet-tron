@@ -24,6 +24,9 @@ EffetBonus JoueurGetEffetBonus(const Joueur* joueur){
 short int JoueurGetNumeroManette(const Joueur *joueur){
     return joueur->numeroManette;
 }
+int JoueurGetTempsBonus(const Joueur *joueur){
+
+}
 
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
