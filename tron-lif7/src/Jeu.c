@@ -24,8 +24,6 @@ char JeuGetJouerSon(Jeu*jeu){
     return jeu->jouerSon;
 }
 
-
-
 void JeuSetGrille(Jeu* jeu,Grid* grille){
     jeu->grille= *grille;
 }
@@ -304,8 +302,8 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     else {(jeu->tempsProchainBonus)-- ;}
     for(i=0;i<_Nombre_de_Bonus;i++){
         unBonus=JeuGetIemeBonus(jeu,i);
+        collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
         if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
-            collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
             if(collisionBonus!=0){
                 nettoieGrid(GridGetMesMurs(JeuGetGrille(jeu)));
                 BonusSetPositionX(unBonus,0);
@@ -313,9 +311,34 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
                 BonusSetEffetBonus(unBonus,AUCUN);
             }
         }
+        else if(BonusGetEffetBonus(unBonus)==BOOST){
+                if(collisionBonus!=0){
+                    JoueurSetEffetBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),BOOST);
+                    JoueurSetTempsBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),_Temps_Bonus_Boost);
+                    BonusSetPositionX(unBonus,0);
+                    BonusSetPositionY(unBonus,0);
+                    BonusSetEffetBonus(unBonus,AUCUN);
+                }
+        }
     }
+    decrementeTempsBonus(jeu);
     decrementeVieMur(grille);
     effaceMur(GridGetMesMurs(grille));
+}
+
+void decrementeTempsBonus(Jeu *jeu){
+    int i;
+    Joueur* unJoueur;
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        unJoueur=JeuGetIemeJoueurs(jeu,i);
+        if((JoueurGetEffetBonus(unJoueur)==BOOST)&&(JoueurGetTempsBonus(unJoueur)!=_Temps_Bonus_Boost)){
+            JoueurSetTempsBonus(unJoueur,JoueurGetTempsBonus(unJoueur)-1);
+            if(JoueurGetTempsBonus(unJoueur)==0){
+                JoueurSetEffetBonus(unJoueur,AUCUN);
+                MotoSetVitesse(JoueurGetMoto(unJoueur),MotoGetVitesse(JoueurGetMoto(unJoueur))-_Vitesse_Boost);
+            }
+        }
+    }
 }
 
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus){
@@ -358,10 +381,10 @@ char testCollisionMursBonus(Grid *grille,Bonus* bonus){
                                 +(float)MurGetTailleX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
                 boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
                                 +(float)MurGetTailleY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                if( ((Boitebonus[0]<boundingBoxMur[2])||(Boitebonus[0]<borduresGrid[0]))&&
-                    ((Boitebonus[2]>boundingBoxMur[0])||(Boitebonus[2]>borduresGrid[2]))&&
-                    ((Boitebonus[1]<boundingBoxMur[3])||(Boitebonus[1]<borduresGrid[1]))&&
-                    ((Boitebonus[3]>boundingBoxMur[1])||(Boitebonus[3]>borduresGrid[3])))
+                if(((Boitebonus[0]<boundingBoxMur[2])&&(Boitebonus[2]>boundingBoxMur[0])
+                    &&(Boitebonus[1]<boundingBoxMur[3])&&(Boitebonus[3]>boundingBoxMur[1]))
+                    ||((Boitebonus[0]<borduresGrid[0])&&(Boitebonus[2]>borduresGrid[2])
+                    &&(Boitebonus[1]<borduresGrid[1])&&(Boitebonus[3]>borduresGrid[3])))
                 {boolCollision = 1;}
                 i++;
             }

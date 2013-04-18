@@ -25,7 +25,7 @@ short int JoueurGetNumeroManette(const Joueur *joueur){
     return joueur->numeroManette;
 }
 int JoueurGetTempsBonus(const Joueur *joueur){
-
+    return joueur->tempsBonus;
 }
 
 
@@ -47,6 +47,9 @@ void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet){
 void JoueurSetNumeroManette(Joueur* joueur,short int numero){
     joueur->numeroManette=numero;
 }
+void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus){
+    joueur->tempsBonus=tempsBonus;
+}
 
 
 void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero){
@@ -56,6 +59,7 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
     JoueurSetEnJeu(joueur,enJeu);
     JoueurSetEffetBonus(joueur,effetActuel);
     JoueurSetNumeroManette(joueur,numero);
+    JoueurSetTempsBonus(joueur,0);
 }
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
@@ -64,6 +68,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetEnJeu(joueur,MORT);
     JoueurSetEffetBonus(joueur,AUCUN);
     JoueurSetNumeroManette(joueur,-1);
+    JoueurSetTempsBonus(joueur,0);
 }
 
  void JoueurTestRegression(){

@@ -107,6 +107,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
         SDLSetIemeTexture(sdl,33,SDLChargeImage("data/moto8D.bmp"));
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/BonusNettoyage.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/BonusNettoyage.bmp"));
     sdl->mesManettes=manettes;
 
 }
@@ -180,7 +181,7 @@ void SDLJeuInitN(SDL *sdl){
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1);
                     }
                     else if(i==3){
-                            ControleConstructeur(&unControle,'t',SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT);
+                            ControleConstructeur(&unControle,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
                             MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1);
                         }

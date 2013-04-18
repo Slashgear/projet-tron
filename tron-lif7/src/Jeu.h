@@ -61,8 +61,10 @@ void JeuActionClavier(Joueur* joueur, const SDLKey touche,Grid* grille);
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus);
 /**Fonction qui teste si un bonus est en Collision avec un Mur*/
 char testCollisionMursBonus(Grid *grille,Bonus* bonus);
-/**fonction qui place des bonus sur la grille*/
+/**Fonction qui place des bonus sur la grille*/
 void PlaceBonus(Jeu *jeu,Bonus *bonus);
+/**Procedure qui décrémente le tempsBonus des bonus actifs des joueurs*/
+void decrementeTempsBonus(Jeu *jeu);
 
 /**procédure de test*/
 void JeuTestRegression();
