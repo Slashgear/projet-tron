@@ -21,6 +21,7 @@ typedef struct {
     Couleur couleur;
     EnJeu enJeu;
     EffetBonus effetActuel;
+    int tempsBonus;
     short int numeroManette;
 }Joueur;
 
@@ -36,6 +37,8 @@ EnJeu JoueurGetEnJeu(const Joueur* joueur);
 EffetBonus JoueurGetEffetBonus(const Joueur *Joueur);
 /**assesseur du numero de la Manette */
 short int JoueurGetNumeroManette(const Joueur *joueur);
+/**assesseur du tempsBonus */
+int JoueurGetTempsBonus(const Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -50,6 +53,8 @@ void JoueurSetEnJeu(Joueur* joueur, EnJeu enJeu);
 void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet);
 /** mutateur du numero de manette*/
 void JoueurSetNumeroManette(Joueur* joueur,short int numero);
+/** mutateur du tempsBonus*/
+void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
 
 
 /** Constructeur de Joueur*/
