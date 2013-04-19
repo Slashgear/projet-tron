@@ -57,6 +57,8 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
 
 
+
+
 /** Constructeur de Joueur*/
 void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero);
 /** Destructeur de Joueur*/

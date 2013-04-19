@@ -4,6 +4,7 @@
 #include <SDL/SDL.h>
 #include "Joystick.h"
 
+
 /**
 *\file [SDL.h]
 *\brief Module des vecteurs
@@ -27,6 +28,7 @@ SDL_Surface * SDLGetIemeTexture(const SDL* sdl,unsigned int i);
 Manette* SDLGetIemeManette(const SDL* sdl,unsigned int i);
 /** assesseur de textures*/
 SDL_Surface * SDLGetTextures(const SDL* sdl);
+
 
 
 /**mutateur de jeu*/
