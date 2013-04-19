@@ -307,6 +307,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     int affAJour;
     Controle* unControle;
     Manette* uneManette;
+    int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette;
 
 
     SDLAfficheJeu(sdl);
@@ -326,7 +327,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
 				affAJour = 0;
             }
             if (evenement.type == SDL_KEYDOWN){
-                for(i=0;(i<_Nombre_de_Joueur-_Nombre_de_Manette);i++){
+                for(i=0;(i<nbJoueurClavier);i++){
                     if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
                         unControle=JoueurGetControle(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
                         if(evenement.key.keysym.sym==ControleGetHaut(unControle)){
@@ -362,32 +363,37 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                 uneManette=SDLGetIemeManette(sdl,i);
                 updateEvent(uneManette,evenement);
                 if(uneManette->boutons[3]){
-                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
                     uneManette->boutons[3]=0;
                     affAJour = 0;
                 }
                 if(uneManette->boutons[0]){
-                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
-                        uneManette->boutons[0]=0;
-                        affAJour = 0;
-                    }
-                if((uneManette->boutons[2])==1){
-                            SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
-                            uneManette->boutons[2]=0;
-                            affAJour = 0;
-                        }
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
+                    uneManette->boutons[0]=0;
+                    affAJour = 0;
+                }
+                if((uneManette->boutons[2])){
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
+                    uneManette->boutons[2]=0;
+                    affAJour = 0;
+                }
                 if(uneManette->boutons[1]){
-                                SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),_Nombre_de_Joueur-_Nombre_de_Manette+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
-                                uneManette->boutons[1]=0;
-                                affAJour = 0;
-                            }
+                    SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
+                    uneManette->boutons[1]=0;
+                    affAJour = 0;
+                }
+                if(uneManette->boutons[6]){
+                    JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i));
+                    uneManette->boutons[6]=0;
+                    affAJour = 0;
+                }
             }
         }
         if(!affAJour){
             SDLAfficheJeu(sdl);
         }
     }
-    printf("Partie terminée ! \nAppuyez sur échap pour quitter ou sur F1 pour rejouer. \n");
+    printf("Partie terminée ! \n Appuyez sur échap pour quitter ou sur F1 pour rejouer. \n");
     while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)){
         SDL_WaitEvent(&evenement);
     }
