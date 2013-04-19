@@ -71,6 +71,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetTempsBonus(joueur,0);
 }
 
+
  void JoueurTestRegression(){
     Joueur joueur;
     Moto moto;

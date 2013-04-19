@@ -107,7 +107,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
         SDLSetIemeTexture(sdl,33,SDLChargeImage("data/moto8D.bmp"));
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/BonusNettoyage.bmp"));
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/BonusNettoyage.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/BonusBoost.bmp"));
     sdl->mesManettes=manettes;
 
 }
@@ -157,7 +157,7 @@ void SDLJeuInitN(SDL *sdl){
     Manette uneManette;
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
     Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
-    printf("nb manette %d \n\n\n",SDL_NumJoysticks());
+
     SDL_JoystickEventState(SDL_ENABLE);
     assert((_Nombre_de_Joueur<=8)&&(_Nombre_de_Joueur>0)&&(_Nombre_de_Manette<=4)&&(_Nombre_de_Manette>=0)&&
            (nbJoueurClavier<=4)&&(nbJoueurClavier>=0)&&(SDL_NumJoysticks()>=_Nombre_de_Manette)&&
@@ -349,6 +349,10 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                                                              ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
                                             affAJour = 0;
                                         }
+                                        else if(evenement.key.keysym.sym==ControleGetBonus(unControle)){
+                                            JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+                                            affAJour=0;
+                                        }
                     }
                 }
 
@@ -401,70 +405,72 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
     Mur unMur;
     float dureeVieMur=_Duree_Vie_Mur;
     char directionChange=0;
-    if(MotoGetDirection(uneMoto)==HAUT){
-        MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
-                            MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
-                            JoueurGetCouleur(joueur),dureeVieMur);
-        if(direction==GAUCHE){
-            MotoSetDirection(uneMoto,GAUCHE);
-            MotoSetPositionX(uneMoto,(MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto)));
-            directionChange=1;
-            }
-        else if(direction==DROITE){
-            MotoSetDirection(uneMoto,DROITE);
-            directionChange=1;
-            }
-        }
-    else if(MotoGetDirection(uneMoto)==BAS){
+    if(JoueurGetEnJeu(joueur)!=VIVANT){
+        if(MotoGetDirection(uneMoto)==HAUT){
             MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
-                            MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
-                            JoueurGetCouleur(joueur),dureeVieMur);
+                                MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
+                                JoueurGetCouleur(joueur),dureeVieMur);
             if(direction==GAUCHE){
                 MotoSetDirection(uneMoto,GAUCHE);
-                MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
-                MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
-                directionChange=1;
-            }
-            else if(direction==DROITE){
-                MotoSetDirection(uneMoto,DROITE);
-                MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                MotoSetPositionX(uneMoto,(MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto)));
                 directionChange=1;
                 }
-        }
-        else if(MotoGetDirection(uneMoto)==GAUCHE){
-            MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
-                            MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
-                            JoueurGetCouleur(joueur),dureeVieMur);
-                if(direction==HAUT){
-                    MotoSetDirection(uneMoto,HAUT);
+            else if(direction==DROITE){
+                MotoSetDirection(uneMoto,DROITE);
+                directionChange=1;
+                }
+            }
+        else if(MotoGetDirection(uneMoto)==BAS){
+                MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                                MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
+                                JoueurGetCouleur(joueur),dureeVieMur);
+                if(direction==GAUCHE){
+                    MotoSetDirection(uneMoto,GAUCHE);
+                    MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
                     MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
                     directionChange=1;
                 }
-                else if(direction==BAS){
-                        MotoSetDirection(uneMoto,BAS);
-                        directionChange=1;
+                else if(direction==DROITE){
+                    MotoSetDirection(uneMoto,DROITE);
+                    MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                    directionChange=1;
                     }
             }
-            else if(MotoGetDirection(uneMoto)==DROITE){
-                    MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
-                            MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
-                            JoueurGetCouleur(joueur),dureeVieMur);
+            else if(MotoGetDirection(uneMoto)==GAUCHE){
+                MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                                MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
+                                JoueurGetCouleur(joueur),dureeVieMur);
                     if(direction==HAUT){
                         MotoSetDirection(uneMoto,HAUT);
-                        MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
                         MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
                         directionChange=1;
                     }
                     else if(direction==BAS){
                             MotoSetDirection(uneMoto,BAS);
-                            MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
                             directionChange=1;
-                    }
+                        }
                 }
-    if(directionChange){
-        MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
-        MotoSetTailleY(uneMoto,tailleTemp);
-        ajouteMur(GridGetMesMurs(grille),unMur);
+                else if(MotoGetDirection(uneMoto)==DROITE){
+                        MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
+                                MotoGetTailleX(uneMoto),MotoGetTailleY(uneMoto),
+                                JoueurGetCouleur(joueur),dureeVieMur);
+                        if(direction==HAUT){
+                            MotoSetDirection(uneMoto,HAUT);
+                            MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
+                            MotoSetPositionY(uneMoto,MotoGetPositionY(uneMoto)+(float)MotoGetTailleY(uneMoto)-(float)MotoGetTailleX(uneMoto));
+                            directionChange=1;
+                        }
+                        else if(direction==BAS){
+                                MotoSetDirection(uneMoto,BAS);
+                                MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+(float)MotoGetTailleX(uneMoto)-(float)MotoGetTailleY(uneMoto));
+                                directionChange=1;
+                        }
+                    }
+        if(directionChange){
+            MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
+            MotoSetTailleY(uneMoto,tailleTemp);
+            ajouteMur(GridGetMesMurs(grille),unMur);
+        }
     }
 }
 
@@ -536,6 +542,10 @@ void SDLAfficheBonus(SDL*sdl){
         unBonus=JeuGetIemeBonus(SDLGetJeu(sdl),i);
         if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
              SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4),SDLGetIemeTexture(sdl,0),
+                                BonusGetPositionX(unBonus),BonusGetPositionY(unBonus));
+        }
+        if(BonusGetEffetBonus(unBonus)==BOOST){
+            SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1),SDLGetIemeTexture(sdl,0),
                                 BonusGetPositionX(unBonus),BonusGetPositionY(unBonus));
         }
     }

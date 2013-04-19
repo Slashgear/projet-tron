@@ -341,6 +341,13 @@ void decrementeTempsBonus(Jeu *jeu){
     }
 }
 
+void JeuActionneBonus(Joueur *joueur){
+    if(JoueurGetEffetBonus(joueur)==BOOST){
+        JoueurSetTempsBonus(joueur,JoueurGetTempsBonus(joueur)-1);
+        MotoSetVitesse(JoueurGetMoto(joueur),MotoGetVitesse(JoueurGetMoto(joueur))+_Vitesse_Boost);
+    }
+}
+
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus){
     Moto* moto;
     int i;
@@ -406,6 +413,8 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
         BonusSetEffetBonus(bonus,effetBonus);
     }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
 }
+
+
 
 
 

@@ -56,6 +56,8 @@ char testCollisionMur(Joueur * joueur, Grid * grille);
 char testCollisionMoto(Moto* moto, Moto* moto2);
 /**procédure qui gère les actions des motos en fonction des touches saisies*/
 void JeuActionClavier(Joueur* joueur, const SDLKey touche,Grid* grille);
+/**procédure qui actionne le bonus*/
+void JeuActionneBonus(Joueur*Joueur);
 
 /**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus);
