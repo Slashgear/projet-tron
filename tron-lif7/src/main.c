@@ -10,18 +10,20 @@
 #include "SDL.h"
 #include "Bonus.h"
 #include "Constantes.h"
+#include "Musique.h"
 
 int main(){
-#if 0
+#if 1
     /*MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
     GridTestRegression();
     JeuTestRegression();
-    SDLTestRegression();*/
+    SDLTestRegression();
     BonusTestRegression();
-   /* JoystickTestRegression();*/
+   JoystickTestRegression();*/
+   MusiqueTestRegression();
 #else
     SDL sdl;
     short int jeuReInit=1;
