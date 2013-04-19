@@ -11,7 +11,8 @@
 
 #define _Nombre_de_Bonus 4
 #define _Temps_Bonus_Boost 50
-#define _Vitesse_Boost 5
+#define _Vitesse_Boost 10
+#define _Nombre_De_Musique 1
 
 #endif
 
