@@ -351,8 +351,8 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                                             affAJour = 0;
                                         }
                                         else if(evenement.key.keysym.sym==ControleGetBonus(unControle)){
-                                            JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
-                                            affAJour=0;
+                                                JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+                                                affAJour=0;
                                         }
                     }
                 }

@@ -10,8 +10,8 @@
 #define _Acceleration 0.02f
 
 #define _Nombre_de_Bonus 4
-#define _Temps_Bonus_Boost 50
-#define _Vitesse_Boost 10
+#define _Temps_Bonus_Boost 30
+#define _Vitesse_Boost 15
 #define _Nombre_De_Musique 1
 
 #endif
