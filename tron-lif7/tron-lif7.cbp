@@ -40,6 +40,7 @@
 		</Compiler>
 		<Linker>
 			<Add option="`sdl-config --libs`" />
+			<Add library="lib/FMOD/lib/libfmodex.so" />
 		</Linker>
 		<Unit filename="src/Bonus.c">
 			<Option compilerVar="CC" />
@@ -76,6 +77,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/Mur.h" />
+		<Unit filename="src/Musique.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Musique.h" />
 		<Unit filename="src/SDL.c">
 			<Option compilerVar="CC" />
 		</Unit>

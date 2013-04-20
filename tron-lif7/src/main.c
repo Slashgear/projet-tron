@@ -13,7 +13,7 @@
 #include "Musique.h"
 
 int main(){
-#if 1
+#if 0
     /*MurTestRegression();
     ControleTestRegression();
     MotoTestRegression();

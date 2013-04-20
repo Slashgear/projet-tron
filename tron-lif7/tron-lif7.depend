@@ -208,7 +208,7 @@
 	<stdio.h>
 	<SDL/SDL.h>
 
-1366096608 source:/home/antoine/Projets/tron-lif7/src/main.c
+1366487073 source:/home/antoine/Projets/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -221,6 +221,7 @@
 	"SDL.h"
 	"Bonus.h"
 	"Constantes.h"
+	"Musique.h"
 
 1365951345 source:/home/antoine/Projets/tron-lif7/src/Grid.c
 	<stdlib.h>
@@ -389,7 +390,7 @@
 	"Couleur.h"
 	"EffetBonus.h"
 
-1366355225 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
+1366487167 source:/home/antoine/Projets/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
@@ -398,15 +399,16 @@
 	<stdlib.h>
 	<time.h>
 
-1366354084 /home/antoine/Projets/tron-lif7/src/Jeu.h
+1366487185 /home/antoine/Projets/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
 	"Constantes.h"
 	"Bonus.h"
+	"Musique.h"
 
-1366354410 /home/antoine/Projets/tron-lif7/src/Constantes.h
+1366479080 /home/antoine/Projets/tron-lif7/src/Constantes.h
 
-1366354212 source:/home/antoine/Projets/tron-lif7/src/SDL.c
+1366400038 source:/home/antoine/Projets/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
@@ -650,7 +652,7 @@
 	"time.h"
 	"Jeu.h"
 
-1365942235 /home/antoine/Projets/tron-lif7/src/Bonus.h
+1366355632 /home/antoine/Projets/tron-lif7/src/Bonus.h
 	"EffetBonus.h"
 
 1366103016 source:/home/antoine/Projets/tron-lif7/src/Joystick.c
@@ -693,4 +695,25 @@
 	<SDL/SDL.h>
 
 1302965372 /home/antoine/kv-linux-fmod-3.75-20110422/include/fmod.h
+
+1366480482 /home/antoine/Projets/tron-lif7/src/Musique.h
+	"../lib/FMOD/inc/fmod.h"
+
+1365998751 /home/antoine/Projets/tron-lif7/lib/FMOD/inc/fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1365998751 /home/antoine/Projets/tron-lif7/lib/FMOD/inc/fmod_codec.h
+
+1365998751 /home/antoine/Projets/tron-lif7/lib/FMOD/inc/fmod_dsp.h
+
+1365998751 /home/antoine/Projets/tron-lif7/lib/FMOD/inc/fmod_memoryinfo.h
+
+1366486595 source:/home/antoine/Projets/tron-lif7/src/Musique.c
+	<stdio.h>
+	<stdlib.h>
+	"Musique.h"
+	"../lib/FMOD/inc/fmod.h"
+	"Constantes.h"
 
