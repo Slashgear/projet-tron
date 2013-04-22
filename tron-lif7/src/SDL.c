@@ -61,53 +61,53 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
     SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1010,710,32,SDL_HWSURFACE));
-    SDLSetIemeTexture(sdl,1,SDLChargeImage("data/grid.bmp"));
-    SDLSetIemeTexture(sdl,2,SDLChargeImage("data/moto1H.bmp"));
-    SDLSetIemeTexture(sdl,3,SDLChargeImage("data/moto1B.bmp"));
-    SDLSetIemeTexture(sdl,4,SDLChargeImage("data/moto1G.bmp"));
-    SDLSetIemeTexture(sdl,5,SDLChargeImage("data/moto1D.bmp"));
-    SDLSetIemeTexture(sdl,6,SDLChargeImage("data/moto2H.bmp"));
-    SDLSetIemeTexture(sdl,7,SDLChargeImage("data/moto2B.bmp"));
-    SDLSetIemeTexture(sdl,8,SDLChargeImage("data/moto2G.bmp"));
-    SDLSetIemeTexture(sdl,9,SDLChargeImage("data/moto2D.bmp"));
+    SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
+    SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
+    SDLSetIemeTexture(sdl,3,SDLChargeImage("data/images/moto1B.bmp"));
+    SDLSetIemeTexture(sdl,4,SDLChargeImage("data/images/moto1G.bmp"));
+    SDLSetIemeTexture(sdl,5,SDLChargeImage("data/images/moto1D.bmp"));
+    SDLSetIemeTexture(sdl,6,SDLChargeImage("data/images/moto2H.bmp"));
+    SDLSetIemeTexture(sdl,7,SDLChargeImage("data/images/moto2B.bmp"));
+    SDLSetIemeTexture(sdl,8,SDLChargeImage("data/images/moto2G.bmp"));
+    SDLSetIemeTexture(sdl,9,SDLChargeImage("data/images/moto2D.bmp"));
     if(_Nombre_de_Joueur>=3){
-        SDLSetIemeTexture(sdl,10,SDLChargeImage("data/moto3H.bmp"));
-        SDLSetIemeTexture(sdl,11,SDLChargeImage("data/moto3B.bmp"));
-        SDLSetIemeTexture(sdl,12,SDLChargeImage("data/moto3G.bmp"));
-        SDLSetIemeTexture(sdl,13,SDLChargeImage("data/moto3D.bmp"));
+        SDLSetIemeTexture(sdl,10,SDLChargeImage("data/images/moto3H.bmp"));
+        SDLSetIemeTexture(sdl,11,SDLChargeImage("data/images/moto3B.bmp"));
+        SDLSetIemeTexture(sdl,12,SDLChargeImage("data/images/moto3G.bmp"));
+        SDLSetIemeTexture(sdl,13,SDLChargeImage("data/images/moto3D.bmp"));
     }
     if(_Nombre_de_Joueur>=4){
-        SDLSetIemeTexture(sdl,14,SDLChargeImage("data/moto4H.bmp"));
-        SDLSetIemeTexture(sdl,15,SDLChargeImage("data/moto4B.bmp"));
-        SDLSetIemeTexture(sdl,16,SDLChargeImage("data/moto4G.bmp"));
-        SDLSetIemeTexture(sdl,17,SDLChargeImage("data/moto4D.bmp"));
+        SDLSetIemeTexture(sdl,14,SDLChargeImage("data/images/moto4H.bmp"));
+        SDLSetIemeTexture(sdl,15,SDLChargeImage("data/images/moto4B.bmp"));
+        SDLSetIemeTexture(sdl,16,SDLChargeImage("data/images/moto4G.bmp"));
+        SDLSetIemeTexture(sdl,17,SDLChargeImage("data/images/moto4D.bmp"));
     }
     if(_Nombre_de_Joueur>=5){
-        SDLSetIemeTexture(sdl,18,SDLChargeImage("data/moto5H.bmp"));
-        SDLSetIemeTexture(sdl,19,SDLChargeImage("data/moto5B.bmp"));
-        SDLSetIemeTexture(sdl,20,SDLChargeImage("data/moto5G.bmp"));
-        SDLSetIemeTexture(sdl,21,SDLChargeImage("data/moto5D.bmp"));
+        SDLSetIemeTexture(sdl,18,SDLChargeImage("data/images/moto5H.bmp"));
+        SDLSetIemeTexture(sdl,19,SDLChargeImage("data/images/moto5B.bmp"));
+        SDLSetIemeTexture(sdl,20,SDLChargeImage("data/images/moto5G.bmp"));
+        SDLSetIemeTexture(sdl,21,SDLChargeImage("data/images/moto5D.bmp"));
     }
     if(_Nombre_de_Joueur>=6){
-        SDLSetIemeTexture(sdl,22,SDLChargeImage("data/moto6H.bmp"));
-        SDLSetIemeTexture(sdl,23,SDLChargeImage("data/moto6B.bmp"));
-        SDLSetIemeTexture(sdl,24,SDLChargeImage("data/moto6G.bmp"));
-        SDLSetIemeTexture(sdl,25,SDLChargeImage("data/moto6D.bmp"));
+        SDLSetIemeTexture(sdl,22,SDLChargeImage("data/images/moto6H.bmp"));
+        SDLSetIemeTexture(sdl,23,SDLChargeImage("data/images/moto6B.bmp"));
+        SDLSetIemeTexture(sdl,24,SDLChargeImage("data/images/moto6G.bmp"));
+        SDLSetIemeTexture(sdl,25,SDLChargeImage("data/images/moto6D.bmp"));
     }
     if(_Nombre_de_Joueur>=7){
-        SDLSetIemeTexture(sdl,26,SDLChargeImage("data/moto7H.bmp"));
-        SDLSetIemeTexture(sdl,27,SDLChargeImage("data/moto7B.bmp"));
-        SDLSetIemeTexture(sdl,28,SDLChargeImage("data/moto7G.bmp"));
-        SDLSetIemeTexture(sdl,29,SDLChargeImage("data/moto7D.bmp"));
+        SDLSetIemeTexture(sdl,26,SDLChargeImage("data/images/moto7H.bmp"));
+        SDLSetIemeTexture(sdl,27,SDLChargeImage("data/images/moto7B.bmp"));
+        SDLSetIemeTexture(sdl,28,SDLChargeImage("data/images/moto7G.bmp"));
+        SDLSetIemeTexture(sdl,29,SDLChargeImage("data/images/moto7D.bmp"));
     }
     if(_Nombre_de_Joueur>=8){
-        SDLSetIemeTexture(sdl,30,SDLChargeImage("data/moto8H.bmp"));
-        SDLSetIemeTexture(sdl,31,SDLChargeImage("data/moto8B.bmp"));
-        SDLSetIemeTexture(sdl,32,SDLChargeImage("data/moto8G.bmp"));
-        SDLSetIemeTexture(sdl,33,SDLChargeImage("data/moto8D.bmp"));
+        SDLSetIemeTexture(sdl,30,SDLChargeImage("data/images/moto8H.bmp"));
+        SDLSetIemeTexture(sdl,31,SDLChargeImage("data/images/moto8B.bmp"));
+        SDLSetIemeTexture(sdl,32,SDLChargeImage("data/images/moto8G.bmp"));
+        SDLSetIemeTexture(sdl,33,SDLChargeImage("data/images/moto8D.bmp"));
     }
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/BonusNettoyage.bmp"));
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/BonusBoost.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/images/BonusNettoyage.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
     sdl->mesManettes=manettes;
 
 }
