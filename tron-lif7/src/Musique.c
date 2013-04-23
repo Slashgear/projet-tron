@@ -47,8 +47,11 @@ void MusiqueConstructeur(Musique*musique){
     }
     FMOD_System_CreateSound(baseDuSon, "data/Sons/Get_Lucky", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+0);
-    FMOD_System_CreateSound(baseDuSon, "data/Sons/The_Game_Has_Changed", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
+    resultat=FMOD_System_CreateSound(baseDuSon, "data/Sons/TGHC", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+1);
+    if(resultat!=FMOD_OK){
+        printf("Erreur chargement fichier du son court\n");
+    }
     FMOD_System_CreateSound(baseDuSon, "data/Sons/Derezzed", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+2);
 
