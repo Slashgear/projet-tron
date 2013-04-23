@@ -52,8 +52,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
     }
     MusiqueConstructeur(&musique);
     jeu->musique=musique;
-    assert(_Choix_De_Chanson<_Nombre_De_Musique);
-    JouerIemeMusique(&musique,_Choix_De_Chanson,-1);
+    JouerIemeMusique(&musique,rand()%3,-1);
 }
 
 void JeuDestructeur(Jeu* jeu){

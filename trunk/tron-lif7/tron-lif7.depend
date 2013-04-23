@@ -717,3 +717,162 @@
 	"../lib/FMOD/inc/fmod.h"
 	"Constantes.h"
 
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Bonus.c
+	"EffetBonus.h"
+	"stdio.h"
+	"Bonus.h"
+	"time.h"
+	"Jeu.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/EffetBonus.h
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Bonus.h
+	"EffetBonus.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Jeu.h
+	"Joueur.h"
+	"Grid.h"
+	"Constantes.h"
+	"Bonus.h"
+	"Musique.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Joueur.h
+	"Controle.h"
+	"Moto.h"
+	"Couleur.h"
+	"EffetBonus.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Controle.h
+	<stdlib.h>
+	<stdio.h>
+	<SDL/SDL.h>
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Moto.h
+	<stdlib.h>
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Couleur.h
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Grid.h
+	"Mur.h"
+	<stdlib.h>
+	<stdio.h>
+	"TableauDynamique.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Mur.h
+	<stdlib.h>
+	<stdio.h>
+	"Couleur.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/TableauDynamique.h
+	"Mur.h"
+	<stdio.h>
+	<stdlib.h>
+
+1366714381 /home/antoine/Projet/tron-lif7/src/Constantes.h
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Musique.h
+	"../lib/FMOD/inc/fmod.h"
+
+1366662611 /home/antoine/Projet/tron-lif7/lib/FMOD/inc/fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1366662611 /home/antoine/Projet/tron-lif7/lib/FMOD/inc/fmod_codec.h
+
+1366662611 /home/antoine/Projet/tron-lif7/lib/FMOD/inc/fmod_dsp.h
+
+1366662611 /home/antoine/Projet/tron-lif7/lib/FMOD/inc/fmod_memoryinfo.h
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Controle.c
+	"Controle.h"
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	<SDL/SDL.h>
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Grid.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"Grid.h"
+	"Mur.h"
+	"TableauDynamique.h"
+
+1366714434 source:/home/antoine/Projet/tron-lif7/src/Jeu.c
+	"Jeu.h"
+	"Joueur.h"
+	"Grid.h"
+	<assert.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Joueur.c
+	<stdlib.h>
+	<stdio.h>
+	"Joueur.h"
+	"Moto.h"
+	"Controle.h"
+	"Couleur.h"
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Joystick.c
+	<stdlib.h>
+	<SDL/SDL.h>
+	"Joystick.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/Joystick.h
+	<SDL/SDL.h>
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Moto.c
+	<stdlib.h>
+	<stdio.h>
+	"Moto.h"
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/Mur.c
+	<stdlib.h>
+	<stdio.h>
+	"Couleur.h"
+	"Mur.h"
+
+1366714295 source:/home/antoine/Projet/tron-lif7/src/Musique.c
+	<stdio.h>
+	<stdlib.h>
+	"Musique.h"
+	"../lib/FMOD/inc/fmod.h"
+	"Constantes.h"
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/SDL.c
+	"Jeu.h"
+	"SDL.h"
+	<assert.h>
+	<SDL/SDL.h>
+	<time.h>
+	"Joystick.h"
+
+1366662612 /home/antoine/Projet/tron-lif7/src/SDL.h
+	"Jeu.h"
+	<SDL/SDL.h>
+	"Joystick.h"
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/TableauDynamique.c
+	"TableauDynamique.h"
+	<stdio.h>
+	"Mur.h"
+	<stdlib.h>
+
+1366662612 source:/home/antoine/Projet/tron-lif7/src/main.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"Mur.h"
+	"Moto.h"
+	"Controle.h"
+	"Joueur.h"
+	"Grid.h"
+	"Jeu.h"
+	"SDL.h"
+	"Bonus.h"
+	"Constantes.h"
+	"Musique.h"
+
