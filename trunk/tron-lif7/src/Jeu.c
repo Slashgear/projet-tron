@@ -20,6 +20,9 @@ Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
 int JeuGetTempsProchainBonus(Jeu* jeu){
     return jeu->tempsProchainBonus;
 }
+Musique* JeuGetMusique(Jeu* jeu){
+    return &(jeu->musique);
+}
 
 
 void JeuSetGrille(Jeu* jeu,Grid* grille){
@@ -34,6 +37,7 @@ void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i){
 void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
     jeu->tempsProchainBonus=tempsProchainBonus;
 }
+
 
 
 
@@ -304,6 +308,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
         collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
         if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
             if(collisionBonus!=0){
+                JouerIemeSonCourt(JeuGetMusique(jeu),1);
                 nettoieGrid(GridGetMesMurs(JeuGetGrille(jeu)));
                 BonusSetPositionX(unBonus,0);
                 BonusSetPositionY(unBonus,0);
@@ -312,6 +317,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
         }
         else if(BonusGetEffetBonus(unBonus)==BOOST){
                 if(collisionBonus!=0){
+                    JouerIemeSonCourt(JeuGetMusique(jeu),1);
                     JoueurSetEffetBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),BOOST);
                     JoueurSetTempsBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),_Temps_Bonus_Boost);
                     BonusSetPositionX(unBonus,0);
