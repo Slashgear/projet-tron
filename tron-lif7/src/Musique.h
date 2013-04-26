@@ -3,7 +3,7 @@
 #include "../lib/FMOD/inc/fmod.h"
 
 #define _Nombre_De_Musique 3
-#define _Nombre_De_Bruitages 1
+#define _Nombre_De_Bruitages 2
 
 /**
 \file [Musique.h]

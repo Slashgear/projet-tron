@@ -28,6 +28,8 @@ Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i);
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i);
 /**assesseur de tempsProchainBonus*/
 int JeuGetTempsProchainBonus(Jeu* jeu);
+/**assesseur de musique*/
+Musique* JeuGetMusique(Jeu* jeu);
 
 
 
@@ -40,6 +42,8 @@ void JeuSetIemeJoueurs(Jeu* jeu,Joueur* Joueur,int i);
 void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i);
 /**mutateur de tempsProchainBonus*/
 void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus);
+/**mutateur de Musique*/
+void JeuSetMusique(Jeu* jeu,Musique* musique);
 
 
 /**constructeur du jeu*/

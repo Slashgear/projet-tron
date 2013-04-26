@@ -34,26 +34,22 @@ void MusiqueSetMusiqueDuJeu(Musique *musique,FMOD_SOUND **musiqueDuJeu){
 
 
 void MusiqueConstructeur(Musique*musique){
-    FMOD_RESULT resultat;
     FMOD_SYSTEM *baseDuSon;
     FMOD_SOUND** sonCourt=(FMOD_SOUND **)malloc(_Nombre_De_Bruitages*sizeof(FMOD_SOUND *));
     FMOD_SOUND** musiqueDuJeu=(FMOD_SOUND**)malloc(_Nombre_De_Musique*sizeof(FMOD_SOUND *));
 
     FMOD_System_Create(&baseDuSon);
     FMOD_System_Init(baseDuSon, 5, FMOD_INIT_NORMAL, NULL);
-    resultat=FMOD_System_CreateSound(baseDuSon, "data/Sons/sonDestruction.wav", FMOD_CREATESAMPLE, 0,sonCourt+0);
-    if(resultat!=FMOD_OK){
-        printf("Erreur chargement fichier du son court\n");
-    }
+    FMOD_System_CreateSound(baseDuSon, "data/Sons/sonDestruction.wav", FMOD_CREATESAMPLE, 0,sonCourt+0);
+    FMOD_System_CreateSound(baseDuSon, "data/Sons/SonAttrapeBonus.mp3", FMOD_CREATESAMPLE, 0,sonCourt+1);
+
     FMOD_System_CreateSound(baseDuSon, "data/Sons/Get_Lucky.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+0);
-    resultat=FMOD_System_CreateSound(baseDuSon, "data/Sons/TGHC.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
+    FMOD_System_CreateSound(baseDuSon, "data/Sons/TGHC.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+1);
-    if(resultat!=FMOD_OK){
-        printf("Erreur chargement fichier du son court\n");
-    }
     FMOD_System_CreateSound(baseDuSon, "data/Sons/Derezzed.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+2);
+
 
     MusiqueSetBaseDuSon(musique,baseDuSon);
     MusiqueSetSonCourt(musique,sonCourt);
