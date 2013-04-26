@@ -4,6 +4,7 @@
 #include "Moto.h"
 #include "Couleur.h"
 #include "EffetBonus.h"
+#include "Mur.h"
 
 /**
 \file [Moto.h]
@@ -23,6 +24,7 @@ typedef struct {
     EffetBonus effetActuel;
     int tempsBonus;
     short int numeroManette;
+    Mur dernierMur;
 }Joueur;
 
 /** assesseur de moto*/
@@ -39,6 +41,8 @@ EffetBonus JoueurGetEffetBonus(const Joueur *Joueur);
 short int JoueurGetNumeroManette(const Joueur *joueur);
 /**assesseur du tempsBonus */
 int JoueurGetTempsBonus(const Joueur *joueur);
+/**assesseur du dernierMur*/
+Mur* JoueurGetDernierMur(Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -55,7 +59,8 @@ void JoueurSetEffetBonus(Joueur* joueur,EffetBonus effet);
 void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 /** mutateur du tempsBonus*/
 void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
-
+/** mutateur du dernierMur*/
+void JoueurSetDernierMur(Joueur* joueur,Mur unMur);
 
 
 
