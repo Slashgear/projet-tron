@@ -81,6 +81,14 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                                 (float)MotoGetTailleY(JoueurGetMoto(joueur)) + MotoGetPositionY(JoueurGetMoto(joueur))};
     float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
+    Mur* dernierMur;
+    float boundingboxDernierMur[4];
+    dernierMur=JoueurGetDernierMur(joueur);
+    boundingboxDernierMur[0]=MurGetPositionX(dernierMur);
+    boundingboxDernierMur[1]=MurGetPositionY(dernierMur);
+    boundingboxDernierMur[2]=MurGetPositionX(dernierMur)+MurGetTailleX(dernierMur);
+    boundingboxDernierMur[3]=MurGetPositionX(dernierMur)+MurGetTailleY(dernierMur);
+
     if((boundingBoxMoto[0]<borduresGrid[0])||
        (boundingBoxMoto[2]>borduresGrid[2])||
        (boundingBoxMoto[1]<borduresGrid[1])||
@@ -97,8 +105,18 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                 if((boundingBoxMoto[0]<boundingBoxMur[2])&&
                     (boundingBoxMoto[2]>boundingBoxMur[0])&&
                     (boundingBoxMoto[1]<boundingBoxMur[3])&&
-                    (boundingBoxMoto[3]>boundingBoxMur[1])&&(((MurGetDureeVie(unMur))<_Duree_Vie_Mur)||(JoueurGetCouleur(joueur)!=MurGetCouleur(unMur))))
+                    (boundingBoxMoto[3]>boundingBoxMur[1])&&
+                    (((MurGetDureeVie(unMur))<_Duree_Vie_Mur)||(JoueurGetCouleur(joueur)!=MurGetCouleur(unMur))))
                 {boolCollision = 1;}
+                if((MotoGetVitesse(JoueurGetMoto(joueur))>=10)&&
+                    (boundingboxDernierMur[0]<boundingBoxMur[2])&&
+                    (boundingboxDernierMur[2]<boundingBoxMur[0])&&
+                    (boundingboxDernierMur[1]<boundingBoxMur[3])&&
+                    (boundingboxDernierMur[3]>boundingBoxMur[1])&&
+                    ((MurGetDureeVie(dernierMur))<_Duree_Vie_Mur-1)&&
+                    (JoueurGetCouleur(joueur)!=MurGetCouleur(dernierMur))
+                )
+                {boolCollision=1;}
                 i++;
             }
     return boolCollision;
@@ -190,6 +208,7 @@ void JeuActionClavier(Joueur* joueur,const SDLKey touche,Grid* grille){
         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
         MotoSetTailleY(uneMoto,tailleTemp);
         ajouteMur(GridGetMesMurs(grille),unMur);
+        JoueurSetDernierMur(joueur,unMur);
     }
 }
 
@@ -222,6 +241,7 @@ void bougeMoto(Jeu* jeu){
                             MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                             }
             ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
+            JoueurSetDernierMur(JeuGetIemeJoueurs(jeu,i),unMur);
             MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+_Acceleration);
         }
     }
@@ -236,6 +256,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
 
     bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
+        MurSetDureeVie(JoueurGetDernierMur(JeuGetIemeJoueurs(jeu,i)),MurGetDureeVie(JoueurGetDernierMur(JeuGetIemeJoueurs(jeu,i)))-1);
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
                 JouerIemeSonCourt(&(jeu->musique),0);
