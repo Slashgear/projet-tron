@@ -82,7 +82,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
     Mur* dernierMur=JoueurGetDernierMur(joueur);
     float boundingboxDernierMur[4]={MurGetPositionX(dernierMur),MurGetPositionY(dernierMur),
-                                    MurGetPositionX(dernierMur)+MurGetTailleX(dernierMur),MurGetPositionX(dernierMur)+MurGetTailleY(dernierMur)};
+                                    MurGetPositionX(dernierMur)+(float)MurGetTailleX(dernierMur),MurGetPositionY(dernierMur)+(float)MurGetTailleY(dernierMur)};
     if((boundingBoxMoto[0]<borduresGrid[0])||
        (boundingBoxMoto[2]>borduresGrid[2])||
        (boundingBoxMoto[1]<borduresGrid[1])||
@@ -107,8 +107,9 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                     (boundingboxDernierMur[2]>boundingBoxMur[0])&&
                     (boundingboxDernierMur[1]<boundingBoxMur[3])&&
                     (boundingboxDernierMur[3]>boundingBoxMur[1])&&
-                    ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]=!boundingBoxMur[0]))||
-                    (((MotoGetDirection(JoueurGetMoto(joueur))==GAUCHE)||(MotoGetDirection(JoueurGetMoto(joueur))==DROITE))&&(boundingboxDernierMur[1]=!boundingBoxMur[1]))) )
+                    ((MurGetDureeVie(unMur)<(_Duree_Vie_Mur))||(MurGetCouleur(unMur)!=MurGetCouleur(dernierMur)))&&
+                    ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]!=boundingBoxMur[0]))||
+                    (((MotoGetDirection(JoueurGetMoto(joueur))==GAUCHE)||(MotoGetDirection(JoueurGetMoto(joueur))==DROITE))&&(boundingboxDernierMur[1]!=boundingBoxMur[1]))) )
                 {boolCollision=1;}
                 i++;
             }
@@ -201,7 +202,7 @@ void JeuActionClavier(Joueur* joueur,const SDLKey touche,Grid* grille){
         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
         MotoSetTailleY(uneMoto,tailleTemp);
         ajouteMur(GridGetMesMurs(grille),unMur);
-        JoueurSetDernierMur(joueur,&unMur);
+        JoueurSetDernierMur(joueur,adresseIemeElementTabDyn(GridGetMesMurs(grille),TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1));
     }
 }
 
@@ -234,7 +235,7 @@ void bougeMoto(Jeu* jeu){
                             MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                             }
             ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
-            JoueurSetDernierMur(JeuGetIemeJoueurs(jeu,i),&unMur);
+            JoueurSetDernierMur(JeuGetIemeJoueurs(jeu,i),adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(jeu)),TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1));
             MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+_Acceleration);
         }
     }
@@ -249,7 +250,6 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
 
     bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
-        MurSetDureeVie(JoueurGetDernierMur(JeuGetIemeJoueurs(jeu,i)),MurGetDureeVie(JoueurGetDernierMur(JeuGetIemeJoueurs(jeu,i)))-1);
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
                 JouerIemeSonCourt(&(jeu->musique),0);

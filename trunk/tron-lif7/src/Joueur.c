@@ -66,6 +66,7 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
     JoueurSetEffetBonus(joueur,effetActuel);
     JoueurSetNumeroManette(joueur,numero);
     JoueurSetTempsBonus(joueur,0);
+    JoueurSetDernierMur(joueur,NULL);
 }
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
@@ -75,6 +76,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetEffetBonus(joueur,AUCUN);
     JoueurSetNumeroManette(joueur,-1);
     JoueurSetTempsBonus(joueur,0);
+    JoueurSetDernierMur(joueur,NULL);
 }
 
 
