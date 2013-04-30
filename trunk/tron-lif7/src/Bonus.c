@@ -57,7 +57,7 @@ void BonusDestructeur(Bonus* bonus){
 
 
 void BonusTestRegression(){
-
+/*
 
     Grid grille;
     float posXg=1.;
@@ -130,7 +130,7 @@ void BonusTestRegression(){
     printf("La position X du bonus %f\n",BonusGetPositionX(&bonus));
     printf("La position Y du bonus %f\n",BonusGetPositionY(&bonus));
     printf("Le numéro du bonus %u \n\n",BonusGetEffetBonus(&bonus));
-
+*/
 }
 
 

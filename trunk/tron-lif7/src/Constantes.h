@@ -6,15 +6,12 @@
 
 
 #define _Duree_Vie_Mur 150
-#define _Vitesse_Initiale 15
+#define _Vitesse_Initiale 4
 #define _Acceleration 0.02f
 
-#define _Nombre_de_Bonus 4
+#define _Nombre_de_Bonus 5
 #define _Temps_Bonus_Boost 30
 #define _Vitesse_Boost 15
-
-
-
 
 #endif
 

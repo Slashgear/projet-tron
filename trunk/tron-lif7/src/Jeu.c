@@ -113,7 +113,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                     (boundingboxDernierMur[2]<boundingBoxMur[0])&&
                     (boundingboxDernierMur[1]<boundingBoxMur[3])&&
                     (boundingboxDernierMur[3]>boundingBoxMur[1])&&
-                    ((MurGetDureeVie(dernierMur))<_Duree_Vie_Mur-1)&&
+                    ((MurGetDureeVie(dernierMur))<_Duree_Vie_Mur)&&
                     (JoueurGetCouleur(joueur)!=MurGetCouleur(dernierMur))
                 )
                 {boolCollision=1;}

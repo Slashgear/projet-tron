@@ -60,7 +60,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
-    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1010,710,32,SDL_HWSURFACE));
+    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1300,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
     SDLSetIemeTexture(sdl,3,SDLChargeImage("data/images/moto1B.bmp"));
@@ -108,8 +108,8 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/images/BonusNettoyage.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Titre-Gauche.bmp"));
     sdl->mesManettes=manettes;
-
 }
 
 void SDLDestructeur(SDL *sdl){
@@ -411,7 +411,7 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
     Mur unMur;
     float dureeVieMur=_Duree_Vie_Mur;
     char directionChange=0;
-    if(JoueurGetEnJeu(joueur)!=VIVANT){
+    if(JoueurGetEnJeu(joueur)==VIVANT){
         if(MotoGetDirection(uneMoto)==HAUT){
             MurConstructeur(&unMur,MotoGetPositionX(uneMoto),MotoGetPositionY(uneMoto),
                                 MotoGetTailleX(uneMoto),(float)MotoGetTailleY(uneMoto),
