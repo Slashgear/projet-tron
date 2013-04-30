@@ -110,7 +110,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                     ((MurGetDureeVie(unMur)<(_Duree_Vie_Mur))||(MurGetCouleur(unMur)!=MurGetCouleur(dernierMur)))&&
                     ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]!=boundingBoxMur[0]))||
                     (((MotoGetDirection(JoueurGetMoto(joueur))==GAUCHE)||(MotoGetDirection(JoueurGetMoto(joueur))==DROITE))&&(boundingboxDernierMur[1]!=boundingBoxMur[1]))) )
-                {boolCollision=1;}
+                {boolCollision=2;}
                 i++;
             }
     return boolCollision;
@@ -198,7 +198,8 @@ void JeuActionClavier(Joueur* joueur,const SDLKey touche,Grid* grille){
                             directionChange=1;
                     }
                 }
-    if(directionChange){
+    if(directionChange==1){
+        JoueurSetBooltourne(joueur,1);
         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
         MotoSetTailleY(uneMoto,tailleTemp);
         ajouteMur(GridGetMesMurs(grille),unMur);
@@ -246,17 +247,24 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     Grid* grille=JeuGetGrille(jeu);
     Bonus* unBonus=NULL;
     short int NbJoueurEnJeu=0;
+    short int NbJoueurEnDoute=0;
     char collisionBonus=0;
+    char collisionMur=0;
 
     bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
-            if(testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille)){
+            collisionMur=testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille);
+            if(collisionMur==1){
                 JouerIemeSonCourt(&(jeu->musique),0);
                 printf("Le joueur %d a perdu ! \n",i+1);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+
             }
             else {
+                if(collisionMur==2){
+                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),DOUTE);
+                }
                 for(j=i+1;(j<_Nombre_de_Joueur);j++){
                     if((JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,j))==VIVANT)
                        &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
@@ -275,6 +283,35 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             NbJoueurEnJeu++;
+        }
+        if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
+            NbJoueurEnDoute++;
+            NbJoueurEnJeu++;
+        }
+    }
+    if(NbJoueurEnDoute==1){
+        for(i=0;i<_Nombre_de_Joueur;i++){
+            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
+                JouerIemeSonCourt(&(jeu->musique),0);
+                printf("Le joueur %d a perdu ! \n",i+1);
+                JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+                NbJoueurEnJeu--;
+            }
+        }
+    }
+    if(NbJoueurEnDoute>1){
+        for(i=0;i<_Nombre_de_Joueur;i++){
+            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
+                if(JoueurGetBooltourne(JeuGetIemeJoueurs(jeu,i))==1){
+                    JouerIemeSonCourt(&(jeu->musique),0);
+                    printf("Le joueur %d a perdu ! \n",i+1);
+                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+                    NbJoueurEnJeu--;
+                }
+                else {
+                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),VIVANT);
+                }
+            }
         }
     }
     if(NbJoueurEnJeu==1){

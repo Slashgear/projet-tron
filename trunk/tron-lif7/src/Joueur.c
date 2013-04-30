@@ -30,7 +30,9 @@ int JoueurGetTempsBonus(const Joueur *joueur){
 Mur* JoueurGetDernierMur(Joueur *joueur){
     return joueur->dernierMur;
 }
-
+short int JoueurGetBooltourne(Joueur *joueur){
+    return joueur->boolTourne;
+}
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
     joueur->moto= *moto;
@@ -56,6 +58,9 @@ void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus){
 void JoueurSetDernierMur(Joueur* joueur,Mur* unMur){
     joueur->dernierMur=unMur;
 }
+void JoueurSetBooltourne(Joueur *joueur,short int boolTourne){
+    joueur->boolTourne=boolTourne;
+}
 
 
 void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero){
@@ -67,6 +72,7 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
     JoueurSetNumeroManette(joueur,numero);
     JoueurSetTempsBonus(joueur,0);
     JoueurSetDernierMur(joueur,NULL);
+    JoueurSetBooltourne(joueur,0);
 }
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
@@ -77,6 +83,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetNumeroManette(joueur,-1);
     JoueurSetTempsBonus(joueur,0);
     JoueurSetDernierMur(joueur,NULL);
+    JoueurSetBooltourne(joueur,0);
 }
 
 
