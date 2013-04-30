@@ -476,7 +476,7 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
             MotoSetTailleY(uneMoto,tailleTemp);
             ajouteMur(GridGetMesMurs(grille),unMur);
-            JoueurSetDernierMur(joueur,unMur);
+            JoueurSetDernierMur(joueur,&unMur);
         }
     }
 }

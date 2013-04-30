@@ -565,7 +565,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1366356636 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Jeu.c
+1367305486 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
@@ -574,24 +574,26 @@
 	<stdlib.h>
 	<time.h>
 
-1366356636 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Jeu.h
+1367301980 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
 	"Constantes.h"
 	"Bonus.h"
+	"Musique.h"
 
-1366356636 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Joueur.h
+1367303717 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Joueur.h
 	"Controle.h"
 	"Moto.h"
 	"Couleur.h"
 	"EffetBonus.h"
+	"Mur.h"
 
 1365493442 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Moto.h
 	<stdlib.h>
 
-1366356636 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Constantes.h
+1367305067 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Constantes.h
 
-1366356636 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Joueur.c
+1367303779 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Joueur.c
 	<stdlib.h>
 	<stdio.h>
 	"Joueur.h"
@@ -610,7 +612,7 @@
 	"Couleur.h"
 	"Mur.h"
 
-1366356636 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/SDL.c
+1367303958 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
@@ -629,7 +631,7 @@
 	"Mur.h"
 	<stdlib.h>
 
-1366273142 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/main.c
+1367301980 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -642,6 +644,7 @@
 	"SDL.h"
 	"Bonus.h"
 	"Constantes.h"
+	"Musique.h"
 
 1366352702 /home/antoine/Projets/tron-lif7/src/EffetBonus.h
 
@@ -683,7 +686,7 @@
 
 1366275285 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/EffetBonus.h
 
-1366092130 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Bonus.h
+1367301980 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Bonus.h
 	"EffetBonus.h"
 
 1366272736 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Joystick.c
@@ -876,4 +879,25 @@
 	"Bonus.h"
 	"Constantes.h"
 	"Musique.h"
+
+1367301980 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Musique.h
+	"../lib/FMOD/inc/fmod.h"
+
+1366272737 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/lib/FMOD/inc/fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1366272737 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/lib/FMOD/inc/fmod_codec.h
+
+1366272737 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/lib/FMOD/inc/fmod_dsp.h
+
+1366272737 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/lib/FMOD/inc/fmod_memoryinfo.h
+
+1367301980 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Musique.c
+	<stdio.h>
+	<stdlib.h>
+	"Musique.h"
+	"../lib/FMOD/inc/fmod.h"
+	"Constantes.h"
 

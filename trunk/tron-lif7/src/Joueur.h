@@ -24,7 +24,7 @@ typedef struct {
     EffetBonus effetActuel;
     int tempsBonus;
     short int numeroManette;
-    Mur dernierMur;
+    Mur* dernierMur;
 }Joueur;
 
 /** assesseur de moto*/
@@ -60,7 +60,7 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 /** mutateur du tempsBonus*/
 void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
 /** mutateur du dernierMur*/
-void JoueurSetDernierMur(Joueur* joueur,Mur unMur);
+void JoueurSetDernierMur(Joueur* joueur,Mur* unMur);
 
 
 
