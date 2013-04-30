@@ -60,7 +60,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
-    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1300,710,32,SDL_HWSURFACE));
+    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
     SDLSetIemeTexture(sdl,3,SDLChargeImage("data/images/moto1B.bmp"));
@@ -108,13 +108,14 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/images/BonusNettoyage.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Titre-Gauche.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Titre-Droit.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1,SDLChargeImage("data/images/Interface.bmp"));
     sdl->mesManettes=manettes;
 }
 
 void SDLDestructeur(SDL *sdl){
     int i;
-    for(i=0;i<(2+4*_Nombre_de_Joueur+_Nombre_Type_Bonus);i++){
+    for(i=0;i<(2+4*_Nombre_de_Joueur+_Nombre_Type_Bonus+2);i++){
         SDL_FreeSurface(SDLGetIemeTexture(sdl,i));
         SDLSetIemeTexture(sdl,i,NULL);
     }
@@ -291,7 +292,7 @@ void SDLJeuInitN(SDL *sdl){
     SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
     SDLConstructeur(sdl,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
-    SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,255,255,255));
+    SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,0,0,0));
     SDLSetIemeTexture(sdl,0,ecran);
 }
 
@@ -382,9 +383,9 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                     uneManette->boutons[1]=0;
                     affAJour = 0;
                 }
-                if(uneManette->boutons[6]){
+                if(uneManette->boutons[5]){
                     JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i));
-                    uneManette->boutons[6]=0;
+                    uneManette->boutons[5]=0;
                     affAJour = 0;
                 }
             }
@@ -557,11 +558,16 @@ void SDLAfficheBonus(SDL*sdl){
         }
     }
 }
+void SDLAfficheInterface(SDL *sdl){
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus),SDLGetIemeTexture(sdl,0),
+                                1010,5);
+}
 
 void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
     SDLAfficheBonus(sdl);
+    SDLAfficheInterface(sdl);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 
 }

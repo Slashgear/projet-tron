@@ -50,6 +50,8 @@ void SDLAfficheJeu(SDL *sdl);
 void SDLAfficheMotos(SDL *sdl);
 /**Procédure d'affichage des Murs*/
 void SDLAfficheMurs(SDL *sdl);
+/**Procédure qui affiche l'interface*/
+void SDLAfficheInterface(SDL *sdl);
 /** Fonction qui affiche un Bonus*/
 void SDLAfficheBonus(SDL*sdl);
 /**Procédure Init à N=_Nombre_De_Joueur joueurs*/
