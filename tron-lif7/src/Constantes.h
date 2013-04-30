@@ -6,7 +6,7 @@
 
 
 #define _Duree_Vie_Mur 150
-#define _Vitesse_Initiale 40
+#define _Vitesse_Initiale 30
 #define _Acceleration 0.02f
 
 #define _Nombre_de_Bonus 4
