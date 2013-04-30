@@ -477,7 +477,7 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
             MotoSetTailleY(uneMoto,tailleTemp);
             ajouteMur(GridGetMesMurs(grille),unMur);
-            JoueurSetDernierMur(joueur,&unMur);
+            JoueurSetDernierMur(joueur,adresseIemeElementTabDyn(GridGetMesMurs(grille),TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1));
         }
     }
 }
@@ -561,6 +561,8 @@ void SDLAfficheBonus(SDL*sdl){
 void SDLAfficheInterface(SDL *sdl){
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus),SDLGetIemeTexture(sdl,0),
                                 1010,5);
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),SDLGetIemeTexture(sdl,0),
+                                1010,150);
 }
 
 void SDLAfficheJeu(SDL *sdl){
