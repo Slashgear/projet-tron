@@ -14,7 +14,7 @@
 \date 19 mars 2013
 */
 
-typedef enum{MORT=0,VIVANT=1,MOURANT=2} EnJeu;
+typedef enum{MORT=0,VIVANT=1,MOURANT=2,DOUTE=3} EnJeu;
 
 typedef struct {
     Moto moto;
@@ -25,6 +25,7 @@ typedef struct {
     int tempsBonus;
     short int numeroManette;
     Mur* dernierMur;
+    short int boolTourne;
 }Joueur;
 
 /** assesseur de moto*/
@@ -43,6 +44,8 @@ short int JoueurGetNumeroManette(const Joueur *joueur);
 int JoueurGetTempsBonus(const Joueur *joueur);
 /**assesseur du dernierMur*/
 Mur* JoueurGetDernierMur(Joueur *joueur);
+/**assesseur de boolTourne*/
+short int JoueurGetBooltourne(Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -61,6 +64,8 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero);
 void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
 /** mutateur du dernierMur*/
 void JoueurSetDernierMur(Joueur* joueur,Mur* unMur);
+/** mutateur de boolTourne*/
+void JoueurSetBooltourne(Joueur *joueur,short int boolTourne);
 
 
 
