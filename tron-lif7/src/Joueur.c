@@ -28,7 +28,7 @@ int JoueurGetTempsBonus(const Joueur *joueur){
     return joueur->tempsBonus;
 }
 Mur* JoueurGetDernierMur(Joueur *joueur){
-    return &(joueur->dernierMur);
+    return joueur->dernierMur;
 }
 
 
@@ -53,7 +53,7 @@ void JoueurSetNumeroManette(Joueur* joueur,short int numero){
 void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus){
     joueur->tempsBonus=tempsBonus;
 }
-void JoueurSetDernierMur(Joueur* joueur,Mur unMur){
+void JoueurSetDernierMur(Joueur* joueur,Mur* unMur){
     joueur->dernierMur=unMur;
 }
 
