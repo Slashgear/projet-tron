@@ -21,11 +21,14 @@ typedef struct {
     Couleur couleur;
     Controle controle;
     short int numeroManette;
+    short int numeroJoueur;
     Mur* dernierMur;
     short int boolTourne;
     EnJeu enJeu;
     EffetBonus effetActuel;
     int tempsBonus;
+    short int boolIA;
+    short int joueurCible;
 }Joueur;
 
 /** assesseur de moto*/
@@ -46,6 +49,12 @@ int JoueurGetTempsBonus(const Joueur *joueur);
 Mur* JoueurGetDernierMur(Joueur *joueur);
 /**assesseur de boolTourne*/
 short int JoueurGetBooltourne(Joueur *joueur);
+/**assesseur du numero de joueur*/
+short int JoueurGetNumeroJoueur(Joueur *joueur);
+/**assesseur de boolIA*/
+short int JoueurGetBoolIA(Joueur *joueur);
+/**assesseur du numero du joueur ciblé*/
+short int JoueurGetJoueurCible(Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -66,11 +75,18 @@ void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus);
 void JoueurSetDernierMur(Joueur* joueur,Mur* unMur);
 /** mutateur de boolTourne*/
 void JoueurSetBooltourne(Joueur *joueur,short int boolTourne);
+/** mutateur du numero de joueur*/
+void JoueurSetNumeroJoueur(Joueur *joueur,short int numero);
+/** mutateur de boolIA*/
+void JoueurSetBoolIA(Joueur *joueur,short int boolIA);
+/** mutateur du numero du joueur ciblé*/
+void JoueurSetJoueurCible(Joueur *joueur,short int numero);
 
 
 
 /** Constructeur de Joueur*/
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero);
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,
+                        EffetBonus effetActuel,short int numeroManette,short int numeroJoueur,short int boolIA);
 /** Destructeur de Joueur*/
 void JoueurDestructeur(Joueur* joueur);
 

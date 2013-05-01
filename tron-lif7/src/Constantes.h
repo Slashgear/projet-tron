@@ -1,8 +1,14 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
 
-#define _Nombre_de_Joueur 2
+#define _Nombre_de_Joueur 4
 #define _Nombre_de_Manette 0
+#define _Nombre_IA 1
+
+#define _Position_X_Grille 5
+#define _Position_Y_Grille 5
+#define _Taille_X_Grille 5
+#define _Taille_Y_Grille 5
 
 
 #define _Duree_Vie_Mur 150
