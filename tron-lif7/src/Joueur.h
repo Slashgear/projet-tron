@@ -18,14 +18,14 @@ typedef enum{MORT=0,VIVANT=1,MOURANT=2,DOUTE=3} EnJeu;
 
 typedef struct {
     Moto moto;
-    Controle controle;
     Couleur couleur;
-    EnJeu enJeu;
-    EffetBonus effetActuel;
-    int tempsBonus;
+    Controle controle;
     short int numeroManette;
     Mur* dernierMur;
     short int boolTourne;
+    EnJeu enJeu;
+    EffetBonus effetActuel;
+    int tempsBonus;
 }Joueur;
 
 /** assesseur de moto*/

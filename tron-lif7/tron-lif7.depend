@@ -244,16 +244,19 @@
 
 1363203920 /home/antoine/Projets/tron-lif7/src/bool.h
 
-1364312440 source:/home/matthieu/Projet/tron-lif7/src/Controle.c
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Controle.c
 	"Controle.h"
 	<stdlib.h>
 	<stdio.h>
+	<assert.h>
+	<SDL/SDL.h>
 
-1364312411 /home/matthieu/Projet/tron-lif7/src/Controle.h
+1367411754 /home/matthieu/Projet/tron-lif7/src/Controle.h
 	<stdlib.h>
 	<stdio.h>
+	<SDL/SDL.h>
 
-1364290701 source:/home/matthieu/Projet/tron-lif7/src/Grid.c
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Grid.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -261,13 +264,13 @@
 	"Mur.h"
 	"TableauDynamique.h"
 
-1364290701 /home/matthieu/Projet/tron-lif7/src/Grid.h
+1367411754 /home/matthieu/Projet/tron-lif7/src/Grid.h
 	"Mur.h"
 	<stdlib.h>
 	<stdio.h>
 	"TableauDynamique.h"
 
-1364232054 /home/matthieu/Projet/tron-lif7/src/Mur.h
+1367411754 /home/matthieu/Projet/tron-lif7/src/Mur.h
 	<stdlib.h>
 	<stdio.h>
 	"Couleur.h"
@@ -307,7 +310,7 @@
 	"Couleur.h"
 	"Mur.h"
 
-1364058465 /home/matthieu/Projet/tron-lif7/src/Couleur.h
+1367411754 /home/matthieu/Projet/tron-lif7/src/Couleur.h
 
 1364291007 source:/home/matthieu/Projet/tron-lif7/src/Moto.c
 	<stdlib.h>
@@ -323,9 +326,10 @@
 	"Mur.h"
 	<stdlib.h>
 
-1364318877 source:/home/matthieu/Projet/tron-lif7/src/main.c
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
+	<assert.h>
 	"Mur.h"
 	"Moto.h"
 	"Controle.h"
@@ -333,19 +337,24 @@
 	"Grid.h"
 	"Jeu.h"
 	"SDL.h"
+	"Bonus.h"
+	"Constantes.h"
+	"Musique.h"
 
-1364062371 source:/home/matthieu/Projet/tron-lif7/src/Mur.c
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Mur.c
 	<stdlib.h>
 	<stdio.h>
 	"Couleur.h"
 	"Mur.h"
 
-1364064319 /home/matthieu/Projet/tron-lif7/src/Joueur.h
+1367417101 /home/matthieu/Projet/tron-lif7/src/Joueur.h
 	"Controle.h"
 	"Moto.h"
 	"Couleur.h"
+	"EffetBonus.h"
+	"Mur.h"
 
-1364153300 source:/home/matthieu/Projet/tron-lif7/src/Joueur.c
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Joueur.c
 	<stdlib.h>
 	<stdio.h>
 	"Joueur.h"
@@ -353,28 +362,34 @@
 	"Controle.h"
 	"Couleur.h"
 
-1364295320 source:/home/matthieu/Projet/tron-lif7/src/Jeu.c
+1367416560 source:/home/matthieu/Projet/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
 	<assert.h>
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 
-1364292672 /home/matthieu/Projet/tron-lif7/src/Jeu.h
+1367414889 /home/matthieu/Projet/tron-lif7/src/Jeu.h
 	"Joueur.h"
 	"Grid.h"
+	"Constantes.h"
+	"Bonus.h"
+	"Musique.h"
 
-1364320623 source:/home/matthieu/Projet/tron-lif7/src/SDL.c
+1367414461 source:/home/matthieu/Projet/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
 	<SDL/SDL.h>
-	<SDL/SDL_image.h>
+	<time.h>
+	"Joystick.h"
 
-1364315692 /home/matthieu/Projet/tron-lif7/src/SDL.h
+1367411754 /home/matthieu/Projet/tron-lif7/src/SDL.h
 	"Jeu.h"
 	<SDL/SDL.h>
+	"Joystick.h"
 
 1366354092 source:/home/antoine/Projets/tron-lif7/src/Joueur.c
 	<stdlib.h>
@@ -895,6 +910,49 @@
 1366272737 /home/etu/b/p1104126/Projet/projet-tron/tron-lif7/lib/FMOD/inc/fmod_memoryinfo.h
 
 1367301980 source:/home/etu/b/p1104126/Projet/projet-tron/tron-lif7/src/Musique.c
+	<stdio.h>
+	<stdlib.h>
+	"Musique.h"
+	"../lib/FMOD/inc/fmod.h"
+	"Constantes.h"
+
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Bonus.c
+	"EffetBonus.h"
+	"stdio.h"
+	"Bonus.h"
+	"time.h"
+	"Jeu.h"
+
+1367411754 /home/matthieu/Projet/tron-lif7/src/EffetBonus.h
+
+1367411754 /home/matthieu/Projet/tron-lif7/src/Bonus.h
+	"EffetBonus.h"
+
+1367411754 /home/matthieu/Projet/tron-lif7/src/Constantes.h
+
+1367411754 /home/matthieu/Projet/tron-lif7/src/Musique.h
+	"../lib/FMOD/inc/fmod.h"
+
+1367412229 /home/matthieu/Projet/tron-lif7/lib/FMOD/inc/fmod.h
+	"fmod_codec.h"
+	"fmod_dsp.h"
+	"fmod_memoryinfo.h"
+
+1367412229 /home/matthieu/Projet/tron-lif7/lib/FMOD/inc/fmod_codec.h
+
+1367412229 /home/matthieu/Projet/tron-lif7/lib/FMOD/inc/fmod_dsp.h
+
+1367412229 /home/matthieu/Projet/tron-lif7/lib/FMOD/inc/fmod_memoryinfo.h
+
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Joystick.c
+	<stdlib.h>
+	<SDL/SDL.h>
+	"Joystick.h"
+
+1367411754 /home/matthieu/Projet/tron-lif7/src/Joystick.h
+	<SDL/SDL.h>
+
+1367411754 source:/home/matthieu/Projet/tron-lif7/src/Musique.c
 	<stdio.h>
 	<stdlib.h>
 	"Musique.h"

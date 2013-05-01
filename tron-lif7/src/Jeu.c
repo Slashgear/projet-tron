@@ -69,6 +69,16 @@ void JeuDestructeur(Jeu* jeu){
     MusiqueDestructeur(&(jeu->musique));
 }
 
+char testCollisionGenerique(float objet1[4],float objet2[4]){
+    char boolcollision=0;
+    if((objet1[0]<objet2[2])&&
+       (objet1[2]>objet2[0])&&
+       (objet1[1]<objet2[3])&&
+       (objet1[3]>objet2[1]))
+    {boolcollision=1;}
+    return boolcollision;
+}
+
 
 char testCollisionMur(Joueur * joueur, Grid * grille){
     int i=0;
@@ -96,17 +106,11 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                                 +(float)MurGetTailleX(unMur);
                 boundingBoxMur[3]=MurGetPositionY(unMur)
                                 +(float)MurGetTailleY(unMur);
-                if((boundingBoxMoto[0]<boundingBoxMur[2])&&
-                    (boundingBoxMoto[2]>boundingBoxMur[0])&&
-                    (boundingBoxMoto[1]<boundingBoxMur[3])&&
-                    (boundingBoxMoto[3]>boundingBoxMur[1])&&
+                if((testCollisionGenerique(boundingBoxMoto,boundingBoxMur))&&
                     (((MurGetDureeVie(unMur))<_Duree_Vie_Mur)||(JoueurGetCouleur(joueur)!=MurGetCouleur(unMur))))
                 {boolCollision = 1;}
                 if((MotoGetVitesse(JoueurGetMoto(joueur))>=10)&&
-                    (boundingboxDernierMur[0]<boundingBoxMur[2])&&
-                    (boundingboxDernierMur[2]>boundingBoxMur[0])&&
-                    (boundingboxDernierMur[1]<boundingBoxMur[3])&&
-                    (boundingboxDernierMur[3]>boundingBoxMur[1])&&
+                    (testCollisionGenerique(boundingboxDernierMur,boundingBoxMur))&&
                     ((MurGetDureeVie(unMur)<(_Duree_Vie_Mur))||(MurGetCouleur(unMur)!=MurGetCouleur(dernierMur)))&&
                     ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]!=boundingBoxMur[0]))||
                     (((MotoGetDirection(JoueurGetMoto(joueur))==GAUCHE)||(MotoGetDirection(JoueurGetMoto(joueur))==DROITE))&&(boundingboxDernierMur[1]!=boundingBoxMur[1]))) )
@@ -122,10 +126,7 @@ char testCollisionMoto(Moto* moto1, Moto* moto2){
                                 (float)MotoGetTailleY(moto1) + MotoGetPositionY(moto1)};
     float boundingBoxMoto2[4]={MotoGetPositionX(moto2),MotoGetPositionY(moto2),(float)MotoGetTailleX(moto2) + MotoGetPositionX(moto2),
                                 (float)MotoGetTailleY(moto2) + MotoGetPositionY(moto2)};
-    if((boundingBoxMoto1[0]<boundingBoxMoto2[2])&&
-        (boundingBoxMoto1[2]>boundingBoxMoto2[0])&&
-        (boundingBoxMoto1[1]<boundingBoxMoto2[3])&&
-        (boundingBoxMoto1[3]>boundingBoxMoto2[1])){
+    if(testCollisionGenerique(boundingBoxMoto1,boundingBoxMoto2)){
         boolCollision=1;
     }
     return boolCollision;
