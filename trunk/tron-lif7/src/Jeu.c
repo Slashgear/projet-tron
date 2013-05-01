@@ -470,6 +470,11 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
     }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
 }
 
+void JeuGereIA(Joueur* joueur){
+    int i,j;
+    short int grilleAnalyse[_Taille_Y_Grille/5][_Taille_X_Grille/5]={{0}};
+    /* for i j nb joueur etc ... */
+}
 
 
 
@@ -531,7 +536,7 @@ void JeuTestRegression(){
 
     MotoConstructeur(&moto1,posX1,posY1,tailleX1,tailleY1,vitesse1,direction1);
     ControleConstructeur(&controle1,touchedroite1,touchegauche1,touchehaut1,touchebas1,touchebonus1);
-    JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1,1,AUCUN,-1);
+    JoueurConstructeur(&joueur1,&moto1,&controle1,couleur1,1,AUCUN,-1,1,0);
     mesJoueurs[0]=joueur1;
 
     printf("La valeur posX1 est %f et dans la Moto1 du joueur1 est de %f \n",posX1,
@@ -539,7 +544,7 @@ void JeuTestRegression(){
 
     MotoConstructeur(&moto2,posX2,posY2,tailleX2,tailleY2,vitesse2,direction2);
     ControleConstructeur(&controle2,touchedroite2,touchegauche2,touchehaut2,touchebas2,touchebonus2);
-    JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2,1,AUCUN,-1);
+    JoueurConstructeur(&joueur2,&moto2,&controle2,couleur2,1,AUCUN,-1,1,0);
     mesJoueurs[1]=joueur2;
 
     printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",

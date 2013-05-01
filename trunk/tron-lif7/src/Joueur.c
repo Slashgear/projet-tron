@@ -33,6 +33,16 @@ Mur* JoueurGetDernierMur(Joueur *joueur){
 short int JoueurGetBooltourne(Joueur *joueur){
     return joueur->boolTourne;
 }
+short int JoueurGetNumeroJoueur(Joueur *joueur){
+    return joueur->numeroJoueur;
+}
+short int JoueurGetBoolIA(Joueur *joueur){
+    return joueur->boolIA;
+}
+short int JoueurGetJoueurCible(Joueur *joueur){
+    return joueur->joueurCible;
+}
+
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
     joueur->moto= *moto;
@@ -61,18 +71,31 @@ void JoueurSetDernierMur(Joueur* joueur,Mur* unMur){
 void JoueurSetBooltourne(Joueur *joueur,short int boolTourne){
     joueur->boolTourne=boolTourne;
 }
+void JoueurSetNumeroJoueur(Joueur *joueur,short int numero){
+    joueur->numeroJoueur=numero;
+}
+void JoueurSetBoolIA(Joueur *joueur,short int boolIA){
+    joueur->boolIA=boolIA;
+}
+void JoueurSetJoueurCible(Joueur *joueur,short int numero){
+    joueur->joueurCible=numero;
+}
 
 
-void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,EffetBonus effetActuel,short int numero){
+void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,
+                        EffetBonus effetActuel,short int numeroManette,short int numeroJoueur,short int boolIA){
     JoueurSetMoto(joueur,moto);
     JoueurSetControle(joueur,controle);
     JoueurSetCouleur(joueur,couleur);
     JoueurSetEnJeu(joueur,enJeu);
     JoueurSetEffetBonus(joueur,effetActuel);
-    JoueurSetNumeroManette(joueur,numero);
+    JoueurSetNumeroManette(joueur,numeroManette);
     JoueurSetTempsBonus(joueur,0);
     JoueurSetDernierMur(joueur,NULL);
     JoueurSetBooltourne(joueur,0);
+    JoueurSetNumeroJoueur(joueur,numeroJoueur);
+    JoueurSetBoolIA(joueur,boolIA);
+    JoueurSetJoueurCible(joueur,0);
 }
 void JoueurDestructeur(Joueur* joueur){
     MotoDestructeur(JoueurGetMoto(joueur));
@@ -84,6 +107,9 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetTempsBonus(joueur,0);
     JoueurSetDernierMur(joueur,NULL);
     JoueurSetBooltourne(joueur,0);
+    JoueurSetNumeroJoueur(joueur,0);
+    JoueurSetBoolIA(joueur,0);
+    JoueurSetJoueurCible(joueur,0);
 }
 
 
@@ -109,7 +135,7 @@ void JoueurDestructeur(Joueur* joueur){
 
     ControleConstructeur(&controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);
 
-    JoueurConstructeur(&joueur,&moto,&controle,couleur,VIVANT,AUCUN,-1);
+    JoueurConstructeur(&joueur,&moto,&controle,couleur,VIVANT,AUCUN,-1,1,0);
     printf("La valeur posX est %f et dans la Moto du joueur est de %f \n",posX,MotoGetPositionX(JoueurGetMoto(&joueur)));
     printf("La valeur posY est %f et dans la Moto du joueur est de %f \n",posY,MotoGetPositionY(JoueurGetMoto(&joueur)));
     printf("La valeur tailleX est %u et dans la Moto du joueur est de %u \n",tailleX,MotoGetTailleX(JoueurGetMoto(&joueur)));
