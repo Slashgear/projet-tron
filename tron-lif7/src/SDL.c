@@ -333,22 +333,22 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                         unControle=JoueurGetControle(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
                         if(evenement.key.keysym.sym==ControleGetHaut(unControle)){
                             JeuActionClavier(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetHaut(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                                HAUT,JeuGetGrille(SDLGetJeu(sdl)));
                             affAJour = 0;
                         }
                         else  if(evenement.key.keysym.sym==ControleGetBas(unControle)){
                                 JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                ControleGetBas(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                                BAS,JeuGetGrille(SDLGetJeu(sdl)));
                                 affAJour = 0;
                             }
                             else if(evenement.key.keysym.sym==ControleGetGauche(unControle)){
                                     JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                        ControleGetGauche(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                                        GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
                                     affAJour = 0;
                                     }
                                     else if(evenement.key.keysym.sym==ControleGetDroite(unControle)){
                                             JeuActionClavier( JeuGetIemeJoueurs(SDLGetJeu(sdl),i),
-                                                             ControleGetDroite(unControle),JeuGetGrille(SDLGetJeu(sdl)));
+                                                             DROITE,JeuGetGrille(SDLGetJeu(sdl)));
                                             affAJour = 0;
                                         }
                                         else if(evenement.key.keysym.sym==ControleGetBonus(unControle)){
