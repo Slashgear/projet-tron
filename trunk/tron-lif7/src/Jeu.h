@@ -63,6 +63,8 @@ void JeuActionClavier(Joueur* joueur, Direction direction,Grid* grille);
 /**procédure qui actionne le bonus*/
 void JeuActionneBonus(Joueur*Joueur);
 
+/**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
+char testCollisionGenerique(float objet1[4],float objet2[4]);
 /**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus);
 /**Fonction qui teste si un bonus est en Collision avec un Mur*/
