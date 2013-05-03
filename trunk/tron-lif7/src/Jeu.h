@@ -64,6 +64,8 @@ void JeuActionClavier(Joueur* joueur, Direction direction,Grid* grille);
 void JeuActionneBonus(Joueur*Joueur);
 /**procedure qui gère les mouvements d'une IA*/
 void JeuGereIA(Joueur* joueur,Jeu* jeu);
+/**procédure qui affiche le tableau d'analyse du la grille*/
+void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
 
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
 char testCollisionGenerique(float objet1[4],float objet2[4]);
