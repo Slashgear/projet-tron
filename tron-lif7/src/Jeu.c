@@ -91,8 +91,13 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
     float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
     Mur* dernierMur=JoueurGetDernierMur(joueur);
-    float boundingboxDernierMur[4]={MurGetPositionX(dernierMur),MurGetPositionY(dernierMur),
-                                    MurGetPositionX(dernierMur)+(float)MurGetTailleX(dernierMur),MurGetPositionY(dernierMur)+(float)MurGetTailleY(dernierMur)};
+    float boundingboxDernierMur[4];
+    if(dernierMur!=0){
+        boundingboxDernierMur[0]=MurGetPositionX(dernierMur);
+        boundingboxDernierMur[1]=MurGetPositionY(dernierMur);
+        boundingboxDernierMur[2]=MurGetPositionX(dernierMur)+(float)MurGetTailleX(dernierMur);
+        boundingboxDernierMur[3]=MurGetPositionY(dernierMur)+(float)MurGetTailleY(dernierMur);
+    }
     if((boundingBoxMoto[0]<borduresGrid[0])||
        (boundingBoxMoto[2]>borduresGrid[2])||
        (boundingBoxMoto[1]<borduresGrid[1])||
@@ -110,6 +115,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                     (((MurGetDureeVie(unMur))<_Duree_Vie_Mur)||(JoueurGetCouleur(joueur)!=MurGetCouleur(unMur))))
                 {boolCollision = 1;}
                 if((MotoGetVitesse(JoueurGetMoto(joueur))>=10)&&
+                    (dernierMur!=NULL)&&
                     (testCollisionGenerique(boundingboxDernierMur,boundingBoxMur))&&
                     ((MurGetDureeVie(unMur)<(_Duree_Vie_Mur))||(MurGetCouleur(unMur)!=MurGetCouleur(dernierMur)))&&
                     ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]!=boundingBoxMur[0]))||
@@ -380,6 +386,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     decrementeTempsBonus(jeu);
     decrementeVieMur(grille);
     effaceMur(GridGetMesMurs(grille));
+    JeuGereIA(JeuGetIemeJoueurs(jeu,0),jeu);
 }
 
 void decrementeTempsBonus(Jeu *jeu){
@@ -466,14 +473,34 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
     }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
 }
 
+void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]){
+    int i,j;
+    FILE* fichier=NULL;
+    fichier=fopen("grilleAnalyse.txt","w+");
+    for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
+        for(j=0;j<_Taille_X_Grille/_Precision_Analyse_IA;j++){
+            fprintf(fichier,"%d ",(*grilleAnalyse)[i][j]);
+        }
+        fprintf(fichier,"\n");
+    }
+    fprintf(fichier,"\n");
+    fprintf(fichier,"\n");
+    fclose(fichier);
+}
+
 void JeuGereIA(Joueur* joueur,Jeu* jeu){
     int i,j,k;
     float decalageXMur;
     float decalageYMur;
-    short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA]={{0}};
+    short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA];
     Mur* unMur;
     Joueur* unJoueur;
-    short int* pValeurCase=0;
+    short int* pValeurCase;
+    for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
+        for(j=0;j<_Taille_X_Grille/_Precision_Analyse_IA;j++){
+            grilleAnalyse[i][j]=0;
+        }
+    }
     for(i=TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){
         unMur=adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(jeu)),i);
         if(MurGetTailleX(unMur)==5){
@@ -484,7 +511,7 @@ void JeuGereIA(Joueur* joueur,Jeu* jeu){
             decalageYMur=2.5;
             decalageXMur=MurGetTailleX(unMur);
         }
-        while((decalageXMur!=0)||(decalageYMur!=0)){
+        while((decalageXMur!=0)&&(decalageYMur!=0)){
             for(j=-1;j<=1;j++){
                 for(k=-1;k<=1;k++){
                     pValeurCase=&grilleAnalyse[(((int)(MurGetPositionX(unMur)+decalageXMur))/_Precision_Analyse_IA)+j]
@@ -535,8 +562,10 @@ void JeuGereIA(Joueur* joueur,Jeu* jeu){
             }
         }
     }
-
+    AfficheGrilleAnalyse(&grilleAnalyse);
 }
+
+
 
 
 
@@ -620,15 +649,19 @@ void JeuTestRegression(){
     assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,0),JeuGetGrille(&jeu)));
     assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,1),JeuGetGrille(&jeu)));
 
-    ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
+  /*  ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
     assert(1== testCollisionMur(JeuGetIemeJoueurs(&jeu,0),JeuGetGrille(&jeu)));
-    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,1),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,1),JeuGetGrille(&jeu)));*/
 
     bougeMoto(&jeu);
     printf("La vitesse de la moto1 (1 avant) après bougeMoto est %f \n",
            MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,0))));
     printf("La positionY de la moto2 (2avant + vitesse) après bougeMoto est %f \n",
            MotoGetPositionY(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
+
+    printf("\n printf \n");
+    JeuGereIA(JeuGetIemeJoueurs(&jeu,0),&jeu);
+    printf("\n printf \n");
 
     nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
 
