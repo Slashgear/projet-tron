@@ -466,15 +466,16 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
     }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
 }
 
-void JeuGereIA(Joueur* joueur,Grid* grille){
+void JeuGereIA(Joueur* joueur,Jeu* jeu){
     int i,j,k;
     float decalageXMur;
     float decalageYMur;
     short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA]={{0}};
     Mur* unMur;
+    Joueur* unJoueur;
     short int* pValeurCase=0;
-    for(i=TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1;i>=0;i--){
-        unMur=adresseIemeElementTabDyn(GridGetMesMurs(grille),i);
+    for(i=TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){
+        unMur=adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(jeu)),i);
         if(MurGetTailleX(unMur)==5){
             decalageXMur=2.5;
             decalageYMur=MurGetTailleY(unMur);
@@ -516,7 +517,24 @@ void JeuGereIA(Joueur* joueur,Grid* grille){
             }
         }
     }
-    /* for i=nbJoueur etc..*/
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        unJoueur=JeuGetIemeJoueurs(jeu,i);
+        if(JoueurGetNumeroJoueur(unJoueur)!=JoueurGetNumeroJoueur(joueur)){
+            grilleAnalyse[(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
+                            [(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
+                            =-JoueurGetNumeroJoueur(unJoueur);
+            if((MotoGetDirection(JoueurGetMoto(unJoueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(unJoueur))==BAS)){
+                grilleAnalyse[(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
+                            [(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)+1]
+                            =-JoueurGetNumeroJoueur(unJoueur);
+            }
+            else{
+                grilleAnalyse[(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)+1]
+                            [(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
+                            =-JoueurGetNumeroJoueur(unJoueur);
+            }
+        }
+    }
 
 }
 
