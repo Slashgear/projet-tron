@@ -63,7 +63,7 @@ void JeuActionClavier(Joueur* joueur, Direction direction,Grid* grille);
 /**procédure qui actionne le bonus*/
 void JeuActionneBonus(Joueur*Joueur);
 /**procedure qui gère les mouvements d'une IA*/
-void JeuGereIA(Joueur* joueur);
+void JeuGereIA(Joueur* joueur,Grid* grille);
 
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
 char testCollisionGenerique(float objet1[4],float objet2[4]);

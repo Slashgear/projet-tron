@@ -420,10 +420,7 @@ char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus){
         Boitebonus[1]=BonusGetPositionY(bonus);
         Boitebonus[2]=BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus);
         Boitebonus[3]=BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus);
-        if((BoiteMoto[0]<Boitebonus[2])&&
-           (BoiteMoto[2]>Boitebonus[0])&&
-           (BoiteMoto[1]<Boitebonus[3])&&
-           (BoiteMoto[3]>Boitebonus[1]))
+        if(testCollisionGenerique(Boitebonus,BoiteMoto))
         {boolCollision=i+1;}
     }
     return boolCollision;
@@ -444,10 +441,9 @@ char testCollisionMursBonus(Grid *grille,Bonus* bonus){
                                 +(float)MurGetTailleX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
                 boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
                                 +(float)MurGetTailleY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                if(((Boitebonus[0]<boundingBoxMur[2])&&(Boitebonus[2]>boundingBoxMur[0])
-                    &&(Boitebonus[1]<boundingBoxMur[3])&&(Boitebonus[3]>boundingBoxMur[1]))
-                    ||((Boitebonus[0]<borduresGrid[0])&&(Boitebonus[2]>borduresGrid[2])
-                    &&(Boitebonus[1]<borduresGrid[1])&&(Boitebonus[3]>borduresGrid[3])))
+                if((testCollisionGenerique(Boitebonus,boundingBoxMur))
+                    ||((Boitebonus[0]<borduresGrid[0])||(Boitebonus[2]>borduresGrid[2])
+                    ||(Boitebonus[1]<borduresGrid[1])||(Boitebonus[3]>borduresGrid[3])))
                 {boolCollision = 1;}
                 i++;
             }
@@ -470,12 +466,59 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
     }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
 }
 
-void JeuGereIA(Joueur* joueur){
-    int i,j;
-    short int grilleAnalyse[_Taille_Y_Grille/5][_Taille_X_Grille/5]={{0}};
-    /* for i j nb joueur etc ... */
-}
+void JeuGereIA(Joueur* joueur,Grid* grille){
+    int i,j,k;
+    float decalageXMur;
+    float decalageYMur;
+    short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA]={{0}};
+    Mur* unMur;
+    short int* pValeurCase=0;
+    for(i=TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1;i>=0;i--){
+        unMur=adresseIemeElementTabDyn(GridGetMesMurs(grille),i);
+        if(MurGetTailleX(unMur)==5){
+            decalageXMur=2.5;
+            decalageYMur=MurGetTailleY(unMur);
+        }
+        else{
+            decalageYMur=2.5;
+            decalageXMur=MurGetTailleX(unMur);
+        }
+        while((decalageXMur!=0)||(decalageYMur!=0)){
+            for(j=-1;j<=1;j++){
+                for(k=-1;k<=1;k++){
+                    pValeurCase=&grilleAnalyse[(((int)(MurGetPositionX(unMur)+decalageXMur))/_Precision_Analyse_IA)+j]
+                                                [(((int)(MurGetPositionY(unMur)+decalageYMur))/_Precision_Analyse_IA)+k];
+                    if(*pValeurCase<(short int)MurGetDureeVie(unMur))
+                    *pValeurCase =(short int)MurGetDureeVie(unMur);
+                }
+            }
+            if(decalageXMur>3*_Precision_Analyse_IA){
+                decalageXMur-=3*_Precision_Analyse_IA;
+                if(decalageXMur==2.5) decalageXMur=2.6;
+            }
+            else{
+                if(decalageXMur!=2.5) decalageXMur=0;
+            }
+            if(decalageYMur>+3*_Precision_Analyse_IA){
+                decalageYMur-=3*_Precision_Analyse_IA;
+                if(decalageYMur==2.5) decalageYMur=2.6;
+            }
+            else{
+                if(decalageYMur!=2.5) decalageYMur=0;
+            }
+        }
+        for(j=-1;j<=1;j++){
+            for(k=-1;k<=1;k++){
+                pValeurCase=&grilleAnalyse[(((int)(MurGetPositionX(unMur)+decalageXMur))/_Precision_Analyse_IA)+j]
+                                        [(((int)(MurGetPositionY(unMur)+decalageYMur))/_Precision_Analyse_IA)+k];
+                if(*pValeurCase<(short int)MurGetDureeVie(unMur))
+                *pValeurCase =(short int)MurGetDureeVie(unMur);
+            }
+        }
+    }
+    /* for i=nbJoueur etc..*/
 
+}
 
 
 

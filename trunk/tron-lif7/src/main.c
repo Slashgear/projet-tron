@@ -18,12 +18,12 @@ int main(){
     ControleTestRegression();
     MotoTestRegression();
     JoueurTestRegression();
-    GridTestRegression();
+    GridTestRegression();*/
     JeuTestRegression();
-    SDLTestRegression();
+    /*SDLTestRegression();
     BonusTestRegression();
-   JoystickTestRegression();*/
-   MusiqueTestRegression();
+   JoystickTestRegression();
+   MusiqueTestRegression();*/
 #else
     SDL sdl;
     short int jeuReInit=1;
