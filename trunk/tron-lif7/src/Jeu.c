@@ -495,7 +495,42 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
         }
     } /** On initialise la grilleAnalyse à 0*/
     CreerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
+    printf("%d \n",distanceGrilleAnalyse(0,0,0,2,&grilleAnalyse));
 
+}
+
+int distanceGrilleAnalyse(short int ligne1,short int colonne1,short int ligne2,short int colonne2,
+                                short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                          [_Taille_X_Grille/_Precision_Analyse_IA]){
+    short int distance=-1;
+    short int distanceTemp=0;
+    if((colonne1==colonne2)&&(ligne1==ligne2)){
+        return 0;
+    }
+    (*grilleAnalyse)[ligne1][colonne1]=1;
+    if((ligne1!=0)&&((*grilleAnalyse)[ligne1-1][colonne1]==0)){
+        distance=distanceGrilleAnalyse(ligne1-1,colonne1,ligne2,colonne2,grilleAnalyse);
+    }
+    else distance=-1;
+    if((ligne1!=(_Taille_Y_Grille/_Precision_Analyse_IA)-1)&&((*grilleAnalyse)[ligne1+1][colonne1]==0)){
+        distanceTemp=distanceGrilleAnalyse(ligne1+1,colonne1,ligne2,colonne2,grilleAnalyse);
+    }
+    else distanceTemp=-1;
+    if((distance==-1)||(distanceTemp<distance)){distance=distanceTemp;}/**calcule du minimum des distances de cases adjacentes*/
+    if((colonne1!=0)&&((*grilleAnalyse)[ligne1][colonne1-1]==0)){
+        distanceTemp=distanceGrilleAnalyse(ligne1,colonne1-1,ligne2,colonne2,grilleAnalyse);
+    }
+    else distanceTemp=-1;
+    if((distance==-1)||(distanceTemp<distance)){distance=distanceTemp;}
+    if((colonne1!=(_Taille_X_Grille/_Precision_Analyse_IA))&&((*grilleAnalyse)[ligne1][colonne1+1]==0)){
+        distanceTemp=distanceGrilleAnalyse(ligne1,colonne1+1,ligne2,colonne2,grilleAnalyse);
+    }
+    else distanceTemp=-1;
+    if((distance==-1)||(distanceTemp<distance)){distance=distanceTemp;}
+    (*grilleAnalyse)[ligne1][colonne1]=0;
+    if(distance==-1){
+        return -1;
+    }else return distance+1;
 }
 
 void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]

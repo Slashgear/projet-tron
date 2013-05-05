@@ -70,6 +70,10 @@ void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision
 void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
                         Jeu* jeu,Joueur* joueurIA);
+/**Fonction quirenvoie la distance entre deux cases de la grille*/
+int distanceGrilleAnalyse(short int ligne1,short int colonne1,short int ligne2,short int colonne2,
+                                short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                          [_Taille_X_Grille/_Precision_Analyse_IA]);
 
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
 char testCollisionGenerique(float objet1[4],float objet2[4]);
