@@ -495,7 +495,7 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
         }
     } /** On initialise la grilleAnalyse à 0*/
     CreerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
-    printf("%d \n",distanceGrilleAnalyse(0,0,0,2,&grilleAnalyse));
+   /* printf("%d \n",distanceGrilleAnalyse(0,0,0,2,&grilleAnalyse));*/
 
 }
 

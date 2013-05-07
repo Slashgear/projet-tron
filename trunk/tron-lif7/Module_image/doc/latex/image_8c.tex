@@ -1,0 +1,149 @@
+\hypertarget{image_8c}{\section{/home/antoine/\-L\-I\-F7\-\_\-td/src/image.c File Reference}
+\label{image_8c}\index{/home/antoine/\-L\-I\-F7\-\_\-td/src/image.\-c@{/home/antoine/\-L\-I\-F7\-\_\-td/src/image.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}image.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pixel.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{image_8c_a09752f3133d816f341b8829132336043}{im\-Init} (\hyperlink{structImage}{Image} $\ast$Im, int dimx, int dimy)
+\begin{DoxyCompactList}\small\item\em im\-Init initialise dimx et dimy (après vérification) de la structure \hyperlink{structImage}{Image} puis alloue le tableau de pixel dans le tas \end{DoxyCompactList}\item 
+void \hyperlink{image_8c_a5c53a00ee1712cbf4236ecf8c5c34471}{im\-Libere} (\hyperlink{structImage}{Image} $\ast$Im)
+\item 
+\hyperlink{structImage}{Image} $\ast$ \hyperlink{image_8c_a9a91b54dbb066e5d191fb6f23316c7f4}{im\-Creer} (int dimx, int dimy)
+\item 
+void \hyperlink{image_8c_a0432c9a9f4a307b34549cca27df59fb6}{im\-Detruire} (\hyperlink{structImage}{Image} $\ast$$\ast$pim)
+\item 
+\hyperlink{structPixel}{Pixel} \hyperlink{image_8c_ae312c8b781c888ee84c25bda908a3b55}{get\-Pix} (const \hyperlink{structImage}{Image} $\ast$Im, int x, int y)
+\item 
+void \hyperlink{image_8c_a5547e2784de260bc57e46673adbc4121}{set\-Pix} (\hyperlink{structImage}{Image} $\ast$Im, int x, int y, const \hyperlink{structPixel}{Pixel} $\ast$couleur)
+\item 
+void \hyperlink{image_8c_ab37b9cd64497d1e4fb0b87a8c6fb7873}{im\-Dessine\-Rectangle} (\hyperlink{structImage}{Image} $\ast$Im, int Xmin, int Ymin, int Xmax, int Ymax, const \hyperlink{structPixel}{Pixel} $\ast$couleur)
+\item 
+void \hyperlink{image_8c_afe91cb0a289ff537a64ef98dd333e71f}{im\-Effacer} (\hyperlink{structImage}{Image} $\ast$Im, const \hyperlink{structPixel}{Pixel} $\ast$couleur)
+\item 
+void \hyperlink{image_8c_a20b9ad35b6db7bd09d7452574d04dd50}{im\-Sauver} (const \hyperlink{structImage}{Image} $\ast$p\-Im, const char filename\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{image_8c_a0a1f0b9be4b910e1cfc2648cfa9e38fd}{im\-Ouvrir} (\hyperlink{structImage}{Image} $\ast$p\-Im, const char filename\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{image_8c_afadf8ab43119d304c72e201d0d95164d}{im\-Printf} (const \hyperlink{structImage}{Image} $\ast$p\-Im)
+\item 
+void \hyperlink{image_8c_a8d4964490fb1a67b590ce77acd78031f}{im\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{image_8c_ae312c8b781c888ee84c25bda908a3b55}{\index{image.\-c@{image.\-c}!get\-Pix@{get\-Pix}}
+\index{get\-Pix@{get\-Pix}!image.c@{image.\-c}}
+\subsubsection[{get\-Pix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pixel} get\-Pix (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} $\ast$}]{Im, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{image_8c_ae312c8b781c888ee84c25bda908a3b55}
+\begin{DoxyVerb}getPix récupère le pixel de coordonnée (x,y) en vérifiant leur validité
+\end{DoxyVerb}
+ la formule pour passer de 2\-D à un tab 1\-D est pix\mbox{[}y$\ast$dimx+x\mbox{]} \hypertarget{image_8c_a9a91b54dbb066e5d191fb6f23316c7f4}{\index{image.\-c@{image.\-c}!im\-Creer@{im\-Creer}}
+\index{im\-Creer@{im\-Creer}!image.c@{image.\-c}}
+\subsubsection[{im\-Creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image}$\ast$ im\-Creer (
+\begin{DoxyParamCaption}
+\item[{int}]{dimx, }
+\item[{int}]{dimy}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a9a91b54dbb066e5d191fb6f23316c7f4}
+im\-Creer alloue dans le tas une structure \hyperlink{structImage}{Image} puis l'initialise avec im\-Init =$>$ 2 lignes \hypertarget{image_8c_ab37b9cd64497d1e4fb0b87a8c6fb7873}{\index{image.\-c@{image.\-c}!im\-Dessine\-Rectangle@{im\-Dessine\-Rectangle}}
+\index{im\-Dessine\-Rectangle@{im\-Dessine\-Rectangle}!image.c@{image.\-c}}
+\subsubsection[{im\-Dessine\-Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Dessine\-Rectangle (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{Im, }
+\item[{int}]{Xmin, }
+\item[{int}]{Ymin, }
+\item[{int}]{Xmax, }
+\item[{int}]{Ymax, }
+\item[{const {\bf Pixel} $\ast$}]{couleur}
+\end{DoxyParamCaption}
+)}}\label{image_8c_ab37b9cd64497d1e4fb0b87a8c6fb7873}
+dessine un rectangle de couleur dans l'image en utilisant set\-Pix \hypertarget{image_8c_a0432c9a9f4a307b34549cca27df59fb6}{\index{image.\-c@{image.\-c}!im\-Detruire@{im\-Detruire}}
+\index{im\-Detruire@{im\-Detruire}!image.c@{image.\-c}}
+\subsubsection[{im\-Detruire}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Detruire (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$$\ast$}]{pim}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a0432c9a9f4a307b34549cca27df59fb6}
+\begin{DoxyVerb}Libere le tableau de pixel en appelant imLibere puis détruit
+\end{DoxyVerb}
+ la structure image \hypertarget{image_8c_afe91cb0a289ff537a64ef98dd333e71f}{\index{image.\-c@{image.\-c}!im\-Effacer@{im\-Effacer}}
+\index{im\-Effacer@{im\-Effacer}!image.c@{image.\-c}}
+\subsubsection[{im\-Effacer}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Effacer (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{Im, }
+\item[{const {\bf Pixel} $\ast$}]{couleur}
+\end{DoxyParamCaption}
+)}}\label{image_8c_afe91cb0a289ff537a64ef98dd333e71f}
+efface l'image en appelant im\-Dessine\-Rectangle avec le bon rectangle \hypertarget{image_8c_a09752f3133d816f341b8829132336043}{\index{image.\-c@{image.\-c}!im\-Init@{im\-Init}}
+\index{im\-Init@{im\-Init}!image.c@{image.\-c}}
+\subsubsection[{im\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{Im, }
+\item[{int}]{dimx, }
+\item[{int}]{dimy}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a09752f3133d816f341b8829132336043}
+
+
+im\-Init initialise dimx et dimy (après vérification) de la structure \hyperlink{structImage}{Image} puis alloue le tableau de pixel dans le tas 
+
+\hypertarget{image_8c_a5c53a00ee1712cbf4236ecf8c5c34471}{\index{image.\-c@{image.\-c}!im\-Libere@{im\-Libere}}
+\index{im\-Libere@{im\-Libere}!image.c@{image.\-c}}
+\subsubsection[{im\-Libere}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Libere (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{Im}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a5c53a00ee1712cbf4236ecf8c5c34471}
+Libère la mémoire du tableau de pixels et met les champs dimx et dimy de la structure à 0 \hypertarget{image_8c_a0a1f0b9be4b910e1cfc2648cfa9e38fd}{\index{image.\-c@{image.\-c}!im\-Ouvrir@{im\-Ouvrir}}
+\index{im\-Ouvrir@{im\-Ouvrir}!image.c@{image.\-c}}
+\subsubsection[{im\-Ouvrir}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Ouvrir (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{p\-Im, }
+\item[{const char}]{filename\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a0a1f0b9be4b910e1cfc2648cfa9e38fd}
+\hypertarget{image_8c_afadf8ab43119d304c72e201d0d95164d}{\index{image.\-c@{image.\-c}!im\-Printf@{im\-Printf}}
+\index{im\-Printf@{im\-Printf}!image.c@{image.\-c}}
+\subsubsection[{im\-Printf}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Printf (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} $\ast$}]{p\-Im}
+\end{DoxyParamCaption}
+)}}\label{image_8c_afadf8ab43119d304c72e201d0d95164d}
+\hypertarget{image_8c_a20b9ad35b6db7bd09d7452574d04dd50}{\index{image.\-c@{image.\-c}!im\-Sauver@{im\-Sauver}}
+\index{im\-Sauver@{im\-Sauver}!image.c@{image.\-c}}
+\subsubsection[{im\-Sauver}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Sauver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} $\ast$}]{p\-Im, }
+\item[{const char}]{filename\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a20b9ad35b6db7bd09d7452574d04dd50}
+\hypertarget{image_8c_a8d4964490fb1a67b590ce77acd78031f}{\index{image.\-c@{image.\-c}!im\-Test\-Regression@{im\-Test\-Regression}}
+\index{im\-Test\-Regression@{im\-Test\-Regression}!image.c@{image.\-c}}
+\subsubsection[{im\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void im\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a8d4964490fb1a67b590ce77acd78031f}
+\begin{DoxyVerb}Effectue tout une série de test vérifiant que le module fonctionne et que les
+\end{DoxyVerb}
+ champ de la structure sont conformes \hypertarget{image_8c_a5547e2784de260bc57e46673adbc4121}{\index{image.\-c@{image.\-c}!set\-Pix@{set\-Pix}}
+\index{set\-Pix@{set\-Pix}!image.c@{image.\-c}}
+\subsubsection[{set\-Pix}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Pix (
+\begin{DoxyParamCaption}
+\item[{{\bf Image} $\ast$}]{Im, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{const {\bf Pixel} $\ast$}]{couleur}
+\end{DoxyParamCaption}
+)}}\label{image_8c_a5547e2784de260bc57e46673adbc4121}
+set\-Pix modifie le pixel de coord (x,y) 

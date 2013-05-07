@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1361265431 source:/home/etu/c/p1101362/LIF7/LIF7_td/image.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"image.h"
+	"pixel.h"
+
+1360661567 /home/etu/c/p1101362/LIF7/LIF7_td/image.h
+	<stdlib.h>
+	"pixel.h"
+	<stdio.h>
+
+1360661149 /home/etu/c/p1101362/LIF7/LIF7_td/pixel.h
+	<stdlib.h>
+	<stdio.h>
+
+1361266698 source:/home/etu/c/p1101362/LIF7/LIF7_td/main.c
+	<stdlib.h>
+	<stdio.h>
+	"image.h"
+	"pixel.h"
+
+1362494808 source:/home/antoine/LIF7_td/src/main.c
+	<stdlib.h>
+	<stdio.h>
+	"image.h"
+	"pixel.h"
+
+1362489971 /home/antoine/LIF7_td/src/image.h
+	<stdlib.h>
+	"pixel.h"
+	<stdio.h>
+
+1360661149 /home/antoine/LIF7_td/src/pixel.h
+	<stdlib.h>
+	<stdio.h>
+
+1362494957 source:/home/antoine/LIF7_td/src/image.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"image.h"
+	"pixel.h"
+
+1362495122 source:/home/antoine/LIF7_td/src/test.c
+	<stdlib.h>
+	<stdio.h>
+	"image.h"
+	"pixel.h"
+
+1362496189 source:/home/matthieu/11101362_11104126/src/image.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"image.h"
+	"pixel.h"
+
+1362489971 /home/matthieu/11101362_11104126/src/image.h
+	<stdlib.h>
+	"pixel.h"
+	<stdio.h>
+
+1362496267 /home/matthieu/11101362_11104126/src/pixel.h
+	<stdlib.h>
+	<stdio.h>
+
+1367675706 source:/home/matthieu/11101362_11104126/src/main.c
+	<stdlib.h>
+	<stdio.h>
+	"image.h"
+	"pixel.h"
+
