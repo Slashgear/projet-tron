@@ -64,7 +64,7 @@ void BonusTestRegression(){
     float posYg=1.;
     unsigned int tailleXg=300;
     unsigned int tailleYg=400;
-    TableauDynamique mesMurs;
+    TableauDynamiqueMur mesMurs;
 
     Mur unMur;
     float posXm=50.;

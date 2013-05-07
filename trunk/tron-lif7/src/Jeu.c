@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "TableauDynamiqueEntier.h"
 
 
 
@@ -103,8 +104,8 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
        (boundingBoxMoto[1]<borduresGrid[1])||
        (boundingBoxMoto[3]>borduresGrid[3]))
     {boolCollision = 1;}
-    else while((i<TabDynGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
-                unMur=adresseIemeElementTabDyn(GridGetMesMurs(grille),i);
+    else while((i<TabDynMurGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
+                unMur=adresseIemeElementTabDynMur(GridGetMesMurs(grille),i);
                 boundingBoxMur[0]=MurGetPositionX(unMur);
                 boundingBoxMur[1]=MurGetPositionY(unMur);
                 boundingBoxMur[2]=MurGetPositionX(unMur)
@@ -209,7 +210,7 @@ void JeuActionClavier(Joueur* joueur,Direction direction,Grid* grille){
         MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
         MotoSetTailleY(uneMoto,tailleTemp);
         ajouteMur(GridGetMesMurs(grille),unMur);
-        JoueurSetDernierMur(joueur,adresseIemeElementTabDyn(GridGetMesMurs(grille),TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1));
+        JoueurSetDernierMur(joueur,adresseIemeElementTabDynMur(GridGetMesMurs(grille),TabDynMurGetTaille_utilisee(GridGetMesMurs(grille))-1));
     }
 }
 
@@ -242,7 +243,7 @@ void bougeMoto(Jeu* jeu){
                             MotoSetPositionX(uneMoto,MotoGetPositionX(uneMoto)+MotoGetVitesse(uneMoto));
                             }
             ajouteMur(GridGetMesMurs(JeuGetGrille(jeu)),unMur);
-            JoueurSetDernierMur(JeuGetIemeJoueurs(jeu,i),adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(jeu)),TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1));
+            JoueurSetDernierMur(JeuGetIemeJoueurs(jeu,i),adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(jeu)),TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1));
             MotoSetVitesse(uneMoto,MotoGetVitesse(uneMoto)+_Acceleration);
         }
     }
@@ -441,13 +442,13 @@ char testCollisionMursBonus(Grid *grille,Bonus* bonus){
     BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus)};
     float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
-    while((i<TabDynGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
-                boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[1]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[2]=MurGetPositionX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleX(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
-                boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleY(adresseIemeElementTabDyn(GridGetMesMurs(grille),i));
+    while((i<TabDynMurGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
+                boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
+                boundingBoxMur[1]=MurGetPositionY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
+                boundingBoxMur[2]=MurGetPositionX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i))
+                                +(float)MurGetTailleX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
+                boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i))
+                                +(float)MurGetTailleY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
                 if((testCollisionGenerique(Boitebonus,boundingBoxMur))
                     ||((Boitebonus[0]<borduresGrid[0])||(Boitebonus[2]>borduresGrid[2])
                     ||(Boitebonus[1]<borduresGrid[1])||(Boitebonus[3]>borduresGrid[3])))
@@ -486,25 +487,103 @@ void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision
     fclose(fichier);
 }
 
+void AfficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]){
+    int i,j;
+    FILE* fichier=NULL;
+    fichier=fopen("Module_image/grilleDistances.txt","w+");
+    for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
+        for(j=0;j<_Taille_X_Grille/_Precision_Analyse_IA;j++){
+            fprintf(fichier,"%d ",(*grilleDistance)[i][j]);
+        }
+    }
+    fclose(fichier);
+}
+
 void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
     int i,j;
+    short int ligneJoueur,colonneJoueur;
+    Direction directionJoueur=MotoGetDirection(JoueurGetMoto(joueurIA));
     short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA];
     short int grilleDistances[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA];
     for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
         for(j=0;j<_Taille_X_Grille/_Precision_Analyse_IA;j++){
             grilleAnalyse[i][j]=0;
+            grilleDistances[i][j]=-1;
         }
-    } /** On initialise la grilleAnalyse à 0*/
+    } /** On initialise la grilleAnalyse et la grilleDistance à 0*/
+    if(directionJoueur==HAUT){
+        ligneJoueur=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
+        colonneJoueur=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA);
+    }
+    else {if(directionJoueur==BAS){
+            ligneJoueur=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)+2;
+            colonneJoueur=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA);
+        }
+    else {if(directionJoueur==GAUCHE){
+                ligneJoueur=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA);
+                colonneJoueur=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
+            }
+            else {if(directionJoueur==DROITE){
+                    ligneJoueur=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA);
+                    colonneJoueur=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)+2;
+                }
+            }
+        }
+        }/** On initialise la position du joueurIA au devant de sa moto*/
     CreerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
-   /* printf("%d \n",distanceGrilleAnalyse(0,0,0,2,&grilleAnalyse));*/
-
+    AfficheGrilleAnalyse(&grilleAnalyse);
+    CreerGrilleDistances(ligneJoueur,colonneJoueur,&grilleAnalyse,&grilleDistances);
+    AfficheGrilleDistances(&grilleDistances);
 }
 
-void (short int ligne1,short int colonne1,
+ void CreerGrilleDistances(short int ligne1,short int colonne1,
                                 short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                          [_Taille_X_Grille/_Precision_Analyse_IA],
+                                short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA]){
-
-
+    int i;
+    short int distance=0;
+    TableauDynamiqueEntier tabCase;
+    int ligneCase,colonneCase;
+    initialiserTabDynEntier(&tabCase);
+    (*grilleDistance)[ligne1][colonne1]=distance;
+    distance++;
+    ajouterElementTabDynEntier(&tabCase,ligne1);
+    ajouterElementTabDynEntier(&tabCase,colonne1);
+    while(TabDynEntierGetTaille_utilisee(&tabCase)!=0){
+        for(i=TabDynEntierGetTaille_utilisee(&tabCase)-1;i>=0;i-=2){
+            ligneCase=valeurIemeElementTabDynEntier(&tabCase,i-1);
+            colonneCase=valeurIemeElementTabDynEntier(&tabCase,i);
+            if(((ligneCase!=_Taille_Y_Grille/_Precision_Analyse_IA-1)&&(*grilleAnalyse)[ligneCase+1][colonneCase]==0)&&
+                    ((*grilleDistance)[ligneCase+1][colonneCase]==-1)){
+                (*grilleDistance)[ligneCase+1][colonneCase]=distance;
+                ajouterElementTabDynEntier(&tabCase,ligneCase+1);
+                ajouterElementTabDynEntier(&tabCase,colonneCase);
+            }
+            if(((colonneCase!=_Taille_X_Grille/_Precision_Analyse_IA-1)&&(*grilleAnalyse)[ligneCase][colonneCase+1]==0)&&
+                    ((*grilleDistance)[ligneCase][colonneCase+1]==-1)){
+                (*grilleDistance)[ligneCase][colonneCase+1]=distance;
+                ajouterElementTabDynEntier(&tabCase,ligneCase);
+                ajouterElementTabDynEntier(&tabCase,colonneCase+1);
+            }
+            if(((ligneCase!=0)&&(*grilleAnalyse)[ligneCase-1][colonneCase]==0)&&
+                    ((*grilleDistance)[ligneCase-1][colonneCase]==-1)){
+                (*grilleDistance)[ligneCase-1][colonneCase]=distance;
+                ajouterElementTabDynEntier(&tabCase,ligneCase-1);
+                ajouterElementTabDynEntier(&tabCase,colonneCase);
+            }
+            if(((colonneCase!=0)&&(*grilleAnalyse)[ligneCase][colonneCase-1]==0)&&
+                    ((*grilleDistance)[ligneCase][colonneCase-1]==-1)){
+                (*grilleDistance)[ligneCase][colonneCase-1]=distance;
+                ajouterElementTabDynEntier(&tabCase,ligneCase);
+                ajouterElementTabDynEntier(&tabCase,colonneCase-1);
+            }
+            supprimerElementTabDynEntier(&tabCase,i);
+            supprimerElementTabDynEntier(&tabCase,i-1);
+            distance++;
+        }
+    }
+    testamentTabDynEntier(&tabCase);
 }
 
 void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
@@ -550,10 +629,9 @@ void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
             }
     }
 
-    for(i=TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){ /** On parcours les murs et on  */
-        unMur=adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(jeu)),i);       /** Crée une zone de danger autour d'eux*/
-        indiceLigne=((int)(MurGetPositionY(unMur)+decalageYMur))/_Precision_Analyse_IA;
-        indiceColonne=((int)(MurGetPositionX(unMur)+decalageXMur))/_Precision_Analyse_IA;
+    for(i=TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){ /** On parcours les murs et on  */
+        unMur=adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(jeu)),i);       /** Crée une zone de danger autour d'eux*/
+
         if(MurGetTailleX(unMur)==5){
             decalageXMur=2.5;
             decalageYMur=MurGetTailleY(unMur);
@@ -563,7 +641,10 @@ void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
             decalageXMur=MurGetTailleX(unMur);
         }
         while((decalageXMur!=0)&&(decalageYMur!=0)){ /** On crée la zone de danger au bout du mur, on décrémente le décalage */
-            for(j=-1;j<=1;j++){                      /** puis on crée la zone de danger au milieu du mur etc ...*/
+                                                    /** puis on crée la zone de danger au milieu du mur etc ...*/
+            indiceLigne=((int)(MurGetPositionY(unMur)+decalageYMur))/_Precision_Analyse_IA;
+            indiceColonne=((int)(MurGetPositionX(unMur)+decalageXMur))/_Precision_Analyse_IA;
+            for(j=-1;j<=1;j++){
                 for(k=-1;k<=1;k++){
                     if((indiceLigne+j<_Taille_Y_Grille/_Precision_Analyse_IA)&&
                        (indiceLigne+j>=0)&&
@@ -627,7 +708,6 @@ void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
             }
         }
     }
-    AfficheGrilleAnalyse(grilleAnalyse);
 }
 
 
@@ -638,7 +718,7 @@ void JeuTestRegression(){
     float posYg=1.;
     unsigned int tailleXg=300;
     unsigned int tailleYg=400;
-    TableauDynamique mesMurs;
+    TableauDynamiqueMur mesMurs;
 
     Mur unMur;
     float posXm=50.;

@@ -66,13 +66,17 @@ void JeuActionneBonus(Joueur*Joueur);
 void JeuGereIA(Joueur* joueur,Jeu* jeu);
 /**procédure qui affiche le tableau d'analyse de la grille*/
 void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
+/**procédure qui affiche le tableau d'analyse des distances de la grille*/
+void AfficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
 /**procédure qui crée le tableau d'analyse de la grille*/
 void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
                         Jeu* jeu,Joueur* joueurIA);
-/**Fonction quirenvoie la distance entre deux cases de la grille*/
-int distanceGrilleAnalyse(short int ligne1,short int colonne1,short int ligne2,short int colonne2,
+/**Fonction quirenvoie la distance entre une case et toute la grille*/
+ void CreerGrilleDistances(short int ligne1,short int colonne1,
                                 short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                          [_Taille_X_Grille/_Precision_Analyse_IA],
+                                short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA]);
 
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/

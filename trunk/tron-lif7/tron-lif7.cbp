@@ -88,7 +88,11 @@
 		<Unit filename="src/TableauDynamique.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/TableauDynamique.h" />
+		<Unit filename="src/TableauDynamiqueEntier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/TableauDynamiqueEntier.h" />
+		<Unit filename="src/TableauDynamiqueMur.h" />
 		<Unit filename="src/Texte.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />

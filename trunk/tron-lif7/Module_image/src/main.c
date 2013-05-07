@@ -15,6 +15,9 @@ int main()
     int i,j;
     int nombre;
     Pixel pixel;
+    FILE* fichier2;
+
+    Image *image2;
     image=imCreer(TailleX/precision,TailleY/precision);
     for(j=0;j<(TailleY/precision);j++){
         for(i=0;i<TailleX/precision;i++){
@@ -38,6 +41,31 @@ int main()
     imSauver( image, "Analyse.ppm");
     imOuvrir( image, "Analyse.ppm");
     imDetruire(&image);
+
+    fichier2=fopen("grilleDistances.txt","r");
+    image2=imCreer(TailleX/precision,TailleY/precision);
+    for(j=0;j<(TailleY/precision);j++){
+        for(i=0;i<TailleX/precision;i++){
+                if(fscanf(fichier,"%d ",&nombre)>0){
+                    if(nombre>=0){
+                        pixel.r=255-(nombre/150);
+                        pixel.b=255-(nombre/150);
+                        pixel.g=255-(nombre/150);
+                        setPix(image,i,j,&pixel);
+                    }
+                    else{
+                        pixel.r=0;
+                        pixel.b=128;
+                        pixel.g=255;
+                        setPix(image,i,j,&pixel);
+                    }
+                }
+        }
+    }
+    imSauver( image2, "Distances.ppm");
+    imOuvrir( image2, "Distances.ppm");
+    fclose(fichier2);
+    imDetruire(&image2);
 
 
 
