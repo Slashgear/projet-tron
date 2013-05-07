@@ -3,7 +3,7 @@
 #include"Mur.h"
 #include<stdlib.h>
 #include<stdio.h>
-#include"TableauDynamique.h"
+#include"TableauDynamiqueMur.h"
 
 /**
 *\file [Grid.h]
@@ -18,7 +18,7 @@ typedef struct {
     float positionY;
     unsigned int tailleX;
     unsigned int tailleY;
-    TableauDynamique mesMurs;
+    TableauDynamiqueMur mesMurs;
 } Grid;
 
 /**assesseur de positionX*/
@@ -30,7 +30,7 @@ unsigned int GridGetTailleX(const Grid* );
 /**assesseur de tailleY*/
 unsigned int GridGetTailleY(const Grid*);
 /**assesseur de mesMurs*/
-TableauDynamique* GridGetMesMurs(Grid*);
+TableauDynamiqueMur* GridGetMesMurs(Grid*);
 
 
 /**mutateur de positionX*/
@@ -42,18 +42,18 @@ void GridSetTailleX(Grid* ,unsigned int );
 /**mutateur de tailleY*/
 void GridSetTailleY(Grid* ,unsigned int );
 /**mutateur de mesMurs*/
-void GridSetMesMurs(Grid* ,TableauDynamique* );
+void GridSetMesMurs(Grid* ,TableauDynamiqueMur* );
 
  /** Constructeur de Grid*/
- void GridConstructeur(Grid* , float , float , unsigned int , unsigned int ,TableauDynamique* );
+ void GridConstructeur(Grid* , float , float , unsigned int , unsigned int ,TableauDynamiqueMur* );
  /** Destructeur de Grid*/
  void GridDestructeur(Grid* grille);
  /** Ajoute un mur*/
- void ajouteMur(TableauDynamique* mesMurs, Mur mur);
+ void ajouteMur(TableauDynamiqueMur* mesMurs, Mur mur);
  /** Efface un mur*/
- void effaceMur(TableauDynamique* mesMurs);
+ void effaceMur(TableauDynamiqueMur* mesMurs);
  /** Nettoie tous les murs de la Grid*/
- void nettoieGrid(TableauDynamique* mesMurs);
+ void nettoieGrid(TableauDynamiqueMur* mesMurs);
  /** décrementation de la durée de vie des murs*/
  void decrementeVieMur(Grid* grille);
 

@@ -150,7 +150,7 @@ void SDLJeuInitN(SDL *sdl){
     short int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette;
     Jeu jeu;
     Grid grille;
-    TableauDynamique tabDynMurs;
+    TableauDynamiqueMur TabDynMurMurs;
     Controle unControle;
     Moto uneMoto;
     SDL_Surface *ecran;
@@ -289,7 +289,7 @@ void SDLJeuInitN(SDL *sdl){
         mesJoueurs[i]=unJoueur;
     }
 
-    GridConstructeur(&grille,5,5,1000,700,&tabDynMurs);
+    GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs);
 
     SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
@@ -480,7 +480,7 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
             MotoSetTailleX(uneMoto,MotoGetTailleY(uneMoto));
             MotoSetTailleY(uneMoto,tailleTemp);
             ajouteMur(GridGetMesMurs(grille),unMur);
-            JoueurSetDernierMur(joueur,adresseIemeElementTabDyn(GridGetMesMurs(grille),TabDynGetTaille_utilisee(GridGetMesMurs(grille))-1));
+            JoueurSetDernierMur(joueur,adresseIemeElementTabDynMur(GridGetMesMurs(grille),TabDynMurGetTaille_utilisee(GridGetMesMurs(grille))-1));
         }
     }
 }
@@ -515,8 +515,8 @@ void SDLAfficheMurs(SDL *sdl){
     Mur* mur;
     int i;
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,1),SDLGetIemeTexture(sdl,0),GridGetPositionX(JeuGetGrille(SDLGetJeu(sdl))),GridGetPositionY(JeuGetGrille(SDLGetJeu(sdl))));
-    for(i=0;i<TabDynGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(SDLGetJeu(sdl))));i++){
-        mur= adresseIemeElementTabDyn(GridGetMesMurs(JeuGetGrille(SDLGetJeu(sdl))),i);
+    for(i=0;i<TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(SDLGetJeu(sdl))));i++){
+        mur= adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(SDLGetJeu(sdl))),i);
         surfaceMur=SDL_CreateRGBSurface(SDL_HWSURFACE,MurGetTailleX(mur),MurGetTailleY(mur),32,0,0,0,0);
         if(MurGetCouleur(mur)==ORANGE){
             SDL_FillRect(surfaceMur,NULL,SDL_MapRGB(surfaceMur->format,255,204,51));
