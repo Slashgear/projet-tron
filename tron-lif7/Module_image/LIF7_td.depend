@@ -93,3 +93,25 @@
 	"image.h"
 	"pixel.h"
 
+1362496189 source:/home/matthieu/Projet/tron-lif7/Module_image/src/image.c
+	<stdlib.h>
+	<stdio.h>
+	<assert.h>
+	"image.h"
+	"pixel.h"
+
+1362489971 /home/matthieu/Projet/tron-lif7/Module_image/src/image.h
+	<stdlib.h>
+	"pixel.h"
+	<stdio.h>
+
+1362496267 /home/matthieu/Projet/tron-lif7/Module_image/src/pixel.h
+	<stdlib.h>
+	<stdio.h>
+
+1368017346 source:/home/matthieu/Projet/tron-lif7/Module_image/src/main.c
+	<stdlib.h>
+	<stdio.h>
+	"image.h"
+	"pixel.h"
+
