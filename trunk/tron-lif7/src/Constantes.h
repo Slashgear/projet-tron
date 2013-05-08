@@ -10,7 +10,7 @@
 #define _Taille_X_Grille 1000
 #define _Taille_Y_Grille 700
 
-#define _Precision_Analyse_IA 5
+#define _Precision_Analyse_IA 10
 
 #define _Duree_Vie_Mur 150
 #define _Vitesse_Initiale 7

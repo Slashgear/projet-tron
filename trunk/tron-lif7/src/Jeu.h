@@ -65,20 +65,27 @@ void JeuActionneBonus(Joueur*Joueur);
 /**procedure qui gère les mouvements d'une IA*/
 void JeuGereIA(Joueur* joueur,Jeu* jeu);
 /**procédure qui affiche le tableau d'analyse de la grille*/
-void AfficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
+void afficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
 /**procédure qui affiche le tableau d'analyse des distances de la grille*/
-void AfficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
+void afficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
 /**procédure qui crée le tableau d'analyse de la grille*/
-void CreerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
                         Jeu* jeu,Joueur* joueurIA);
-/**Fonction quirenvoie la distance entre une case et toute la grille*/
- void CreerGrilleDistances(short int ligne1,short int colonne1,
+/**Procédure quirenvoie la distance entre une case et toute la grille*/
+ void creerGrilleDistances(short int ligne1,short int colonne1,
                                 short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA],
                                 short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA]);
+/**Procédure qui choisie la cible d'un joueurIA et retourne la distance à ce joueur*/
+void choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistanceCible)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                                              [_Taille_X_Grille/_Precision_Analyse_IA]);
 
+/**Procédure qui décide de la direction choisie à chaque tour pour l'IA*/
+void choisieDirection(short int ligne1,short int colonne1,
+                      Joueur* joueurIA,Jeu *jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                                            [_Taille_X_Grille/_Precision_Analyse_IA]);
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
 char testCollisionGenerique(float objet1[4],float objet2[4]);
 /**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/
