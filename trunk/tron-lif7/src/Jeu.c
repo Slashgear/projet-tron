@@ -387,7 +387,10 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     decrementeTempsBonus(jeu);
     decrementeVieMur(grille);
     effaceMur(GridGetMesMurs(grille));
-    JeuGereIA(JeuGetIemeJoueurs(jeu,0),jeu);
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        if(JoueurGetBoolIA(JeuGetIemeJoueurs(jeu,i))==1)
+        JeuGereIA(JeuGetIemeJoueurs(jeu,i),jeu);
+    }
 }
 
 void decrementeTempsBonus(Jeu *jeu){
@@ -503,6 +506,7 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
     int i,j;
     short int ligneJoueur,colonneJoueur;
     Direction directionJoueur=MotoGetDirection(JoueurGetMoto(joueurIA));
+    short int distanceCible;
     short int grilleAnalyse[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA];
     short int grilleDistances[_Taille_Y_Grille/_Precision_Analyse_IA ][_Taille_X_Grille/_Precision_Analyse_IA];
     for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
@@ -531,9 +535,11 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
         }
         }/** On initialise la position du joueurIA au devant de sa moto*/
     creerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
-    afficheGrilleAnalyse(&grilleAnalyse);
+  /*  afficheGrilleAnalyse(&grilleAnalyse);*/
     creerGrilleDistances(ligneJoueur,colonneJoueur,&grilleAnalyse,&grilleDistances);
     afficheGrilleDistances(&grilleDistances);
+    distanceCible=choisieCibleIA(joueurIA,jeu,&grilleDistances);
+    choisieDirection(ligneJoueur,colonneJoueur,joueurIA,jeu,distanceCible,&grilleDistances);
 }
 
  void creerGrilleDistances(short int ligne1,short int colonne1,
@@ -741,11 +747,78 @@ void choisieDirection(short int ligne1,short int colonne1,Joueur* joueurIA,Jeu *
     Direction nouvelleDirection=NON_DIRIGE;
     Direction directionCourante=MotoGetDirection(JoueurGetMoto(joueurIA));
     short int distanceTemp=32000;
-    if(JoueurGetJoueurCible(joueur)==0){
-
+    if(JoueurGetJoueurCible(joueurIA)==0){/**Si on a pas de cible, l'IA essaie de survivre sans se bloquer*/
+        if(directionCourante==HAUT){
+            /**Amélioration possible : fonction aireGrilleDistance qui détermine le choix de direction
+            selon la place disponible ou même selon le mur qui va disparaitre le plus tôt */
+            if((ligne1==0)||((*grilleDistanceCible)[ligne1-1][colonne1]==-1)){/**Si la position devant la moto est bloquée,*/
+                JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu)); /**alors on fait demi tour par la droite*/
+                JeuActionClavier(joueurIA,BAS,JeuGetGrille(jeu));
+            }
+            else{
+                if((ligne1!=0)&&(colonne1!=(_Taille_X_Grille/_Precision_Analyse_IA)-1)&&/**Si la position en haut à droite de la moto est bloquée*/
+                   ((*grilleDistanceCible)[ligne1-1][colonne1+1]!=-1)&& /**Et que la position à gauche est libre,*/
+                   (colonne1!=0)&&((*grilleDistanceCible)[ligne1][colonne1-1]!=-1)){ /**alors on fait demi tour par la gauche*/
+                    JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));
+                    JeuActionClavier(joueurIA,BAS,JeuGetGrille(jeu));
+                }
+            }
+        }
+        else{
+            if(directionCourante==BAS){ /**De même si la moto a une autre direction*/
+                if((ligne1==(_Taille_Y_Grille/_Precision_Analyse_IA)-1)||
+                   ((*grilleDistanceCible)[ligne1+1][colonne1]==-1)){
+                    JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));
+                    JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
+                }
+                else{
+                    if((ligne1!=(_Taille_Y_Grille/_Precision_Analyse_IA)-1)&&(colonne1!=0)&&
+                       ((*grilleDistanceCible)[ligne1+1][colonne1-1]!=-1)&&
+                       (colonne1!=(_Taille_X_Grille/_Precision_Analyse_IA)-1)&&((*grilleDistanceCible)[ligne1][colonne1+1]!=-1)){
+                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));
+                        JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
+                    }
+                }
+            }
+            else{
+                if(directionCourante==GAUCHE){
+                    if((colonne1==0)||
+                       ((*grilleDistanceCible)[ligne1][colonne1-1]==-1)){
+                        JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
+                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));
+                    }
+                    else{
+                        if((ligne1!=0)&&(colonne1!=0)&&
+                           ((*grilleDistanceCible)[ligne1-1][colonne1-1]!=-1)&&
+                           (ligne1!=(_Taille_Y_Grille/_Precision_Analyse_IA)-1)&&((*grilleDistanceCible)[ligne1+1][colonne1]!=-1)){
+                            JeuActionClavier(joueurIA,BAS,JeuGetGrille(jeu));
+                            JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));
+                        }
+                    }
+                }
+                else{
+                    if(directionCourante==DROITE){
+                        if((colonne1==(_Taille_X_Grille/_Precision_Analyse_IA)-1)||
+                           ((*grilleDistanceCible)[ligne1][colonne1+1]==-1)){
+                            JeuActionClavier(joueurIA,BAS,JeuGetGrille(jeu));
+                            JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));
+                        }
+                        else{
+                            if((ligne1!=(_Taille_Y_Grille/_Precision_Analyse_IA)-1)&&
+                               (colonne1!=(_Taille_X_Grille/_Precision_Analyse_IA)-1)&&
+                               ((*grilleDistanceCible)[ligne1+1][colonne1+1]!=-1)&&
+                               (ligne1!=0)&&((*grilleDistanceCible)[ligne1-1][colonne1]!=-1)){
+                                JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
+                                JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     else {
-        if(distanceJoueurCible>=(vitesse*2)/_Precision_Analyse_IA){
+        if(distanceJoueurCible>=(MotoGetVitesse(JoueurGetMoto(joueurIA))*2)/_Precision_Analyse_IA){
             if((ligne1!=0)&&((*grilleDistanceCible)[ligne1-1][colonne1]<distanceTemp)&&
                ((*grilleDistanceCible)[ligne1-1][colonne1]!=-1))
             {nouvelleDirection=HAUT;}
@@ -760,6 +833,7 @@ void choisieDirection(short int ligne1,short int colonne1,Joueur* joueurIA,Jeu *
                ((*grilleDistanceCible)[ligne1][colonne1+1]<distanceTemp)&&
                ((*grilleDistanceCible)[ligne1][colonne1+1]!=-1))
             {nouvelleDirection=DROITE;}
+
             if (((directionCourante==HAUT)||(directionCourante==BAS))&&
                 ((nouvelleDirection==GAUCHE)||(nouvelleDirection==DROITE))){
                 JeuActionClavier(joueurIA,nouvelleDirection,JeuGetGrille(jeu));
