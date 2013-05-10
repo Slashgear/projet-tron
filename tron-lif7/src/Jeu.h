@@ -72,7 +72,7 @@ void afficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precis
 void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
                         Jeu* jeu,Joueur* joueurIA);
-/**Procédure quirenvoie la distance entre une case et toute la grille*/
+/**Procédure qui renvoie la distance entre une case et toute la grille (grilleDistance doit être initialisé à -1 partout)*/
  void creerGrilleDistances(short int ligne1,short int colonne1,
                                 short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA],
@@ -82,10 +82,13 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
 short int choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                                               [_Taille_X_Grille/_Precision_Analyse_IA]);
 
-/**Procédure qui décide de la direction choisie à chaque tour pour l'IA*/
+/**Procédure qui décide de la direction choisie à chaque tour pour l'IA à partir de la grille des distances
+de la cible ou si l'IA n'a pas de cible, la grille des distance de l'IA*/
 void choisieDirection(short int ligne1,short int colonne1,Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
-                      short int (*grilleDistanceCible)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                      short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                       [_Taille_X_Grille/_Precision_Analyse_IA]);
+/**Procédure qui donne les indices ligne et colonne d'un joueur dans la grille*/
+void indicesGrilleJoueur(short int *ligne,short int *colonne,Joueur* joueur);
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
 char testCollisionGenerique(float objet1[4],float objet2[4]);
 /**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/

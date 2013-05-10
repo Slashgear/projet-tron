@@ -5,7 +5,7 @@
 
 #define TailleX 1000
 #define TailleY 700
-#define precision 10
+#define precision 5
 
 int main()
 {
@@ -48,9 +48,9 @@ int main()
         for(i=0;i<TailleX/precision;i++){
                 if(fscanf(fichier,"%d ",&nombre)>0){
                     if(nombre>=0){
-                        pixel.r=255-(nombre/50);
-                        pixel.b=255-(nombre/50);
-                        pixel.g=255-(nombre/50);
+                        pixel.r=255-(nombre);
+                        pixel.b=255-(nombre);
+                        pixel.g=255-(nombre);
                         setPix(image,i,j,&pixel);
                     }
                     else{
