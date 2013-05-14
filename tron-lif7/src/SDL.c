@@ -4,6 +4,7 @@
 #include <SDL/SDL.h>
 #include <time.h>
 #include "Joystick.h"
+#include <SDL/SDL_ttf.h>
 
 
 Jeu* SDLGetJeu(SDL* sdl){
@@ -60,6 +61,7 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
+    TTF_Init();
     SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
@@ -110,12 +112,16 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Titre-Droit.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1,SDLChargeImage("data/images/Interface.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,NULL);
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,NULL);
     sdl->mesManettes=manettes;
+    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",20);
+
 }
 
 void SDLDestructeur(SDL *sdl){
     int i;
-    for(i=0;i<(2+4*_Nombre_de_Joueur+_Nombre_Type_Bonus+2);i++){
+    for(i=0;i<(2+4*_Nombre_de_Joueur+_Nombre_Type_Bonus+_Nombre_Images_Interface+_Nombre_de_Textes);i++){
         SDL_FreeSurface(SDLGetIemeTexture(sdl,i));
         SDLSetIemeTexture(sdl,i,NULL);
     }
@@ -125,6 +131,8 @@ void SDLDestructeur(SDL *sdl){
     }
     free(sdl->mesManettes);
     sdl->mesManettes=NULL;
+    TTF_CloseFont(sdl->police);
+    TTF_Quit();
 }
 
 void pause()
@@ -378,6 +386,9 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     Controle* unControle;
     Manette* uneManette;
     int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
+
+    char commentaire[50];
+    Couleur uneCouleur;
 
 
     SDLAfficheJeu(sdl);
@@ -633,6 +644,67 @@ void SDLAfficheInterface(SDL *sdl){
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),SDLGetIemeTexture(sdl,0),
                                 1010,150);
 }
+void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
+    SDL_Color couleur;
+    SDL_Color couleurOmbre={50,50,50};
+    switch(uneCouleur){
+        case NOIR:
+        couleur.r=255;
+        couleur.g=255;
+        couleur.b=255;
+        case BLEU:
+        couleur.r=51;
+        couleur.g=204;
+        couleur.b=255;
+        case ORANGE:
+        couleur.r=255;
+        couleur.g=204;
+        couleur.b=51;
+        case ROUGE:
+        couleur.r=232;
+        couleur.g=33;
+        couleur.b=5;
+        case VERT:
+        couleur.r=33;
+        couleur.g=198;
+        couleur.b=33;
+        case VIOLET:
+        couleur.r=204;
+        couleur.g=51;
+        couleur.b=255;
+        case BLEUF:
+        couleur.r=13;
+        couleur.g=24;
+        couleur.b=179;
+        case JAUNE:
+        couleur.r=231;
+        couleur.g=239;
+        couleur.b=11;
+        case BLANC:
+        couleur.r=255;
+        couleur.g=255;
+        couleur.b=255;
+        default:
+         break;
+    }
+    if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface)==NULL){
+        SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
+        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+    }else if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1)==NULL){
+         SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
+            TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+            }else{
+                SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
+                SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1));
+                SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
+                    TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+            }
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface),
+            SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),1015,152);
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface),
+            SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),1015,174);
+    SDL_Flip(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1));
+}
 
 void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
@@ -640,7 +712,6 @@ void SDLAfficheJeu(SDL *sdl){
     SDLAfficheBonus(sdl);
     SDLAfficheInterface(sdl);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
-
 }
 
 

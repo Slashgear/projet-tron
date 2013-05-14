@@ -3,6 +3,8 @@
 #include "Jeu.h"
 #include <SDL/SDL.h>
 #include "Joystick.h"
+#include <SDL/SDL_ttf.h>
+
 
 
 /**
@@ -15,8 +17,9 @@
 
 typedef struct{
     Jeu jeu;
-    SDL_Surface * textures[2+4*_Nombre_de_Joueur+_Nombre_de_Bonus];
+    SDL_Surface * textures[2+4*_Nombre_de_Joueur+_Nombre_de_Bonus+_Nombre_de_Textes+_Nombre_Images_Interface];
     Manette* mesManettes;
+    TTF_Font *police;
 }SDL;
 /** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
@@ -62,6 +65,8 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit);
 SDL_Surface* SDLChargeImage(const char *nomfichier);
 /** procédure qui gère les actions des motos en fonction des touches saisies sur une Manette*/
 void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille);
+/**procédure qui affiche les textes de l'actualité du jeu*/
+void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur);
 
 
 /** Pocédure qui teste le Module*/
