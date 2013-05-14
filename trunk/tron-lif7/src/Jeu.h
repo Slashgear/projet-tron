@@ -84,9 +84,9 @@ short int choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_
 
 /**Procédure qui décide de la direction choisie à chaque tour pour l'IA à partir de la grille des distances
 de la cible ou si l'IA n'a pas de cible, la grille des distance de l'IA*/
-void choisieDirection(short int ligne1,short int colonne1,Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
+void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                       short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
-                                                      [_Taille_X_Grille/_Precision_Analyse_IA]);
+                                                 [_Taille_X_Grille/_Precision_Analyse_IA]);
 /**Procédure qui donne les indices ligne et colonne d'un joueur dans la grille*/
 void indicesGrilleJoueur(short int *ligne,short int *colonne,Joueur* joueur);
 /**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
