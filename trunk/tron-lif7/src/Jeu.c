@@ -264,7 +264,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             collisionMur=testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille);
             if(collisionMur==1){
                 JouerIemeSonCourt(&(jeu->musique),0);
-                sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
+                sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
 
             }
@@ -274,12 +274,13 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                 }
                 for(j=i+1;(j<_Nombre_de_Joueur);j++){
                     if((JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,j))==VIVANT)
-                       &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
+                       &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),
+                                            JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
-                        sprintf(nouveauMessage, "Le joueur %d a perdu ! \n",j+1);
+                        sprintf(nouveauMessage, "Le joueur %d a perdu ! ",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
-                        sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
+                        sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
 
 
                     }
@@ -311,7 +312,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
                 if(JoueurGetBooltourne(JeuGetIemeJoueurs(jeu,i))==1){
                     JouerIemeSonCourt(&(jeu->musique),0);
-                    sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
+                    sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
                     JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
                     NbJoueurEnJeu--;
                 }
@@ -326,7 +327,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         i=0;
         while(i<_Nombre_de_Joueur){
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==1){
-                sprintf(nouveauMessage,"Le joueur %d a gagné ! \n",i+1);
+                sprintf(nouveauMessage,"Le joueur %d a gagne ! ",i+1);
                 i++;
             }
             else {i++;}
@@ -390,7 +391,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     for(i=_Nombre_de_Joueur-_Nombre_IA;i<_Nombre_de_Joueur;i++){
         unJoueur=JeuGetIemeJoueurs(jeu,i);
         if((JoueurGetBoolIA(unJoueur)==1)&&(JoueurGetEnJeu(unJoueur)==VIVANT))
-        JeuGereIA(unJoueur,jeu);
+            JeuGereIA(unJoueur,jeu);
     }
 }
 
@@ -850,6 +851,22 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 if(boolDistanceValide==1){/**Si la position a gauche de la moto est libre, */
                     JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));        /**On tourne à gauche*/
                 }
+                else{
+                    if(ligne1<=distanceSecurite){/**Si la position devant la moto est bloquée,*/
+                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                    }
+                    else{
+                        boolDistanceValide=1;
+                        for(i=1;i<=distanceSecurite;i++){
+                            if((*grilleDistance)[ligne1-i][colonne1]==-1){
+                                boolDistanceValide=0;
+                            }
+                        }
+                        if(boolDistanceValide==0){/**Si la position devant la moto est bloquée,*/
+                            JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                        }
+                    }
+                }
             }
             else{
                 if(ligne1<=distanceSecurite){/**Si la position devant la moto est bloquée,*/
@@ -869,8 +886,8 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
             }
         }
         else{
-            if(directionCourante==BAS){ /**Si la moto va vers le bas, elle essaie de descendre,*/
-                if((ligne1<=(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite)){ /**jusqu'à ce que le bas soit bloqué*/
+            if(directionCourante==BAS){ /**Si la moto va vers le bas, elle essaie de continuer à descendre,*/
+                if(ligne2>=(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){ /**jusqu'à ce que le bas soit bloqué*/
                    if(colonne1>=distanceSecurite){
                        boolDistanceValide=1;
                        for(i=1;i<=distanceSecurite;i++){
@@ -892,7 +909,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 else{
                     boolDistanceValide=1;
                     for(i=1;i<=distanceSecurite;i++){
-                        if((*grilleDistance)[ligne1+i][colonne1]==-1){
+                        if((*grilleDistance)[ligne2+i][colonne1]==-1){
                             boolDistanceValide=0;
                         }
                     }
@@ -900,7 +917,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                         if(colonne1>=distanceSecurite){
                            boolDistanceValide=1;
                            for(i=1;i<=distanceSecurite;i++){
-                                if((*grilleDistance)[ligne1][colonne1-i]==-1){
+                                if((*grilleDistance)[ligne2][colonne1-i]==-1){
                                     boolDistanceValide=0;
                                 }
                             }
@@ -933,7 +950,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                             if(colonne1<=distanceSecurite){
                                 JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
                             }
-                            else {
+                            else{
                                 boolDistanceValide=1;
                                 for(i=1;i<=distanceSecurite;i++){
                                     if((*grilleDistance)[ligne1][colonne1-i]==-1){
@@ -943,6 +960,22 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                                 if(boolDistanceValide==0){
                                     JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
                                 }
+                            }
+                        }
+                    }
+                    else{
+                        if(colonne1<=distanceSecurite){
+                            JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
+                        }
+                        else{
+                            boolDistanceValide=1;
+                            for(i=1;i<=distanceSecurite;i++){
+                                if((*grilleDistance)[ligne1][colonne1-i]==-1){
+                                    boolDistanceValide=0;
+                                }
+                            }
+                            if(boolDistanceValide==0){
+                                JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
                             }
                         }
                     }
@@ -999,23 +1032,23 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
     }/**Fin de l'algo de survie*/
     else{
         if((*grilleDistance)[ligne1][colonne1]==-1){
-                JouerIemeSonCourt(JeuGetMusique(jeu),1);
-            }
+            JouerIemeSonCourt(JeuGetMusique(jeu),1);
+        }
         if(distanceJoueurCible>=distanceSecurite*2){
-            if(ligne1>distanceSecurite){
+            if(ligne1>=distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
                     if((*grilleDistance)[ligne1-i][colonne1]==-1){
                         boolDistanceValide=0;
                     }
                 }
                 distanceTemp=(*grilleDistance)[ligne1-distanceSecurite][colonne1];
-                if((distanceTemp<distanceMin)&&(boolDistanceValide==1)){
+                if((distanceTemp<=distanceMin)&&(boolDistanceValide==1)){
                     nouvelleDirection=HAUT;
                     distanceMin=distanceTemp;
                 }
             }
             boolDistanceValide=1;
-            if(ligne1<(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){
+            if(ligne1<=(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
                     if((*grilleDistance)[ligne1+i][colonne1]==-1){
                         boolDistanceValide=0;
@@ -1028,7 +1061,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 }
             }
             boolDistanceValide=1;
-            if(colonne1>distanceSecurite){
+            if(colonne1>=distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
                     if((*grilleDistance)[ligne1][colonne1-i]==-1){
                         boolDistanceValide=0;
@@ -1041,7 +1074,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 }
             }
             boolDistanceValide=1;
-            if(colonne1<(_Taille_X_Grille/_Precision_Analyse_IA)-1-distanceSecurite){
+            if(colonne1<=(_Taille_X_Grille/_Precision_Analyse_IA)-1-distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
                     if((*grilleDistance)[ligne1][colonne1+i]==-1){
                         boolDistanceValide=0;

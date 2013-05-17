@@ -5,6 +5,7 @@
 #include <time.h>
 #include "Joystick.h"
 #include <SDL/SDL_ttf.h>
+#include <string.h>
 
 
 Jeu* SDLGetJeu(SDL* sdl){
@@ -387,7 +388,8 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     Manette* uneManette;
     int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
 
-    char commentaire;
+    char commentaire[50]={0};
+    char commentaireNull[50]={0};
     Couleur uneCouleur=NOIR;
 
 
@@ -399,8 +401,10 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
         affAJour = 1;
         horloge_courante = (float)clock()/(float) CLOCKS_PER_SEC;
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
-            JeuEvolue(SDLGetJeu(sdl),&jeuFini,&commentaire,&uneCouleur);
-            SDLAfficheTextes(sdl,&commentaire,uneCouleur);
+            strcpy(commentaire,commentaireNull);
+            JeuEvolue(SDLGetJeu(sdl),&jeuFini,commentaire,&uneCouleur);
+            if(strcmp(commentaire,commentaireNull)!=0)/**Si le jeu a renvoyé un nouveau commentaire*/
+            {SDLAfficheTextes(sdl,commentaire,uneCouleur);}
             affAJour = 0;
             horloge_precedente = horloge_courante;
         }
@@ -639,12 +643,23 @@ void SDLAfficheBonus(SDL*sdl){
         }
     }
 }
+
 void SDLAfficheInterface(SDL *sdl){
+    SDL_Surface* surfaceTexte;
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus),SDLGetIemeTexture(sdl,0),
                                 1010,5);
     SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),SDLGetIemeTexture(sdl,0),
                                 1010,150);
+    surfaceTexte=SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface);
+    if(surfaceTexte!=NULL){
+        SDLAppliqueSurface(surfaceTexte,SDLGetIemeTexture(sdl,0),1015,152);
+    }
+    surfaceTexte=SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1);
+    if(surfaceTexte!=NULL){
+        SDLAppliqueSurface(surfaceTexte,SDLGetIemeTexture(sdl,0),1015,179);
+    }
 }
+
 void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
     SDL_Color couleur;
     SDL_Color couleurOmbre={50,50,50};
@@ -690,21 +705,16 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
     }
     if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface)==NULL){
         SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
-        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+            TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
     }else if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1)==NULL){
          SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
             TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
             }else{
                 SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
-                SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1));
+                    SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1));
                 SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
                     TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
             }
-    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface),
-            SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),1015,152);
-    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface),
-            SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),1015,174);
-    SDL_Flip(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1));
 }
 
 void SDLAfficheJeu(SDL *sdl){
