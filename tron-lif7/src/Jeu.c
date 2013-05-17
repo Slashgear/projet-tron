@@ -247,7 +247,7 @@ void bougeMoto(Jeu* jeu){
     }
 }
 
-void JeuEvolue(Jeu* jeu,short int* jeuFini){
+void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleurMessage){
     int i,j;
     Grid* grille=JeuGetGrille(jeu);
     Bonus* unBonus=NULL;
@@ -257,13 +257,14 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
     char collisionBonus=0;
     char collisionMur=0;
 
+
     bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
             collisionMur=testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille);
             if(collisionMur==1){
                 JouerIemeSonCourt(&(jeu->musique),0);
-                printf("Le joueur %d a perdu ! \n",i+1);
+                sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
 
             }
@@ -276,9 +277,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
                        &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
-                        printf("Le joueur %d a perdu ! \n",j+1);
+                        sprintf(nouveauMessage, "Le joueur %d a perdu ! \n",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
-                        printf("Le joueur %d a perdu ! \n",i+1);
+                        sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
 
 
                     }
@@ -310,7 +311,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
                 if(JoueurGetBooltourne(JeuGetIemeJoueurs(jeu,i))==1){
                     JouerIemeSonCourt(&(jeu->musique),0);
-                    printf("Le joueur %d a perdu ! \n",i+1);
+                    sprintf(nouveauMessage,"Le joueur %d a perdu ! \n",i+1);
                     JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
                     NbJoueurEnJeu--;
                 }
@@ -325,7 +326,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini){
         i=0;
         while(i<_Nombre_de_Joueur){
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==1){
-                printf("Le joueur %d a gagné ! \n",i+1);
+                sprintf(nouveauMessage,"Le joueur %d a gagné ! \n",i+1);
                 i++;
             }
             else {i++;}
@@ -1174,7 +1175,7 @@ void JeuTestRegression(){
 
     nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
 
-    JeuEvolue(&jeu,&jeuContinue);
+    JeuEvolue(&jeu,&jeuContinue,NULL,NOIR);
 
     JeuDestructeur(&jeu);
     printf("Après destruction, la position de la grille du jeu est %f \n",GridGetPositionX(JeuGetGrille(&jeu)));

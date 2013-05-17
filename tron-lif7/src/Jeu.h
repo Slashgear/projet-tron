@@ -51,7 +51,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu* jeu);
 /**Boucle d'évolutions du jeu*/
-void JeuEvolue(Jeu* jeu,short int* jeuFini);
+void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleurMessage);
 /**procédure qui gère le mouvement de toutes les motos*/
 void bougeMoto(Jeu* jeu);
 /**fonction qui teste les collisions avec le murs*/

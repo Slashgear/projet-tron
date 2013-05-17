@@ -39,7 +39,7 @@
 			<Add option="`sdl-config --cflags`" />
 		</Compiler>
 		<Linker>
-			<Add option="`sdl-config --libs`" />
+			<Add option="`sdl-config --libs` -lSDL_ttf" />
 			<Add library="lib/FMOD/lib/libfmodex.so" />
 		</Linker>
 		<Unit filename="src/Bonus.c">
@@ -93,7 +93,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/TableauDynamiqueMur.h" />
-		<Unit filename="src/Texte.h" />
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -387,8 +387,8 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     Manette* uneManette;
     int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
 
-    char commentaire[50];
-    Couleur uneCouleur;
+    char commentaire;
+    Couleur uneCouleur=NOIR;
 
 
     SDLAfficheJeu(sdl);
@@ -399,7 +399,8 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
         affAJour = 1;
         horloge_courante = (float)clock()/(float) CLOCKS_PER_SEC;
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
-            JeuEvolue(SDLGetJeu(sdl),&jeuFini);
+            JeuEvolue(SDLGetJeu(sdl),&jeuFini,&commentaire,&uneCouleur);
+            SDLAfficheTextes(sdl,&commentaire,uneCouleur);
             affAJour = 0;
             horloge_precedente = horloge_courante;
         }
