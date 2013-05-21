@@ -16,6 +16,9 @@ Grid* JeuGetGrille(Jeu* jeu){
 Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i){
     return (jeu->mesJoueurs)+i;
 }
+int JeuGetIemeScore(Jeu* jeu,int i){
+    return (jeu->scores)[i];
+}
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
     return &((jeu->mesBonus)[i]);
 }
@@ -32,6 +35,9 @@ void JeuSetGrille(Jeu* jeu,Grid* grille){
 void JeuSetIemeJoueurs(Jeu* jeu,Joueur* joueur,int i){
     (jeu->mesJoueurs)[i]= *joueur;
 }
+void JeuSetIemeScore(Jeu* jeu,int score,int i){
+    (jeu->scores)[i]=score;
+}
 void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i){
     (jeu->mesBonus)[i]=*bonus;
 }
@@ -39,7 +45,7 @@ void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
     jeu->tempsProchainBonus=tempsProchainBonus;
 }
 
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
     int i;
     Bonus bonus;
     Musique musique;
@@ -54,6 +60,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs){
     }
     MusiqueConstructeur(&musique);
     jeu->musique=musique;
+    jeu->scores=scores;
     JouerIemeMusique(&musique,rand()%3,-1);
 }
 
@@ -66,6 +73,7 @@ void JeuDestructeur(Jeu* jeu){
         BonusDestructeur(JeuGetIemeBonus(jeu,i));
     }
     MusiqueDestructeur(&(jeu->musique));
+    jeu->scores=NULL;
 }
 
 char testCollisionGenerique(float objet1[4],float objet2[4]){
@@ -269,7 +277,6 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                 sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
                 JoueurSetEnJeu(joueur,MOURANT);
                 *couleurMessage=JoueurGetCouleur(joueur);
-
             }
             else {
                 if(collisionMur==2){
@@ -281,10 +288,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                                             JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
-                        sprintf(nouveauMessage, "Le joueur %d a perdu !",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
-                        sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
-
+                        sprintf(nouveauMessage,"Les joueurs %d, %d ont perdu !",i+1,j+1);
+                        *couleurMessage=NOIR;
                     }
                 }
             }
@@ -329,31 +335,32 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             }
         }
     }
-    if(NbJoueurEnJeu==0){
-        *jeuFini=1;
-        strcpy(nouveauMessage,"Les Joueurs ");
-        for(i=0;i<_Nombre_de_Joueur;i++){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
-                sprintf(chaine,"%d, ",i+1);
-                strcat(nouveauMessage,chaine);
-                JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MORT);
-            }
-        }
-        strcat(nouveauMessage,"sont a egalite !");
-        *couleurMessage=NOIR;
-    }
     if(NbJoueurEnJeu==1){
         *jeuFini=1;
         i=0;
         while(i<_Nombre_de_Joueur){
             joueur=JeuGetIemeJoueurs(jeu,i);
             if(JoueurGetEnJeu(joueur)==1){
+                JeuSetIemeScore(jeu,JeuGetIemeScore(jeu,i)+2,i);
                 sprintf(nouveauMessage,"Le joueur %d a gagne ! ",i+1);
                 *couleurMessage=JoueurGetCouleur(joueur);
                 i++;
             }
             else {i++;}
         }
+    }
+    if(NbJoueurEnJeu==0){
+        *jeuFini=1;
+        strcpy(nouveauMessage,"Les Joueurs ");
+        for(i=0;i<_Nombre_de_Joueur;i++){
+            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
+                JeuSetIemeScore(jeu,JeuGetIemeScore(jeu,i)+1,i);
+                sprintf(chaine,"%d, ",i+1);
+                strcat(nouveauMessage,chaine);
+            }
+        }
+        strcat(nouveauMessage,"sont a egalite !");
+        *couleurMessage=NOIR;
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
@@ -1108,6 +1115,7 @@ void JeuTestRegression(){
     char touchebonus2='i';
 
     short int jeuContinue=0;
+    int scores[2]={0};
     Jeu jeu;
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
 
@@ -1131,7 +1139,7 @@ void JeuTestRegression(){
     printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",
            posX2,MotoGetPositionX(JoueurGetMoto(&joueur2)));
 
-    JeuConstructeur(&jeu,&grille,mesJoueurs);
+    JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
 
 
     printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",

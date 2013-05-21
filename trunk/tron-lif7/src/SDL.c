@@ -111,7 +111,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/images/BonusNettoyage.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Titre-Droit.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Tron.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1,SDLChargeImage("data/images/Interface.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,NULL);
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,NULL);
@@ -155,7 +155,7 @@ void pause()
 
 
 
-void SDLJeuInitN(SDL *sdl){
+void SDLJeuInitN(SDL *sdl, int* scores){
     int i;
     short int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
     Jeu jeu;
@@ -372,7 +372,7 @@ void SDLJeuInitN(SDL *sdl){
     }
 
     GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
-    JeuConstructeur(&jeu,&grille,mesJoueurs);
+    JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
 
     SDL_WM_SetCaption( "TRON-The Grid v2.6", NULL );
     SDLConstructeur(sdl,&jeu,mesManettes);
@@ -384,7 +384,7 @@ void SDLJeuInitN(SDL *sdl){
 
 
 /** Boucle principale du Jeu */
-void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
+void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     short int jeuFini = 0;
     int i;
     SDL_Event evenement;
@@ -394,6 +394,9 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     Controle* unControle;
     Manette* uneManette;
     int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
+    int indiceGagnant=-1;
+    int scoreGagnant=0;
+    short int boolGagnant=0;
 
     char commentaire[50]={0};
     char commentaireNull[50]={0};
@@ -404,7 +407,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
 
-    while(!jeuFini){
+    while(jeuFini==0){
         affAJour = 1;
         horloge_courante = (float)clock()/(float) CLOCKS_PER_SEC;
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
@@ -486,15 +489,58 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
             SDLAfficheJeu(sdl);
         }
     }
-    printf("Partie terminée ! \n Appuyez sur échap pour quitter ou sur F1 pour rejouer. \n");
-    while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)){
-        SDL_WaitEvent(&evenement);
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        if(scores[i]>=_Score_de_Victoire){
+            if(indiceGagnant==-1){
+                indiceGagnant=i;
+                scoreGagnant=scores[i];
+                boolGagnant=1;
+            }
+            else{
+                if(scoreGagnant<scores[i]){
+                    indiceGagnant=i;
+                    scoreGagnant=scores[i];
+                    boolGagnant=1;
+                }
+                else if(scoreGagnant==scores[i]){
+                        boolGagnant=0;
+                    }
+            }
+        }
     }
-    if(evenement.key.keysym.sym==SDLK_ESCAPE){
-        *jeuReInit=0;
+    if(boolGagnant==0){
+        printf("Manche terminée ! \n Appuyez sur échap pour quitter, ou sur F1 pour lancer la manche suivante, ou sur tabulation pour réinitialiser les scores. \n");
+        while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)
+              &&(evenement.key.keysym.sym!=SDLK_TAB)){
+            SDL_WaitEvent(&evenement);
+        }
+        if(evenement.key.keysym.sym==SDLK_ESCAPE){
+            *jeuReInit=0;
+        }
+        if(evenement.key.keysym.sym==SDLK_F1){
+            *jeuReInit=1;
+        }
+        if(evenement.key.keysym.sym==SDLK_TAB){
+            for(i=0;i<_Nombre_de_Joueur;i++){
+                scores[i]=0;
+            }
+            *jeuReInit=1;
+        }
     }
-    if(evenement.key.keysym.sym==SDLK_F1){
-        *jeuReInit=1;
+    else{
+        printf("Partie terminée ! Le joueur %d a gagné ! \n Appuyez sur échap pour quitter ou sur F1 pour lancer une nouvelle partie. \n",indiceGagnant+1);
+        while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)){
+            SDL_WaitEvent(&evenement);
+        }
+        if(evenement.key.keysym.sym==SDLK_ESCAPE){
+            *jeuReInit=0;
+        }
+        if(evenement.key.keysym.sym==SDLK_F1){
+            for(i=0;i<_Nombre_de_Joueur;i++){
+                scores[i]=0;
+            }
+            *jeuReInit=1;
+        }
     }
 }
 

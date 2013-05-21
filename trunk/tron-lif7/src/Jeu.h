@@ -15,6 +15,7 @@ typedef struct
 {
 	Grid grille;
 	Joueur *mesJoueurs;
+	int *scores;
 	Bonus mesBonus[_Nombre_de_Bonus];
 	int tempsProchainBonus;
 	Musique musique;/*assesseur non fait*/
@@ -24,6 +25,8 @@ typedef struct
 Grid* JeuGetGrille(Jeu* jeu);
 /**assesseur de mesjoueurs*/
 Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i);
+/**assesseur de scores*/
+int JeuGetIemeScore(Jeu* jeu,int i);
 /**assesseur du ieme  Bonus*/
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i);
 /**assesseur de tempsProchainBonus*/
@@ -38,6 +41,8 @@ Musique* JeuGetMusique(Jeu* jeu);
 void JeuSetGrille(Jeu* jeu,Grid* grille);
 /**mutateur de mesjoueurs*/
 void JeuSetIemeJoueurs(Jeu* jeu,Joueur* Joueur,int i);
+/**mutateur de scores*/
+void JeuSetIemeScore(Jeu* jeu,int score,int i);
 /**mutateur du ieme bonus*/
 void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i);
 /**mutateur de tempsProchainBonus*/
@@ -47,7 +52,7 @@ void JeuSetMusique(Jeu* jeu,Musique* musique);
 
 
 /**constructeur du jeu*/
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs);
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores);
 /**destructeur du jeu*/
 void JeuDestructeur(Jeu* jeu);
 /**Boucle d'évolutions du jeu*/
