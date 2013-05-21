@@ -352,7 +352,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MORT);
             }
         }
-        strcat(nouveauMessage,"sont à egalite !");
+        strcat(nouveauMessage,"sont a egalite !");
         *couleurMessage=NOIR;
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
