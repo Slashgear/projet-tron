@@ -117,7 +117,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,NULL);
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,NULL);
     sdl->mesManettes=manettes;
-    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",15);
+    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",14);
 
 }
 
