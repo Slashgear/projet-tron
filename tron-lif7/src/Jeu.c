@@ -329,19 +329,6 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             }
         }
     }
-    if(NbJoueurEnJeu==1){
-        *jeuFini=1;
-        i=0;
-        while(i<_Nombre_de_Joueur){
-            joueur=JeuGetIemeJoueurs(jeu,i);
-            if(JoueurGetEnJeu(joueur)==1){
-                sprintf(nouveauMessage,"Le joueur %d a gagne ! ",i+1);
-                *couleurMessage=JoueurGetCouleur(joueur);
-                i++;
-            }
-            else {i++;}
-        }
-    }
     if(NbJoueurEnJeu==0){
         *jeuFini=1;
         strcpy(nouveauMessage,"Les Joueurs ");
@@ -354,6 +341,19 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         }
         strcat(nouveauMessage,"sont a egalite !");
         *couleurMessage=NOIR;
+    }
+    if(NbJoueurEnJeu==1){
+        *jeuFini=1;
+        i=0;
+        while(i<_Nombre_de_Joueur){
+            joueur=JeuGetIemeJoueurs(jeu,i);
+            if(JoueurGetEnJeu(joueur)==1){
+                sprintf(nouveauMessage,"Le joueur %d a gagne ! ",i+1);
+                *couleurMessage=JoueurGetCouleur(joueur);
+                i++;
+            }
+            else {i++;}
+        }
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
