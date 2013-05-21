@@ -1,9 +1,9 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
 
-#define _Nombre_de_Joueur 2
-#define _Nombre_de_Manette 0
-#define _Nombre_IA 1
+#define _Nombre_de_Joueur 5
+#define _Nombre_de_Manette 1
+#define _Nombre_IA 4
 
 #define _Nombre_de_Textes 3
 #define _Nombre_Images_Interface 2
