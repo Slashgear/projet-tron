@@ -251,26 +251,29 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     int i,j;
     Grid* grille=JeuGetGrille(jeu);
     Bonus* unBonus=NULL;
-    Joueur* unJoueur;
     short int NbJoueurEnJeu=0;
     short int NbJoueurEnDoute=0;
     char collisionBonus=0;
     char collisionMur=0;
+    Joueur *joueur;
+    char chaine[10];
 
 
     bougeMoto(jeu);
     for(i=0;i<_Nombre_de_Joueur;i++){
-        if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
-            collisionMur=testCollisionMur(JeuGetIemeJoueurs(jeu,i),grille);
+        joueur=JeuGetIemeJoueurs(jeu,i);
+        if(JoueurGetEnJeu(joueur)==VIVANT){
+            collisionMur=testCollisionMur(joueur,grille);
             if(collisionMur==1){
                 JouerIemeSonCourt(&(jeu->musique),0);
                 sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
-                JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+                JoueurSetEnJeu(joueur,MOURANT);
+                *couleurMessage=JoueurGetCouleur(joueur);
 
             }
             else {
                 if(collisionMur==2){
-                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),DOUTE);
+                    JoueurSetEnJeu(joueur,DOUTE);
                 }
                 for(j=i+1;(j<_Nombre_de_Joueur);j++){
                     if((JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,j))==VIVANT)
@@ -278,10 +281,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                                             JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
-                        sprintf(nouveauMessage, "Le joueur %d a perdu ! ",j+1);
+                        sprintf(nouveauMessage, "Le joueur %d a perdu !",j+1);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
-                        sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
-
+                        sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
 
                     }
                 }
@@ -289,35 +291,40 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         }
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
-        if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==VIVANT){
+        joueur=JeuGetIemeJoueurs(jeu,i);
+        if(JoueurGetEnJeu(joueur)==VIVANT){
             NbJoueurEnJeu++;
         }
-        if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
+        if(JoueurGetEnJeu(joueur)==DOUTE){
             NbJoueurEnDoute++;
             NbJoueurEnJeu++;
         }
     }
     if(NbJoueurEnDoute==1){
         for(i=0;i<_Nombre_de_Joueur;i++){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
+            joueur=JeuGetIemeJoueurs(jeu,i);
+            if(JoueurGetEnJeu(joueur)==DOUTE){
                 JouerIemeSonCourt(&(jeu->musique),0);
-                printf("Le joueur %d a perdu ! \n",i+1);
-                JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+                sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
+                JoueurSetEnJeu(joueur,MOURANT);
+                *couleurMessage=JoueurGetCouleur(joueur);
                 NbJoueurEnJeu--;
             }
         }
     }
     if(NbJoueurEnDoute>1){
         for(i=0;i<_Nombre_de_Joueur;i++){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==DOUTE){
-                if(JoueurGetBooltourne(JeuGetIemeJoueurs(jeu,i))==1){
+            joueur=JeuGetIemeJoueurs(jeu,i);
+            if(JoueurGetEnJeu(joueur)==DOUTE){
+                if(JoueurGetBooltourne(joueur)==1){
                     JouerIemeSonCourt(&(jeu->musique),0);
-                    sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
-                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
+                    sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
+                    *couleurMessage=JoueurGetCouleur(joueur);
+                    JoueurSetEnJeu(joueur,MOURANT);
                     NbJoueurEnJeu--;
                 }
                 else {
-                    JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),VIVANT);
+                    JoueurSetEnJeu(joueur,VIVANT);
                 }
             }
         }
@@ -326,8 +333,10 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         *jeuFini=1;
         i=0;
         while(i<_Nombre_de_Joueur){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==1){
+            joueur=JeuGetIemeJoueurs(jeu,i);
+            if(JoueurGetEnJeu(joueur)==1){
                 sprintf(nouveauMessage,"Le joueur %d a gagne ! ",i+1);
+                *couleurMessage=JoueurGetCouleur(joueur);
                 i++;
             }
             else {i++;}
@@ -335,14 +344,16 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     }
     if(NbJoueurEnJeu==0){
         *jeuFini=1;
-        printf("Les joueurs : ");
+        strcpy(nouveauMessage,"Les Joueurs ");
         for(i=0;i<_Nombre_de_Joueur;i++){
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
-                printf("%d, ",i+1);
+                sprintf(chaine,"%d, ",i+1);
+                strcat(nouveauMessage,chaine);
                 JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MORT);
             }
         }
-        printf("sont à égalité ! \n");
+        strcat(nouveauMessage,"sont à egalite !");
+        *couleurMessage=NOIR;
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
         if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
@@ -389,9 +400,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     decrementeVieMur(grille);
     effaceMur(GridGetMesMurs(grille));
     for(i=_Nombre_de_Joueur-_Nombre_IA;i<_Nombre_de_Joueur;i++){
-        unJoueur=JeuGetIemeJoueurs(jeu,i);
-        if((JoueurGetBoolIA(unJoueur)==1)&&(JoueurGetEnJeu(unJoueur)==VIVANT))
-            JeuGereIA(unJoueur,jeu);
+        joueur=JeuGetIemeJoueurs(jeu,i);
+        if((JoueurGetBoolIA(joueur)==1)&&(JoueurGetEnJeu(joueur)==VIVANT))
+            JeuGereIA(joueur,jeu);
     }
 }
 
@@ -615,41 +626,8 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
     float decalageYMur=0;
     int indiceLigne=0;
     int indiceColonne=0;
-   /* int borneColonneInterdite[2];
-    int borneLigneInterdite[2];*/
     Mur* unMur;
- /*   Joueur* unJoueur;*/
     short int* pValeurCase;
- /*   if(MotoGetDirection(JoueurGetMoto(joueurIA))==HAUT){*/ /**On repère les bornes de la zone devant le joueur à laisser
-                                                sans danger pour éviter que l'IA n'essaie d'esquiver ses propores murs*/
-      /*  borneColonneInterdite[0]=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)-1;
-        borneColonneInterdite[1]=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)+1;
-        borneLigneInterdite[0]=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)-1;
-        borneLigneInterdite[1]=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
-    }
-    else {
-        if(MotoGetDirection(JoueurGetMoto(joueurIA))==BAS){
-            borneColonneInterdite[0]=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)-1;
-            borneColonneInterdite[1]=(((int)(MotoGetPositionX(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)+1;
-            borneLigneInterdite[0]=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
-            borneLigneInterdite[1]=(((int)MotoGetPositionY(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)+1;
-        }
-        else {
-                if(MotoGetDirection(JoueurGetMoto(joueurIA))==GAUCHE){
-                    borneColonneInterdite[0]=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)-1;
-                    borneColonneInterdite[1]=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
-                    borneLigneInterdite[0]=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)-1;
-                    borneLigneInterdite[1]=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)+1;
-                }
-                else{
-                        borneColonneInterdite[0]=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA);
-                        borneColonneInterdite[1]=(((int)MotoGetPositionX(JoueurGetMoto(joueurIA)))/_Precision_Analyse_IA)+1;
-                        borneLigneInterdite[0]=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)-1;
-                        borneLigneInterdite[1]=(((int)(MotoGetPositionY(JoueurGetMoto(joueurIA))+2.5))/_Precision_Analyse_IA)+1;
-                }
-            }
-    }*/
-
     for(i=TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){ /** On parcours les murs et on  */
         unMur=adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(jeu)),i);       /** Crée une zone de danger autour d'eux*/
         if((MurGetDureeVie(unMur)<_Duree_Vie_Mur-2)||(MurGetCouleur(unMur)!=JoueurGetCouleur(joueurIA))){
@@ -713,33 +691,6 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
             }
         }
     }
-   /* for(i=0;i<_Taille_Y_Grille/_Precision_Analyse_IA;i++){
-        (*grilleAnalyse)[i][0]=1;
-        (*grilleAnalyse)[i][(_Taille_X_Grille/_Precision_Analyse_IA)-1]=1;
-    }
-    for(i=0;i<_Taille_X_Grille/_Precision_Analyse_IA;i++){
-        (*grilleAnalyse)[0][i]=1;
-        (*grilleAnalyse)[(_Taille_Y_Grille/_Precision_Analyse_IA)-1][i]=1;
-    }*/
-    /** On repère la position des autres joueurs*/
-  /*  for(i=0;i<_Nombre_de_Joueur;i++){
-        unJoueur=JeuGetIemeJoueurs(jeu,i);
-        if(JoueurGetNumeroJoueur(unJoueur)!=JoueurGetNumeroJoueur(joueurIA)){
-            (*grilleAnalyse)[(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
-                         [(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
-                         =-JoueurGetNumeroJoueur(unJoueur);
-            if((MotoGetDirection(JoueurGetMoto(unJoueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(unJoueur))==BAS)){
-                (*grilleAnalyse)[(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)+1]
-                             [(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
-                             =-JoueurGetNumeroJoueur(unJoueur);
-            }
-            else{
-                (*grilleAnalyse)[(((int)MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)]
-                             [(((int)MotoGetPositionX(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA)+1]
-                             =-JoueurGetNumeroJoueur(unJoueur);
-            }
-        }
-    }*/
 }
 
 short int choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
@@ -836,7 +787,6 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
     }
 
     if((JoueurGetJoueurCible(joueurIA)==0)){/**Si on a pas de cible, l'IA essaie de survivre sans se bloquer*/
-        JouerIemeSonCourt(JeuGetMusique(jeu),1);
         if(directionCourante==HAUT){
             /**Amélioration possible : fonction aireGrilleDistance qui détermine le choix de direction
             selon la place disponible ou même selon le mur qui va disparaitre le plus tôt */
@@ -1030,7 +980,6 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
     }/**Fin de l'algo de survie, ci-dessous l'IA essaie de suivre l'adversaire pour le bloquer*/
     else{
         if(JoueurGetNumeroJoueur(joueurIA)==JoueurGetJoueurCible(joueurIA)){
-        /*    JouerIemeSonCourt(JeuGetMusique(jeu),1);*/
         }
         if(distanceJoueurCible>=distanceSecurite*2){
             boolDistanceValide=1;

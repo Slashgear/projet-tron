@@ -368,7 +368,7 @@ void SDLJeuInitN(SDL *sdl){
     GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs);
 
-    SDL_WM_SetCaption( "TRON-The Grid v0.1", NULL );
+    SDL_WM_SetCaption( "TRON-The Grid v2.6", NULL );
     SDLConstructeur(sdl,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,0,0,0));
