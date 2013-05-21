@@ -115,8 +115,9 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1,SDLChargeImage("data/images/Interface.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,NULL);
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,NULL);
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,NULL);
     sdl->mesManettes=manettes;
-    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",20);
+    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",15);
 
 }
 
@@ -646,10 +647,10 @@ void SDLAfficheBonus(SDL*sdl){
 
 void SDLAfficheInterface(SDL *sdl){
     SDL_Surface* surfaceTexte;
-    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus),SDLGetIemeTexture(sdl,0),
-                                1010,5);
-    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),SDLGetIemeTexture(sdl,0),
-                                1010,150);
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus),
+                       SDLGetIemeTexture(sdl,0),1010,5);
+    SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1),
+                       SDLGetIemeTexture(sdl,0),1010,150);
     surfaceTexte=SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface);
     if(surfaceTexte!=NULL){
         SDLAppliqueSurface(surfaceTexte,SDLGetIemeTexture(sdl,0),1015,152);
@@ -657,6 +658,10 @@ void SDLAfficheInterface(SDL *sdl){
     surfaceTexte=SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1);
     if(surfaceTexte!=NULL){
         SDLAppliqueSurface(surfaceTexte,SDLGetIemeTexture(sdl,0),1015,179);
+    }
+    surfaceTexte=SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2);
+    if(surfaceTexte!=NULL){
+        SDLAppliqueSurface(surfaceTexte,SDLGetIemeTexture(sdl,0),1015,206);
     }
 }
 
@@ -707,13 +712,21 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
         SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
             TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
     }else if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1)==NULL){
-         SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
-            TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+            SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
+                TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
             }else{
-                SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
-                    SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1));
-                SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
-                    TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2)==NULL){
+                    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,
+                        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                }
+                else{
+                    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
+                        SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1));
+                    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
+                        SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2));
+                    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,
+                        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                }
             }
 }
 
