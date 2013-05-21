@@ -27,10 +27,11 @@ int main(){
 #else
     SDL sdl;
     short int jeuReInit=1;
+    int scores[_Nombre_de_Joueur]={0};
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );
     while(jeuReInit==1){
-        SDLJeuInitN(&sdl);
-        SDLBoucleJeu(&sdl,&jeuReInit);
+        SDLJeuInitN(&sdl,scores);
+        SDLBoucleJeu(&sdl,&jeuReInit,scores);
         SDLDestructeur(&sdl);
     }
     SDL_Quit();
