@@ -539,9 +539,9 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
     indicesGrilleJoueur(&ligneJoueurIA,&colonneJoueurIA,joueurIA);
     /** On initialise la position du joueurIA au devant de sa moto*/
     creerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
-    afficheGrilleAnalyse(&grilleAnalyse);
+  /*  afficheGrilleAnalyse(&grilleAnalyse);*/
     creerGrilleDistances(ligneJoueurIA,colonneJoueurIA,&grilleAnalyse,&grilleDistances);
-    afficheGrilleDistances(&grilleDistances);
+  /*  afficheGrilleDistances(&grilleDistances);*/
     distanceCible=choisieCibleIA(joueurIA,jeu,&grilleDistances);
     if(JoueurGetJoueurCible(joueurIA)!=0){
         indicesGrilleJoueur(&ligneJoueurCible,&colonneJoueurCible,JeuGetIemeJoueurs(jeu,JoueurGetJoueurCible(joueurIA)-1));
