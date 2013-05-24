@@ -4,8 +4,8 @@
 	<File name="src/Bonus.c" open="1" top="0" tabpos="16">
 		<Cursor position="842" topLine="22" />
 	</File>
-	<File name="src/Constantes.h" open="1" top="1" tabpos="15">
-		<Cursor position="91" topLine="0" />
+	<File name="src/Constantes.h" open="1" top="0" tabpos="15">
+		<Cursor position="142" topLine="0" />
 	</File>
 	<File name="src/Controle.c" open="1" top="0" tabpos="4">
 		<Cursor position="764" topLine="18" />
@@ -25,8 +25,8 @@
 	<File name="src/Grid.h" open="1" top="0" tabpos="7">
 		<Cursor position="1663" topLine="7" />
 	</File>
-	<File name="src/Jeu.c" open="1" top="0" tabpos="12">
-		<Cursor position="92" topLine="0" />
+	<File name="src/Jeu.c" open="1" top="1" tabpos="12">
+		<Cursor position="12450" topLine="261" />
 	</File>
 	<File name="src/Jeu.h" open="1" top="0" tabpos="11">
 		<Cursor position="1294" topLine="30" />
