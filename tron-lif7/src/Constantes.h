@@ -5,9 +5,9 @@
 #define _Nombre_de_Manette 0
 #define _Nombre_IA 7
 
-#define _Score_de_Victoire 20
+#define _Score_de_Victoire 4
 
-#define _Nombre_de_Textes 3
+#define _Nombre_de_Textes 4
 #define _Nombre_Images_Interface 2
 
 #define _Position_X_Grille 5
