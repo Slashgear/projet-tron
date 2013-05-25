@@ -67,6 +67,8 @@ SDL_Surface* SDLChargeImage(const char *nomfichier);
 void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille);
 /**procédure qui affiche les textes de l'actualité du jeu*/
 void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur);
+/**procédure que affiche les scores*/
+void SDLAfficheScores(SDL *sdl);
 
 
 /** Pocédure qui teste le Module*/

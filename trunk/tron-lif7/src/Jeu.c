@@ -405,12 +405,13 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     }
     decrementeTempsBonus(jeu);
     decrementeVieMur(grille);
-    effaceMur(GridGetMesMurs(grille));
+
     for(i=_Nombre_de_Joueur-_Nombre_IA;i<_Nombre_de_Joueur;i++){
         joueur=JeuGetIemeJoueurs(jeu,i);
         if((JoueurGetBoolIA(joueur)==1)&&(JoueurGetEnJeu(joueur)==VIVANT))
             JeuGereIA(joueur,jeu);
     }
+    effaceMur(GridGetMesMurs(grille));
 }
 
 void decrementeTempsBonus(Jeu *jeu){

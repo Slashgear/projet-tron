@@ -29,6 +29,7 @@ typedef struct {
     int tempsBonus;
     short int boolIA;
     short int joueurCible;
+    short int score;
 }Joueur;
 
 /** assesseur de moto*/
@@ -55,6 +56,8 @@ short int JoueurGetNumeroJoueur(Joueur *joueur);
 short int JoueurGetBoolIA(Joueur *joueur);
 /**assesseur du numero du joueur ciblé*/
 short int JoueurGetJoueurCible(Joueur *joueur);
+/**assesseur du numero du score du joueur*/
+short int JoueurGetScore(Joueur *joueur);
 
 
 /** mutateur de moto*/
@@ -81,6 +84,8 @@ void JoueurSetNumeroJoueur(Joueur *joueur,short int numero);
 void JoueurSetBoolIA(Joueur *joueur,short int boolIA);
 /** mutateur du numero du joueur ciblé*/
 void JoueurSetJoueurCible(Joueur *joueur,short int numero);
+/** mutateur du numero du score du joueur*/
+void JoueurSetScore(Joueur *joueur,short int score);
 
 
 
