@@ -373,7 +373,6 @@ void SDLJeuInitN(SDL *sdl, int* scores){
 
     GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
-
     SDL_WM_SetCaption( "TRON-The Grid v2.6", NULL );
     SDLConstructeur(sdl,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
@@ -510,6 +509,9 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     }
     if(boolGagnant==0){
         printf("Manche terminée ! \n Appuyez sur échap pour quitter, ou sur F1 pour lancer la manche suivante, ou sur tabulation pour réinitialiser les scores. \n");
+        for(i=0;i<_Nombre_de_Joueur;i++){
+            JoueurSetScore(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),scores[i]);
+        }
         while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)
               &&(evenement.key.keysym.sym!=SDLK_TAB)){
             SDL_WaitEvent(&evenement);
@@ -790,12 +792,40 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
                 }
             }
 }
+void SDLAfficheScores(SDL *sdl){
+    SDL_Surface * uneSurface;
+    short int i,largeurBarre,score,positionXBarre;
+    float pourcentage,positionYBarre,hauteur;
+    uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,270,3,32,0,0,0,0);
+    SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
+    /**<affichage de la ligne supérieure*/
+    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,267);
+    /**<affichage de la ligne inférieure*/
+    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,570);
+    largeurBarre=(270-20-((_Nombre_de_Joueur-1)*5))/_Nombre_de_Joueur;
+    positionXBarre=1025;
+    for(i=0;i<_Nombre_de_Joueur;i++){
+        score=JoueurGetScore(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+        if((score>=0)&&(score<_Score_de_Victoire)){
+        pourcentage=score/_Score_de_Victoire;
+        hauteur=pourcentage*(570-270);
+        positionYBarre=270+(300-hauteur);
+        uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,largeurBarre,hauteur,32,0,0,0,0);
+        SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
+        SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),positionXBarre,positionYBarre);
+        positionXBarre+=5;
+        }
+    }
+    SDL_FreeSurface(uneSurface);
+}
+
 
 void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
     SDLAfficheBonus(sdl);
     SDLAfficheInterface(sdl);
+    SDLAfficheScores(sdl);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 }
 

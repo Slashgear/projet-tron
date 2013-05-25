@@ -42,7 +42,9 @@ short int JoueurGetBoolIA(Joueur *joueur){
 short int JoueurGetJoueurCible(Joueur *joueur){
     return joueur->joueurCible;
 }
-
+short int JoueurGetScore(Joueur *joueur){
+    return joueur->score;
+}
 
 void JoueurSetMoto(Joueur* joueur, Moto* moto){
     joueur->moto= *moto;
@@ -79,6 +81,9 @@ void JoueurSetBoolIA(Joueur *joueur,short int boolIA){
 }
 void JoueurSetJoueurCible(Joueur *joueur,short int numero){
     joueur->joueurCible=numero;
+}
+void JoueurSetScore(Joueur *joueur,short int score){
+    joueur->score=score;
 }
 
 
