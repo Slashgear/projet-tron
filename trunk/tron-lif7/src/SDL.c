@@ -32,29 +32,29 @@ void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture){
 
 
 SDL_Surface* SDLChargeImage(const char* nomfichier){
-	/* Temporary storage for the image that's loaded */
+	/**< Temporary storage for the image that's loaded */
 	SDL_Surface* loadedImage = NULL;
 
-	/* Load the image */
+	/**< Load the image */
 	loadedImage = SDL_LoadBMP( nomfichier );
 
-	/* If nothing went wrong in loading the image */
+	/**< If nothing went wrong in loading the image */
 	if ( loadedImage == NULL ) printf("image non chargée ! %s \n",nomfichier);
 
 
-	/* Return the optimized image */
+	/**< Return the optimized image */
 	return loadedImage;
 }
 
 void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int positionX,const int positionY){
-	/* Make a temporary rectangle to hold the offsets */
+	/**< Make a temporary rectangle to hold the offsets */
 	SDL_Rect offset;
 
-	/* Give the offsets to the rectangle */
+	/**< Give the offsets to the rectangle */
 	offset.x = positionX;
 	offset.y = positionY;
 
-	/* Blit the surface */
+	/**< Blit the surface */
 	SDL_BlitSurface( surfaceA, NULL, surfaceB, &offset );
 }
 
@@ -117,7 +117,8 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,NULL);
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,NULL);
     sdl->mesManettes=manettes;
-    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",14);
+    sdl->police=TTF_OpenFont("data/Font/Downlink.ttf",18);
+    sdl->policeGrandsMessages=TTF_OpenFont("data/Font/Downlink.ttf",50);
 
 }
 
@@ -134,6 +135,7 @@ void SDLDestructeur(SDL *sdl){
     free(sdl->mesManettes);
     sdl->mesManettes=NULL;
     TTF_CloseFont(sdl->police);
+    TTF_CloseFont(sdl->policeGrandsMessages);
     TTF_Quit();
 }
 
@@ -152,8 +154,6 @@ void pause()
         }
     }
 }
-
-
 
 void SDLJeuInitN(SDL *sdl, int* scores){
     int i;
@@ -380,9 +380,6 @@ void SDLJeuInitN(SDL *sdl, int* scores){
     SDLSetIemeTexture(sdl,0,ecran);
 }
 
-
-
-/** Boucle principale du Jeu */
 void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     short int jeuFini = 0;
     int i;
@@ -400,9 +397,12 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     char commentaire[50]={0};
     char commentaireNull[50]={0};
     Couleur uneCouleur=NOIR;
+    SDL_Color couleur;
 
-
-    SDLAfficheJeu(sdl);
+    couleur.r=255;
+    couleur.g=255;
+    couleur.b=255;
+    SDLAfficheJeu(sdl,scores);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
 
@@ -412,7 +412,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
             strcpy(commentaire,commentaireNull);
             JeuEvolue(SDLGetJeu(sdl),&jeuFini,commentaire,&uneCouleur);
-            if(strcmp(commentaire,commentaireNull)!=0)/**Si le jeu a renvoyé un nouveau commentaire*/
+            if(strcmp(commentaire,commentaireNull)!=0)/**<Si le jeu a renvoyé un nouveau commentaire*/
             {SDLAfficheTextes(sdl,commentaire,uneCouleur);}
             affAJour = 0;
             horloge_precedente = horloge_courante;
@@ -485,7 +485,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
             }
         }
         if(!affAJour){
-            SDLAfficheJeu(sdl);
+            SDLAfficheJeu(sdl,scores);
         }
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
@@ -508,10 +508,14 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
         }
     }
     if(boolGagnant==0){
-        printf("Manche terminée ! \n Appuyez sur échap pour quitter, ou sur F1 pour lancer la manche suivante, ou sur tabulation pour réinitialiser les scores. \n");
-        for(i=0;i<_Nombre_de_Joueur;i++){
-            JoueurSetScore(JeuGetIemeJoueurs(SDLGetJeu(sdl),i),scores[i]);
-        }
+        SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3,
+                        TTF_RenderText_Blended(sdl->policeGrandsMessages,
+                        "Manche terminee !"
+                        ,couleur));
+        SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3),
+                            SDLGetIemeTexture(sdl,0),
+                            200,300);
+        SDL_Flip(SDLGetIemeTexture(sdl,0));
         while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)
               &&(evenement.key.keysym.sym!=SDLK_TAB)){
             SDL_WaitEvent(&evenement);
@@ -530,7 +534,14 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
         }
     }
     else{
-        printf("Partie terminée ! Le joueur %d a gagné ! \n Appuyez sur échap pour quitter ou sur F1 pour lancer une nouvelle partie. \n",indiceGagnant+1);
+        sprintf(commentaire,"Partie terminee ! Le joueur %d a gagne !",indiceGagnant+1);
+        SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3,
+                        TTF_RenderText_Blended(sdl->policeGrandsMessages,
+                        commentaire,couleur));
+        SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3),
+                            SDLGetIemeTexture(sdl,0),
+                            50,300);
+        SDL_Flip(SDLGetIemeTexture(sdl,0));
         while((evenement.key.keysym.sym!=SDLK_ESCAPE)&&(evenement.key.keysym.sym!=SDLK_F1)){
             SDL_WaitEvent(&evenement);
         }
@@ -721,7 +732,6 @@ void SDLAfficheInterface(SDL *sdl){
 
 void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
     SDL_Color couleur;
-    SDL_Color couleurOmbre={50,50,50};
     switch(uneCouleur){
         case NOIR:
             couleur.r=255;
@@ -773,14 +783,14 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
     }
     if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface)==NULL){
         SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
-            TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+            TTF_RenderText_Blended(sdl->police,chaineDeCaractere,couleur));
     }else if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1)==NULL){
             SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
-                TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                TTF_RenderText_Blended(sdl->police,chaineDeCaractere,couleur));
             }else{
                 if(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2)==NULL){
                     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,
-                        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                        TTF_RenderText_Blended(sdl->police,chaineDeCaractere,couleur));
                 }
                 else{
                     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,
@@ -788,44 +798,67 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
                     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+1,
                         SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2));
                     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+2,
-                        TTF_RenderText_Shaded(sdl->police,chaineDeCaractere,couleur,couleurOmbre));
+                        TTF_RenderText_Blended(sdl->police,chaineDeCaractere,couleur));
                 }
             }
 }
-void SDLAfficheScores(SDL *sdl){
+
+void SDLAfficheScores(SDL *sdl,int *scores){
     SDL_Surface * uneSurface;
-    short int i,largeurBarre,score,positionXBarre;
+    short int i,largeurBarre,positionXBarre;
     float pourcentage,positionYBarre,hauteur;
+    Couleur uneCouleur;
     uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,270,3,32,0,0,0,0);
     SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
     /**<affichage de la ligne supérieure*/
-    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,267);
+    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,367);
     /**<affichage de la ligne inférieure*/
-    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,570);
+    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,670);
     largeurBarre=(270-20-((_Nombre_de_Joueur-1)*5))/_Nombre_de_Joueur;
     positionXBarre=1025;
     for(i=0;i<_Nombre_de_Joueur;i++){
-        score=JoueurGetScore(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
-        if((score>=0)&&(score<_Score_de_Victoire)){
-        pourcentage=score/_Score_de_Victoire;
+        pourcentage=((float)scores[i])/(float)_Score_de_Victoire;
         hauteur=pourcentage*(570-270);
-        positionYBarre=270+(300-hauteur);
+        positionYBarre=370+(300-hauteur);
         uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,largeurBarre,hauteur,32,0,0,0,0);
-        SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
-        SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),positionXBarre,positionYBarre);
-        positionXBarre+=5;
+        uneCouleur=JoueurGetCouleur(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
+        if(uneCouleur==ORANGE){
+            SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,204,51));
         }
+        else if(uneCouleur==BLEU){
+            SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,51,204,255));
+            }
+            else if(uneCouleur==ROUGE){
+            SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,232,33,5));
+            }
+                else if(uneCouleur==VERT){
+                SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,33,198,33));
+                }
+                    else if(uneCouleur==VIOLET){
+                    SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,204,51,255));
+                    }
+                        else if(uneCouleur==BLEUF){
+                        SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,13,24,179));
+                        }
+                            else if(uneCouleur==JAUNE){
+                            SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,231,239,11));
+                            }
+                                else if(uneCouleur==BLANC){
+                                SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
+                                }
+        SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),positionXBarre,positionYBarre);
+        positionXBarre+=5+largeurBarre;
     }
     SDL_FreeSurface(uneSurface);
 }
 
 
-void SDLAfficheJeu(SDL *sdl){
+void SDLAfficheJeu(SDL *sdl,int *scores){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
     SDLAfficheBonus(sdl);
     SDLAfficheInterface(sdl);
-    SDLAfficheScores(sdl);
+    SDLAfficheScores(sdl,scores);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 }
 

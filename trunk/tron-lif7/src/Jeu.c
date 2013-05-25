@@ -289,7 +289,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
-                        sprintf(nouveauMessage,"Les joueurs %d, %d ont perdu !",i+1,j+1);
+                        sprintf(nouveauMessage,"Mort des joueurs %d et %d !",i+1,j+1);
                         *couleurMessage=NOIR;
                     }
                 }
@@ -351,7 +351,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     }
     if(NbJoueurEnJeu==0){
         *jeuFini=1;
-        strcpy(nouveauMessage,"Les Joueurs ");
+        strcpy(nouveauMessage,"Joueurs ");
         for(i=0;i<_Nombre_de_Joueur;i++){
             if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
                 JeuSetIemeScore(jeu,JeuGetIemeScore(jeu,i)+1,i);
@@ -359,7 +359,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                 strcat(nouveauMessage,chaine);
             }
         }
-        strcat(nouveauMessage,"sont a egalite !");
+        strcat(nouveauMessage,"font egalite !");
         *couleurMessage=NOIR;
     }
     for(i=0;i<_Nombre_de_Joueur;i++){

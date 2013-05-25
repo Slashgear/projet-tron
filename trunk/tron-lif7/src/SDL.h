@@ -20,6 +20,7 @@ typedef struct{
     SDL_Surface * textures[2+4*_Nombre_de_Joueur+_Nombre_de_Bonus+_Nombre_de_Textes+_Nombre_Images_Interface];
     Manette* mesManettes;
     TTF_Font *police;
+    TTF_Font *policeGrandsMessages;
 }SDL;
 /** La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc..*/
 
@@ -48,7 +49,7 @@ void SDLDestructeur(SDL *sdl);
 /**Procédure qui applique la surface A sur la B*/
 void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,int positionX,int positionY);
 /** Procédure d'affichage du jeu*/
-void SDLAfficheJeu(SDL *sdl);
+void SDLAfficheJeu(SDL *sdl,int *scores);
 /**Procédure d'affichage des motos*/
 void SDLAfficheMotos(SDL *sdl);
 /**Procédure d'affichage des Murs*/
@@ -68,7 +69,7 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille);
 /**procédure qui affiche les textes de l'actualité du jeu*/
 void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur);
 /**procédure que affiche les scores*/
-void SDLAfficheScores(SDL *sdl);
+void SDLAfficheScores(SDL *sdl,int *scores);
 
 
 /** Pocédure qui teste le Module*/
