@@ -1,20 +1,20 @@
+/**
+*\file [SDL.h]
+*\brief Module qui gère les affichage du jeu,ainsi que les manettes
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 19 mars 2013
+*/
 #ifndef SDL_H_INCLUDED
 #define SDL_H_INCLUDED
 #include "Jeu.h"
 #include <SDL/SDL.h>
 #include "Joystick.h"
 #include <SDL/SDL_ttf.h>
-
-
-
 /**
-*\file [SDL.h]
-*\brief Module des vecteurs
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 19 mars 2013
-*/
-
+ * \struct SDL
+ * \brief Structure de l'affichage
+ */
 typedef struct{
     Jeu jeu;
     SDL_Surface * textures[2+4*_Nombre_de_Joueur+_Nombre_de_Bonus+_Nombre_de_Textes+_Nombre_Images_Interface];

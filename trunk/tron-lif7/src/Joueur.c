@@ -1,9 +1,17 @@
+/**
+\file [Joueur.c]
+\brief Module des Joueurs
+\author {Antoine.C,Matthieu.B}
+\version 1.1
+\date 19 mars 2013
+*/
 #include<stdlib.h>
 #include<stdio.h>
 #include "Joueur.h"
 #include "Moto.h"
 #include "Controle.h"
 #include "Couleur.h"
+
 
 
 Moto* JoueurGetMoto(Joueur* joueur){

@@ -1,9 +1,18 @@
+/**
+*\file [Grid.c]
+*\brief Module des vecteurs
+*\author {Antoine.C,Matthieu.B}
+*\version 1.0
+*\date 13 mars 2013
+*/
 #include<stdlib.h>
 #include<stdio.h>
 #include <assert.h>
 #include "Grid.h"
 #include "Mur.h"
 #include "TableauDynamiqueMur.h"
+
+
 
 float GridGetPositionX(const Grid* grille){
     return grille->positionX;

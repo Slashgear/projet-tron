@@ -1,3 +1,10 @@
+/**
+*\file [Grid.h]
+*\brief Module des vecteurs
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 13 mars 2013
+*/
 #ifndef GRID_H_INCLUDED
 #define GRID_H_INCLUDED
 #include"Mur.h"
@@ -6,19 +13,15 @@
 #include"TableauDynamiqueMur.h"
 
 /**
-*\file [Grid.h]
-*\brief Module des vecteurs
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 13 mars 2013
-*/
-
+ * \struct Grid
+ * \brief Structure de la grille
+ */
 typedef struct {
-    float positionX;
-    float positionY;
-    unsigned int tailleX;
-    unsigned int tailleY;
-    TableauDynamiqueMur mesMurs;
+    float positionX; /*!< Position X de la grille */
+    float positionY; /*!< Position Y de la grille */
+    unsigned int tailleX; /*!< Taille X de la grille */
+    unsigned int tailleY; /*!< Taille Y de la grille*/
+    TableauDynamiqueMur mesMurs; /*!< Tableau des Murs */
 } Grid;
 
 /**assesseur de positionX*/

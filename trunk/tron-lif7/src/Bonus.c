@@ -1,8 +1,16 @@
+/**
+\file [Bonus.c]
+\brief Module des Bonus du jeu
+\author {Antoine.C,Matthieu.B}
+\version 1.1
+\date 10 avril 2013
+*/
 #include "EffetBonus.h"
 #include "stdio.h"
 #include "Bonus.h"
 #include "time.h"
 #include "Jeu.h"
+
 
 float BonusGetPositionX(const Bonus* bonus){
     return bonus->positionX;

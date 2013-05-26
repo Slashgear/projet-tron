@@ -1,9 +1,3 @@
-#ifndef MOTOS_H_INCLUDED
-#define MOTOS_H_INCLUDED
-#include<stdlib.h>
-
-
-
 /**
 \file [Moto.h]
 \brief Module des Motos du jeu
@@ -11,9 +5,17 @@
 \version 0.1
 \date 13 mars 2013
 */
-
+#ifndef MOTOS_H_INCLUDED
+#define MOTOS_H_INCLUDED
+#include<stdlib.h>
+/**
+*\enum Direction
+*/
 typedef enum{NON_DIRIGE=0,HAUT=1,BAS=2,GAUCHE=3,DROITE=4} Direction;
-
+/**
+ * \struct Moto
+ * \brief Structure d'une Moto
+ */
 typedef struct{
         float positionX;
         float positionY;

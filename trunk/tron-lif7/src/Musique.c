@@ -1,8 +1,16 @@
+/**
+\file [Musique.c]
+\brief Module des Musiques du jeu
+\author {Antoine.C,Matthieu.B}
+\version 1.4
+\date 19 avril 2013
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "Musique.h"
 #include "../lib/FMOD/inc/fmod.h"
 #include "Constantes.h"
+
 
 
 FMOD_SYSTEM* MusiqueGetBaseDuSon(Musique *musique){

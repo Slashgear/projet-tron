@@ -1,19 +1,20 @@
+/**
+*\file [Mur.h]
+*\brief Module des Murs du Jeu
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 13 mars 2013
+*/
 #ifndef MUR_H_INCLUDED
 #define MUR_H_INCLUDED
 
 #include<stdlib.h>
 #include<stdio.h>
 #include"Couleur.h"
-
 /**
-*\file [Grid.h]
-*\brief Module des vecteurs
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 13 mars 2013
-*/
-
-
+ * \struct Mur
+ * \brief Structure d'un Mur
+ */
 typedef struct{
     float positionX;
     float positionY;

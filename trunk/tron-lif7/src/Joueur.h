@@ -1,3 +1,10 @@
+/**
+\file [Joueur.h]
+\brief Module des Joueurs
+\author {Antoine.C,Matthieu.B}
+\version 1.1
+\date 19 mars 2013
+*/
 #ifndef JOUEUR_H_INCLUDED
 #define JOUEUR_H_INCLUDED
 #include "Controle.h"
@@ -6,16 +13,16 @@
 #include "EffetBonus.h"
 #include "Mur.h"
 
+
+
 /**
-\file [Moto.h]
-\brief Module des Motos du jeu
-\author {Antoine.C,Matthieu.B}
-\version 1.1
-\date 19 mars 2013
+*\enum EnJeu
 */
-
 typedef enum{MORT=0,VIVANT=1,MOURANT=2,DOUTE=3} EnJeu;
-
+/**
+ * \struct Joueur
+ * \brief Structure d'un Joueur
+ */
 typedef struct {
     Moto moto;
     Couleur couleur;
