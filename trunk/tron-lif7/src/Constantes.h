@@ -1,11 +1,11 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
 
-#define _Nombre_de_Joueur 8
+#define _Nombre_de_Joueur 5
 #define _Nombre_de_Manette 0
-#define _Nombre_IA 7
+#define _Nombre_IA 4
 
-#define _Score_de_Victoire 4
+#define _Score_de_Victoire 12
 
 #define _Nombre_de_Textes 4
 #define _Nombre_Images_Interface 2

@@ -818,6 +818,7 @@ void SDLAfficheScores(SDL *sdl,int *scores){
     positionXBarre=1025;
     for(i=0;i<_Nombre_de_Joueur;i++){
         pourcentage=((float)scores[i])/(float)_Score_de_Victoire;
+        if(scores[i]>_Score_de_Victoire){pourcentage=1;}
         hauteur=pourcentage*(570-270);
         positionYBarre=370+(300-hauteur);
         uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,largeurBarre,hauteur,32,0,0,0,0);
