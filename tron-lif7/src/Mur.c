@@ -1,3 +1,10 @@
+/**
+*\file [Mur.c]
+*\brief Module des Murs du Jeu
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 13 mars 2013
+*/
 #include<stdlib.h>
 #include<stdio.h>
 #include"Couleur.h"

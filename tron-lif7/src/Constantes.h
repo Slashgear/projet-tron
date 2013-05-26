@@ -1,5 +1,12 @@
 #ifndef CONSTANTES_H_INCLUDED
 #define CONSTANTES_H_INCLUDED
+/**
+*\file [Constantes.h]
+*\brief Module des constantes du jeu
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 2 avril 2013
+*/
 
 #define _Nombre_de_Joueur 5
 #define _Nombre_de_Manette 0

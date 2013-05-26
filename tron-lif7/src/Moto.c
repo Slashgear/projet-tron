@@ -1,6 +1,14 @@
+/**
+\file [Moto.c]
+\brief Module des Motos du jeu
+\author {Antoine.C,Matthieu.B}
+\version 0.1
+\date 13 mars 2013
+*/
 #include<stdlib.h>
 #include<stdio.h>
 #include"Moto.h"
+
 
 float MotoGetPositionX(const Moto* moto){
     return moto->positionX;

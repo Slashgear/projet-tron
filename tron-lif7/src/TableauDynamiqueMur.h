@@ -1,13 +1,20 @@
 
 #ifndef _TAB_DYN
 #define _TAB_DYN
-
+/**
+*\file [TableauDynamiqueMur.h]
+*\brief Module qui gère les tableaux dynamiques des Murs
+*\author {Antoine.C,Matthieu.B}
+*\version 1.0
+*\date 19 mars 2013
+*/
 #include "Mur.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-
-
+/**
+ * \struct TableauDynamiqueMur
+ * \brief Structure d'un TableauDynamiqueMur
+ */
 typedef struct{
   unsigned int capacite;
   unsigned int taille_utilisee;

@@ -1,8 +1,16 @@
+/**
+*\file [Controle.c]
+*\brief Module qui défini les Controles
+*\author {Antoine.C,Matthieu.B}
+*\version 0.1
+*\date 13 mars 2013
+*/
 #include"Controle.h"
 #include<stdlib.h>
 #include<stdio.h>
 #include <assert.h>
 #include<SDL/SDL.h>
+
 
 SDLKey ControleGetDroite(const Controle* controle){
     return controle->droite;

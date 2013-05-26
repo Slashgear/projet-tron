@@ -1,10 +1,3 @@
-#ifndef MUSIQUE_H_INCLUDED
-#define MUSIQUE_H_INCLUDED
-#include "../lib/FMOD/inc/fmod.h"
-
-#define _Nombre_De_Musique 3
-#define _Nombre_De_Bruitages 2
-
 /**
 \file [Musique.h]
 \brief Module des Musiques du jeu
@@ -12,7 +5,16 @@
 \version 1.4
 \date 19 avril 2013
 */
+#ifndef MUSIQUE_H_INCLUDED
+#define MUSIQUE_H_INCLUDED
+#include "../lib/FMOD/inc/fmod.h"
 
+#define _Nombre_De_Musique 3
+#define _Nombre_De_Bruitages 2
+/**
+ * \struct Musique
+ * \brief Structure d'une musique
+ */
 typedef struct{
     FMOD_SYSTEM *baseDuSon;
     FMOD_SOUND **sonCourt;

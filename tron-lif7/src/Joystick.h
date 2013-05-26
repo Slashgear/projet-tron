@@ -1,15 +1,19 @@
-#ifndef JOYSTICK_H_INCLUDED
-#define JOYSTICK_H_INCLUDED
-#include <SDL/SDL.h>
-
 /**
 *\file [Joystick.h]
-*\brief Module des vecteurs
+*\brief Module des manettes
 *\author {Antoine.C,Matthieu.B}
 *\version 0.1
 *\date 11 avril 2013
 */
+#ifndef JOYSTICK_H_INCLUDED
+#define JOYSTICK_H_INCLUDED
+#include <SDL/SDL.h>
 
+
+/**
+ * \struct Manette
+ * \brief Structure d'une manette
+ */
 typedef struct
 {
     SDL_Joystick *joystick;

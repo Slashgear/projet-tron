@@ -1,4 +1,10 @@
-
+/**
+*\file [Jeu.h]
+*\brief Module centrale du Jeu
+*\author {Antoine.C,Matthieu.B}
+*\version 2.1
+*\date 13 mars 2013
+*/
 #ifndef _JEU_H
 #define _JEU_H
 
@@ -8,9 +14,10 @@
 #include "Bonus.h"
 #include "Musique.h"
 
-
-
-
+/**
+ * \struct Jeu
+ * \brief Structure du Jeu
+ */
 typedef struct
 {
 	Grid grille;
