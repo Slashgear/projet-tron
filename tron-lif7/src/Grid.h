@@ -23,44 +23,112 @@ typedef struct {
     unsigned int tailleY; /*!< Taille Y de la grille*/
     TableauDynamiqueMur mesMurs; /*!< Tableau des Murs */
 } Grid;
-
-/**assesseur de positionX*/
+/**
+ * \fn GridGetPositionX
+ * \brief assesseur de positionX
+ * \param const Grid*
+ * \return positionX
+ */
 float GridGetPositionX(const Grid* );
-/**assesseur de positionY*/
+/**
+ * \fn GridGetPositionY
+ * \brief assesseur de positionY
+ * \param const Grid*
+ * \return positionY
+ */
 float GridGetPositionY(const Grid* );
-/**assesseur de tailleX*/
+/**
+ * \fn GridGetTailleX
+ * \brief assesseur de tailleX
+ * \param const Grid*
+ * \return tailleX
+ */
 unsigned int GridGetTailleX(const Grid* );
-/**assesseur de tailleY*/
+/**
+ * \fn GridGetTailleY
+ * \brief assesseur de tailleY
+ * \param const Grid*
+ * \return tailleY
+ */
 unsigned int GridGetTailleY(const Grid*);
-/**assesseur de mesMurs*/
+/**
+ * \fn GridGetTailleY
+ * \brief assesseur de mesMurs
+ * \param const Grid*
+ * \return pointeur de tableau Dynamique
+ */
 TableauDynamiqueMur* GridGetMesMurs(Grid*);
 
-
-/**mutateur de positionX*/
+/**
+ * \fn GridSetPositionX
+ * \brief mutateur de positionX
+ * \param Grid* grille,float posX
+ */
 void GridSetPositionX(Grid* grille,float posX);
-/**mutateur de positionY*/
+/**
+ * \fn GridSetPositionY
+ * \brief mutateur de positionY
+ * \param Grid* grille,float posY
+ */
 void GridSetPositionY(Grid* grille,float posY);
-/**mutateur de tailleX*/
+/**
+ * \fn GridSetTailleX
+ * \brief mutateur de tailleX
+ * \param Grid* ,unsigned int tailleX
+ */
 void GridSetTailleX(Grid* ,unsigned int );
-/**mutateur de tailleY*/
+/**
+ * \fn GridSetTailleY
+ * \brief mutateur de tailleY
+ * \param Grid* ,unsigned int tailleY
+ */
 void GridSetTailleY(Grid* ,unsigned int );
-/**mutateur de mesMurs*/
+/**
+ * \fn GridSetMesMurs
+ * \brief mutateur de mesMurs
+ * \param Grid* ,TableauDynamiqueMur*
+ */
 void GridSetMesMurs(Grid* ,TableauDynamiqueMur* );
-
- /** Constructeur de Grid*/
+/**
+ * \fn GridConstructeur
+ * \brief Constructeur de Grid
+ * \param Grid* , float , float , unsigned int , unsigned int ,TableauDynamiqueMur*
+ */
  void GridConstructeur(Grid* , float , float , unsigned int , unsigned int ,TableauDynamiqueMur* );
- /** Destructeur de Grid*/
+ /**
+ * \fn GridDestructeur
+ * \brief Destructeur de Grid
+ * \param Grid*
+ */
  void GridDestructeur(Grid* grille);
- /** Ajoute un mur*/
+  /**
+ * \fn ajouteMur
+ * \brief ajoute un Mur au tableau Dynamique de Murs
+ * \param TableauDynamiqueMur* mesMurs, Mur mur
+ */
  void ajouteMur(TableauDynamiqueMur* mesMurs, Mur mur);
- /** Efface un mur*/
+   /**
+ * \fn effaceMur
+ * \brief Efface les Murs qui ont une durée de Vie <1
+ * \param ableauDynamiqueMur* mesMurs
+ */
  void effaceMur(TableauDynamiqueMur* mesMurs);
- /** Nettoie tous les murs de la Grid*/
+  /**
+ * \fn nettoieGrid
+ * \brief Nettoie tous les murs de la Grid en setant leur durée Vie à 0.
+ * \param Grid*
+ */
  void nettoieGrid(TableauDynamiqueMur* mesMurs);
- /** décrementation de la durée de vie des murs*/
+  /**
+ * \fn decrementeVieMur
+ * \brief décrementation de la durée de vie des murs
+ * \param Grid*
+ */
  void decrementeVieMur(Grid* grille);
-
- /** Procedure qui teste le module Grid*/
+ /**
+ * \fn GridTestRegression
+ * \brief procédure de Test du module
+ */
  void GridTestRegression();
 
 

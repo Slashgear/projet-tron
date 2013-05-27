@@ -22,14 +22,28 @@ typedef struct
     int *chapeaux;
     int numero;
 }Manette;
-
-/**fonction qui initialise  une manette*/
+/**
+ * \fn initialiserManette
+ * \brief  fonction qui initialise  une manette
+ * \param Manette *manette,int numeroJoystick
+ */
 void initialiserManette(Manette *manette,int numeroJoystick);
-/**fonction qui détruit une manette*/
+/**
+ * \fn detruireManette
+ * \brief  fonction qui détruit une manette
+ * \param Manette *manette
+ */
 void detruireManette(Manette *manette);
-/**fonction qui renvoit les inputs d'une manette passé en paramèrtre*/
+/**
+ * \fn updateEvent
+ * \brief  fonction qui renvoit les inputs d'une manette passé en paramèrtre
+ * \param Manette *manette, SDL_Event evenement
+ */
 void updateEvent(Manette *manette, SDL_Event evenement);
-/**fonction qui teste le module*/
+/**
+ * \fn JoystickTestRegression
+ * \brief  fonction qui teste le module
+ */
 void JoystickTestRegression();
 
 #endif

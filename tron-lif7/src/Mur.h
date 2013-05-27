@@ -23,44 +23,109 @@ typedef struct{
     Couleur couleur;
     float dureeVie;
 }Mur;
-
-/** assesseur de positionX*/
+/**
+ * \fn MurGetPositionX
+ * \brief assesseur de positionX
+ * \param const Mur* mur
+ * \return positionX
+ */
 float MurGetPositionX(const Mur* mur);
-/** assesseur de positionY*/
+/**
+ * \fn MurGetPositionY
+ * \brief assesseur de positionY
+ * \param const Mur* mur
+ * \return positionY
+ */
 float MurGetPositionY(const Mur* mur);
-/** assesseur de tailleX*/
+/**
+ * \fn MurGetTailleX
+ * \brief assesseur de tailleX
+ * \param const Mur* mur
+ * \return tailleX
+ */
 unsigned int MurGetTailleX(const Mur* mur);
-/** assesseur de tailleY*/
+/**
+ * \fn MurGetTailleY
+ * \brief assesseur de tailleY
+ * \param const Mur* mur
+ * \return tailleY
+ */
 unsigned int MurGetTailleY(const Mur* mur);
-/** assesseur de couleur*/
+/**
+ * \fn MurGetCouleur
+ * \brief assesseur de couleur
+ * \param const Mur* mur
+ * \return Couleur
+ */
 Couleur MurGetCouleur(const Mur* mur);
-/** assesseur de dureeVie*/
+/**
+ * \fn MurGetDureeVie
+ * \brief assesseur de DureeVie
+ * \param const Mur* mur
+ * \return duree de Vie de Mur
+ */
 float MurGetDureeVie(const Mur* mur);
 
-
-/** mutateur de positionX*/
+/**
+ * \fn MurSetPositionX
+ * \brief mutateur de positionX
+ * \param Mur* mur,float posX
+ */
 void MurSetPositionX(Mur* mur,float posX);
-/** mutateur de positionY*/
+/**
+ * \fn MurSetPositionY
+ * \brief mutateur de positionY
+ * \param Mur* mur,float posY
+ */
 void MurSetPositionY(Mur* mur,float posY);
-/** mutateur de tailleX*/
+/**
+ * \fn MurSetTailleX
+ * \brief mutateur de tailleX
+ * \param Mur* mur,float tailleX
+ */
 void MurSetTailleX(Mur* mur,unsigned int tailleX);
-/** mutateur de tailleY*/
+/**
+ * \fn MurSetTailleY
+ * \brief mutateur de tailleY
+ * \param Mur* mur,float tailleY
+ */
 void MurSetTailleY(Mur* mur,unsigned int tailleY);
-/** mutateur de couleur*/
+/**
+ * \fn MurSetCouleur
+ * \brief mutateur de couleur
+ * \param Mur* mur,Couleur couleur
+ */
 void MurSetCouleur(Mur* mur,Couleur couleur);
-/** mutateur de dureeVie*/
+/**
+ * \fn MurSetDureeVie
+ * \brief mutateur de Duree Vie
+ * \param Mur* mur,float dureeVie
+ */
 void MurSetDureeVie(Mur* mur,float dureeVie);
-/** affiche les stats des murs crée*/
+/**
+ * \fn AfficheStatsMur
+ * \brief Affichage des Stats des Murs
+ * \param Mur* mur
+ */
 void AfficheStatsMur(Mur* mur);
 
-
-/** Constructeur de Mur*/
+/**
+ * \fn MurConstructeur
+ * \brief Constructeur du Murs
+ * \param Mur* mur,float posX, float posY, unsigned int tailleX, unsigned int tailleY,Couleur couleur, float dureeVie
+ */
 void MurConstructeur(Mur* mur,float posX, float posY, unsigned int tailleX, unsigned int tailleY,Couleur couleur, float dureeVie);
-/** Destructeur de Mur*/
+/**
+ * \fn MurDestructeur
+ * \brief Destructeur du Murs
+ * \param Mur* mur
+ */
 void MurDestructeur(Mur* mur);
 
-
-/** Procedure qui teste le module Mur*/
+/**
+ * \fn MurTestRegression
+ * \brief Procédure qui teste le Module
+ */
  void MurTestRegression();
 
 

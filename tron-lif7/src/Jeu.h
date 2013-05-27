@@ -25,61 +25,160 @@ typedef struct
 	int *scores;
 	Bonus mesBonus[_Nombre_de_Bonus];
 	int tempsProchainBonus;
-	Musique musique;/*assesseur non fait*/
+	Musique musique;
 } Jeu;
-
-/**assesseur de grille*/
+/**
+ * \fn JeuGetGrille
+ * \brief assesseur de grille
+ * \param Jeu* jeu
+ * \return Grid*
+ */
 Grid* JeuGetGrille(Jeu* jeu);
-/**assesseur de mesjoueurs*/
+/**
+ * \fn JeuGetGrille
+ * \brief assesseur du Ieme Joueur
+ * \param Jeu* jeu,int i
+ * \return Joueur*
+ */
 Joueur* JeuGetIemeJoueurs(Jeu* jeu,int i);
-/**assesseur de scores*/
+/**
+ * \fn JeuGetIemeScore
+ * \brief assesseur de scores
+ * \param Jeu* jeu,int i
+ * \return un score
+ */
 int JeuGetIemeScore(Jeu* jeu,int i);
-/**assesseur du ieme  Bonus*/
+/**
+ * \fn JeuGetIemeBonus
+ * \brief assesseur du ieme  Bonus
+ * \param Jeu* jeu,int i
+ * \return Bonus*
+ */
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i);
-/**assesseur de tempsProchainBonus*/
+/**
+ * \fn JeuGetTempsProchainBonus
+ * \brief assesseur de tempsProchainBonus
+ * \param Jeu* jeu
+ * \return temps avant prochain Bonus
+ */
 int JeuGetTempsProchainBonus(Jeu* jeu);
-/**assesseur de musique*/
+/**
+ * \fn JeuGetMusique
+ * \brief assesseur de tempsProchainBonus
+ * \param Jeu* jeu
+ * \return Musique*
+ */
 Musique* JeuGetMusique(Jeu* jeu);
 
-
-
-
-/**mutateur de grille*/
+/**
+ * \fn JeuSetGrille
+ * \brief mutateur de grille
+ * \param Jeu* jeu,Grid* grille
+ */
 void JeuSetGrille(Jeu* jeu,Grid* grille);
-/**mutateur de mesjoueurs*/
+/**
+ * \fn JeuSetIemeJoueurs
+ * \brief mutateur de mesjoueurs
+ * \param Jeu* jeu,Joueur* Joueur,int i
+ */
 void JeuSetIemeJoueurs(Jeu* jeu,Joueur* Joueur,int i);
-/**mutateur de scores*/
+/**
+ * \fn JeuSetIemeScore
+ * \brief mutateur de scores
+ * \param Jeu* jeu,int score,int i
+ */
 void JeuSetIemeScore(Jeu* jeu,int score,int i);
-/**mutateur du ieme bonus*/
+/**
+ * \fn JeuSetIemeBonus
+ * \brief mutateur du ieme bonus
+ * \param Jeu* jeu,const Bonus* bonus,int i
+ */
 void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i);
-/**mutateur de tempsProchainBonus*/
+/**
+ * \fn  JeuSetTempsProchainBonus
+ * \brief mutateur de tempsProchainBonus
+ * \param Jeu* jeu,int tempsProchainBonus
+ */
 void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus);
-/**mutateur de Musique*/
+/**
+ * \fn  JeuSetMusique
+ * \brief mutateur de musique
+ * \param Jeu* jeu,Musique* musique
+ */
 void JeuSetMusique(Jeu* jeu,Musique* musique);
 
-
-/**constructeur du jeu*/
+/**
+ * \fn  JeuConstructeur
+ * \brief Constructeur de Jeu
+ * \param Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores
+ */
 void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores);
-/**destructeur du jeu*/
+/**
+ * \fn  JeuDestructeur
+ * \brief Destructeur de Jeu
+ * \param Jeu* jeu
+ */
 void JeuDestructeur(Jeu* jeu);
-/**Boucle d'évolutions du jeu*/
+/**
+ * \fn  JeuEvolue
+ * \brief Centre de l'action du jeu
+ * \param Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleurMessage
+ * Procédure qui gère tous les tours l'avancement et l'état de chaque moto, ainsi que les conditions de victoire
+ * Elle lance également les affichages des informations principales du jeu et modifie les scores
+ */
 void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleurMessage);
-/**procédure qui gère le mouvement de toutes les motos*/
+/**
+ * \fn  bougeMoto
+ * \brief procédure qui gère le mouvement de toutes les motos
+ * \param Jeu* jeu
+ */
 void bougeMoto(Jeu* jeu);
-/**fonction qui teste les collisions avec le murs*/
+/**
+ * \fn  testCollisionMur
+ * \brief fonction qui teste les collisions entre les motos et les Murs
+ * \param Joueur * joueur, Grid * grille
+ * \return Retourne 0 si pas de collisions, 1 si collision simple, 2 si collision à grande vitesse
+ */
 char testCollisionMur(Joueur * joueur, Grid * grille);
-/**fonction qui teste les collisions entre 2 moto*/
+/**
+ * \fn  testCollisionMoto
+ * \brief fonction qui teste les collisions entre les motos
+ * \param Moto* moto, Moto* moto2
+ * \return Retourne 0 si pas de collisions, 1 si collision
+ */
 char testCollisionMoto(Moto* moto, Moto* moto2);
-/**procédure qui gère les actions des motos en fonction des touches saisies*/
+/**
+ * \fn  JeuActionClavier
+ * \brief procédure qui gère les actions des motos en fonction des touches saisies
+ * \param Joueur* joueur, Direction direction,Grid* grille
+ */
 void JeuActionClavier(Joueur* joueur, Direction direction,Grid* grille);
-/**procédure qui actionne le bonus*/
+/**
+ * \fn  JeuActionneBonus
+ * \brief procédure qui actionne le Bonus
+ * \param Joueur* joueur
+ */
 void JeuActionneBonus(Joueur*Joueur);
-/**procedure qui gère les mouvements d'une IA*/
+/**
+ * \fn JeuGereIA
+ * \brief procédure qui gère les mouvements d'une IA
+ * \param Joueur* joueur,Jeu* jeu
+ */
 void JeuGereIA(Joueur* joueur,Jeu* jeu);
-/**procédure qui affiche le tableau d'analyse de la grille*/
-void afficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
-/**procédure qui affiche le tableau d'analyse des distances de la grille*/
-void afficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]);
+/**
+ * \fn afficheGrilleAnalyse
+ * \brief procédure qui affiche le tableau d'analyse de la grille
+ * \param short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]
+ */
+void afficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                    [_Taille_X_Grille/_Precision_Analyse_IA]);
+/**
+ * \fn afficheGrilleDistances
+ * \brief procédure qui affiche le tableau d'analyse des distances de la grille
+ * \param short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA][_Taille_X_Grille/_Precision_Analyse_IA]
+ */
+void afficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                       [_Taille_X_Grille/_Precision_Analyse_IA]);
 /**procédure qui crée le tableau d'analyse de la grille*/
 void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
@@ -105,8 +204,6 @@ void indicesGrilleJoueur(short int *ligne,short int *colonne,Joueur* joueur);
 char testCollisionGenerique(float objet1[4],float objet2[4]);
 /**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus);
-/**Fonction qui teste si un bonus est en Collision avec un Mur*/
-char testCollisionMursBonus(Grid *grille,Bonus* bonus);
 /**Fonction qui place des bonus sur la grille*/
 void PlaceBonus(Jeu *jeu,Bonus *bonus);
 /**Procedure qui décrémente le tempsBonus des bonus actifs des joueurs*/

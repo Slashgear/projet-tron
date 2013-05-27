@@ -24,38 +24,103 @@ typedef struct{
         float vitesse;
         Direction direction;
 } Moto;
-/** assesseur position X moto*/
+/**
+ * \fn MotoGetPositionX
+ * \brief assesseur position X moto
+ * \param const Moto* moto
+ * \return positionX
+ */
 float MotoGetPositionX(const Moto* moto);
-/** assesseur position Y moto*/
+/**
+ * \fn MotoGetPositionY
+ * \brief assesseur position Y moto
+ * \param const Moto* moto
+ * \return positionY
+ */
 float MotoGetPositionY(const Moto* moto);
-/** assesseur tailleX moto*/
+/**
+ * \fn MotoGetTailleX
+ * \brief assesseur tailleX moto
+ * \param const Moto* moto
+ * \return tailleX
+ */
 unsigned int MotoGetTailleX(const Moto* moto);
-/** assesseur tailleY moto*/
+/**
+ * \fn MotoGetTailleY
+ * \brief assesseur tailleY moto
+ * \param const Moto* moto
+ * \return tailleY
+ */
 unsigned int MotoGetTailleY(const Moto* moto);
-/** assesseur vitesse de moto*/
+/**
+ * \fn MotoGetVitesse
+ * \brief assesseur vitesse moto
+ * \param const Moto* moto
+ * \return vitesse (float)
+ */
 float MotoGetVitesse(const Moto* moto);
-/** assesseur de direction*/
+/**
+ * \fn MotoGetDirection
+ * \brief assesseur direction moto
+ * \param const Moto* moto
+ * \return Direction
+ */
 Direction MotoGetDirection(const Moto* moto);
 
-/** mutateur de positionX de moto*/
+
+/**
+ * \fn MotoSetPositionX
+ * \brief mutateur de positionX de moto
+ * \param Moto* m,float posX
+ */
 void MotoSetPositionX(Moto* m,float posX);
-/** mutateur de positionY de moto*/
+/**
+ * \fn MotoSetPositionY
+ * \brief mutateur de positionY de moto
+ * \param Moto* m,float posY
+ */
 void MotoSetPositionY(Moto* m,float posY);
-/**mutateur de dimX moto*/
+/**
+ * \fn MotoSetTailleX
+ * \brief mutateur de dimX moto
+ * \param Moto* m,unsigned int tailleX
+ */
 void MotoSetTailleX(Moto* m,unsigned int tailleX);
-/**mutateur de dimY moto*/
+/**
+ * \fn MotoSetTailleY
+ * \brief mutateur de dimY moto
+ * \param Moto* m,unsigned int tailleY
+ */
 void MotoSetTailleY(Moto* m,unsigned int tailleY);
-/**mutateur de vitesse*/
+/**
+ * \fn MotoSetVitesse
+ * \brief mutateur de vitesse
+ * \param Moto* m,float vitesse
+ */
 void MotoSetVitesse(Moto* m,float vitesse);
-/**mutateur de direction*/
+/**
+ * \fn MotoSetDirection
+ * \brief mutateur de direction
+ * \param Moto* m, Direction direction
+ */
 void MotoSetDirection(Moto* m, Direction direction);
 
-/** Constructeur de Moto*/
+/**
+ * \fn MotoConstructeur
+ * \brief Constructeur de Moto
+ * \param Moto* moto,float posX,float posY,unsigned int tailleX, unsigned int tailleY,float vitesse,Direction direction
+ */
 void MotoConstructeur(Moto* moto,float posX,float posY,unsigned int tailleX, unsigned int tailleY,float vitesse,Direction direction);
-/** Destructeur de Moto*/
+/**
+ * \fn MotoDestructeur
+ * \brief Destructeur de Moto
+ * \param Moto* moto
+ */
 void MotoDestructeur(Moto* moto);
-
-/** Procedure qui teste le module Moto*/
+/**
+ * \fn MotoDestructeur
+ * \brief  Procedure qui teste le module Moto
+ */
  void MotoTestRegression();
 
 

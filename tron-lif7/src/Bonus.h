@@ -23,35 +23,35 @@ typedef struct{
 
 
 /**
- * \fn BonusGetPositionX(const Bonus* bonus)
+ * \fn BonusGetPositionX
  * \brief Assesseur de la positionX
  * \param un Bonus
  * \return position du bonus
  */
 float BonusGetPositionX(const Bonus* bonus);
 /**
- * \fn BonusGetPositionY(const Bonus* bonus)
+ * \fn BonusGetPositionY
  * \brief Assesseur de la positionY
  * \param un Bonus
  * \return position du bonus
  */
 float BonusGetPositionY(const Bonus* bonus);
 /**
- * \fn BonusGetTailleX(const Bonus* bonus)
+ * \fn BonusGetTailleX
  * \brief Assesseur de la tailleX
  * \param un Bonus
  * \return taille du bonus
  */
 unsigned int BonusGetTailleX(const Bonus* bonus);
 /**
- * \fn BonusGetTailleY(const Bonus* bonus)
+ * \fn BonusGetTailleY
  * \brief Assesseur de la tailleY
  * \param un Bonus
  * \return taille du bonus
  */
 unsigned int BonusGetTailleY(const Bonus* bonus);
 /**
- * \fn BonusGetEffetBonus(const Bonus* effet)
+ * \fn BonusGetEffetBonus)
  * \brief Assesseur de l'effet bonus
  * \param un Bonus
  * \return EffetBonus
@@ -59,31 +59,31 @@ unsigned int BonusGetTailleY(const Bonus* bonus);
 EffetBonus BonusGetEffetBonus(const Bonus* effet);
 
 /**
- * \fn BonusSetPositionX(Bonus* bonus,float positionX)
+ * \fn BonusSetPositionX
  * \brief Mutateur de la position X
  * \param un Bonus, une position
  */
 void BonusSetPositionX(Bonus* bonus,float positionX);
 /**
- * \fn BonusSetPositionY(Bonus* bonus,float positionY)
+ * \fn BonusSetPositionY
  * \brief Mutateur de la position Y
  * \param un Bonus, une position
  */
 void BonusSetPositionY(Bonus* bonus,float positionY);
 /**
- * \fn BonusSetTailleX(Bonus* bonus,unsigned int tailleX)
+ * \fn BonusSetTailleX(
  * \brief Mutateur de la taille X
  * \param un Bonus, une taille
  */
 void BonusSetTailleX(Bonus* bonus,unsigned int tailleX);
 /**
- * \fn BonusSetTailleY(Bonus* bonus,unsigned int tailleY)
+ * \fn BonusSetTailleY
  * \brief Mutateur de la taille Y
  * \param un Bonus, une taille
  */
 void BonusSetTailleY(Bonus* bonus,unsigned int tailleY);
 /**
- * \fn BonusSetEffetBonus(Bonus* bonus,EffetBonus effet)
+ * \fn BonusSetEffetBonus
  * \brief Mutateur de l'effet bonus
  * \param un Bonus, un effet
  */

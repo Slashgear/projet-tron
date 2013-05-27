@@ -39,29 +39,29 @@ void SDLSetIemeTexture(SDL *sdl,unsigned int i,SDL_Surface * texture){
 
 
 SDL_Surface* SDLChargeImage(const char* nomfichier){
-	/**< Temporary storage for the image that's loaded */
+	/**!< Temporary storage for the image that's loaded */
 	SDL_Surface* loadedImage = NULL;
 
-	/**< Load the image */
+	/**!< Load the image */
 	loadedImage = SDL_LoadBMP( nomfichier );
 
-	/**< If nothing went wrong in loading the image */
+	/**!< If nothing went wrong in loading the image */
 	if ( loadedImage == NULL ) printf("image non chargée ! %s \n",nomfichier);
 
 
-	/**< Return the optimized image */
+	/**!< Return the optimized image */
 	return loadedImage;
 }
 
 void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int positionX,const int positionY){
-	/**< Make a temporary rectangle to hold the offsets */
+	/**!< Make a temporary rectangle to hold the offsets */
 	SDL_Rect offset;
 
-	/**< Give the offsets to the rectangle */
+	/**!< Give the offsets to the rectangle */
 	offset.x = positionX;
 	offset.y = positionY;
 
-	/**< Blit the surface */
+	/**!< Blit the surface */
 	SDL_BlitSurface( surfaceA, NULL, surfaceB, &offset );
 }
 
@@ -69,7 +69,6 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
-    TTF_Init();
     SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE));
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
@@ -143,7 +142,6 @@ void SDLDestructeur(SDL *sdl){
     sdl->mesManettes=NULL;
     TTF_CloseFont(sdl->police);
     TTF_CloseFont(sdl->policeGrandsMessages);
-    TTF_Quit();
 }
 
 void pause()
@@ -419,7 +417,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
             strcpy(commentaire,commentaireNull);
             JeuEvolue(SDLGetJeu(sdl),&jeuFini,commentaire,&uneCouleur);
-            if(strcmp(commentaire,commentaireNull)!=0)/**<Si le jeu a renvoyé un nouveau commentaire*/
+            if(strcmp(commentaire,commentaireNull)!=0)/**!<Si le jeu a renvoyé un nouveau commentaire*/
             {SDLAfficheTextes(sdl,commentaire,uneCouleur);}
             affAJour = 0;
             horloge_precedente = horloge_courante;
@@ -823,6 +821,8 @@ void SDLAfficheScores(SDL *sdl,int *scores){
     SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,670);
     largeurBarre=(270-20-((_Nombre_de_Joueur-1)*5))/_Nombre_de_Joueur;
     positionXBarre=1025;
+    SDL_FreeSurface(uneSurface);
+
     for(i=0;i<_Nombre_de_Joueur;i++){
         pourcentage=((float)scores[i])/(float)_Score_de_Victoire;
         if(scores[i]>_Score_de_Victoire){pourcentage=1;}
@@ -856,8 +856,8 @@ void SDLAfficheScores(SDL *sdl,int *scores){
                                 }
         SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),positionXBarre,positionYBarre);
         positionXBarre+=5+largeurBarre;
+        SDL_FreeSurface(uneSurface);
     }
-    SDL_FreeSurface(uneSurface);
 }
 
 
