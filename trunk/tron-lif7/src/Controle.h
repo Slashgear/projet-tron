@@ -25,66 +25,66 @@ typedef struct{
 }Controle;
 
 /**
- * \fn ControleGetDroite(const Controle* controle)
+ * \fn ControleGetDroite
  * \brief Assesseur de la Touche droite
  * \param un Controle
  * \return SDLKey
  */
 SDLKey ControleGetDroite(const Controle* controle);
 /**
- * \fn ControleGetHaut(const Controle* controle)
+ * \fn ControleGetHaut
  * \brief Assesseur de la Touche Haute
  * \param un Controle
  * \return SDLKey
  */
 SDLKey ControleGetHaut(const Controle* controle);
 /**
- * \fn ControleGetBas(const Controle* controle)
+ * \fn ControleGetBas
  * \brief Assesseur de la Touche Bas
  * \param un Controle
  * \return SDLKey
  */
 SDLKey ControleGetBas(const Controle* controle);
 /**
- * \fn ControleGetGauche(const Controle* controle)
+ * \fn ControleGetGauche
  * \brief Assesseur de la Touche Gauche
  * \param un Controle
  * \return SDLKey
  */
 SDLKey ControleGetGauche(const Controle* controle);
 /**
- * \fn ControleGetBonus(const Controle* controle)
+ * \fn ControleGetBonus
  * \brief Assesseur de la Touche Bonus
- * \param un Controle
+ * \param const Controle* controle
  * \return SDLKey
  */
 SDLKey ControleGetBonus(const Controle* controle);
 /**
- * \fn ControleSetDroite(Controle* controle,SDLKey x)
+ * \fn ControleSetDroite(
  * \brief Mutateur de la Touche droite
  * \param Controle* controle,SDLKey x
  */
 void ControleSetDroite(Controle* controle,SDLKey x);
 /**
- * \fn ControleSetHaut(Controle* controle,SDLKey x)
+ * \fn ControleSetHaut
  * \brief Mutateur de la Touche haute
  * \param Controle* controle,SDLKey x
  */
 void ControleSetHaut(Controle* controle,SDLKey x);
 /**
- * \fn ControleSetBas(Controle* controle,SDLKey x)
+ * \fn ControleSetBas
  * \brief Mutateur de la Touche bas
  * \param Controle* controle,SDLKey x
  */
 void ControleSetBas(Controle* controle,SDLKey x);
 /**
- * \fn ControleSetGauche(Controle* controle,SDLKey x)
+ * \fn ControleSetGauche
  * \brief Mutateur de la Touche Gauche
  * \param Controle* controle,SDLKey x
  */
 void ControleSetGauche(Controle* controle,SDLKey x);
 /**
- * \fn ControleSetBonus(Controle* controle,SDLKey x)
+ * \fn ControleSetBonus
  * \brief Mutateur de la Touche Bonus
  * \param Controle* controle,SDLKey x
  */

@@ -27,7 +27,7 @@ int JeuGetIemeScore(Jeu* jeu,int i){
     return (jeu->scores)[i];
 }
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
-    return &((jeu->mesBonus)[i]);
+    return (jeu->mesBonus)+i;
 }
 int JeuGetTempsProchainBonus(Jeu* jeu){
     return jeu->tempsProchainBonus;
@@ -465,29 +465,6 @@ char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus){
     return boolCollision;
 }
 
-char testCollisionMursBonus(Grid *grille,Bonus* bonus){
-    int i;
-    char boolCollision=0;
-    float boundingBoxMur[4];
-    float Boitebonus[4]={BonusGetPositionX(bonus),BonusGetPositionY(bonus),BonusGetPositionX(bonus)+(float)BonusGetTailleX(bonus),
-    BonusGetPositionY(bonus)+(float)BonusGetTailleY(bonus)};
-    float borduresGrid[4]={GridGetPositionX(grille),GridGetPositionY(grille),(float)GridGetTailleX(grille) + GridGetPositionX(grille),
-                            (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
-    while((i<TabDynMurGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
-                boundingBoxMur[0]=MurGetPositionX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
-                boundingBoxMur[1]=MurGetPositionY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
-                boundingBoxMur[2]=MurGetPositionX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleX(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
-                boundingBoxMur[3]=MurGetPositionY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i))
-                                +(float)MurGetTailleY(adresseIemeElementTabDynMur(GridGetMesMurs(grille),i));
-                if((testCollisionGenerique(Boitebonus,boundingBoxMur))
-                    ||((Boitebonus[0]<borduresGrid[0])||(Boitebonus[2]>borduresGrid[2])
-                    ||(Boitebonus[1]<borduresGrid[1])||(Boitebonus[3]>borduresGrid[3])))
-                {boolCollision = 1;}
-                i++;
-            }
-    return boolCollision;
-}
 
 void PlaceBonus(Jeu *jeu,Bonus* bonus){
     float positionX;
@@ -502,7 +479,7 @@ void PlaceBonus(Jeu *jeu,Bonus* bonus){
         BonusSetPositionY(bonus,positionY);
         effetBonus=rand()%_Nombre_Type_Bonus +1;
         BonusSetEffetBonus(bonus,effetBonus);
-    }while((testCollisionMursBonus(grille,bonus)==1)||(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0));
+    }while(testCollisionMotoBonus(jeu->mesJoueurs,bonus)!=0);
 }
 
 void afficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
@@ -543,9 +520,9 @@ void JeuGereIA(Joueur* joueurIA,Jeu* jeu){
             grilleDistances[i][j]=-1;
             grilleDistancesCible[i][j]=-1;
         }
-    } /** On initialise la grilleAnalyse et la grilleDistance à 0*/
+    } /**!< On initialise la grilleAnalyse et la grilleDistance à 0*/
     indicesGrilleJoueur(&ligneJoueurIA,&colonneJoueurIA,joueurIA);
-    /** On initialise la position du joueurIA au devant de sa moto*/
+    /**!< On initialise la position du joueurIA au devant de sa moto*/
     creerGrilleAnalyse(&grilleAnalyse,jeu,joueurIA);
   /*  afficheGrilleAnalyse(&grilleAnalyse);*/
     creerGrilleDistances(ligneJoueurIA,colonneJoueurIA,&grilleAnalyse,&grilleDistances);
@@ -643,27 +620,27 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
     int indiceColonne=0;
     Mur* unMur;
     short int* pValeurCase;
-    for(i=TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){ /** On parcours les murs et on  */
-        unMur=adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(jeu)),i);       /** Crée une zone de danger autour d'eux*/
+    for(i=TabDynMurGetTaille_utilisee(GridGetMesMurs(JeuGetGrille(jeu)))-1;i>=0;i--){ /**!< On parcours les murs et on  */
+        unMur=adresseIemeElementTabDynMur(GridGetMesMurs(JeuGetGrille(jeu)),i);       /**!< Crée une zone de danger autour d'eux*/
         if((MurGetDureeVie(unMur)<_Duree_Vie_Mur-2)||(MurGetCouleur(unMur)!=JoueurGetCouleur(joueurIA))){
-            if(MurGetTailleX(unMur)==5){/**Si la largeur est selon x on se place au bord gauche du mur*/
+            if(MurGetTailleX(unMur)==5){/**!<Si la largeur est selon x on se place au bord gauche du mur*/
                 decalageXMur=0;
                 decalageYMur=MurGetTailleY(unMur);
                 while(decalageYMur>0){
-                                    /** On crée la zone de danger au bout du mur, on décrémente le décalage */
-                                    /** puis on crée la zone de danger au milieu du mur etc ...*/
+                                    /**!< On crée la zone de danger au bout du mur, on décrémente le décalage */
+                                    /**!< puis on crée la zone de danger au milieu du mur etc ...*/
                     indiceLigne=floor((MurGetPositionY(unMur)+decalageYMur)/_Precision_Analyse_IA);
                     indiceColonne=floor((MurGetPositionX(unMur)+decalageXMur)/_Precision_Analyse_IA);
                     pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                     if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
                         *pValeurCase=ceil(MurGetDureeVie(unMur));
                     decalageYMur-=_Precision_Analyse_IA;
-                    if((decalageYMur<=0)&&(decalageXMur==0)){/**A la fin du parcours on se replace au */
-                        decalageXMur=5;                      /**bord droit du mur et on recommence*/
+                    if((decalageYMur<=0)&&(decalageXMur==0)){/**!<A la fin du parcours on se replace au */
+                        decalageXMur=5;                      /**!<bord droit du mur et on recommence*/
                         decalageYMur=MurGetTailleY(unMur);
                     }
                 }
-                    /**Enfin on crée la zone de danger au début du mur au bord gauche puis au bord droit*/
+                    /**!<Enfin on crée la zone de danger au début du mur au bord gauche puis au bord droit*/
                 indiceLigne=floor((MurGetPositionY(unMur)+0)/_Precision_Analyse_IA);
                 indiceColonne=floor((MurGetPositionX(unMur)+0)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
@@ -675,24 +652,24 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
                 if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
                     *pValeurCase =ceil(MurGetDureeVie(unMur));
             }
-            else{ /**Si la largeur est selon y on se place au bord haut du mur*/
+            else{ /**!<Si la largeur est selon y on se place au bord haut du mur*/
                 decalageYMur=0;
                 decalageXMur=MurGetTailleX(unMur);
                 while(decalageXMur>0){
-                                    /** On crée la zone de danger au bout du mur, on décrémente le décalage */
-                                    /** puis on crée la zone de danger au milieu du mur etc ...*/
+                                    /** !<On crée la zone de danger au bout du mur, on décrémente le décalage */
+                                    /** !<puis on crée la zone de danger au milieu du mur etc ...*/
                     indiceLigne=floor((MurGetPositionY(unMur)+decalageYMur)/_Precision_Analyse_IA);
                     indiceColonne=floor((MurGetPositionX(unMur)+decalageXMur)/_Precision_Analyse_IA);
                     pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                     if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
                         *pValeurCase =ceil(MurGetDureeVie(unMur));
                     decalageXMur-=_Precision_Analyse_IA;
-                    if((decalageXMur<=0)&&(decalageYMur==0)){/**A la fin du parcours on se replace au */
-                        decalageYMur=5;                      /**bord bas du mur et on recommence*/
+                    if((decalageXMur<=0)&&(decalageYMur==0)){/**!<A la fin du parcours on se replace au */
+                        decalageYMur=5;                      /**!<bord bas du mur et on recommence*/
                         decalageXMur=MurGetTailleX(unMur);
                     }
                 }
-                    /**Enfin on crée la zone de danger au début du mur au bord haut puis au bord bas*/
+                    /**!<Enfin on crée la zone de danger au début du mur au bord haut puis au bord bas*/
                 indiceLigne=floor((MurGetPositionY(unMur)+0)/_Precision_Analyse_IA);
                 indiceColonne=floor((MurGetPositionX(unMur)+0)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
@@ -719,7 +696,7 @@ short int choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_
         unJoueur=JeuGetIemeJoueurs(jeu,i);
         if(JoueurGetNumeroJoueur(joueurIA)!=JoueurGetNumeroJoueur(unJoueur)){
             directionJoueur=MotoGetDirection(JoueurGetMoto(unJoueur));
-            if(directionJoueur==HAUT){/**On prend pour position du joueur le devant de sa moto
+            if(directionJoueur==HAUT){/**!<On prend pour position du joueur le devant de sa moto
                                         Si cette case est inaccessible on prend une case plus loin*/
                 ligne=floor((MotoGetPositionY(JoueurGetMoto(unJoueur)))/_Precision_Analyse_IA);
                 colonne=floor((MotoGetPositionX(JoueurGetMoto(unJoueur))+2.5)/_Precision_Analyse_IA);
@@ -778,7 +755,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
     short int distanceTemp,distanceMin=32000,
             distanceSecurite=ceil((MotoGetVitesse(JoueurGetMoto(joueurIA))+1)/_Precision_Analyse_IA);
     char boolDistanceValide=1;
-    if((directionCourante==HAUT)||(directionCourante==GAUCHE)){/**on crée 2 points pour définir la hitBox de la moto*/
+    if((directionCourante==HAUT)||(directionCourante==GAUCHE)){/**!<on crée 2 points pour définir la hitBox de la moto*/
         ligne1=floor(((MotoGetPositionY(JoueurGetMoto(joueurIA))+0))/_Precision_Analyse_IA);
         colonne1=floor(((MotoGetPositionX(JoueurGetMoto(joueurIA))+0))/_Precision_Analyse_IA);
         ligne2=floor(((MotoGetPositionY(JoueurGetMoto(joueurIA))+5))/_Precision_Analyse_IA);
@@ -801,9 +778,9 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
         }
     }
 
-    if((JoueurGetJoueurCible(joueurIA)==0)){/**Si on a pas de cible, l'IA essaie de survivre sans se bloquer*/
+    if((JoueurGetJoueurCible(joueurIA)==0)){/**!<Si on a pas de cible, l'IA essaie de survivre sans se bloquer*/
         if(directionCourante==HAUT){
-            /**Amélioration possible : fonction aireGrilleDistance qui détermine le choix de direction
+            /**!<Amélioration possible : fonction aireGrilleDistance qui détermine le choix de direction
             selon la place disponible ou même selon le mur qui va disparaitre le plus tôt */
             if(colonne1>=distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
@@ -811,12 +788,12 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                         boolDistanceValide=0;
                     }
                 }
-                if(boolDistanceValide==1){/**Si la position a gauche de la moto est libre, */
-                    JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));        /**On tourne à gauche*/
+                if(boolDistanceValide==1){/**!<Si la position a gauche de la moto est libre, */
+                    JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));        /**!<On tourne à gauche*/
                 }
                 else{
-                    if(ligne1<distanceSecurite){/**Si la position devant la moto est bloquée,*/
-                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                    if(ligne1<distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
+                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                     }
                     else{
                         boolDistanceValide=1;
@@ -825,15 +802,15 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                                 boolDistanceValide=0;
                             }
                         }
-                        if(boolDistanceValide==0){/**Si la position devant la moto est bloquée,*/
-                            JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                        if(boolDistanceValide==0){/**!<Si la position devant la moto est bloquée,*/
+                            JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                         }
                     }
                 }
             }
             else{
-                if(ligne1<distanceSecurite){/**Si la position devant la moto est bloquée,*/
-                    JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                if(ligne1<distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
+                    JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                 }
                 else{
                     boolDistanceValide=1;
@@ -842,15 +819,15 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                             boolDistanceValide=0;
                         }
                     }
-                    if(boolDistanceValide==0){/**Si la position devant la moto est bloquée,*/
-                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**alors on tourne à droite*/
+                    if(boolDistanceValide==0){/**!<Si la position devant la moto est bloquée,*/
+                        JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                     }
                 }
             }
         }
         else{
-            if(directionCourante==BAS){ /**Si la moto va vers le bas, elle essaie de continuer à descendre,*/
-                if(ligne2>(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){ /**jusqu'à ce que le bas soit bloqué*/
+            if(directionCourante==BAS){ /**!<Si la moto va vers le bas, elle essaie de continuer à descendre,*/
+                if(ligne2>(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){ /**!<jusqu'à ce que le bas soit bloqué*/
                    if(colonne1>=distanceSecurite){
                        boolDistanceValide=1;
                        for(i=1;i<=distanceSecurite;i++){
@@ -876,7 +853,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                             boolDistanceValide=0;
                         }
                     }
-                    if(boolDistanceValide==0){ /**jusqu'à ce que le bas soit bloqué*/
+                    if(boolDistanceValide==0){ /**!<jusqu'à ce que le bas soit bloqué*/
                         if(colonne1>=distanceSecurite){
                            boolDistanceValide=1;
                            for(i=1;i<=distanceSecurite;i++){
@@ -992,7 +969,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 }
             }
         }
-    }/**Fin de l'algo de survie, ci-dessous l'IA essaie de suivre l'adversaire pour le bloquer*/
+    }/**!<Fin de l'algo de survie, ci-dessous l'IA essaie de suivre l'adversaire pour le bloquer*/
     else{
         if(JoueurGetNumeroJoueur(joueurIA)==JoueurGetJoueurCible(joueurIA)){
         }

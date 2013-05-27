@@ -20,38 +20,86 @@ typedef struct{
     FMOD_SOUND **sonCourt;
     FMOD_SOUND **musiqueDuJeu;
 }Musique;
-
-/**assesseur de BaseDuSon*/
+/**
+ * \fn MusiqueGetBaseDuSon
+ * \brief assesseur de BaseDuSon
+ * \param Musique *musique
+ * \return FMOD_SYSTEM*
+ */
 FMOD_SYSTEM* MusiqueGetBaseDuSon(Musique *musique);
-/**assesseur du ieme Son Court*/
+/**
+ * \fn MusiqueGetIemeSonCourt
+ * \brief assesseur de BaseDuSon
+ * \param Musique *musique,int i
+ * \return FMOD_SOUND*
+ */
 FMOD_SOUND* MusiqueGetIemeSonCourt(Musique *musique,int i);
-/**assesseur de la ieme musique du jeu*/
+/**
+ * \fn MusiqueGetIemeMusiqueDuJeu
+ * \brief assesseur de la ieme musique du jeu
+ * \param Musique *musique,int i
+ * \return FMOD_SOUND*
+ */
 FMOD_SOUND* MusiqueGetIemeMusiqueDuJeu(Musique *musique,int i);
-
-/**mutateur de BaseDuSon*/
+/**
+ * \fn MusiqueSetBaseDuSon
+ * \brief mutateur de BaseDuSon
+ * \param Musique *musique,FMOD_SYSTEM *baseDuSon
+ */
 void MusiqueSetBaseDuSon(Musique *musique,FMOD_SYSTEM *baseDuSon);
-/**mutateur du ieme SonCourt*/
+/**
+ * \fn MusiqueSetIemeSonCourt
+ * \brief mutateur du ieme SonCourt
+ * \param Musique *musique,FMOD_SOUND* unSon,int i
+ */
 void MusiqueSetIemeSonCourt(Musique *musique,FMOD_SOUND* unSon,int i);
-/**mutateur de la ieme musique du Jeu*/
+/**
+ * \fn MusiqueSetIemeMusiqueDuJeu
+ * \brief mutateur de la ieme musique du Jeu
+ * \param Musique *musique,FMOD_SOUND* unSon,int i
+ */
 void MusiqueSetIemeMusiqueDuJeu(Musique *musique,FMOD_SOUND* unSon,int i);
 
-/**fonction qui affecte une tableau de sonsCourt au champs sonCourt de la structure musique*/
+/**
+ * \fn MusiqueSetSonCourt
+ * \brief fonction qui affecte une tableau de sonsCourt au champs sonCourt de la structure musique
+ * \param Musique *musique,FMOD_SOUND **SonCourt
+ */
 void MusiqueSetSonCourt(Musique *musique,FMOD_SOUND **SonCourt);
-/**fonction qui affecte une tablau de musique au champs musique de jeu*/
+/**
+ * \fn MusiqueSetMusiqueDuJeu
+ * \brief fonction qui affecte une tablau de musique au champs musique de jeu
+ * \param Musique *musique,FMOD_SOUND **musiqueDuJeu
+ */
 void MusiqueSetMusiqueDuJeu(Musique *musique,FMOD_SOUND **musiqueDuJeu);
-
-/**constructeur du Musique*/
+/**
+ * \fn MusiqueConstructeur
+ * \brief constructeur du Musique
+ * \param Musique *musique
+ */
 void MusiqueConstructeur(Musique *musique);
-
-/**Destructeur de Musique*/
+/**
+ * \fn MusiqueDestructeur
+ * \brief Destructeur du Musique
+ * \param Musique *musique
+ */
 void MusiqueDestructeur(Musique *musique);
-
-/** fonction qui joue le Ieme son Court*/
+/**
+ * \fn JouerIemeSonCourt
+ * \brief fonction qui joue le Ieme son Court
+ * \param Musique *musique,int i
+ */
 void JouerIemeSonCourt(Musique *musique,int i);
-/** fonction qui joue la Ieme Musique*/
+/**
+ * \fn JouerIemeSonCourt
+ * \brief fonction qui joue la Ieme Musique
+ * \param Musique *musique,int i,int repetition
+ */
 void JouerIemeMusique(Musique *musique,int i,int repetition);
-
-/**fonction qui teste le module*/
+/**
+ * \fn MusiqueTestRegression
+ * \brief fonction qui teste le Module
+ */
 void MusiqueTestRegression();
 
 
