@@ -1,5 +1,5 @@
-\hypertarget{Joueur_8c}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Joueur.c}
-\label{Joueur_8c}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Joueur.\-c@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Joueur.\-c}}
+\hypertarget{Joueur_8c}{\section{Référence du fichier Joueur.\-c}
+\label{Joueur_8c}\index{Joueur.\-c@{Joueur.\-c}}
 }
 
 
@@ -22,57 +22,57 @@ Graphe des dépendances par inclusion de Joueur.\-c\-:\nopagebreak
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structMoto}{Moto} $\ast$ \hyperlink{Joueur_8c_a3c09cd1a406f9909b24201539e1d3d49}{Joueur\-Get\-Moto} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+void \hyperlink{Joueur_8c_a7727f84c34d3fd32cc6f9c2ed84cf0b0}{Joueur\-Constructeur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMoto}{Moto} $\ast$moto, \hyperlink{structControle}{Controle} $\ast$controle, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, \hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet\-Actuel, short int numero\-Manette, short int numero\-Joueur, short int bool\-I\-A)
+\item 
+void \hyperlink{Joueur_8c_a535ea5e3fdedcdbcc7e9d84cb3b7b75e}{Joueur\-Destructeur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{Joueur_8c_a0b913ee2eb6d62f1c2cf10a6bb45c828}{Joueur\-Get\-Bool\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{Joueur_8c_a1c1f4a97676079b24229c073408d340b}{Joueur\-Get\-Booltourne} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 \hyperlink{structControle}{Controle} $\ast$ \hyperlink{Joueur_8c_afc9df65c1a7c306e987f1246a5f53b87}{Joueur\-Get\-Controle} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} \hyperlink{Joueur_8c_ab174573f7233afa24b6b2029e2427a96}{Joueur\-Get\-Couleur} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
-\hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} \hyperlink{Joueur_8c_a59fc2f0e1b118c958bc22bde81fe619d}{Joueur\-Get\-En\-Jeu} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\hyperlink{structMur}{Mur} $\ast$ \hyperlink{Joueur_8c_a9df1787fbad3851b301eb03f3e5bdf48}{Joueur\-Get\-Dernier\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} \hyperlink{Joueur_8c_afe1d98d25a2a9915a619095e63a37d28}{Joueur\-Get\-Effet\-Bonus} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} \hyperlink{Joueur_8c_a59fc2f0e1b118c958bc22bde81fe619d}{Joueur\-Get\-En\-Jeu} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{Joueur_8c_a7108e6f90ec1b61b4c62b55d234d6143}{Joueur\-Get\-Joueur\-Cible} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{structMoto}{Moto} $\ast$ \hyperlink{Joueur_8c_a3c09cd1a406f9909b24201539e1d3d49}{Joueur\-Get\-Moto} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{Joueur_8c_ae0849d40938feaf7a829289eb20971ab}{Joueur\-Get\-Numero\-Joueur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 short int \hyperlink{Joueur_8c_a72ad3b3bcf7dcca662d019c58f983468}{Joueur\-Get\-Numero\-Manette} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 int \hyperlink{Joueur_8c_a780868d4eb761d68abce085a2b040349}{Joueur\-Get\-Temps\-Bonus} (const \hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
-\hyperlink{structMur}{Mur} $\ast$ \hyperlink{Joueur_8c_a9df1787fbad3851b301eb03f3e5bdf48}{Joueur\-Get\-Dernier\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+void \hyperlink{Joueur_8c_aee2c26808a926100a0497f615ece9979}{Joueur\-Set\-Bool\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int bool\-I\-A)
 \item 
-short int \hyperlink{Joueur_8c_a1c1f4a97676079b24229c073408d340b}{Joueur\-Get\-Booltourne} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-short int \hyperlink{Joueur_8c_ae0849d40938feaf7a829289eb20971ab}{Joueur\-Get\-Numero\-Joueur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-short int \hyperlink{Joueur_8c_a0b913ee2eb6d62f1c2cf10a6bb45c828}{Joueur\-Get\-Bool\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-short int \hyperlink{Joueur_8c_a7108e6f90ec1b61b4c62b55d234d6143}{Joueur\-Get\-Joueur\-Cible} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-void \hyperlink{Joueur_8c_a1e3513e25a86b80327d96ad2fddd160c}{Joueur\-Set\-Moto} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMoto}{Moto} $\ast$moto)
+void \hyperlink{Joueur_8c_aac0438d709a0c17cf579b0f4224ebbee}{Joueur\-Set\-Booltourne} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int bool\-Tourne)
 \item 
 void \hyperlink{Joueur_8c_a9af06734120dc02a68f4520e19473368}{Joueur\-Set\-Controle} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structControle}{Controle} $\ast$controle)
 \item 
 void \hyperlink{Joueur_8c_a308e870320d2641a5582bb546c6d21fc}{Joueur\-Set\-Couleur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur)
 \item 
-void \hyperlink{Joueur_8c_a39b0f2a497b5ac7a2284513a9e19feaf}{Joueur\-Set\-En\-Jeu} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu)
+void \hyperlink{Joueur_8c_adeb829f19b298f3eec06c7b13ee0c430}{Joueur\-Set\-Dernier\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMur}{Mur} $\ast$un\-Mur)
 \item 
 void \hyperlink{Joueur_8c_ab9b0084e52b37643b7540ef384c76f22}{Joueur\-Set\-Effet\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
+\item 
+void \hyperlink{Joueur_8c_a39b0f2a497b5ac7a2284513a9e19feaf}{Joueur\-Set\-En\-Jeu} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu)
+\item 
+void \hyperlink{Joueur_8c_a9e3ee59830e0287bd639173c344ab845}{Joueur\-Set\-Joueur\-Cible} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int numero)
+\item 
+void \hyperlink{Joueur_8c_a1e3513e25a86b80327d96ad2fddd160c}{Joueur\-Set\-Moto} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMoto}{Moto} $\ast$moto)
+\item 
+void \hyperlink{Joueur_8c_ab4930b1fbe66da4157c708b47d9a3f5b}{Joueur\-Set\-Numero\-Joueur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int numero)
 \item 
 void \hyperlink{Joueur_8c_a48903f3392e108482e958c7de74ea21c}{Joueur\-Set\-Numero\-Manette} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int numero)
 \item 
 void \hyperlink{Joueur_8c_a867959894ba0095f6c5d3799b8fa892f}{Joueur\-Set\-Temps\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, int temps\-Bonus)
-\item 
-void \hyperlink{Joueur_8c_adeb829f19b298f3eec06c7b13ee0c430}{Joueur\-Set\-Dernier\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMur}{Mur} $\ast$un\-Mur)
-\item 
-void \hyperlink{Joueur_8c_aac0438d709a0c17cf579b0f4224ebbee}{Joueur\-Set\-Booltourne} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int bool\-Tourne)
-\item 
-void \hyperlink{Joueur_8c_ab4930b1fbe66da4157c708b47d9a3f5b}{Joueur\-Set\-Numero\-Joueur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int numero)
-\item 
-void \hyperlink{Joueur_8c_aee2c26808a926100a0497f615ece9979}{Joueur\-Set\-Bool\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int bool\-I\-A)
-\item 
-void \hyperlink{Joueur_8c_a9e3ee59830e0287bd639173c344ab845}{Joueur\-Set\-Joueur\-Cible} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, short int numero)
-\item 
-void \hyperlink{Joueur_8c_a7727f84c34d3fd32cc6f9c2ed84cf0b0}{Joueur\-Constructeur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structMoto}{Moto} $\ast$moto, \hyperlink{structControle}{Controle} $\ast$controle, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, \hyperlink{Joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet\-Actuel, short int numero\-Manette, short int numero\-Joueur, short int bool\-I\-A)
-\item 
-void \hyperlink{Joueur_8c_a535ea5e3fdedcdbcc7e9d84cb3b7b75e}{Joueur\-Destructeur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
 \item 
 void \hyperlink{Joueur_8c_ad628d18447d13fd4d2782e1a556c9cc3}{Joueur\-Test\-Regression} ()
 \begin{DoxyCompactList}\small\item\em Procedure qui teste le module \hyperlink{structJoueur}{Joueur}. \end{DoxyCompactList}\end{DoxyCompactItemize}

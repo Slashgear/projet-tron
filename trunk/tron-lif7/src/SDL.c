@@ -1,9 +1,9 @@
 /**
-*\file [SDL.c]
-*@brief Module qui gère les affichage du jeu,ainsi que les manettes
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 19 mars 2013
+	\file [SDL.c]
+	 Module qui gère les affichage du jeu,ainsi que les manettes
+	\author {Antoine.C,Matthieu.B}
+	\version 0.1
+	\date 19 mars 2013
 */
 #include "Jeu.h"
 #include "SDL.h"

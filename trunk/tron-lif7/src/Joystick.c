@@ -1,9 +1,9 @@
 /**
-*\file [Joystick.c]
-*@brief Module des manettes
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 11 avril 2013
+	\file [Joystick.c]
+	 Module des manettes
+	\author {Antoine.C,Matthieu.B}
+	\version 0.1
+	\date 11 avril 2013
 */
 #include <stdlib.h>
 #include <SDL/SDL.h>

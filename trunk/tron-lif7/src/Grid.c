@@ -1,9 +1,9 @@
 /**
-*\file [Grid.c]
-*@brief Module des vecteurs
-*\author {Antoine.C,Matthieu.B}
-*\version 1.0
-*\date 13 mars 2013
+	\file [Grid.c]
+	 Module des vecteurs
+	\author {Antoine.C,Matthieu.B}
+	\version 1.0
+	\date 13 mars 2013
 */
 #include<stdlib.h>
 #include<stdio.h>

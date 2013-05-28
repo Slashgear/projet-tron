@@ -1,8 +1,8 @@
-<map id="/home/matthieu/Projet/tron&#45;lif7/src/Joueur.c" name="/home/matthieu/Projet/tron&#45;lif7/src/Joueur.c">
-<area shape="rect" id="node7" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="200,101,272,131"/>
-<area shape="rect" id="node9" href="$Controle_8h.html" title="Module qui défini les Controles." alt="" coords="107,179,189,208"/>
-<area shape="rect" id="node15" href="$Moto_8h.html" title="Module des Motos du jeu." alt="" coords="21,179,83,208"/>
-<area shape="rect" id="node18" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="301,256,379,285"/>
-<area shape="rect" id="node20" href="$EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="341,179,440,208"/>
-<area shape="rect" id="node22" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="213,179,267,208"/>
+<map id="Joueur.c" name="Joueur.c">
+<area shape="rect" id="node7" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="200,83,272,112"/>
+<area shape="rect" id="node9" href="$Controle_8h.html" title="Module qui défini les Controles." alt="" coords="107,160,189,189"/>
+<area shape="rect" id="node15" href="$Moto_8h.html" title="Module des Motos du jeu." alt="" coords="21,160,83,189"/>
+<area shape="rect" id="node18" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="301,237,379,267"/>
+<area shape="rect" id="node20" href="$EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="341,160,440,189"/>
+<area shape="rect" id="node22" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="213,160,267,189"/>
 </map>

@@ -1,5 +1,5 @@
-\hypertarget{Mur_8h}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Mur.h}
-\label{Mur_8h}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Mur.\-h@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Mur.\-h}}
+\hypertarget{Mur_8h}{\section{Référence du fichier Mur.\-h}
+\label{Mur_8h}\index{Mur.\-h@{Mur.\-h}}
 }
 
 
@@ -23,13 +23,23 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \includegraphics[width=350pt]{Mur_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\subsection*{Structures de données}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structMur}{Mur}
 \begin{DoxyCompactList}\small\item\em Structure d'un \hyperlink{structMur}{Mur}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Mur_8h_a5b1e2027147808ddbccc9c211f929f9e}{Affiche\-Stats\-Mur} (\hyperlink{structMur}{Mur} $\ast$mur)
+\item 
+void \hyperlink{Mur_8h_a48159b7842108cf44f51dfba06fae844}{Mur\-Constructeur} (\hyperlink{structMur}{Mur} $\ast$mur, float pos\-X, float pos\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, float duree\-Vie)
+\item 
+void \hyperlink{Mur_8h_a1661630a97686483f104c48fd06dec8e}{Mur\-Destructeur} (\hyperlink{structMur}{Mur} $\ast$mur)
+\item 
+\hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} \hyperlink{Mur_8h_a9b9c7924d6ba7afb0fe4daef7cf58d8d}{Mur\-Get\-Couleur} (const \hyperlink{structMur}{Mur} $\ast$mur)
+\item 
+float \hyperlink{Mur_8h_a0150e2edbf0f0c8a60df0b8c261835e2}{Mur\-Get\-Duree\-Vie} (const \hyperlink{structMur}{Mur} $\ast$mur)
 \item 
 float \hyperlink{Mur_8h_a242796bbf2bac8399f38a190f18edfbc}{Mur\-Get\-Position\-X} (const \hyperlink{structMur}{Mur} $\ast$mur)
 \item 
@@ -39,9 +49,9 @@ unsigned int \hyperlink{Mur_8h_abeddf3763bcdb728a7e3bac665a64552}{Mur\-Get\-Tail
 \item 
 unsigned int \hyperlink{Mur_8h_ab0f66438f4a38b71a243bad168ee0178}{Mur\-Get\-Taille\-Y} (const \hyperlink{structMur}{Mur} $\ast$mur)
 \item 
-\hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} \hyperlink{Mur_8h_a9b9c7924d6ba7afb0fe4daef7cf58d8d}{Mur\-Get\-Couleur} (const \hyperlink{structMur}{Mur} $\ast$mur)
+void \hyperlink{Mur_8h_a363d065942b92543a4cd0324531a7aa6}{Mur\-Set\-Couleur} (\hyperlink{structMur}{Mur} $\ast$mur, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur)
 \item 
-float \hyperlink{Mur_8h_a0150e2edbf0f0c8a60df0b8c261835e2}{Mur\-Get\-Duree\-Vie} (const \hyperlink{structMur}{Mur} $\ast$mur)
+void \hyperlink{Mur_8h_a7c8ffaab1a81e082767ee865573f6813}{Mur\-Set\-Duree\-Vie} (\hyperlink{structMur}{Mur} $\ast$mur, float duree\-Vie)
 \item 
 void \hyperlink{Mur_8h_acef090d8aa04a7f2c059113ef5fff387}{Mur\-Set\-Position\-X} (\hyperlink{structMur}{Mur} $\ast$mur, float pos\-X)
 \item 
@@ -50,16 +60,6 @@ void \hyperlink{Mur_8h_a09e4ebc64953687f4887b95204db41e2}{Mur\-Set\-Position\-Y}
 void \hyperlink{Mur_8h_a12cb4b9c7117a03037cb836ce53864dc}{Mur\-Set\-Taille\-X} (\hyperlink{structMur}{Mur} $\ast$mur, unsigned int taille\-X)
 \item 
 void \hyperlink{Mur_8h_a0749cb2928457b9738b542c3e83f3176}{Mur\-Set\-Taille\-Y} (\hyperlink{structMur}{Mur} $\ast$mur, unsigned int taille\-Y)
-\item 
-void \hyperlink{Mur_8h_a363d065942b92543a4cd0324531a7aa6}{Mur\-Set\-Couleur} (\hyperlink{structMur}{Mur} $\ast$mur, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur)
-\item 
-void \hyperlink{Mur_8h_a7c8ffaab1a81e082767ee865573f6813}{Mur\-Set\-Duree\-Vie} (\hyperlink{structMur}{Mur} $\ast$mur, float duree\-Vie)
-\item 
-void \hyperlink{Mur_8h_a5b1e2027147808ddbccc9c211f929f9e}{Affiche\-Stats\-Mur} (\hyperlink{structMur}{Mur} $\ast$mur)
-\item 
-void \hyperlink{Mur_8h_a48159b7842108cf44f51dfba06fae844}{Mur\-Constructeur} (\hyperlink{structMur}{Mur} $\ast$mur, float pos\-X, float pos\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, float duree\-Vie)
-\item 
-void \hyperlink{Mur_8h_a1661630a97686483f104c48fd06dec8e}{Mur\-Destructeur} (\hyperlink{structMur}{Mur} $\ast$mur)
 \item 
 void \hyperlink{Mur_8h_ac8810857667a124157a1143ad96c2435}{Mur\-Test\-Regression} ()
 \begin{DoxyCompactList}\small\item\em Procédure qui teste le Module. \end{DoxyCompactList}\end{DoxyCompactItemize}

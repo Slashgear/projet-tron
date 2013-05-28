@@ -1,5 +1,5 @@
-\hypertarget{Grid_8h}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Grid.h}
-\label{Grid_8h}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Grid.\-h@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Grid.\-h}}
+\hypertarget{Grid_8h}{\section{Référence du fichier Grid.\-h}
+\label{Grid_8h}\index{Grid.\-h@{Grid.\-h}}
 }
 
 
@@ -14,7 +14,7 @@ Graphe des dépendances par inclusion de Grid.\-h\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{Grid_8h__incl}
+\includegraphics[width=275pt]{Grid_8h__incl}
 \end{center}
 \end{figure}
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
@@ -24,13 +24,25 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \includegraphics[width=350pt]{Grid_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\subsection*{Structures de données}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structGrid}{Grid}
 \begin{DoxyCompactList}\small\item\em Structure de la grille. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Grid_8h_a7c5242962aa4ad47998bb4d04c4a3738}{ajoute\-Mur} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs, \hyperlink{structMur}{Mur} mur)
+\item 
+void \hyperlink{Grid_8h_a84ff8aa0929298d2570fd909d90c7a17}{decremente\-Vie\-Mur} (\hyperlink{structGrid}{Grid} $\ast$grille)
+\item 
+void \hyperlink{Grid_8h_aa92f26b6a71343e3c05d7bf8fc218bb2}{efface\-Mur} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
+\item 
+void \hyperlink{Grid_8h_a214707008d196d1e43ba28528bfe7f95}{Grid\-Constructeur} (\hyperlink{structGrid}{Grid} $\ast$, float, float, unsigned int, unsigned int, \hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$)
+\item 
+void \hyperlink{Grid_8h_a5055e1bc05a5a03b8974301f64541ce5}{Grid\-Destructeur} (\hyperlink{structGrid}{Grid} $\ast$grille)
+\item 
+\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$ \hyperlink{Grid_8h_a90571a2b8569148c5adb00a0d1c8f78e}{Grid\-Get\-Mes\-Murs} (\hyperlink{structGrid}{Grid} $\ast$)
 \item 
 float \hyperlink{Grid_8h_af3c58e084a35908474f7148cf177e717}{Grid\-Get\-Position\-X} (const \hyperlink{structGrid}{Grid} $\ast$)
 \item 
@@ -40,7 +52,7 @@ unsigned int \hyperlink{Grid_8h_ae4c0acd7634c52be99782403daf71f8e}{Grid\-Get\-Ta
 \item 
 unsigned int \hyperlink{Grid_8h_ab1b8157d42bd3763ead211ede9c667cc}{Grid\-Get\-Taille\-Y} (const \hyperlink{structGrid}{Grid} $\ast$)
 \item 
-\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$ \hyperlink{Grid_8h_a90571a2b8569148c5adb00a0d1c8f78e}{Grid\-Get\-Mes\-Murs} (\hyperlink{structGrid}{Grid} $\ast$)
+void \hyperlink{Grid_8h_a707a4949087945113f1105e38449eaff}{Grid\-Set\-Mes\-Murs} (\hyperlink{structGrid}{Grid} $\ast$, \hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$)
 \item 
 void \hyperlink{Grid_8h_a55dea47bf264d8c4c5f7ddf2584b3ec8}{Grid\-Set\-Position\-X} (\hyperlink{structGrid}{Grid} $\ast$grille, float pos\-X)
 \item 
@@ -50,22 +62,10 @@ void \hyperlink{Grid_8h_a2f666baeec2f8712d60670e2ea196257}{Grid\-Set\-Taille\-X}
 \item 
 void \hyperlink{Grid_8h_a7a7251a47cde9f4a26fd33145dab565f}{Grid\-Set\-Taille\-Y} (\hyperlink{structGrid}{Grid} $\ast$, unsigned int)
 \item 
-void \hyperlink{Grid_8h_a707a4949087945113f1105e38449eaff}{Grid\-Set\-Mes\-Murs} (\hyperlink{structGrid}{Grid} $\ast$, \hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$)
-\item 
-void \hyperlink{Grid_8h_a214707008d196d1e43ba28528bfe7f95}{Grid\-Constructeur} (\hyperlink{structGrid}{Grid} $\ast$, float, float, unsigned int, unsigned int, \hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$)
-\item 
-void \hyperlink{Grid_8h_a5055e1bc05a5a03b8974301f64541ce5}{Grid\-Destructeur} (\hyperlink{structGrid}{Grid} $\ast$grille)
-\item 
-void \hyperlink{Grid_8h_a7c5242962aa4ad47998bb4d04c4a3738}{ajoute\-Mur} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs, \hyperlink{structMur}{Mur} mur)
-\item 
-void \hyperlink{Grid_8h_aa92f26b6a71343e3c05d7bf8fc218bb2}{efface\-Mur} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
-\item 
-void \hyperlink{Grid_8h_a0e28e84d588ce2e55bbc743bb21c8731}{nettoie\-Grid} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
-\item 
-void \hyperlink{Grid_8h_a84ff8aa0929298d2570fd909d90c7a17}{decremente\-Vie\-Mur} (\hyperlink{structGrid}{Grid} $\ast$grille)
-\item 
 void \hyperlink{Grid_8h_a0c7fd37261e2118a2233698fb898f52a}{Grid\-Test\-Regression} ()
-\begin{DoxyCompactList}\small\item\em procédure de Test du module \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em procédure de Test du module \end{DoxyCompactList}\item 
+void \hyperlink{Grid_8h_a0e28e84d588ce2e55bbc743bb21c8731}{nettoie\-Grid} (\hyperlink{structTableauDynamiqueMur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}

@@ -1,9 +1,9 @@
 /**
-*\file [Jeu.c]
-*@brief Module centrale du Jeu
-*\author {Antoine.C,Matthieu.B}
-*\version 2.1
-*\date 13 mars 2013
+    \file [Jeu.c]
+    Module centrale du Jeu
+    \author {Antoine.C,Matthieu.B}
+    \version 2.1
+    \date 13 mars 2013
 */
 #include "Jeu.h"
 #include "Joueur.h"

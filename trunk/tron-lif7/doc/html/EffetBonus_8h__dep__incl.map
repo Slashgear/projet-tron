@@ -1,11 +1,11 @@
-<map id="/home/matthieu/Projet/tron&#45;lif7/src/EffetBonus.h" name="/home/matthieu/Projet/tron&#45;lif7/src/EffetBonus.h">
-<area shape="rect" id="node3" href="$Bonus_8c.html" title="Module des Bonus du jeu." alt="" coords="5,294,155,341"/>
-<area shape="rect" id="node5" href="$Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="320,102,469,149"/>
-<area shape="rect" id="node22" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="565,102,715,149"/>
-<area shape="rect" id="node8" href="$Jeu_8h.html" title="Module centrale du Jeu." alt="" coords="320,198,469,245"/>
-<area shape="rect" id="node13" href="$main_8c.html" title="main.c" alt="" coords="384,390,533,437"/>
-<area shape="rect" id="node11" href="$Jeu_8c.html" title="Module centrale du Jeu." alt="" coords="453,294,603,341"/>
-<area shape="rect" id="node15" href="$SDL_8h.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="229,294,379,341"/>
-<area shape="rect" id="node18" href="$SDL_8c.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="185,390,335,437"/>
-<area shape="rect" id="node26" href="$Joueur_8c.html" title="Module des Joueurs." alt="" coords="728,198,877,245"/>
+<map id="EffetBonus.h" name="EffetBonus.h">
+<area shape="rect" id="node3" href="$Bonus_8c.html" title="Module des Bonus du jeu." alt="" coords="5,237,75,267"/>
+<area shape="rect" id="node5" href="$Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="200,83,269,112"/>
+<area shape="rect" id="node22" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="337,83,409,112"/>
+<area shape="rect" id="node8" href="$Jeu_8h.html" title="Module centrale du Jeu." alt="" coords="208,160,261,189"/>
+<area shape="rect" id="node13" href="$main_8c.html" title="main.c" alt="" coords="235,315,296,344"/>
+<area shape="rect" id="node11" href="$Jeu_8c.html" title="Module centrale du Jeu." alt="" coords="283,237,336,267"/>
+<area shape="rect" id="node15" href="$SDL_8h.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="149,237,208,267"/>
+<area shape="rect" id="node18" href="$SDL_8c.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="128,315,187,344"/>
+<area shape="rect" id="node26" href="$Joueur_8c.html" title="Module des Joueurs." alt="" coords="461,160,533,189"/>
 </map>

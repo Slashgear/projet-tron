@@ -1,7 +1,7 @@
 /**
 \file [main.c]
-@brief main.c
-\author {Antoine.C,Matthieu.B}
+	\brief main.c
+	\author {Antoine.C,Matthieu.B}
 \version 1.0
 \date 13 mars 2013
 */
