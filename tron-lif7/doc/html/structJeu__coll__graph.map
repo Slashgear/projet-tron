@@ -1,0 +1,10 @@
+<map id="Jeu" name="Jeu">
+<area shape="rect" id="node2" href="$structMusique.html" title="Structure d&#39;une musique." alt="" coords="708,332,777,361"/>
+<area shape="rect" id="node8" href="$structJoueur.html" title="Structure d&#39;un Joueur." alt="" coords="453,385,515,415"/>
+<area shape="rect" id="node10" href="$structControle.html" title="Structure d&#39;un Controle." alt="" coords="211,161,280,191"/>
+<area shape="rect" id="node16" href="$structMur.html" title="Structure d&#39;un Mur." alt="" coords="224,468,267,497"/>
+<area shape="rect" id="node36" href="$structTableauDynamiqueMur.html" title="Structure d&#39;un TableauDynamiqueMur." alt="" coords="407,753,561,783"/>
+<area shape="rect" id="node24" href="$structMoto.html" title="Structure d&#39;une Moto." alt="" coords="220,385,271,415"/>
+<area shape="rect" id="node34" href="$structGrid.html" title="Structure de la grille." alt="" coords="720,783,765,812"/>
+<area shape="rect" id="node43" href="$structBonus.html" title="Structure d&#39;un Bonus." alt="" coords="216,528,275,557"/>
+</map>

@@ -1,0 +1,169 @@
+\hypertarget{Bonus_8c}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.c}
+\label{Bonus_8c}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.\-c@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.\-c}}
+}
+
+
+Module des \hyperlink{structBonus}{Bonus} du jeu.  
+
+
+{\ttfamily \#include \char`\"{}Effet\-Bonus.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Bonus.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}time.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Jeu.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Bonus.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Bonus_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{Bonus_8c_ad2300fc873c5fbb081462836491cf0af}{Bonus\-Get\-Position\-X} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+float \hyperlink{Bonus_8c_a96c6e41f28e13bebf9ec054be2adf162}{Bonus\-Get\-Position\-Y} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+unsigned int \hyperlink{Bonus_8c_a945a94dccbb8c3d86e7cfdd1d857b839}{Bonus\-Get\-Taille\-X} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+unsigned int \hyperlink{Bonus_8c_acb6e371434cd8f0a2344f82d9a6a1b3f}{Bonus\-Get\-Taille\-Y} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+\hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} \hyperlink{Bonus_8c_abe0dd0bc842a718d996ba2896c8b9095}{Bonus\-Get\-Effet\-Bonus} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+void \hyperlink{Bonus_8c_a3d2d99a0657d70c3f5377a6ff8086aa4}{Bonus\-Set\-Position\-X} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-X)
+\item 
+void \hyperlink{Bonus_8c_aee7509485ef9e5665df4f6ceb4c3e013}{Bonus\-Set\-Position\-Y} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-Y)
+\item 
+void \hyperlink{Bonus_8c_afcfcf285fd9d03b022fe35d7b7133617}{Bonus\-Set\-Taille\-X} (\hyperlink{structBonus}{Bonus} $\ast$bonus, unsigned int taille\-X)
+\item 
+void \hyperlink{Bonus_8c_a7dc1b0b791bc9511f058196149403618}{Bonus\-Set\-Taille\-Y} (\hyperlink{structBonus}{Bonus} $\ast$bonus, unsigned int taille\-Y)
+\item 
+void \hyperlink{Bonus_8c_a7ea8105e2bb249bf553667f8fa625938}{Bonus\-Set\-Effet\-Bonus} (\hyperlink{structBonus}{Bonus} $\ast$bonus, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
+\item 
+void \hyperlink{Bonus_8c_a50ea247d2b50e6bb7045adc1511b25f8}{Bonus\-Constructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-X, float position\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
+\item 
+void \hyperlink{Bonus_8c_a10400d2cfc7f4779aceaa86d8d65bfe1}{Bonus\-Destructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+void \hyperlink{Bonus_8c_add62f0ba957817fd53131c8b507fda71}{Bonus\-Test\-Regression} ()
+\begin{DoxyCompactList}\small\item\em Test du Module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Module des \hyperlink{structBonus}{Bonus} du jeu. \mbox{]} \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+10 avril 2013 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{Bonus_8c_a50ea247d2b50e6bb7045adc1511b25f8}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Constructeur@{Bonus\-Constructeur}}
+\index{Bonus\-Constructeur@{Bonus\-Constructeur}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{float}]{position\-X, }
+\item[{float}]{position\-Y, }
+\item[{unsigned int}]{taille\-X, }
+\item[{unsigned int}]{taille\-Y, }
+\item[{{\bf Effet\-Bonus}}]{effet}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a50ea247d2b50e6bb7045adc1511b25f8}
+\hypertarget{Bonus_8c_a10400d2cfc7f4779aceaa86d8d65bfe1}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Destructeur@{Bonus\-Destructeur}}
+\index{Bonus\-Destructeur@{Bonus\-Destructeur}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a10400d2cfc7f4779aceaa86d8d65bfe1}
+\hypertarget{Bonus_8c_abe0dd0bc842a718d996ba2896c8b9095}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Get\-Effet\-Bonus@{Bonus\-Get\-Effet\-Bonus}}
+\index{Bonus\-Get\-Effet\-Bonus@{Bonus\-Get\-Effet\-Bonus}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Get\-Effet\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Effet\-Bonus} Bonus\-Get\-Effet\-Bonus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_abe0dd0bc842a718d996ba2896c8b9095}
+\hypertarget{Bonus_8c_ad2300fc873c5fbb081462836491cf0af}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Get\-Position\-X@{Bonus\-Get\-Position\-X}}
+\index{Bonus\-Get\-Position\-X@{Bonus\-Get\-Position\-X}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Get\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}float Bonus\-Get\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_ad2300fc873c5fbb081462836491cf0af}
+\hypertarget{Bonus_8c_a96c6e41f28e13bebf9ec054be2adf162}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Get\-Position\-Y@{Bonus\-Get\-Position\-Y}}
+\index{Bonus\-Get\-Position\-Y@{Bonus\-Get\-Position\-Y}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Get\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}float Bonus\-Get\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a96c6e41f28e13bebf9ec054be2adf162}
+\hypertarget{Bonus_8c_a945a94dccbb8c3d86e7cfdd1d857b839}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Get\-Taille\-X@{Bonus\-Get\-Taille\-X}}
+\index{Bonus\-Get\-Taille\-X@{Bonus\-Get\-Taille\-X}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Get\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Bonus\-Get\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a945a94dccbb8c3d86e7cfdd1d857b839}
+\hypertarget{Bonus_8c_acb6e371434cd8f0a2344f82d9a6a1b3f}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Get\-Taille\-Y@{Bonus\-Get\-Taille\-Y}}
+\index{Bonus\-Get\-Taille\-Y@{Bonus\-Get\-Taille\-Y}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Get\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Bonus\-Get\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Bonus} $\ast$}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_acb6e371434cd8f0a2344f82d9a6a1b3f}
+\hypertarget{Bonus_8c_a7ea8105e2bb249bf553667f8fa625938}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Set\-Effet\-Bonus@{Bonus\-Set\-Effet\-Bonus}}
+\index{Bonus\-Set\-Effet\-Bonus@{Bonus\-Set\-Effet\-Bonus}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Set\-Effet\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Set\-Effet\-Bonus (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{{\bf Effet\-Bonus}}]{effet}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a7ea8105e2bb249bf553667f8fa625938}
+\hypertarget{Bonus_8c_a3d2d99a0657d70c3f5377a6ff8086aa4}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Set\-Position\-X@{Bonus\-Set\-Position\-X}}
+\index{Bonus\-Set\-Position\-X@{Bonus\-Set\-Position\-X}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Set\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Set\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{float}]{position\-X}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a3d2d99a0657d70c3f5377a6ff8086aa4}
+\hypertarget{Bonus_8c_aee7509485ef9e5665df4f6ceb4c3e013}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Set\-Position\-Y@{Bonus\-Set\-Position\-Y}}
+\index{Bonus\-Set\-Position\-Y@{Bonus\-Set\-Position\-Y}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Set\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Set\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{float}]{position\-Y}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_aee7509485ef9e5665df4f6ceb4c3e013}
+\hypertarget{Bonus_8c_afcfcf285fd9d03b022fe35d7b7133617}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Set\-Taille\-X@{Bonus\-Set\-Taille\-X}}
+\index{Bonus\-Set\-Taille\-X@{Bonus\-Set\-Taille\-X}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Set\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Set\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{unsigned int}]{taille\-X}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_afcfcf285fd9d03b022fe35d7b7133617}
+\hypertarget{Bonus_8c_a7dc1b0b791bc9511f058196149403618}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Set\-Taille\-Y@{Bonus\-Set\-Taille\-Y}}
+\index{Bonus\-Set\-Taille\-Y@{Bonus\-Set\-Taille\-Y}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Set\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Bonus\-Set\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Bonus} $\ast$}]{bonus, }
+\item[{unsigned int}]{taille\-Y}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_a7dc1b0b791bc9511f058196149403618}
+\hypertarget{Bonus_8c_add62f0ba957817fd53131c8b507fda71}{\index{Bonus.\-c@{Bonus.\-c}!Bonus\-Test\-Regression@{Bonus\-Test\-Regression}}
+\index{Bonus\-Test\-Regression@{Bonus\-Test\-Regression}!Bonus.c@{Bonus.\-c}}
+\subsubsection[{Bonus\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}Bonus\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Bonus_8c_add62f0ba957817fd53131c8b507fda71}
+
+
+Test du Module. 
+
