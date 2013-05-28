@@ -36,7 +36,7 @@ int JoueurGetTempsBonus(const Joueur *joueur){
     return joueur->tempsBonus;
 }
 Mur* JoueurGetDernierMur(Joueur *joueur){
-    return joueur->dernierMur;
+    return &(joueur->dernierMur);
 }
 short int JoueurGetBooltourne(Joueur *joueur){
     return joueur->boolTourne;
@@ -74,7 +74,7 @@ void JoueurSetTempsBonus(Joueur* joueur, int tempsBonus){
     joueur->tempsBonus=tempsBonus;
 }
 void JoueurSetDernierMur(Joueur* joueur,Mur* unMur){
-    joueur->dernierMur=unMur;
+    joueur->dernierMur=*unMur;
 }
 void JoueurSetBooltourne(Joueur *joueur,short int boolTourne){
     joueur->boolTourne=boolTourne;
@@ -93,6 +93,13 @@ void JoueurSetJoueurCible(Joueur *joueur,short int numero){
 
 void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur couleur, EnJeu enJeu,
                         EffetBonus effetActuel,short int numeroManette,short int numeroJoueur,short int boolIA){
+    Mur mur;
+    MurSetCouleur(&mur,NOIR);
+    MurSetDureeVie(&mur,0);
+    MurSetPositionX(&mur,0);
+    MurSetPositionY(&mur,0);
+    MurSetTailleX(&mur,0);
+    MurSetTailleY(&mur,0);
     JoueurSetMoto(joueur,moto);
     JoueurSetControle(joueur,controle);
     JoueurSetCouleur(joueur,couleur);
@@ -100,13 +107,20 @@ void JoueurConstructeur(Joueur* joueur, Moto* moto, Controle* controle, Couleur 
     JoueurSetEffetBonus(joueur,effetActuel);
     JoueurSetNumeroManette(joueur,numeroManette);
     JoueurSetTempsBonus(joueur,0);
-    JoueurSetDernierMur(joueur,NULL);
+    JoueurSetDernierMur(joueur,&mur);
     JoueurSetBooltourne(joueur,0);
     JoueurSetNumeroJoueur(joueur,numeroJoueur);
     JoueurSetBoolIA(joueur,boolIA);
     JoueurSetJoueurCible(joueur,0);
 }
 void JoueurDestructeur(Joueur* joueur){
+    Mur mur;
+    MurSetCouleur(&mur,NOIR);
+    MurSetDureeVie(&mur,0);
+    MurSetPositionX(&mur,0);
+    MurSetPositionY(&mur,0);
+    MurSetTailleX(&mur,0);
+    MurSetTailleY(&mur,0);
     MotoDestructeur(JoueurGetMoto(joueur));
     ControleDestructeur(JoueurGetControle(joueur));
     JoueurSetCouleur(joueur,NOIR);
@@ -114,7 +128,7 @@ void JoueurDestructeur(Joueur* joueur){
     JoueurSetEffetBonus(joueur,AUCUN);
     JoueurSetNumeroManette(joueur,-1);
     JoueurSetTempsBonus(joueur,0);
-    JoueurSetDernierMur(joueur,NULL);
+    JoueurSetDernierMur(joueur,&mur);
     JoueurSetBooltourne(joueur,0);
     JoueurSetNumeroJoueur(joueur,0);
     JoueurSetBoolIA(joueur,0);

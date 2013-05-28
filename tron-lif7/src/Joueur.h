@@ -29,7 +29,7 @@ typedef struct {
     Controle controle;
     short int numeroManette;
     short int numeroJoueur;
-    Mur* dernierMur;
+    Mur dernierMur;
     short int boolTourne;
     EnJeu enJeu;
     EffetBonus effetActuel;

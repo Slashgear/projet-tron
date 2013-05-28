@@ -106,7 +106,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                             (float)GridGetTailleY(grille) + GridGetPositionY(grille)};
     Mur* dernierMur=JoueurGetDernierMur(joueur);
     float boundingboxDernierMur[4];
-    if(dernierMur!=0){
+    if(MurGetCouleur(dernierMur)!=NOIR){
         boundingboxDernierMur[0]=MurGetPositionX(dernierMur);
         boundingboxDernierMur[1]=MurGetPositionY(dernierMur);
         boundingboxDernierMur[2]=MurGetPositionX(dernierMur)+(float)MurGetTailleX(dernierMur);
@@ -129,7 +129,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
                     (((MurGetDureeVie(unMur))<_Duree_Vie_Mur)||(JoueurGetCouleur(joueur)!=MurGetCouleur(unMur))))
                 {boolCollision = 1;}
                 if((MotoGetVitesse(JoueurGetMoto(joueur))>=10)&&
-                    (dernierMur!=NULL)&&
+                    (MurGetCouleur(dernierMur)!=NOIR)&&
                     (testCollisionGenerique(boundingboxDernierMur,boundingBoxMur))&&
                     ((MurGetDureeVie(unMur)<(_Duree_Vie_Mur))||(MurGetCouleur(unMur)!=MurGetCouleur(dernierMur)))&&
                     ((((MotoGetDirection(JoueurGetMoto(joueur))==HAUT)||(MotoGetDirection(JoueurGetMoto(joueur))==BAS))&&(boundingboxDernierMur[0]!=boundingBoxMur[0]))||
