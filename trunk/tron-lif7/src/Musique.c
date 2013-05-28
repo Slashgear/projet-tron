@@ -1,6 +1,6 @@
 /**
 \file [Musique.c]
-\brief Module des Musiques du jeu
+@brief Module des Musiques du jeu
 \author {Antoine.C,Matthieu.B}
 \version 1.4
 \date 19 avril 2013

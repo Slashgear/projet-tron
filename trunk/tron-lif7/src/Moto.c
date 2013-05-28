@@ -1,6 +1,6 @@
 /**
 \file [Moto.c]
-\brief Module des Motos du jeu
+@brief Module des Motos du jeu
 \author {Antoine.C,Matthieu.B}
 \version 0.1
 \date 13 mars 2013
