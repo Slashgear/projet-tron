@@ -5,6 +5,12 @@ Il s'agit ici de piloter des motos ultra-rapides, un seul but survivre pour gagn
 INSTALLATION:
 	Veuillez avoir installé les librairies suivantes : SDL, SDL_ttf;
 	La librairie FMOD pour le son est déjà dans l'archive.
+	Pour bien faire fonctionner la libFmod et utiliser l'executable "jeu" créer par le make, il faut rajouter une ligne au .bashrc
+	
+	#
+ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/antoine/Projet/tron-lif7/lib/FMOD/lib"
+	
+	
 JOUER:
 	Le plus simple pour jouer est d'avoir codeBlocks afin de pouvoir modifier les constantes du jeu. Dans le fichier Constantes.h
 	Le nombre de joueur est le nombre de joueurs total (IA comprises)
@@ -61,6 +67,8 @@ GAMEPLAY:
 	- relancer une partie avec les mêmes paramètre avec F1
 	
 Bon jeu!
+
+
 				
 		
 		
