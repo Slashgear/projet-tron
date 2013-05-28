@@ -12,12 +12,12 @@
 
 
 void initialiserManette(Manette *manette,int numeroJoystick)
-{
+{   int i;
     if(numeroJoystick < SDL_NumJoysticks())
     {
         manette->joystick = SDL_JoystickOpen(numeroJoystick);
         manette->numero = numeroJoystick;
-        int i;
+
 
 
         manette->boutons = (char*) malloc(SDL_JoystickNumButtons(manette->joystick) * sizeof(char));
@@ -90,15 +90,16 @@ void updateEvent(Manette *manette, SDL_Event evenements)
 
 void JoystickTestRegression(){
 
-SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
-
     Manette manette;
     int i;
     int j;
     SDL_Event evenement;
+    int quitter = 0;
+SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK);
+
+
     SDL_JoystickEventState(SDL_ENABLE);
     initialiserManette(&manette,0);
-    int quitter = 0;
     printf("Nombre de Joystick :%d\n",SDL_NumJoysticks());
     for(i=0;i<SDL_NumJoysticks();i++){
     printf("Nom du joystick numero %d : %s\n",i,SDL_JoystickName(i));
