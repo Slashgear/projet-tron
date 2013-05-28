@@ -1,9 +1,9 @@
 /**
-*\file [Controle.c]
-*@brief Module qui défini les Controles
-*\author {Antoine.C,Matthieu.B}
-*\version 0.1
-*\date 13 mars 2013
+	\file [Controle.c]
+	 Module qui défini les Controles
+	\author {Antoine.C,Matthieu.B}
+	\version 0.1
+	\date 13 mars 2013
 */
 #include"Controle.h"
 #include<stdlib.h>

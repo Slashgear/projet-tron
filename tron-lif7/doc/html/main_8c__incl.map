@@ -1,16 +1,16 @@
-<map id="/home/matthieu/Projet/tron&#45;lif7/src/main.c" name="/home/matthieu/Projet/tron&#45;lif7/src/main.c">
-<area shape="rect" id="node9" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="341,411,395,440"/>
-<area shape="rect" id="node15" href="$Moto_8h.html" title="Module des Motos du jeu." alt="" coords="93,333,155,363"/>
-<area shape="rect" id="node18" href="$Controle_8h.html" title="Module qui défini les Controles." alt="" coords="744,333,827,363"/>
-<area shape="rect" id="node24" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="613,256,685,285"/>
-<area shape="rect" id="node32" href="$Grid_8h.html" title="Module des vecteurs." alt="" coords="424,256,480,285"/>
-<area shape="rect" id="node42" href="$Jeu_8h.html" title="Module centrale du Jeu." alt="" coords="677,179,731,208"/>
-<area shape="rect" id="node46" href="$Constantes_8h.html" title="Module des constantes du jeu." alt="" coords="709,256,808,285"/>
-<area shape="rect" id="node48" href="$Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="520,256,589,285"/>
-<area shape="rect" id="node51" href="$Musique_8h.html" title="Module des Musiques du jeu." alt="" coords="883,256,965,285"/>
-<area shape="rect" id="node55" href="$SDL_8h.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="996,101,1055,131"/>
-<area shape="rect" id="node13" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="340,488,417,517"/>
-<area shape="rect" id="node29" href="$EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="520,333,619,363"/>
-<area shape="rect" id="node37" href="$TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="229,333,395,363"/>
-<area shape="rect" id="node59" href="$Joystick_8h.html" title="Module des manettes." alt="" coords="1165,179,1248,208"/>
+<map id="main.c" name="main.c">
+<area shape="rect" id="node9" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="341,392,395,421"/>
+<area shape="rect" id="node15" href="$Moto_8h.html" title="Module des Motos du jeu." alt="" coords="93,315,155,344"/>
+<area shape="rect" id="node18" href="$Controle_8h.html" title="Module qui défini les Controles." alt="" coords="744,315,827,344"/>
+<area shape="rect" id="node24" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="613,237,685,267"/>
+<area shape="rect" id="node32" href="$Grid_8h.html" title="Module des vecteurs." alt="" coords="424,237,480,267"/>
+<area shape="rect" id="node42" href="$Jeu_8h.html" title="Module centrale du Jeu." alt="" coords="677,160,731,189"/>
+<area shape="rect" id="node46" href="$Constantes_8h.html" title="Module des constantes du jeu." alt="" coords="709,237,808,267"/>
+<area shape="rect" id="node48" href="$Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="520,237,589,267"/>
+<area shape="rect" id="node51" href="$Musique_8h.html" title="Module des Musiques du jeu." alt="" coords="883,237,965,267"/>
+<area shape="rect" id="node55" href="$SDL_8h.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="996,83,1055,112"/>
+<area shape="rect" id="node13" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="340,469,417,499"/>
+<area shape="rect" id="node29" href="$EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="520,315,619,344"/>
+<area shape="rect" id="node37" href="$TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="229,315,395,344"/>
+<area shape="rect" id="node59" href="$Joystick_8h.html" title="Module des manettes." alt="" coords="1165,160,1248,189"/>
 </map>

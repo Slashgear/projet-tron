@@ -1,5 +1,5 @@
-<map id="/home/matthieu/Projet/tron&#45;lif7/src/TableauDynamiqueMur.c" name="/home/matthieu/Projet/tron&#45;lif7/src/TableauDynamiqueMur.c">
-<area shape="rect" id="node3" href="$TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="85,117,251,147"/>
-<area shape="rect" id="node5" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="115,195,168,224"/>
-<area shape="rect" id="node11" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="103,272,180,301"/>
+<map id="TableauDynamiqueMur.c" name="TableauDynamiqueMur.c">
+<area shape="rect" id="node3" href="$TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="73,83,239,112"/>
+<area shape="rect" id="node5" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="103,160,156,189"/>
+<area shape="rect" id="node11" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="91,237,168,267"/>
 </map>

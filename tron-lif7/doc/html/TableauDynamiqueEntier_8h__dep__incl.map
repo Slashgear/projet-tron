@@ -1,4 +1,4 @@
-<map id="/home/matthieu/Projet/tron&#45;lif7/src/TableauDynamiqueEntier.h" name="/home/matthieu/Projet/tron&#45;lif7/src/TableauDynamiqueEntier.h">
-<area shape="rect" id="node3" href="$Jeu_8c.html" title="Module centrale du Jeu." alt="" coords="5,126,155,173"/>
-<area shape="rect" id="node5" href="$TableauDynamiqueEntier_8c.html" title="Module qui gère les tableaux dynamiques d&#39;entier." alt="" coords="179,117,384,181"/>
+<map id="TableauDynamiqueEntier.h" name="TableauDynamiqueEntier.h">
+<area shape="rect" id="node3" href="$Jeu_8c.html" title="Module centrale du Jeu." alt="" coords="5,83,59,112"/>
+<area shape="rect" id="node5" href="$TableauDynamiqueEntier_8c.html" title="Module qui gère les tableaux dynamiques d&#39;entier." alt="" coords="83,83,261,112"/>
 </map>

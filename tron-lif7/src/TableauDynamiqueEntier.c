@@ -1,9 +1,9 @@
 /**
-*\file [TableauDynamiqueEntier.c]
-*@brief Module qui gère les tableaux dynamiques d'entier
-*\author {Antoine.C,Matthieu.B}
-*\version 1.0
-*\date 19 mars 2013
+	\file [TableauDynamiqueEntier.c]
+	 Module qui gère les tableaux dynamiques d'entier
+	\author {Antoine.C,Matthieu.B}
+	\version 1.0
+	\date 19 mars 2013
 */
 #include "TableauDynamiqueEntier.h"
 #include <stdlib.h>

@@ -1,6 +1,6 @@
 /**
 \file [Bonus.c]
-@brief Module des Bonus du jeu
+ Module des Bonus du jeu
 \author {Antoine.C,Matthieu.B}
 \version 1.1
 \date 10 avril 2013

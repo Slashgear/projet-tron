@@ -1,5 +1,5 @@
-\hypertarget{Bonus_8h}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.h}
-\label{Bonus_8h}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.\-h@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Bonus.\-h}}
+\hypertarget{Bonus_8h}{\section{Référence du fichier Bonus.\-h}
+\label{Bonus_8h}\index{Bonus.\-h@{Bonus.\-h}}
 }
 
 
@@ -11,23 +11,29 @@ Graphe des dépendances par inclusion de Bonus.\-h\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=192pt]{Bonus_8h__incl}
+\includegraphics[width=154pt]{Bonus_8h__incl}
 \end{center}
 \end{figure}
 Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Bonus_8h__dep__incl}
+\includegraphics[width=341pt]{Bonus_8h__dep__incl}
 \end{center}
 \end{figure}
-\subsection*{Classes}
+\subsection*{Structures de données}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structBonus}{Bonus}
 \begin{DoxyCompactList}\small\item\em Structure d'un \hyperlink{structBonus}{Bonus}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Bonus_8h_a50ea247d2b50e6bb7045adc1511b25f8}{Bonus\-Constructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-X, float position\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
+\item 
+void \hyperlink{Bonus_8h_a10400d2cfc7f4779aceaa86d8d65bfe1}{Bonus\-Destructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+\hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} \hyperlink{Bonus_8h_afed5301f763aaa743ed5b566127ac2ed}{Bonus\-Get\-Effet\-Bonus} (const \hyperlink{structBonus}{Bonus} $\ast$effet)
 \item 
 float \hyperlink{Bonus_8h_ad2300fc873c5fbb081462836491cf0af}{Bonus\-Get\-Position\-X} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
 \item 
@@ -37,7 +43,7 @@ unsigned int \hyperlink{Bonus_8h_a945a94dccbb8c3d86e7cfdd1d857b839}{Bonus\-Get\-
 \item 
 unsigned int \hyperlink{Bonus_8h_acb6e371434cd8f0a2344f82d9a6a1b3f}{Bonus\-Get\-Taille\-Y} (const \hyperlink{structBonus}{Bonus} $\ast$bonus)
 \item 
-\hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} \hyperlink{Bonus_8h_afed5301f763aaa743ed5b566127ac2ed}{Bonus\-Get\-Effet\-Bonus} (const \hyperlink{structBonus}{Bonus} $\ast$effet)
+void \hyperlink{Bonus_8h_a7ea8105e2bb249bf553667f8fa625938}{Bonus\-Set\-Effet\-Bonus} (\hyperlink{structBonus}{Bonus} $\ast$bonus, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
 \item 
 void \hyperlink{Bonus_8h_a3d2d99a0657d70c3f5377a6ff8086aa4}{Bonus\-Set\-Position\-X} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-X)
 \item 
@@ -46,12 +52,6 @@ void \hyperlink{Bonus_8h_aee7509485ef9e5665df4f6ceb4c3e013}{Bonus\-Set\-Position
 void \hyperlink{Bonus_8h_afcfcf285fd9d03b022fe35d7b7133617}{Bonus\-Set\-Taille\-X} (\hyperlink{structBonus}{Bonus} $\ast$bonus, unsigned int taille\-X)
 \item 
 void \hyperlink{Bonus_8h_a7dc1b0b791bc9511f058196149403618}{Bonus\-Set\-Taille\-Y} (\hyperlink{structBonus}{Bonus} $\ast$bonus, unsigned int taille\-Y)
-\item 
-void \hyperlink{Bonus_8h_a7ea8105e2bb249bf553667f8fa625938}{Bonus\-Set\-Effet\-Bonus} (\hyperlink{structBonus}{Bonus} $\ast$bonus, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
-\item 
-void \hyperlink{Bonus_8h_a50ea247d2b50e6bb7045adc1511b25f8}{Bonus\-Constructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus, float position\-X, float position\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{EffetBonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
-\item 
-void \hyperlink{Bonus_8h_a10400d2cfc7f4779aceaa86d8d65bfe1}{Bonus\-Destructeur} (\hyperlink{structBonus}{Bonus} $\ast$bonus)
 \item 
 void \hyperlink{Bonus_8h_aeb85fd9743a06ab60c5e6facdcde6980}{Bonus\-Test\-Regression} ()
 \begin{DoxyCompactList}\small\item\em Test du Module. \end{DoxyCompactList}\end{DoxyCompactItemize}

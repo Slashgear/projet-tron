@@ -1,5 +1,5 @@
-\hypertarget{Jeu_8c}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Jeu.c}
-\label{Jeu_8c}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Jeu.\-c@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Jeu.\-c}}
+\hypertarget{Jeu_8c}{\section{Référence du fichier Jeu.\-c}
+\label{Jeu_8c}\index{Jeu.\-c@{Jeu.\-c}}
 }
 
 
@@ -25,70 +25,70 @@ Graphe des dépendances par inclusion de Jeu.\-c\-:\nopagebreak
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structGrid}{Grid} $\ast$ \hyperlink{Jeu_8c_a9cd710c657af64a74c7cc26a4e726d14}{Jeu\-Get\-Grille} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-\hyperlink{structJoueur}{Joueur} $\ast$ \hyperlink{Jeu_8c_a00cab8b79f7ac548749dd29b6a3dcefd}{Jeu\-Get\-Ieme\-Joueurs} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
-\item 
-int \hyperlink{Jeu_8c_a570c1b49959c5727b784ff980a9ca5ba}{Jeu\-Get\-Ieme\-Score} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
-\item 
-\hyperlink{structBonus}{Bonus} $\ast$ \hyperlink{Jeu_8c_a4d3ff47d4638c2a84807bc73b63c2040}{Jeu\-Get\-Ieme\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
-\item 
-int \hyperlink{Jeu_8c_ae4c5515bf7a3dc1b8c55dd193559cc59}{Jeu\-Get\-Temps\-Prochain\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-\hyperlink{structMusique}{Musique} $\ast$ \hyperlink{Jeu_8c_a960195d08a333a161de438fde3f0ce9c}{Jeu\-Get\-Musique} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-void \hyperlink{Jeu_8c_a76c474e2d5c7de3fc3f4878346c33f6d}{Jeu\-Set\-Grille} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structGrid}{Grid} $\ast$grille)
-\item 
-void \hyperlink{Jeu_8c_a5f97577deb2605062a4b7de1473aae9a}{Jeu\-Set\-Ieme\-Joueurs} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structJoueur}{Joueur} $\ast$joueur, int i)
-\item 
-void \hyperlink{Jeu_8c_aed59312d10d85b62fbe0320d267c1172}{Jeu\-Set\-Ieme\-Score} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int score, int i)
-\item 
-void \hyperlink{Jeu_8c_acd42a024bebfff90910b9694e6958531}{Jeu\-Set\-Ieme\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, const \hyperlink{structBonus}{Bonus} $\ast$bonus, int i)
-\item 
-void \hyperlink{Jeu_8c_a71ff5aea9bbf81e8ecd84a2a5a0d27cb}{Jeu\-Set\-Temps\-Prochain\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int temps\-Prochain\-Bonus)
-\item 
-void \hyperlink{Jeu_8c_a21f6877d6b5377c9df2a8321313437f4}{Jeu\-Constructeur} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structGrid}{Grid} $\ast$grille, \hyperlink{structJoueur}{Joueur} $\ast$mes\-Joueurs, int $\ast$scores)
-\item 
-void \hyperlink{Jeu_8c_a8bcba1ef69f19fb2db2610e0391cfd51}{Jeu\-Destructeur} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-char \hyperlink{Jeu_8c_ac2f5807a1e5457c87bad141d69a644ad}{test\-Collision\-Generique} (float objet1\mbox{[}4\mbox{]}, float objet2\mbox{[}4\mbox{]})
-\item 
-char \hyperlink{Jeu_8c_af340da255b9d4e0b94c590aba6286148}{test\-Collision\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structGrid}{Grid} $\ast$grille)
-\item 
-char \hyperlink{Jeu_8c_a1d6d77911c3af96664c509572d7c9abe}{test\-Collision\-Moto} (\hyperlink{structMoto}{Moto} $\ast$moto1, \hyperlink{structMoto}{Moto} $\ast$moto2)
-\item 
-void \hyperlink{Jeu_8c_a43389b43f891711881d87d46c92a53a0}{Jeu\-Action\-Clavier} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction, \hyperlink{structGrid}{Grid} $\ast$grille)
-\item 
-void \hyperlink{Jeu_8c_ac2310df2f749aa58dc111b1bf906f2a8}{bouge\-Moto} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-void \hyperlink{Jeu_8c_a71bdcf7116b2f14b792d222c49ff74de}{Jeu\-Evolue} (\hyperlink{structJeu}{Jeu} $\ast$jeu, short int $\ast$jeu\-Fini, char $\ast$nouveau\-Message, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} $\ast$couleur\-Message)
-\item 
-void \hyperlink{Jeu_8c_acdb1470c32818255dca985898836aafa}{decremente\-Temps\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-void \hyperlink{Jeu_8c_a2ce61226efe3fd99a225cb1609c14833}{Jeu\-Actionne\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-char \hyperlink{Jeu_8c_a9045e76f8f81369ba40d35e5ca9b55ec}{test\-Collision\-Moto\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$mes\-Joueurs, \hyperlink{structBonus}{Bonus} $\ast$bonus)
-\item 
-void \hyperlink{Jeu_8c_a680716484ae925b266b97ed9cf1ca3be}{Place\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structBonus}{Bonus} $\ast$bonus)
-\item 
 void \hyperlink{Jeu_8c_aaa794bc48d4a68c8f3a3ffdb881f8eb3}{affiche\-Grille\-Analyse} (short int($\ast$grille\-Analyse)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
 \item 
 void \hyperlink{Jeu_8c_a057ccaa58f66d1839542ce3ed73bd0d5}{affiche\-Grille\-Distances} (short int($\ast$grille\-Distance)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
 \item 
-void \hyperlink{Jeu_8c_a7dadf0dab9b369d34f8db1e6f03220e4}{Jeu\-Gere\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A, \hyperlink{structJeu}{Jeu} $\ast$jeu)
-\item 
-void \hyperlink{Jeu_8c_ae21534d3ce5552805c5c19c91835d45a}{indices\-Grille\-Joueur} (short int $\ast$ligne, short int $\ast$colonne, \hyperlink{structJoueur}{Joueur} $\ast$joueur)
-\item 
-void \hyperlink{Jeu_8c_a935de1505ff299257332d32d9b450aaa}{creer\-Grille\-Distances} (short int ligne1, short int colonne1, short int($\ast$grille\-Analyse)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}, short int($\ast$grille\-Distance)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
-\item 
-void \hyperlink{Jeu_8c_a3b3af5966cdc7cbf24276b5e80bdc032}{creer\-Grille\-Analyse} (short int($\ast$grille\-Analyse)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}, \hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A)
+void \hyperlink{Jeu_8c_ac2310df2f749aa58dc111b1bf906f2a8}{bouge\-Moto} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
 \item 
 short int \hyperlink{Jeu_8c_a8f806829e6634cfacfd7c54648baf3c6}{choisie\-Cible\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A, \hyperlink{structJeu}{Jeu} $\ast$jeu, short int($\ast$grille\-Distance)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
 \item 
 void \hyperlink{Jeu_8c_a234255b8c79dacdf45153d250a32cee5}{choisie\-Direction} (\hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A, \hyperlink{structJeu}{Jeu} $\ast$jeu, short int distance\-Joueur\-Cible, short int($\ast$grille\-Distance)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
 \item 
+void \hyperlink{Jeu_8c_a3b3af5966cdc7cbf24276b5e80bdc032}{creer\-Grille\-Analyse} (short int($\ast$grille\-Analyse)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}, \hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A)
+\item 
+void \hyperlink{Jeu_8c_a935de1505ff299257332d32d9b450aaa}{creer\-Grille\-Distances} (short int ligne1, short int colonne1, short int($\ast$grille\-Analyse)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}, short int($\ast$grille\-Distance)\mbox{[}\hyperlink{Constantes_8h_abf68bdf8402080e47166e730e6fa7839}{\-\_\-\-Taille\-\_\-\-Y\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]}\mbox{[}\hyperlink{Constantes_8h_a22ca4a20964744e6df65d2c81d5b41ff}{\-\_\-\-Taille\-\_\-\-X\-\_\-\-Grille}/\hyperlink{Constantes_8h_a5486e43da0e415d8e657b6404134e6b7}{\-\_\-\-Precision\-\_\-\-Analyse\-\_\-\-I\-A}\mbox{]})
+\item 
+void \hyperlink{Jeu_8c_acdb1470c32818255dca985898836aafa}{decremente\-Temps\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8c_ae21534d3ce5552805c5c19c91835d45a}{indices\-Grille\-Joueur} (short int $\ast$ligne, short int $\ast$colonne, \hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+void \hyperlink{Jeu_8c_a43389b43f891711881d87d46c92a53a0}{Jeu\-Action\-Clavier} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction, \hyperlink{structGrid}{Grid} $\ast$grille)
+\item 
+void \hyperlink{Jeu_8c_a2ce61226efe3fd99a225cb1609c14833}{Jeu\-Actionne\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$joueur)
+\item 
+void \hyperlink{Jeu_8c_a21f6877d6b5377c9df2a8321313437f4}{Jeu\-Constructeur} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structGrid}{Grid} $\ast$grille, \hyperlink{structJoueur}{Joueur} $\ast$mes\-Joueurs, int $\ast$scores)
+\item 
+void \hyperlink{Jeu_8c_a8bcba1ef69f19fb2db2610e0391cfd51}{Jeu\-Destructeur} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8c_a71bdcf7116b2f14b792d222c49ff74de}{Jeu\-Evolue} (\hyperlink{structJeu}{Jeu} $\ast$jeu, short int $\ast$jeu\-Fini, char $\ast$nouveau\-Message, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} $\ast$couleur\-Message)
+\item 
+void \hyperlink{Jeu_8c_a7dadf0dab9b369d34f8db1e6f03220e4}{Jeu\-Gere\-I\-A} (\hyperlink{structJoueur}{Joueur} $\ast$joueur\-I\-A, \hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+\hyperlink{structGrid}{Grid} $\ast$ \hyperlink{Jeu_8c_a9cd710c657af64a74c7cc26a4e726d14}{Jeu\-Get\-Grille} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+\hyperlink{structBonus}{Bonus} $\ast$ \hyperlink{Jeu_8c_a4d3ff47d4638c2a84807bc73b63c2040}{Jeu\-Get\-Ieme\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
+\item 
+\hyperlink{structJoueur}{Joueur} $\ast$ \hyperlink{Jeu_8c_a00cab8b79f7ac548749dd29b6a3dcefd}{Jeu\-Get\-Ieme\-Joueurs} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
+\item 
+int \hyperlink{Jeu_8c_a570c1b49959c5727b784ff980a9ca5ba}{Jeu\-Get\-Ieme\-Score} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int i)
+\item 
+\hyperlink{structMusique}{Musique} $\ast$ \hyperlink{Jeu_8c_a960195d08a333a161de438fde3f0ce9c}{Jeu\-Get\-Musique} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+int \hyperlink{Jeu_8c_ae4c5515bf7a3dc1b8c55dd193559cc59}{Jeu\-Get\-Temps\-Prochain\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu)
+\item 
+void \hyperlink{Jeu_8c_a76c474e2d5c7de3fc3f4878346c33f6d}{Jeu\-Set\-Grille} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structGrid}{Grid} $\ast$grille)
+\item 
+void \hyperlink{Jeu_8c_acd42a024bebfff90910b9694e6958531}{Jeu\-Set\-Ieme\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, const \hyperlink{structBonus}{Bonus} $\ast$bonus, int i)
+\item 
+void \hyperlink{Jeu_8c_a5f97577deb2605062a4b7de1473aae9a}{Jeu\-Set\-Ieme\-Joueurs} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structJoueur}{Joueur} $\ast$joueur, int i)
+\item 
+void \hyperlink{Jeu_8c_aed59312d10d85b62fbe0320d267c1172}{Jeu\-Set\-Ieme\-Score} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int score, int i)
+\item 
+void \hyperlink{Jeu_8c_a71ff5aea9bbf81e8ecd84a2a5a0d27cb}{Jeu\-Set\-Temps\-Prochain\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, int temps\-Prochain\-Bonus)
+\item 
 void \hyperlink{Jeu_8c_ab00a82316a8da0ba7425cb30e7b34b9f}{Jeu\-Test\-Regression} ()
-\begin{DoxyCompactList}\small\item\em procédure de test \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em procédure de test \end{DoxyCompactList}\item 
+void \hyperlink{Jeu_8c_a680716484ae925b266b97ed9cf1ca3be}{Place\-Bonus} (\hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+char \hyperlink{Jeu_8c_ac2f5807a1e5457c87bad141d69a644ad}{test\-Collision\-Generique} (float objet1\mbox{[}4\mbox{]}, float objet2\mbox{[}4\mbox{]})
+\item 
+char \hyperlink{Jeu_8c_a1d6d77911c3af96664c509572d7c9abe}{test\-Collision\-Moto} (\hyperlink{structMoto}{Moto} $\ast$moto1, \hyperlink{structMoto}{Moto} $\ast$moto2)
+\item 
+char \hyperlink{Jeu_8c_a9045e76f8f81369ba40d35e5ca9b55ec}{test\-Collision\-Moto\-Bonus} (\hyperlink{structJoueur}{Joueur} $\ast$mes\-Joueurs, \hyperlink{structBonus}{Bonus} $\ast$bonus)
+\item 
+char \hyperlink{Jeu_8c_af340da255b9d4e0b94c590aba6286148}{test\-Collision\-Mur} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{structGrid}{Grid} $\ast$grille)
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
