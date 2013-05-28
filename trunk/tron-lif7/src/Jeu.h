@@ -179,37 +179,84 @@ void afficheGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision
  */
 void afficheGrilleDistances(short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                        [_Taille_X_Grille/_Precision_Analyse_IA]);
-/**procédure qui crée le tableau d'analyse de la grille*/
+ /**
+ * \fn afficheGrilleDistances
+ * \brief procédure qui crée le tableau d'analyse de la grille
+ * \param short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                    [_Taille_X_Grille/_Precision_Analyse_IA],
+                    Jeu* jeu,Joueur* joueurIA
+ */
 void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                   [_Taille_X_Grille/_Precision_Analyse_IA],
                         Jeu* jeu,Joueur* joueurIA);
-/**Procédure qui renvoie la distance entre une case et toute la grille (grilleDistance doit être initialisé à -1 partout)*/
+ /**
+ * \fn creerGrilleDistances
+ * \brief procédure qui crée la grille distance
+ * \param short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                    [_Taille_X_Grille/_Precision_Analyse_IA],
+                    Jeu* jeu,Joueur* joueurIA
+    Procédure qui renvoie la distance entre une case et toute la grille (grilleDistance doit être initialisé à -1 partout)
+ */
  void creerGrilleDistances(short int ligne1,short int colonne1,
                                 short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA],
                                 short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                           [_Taille_X_Grille/_Precision_Analyse_IA]);
-/**Procédure qui choisie la cible d'un joueurIA et retourne la distance à ce joueur*/
+/**
+ * \fn choisieCibleIA
+ * \brief Procédure qui choisie la cible d'un joueurIA et retourne la distance à ce joueur
+ * \param Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                               [_Taille_X_Grille/_Precision_Analyse_IA]
+ */
 short int choisieCibleIA(Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
-                                                                              [_Taille_X_Grille/_Precision_Analyse_IA]);
-
-/**Procédure qui décide de la direction choisie à chaque tour pour l'IA à partir de la grille des distances
-de la cible ou si l'IA n'a pas de cible, la grille des distance de l'IA*/
+                                                                            [_Taille_X_Grille/_Precision_Analyse_IA]);
+/**
+* \fn choisieDirection
+ * \brief Procédure qui choisie de la Direction de l'IA
+ * \param Joueur* joueurIA,Jeu* jeu,short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
+                                                               [_Taille_X_Grille/_Precision_Analyse_IA]
+*Procédure qui décide de la direction choisie à chaque tour pour l'IA à partir de la grille des distances
+de la cible ou si l'IA n'a pas de cible, la grille des distance de l'IA
+ */
 void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                       short int (*grilleDistance)[_Taille_Y_Grille/_Precision_Analyse_IA]
                                                  [_Taille_X_Grille/_Precision_Analyse_IA]);
-/**Procédure qui donne les indices ligne et colonne d'un joueur dans la grille*/
+/**
+* \fn indicesGrilleJoueur
+ * \brief Procédure qui donne les indices ligne et colonne d'un joueur dans la grille
+ * \param short int *ligne,short int *colonne,Joueur* joueur
+ */
 void indicesGrilleJoueur(short int *ligne,short int *colonne,Joueur* joueur);
-/**Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)*/
+/**
+* \fn testCollisionGenerique
+ * \brief Fonction qui teste la collision entre deux objets carrés (autrement appelé bounding box)
+ * \param float objet1[4],float objet2[4]
+ */
 char testCollisionGenerique(float objet1[4],float objet2[4]);
-/**Fonction qui teste si une moto rentre en collision avec une Moto, renvoie 0 si pas de collision, le numéro du joueur si il y a collision*/
+/**
+* \fn testCollisionMotoBonus
+ * \brief Fonction qui teste la collision entre la Moto et un Bonus
+ * \param Joueur *mesJoueurs,Bonus* bonus
+ *Fonction qui teste si une moto rentre en collision avec une Moto,
+ renvoie 0 si pas de collision, le numéro du joueur si il y a collision
+ */
 char testCollisionMotoBonus(Joueur *mesJoueurs,Bonus* bonus);
-/**Fonction qui place des bonus sur la grille*/
+/**
+* \fn PlaceBonus
+ * \brief Fonction qui place des bonus sur la grille
+ * \param Jeu *jeu,Bonus *bonus
+ */
 void PlaceBonus(Jeu *jeu,Bonus *bonus);
-/**Procedure qui décrémente le tempsBonus des bonus actifs des joueurs*/
+/**
+* \fn decrementeTempsBonus
+ * \brief Procedure qui décrémente le tempsBonus des bonus actifs des joueurs
+ * \param Jeu *jeu
+ */
 void decrementeTempsBonus(Jeu *jeu);
-
-/**procédure de test*/
+/**
+* \fn JeuTestRegression
+ * \brief procédure de test
+ */
 void JeuTestRegression();
 
 #endif
