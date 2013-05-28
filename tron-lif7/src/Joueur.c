@@ -1,6 +1,6 @@
 /**
 \file [Joueur.c]
-\brief Module des Joueurs
+@brief Module des Joueurs
 \author {Antoine.C,Matthieu.B}
 \version 1.1
 \date 19 mars 2013

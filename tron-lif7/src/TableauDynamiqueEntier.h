@@ -2,14 +2,14 @@
 #define TABLEAUDYNAMIQUEENTIER_H_INCLUDED
 /**
 *\file [TableauDynamiqueEntier.h]
-*\brief Module qui gère les tableaux dynamiques d'entier
+*@brief Module qui gère les tableaux dynamiques d'entier
 *\author {Antoine.C,Matthieu.B}
 *\version 1.0
 *\date 19 mars 2013
 */
 /**
  * \struct TableauDynamiqueEntier
- * \brief Structure d'un TableauDynamiqueEntier
+ * @brief Structure d'un TableauDynamiqueEntier
  */
 typedef struct{
   unsigned int capacite;

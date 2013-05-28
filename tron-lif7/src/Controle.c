@@ -1,6 +1,6 @@
 /**
 *\file [Controle.c]
-*\brief Module qui défini les Controles
+*@brief Module qui défini les Controles
 *\author {Antoine.C,Matthieu.B}
 *\version 0.1
 *\date 13 mars 2013

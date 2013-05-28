@@ -1,6 +1,6 @@
 /**
 *\file [Grid.c]
-*\brief Module des vecteurs
+*@brief Module des vecteurs
 *\author {Antoine.C,Matthieu.B}
 *\version 1.0
 *\date 13 mars 2013

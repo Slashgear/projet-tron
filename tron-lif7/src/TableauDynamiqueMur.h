@@ -3,7 +3,7 @@
 #define _TAB_DYN
 /**
 *\file [TableauDynamiqueMur.h]
-*\brief Module qui gère les tableaux dynamiques des Murs
+*@brief Module qui gère les tableaux dynamiques des Murs
 *\author {Antoine.C,Matthieu.B}
 *\version 1.0
 *\date 19 mars 2013
@@ -13,7 +13,7 @@
 #include <stdlib.h>
 /**
  * \struct TableauDynamiqueMur
- * \brief Structure d'un TableauDynamiqueMur
+ * @brief Structure d'un TableauDynamiqueMur
  */
 typedef struct{
   unsigned int capacite;

@@ -1,6 +1,6 @@
 /**
 *\file [TableauDynamiqueMur.c]
-*\brief Module qui gère les tableaux dynamiques des Murs
+*@brief Module qui gère les tableaux dynamiques des Murs
 *\author {Antoine.C,Matthieu.B}
 *\version 1.0
 *\date 19 mars 2013
