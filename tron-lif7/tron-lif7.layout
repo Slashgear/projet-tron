@@ -7,8 +7,8 @@
 	<File name="src/Bonus.h" open="1" top="0" tabpos="21">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/Constantes.h" open="1" top="0" tabpos="15">
-		<Cursor position="0" topLine="0" />
+	<File name="src/Constantes.h" open="1" top="1" tabpos="15">
+		<Cursor position="229" topLine="0" />
 	</File>
 	<File name="src/Controle.c" open="1" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
@@ -64,7 +64,7 @@
 	<File name="src/Musique.h" open="1" top="0" tabpos="20">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/SDL.c" open="1" top="1" tabpos="14">
+	<File name="src/SDL.c" open="1" top="0" tabpos="14">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/SDL.h" open="1" top="0" tabpos="13">
