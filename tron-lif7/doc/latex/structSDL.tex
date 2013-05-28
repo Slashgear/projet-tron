@@ -1,28 +1,60 @@
-\hypertarget{structSDL}{\section{S\-D\-L Struct Reference}
+\hypertarget{structSDL}{\section{Référence de la structure S\-D\-L}
 \label{structSDL}\index{S\-D\-L@{S\-D\-L}}
 }
 
 
+Structure de l'affichage.  
+
+
+
+
 {\ttfamily \#include $<$S\-D\-L.\-h$>$}
 
-\subsection*{Public Attributes}
+
+
+Graphe de collaboration de S\-D\-L\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structSDL__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structJeu}{Jeu} \hyperlink{structSDL_aed6e34a843f7e278abbc6401e7a86748}{jeu}
 \item 
-S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{structSDL_afa10c1c04f5aab98a52ad375fd6b9c8c}{textures} \mbox{[}10\mbox{]}
+S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{structSDL_a7a8c5288d76cf72d0f5ba90ef4046d58}{textures} \mbox{[}2+4 $\ast$\hyperlink{Constantes_8h_a505b3b803482fbd73a5eafac78db730f}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}+\hyperlink{Constantes_8h_af4e31715ab308023d6200e64b86b9946}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}+\hyperlink{Constantes_8h_a64872e3ddf1efd6847f90dbcb0ed21ce}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Textes}+\hyperlink{Constantes_8h_a228aa6ff538af983b44e972225d962b9}{\-\_\-\-Nombre\-\_\-\-Images\-\_\-\-Interface}\mbox{]}
+\item 
+\hyperlink{structManette}{Manette} $\ast$ \hyperlink{structSDL_ace23bf8418b8f58e086b6e608e9d0ba0}{mes\-Manettes}
+\item 
+T\-T\-F\-\_\-\-Font $\ast$ \hyperlink{structSDL_a1ad36295e29f111c716ccdb0e7265a4e}{police}
+\item 
+T\-T\-F\-\_\-\-Font $\ast$ \hyperlink{structSDL_a6b8f503288d42f8dbe8bb3ff97629404}{police\-Grands\-Messages}
 \end{DoxyCompactItemize}
 
 
-\subsection{Member Data Documentation}
+\subsection{Description détaillée}
+Structure de l'affichage. 
+
+\subsection{Documentation des données membres}
 \hypertarget{structSDL_aed6e34a843f7e278abbc6401e7a86748}{\index{S\-D\-L@{S\-D\-L}!jeu@{jeu}}
 \index{jeu@{jeu}!SDL@{S\-D\-L}}
 \subsubsection[{jeu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Jeu} S\-D\-L\-::jeu}}\label{structSDL_aed6e34a843f7e278abbc6401e7a86748}
-\hypertarget{structSDL_afa10c1c04f5aab98a52ad375fd6b9c8c}{\index{S\-D\-L@{S\-D\-L}!textures@{textures}}
+\hypertarget{structSDL_ace23bf8418b8f58e086b6e608e9d0ba0}{\index{S\-D\-L@{S\-D\-L}!mes\-Manettes@{mes\-Manettes}}
+\index{mes\-Manettes@{mes\-Manettes}!SDL@{S\-D\-L}}
+\subsubsection[{mes\-Manettes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manette}$\ast$ S\-D\-L\-::mes\-Manettes}}\label{structSDL_ace23bf8418b8f58e086b6e608e9d0ba0}
+\hypertarget{structSDL_a1ad36295e29f111c716ccdb0e7265a4e}{\index{S\-D\-L@{S\-D\-L}!police@{police}}
+\index{police@{police}!SDL@{S\-D\-L}}
+\subsubsection[{police}]{\setlength{\rightskip}{0pt plus 5cm}T\-T\-F\-\_\-\-Font$\ast$ S\-D\-L\-::police}}\label{structSDL_a1ad36295e29f111c716ccdb0e7265a4e}
+\hypertarget{structSDL_a6b8f503288d42f8dbe8bb3ff97629404}{\index{S\-D\-L@{S\-D\-L}!police\-Grands\-Messages@{police\-Grands\-Messages}}
+\index{police\-Grands\-Messages@{police\-Grands\-Messages}!SDL@{S\-D\-L}}
+\subsubsection[{police\-Grands\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}T\-T\-F\-\_\-\-Font$\ast$ S\-D\-L\-::police\-Grands\-Messages}}\label{structSDL_a6b8f503288d42f8dbe8bb3ff97629404}
+\hypertarget{structSDL_a7a8c5288d76cf72d0f5ba90ef4046d58}{\index{S\-D\-L@{S\-D\-L}!textures@{textures}}
 \index{textures@{textures}!SDL@{S\-D\-L}}
-\subsubsection[{textures}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ S\-D\-L\-::textures\mbox{[}10\mbox{]}}}\label{structSDL_afa10c1c04f5aab98a52ad375fd6b9c8c}
+\subsubsection[{textures}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ S\-D\-L\-::textures\mbox{[}2+4 $\ast${\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}+{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}+{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Textes}+{\bf \-\_\-\-Nombre\-\_\-\-Images\-\_\-\-Interface}\mbox{]}}}\label{structSDL_a7a8c5288d76cf72d0f5ba90ef4046d58}
+La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc.. Viennent ensuite les texture des \hyperlink{structBonus}{Bonus}, celles des textures d'interfaces puis enfin les textes 
 
-
-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+La documentation de cette structure a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}
 \item 
-/home/antoine/\-Projets/tron-\/lif7/src/\hyperlink{SDL_8h}{S\-D\-L.\-h}\end{DoxyCompactItemize}
+/home/matthieu/\-Projet/tron-\/lif7/src/\hyperlink{SDL_8h}{S\-D\-L.\-h}\end{DoxyCompactItemize}

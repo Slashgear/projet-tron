@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tableaudynamique',['TableauDynamique',['../structTableauDynamique.html',1,'']]]
+  ['tableaudynamiqueentier',['TableauDynamiqueEntier',['../structTableauDynamiqueEntier.html',1,'']]],
+  ['tableaudynamiquemur',['TableauDynamiqueMur',['../structTableauDynamiqueMur.html',1,'']]]
 ];
