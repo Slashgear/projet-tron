@@ -1,0 +1,88 @@
+\hypertarget{Joystick_8h}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Joystick.h}
+\label{Joystick_8h}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Joystick.\-h@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Joystick.\-h}}
+}
+
+
+Module des manettes.  
+
+
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L.\-h$>$}\\*
+Graphe des dépendances par inclusion de Joystick.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{Joystick_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Joystick_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structManette}{Manette}
+\begin{DoxyCompactList}\small\item\em Structure d'une manette. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Joystick_8h_ad146b7d348cac88b34f110a94d7be261}{initialiser\-Manette} (\hyperlink{structManette}{Manette} $\ast$manette, int numero\-Joystick)
+\item 
+void \hyperlink{Joystick_8h_a5b653de255c8eba83785537e28183913}{detruire\-Manette} (\hyperlink{structManette}{Manette} $\ast$manette)
+\item 
+void \hyperlink{Joystick_8h_a40eeef47716755bc5966509b894a0c37}{update\-Event} (\hyperlink{structManette}{Manette} $\ast$manette, S\-D\-L\-\_\-\-Event evenement)
+\item 
+void \hyperlink{Joystick_8h_a8cae93745b6ebe7fc4c3e7374583b037}{Joystick\-Test\-Regression} ()
+\begin{DoxyCompactList}\small\item\em fonction qui teste le module \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Module des manettes. \mbox{]} \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11 avril 2013 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{Joystick_8h_a5b653de255c8eba83785537e28183913}{\index{Joystick.\-h@{Joystick.\-h}!detruire\-Manette@{detruire\-Manette}}
+\index{detruire\-Manette@{detruire\-Manette}!Joystick.h@{Joystick.\-h}}
+\subsubsection[{detruire\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}void detruire\-Manette (
+\begin{DoxyParamCaption}
+\item[{{\bf Manette} $\ast$}]{manette}
+\end{DoxyParamCaption}
+)}}\label{Joystick_8h_a5b653de255c8eba83785537e28183913}
+\hypertarget{Joystick_8h_ad146b7d348cac88b34f110a94d7be261}{\index{Joystick.\-h@{Joystick.\-h}!initialiser\-Manette@{initialiser\-Manette}}
+\index{initialiser\-Manette@{initialiser\-Manette}!Joystick.h@{Joystick.\-h}}
+\subsubsection[{initialiser\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}void initialiser\-Manette (
+\begin{DoxyParamCaption}
+\item[{{\bf Manette} $\ast$}]{manette, }
+\item[{int}]{numero\-Joystick}
+\end{DoxyParamCaption}
+)}}\label{Joystick_8h_ad146b7d348cac88b34f110a94d7be261}
+\hypertarget{Joystick_8h_a8cae93745b6ebe7fc4c3e7374583b037}{\index{Joystick.\-h@{Joystick.\-h}!Joystick\-Test\-Regression@{Joystick\-Test\-Regression}}
+\index{Joystick\-Test\-Regression@{Joystick\-Test\-Regression}!Joystick.h@{Joystick.\-h}}
+\subsubsection[{Joystick\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Joystick\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Joystick_8h_a8cae93745b6ebe7fc4c3e7374583b037}
+
+
+fonction qui teste le module 
+
+\hypertarget{Joystick_8h_a40eeef47716755bc5966509b894a0c37}{\index{Joystick.\-h@{Joystick.\-h}!update\-Event@{update\-Event}}
+\index{update\-Event@{update\-Event}!Joystick.h@{Joystick.\-h}}
+\subsubsection[{update\-Event}]{\setlength{\rightskip}{0pt plus 5cm}void update\-Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Manette} $\ast$}]{manette, }
+\item[{S\-D\-L\-\_\-\-Event}]{evenement}
+\end{DoxyParamCaption}
+)}}\label{Joystick_8h_a40eeef47716755bc5966509b894a0c37}

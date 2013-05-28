@@ -1,0 +1,171 @@
+\hypertarget{Musique_8c}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-Musique.c}
+\label{Musique_8c}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-Musique.\-c@{/home/matthieu/\-Projet/tron-\/lif7/src/\-Musique.\-c}}
+}
+
+
+Module des Musiques du jeu.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Musique.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../lib/\-F\-M\-O\-D/inc/fmod.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Constantes.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Musique.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Musique_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+F\-M\-O\-D\-\_\-\-S\-Y\-S\-T\-E\-M $\ast$ \hyperlink{Musique_8c_a6eaeb9c1618c807754684d59992d6507}{Musique\-Get\-Base\-Du\-Son} (\hyperlink{structMusique}{Musique} $\ast$musique)
+\item 
+F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$ \hyperlink{Musique_8c_af2564aa22a9d674e780a820a9cf2b328}{Musique\-Get\-Ieme\-Son\-Court} (\hyperlink{structMusique}{Musique} $\ast$musique, int i)
+\item 
+F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$ \hyperlink{Musique_8c_ada630365fea1e238fbf95631dd56ee49}{Musique\-Get\-Ieme\-Musique\-Du\-Jeu} (\hyperlink{structMusique}{Musique} $\ast$musique, int i)
+\item 
+void \hyperlink{Musique_8c_a992e9a70c659319a675744a0bca3799d}{Musique\-Set\-Base\-Du\-Son} (\hyperlink{structMusique}{Musique} $\ast$musique, F\-M\-O\-D\-\_\-\-S\-Y\-S\-T\-E\-M $\ast$base\-Du\-Son)
+\item 
+void \hyperlink{Musique_8c_a8126a2d49c47a2dd7ad8c484d01013ad}{Musique\-Set\-Ieme\-Son\-Court} (\hyperlink{structMusique}{Musique} $\ast$musique, F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$un\-Son, int i)
+\item 
+void \hyperlink{Musique_8c_adf596c7e8e14980256f0fc5c4cd23a73}{Musique\-Set\-Son\-Court} (\hyperlink{structMusique}{Musique} $\ast$musique, F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$$\ast$Son\-Court)
+\item 
+void \hyperlink{Musique_8c_a046f5f78ceaa10d2f8337c53ce976b22}{Musique\-Set\-Ieme\-Musique\-Du\-Jeu} (\hyperlink{structMusique}{Musique} $\ast$musique, F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$un\-Son, int i)
+\item 
+void \hyperlink{Musique_8c_aeec5162b4d8bc7da44ce55cfc364015e}{Musique\-Set\-Musique\-Du\-Jeu} (\hyperlink{structMusique}{Musique} $\ast$musique, F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$$\ast$musique\-Du\-Jeu)
+\item 
+void \hyperlink{Musique_8c_a43c750ce46e1cebd1d15d08216546b41}{Musique\-Constructeur} (\hyperlink{structMusique}{Musique} $\ast$musique)
+\item 
+void \hyperlink{Musique_8c_a968015ab08fbe91eb20129567bb467bc}{Musique\-Destructeur} (\hyperlink{structMusique}{Musique} $\ast$musique)
+\item 
+void \hyperlink{Musique_8c_a4ccf3ce1bf3c2fb7ee0ed6352e24fdf4}{Jouer\-Ieme\-Son\-Court} (\hyperlink{structMusique}{Musique} $\ast$musique, int i)
+\item 
+void \hyperlink{Musique_8c_a83de1e788ada978f55d7d8442a3beaa8}{Jouer\-Ieme\-Musique} (\hyperlink{structMusique}{Musique} $\ast$musique, int i, int repetition)
+\item 
+void \hyperlink{Musique_8c_a3565d4a60201640c1e28cc896d002164}{Musique\-Test\-Regression} ()
+\begin{DoxyCompactList}\small\item\em fonction qui teste le Module \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Module des Musiques du jeu. \mbox{]} \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-4 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19 avril 2013 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{Musique_8c_a83de1e788ada978f55d7d8442a3beaa8}{\index{Musique.\-c@{Musique.\-c}!Jouer\-Ieme\-Musique@{Jouer\-Ieme\-Musique}}
+\index{Jouer\-Ieme\-Musique@{Jouer\-Ieme\-Musique}!Musique.c@{Musique.\-c}}
+\subsubsection[{Jouer\-Ieme\-Musique}]{\setlength{\rightskip}{0pt plus 5cm}void Jouer\-Ieme\-Musique (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{int}]{i, }
+\item[{int}]{repetition}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a83de1e788ada978f55d7d8442a3beaa8}
+\hypertarget{Musique_8c_a4ccf3ce1bf3c2fb7ee0ed6352e24fdf4}{\index{Musique.\-c@{Musique.\-c}!Jouer\-Ieme\-Son\-Court@{Jouer\-Ieme\-Son\-Court}}
+\index{Jouer\-Ieme\-Son\-Court@{Jouer\-Ieme\-Son\-Court}!Musique.c@{Musique.\-c}}
+\subsubsection[{Jouer\-Ieme\-Son\-Court}]{\setlength{\rightskip}{0pt plus 5cm}void Jouer\-Ieme\-Son\-Court (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a4ccf3ce1bf3c2fb7ee0ed6352e24fdf4}
+\hypertarget{Musique_8c_a43c750ce46e1cebd1d15d08216546b41}{\index{Musique.\-c@{Musique.\-c}!Musique\-Constructeur@{Musique\-Constructeur}}
+\index{Musique\-Constructeur@{Musique\-Constructeur}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a43c750ce46e1cebd1d15d08216546b41}
+\hypertarget{Musique_8c_a968015ab08fbe91eb20129567bb467bc}{\index{Musique.\-c@{Musique.\-c}!Musique\-Destructeur@{Musique\-Destructeur}}
+\index{Musique\-Destructeur@{Musique\-Destructeur}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a968015ab08fbe91eb20129567bb467bc}
+\hypertarget{Musique_8c_a6eaeb9c1618c807754684d59992d6507}{\index{Musique.\-c@{Musique.\-c}!Musique\-Get\-Base\-Du\-Son@{Musique\-Get\-Base\-Du\-Son}}
+\index{Musique\-Get\-Base\-Du\-Son@{Musique\-Get\-Base\-Du\-Son}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Get\-Base\-Du\-Son}]{\setlength{\rightskip}{0pt plus 5cm}F\-M\-O\-D\-\_\-\-S\-Y\-S\-T\-E\-M$\ast$ Musique\-Get\-Base\-Du\-Son (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a6eaeb9c1618c807754684d59992d6507}
+\hypertarget{Musique_8c_ada630365fea1e238fbf95631dd56ee49}{\index{Musique.\-c@{Musique.\-c}!Musique\-Get\-Ieme\-Musique\-Du\-Jeu@{Musique\-Get\-Ieme\-Musique\-Du\-Jeu}}
+\index{Musique\-Get\-Ieme\-Musique\-Du\-Jeu@{Musique\-Get\-Ieme\-Musique\-Du\-Jeu}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Get\-Ieme\-Musique\-Du\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D$\ast$ Musique\-Get\-Ieme\-Musique\-Du\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_ada630365fea1e238fbf95631dd56ee49}
+\hypertarget{Musique_8c_af2564aa22a9d674e780a820a9cf2b328}{\index{Musique.\-c@{Musique.\-c}!Musique\-Get\-Ieme\-Son\-Court@{Musique\-Get\-Ieme\-Son\-Court}}
+\index{Musique\-Get\-Ieme\-Son\-Court@{Musique\-Get\-Ieme\-Son\-Court}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Get\-Ieme\-Son\-Court}]{\setlength{\rightskip}{0pt plus 5cm}F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D$\ast$ Musique\-Get\-Ieme\-Son\-Court (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_af2564aa22a9d674e780a820a9cf2b328}
+\hypertarget{Musique_8c_a992e9a70c659319a675744a0bca3799d}{\index{Musique.\-c@{Musique.\-c}!Musique\-Set\-Base\-Du\-Son@{Musique\-Set\-Base\-Du\-Son}}
+\index{Musique\-Set\-Base\-Du\-Son@{Musique\-Set\-Base\-Du\-Son}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Set\-Base\-Du\-Son}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Set\-Base\-Du\-Son (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{F\-M\-O\-D\-\_\-\-S\-Y\-S\-T\-E\-M $\ast$}]{base\-Du\-Son}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a992e9a70c659319a675744a0bca3799d}
+\hypertarget{Musique_8c_a046f5f78ceaa10d2f8337c53ce976b22}{\index{Musique.\-c@{Musique.\-c}!Musique\-Set\-Ieme\-Musique\-Du\-Jeu@{Musique\-Set\-Ieme\-Musique\-Du\-Jeu}}
+\index{Musique\-Set\-Ieme\-Musique\-Du\-Jeu@{Musique\-Set\-Ieme\-Musique\-Du\-Jeu}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Set\-Ieme\-Musique\-Du\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Set\-Ieme\-Musique\-Du\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$}]{un\-Son, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a046f5f78ceaa10d2f8337c53ce976b22}
+\hypertarget{Musique_8c_a8126a2d49c47a2dd7ad8c484d01013ad}{\index{Musique.\-c@{Musique.\-c}!Musique\-Set\-Ieme\-Son\-Court@{Musique\-Set\-Ieme\-Son\-Court}}
+\index{Musique\-Set\-Ieme\-Son\-Court@{Musique\-Set\-Ieme\-Son\-Court}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Set\-Ieme\-Son\-Court}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Set\-Ieme\-Son\-Court (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$}]{un\-Son, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a8126a2d49c47a2dd7ad8c484d01013ad}
+\hypertarget{Musique_8c_aeec5162b4d8bc7da44ce55cfc364015e}{\index{Musique.\-c@{Musique.\-c}!Musique\-Set\-Musique\-Du\-Jeu@{Musique\-Set\-Musique\-Du\-Jeu}}
+\index{Musique\-Set\-Musique\-Du\-Jeu@{Musique\-Set\-Musique\-Du\-Jeu}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Set\-Musique\-Du\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Set\-Musique\-Du\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$$\ast$}]{musique\-Du\-Jeu}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_aeec5162b4d8bc7da44ce55cfc364015e}
+\hypertarget{Musique_8c_adf596c7e8e14980256f0fc5c4cd23a73}{\index{Musique.\-c@{Musique.\-c}!Musique\-Set\-Son\-Court@{Musique\-Set\-Son\-Court}}
+\index{Musique\-Set\-Son\-Court@{Musique\-Set\-Son\-Court}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Set\-Son\-Court}]{\setlength{\rightskip}{0pt plus 5cm}void Musique\-Set\-Son\-Court (
+\begin{DoxyParamCaption}
+\item[{{\bf Musique} $\ast$}]{musique, }
+\item[{F\-M\-O\-D\-\_\-\-S\-O\-U\-N\-D $\ast$$\ast$}]{Son\-Court}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_adf596c7e8e14980256f0fc5c4cd23a73}
+\hypertarget{Musique_8c_a3565d4a60201640c1e28cc896d002164}{\index{Musique.\-c@{Musique.\-c}!Musique\-Test\-Regression@{Musique\-Test\-Regression}}
+\index{Musique\-Test\-Regression@{Musique\-Test\-Regression}!Musique.c@{Musique.\-c}}
+\subsubsection[{Musique\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}Musique\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{Musique_8c_a3565d4a60201640c1e28cc896d002164}
+
+
+fonction qui teste le Module 
+

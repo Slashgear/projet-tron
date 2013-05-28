@@ -1,0 +1,13 @@
+<map id="/home/matthieu/Projet/tron&#45;lif7/src/Jeu.h" name="/home/matthieu/Projet/tron&#45;lif7/src/Jeu.h">
+<area shape="rect" id="node3" href="$Joueur_8h.html" title="Module des Joueurs." alt="" coords="224,179,296,208"/>
+<area shape="rect" id="node25" href="$Grid_8h.html" title="Module des vecteurs." alt="" coords="425,101,481,131"/>
+<area shape="rect" id="node35" href="$Constantes_8h.html" title="Module des constantes du jeu." alt="" coords="505,101,604,131"/>
+<area shape="rect" id="node37" href="$Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="185,101,255,131"/>
+<area shape="rect" id="node40" href="$Musique_8h.html" title="Module des Musiques du jeu." alt="" coords="663,101,745,131"/>
+<area shape="rect" id="node5" href="$Controle_8h.html" title="Module qui défini les Controles." alt="" coords="128,256,211,285"/>
+<area shape="rect" id="node13" href="$Moto_8h.html" title="Module des Motos du jeu." alt="" coords="235,256,296,285"/>
+<area shape="rect" id="node16" href="$Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="409,333,487,363"/>
+<area shape="rect" id="node18" href="$EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="5,256,104,285"/>
+<area shape="rect" id="node20" href="$Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="472,256,525,285"/>
+<area shape="rect" id="node30" href="$TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="371,179,536,208"/>
+</map>
