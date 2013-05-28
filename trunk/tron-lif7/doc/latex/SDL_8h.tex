@@ -1,24 +1,42 @@
-\hypertarget{SDL_8h}{\section{/home/antoine/\-Projets/tron-\/lif7/src/\-S\-D\-L.h File Reference}
-\label{SDL_8h}\index{/home/antoine/\-Projets/tron-\/lif7/src/\-S\-D\-L.\-h@{/home/antoine/\-Projets/tron-\/lif7/src/\-S\-D\-L.\-h}}
+\hypertarget{SDL_8h}{\section{Référence du fichier /home/matthieu/\-Projet/tron-\/lif7/src/\-S\-D\-L.h}
+\label{SDL_8h}\index{/home/matthieu/\-Projet/tron-\/lif7/src/\-S\-D\-L.\-h@{/home/matthieu/\-Projet/tron-\/lif7/src/\-S\-D\-L.\-h}}
 }
 
 
-Module des vecteurs.  
+Module qui gère les affichage du jeu,ainsi que les manettes.  
 
 
 {\ttfamily \#include \char`\"{}Jeu.\-h\char`\"{}}\\*
 {\ttfamily \#include $<$S\-D\-L/\-S\-D\-L.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Joystick.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L\-\_\-ttf.\-h$>$}\\*
+Graphe des dépendances par inclusion de S\-D\-L.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SDL_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{SDL_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structSDL}{S\-D\-L}
-\end{DoxyCompactItemize}
-\subsection*{Functions}
+\begin{DoxyCompactList}\small\item\em Structure de l'affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structJeu}{Jeu} $\ast$ \hyperlink{SDL_8h_aa7223cb3ce4fe6f4c83d6a01adc66cbd}{S\-D\-L\-Get\-Jeu} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
 \item 
 S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{SDL_8h_acca01b95fb78179e3051d8d411b8a9cd}{S\-D\-L\-Get\-Ieme\-Texture} (const \hyperlink{structSDL}{S\-D\-L} $\ast$sdl, unsigned int i)
+\item 
+\hyperlink{structManette}{Manette} $\ast$ \hyperlink{SDL_8h_a0739253f7d24014416204f6d64c565b6}{S\-D\-L\-Get\-Ieme\-Manette} (const \hyperlink{structSDL}{S\-D\-L} $\ast$sdl, unsigned int i)
 \item 
 S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{SDL_8h_a7596bb1c6890b99a64e59f6b732a2fe1}{S\-D\-L\-Get\-Textures} (const \hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
 \item 
@@ -28,26 +46,40 @@ void \hyperlink{SDL_8h_ad7897b59aff5363840beb85766e25e47}{S\-D\-L\-Set\-Ieme\-Te
 \item 
 void \hyperlink{SDL_8h_a7167f5c196fc5e167bfabde1a730e81d}{pause} ()
 \item 
-void \hyperlink{SDL_8h_a388e62fa59095a03fed7d12b97e89b8f}{S\-D\-L\-Constructeur} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, \hyperlink{structJeu}{Jeu} $\ast$jeu)
+void \hyperlink{SDL_8h_ab3ab37e752c937a11356bbe991509786}{S\-D\-L\-Constructeur} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, \hyperlink{structJeu}{Jeu} $\ast$jeu, \hyperlink{structManette}{Manette} $\ast$mes\-Manettes)
 \item 
 void \hyperlink{SDL_8h_a18f1617d8034417cd2f06cc9c4dbedf2}{S\-D\-L\-Destructeur} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
 \item 
-void \hyperlink{SDL_8h_a5d08610e68e48a5fc1b40b3ed835b17e}{S\-D\-L\-Applique\-Surface} (S\-D\-L\-\_\-\-Surface $\ast$surface\-A, S\-D\-L\-\_\-\-Surface $\ast$surface\-B, const float position\-X, const float position\-Y)
+void \hyperlink{SDL_8h_a894918515b5365e162d1c5e1214f97eb}{S\-D\-L\-Applique\-Surface} (S\-D\-L\-\_\-\-Surface $\ast$surface\-A, S\-D\-L\-\_\-\-Surface $\ast$surface\-B, int position\-X, int position\-Y)
 \item 
-void \hyperlink{SDL_8h_abcc23c44c3c837b312d055a71e1c93d5}{S\-D\-L\-Affiche\-Jeu} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+void \hyperlink{SDL_8h_a942e816249ca9bef39f4bbaada8d3daf}{S\-D\-L\-Affiche\-Jeu} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, int $\ast$scores)
 \item 
-void \hyperlink{SDL_8h_a9af2a8faac33405c916c5758a054e93d}{S\-D\-L\-Jeu\-Init} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+void \hyperlink{SDL_8h_a0a164a520a75c594cf10cd3cfdca3814}{S\-D\-L\-Affiche\-Motos} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
 \item 
-void \hyperlink{SDL_8h_adcfe74a444d989748d0c1682ddbcb0e7}{S\-D\-L\-Boucle\-Jeu} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+void \hyperlink{SDL_8h_a511761d608b92801c934aad221f762ce}{S\-D\-L\-Affiche\-Murs} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+\item 
+void \hyperlink{SDL_8h_a87530d8f5fdcb529d517fb86bc927e63}{S\-D\-L\-Affiche\-Interface} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+\item 
+void \hyperlink{SDL_8h_ac27595c16fe8fbd8ee635cb6c8d9ec40}{S\-D\-L\-Affiche\-Bonus} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl)
+\item 
+void \hyperlink{SDL_8h_ad6a2da8e854839a096da5db6178b1356}{S\-D\-L\-Jeu\-Init\-N} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, int $\ast$scores)
+\item 
+void \hyperlink{SDL_8h_ab2b2544e3bfaa5cce134a84429e8dbd6}{S\-D\-L\-Affiche\-Textes} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, char $\ast$chaine\-De\-Caractere, \hyperlink{Couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} une\-Couleur)
+\item 
+void \hyperlink{SDL_8h_a1d801e3ea653b113f1868b6c8b1309f8}{S\-D\-L\-Affiche\-Scores} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, int $\ast$scores)
+\item 
+void \hyperlink{SDL_8h_a57b034bb0fbfd35900ad79a98b2be4bd}{S\-D\-L\-Boucle\-Jeu} (\hyperlink{structSDL}{S\-D\-L} $\ast$sdl, short int $\ast$jeu\-Re\-Init, int $\ast$scores)
 \item 
 S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{SDL_8h_a36684beb5e5ec3f9397a2976415141b7}{S\-D\-L\-Charge\-Image} (const char $\ast$nomfichier)
 \item 
+void \hyperlink{SDL_8h_a5307e0546a65557e28218096444fe16e}{S\-D\-L\-Action\-Manette} (\hyperlink{structJoueur}{Joueur} $\ast$joueur, \hyperlink{Moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction, \hyperlink{structGrid}{Grid} $\ast$grille)
+\item 
 void \hyperlink{SDL_8h_a0de41957ce76d79bc06145340f5d2766}{S\-D\-L\-Test\-Regression} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em procédure qui teste le Module \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-Module des vecteurs. \mbox{]} \begin{DoxyAuthor}{Author}
+\subsection{Description détaillée}
+Module qui gère les affichage du jeu,ainsi que les manettes. \mbox{]} \begin{DoxyAuthor}{Auteur}
 \{Antoine.\-C,Matthieu.\-B\} 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
@@ -58,7 +90,7 @@ Module des vecteurs. \mbox{]} \begin{DoxyAuthor}{Author}
 \end{DoxyDate}
 
 
-\subsection{Function Documentation}
+\subsection{Documentation des fonctions}
 \hypertarget{SDL_8h_a7167f5c196fc5e167bfabde1a730e81d}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!pause@{pause}}
 \index{pause@{pause}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void pause (
@@ -66,53 +98,131 @@ Module des vecteurs. \mbox{]} \begin{DoxyAuthor}{Author}
 {}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a7167f5c196fc5e167bfabde1a730e81d}
-Procedure qui met le jeu en pause jusqu'à ce qu'on quitte le jeu \hypertarget{SDL_8h_abcc23c44c3c837b312d055a71e1c93d5}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}}
-\index{S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}!SDL.h@{S\-D\-L.\-h}}
-\subsubsection[{S\-D\-L\-Affiche\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Jeu (
+\hypertarget{SDL_8h_a5307e0546a65557e28218096444fe16e}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Action\-Manette@{S\-D\-L\-Action\-Manette}}
+\index{S\-D\-L\-Action\-Manette@{S\-D\-L\-Action\-Manette}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Action\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Action\-Manette (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Direction}}]{direction, }
+\item[{{\bf Grid} $\ast$}]{grille}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a5307e0546a65557e28218096444fe16e}
+\hypertarget{SDL_8h_ac27595c16fe8fbd8ee635cb6c8d9ec40}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}}
+\index{S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Bonus (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
-)}}\label{SDL_8h_abcc23c44c3c837b312d055a71e1c93d5}
-Procédure d'affichage du jeu \hypertarget{SDL_8h_a5d08610e68e48a5fc1b40b3ed835b17e}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}}
+)}}\label{SDL_8h_ac27595c16fe8fbd8ee635cb6c8d9ec40}
+\hypertarget{SDL_8h_a87530d8f5fdcb529d517fb86bc927e63}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}}
+\index{S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Interface (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a87530d8f5fdcb529d517fb86bc927e63}
+\hypertarget{SDL_8h_a942e816249ca9bef39f4bbaada8d3daf}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}}
+\index{S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{int $\ast$}]{scores}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a942e816249ca9bef39f4bbaada8d3daf}
+\hypertarget{SDL_8h_a0a164a520a75c594cf10cd3cfdca3814}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}}
+\index{S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Motos}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Motos (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a0a164a520a75c594cf10cd3cfdca3814}
+\hypertarget{SDL_8h_a511761d608b92801c934aad221f762ce}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}}
+\index{S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Murs}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Murs (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a511761d608b92801c934aad221f762ce}
+\hypertarget{SDL_8h_a1d801e3ea653b113f1868b6c8b1309f8}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}}
+\index{S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Scores}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Scores (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{int $\ast$}]{scores}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a1d801e3ea653b113f1868b6c8b1309f8}
+$<$affichage de la ligne supérieure
+
+$<$affichage de la ligne inférieure \hypertarget{SDL_8h_ab2b2544e3bfaa5cce134a84429e8dbd6}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}}
+\index{S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Affiche\-Textes}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Textes (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{char $\ast$}]{chaine\-De\-Caractere, }
+\item[{{\bf Couleur}}]{une\-Couleur}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_ab2b2544e3bfaa5cce134a84429e8dbd6}
+\hypertarget{SDL_8h_a894918515b5365e162d1c5e1214f97eb}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}}
 \index{S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Applique\-Surface}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Applique\-Surface (
 \begin{DoxyParamCaption}
 \item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surface\-A, }
 \item[{S\-D\-L\-\_\-\-Surface $\ast$}]{surface\-B, }
-\item[{const float}]{position\-X, }
-\item[{const float}]{position\-Y}
+\item[{int}]{position\-X, }
+\item[{int}]{position\-Y}
 \end{DoxyParamCaption}
-)}}\label{SDL_8h_a5d08610e68e48a5fc1b40b3ed835b17e}
-Procédure qui applique la surface A sur la B \hypertarget{SDL_8h_adcfe74a444d989748d0c1682ddbcb0e7}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}}
+)}}\label{SDL_8h_a894918515b5365e162d1c5e1214f97eb}
+!$<$ Make a temporary rectangle to hold the offsets
+
+!$<$ Give the offsets to the rectangle
+
+!$<$ Blit the surface \hypertarget{SDL_8h_a57b034bb0fbfd35900ad79a98b2be4bd}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}}
 \index{S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Boucle\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Boucle\-Jeu (
 \begin{DoxyParamCaption}
-\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{short int $\ast$}]{jeu\-Re\-Init, }
+\item[{int $\ast$}]{scores}
 \end{DoxyParamCaption}
-)}}\label{SDL_8h_adcfe74a444d989748d0c1682ddbcb0e7}
-Boucle principale du \hyperlink{structJeu}{Jeu} \hypertarget{SDL_8h_a36684beb5e5ec3f9397a2976415141b7}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}}
+)}}\label{SDL_8h_a57b034bb0fbfd35900ad79a98b2be4bd}
+!$<$Si le jeu a renvoyé un nouveau commentaire \hypertarget{SDL_8h_a36684beb5e5ec3f9397a2976415141b7}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}}
 \index{S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Charge\-Image}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ S\-D\-L\-Charge\-Image (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{nomfichier}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a36684beb5e5ec3f9397a2976415141b7}
-Procédure de chargement des images \hypertarget{SDL_8h_a388e62fa59095a03fed7d12b97e89b8f}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}}
+!$<$ Temporary storage for the image that's loaded
+
+!$<$ Load the image
+
+!$<$ If nothing went wrong in loading the image
+
+!$<$ Return the optimized image \hypertarget{SDL_8h_ab3ab37e752c937a11356bbe991509786}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}}
 \index{S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Constructeur (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl, }
-\item[{{\bf Jeu} $\ast$}]{jeu}
+\item[{{\bf Jeu} $\ast$}]{jeu, }
+\item[{{\bf Manette} $\ast$}]{mes\-Manettes}
 \end{DoxyParamCaption}
-)}}\label{SDL_8h_a388e62fa59095a03fed7d12b97e89b8f}
-Constructeur de \hyperlink{structSDL}{S\-D\-L}, initialise les différents champs \hypertarget{SDL_8h_a18f1617d8034417cd2f06cc9c4dbedf2}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Destructeur@{S\-D\-L\-Destructeur}}
+)}}\label{SDL_8h_ab3ab37e752c937a11356bbe991509786}
+\hypertarget{SDL_8h_a18f1617d8034417cd2f06cc9c4dbedf2}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Destructeur@{S\-D\-L\-Destructeur}}
 \index{S\-D\-L\-Destructeur@{S\-D\-L\-Destructeur}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Destructeur (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a18f1617d8034417cd2f06cc9c4dbedf2}
-Destructeur de S\-Dl,remise à zero des champs de \hyperlink{structSDL}{S\-D\-L} et free des allocations \hypertarget{SDL_8h_acca01b95fb78179e3051d8d411b8a9cd}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Ieme\-Texture@{S\-D\-L\-Get\-Ieme\-Texture}}
+\hypertarget{SDL_8h_a0739253f7d24014416204f6d64c565b6}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Ieme\-Manette@{S\-D\-L\-Get\-Ieme\-Manette}}
+\index{S\-D\-L\-Get\-Ieme\-Manette@{S\-D\-L\-Get\-Ieme\-Manette}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Get\-Ieme\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manette}$\ast$ S\-D\-L\-Get\-Ieme\-Manette (
+\begin{DoxyParamCaption}
+\item[{const {\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{SDL_8h_a0739253f7d24014416204f6d64c565b6}
+\hypertarget{SDL_8h_acca01b95fb78179e3051d8d411b8a9cd}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Ieme\-Texture@{S\-D\-L\-Get\-Ieme\-Texture}}
 \index{S\-D\-L\-Get\-Ieme\-Texture@{S\-D\-L\-Get\-Ieme\-Texture}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Get\-Ieme\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ S\-D\-L\-Get\-Ieme\-Texture (
 \begin{DoxyParamCaption}
@@ -120,28 +230,29 @@ Destructeur de S\-Dl,remise à zero des champs de \hyperlink{structSDL}{S\-D\-L}
 \item[{unsigned int}]{i}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_acca01b95fb78179e3051d8d411b8a9cd}
-assesseur de ieme texture \hypertarget{SDL_8h_aa7223cb3ce4fe6f4c83d6a01adc66cbd}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Jeu@{S\-D\-L\-Get\-Jeu}}
+\hypertarget{SDL_8h_aa7223cb3ce4fe6f4c83d6a01adc66cbd}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Jeu@{S\-D\-L\-Get\-Jeu}}
 \index{S\-D\-L\-Get\-Jeu@{S\-D\-L\-Get\-Jeu}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Get\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Jeu}$\ast$ S\-D\-L\-Get\-Jeu (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_aa7223cb3ce4fe6f4c83d6a01adc66cbd}
-La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1, les quatre suivantes celles du joueur 2, etc.. assesseur de jeu \hypertarget{SDL_8h_a7596bb1c6890b99a64e59f6b732a2fe1}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Textures@{S\-D\-L\-Get\-Textures}}
+\hypertarget{SDL_8h_a7596bb1c6890b99a64e59f6b732a2fe1}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Get\-Textures@{S\-D\-L\-Get\-Textures}}
 \index{S\-D\-L\-Get\-Textures@{S\-D\-L\-Get\-Textures}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Get\-Textures}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ S\-D\-L\-Get\-Textures (
 \begin{DoxyParamCaption}
 \item[{const {\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a7596bb1c6890b99a64e59f6b732a2fe1}
-assesseur de textures \hypertarget{SDL_8h_a9af2a8faac33405c916c5758a054e93d}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Jeu\-Init@{S\-D\-L\-Jeu\-Init}}
-\index{S\-D\-L\-Jeu\-Init@{S\-D\-L\-Jeu\-Init}!SDL.h@{S\-D\-L.\-h}}
-\subsubsection[{S\-D\-L\-Jeu\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Jeu\-Init (
+\hypertarget{SDL_8h_ad6a2da8e854839a096da5db6178b1356}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}}
+\index{S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}!SDL.h@{S\-D\-L.\-h}}
+\subsubsection[{S\-D\-L\-Jeu\-Init\-N}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Jeu\-Init\-N (
 \begin{DoxyParamCaption}
-\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{int $\ast$}]{scores}
 \end{DoxyParamCaption}
-)}}\label{SDL_8h_a9af2a8faac33405c916c5758a054e93d}
-Procédure Init \hypertarget{SDL_8h_ad7897b59aff5363840beb85766e25e47}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}}
+)}}\label{SDL_8h_ad6a2da8e854839a096da5db6178b1356}
+\hypertarget{SDL_8h_ad7897b59aff5363840beb85766e25e47}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}}
 \index{S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Set\-Ieme\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Set\-Ieme\-Texture (
 \begin{DoxyParamCaption}
@@ -150,7 +261,7 @@ Procédure Init \hypertarget{SDL_8h_ad7897b59aff5363840beb85766e25e47}{\index{S\
 \item[{S\-D\-L\-\_\-\-Surface $\ast$}]{texture}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_ad7897b59aff5363840beb85766e25e47}
-mutateur de ieme texture \hypertarget{SDL_8h_a29faea1dc4bb87f4538e14d944b55a5e}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Set\-Jeu@{S\-D\-L\-Set\-Jeu}}
+\hypertarget{SDL_8h_a29faea1dc4bb87f4538e14d944b55a5e}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Set\-Jeu@{S\-D\-L\-Set\-Jeu}}
 \index{S\-D\-L\-Set\-Jeu@{S\-D\-L\-Set\-Jeu}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Set\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Set\-Jeu (
 \begin{DoxyParamCaption}
@@ -158,11 +269,14 @@ mutateur de ieme texture \hypertarget{SDL_8h_a29faea1dc4bb87f4538e14d944b55a5e}{
 \item[{{\bf Jeu} $\ast$}]{jeu}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a29faea1dc4bb87f4538e14d944b55a5e}
-mutateur de jeu \hypertarget{SDL_8h_a0de41957ce76d79bc06145340f5d2766}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Test\-Regression@{S\-D\-L\-Test\-Regression}}
+\hypertarget{SDL_8h_a0de41957ce76d79bc06145340f5d2766}{\index{S\-D\-L.\-h@{S\-D\-L.\-h}!S\-D\-L\-Test\-Regression@{S\-D\-L\-Test\-Regression}}
 \index{S\-D\-L\-Test\-Regression@{S\-D\-L\-Test\-Regression}!SDL.h@{S\-D\-L.\-h}}
 \subsubsection[{S\-D\-L\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Test\-Regression (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{SDL_8h_a0de41957ce76d79bc06145340f5d2766}
-Pocédure qui teste le Module 
+
+
+procédure qui teste le Module 
+

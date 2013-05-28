@@ -1,28 +1,65 @@
-\hypertarget{structJeu}{\section{Jeu Struct Reference}
+\hypertarget{structJeu}{\section{Référence de la structure Jeu}
 \label{structJeu}\index{Jeu@{Jeu}}
 }
 
 
+Structure du \hyperlink{structJeu}{Jeu}.  
+
+
+
+
 {\ttfamily \#include $<$Jeu.\-h$>$}
 
-\subsection*{Public Attributes}
+
+
+Graphe de collaboration de Jeu\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structJeu__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structGrid}{Grid} \hyperlink{structJeu_a004d8d0f888b9dea26cbbc2d6afea6e7}{grille}
 \item 
-\hyperlink{structJoueur}{Joueur} \hyperlink{structJeu_aa6d723ce3faee960bc6f49a3e17fe9ad}{mes\-Joueurs} \mbox{[}\hyperlink{Constantes_8h_a505b3b803482fbd73a5eafac78db730f}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}\mbox{]}
+\hyperlink{structJoueur}{Joueur} $\ast$ \hyperlink{structJeu_aafbe63ae87dd9d9b17e69ae94123ee31}{mes\-Joueurs}
+\item 
+int $\ast$ \hyperlink{structJeu_a3db4303dcbb7630f11d5bfdf4a7bf181}{scores}
+\item 
+\hyperlink{structBonus}{Bonus} \hyperlink{structJeu_a70bf0e19753aaa6cfba719388aae410d}{mes\-Bonus} \mbox{[}\hyperlink{Constantes_8h_af4e31715ab308023d6200e64b86b9946}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}\mbox{]}
+\item 
+int \hyperlink{structJeu_a08a8620c89aa61ed6bbeb2dcf6c68a40}{temps\-Prochain\-Bonus}
+\item 
+\hyperlink{structMusique}{Musique} \hyperlink{structJeu_a254bcdad7f9995cb345b777980ffdbe0}{musique}
 \end{DoxyCompactItemize}
 
 
-\subsection{Member Data Documentation}
+\subsection{Description détaillée}
+Structure du \hyperlink{structJeu}{Jeu}. 
+
+\subsection{Documentation des données membres}
 \hypertarget{structJeu_a004d8d0f888b9dea26cbbc2d6afea6e7}{\index{Jeu@{Jeu}!grille@{grille}}
 \index{grille@{grille}!Jeu@{Jeu}}
 \subsubsection[{grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Grid} Jeu\-::grille}}\label{structJeu_a004d8d0f888b9dea26cbbc2d6afea6e7}
-\hypertarget{structJeu_aa6d723ce3faee960bc6f49a3e17fe9ad}{\index{Jeu@{Jeu}!mes\-Joueurs@{mes\-Joueurs}}
+\hypertarget{structJeu_a70bf0e19753aaa6cfba719388aae410d}{\index{Jeu@{Jeu}!mes\-Bonus@{mes\-Bonus}}
+\index{mes\-Bonus@{mes\-Bonus}!Jeu@{Jeu}}
+\subsubsection[{mes\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bonus} Jeu\-::mes\-Bonus\mbox{[}{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}\mbox{]}}}\label{structJeu_a70bf0e19753aaa6cfba719388aae410d}
+\hypertarget{structJeu_aafbe63ae87dd9d9b17e69ae94123ee31}{\index{Jeu@{Jeu}!mes\-Joueurs@{mes\-Joueurs}}
 \index{mes\-Joueurs@{mes\-Joueurs}!Jeu@{Jeu}}
-\subsubsection[{mes\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Joueur} Jeu\-::mes\-Joueurs\mbox{[}{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}\mbox{]}}}\label{structJeu_aa6d723ce3faee960bc6f49a3e17fe9ad}
+\subsubsection[{mes\-Joueurs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Joueur}$\ast$ Jeu\-::mes\-Joueurs}}\label{structJeu_aafbe63ae87dd9d9b17e69ae94123ee31}
+\hypertarget{structJeu_a254bcdad7f9995cb345b777980ffdbe0}{\index{Jeu@{Jeu}!musique@{musique}}
+\index{musique@{musique}!Jeu@{Jeu}}
+\subsubsection[{musique}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Musique} Jeu\-::musique}}\label{structJeu_a254bcdad7f9995cb345b777980ffdbe0}
+\hypertarget{structJeu_a3db4303dcbb7630f11d5bfdf4a7bf181}{\index{Jeu@{Jeu}!scores@{scores}}
+\index{scores@{scores}!Jeu@{Jeu}}
+\subsubsection[{scores}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ Jeu\-::scores}}\label{structJeu_a3db4303dcbb7630f11d5bfdf4a7bf181}
+\hypertarget{structJeu_a08a8620c89aa61ed6bbeb2dcf6c68a40}{\index{Jeu@{Jeu}!temps\-Prochain\-Bonus@{temps\-Prochain\-Bonus}}
+\index{temps\-Prochain\-Bonus@{temps\-Prochain\-Bonus}!Jeu@{Jeu}}
+\subsubsection[{temps\-Prochain\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}int Jeu\-::temps\-Prochain\-Bonus}}\label{structJeu_a08a8620c89aa61ed6bbeb2dcf6c68a40}
 
 
-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+La documentation de cette structure a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}
 \item 
-/home/antoine/\-Projets/tron-\/lif7/src/\hyperlink{Jeu_8h}{Jeu.\-h}\end{DoxyCompactItemize}
+/home/matthieu/\-Projet/tron-\/lif7/src/\hyperlink{Jeu_8h}{Jeu.\-h}\end{DoxyCompactItemize}
