@@ -30,6 +30,7 @@
 
 #define _Nombre_de_Bonus 4
 #define _Temps_Bonus_Boost 25
+#define _Temps_Bonus_Saut 5
 #define _Vitesse_Boost 15
 
 

@@ -94,7 +94,7 @@ char testCollisionGenerique(float objet1[4],float objet2[4]){
 }
 
 
-char testCollisionMur(Joueur * joueur, Grid * grille){
+char testCollisionMur(Joueur * joueur, Grid * grille,char boolSaut){
     int i=0;
     char boolCollision = 0;
     Mur* unMur;
@@ -117,7 +117,7 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
        (boundingBoxMoto[1]<borduresGrid[1])||
        (boundingBoxMoto[3]>borduresGrid[3]))
     {boolCollision = 1;}
-    else while((i<TabDynMurGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)){
+    else while((i<TabDynMurGetTaille_utilisee(GridGetMesMurs(grille)))&&(boolCollision==0)&&(boolSaut==0)){
                 unMur=adresseIemeElementTabDynMur(GridGetMesMurs(grille),i);
                 boundingBoxMur[0]=MurGetPositionX(unMur);
                 boundingBoxMur[1]=MurGetPositionY(unMur);
@@ -142,9 +142,11 @@ char testCollisionMur(Joueur * joueur, Grid * grille){
 
 char testCollisionMoto(Moto* moto1, Moto* moto2){
     char boolCollision=0;
-    float boundingBoxMoto1[4]={MotoGetPositionX(moto1),MotoGetPositionY(moto1),(float)MotoGetTailleX(moto1) + MotoGetPositionX(moto1),
+    float boundingBoxMoto1[4]={MotoGetPositionX(moto1),MotoGetPositionY(moto1),
+                                (float)MotoGetTailleX(moto1) + MotoGetPositionX(moto1),
                                 (float)MotoGetTailleY(moto1) + MotoGetPositionY(moto1)};
-    float boundingBoxMoto2[4]={MotoGetPositionX(moto2),MotoGetPositionY(moto2),(float)MotoGetTailleX(moto2) + MotoGetPositionX(moto2),
+    float boundingBoxMoto2[4]={MotoGetPositionX(moto2),MotoGetPositionY(moto2),
+                                (float)MotoGetTailleX(moto2) + MotoGetPositionX(moto2),
                                 (float)MotoGetTailleY(moto2) + MotoGetPositionY(moto2)};
     if(testCollisionGenerique(boundingBoxMoto1,boundingBoxMoto2)){
         boolCollision=1;
@@ -270,6 +272,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     short int NbJoueurEnDoute=0;
     char collisionBonus=0;
     char collisionMur=0;
+    char boolSaut=0;
     Joueur *joueur;
     char chaine[10];
 
@@ -278,7 +281,10 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     for(i=0;i<_Nombre_de_Joueur;i++){
         joueur=JeuGetIemeJoueurs(jeu,i);
         if(JoueurGetEnJeu(joueur)==VIVANT){
-            collisionMur=testCollisionMur(joueur,grille);
+            if((JoueurGetEffetBonus(joueur)==SAUT)&&(JoueurGetTempsBonus(joueur)!=_Temps_Bonus_Saut))
+                boolSaut=1;
+            else boolSaut=0;
+            collisionMur=testCollisionMur(joueur,grille,boolSaut);
             if(collisionMur==1){
                 JouerIemeSonCourt(&(jeu->musique),0);
                 sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
@@ -292,7 +298,9 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                 for(j=i+1;(j<_Nombre_de_Joueur);j++){
                     if((JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,j))==VIVANT)
                        &&(testCollisionMoto(JoueurGetMoto(JeuGetIemeJoueurs(jeu,i)),
-                                            JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))){
+                                            JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))
+                       &&(boolSaut==0)
+                       &&((JoueurGetEffetBonus(joueur)!=SAUT)||(JoueurGetTempsBonus(joueur)==_Temps_Bonus_Saut))){
                         JouerIemeSonCourt(&(jeu->musique),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
@@ -389,25 +397,37 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
     else {(jeu->tempsProchainBonus)-- ;}
     for(i=0;i<_Nombre_de_Bonus;i++){
         unBonus=JeuGetIemeBonus(jeu,i);
-        collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
-        if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
+        if(BonusGetEffetBonus(unBonus)!=AUCUN){
+            collisionBonus=testCollisionMotoBonus(jeu->mesJoueurs,unBonus);
             if(collisionBonus!=0){
-                JouerIemeSonCourt(JeuGetMusique(jeu),1);
-                nettoieGrid(GridGetMesMurs(JeuGetGrille(jeu)));
-                BonusSetPositionX(unBonus,0);
-                BonusSetPositionY(unBonus,0);
-                BonusSetEffetBonus(unBonus,AUCUN);
-            }
-        }
-        else if(BonusGetEffetBonus(unBonus)==BOOST){
-                if(collisionBonus!=0){
-                    JouerIemeSonCourt(JeuGetMusique(jeu),1);
-                    JoueurSetEffetBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),BOOST);
-                    JoueurSetTempsBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),_Temps_Bonus_Boost);
-                    BonusSetPositionX(unBonus,0);
-                    BonusSetPositionY(unBonus,0);
-                    BonusSetEffetBonus(unBonus,AUCUN);
+                if(BonusGetEffetBonus(unBonus)==NETTOYAGE){
+
+                        JouerIemeSonCourt(JeuGetMusique(jeu),1);
+                        nettoieGrid(GridGetMesMurs(JeuGetGrille(jeu)));
+                        BonusSetPositionX(unBonus,0);
+                        BonusSetPositionY(unBonus,0);
+                        BonusSetEffetBonus(unBonus,AUCUN);
+
                 }
+                else {
+                    if(BonusGetEffetBonus(unBonus)==BOOST){
+                        JouerIemeSonCourt(JeuGetMusique(jeu),1);
+                        JoueurSetEffetBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),BOOST);
+                        JoueurSetTempsBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),_Temps_Bonus_Boost);
+                        BonusSetPositionX(unBonus,0);
+                        BonusSetPositionY(unBonus,0);
+                        BonusSetEffetBonus(unBonus,AUCUN);
+                    }
+                    else if(BonusGetEffetBonus(unBonus)==SAUT){
+                            JouerIemeSonCourt(JeuGetMusique(jeu),1);
+                            JoueurSetEffetBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),SAUT);
+                            JoueurSetTempsBonus(JeuGetIemeJoueurs(jeu,collisionBonus-1),_Temps_Bonus_Saut);
+                            BonusSetPositionX(unBonus,0);
+                            BonusSetPositionY(unBonus,0);
+                            BonusSetEffetBonus(unBonus,AUCUN);
+                        }
+                }
+            }
         }
     }
     decrementeTempsBonus(jeu);
@@ -433,6 +453,12 @@ void decrementeTempsBonus(Jeu *jeu){
                 MotoSetVitesse(JoueurGetMoto(unJoueur),MotoGetVitesse(JoueurGetMoto(unJoueur))-_Vitesse_Boost);
             }
         }
+        if((JoueurGetEffetBonus(unJoueur)==SAUT)&&(JoueurGetTempsBonus(unJoueur)!=_Temps_Bonus_Saut)){
+            JoueurSetTempsBonus(unJoueur,JoueurGetTempsBonus(unJoueur)-1);
+            if(JoueurGetTempsBonus(unJoueur)==0){
+                JoueurSetEffetBonus(unJoueur,AUCUN);
+            }
+        }
     }
 }
 
@@ -440,6 +466,9 @@ void JeuActionneBonus(Joueur *joueur){
     if(JoueurGetEffetBonus(joueur)==BOOST){
         JoueurSetTempsBonus(joueur,JoueurGetTempsBonus(joueur)-1);
         MotoSetVitesse(JoueurGetMoto(joueur),MotoGetVitesse(JoueurGetMoto(joueur))+_Vitesse_Boost);
+    }
+    if(JoueurGetEffetBonus(joueur)==SAUT){
+        JoueurSetTempsBonus(joueur,JoueurGetTempsBonus(joueur)-1);
     }
 }
 
@@ -1130,8 +1159,8 @@ void JeuTestRegression(){
     printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",
            vitesse2,MotoGetVitesse(JoueurGetMoto(JeuGetIemeJoueurs(&jeu,1))));
 
-    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,0),JeuGetGrille(&jeu)));
-    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,1),JeuGetGrille(&jeu)));
+    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,0),JeuGetGrille(&jeu),0));
+    assert(0== testCollisionMur(JeuGetIemeJoueurs(&jeu,1),JeuGetGrille(&jeu),0));
 
   /*  ajouteMur(GridGetMesMurs(JeuGetGrille(&jeu)),unMur);
     assert(1== testCollisionMur(JeuGetIemeJoueurs(&jeu,0),JeuGetGrille(&jeu)));
