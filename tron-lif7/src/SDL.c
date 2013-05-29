@@ -117,6 +117,7 @@ void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
     }
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4,SDLChargeImage("data/images/BonusNettoyage.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1,SDLChargeImage("data/images/BonusBoost.bmp"));
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+2,SDLChargeImage("data/images/BonusSaut.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus,SDLChargeImage("data/images/Tron.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+1,SDLChargeImage("data/images/Interface.bmp"));
     SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface,NULL);
@@ -710,6 +711,10 @@ void SDLAfficheBonus(SDL*sdl){
         }
         if(BonusGetEffetBonus(unBonus)==BOOST){
             SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+1),SDLGetIemeTexture(sdl,0),
+                                BonusGetPositionX(unBonus),BonusGetPositionY(unBonus));
+        }
+        if(BonusGetEffetBonus(unBonus)==SAUT){
+            SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+2),SDLGetIemeTexture(sdl,0),
                                 BonusGetPositionX(unBonus),BonusGetPositionY(unBonus));
         }
     }

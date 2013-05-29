@@ -5,10 +5,10 @@
 		<Cursor position="20" topLine="0" />
 	</File>
 	<File name="src/Bonus.h" open="1" top="0" tabpos="21">
-		<Cursor position="2439" topLine="82" />
+		<Cursor position="2439" topLine="0" />
 	</File>
 	<File name="src/Constantes.h" open="1" top="0" tabpos="15">
-		<Cursor position="91" topLine="1" />
+		<Cursor position="223" topLine="15" />
 	</File>
 	<File name="src/Controle.c" open="1" top="0" tabpos="4">
 		<Cursor position="27" topLine="0" />
@@ -20,22 +20,22 @@
 		<Cursor position="83" topLine="0" />
 	</File>
 	<File name="src/EffetBonus.h" open="1" top="0" tabpos="17">
-		<Cursor position="88" topLine="0" />
+		<Cursor position="253" topLine="0" />
 	</File>
 	<File name="src/Grid.c" open="1" top="0" tabpos="8">
-		<Cursor position="23" topLine="1" />
+		<Cursor position="23" topLine="98" />
 	</File>
 	<File name="src/Grid.h" open="1" top="0" tabpos="7">
 		<Cursor position="2980" topLine="106" />
 	</File>
-	<File name="src/Jeu.c" open="1" top="0" tabpos="12">
-		<Cursor position="27" topLine="2" />
+	<File name="src/Jeu.c" open="1" top="1" tabpos="12">
+		<Cursor position="17184" topLine="158" />
 	</File>
 	<File name="src/Jeu.h" open="1" top="0" tabpos="11">
-		<Cursor position="8661" topLine="234" />
+		<Cursor position="3416" topLine="132" />
 	</File>
 	<File name="src/Joueur.c" open="1" top="0" tabpos="6">
-		<Cursor position="21" topLine="2" />
+		<Cursor position="21" topLine="0" />
 	</File>
 	<File name="src/Joueur.h" open="1" top="0" tabpos="5">
 		<Cursor position="5048" topLine="192" />
@@ -65,10 +65,10 @@
 		<Cursor position="2601" topLine="77" />
 	</File>
 	<File name="src/SDL.c" open="1" top="0" tabpos="14">
-		<Cursor position="22" topLine="0" />
+		<Cursor position="34173" topLine="658" />
 	</File>
 	<File name="src/SDL.h" open="1" top="0" tabpos="13">
-		<Cursor position="4233" topLine="145" />
+		<Cursor position="4233" topLine="15" />
 	</File>
 	<File name="src/TableauDynamiqueEntier.c" open="1" top="0" tabpos="27">
 		<Cursor position="41" topLine="0" />
@@ -82,7 +82,7 @@
 	<File name="src/TableauDynamiqueMur.h" open="1" top="0" tabpos="24">
 		<Cursor position="287" topLine="0" />
 	</File>
-	<File name="src/main.c" open="1" top="1" tabpos="3">
-		<Cursor position="26" topLine="0" />
+	<File name="src/main.c" open="1" top="0" tabpos="3">
+		<Cursor position="26" topLine="25" />
 	</File>
 </CodeBlocks_layout_file>

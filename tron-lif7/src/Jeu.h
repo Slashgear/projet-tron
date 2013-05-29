@@ -136,10 +136,10 @@ void bougeMoto(Jeu* jeu);
 /**
  	\fn  testCollisionMur
  fonction qui teste les collisions entre les motos et les Murs
- 	\param Joueur * joueur, Grid * grille
+ 	\param Joueur * joueur, Grid * grille,char boolSaut
  	\return Retourne 0 si pas de collisions, 1 si collision simple, 2 si collision à grande vitesse
  */
-char testCollisionMur(Joueur * joueur, Grid * grille);
+char testCollisionMur(Joueur * joueur, Grid * grille,char boolSaut);
 /**
  	\fn  testCollisionMoto
  fonction qui teste les collisions entre les motos
