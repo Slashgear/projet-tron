@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['jeu',['jeu',['../structSDL.html#aed6e34a843f7e278abbc6401e7a86748',1,'SDL']]],
-  ['joueurcible',['joueurCible',['../structJoueur.html#a7672ceecb63c257cf2d9a659662620fc',1,'Joueur']]],
-  ['joystick',['joystick',['../structManette.html#ad11c45cf2d1afa059fae52ab61a177d8',1,'Manette']]]
+  ['jeu',['jeu',['../struct_s_d_l.html#a56ca1ac56f66324ba9bc5868128ddb84',1,'SDL']]],
+  ['joueurcible',['joueurCible',['../struct_joueur.html#a92b55b201709dd3df1e01da0264d4b35',1,'Joueur']]],
+  ['joystick',['joystick',['../struct_manette.html#a5fe6c6b426f70a21df07c64227b2c337',1,'Manette']]]
 ];

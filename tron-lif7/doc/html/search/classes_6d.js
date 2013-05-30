@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['manette',['Manette',['../structManette.html',1,'']]],
-  ['moto',['Moto',['../structMoto.html',1,'']]],
-  ['mur',['Mur',['../structMur.html',1,'']]],
-  ['musique',['Musique',['../structMusique.html',1,'']]]
+  ['manette',['Manette',['../struct_manette.html',1,'']]],
+  ['moto',['Moto',['../struct_moto.html',1,'']]],
+  ['mur',['Mur',['../struct_mur.html',1,'']]],
+  ['musique',['Musique',['../struct_musique.html',1,'']]]
 ];

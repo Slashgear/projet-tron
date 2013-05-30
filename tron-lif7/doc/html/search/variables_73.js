@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scores',['scores',['../structJeu.html#a3db4303dcbb7630f11d5bfdf4a7bf181',1,'Jeu']]],
-  ['soncourt',['sonCourt',['../structMusique.html#ae957f32de4befa0f625f4b7229e3d660',1,'Musique']]]
+  ['scores',['scores',['../struct_jeu.html#a859dd84beee150c7f6f6e683f1dc91ac',1,'Jeu']]],
+  ['soncourt',['sonCourt',['../struct_musique.html#a752d8e2529422bc4d30b26cdbe9718bb',1,'Musique']]]
 ];
