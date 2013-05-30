@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['numero',['numero',['../structManette.html#aedc72637b122d8d34ce23f4cf98be10b',1,'Manette']]],
-  ['numerojoueur',['numeroJoueur',['../structJoueur.html#a16d5323b40b813198386623075de9fa1',1,'Joueur']]],
-  ['numeromanette',['numeroManette',['../structJoueur.html#aab4fb5652b29a6bdfc5dff4ed4dbe8da',1,'Joueur']]]
+  ['numero',['numero',['../struct_manette.html#a2c30f43104974e72e2809fb4569804b0',1,'Manette']]],
+  ['numerojoueur',['numeroJoueur',['../struct_joueur.html#a63ba7cc1f1d9cf8e7a5b77d508d833c4',1,'Joueur']]],
+  ['numeromanette',['numeroManette',['../struct_joueur.html#aeb402ac96372bb55a275a4166a0eb2bc',1,'Joueur']]]
 ];

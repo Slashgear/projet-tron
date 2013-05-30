@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['bas',['bas',['../structControle.html#a5b5c96bf02d58115b53eaa683f372faf',1,'Controle']]],
-  ['baseduson',['baseDuSon',['../structMusique.html#a5ac7591cc431a2ef548d48e9cf858d94',1,'Musique']]],
-  ['bonus',['bonus',['../structControle.html#ad6ce9209cfccf9b61fbaf5bc149b64e9',1,'Controle']]],
-  ['boolia',['boolIA',['../structJoueur.html#a2294a826a87221de10ee4aa493598493',1,'Joueur']]],
-  ['booltourne',['boolTourne',['../structJoueur.html#a439aff6381e9272c2fbb737dfa2362bc',1,'Joueur']]],
-  ['boutons',['boutons',['../structManette.html#a07814b5f1ebd865b6e15d2094cf5d671',1,'Manette']]]
+  ['bas',['bas',['../struct_controle.html#aeaae5c4f132aac2712690f1863ce950f',1,'Controle']]],
+  ['baseduson',['baseDuSon',['../struct_musique.html#a690ab19d5ecae7922968f095c2419c99',1,'Musique']]],
+  ['bonus',['bonus',['../struct_controle.html#aee145d374ea504506aac885e3f52fd1a',1,'Controle']]],
+  ['boolia',['boolIA',['../struct_joueur.html#ad27c2d8e0b25d849fbb931f8d01b317d',1,'Joueur']]],
+  ['booltourne',['boolTourne',['../struct_joueur.html#a92bcbcbba7d261bcc12d14ee759c4ca1',1,'Joueur']]],
+  ['boutons',['boutons',['../struct_manette.html#a2d5d3e36cd5f3cfc05dfc548b3ad6f85',1,'Manette']]]
 ];

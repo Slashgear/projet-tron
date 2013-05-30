@@ -3,10 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>TRON-SDL: Référence du fichier main.c</title>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier main.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -20,17 +28,18 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">TRON-SDL
+   <div id="projectname">Tron -The Grid
    </div>
-   <div id="projectbrief">YES</div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
   </td>
  </tr>
  </tbody>
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.1.2 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -63,6 +72,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
       <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8c.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +101,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
@@ -95,35 +114,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;assert.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="Mur_8h_source.html">Mur.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Moto_8h_source.html">Moto.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Controle_8h_source.html">Controle.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Joueur_8h_source.html">Joueur.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Grid_8h_source.html">Grid.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Jeu_8h_source.html">Jeu.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="SDL_8h_source.html">SDL.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Bonus_8h_source.html">Bonus.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Constantes_8h_source.html">Constantes.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="Musique_8h_source.html">Musique.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_mur_8h_source.html">Mur.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_moto_8h_source.html">Moto.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_controle_8h_source.html">Controle.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_joueur_8h_source.html">Joueur.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_grid_8h_source.html">Grid.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_jeu_8h_source.html">Jeu.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_d_l_8h_source.html">SDL.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_bonus_8h_source.html">Bonus.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_constantes_8h_source.html">Constantes.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_musique_8h_source.html">Musique.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#main_8c" alt=""/></div>
 <map name="main_8c" id="main_8c">
-<area shape="rect" id="node9" href="Mur_8h.html" title="Module des Murs du Jeu." alt="" coords="341,392,395,421"/><area shape="rect" id="node15" href="Moto_8h.html" title="Module des Motos du jeu." alt="" coords="93,315,155,344"/><area shape="rect" id="node18" href="Controle_8h.html" title="Module qui défini les Controles." alt="" coords="744,315,827,344"/><area shape="rect" id="node24" href="Joueur_8h.html" title="Module des Joueurs." alt="" coords="613,237,685,267"/><area shape="rect" id="node32" href="Grid_8h.html" title="Module des vecteurs." alt="" coords="424,237,480,267"/><area shape="rect" id="node42" href="Jeu_8h.html" title="Module centrale du Jeu." alt="" coords="677,160,731,189"/><area shape="rect" id="node46" href="Constantes_8h.html" title="Module des constantes du jeu." alt="" coords="709,237,808,267"/><area shape="rect" id="node48" href="Bonus_8h.html" title="Module des Bonus du jeu." alt="" coords="520,237,589,267"/><area shape="rect" id="node51" href="Musique_8h.html" title="Module des Musiques du jeu." alt="" coords="883,237,965,267"/><area shape="rect" id="node55" href="SDL_8h.html" title="Module qui gère les affichage du jeu,ainsi que les manettes." alt="" coords="996,83,1055,112"/><area shape="rect" id="node13" href="Couleur_8h.html" title="Module des ccouleurs du jeu." alt="" coords="340,469,417,499"/><area shape="rect" id="node29" href="EffetBonus_8h.html" title="Module des Motos du jeu." alt="" coords="520,315,619,344"/><area shape="rect" id="node37" href="TableauDynamiqueMur_8h.html" title="Module qui gère les tableaux dynamiques des Murs." alt="" coords="229,315,395,344"/><area shape="rect" id="node59" href="Joystick_8h.html" title="Module des manettes." alt="" coords="1165,160,1248,189"/></map>
+<area shape="rect" id="node9" href="_mur_8h.html" title="Mur.h" alt="" coords="341,392,395,421"/><area shape="rect" id="node15" href="_moto_8h.html" title="Moto.h" alt="" coords="93,315,155,344"/><area shape="rect" id="node18" href="_controle_8h.html" title="Controle.h" alt="" coords="744,315,827,344"/><area shape="rect" id="node24" href="_joueur_8h.html" title="Joueur.h" alt="" coords="613,237,685,267"/><area shape="rect" id="node32" href="_grid_8h.html" title="Grid.h" alt="" coords="424,237,480,267"/><area shape="rect" id="node42" href="_jeu_8h.html" title="Jeu.h" alt="" coords="677,160,731,189"/><area shape="rect" id="node46" href="_constantes_8h.html" title="Constantes.h" alt="" coords="709,237,808,267"/><area shape="rect" id="node48" href="_bonus_8h.html" title="Bonus.h" alt="" coords="520,237,589,267"/><area shape="rect" id="node51" href="_musique_8h.html" title="Musique.h" alt="" coords="883,237,965,267"/><area shape="rect" id="node55" href="_s_d_l_8h.html" title="SDL.h" alt="" coords="996,83,1055,112"/><area shape="rect" id="node13" href="_couleur_8h.html" title="Couleur.h" alt="" coords="340,469,417,499"/><area shape="rect" id="node29" href="_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="520,315,619,344"/><area shape="rect" id="node37" href="_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="229,315,395,344"/><area shape="rect" id="node59" href="_joystick_8h.html" title="Joystick.h" alt="" coords="1165,160,1248,189"/></map>
 </div>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+</div>
+<p><a href="main_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2>Description détaillée</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p><a class="el" href="main_8c.html" title="main.c">main.c</a> </p>
 <p>] </p>
 <dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>13 mars 2013 </dd></dl>
-</div><h2>Documentation des fonctions</h2>
+
+<p>Définition dans le fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
 <a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -137,14 +161,20 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Définition à la ligne <a class="el" href="main_8c_source.html#l00023">23</a> du fichier <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Généré le Mardi Mai 28 2013 02:19:28 pour TRON-SDL par &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.1.2
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8c.html">main.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
 </body>
 </html>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sdl',['SDL',['../structSDL.html',1,'']]]
+  ['sdl',['SDL',['../struct_s_d_l.html',1,'']]]
 ];

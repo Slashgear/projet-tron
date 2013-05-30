@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vitesse',['vitesse',['../structMoto.html#a561dfc3e54a534dfa92ccecbea8dbe71',1,'Moto']]]
+  ['vitesse',['vitesse',['../struct_moto.html#aef55e1775d611bfea0196692da1a0bc5',1,'Moto']]]
 ];
