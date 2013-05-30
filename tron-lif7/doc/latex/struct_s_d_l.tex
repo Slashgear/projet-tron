@@ -1,0 +1,72 @@
+\hypertarget{struct_s_d_l}{\section{Référence de la structure S\-D\-L}
+\label{struct_s_d_l}\index{S\-D\-L@{S\-D\-L}}
+}
+
+
+{\ttfamily \#include $<$S\-D\-L.\-h$>$}
+
+\subsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_jeu}{Jeu} \hyperlink{struct_s_d_l_a56ca1ac56f66324ba9bc5868128ddb84}{jeu}
+\item 
+S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{struct_s_d_l_af2ecb76ea798efcbd83469418abffe48}{textures} \mbox{[}2+4 $\ast$\hyperlink{_constantes_8h_a505b3b803482fbd73a5eafac78db730f}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}+\hyperlink{_constantes_8h_af4e31715ab308023d6200e64b86b9946}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}+\hyperlink{_constantes_8h_a64872e3ddf1efd6847f90dbcb0ed21ce}{\-\_\-\-Nombre\-\_\-de\-\_\-\-Textes}+\hyperlink{_constantes_8h_a228aa6ff538af983b44e972225d962b9}{\-\_\-\-Nombre\-\_\-\-Images\-\_\-\-Interface}\mbox{]}
+\item 
+\hyperlink{struct_manette}{Manette} $\ast$ \hyperlink{struct_s_d_l_ab0b0a871f5eb61c1171d679a7e568590}{mes\-Manettes}
+\item 
+T\-T\-F\-\_\-\-Font $\ast$ \hyperlink{struct_s_d_l_a49a11b0728728090fa1189391c9fe0c8}{police}
+\item 
+T\-T\-F\-\_\-\-Font $\ast$ \hyperlink{struct_s_d_l_a1086358a0d3bf9a044e55f9946bbb869}{police\-Grands\-Messages}
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Structure de l'affichage 
+
+Définition à la ligne 18 du fichier S\-D\-L.\-h.
+
+
+
+\subsection{Documentation des champs}
+\hypertarget{struct_s_d_l_a56ca1ac56f66324ba9bc5868128ddb84}{\index{S\-D\-L@{S\-D\-L}!jeu@{jeu}}
+\index{jeu@{jeu}!SDL@{S\-D\-L}}
+\subsubsection[{jeu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Jeu} jeu}}\label{struct_s_d_l_a56ca1ac56f66324ba9bc5868128ddb84}
+
+
+Définition à la ligne 19 du fichier S\-D\-L.\-h.
+
+\hypertarget{struct_s_d_l_ab0b0a871f5eb61c1171d679a7e568590}{\index{S\-D\-L@{S\-D\-L}!mes\-Manettes@{mes\-Manettes}}
+\index{mes\-Manettes@{mes\-Manettes}!SDL@{S\-D\-L}}
+\subsubsection[{mes\-Manettes}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manette}$\ast$ mes\-Manettes}}\label{struct_s_d_l_ab0b0a871f5eb61c1171d679a7e568590}
+
+
+Définition à la ligne 24 du fichier S\-D\-L.\-h.
+
+\hypertarget{struct_s_d_l_a49a11b0728728090fa1189391c9fe0c8}{\index{S\-D\-L@{S\-D\-L}!police@{police}}
+\index{police@{police}!SDL@{S\-D\-L}}
+\subsubsection[{police}]{\setlength{\rightskip}{0pt plus 5cm}T\-T\-F\-\_\-\-Font$\ast$ police}}\label{struct_s_d_l_a49a11b0728728090fa1189391c9fe0c8}
+
+
+Définition à la ligne 25 du fichier S\-D\-L.\-h.
+
+\hypertarget{struct_s_d_l_a1086358a0d3bf9a044e55f9946bbb869}{\index{S\-D\-L@{S\-D\-L}!police\-Grands\-Messages@{police\-Grands\-Messages}}
+\index{police\-Grands\-Messages@{police\-Grands\-Messages}!SDL@{S\-D\-L}}
+\subsubsection[{police\-Grands\-Messages}]{\setlength{\rightskip}{0pt plus 5cm}T\-T\-F\-\_\-\-Font$\ast$ police\-Grands\-Messages}}\label{struct_s_d_l_a1086358a0d3bf9a044e55f9946bbb869}
+
+
+Définition à la ligne 26 du fichier S\-D\-L.\-h.
+
+\hypertarget{struct_s_d_l_af2ecb76ea798efcbd83469418abffe48}{\index{S\-D\-L@{S\-D\-L}!textures@{textures}}
+\index{textures@{textures}!SDL@{S\-D\-L}}
+\subsubsection[{textures}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-\_\-\-Surface$\ast$ textures\mbox{[}2+4 $\ast${\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Joueur}+{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Bonus}+{\bf \-\_\-\-Nombre\-\_\-de\-\_\-\-Textes}+{\bf \-\_\-\-Nombre\-\_\-\-Images\-\_\-\-Interface}\mbox{]}}}\label{struct_s_d_l_af2ecb76ea798efcbd83469418abffe48}
+\begin{DoxyVerb} La texture 0 est le fond(ecran), la texture 1 est la grille, les textures 2 à 5 sont celles du joueur 1,
+\end{DoxyVerb}
+ les quatre suivantes celles du joueur 2, etc.. Viennent ensuite les texture des \hyperlink{struct_bonus}{Bonus}, celles des textures d'interfaces puis enfin les textes 
+
+Définition à la ligne 21 du fichier S\-D\-L.\-h.
+
+
+
+La documentation de cette structure a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_d_l_8h}{S\-D\-L.\-h}\end{DoxyCompactItemize}

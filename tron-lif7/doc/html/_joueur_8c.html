@@ -1,0 +1,862 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier Joueur.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_joueur_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Joueur.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_joueur_8h_source.html">Joueur.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_moto_8h_source.html">Moto.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_controle_8h_source.html">Controle.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_couleur_8h_source.html">Couleur.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Joueur.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="_joueur_8c__incl.png" border="0" usemap="#_joueur_8c" alt=""/></div>
+<map name="_joueur_8c" id="_joueur_8c">
+<area shape="rect" id="node7" href="_joueur_8h.html" title="Joueur.h" alt="" coords="200,83,272,112"/><area shape="rect" id="node9" href="_controle_8h.html" title="Controle.h" alt="" coords="107,160,189,189"/><area shape="rect" id="node15" href="_moto_8h.html" title="Moto.h" alt="" coords="21,160,83,189"/><area shape="rect" id="node18" href="_couleur_8h.html" title="Couleur.h" alt="" coords="301,237,379,267"/><area shape="rect" id="node20" href="_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="341,160,440,189"/><area shape="rect" id="node22" href="_mur_8h.html" title="Mur.h" alt="" coords="213,160,267,189"/></map>
+</div>
+</div>
+<p><a href="_joueur_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a3c09cd1a406f9909b24201539e1d3d49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a3c09cd1a406f9909b24201539e1d3d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9df65c1a7c306e987f1246a5f53b87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_controle.html">Controle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:afc9df65c1a7c306e987f1246a5f53b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab174573f7233afa24b6b2029e2427a96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#ab174573f7233afa24b6b2029e2427a96">JoueurGetCouleur</a> (const <a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:ab174573f7233afa24b6b2029e2427a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59fc2f0e1b118c958bc22bde81fe619d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a59fc2f0e1b118c958bc22bde81fe619d">JoueurGetEnJeu</a> (const <a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a59fc2f0e1b118c958bc22bde81fe619d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1d98d25a2a9915a619095e63a37d28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#afe1d98d25a2a9915a619095e63a37d28">JoueurGetEffetBonus</a> (const <a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:afe1d98d25a2a9915a619095e63a37d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ad3b3bcf7dcca662d019c58f983468"><td class="memItemLeft" align="right" valign="top">short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a72ad3b3bcf7dcca662d019c58f983468">JoueurGetNumeroManette</a> (const <a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a72ad3b3bcf7dcca662d019c58f983468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a780868d4eb761d68abce085a2b040349"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a780868d4eb761d68abce085a2b040349">JoueurGetTempsBonus</a> (const <a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a780868d4eb761d68abce085a2b040349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df1787fbad3851b301eb03f3e5bdf48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a9df1787fbad3851b301eb03f3e5bdf48">JoueurGetDernierMur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a9df1787fbad3851b301eb03f3e5bdf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c1f4a97676079b24229c073408d340b"><td class="memItemLeft" align="right" valign="top">short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a1c1f4a97676079b24229c073408d340b">JoueurGetBooltourne</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a1c1f4a97676079b24229c073408d340b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0849d40938feaf7a829289eb20971ab"><td class="memItemLeft" align="right" valign="top">short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#ae0849d40938feaf7a829289eb20971ab">JoueurGetNumeroJoueur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:ae0849d40938feaf7a829289eb20971ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b913ee2eb6d62f1c2cf10a6bb45c828"><td class="memItemLeft" align="right" valign="top">short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a0b913ee2eb6d62f1c2cf10a6bb45c828">JoueurGetBoolIA</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a0b913ee2eb6d62f1c2cf10a6bb45c828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7108e6f90ec1b61b4c62b55d234d6143"><td class="memItemLeft" align="right" valign="top">short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a7108e6f90ec1b61b4c62b55d234d6143">JoueurGetJoueurCible</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a7108e6f90ec1b61b4c62b55d234d6143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e3513e25a86b80327d96ad2fddd160c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a1e3513e25a86b80327d96ad2fddd160c">JoueurSetMoto</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a1e3513e25a86b80327d96ad2fddd160c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af06734120dc02a68f4520e19473368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a9af06734120dc02a68f4520e19473368">JoueurSetControle</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="struct_controle.html">Controle</a> *controle)</td></tr>
+<tr class="separator:a9af06734120dc02a68f4520e19473368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308e870320d2641a5582bb546c6d21fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a308e870320d2641a5582bb546c6d21fc">JoueurSetCouleur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur)</td></tr>
+<tr class="separator:a308e870320d2641a5582bb546c6d21fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b0f2a497b5ac7a2284513a9e19feaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a39b0f2a497b5ac7a2284513a9e19feaf">JoueurSetEnJeu</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> enJeu)</td></tr>
+<tr class="separator:a39b0f2a497b5ac7a2284513a9e19feaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b0084e52b37643b7540ef384c76f22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#ab9b0084e52b37643b7540ef384c76f22">JoueurSetEffetBonus</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> effet)</td></tr>
+<tr class="separator:ab9b0084e52b37643b7540ef384c76f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48903f3392e108482e958c7de74ea21c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a48903f3392e108482e958c7de74ea21c">JoueurSetNumeroManette</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, short int numero)</td></tr>
+<tr class="separator:a48903f3392e108482e958c7de74ea21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867959894ba0095f6c5d3799b8fa892f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a867959894ba0095f6c5d3799b8fa892f">JoueurSetTempsBonus</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, int tempsBonus)</td></tr>
+<tr class="separator:a867959894ba0095f6c5d3799b8fa892f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb829f19b298f3eec06c7b13ee0c430"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#adeb829f19b298f3eec06c7b13ee0c430">JoueurSetDernierMur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="struct_mur.html">Mur</a> *unMur)</td></tr>
+<tr class="separator:adeb829f19b298f3eec06c7b13ee0c430"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac0438d709a0c17cf579b0f4224ebbee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#aac0438d709a0c17cf579b0f4224ebbee">JoueurSetBooltourne</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, short int boolTourne)</td></tr>
+<tr class="separator:aac0438d709a0c17cf579b0f4224ebbee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4930b1fbe66da4157c708b47d9a3f5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#ab4930b1fbe66da4157c708b47d9a3f5b">JoueurSetNumeroJoueur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, short int numero)</td></tr>
+<tr class="separator:ab4930b1fbe66da4157c708b47d9a3f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2c26808a926100a0497f615ece9979"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#aee2c26808a926100a0497f615ece9979">JoueurSetBoolIA</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, short int boolIA)</td></tr>
+<tr class="separator:aee2c26808a926100a0497f615ece9979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3ee59830e0287bd639173c344ab845"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a9e3ee59830e0287bd639173c344ab845">JoueurSetJoueurCible</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, short int numero)</td></tr>
+<tr class="separator:a9e3ee59830e0287bd639173c344ab845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7727f84c34d3fd32cc6f9c2ed84cf0b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a7727f84c34d3fd32cc6f9c2ed84cf0b0">JoueurConstructeur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="struct_moto.html">Moto</a> *moto, <a class="el" href="struct_controle.html">Controle</a> *controle, <a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur, <a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> enJeu, <a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> effetActuel, short int numeroManette, short int numeroJoueur, short int boolIA)</td></tr>
+<tr class="separator:a7727f84c34d3fd32cc6f9c2ed84cf0b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535ea5e3fdedcdbcc7e9d84cb3b7b75e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#a535ea5e3fdedcdbcc7e9d84cb3b7b75e">JoueurDestructeur</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur)</td></tr>
+<tr class="separator:a535ea5e3fdedcdbcc7e9d84cb3b7b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad628d18447d13fd4d2782e1a556c9cc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_joueur_8c.html#ad628d18447d13fd4d2782e1a556c9cc3">JoueurTestRegression</a> ()</td></tr>
+<tr class="separator:ad628d18447d13fd4d2782e1a556c9cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>] Module des Joueurs </p>
+<dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>19 mars 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a7727f84c34d3fd32cc6f9c2ed84cf0b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_controle.html">Controle</a> *&#160;</td>
+          <td class="paramname"><em>controle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a>&#160;</td>
+          <td class="paramname"><em>enJeu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a>&#160;</td>
+          <td class="paramname"><em>effetActuel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>numeroManette</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>numeroJoueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>boolIA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00094">94</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a535ea5e3fdedcdbcc7e9d84cb3b7b75e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00116">116</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0b913ee2eb6d62f1c2cf10a6bb45c828"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short int JoueurGetBoolIA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00047">47</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c1f4a97676079b24229c073408d340b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short int JoueurGetBooltourne </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00041">41</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc9df65c1a7c306e987f1246a5f53b87"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_controle.html">Controle</a>* JoueurGetControle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00020">20</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab174573f7233afa24b6b2029e2427a96"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> JoueurGetCouleur </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00023">23</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9df1787fbad3851b301eb03f3e5bdf48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_mur.html">Mur</a>* JoueurGetDernierMur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00038">38</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe1d98d25a2a9915a619095e63a37d28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> JoueurGetEffetBonus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00029">29</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59fc2f0e1b118c958bc22bde81fe619d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> JoueurGetEnJeu </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00026">26</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7108e6f90ec1b61b4c62b55d234d6143"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short int JoueurGetJoueurCible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00050">50</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c09cd1a406f9909b24201539e1d3d49"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_moto.html">Moto</a>* JoueurGetMoto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00017">17</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0849d40938feaf7a829289eb20971ab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short int JoueurGetNumeroJoueur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00044">44</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72ad3b3bcf7dcca662d019c58f983468"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">short int JoueurGetNumeroManette </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00032">32</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a780868d4eb761d68abce085a2b040349"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JoueurGetTempsBonus </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00035">35</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee2c26808a926100a0497f615ece9979"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetBoolIA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>boolIA</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00085">85</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac0438d709a0c17cf579b0f4224ebbee"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetBooltourne </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>boolTourne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00079">79</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9af06734120dc02a68f4520e19473368"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetControle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_controle.html">Controle</a> *&#160;</td>
+          <td class="paramname"><em>controle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00058">58</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a308e870320d2641a5582bb546c6d21fc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetCouleur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00061">61</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adeb829f19b298f3eec06c7b13ee0c430"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetDernierMur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>unMur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00076">76</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9b0084e52b37643b7540ef384c76f22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetEffetBonus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a>&#160;</td>
+          <td class="paramname"><em>effet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00067">67</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a39b0f2a497b5ac7a2284513a9e19feaf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetEnJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a>&#160;</td>
+          <td class="paramname"><em>enJeu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00064">64</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e3ee59830e0287bd639173c344ab845"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetJoueurCible </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>numero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00088">88</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e3513e25a86b80327d96ad2fddd160c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetMoto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00055">55</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4930b1fbe66da4157c708b47d9a3f5b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetNumeroJoueur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>numero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00082">82</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48903f3392e108482e958c7de74ea21c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetNumeroManette </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int&#160;</td>
+          <td class="paramname"><em>numero</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00070">70</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a867959894ba0095f6c5d3799b8fa892f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JoueurSetTempsBonus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tempsBonus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00073">73</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad628d18447d13fd4d2782e1a556c9cc3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JoueurTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Procedure qui teste le module <a class="el" href="struct_joueur.html">Joueur</a> </p>
+
+<p>Définition à la ligne <a class="el" href="_joueur_8c_source.html#l00139">139</a> du fichier <a class="el" href="_joueur_8c_source.html">Joueur.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_joueur_8c.html">Joueur.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

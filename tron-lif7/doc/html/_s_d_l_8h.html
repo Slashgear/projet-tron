@@ -1,0 +1,772 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier SDL.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_s_d_l_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier SDL.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_jeu_8h_source.html">Jeu.h</a>&quot;</code><br/>
+<code>#include &lt;SDL/SDL.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_joystick_8h_source.html">Joystick.h</a>&quot;</code><br/>
+<code>#include &lt;SDL/SDL_ttf.h&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de SDL.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l_8h__incl.png" border="0" usemap="#_s_d_l_8h" alt=""/></div>
+<map name="_s_d_l_8h" id="_s_d_l_8h">
+<area shape="rect" id="node3" href="_jeu_8h.html" title="Jeu.h" alt="" coords="276,83,329,112"/><area shape="rect" id="node47" href="_joystick_8h.html" title="Joystick.h" alt="" coords="751,83,833,112"/><area shape="rect" id="node5" href="_joueur_8h.html" title="Joueur.h" alt="" coords="305,237,377,267"/><area shape="rect" id="node27" href="_grid_8h.html" title="Grid.h" alt="" coords="507,160,563,189"/><area shape="rect" id="node37" href="_constantes_8h.html" title="Constantes.h" alt="" coords="5,160,104,189"/><area shape="rect" id="node39" href="_bonus_8h.html" title="Bonus.h" alt="" coords="128,160,197,189"/><area shape="rect" id="node42" href="_musique_8h.html" title="Musique.h" alt="" coords="221,160,304,189"/><area shape="rect" id="node7" href="_controle_8h.html" title="Controle.h" alt="" coords="599,315,681,344"/><area shape="rect" id="node15" href="_moto_8h.html" title="Moto.h" alt="" coords="335,315,396,344"/><area shape="rect" id="node18" href="_couleur_8h.html" title="Couleur.h" alt="" coords="317,392,395,421"/><area shape="rect" id="node20" href="_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="113,315,212,344"/><area shape="rect" id="node22" href="_mur_8h.html" title="Mur.h" alt="" coords="420,315,473,344"/><area shape="rect" id="node32" href="_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="452,237,617,267"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="_s_d_l_8h__dep__incl.png" border="0" usemap="#_s_d_l_8hdep" alt=""/></div>
+<map name="_s_d_l_8hdep" id="_s_d_l_8hdep">
+<area shape="rect" id="node3" href="main_8c.html" title="main.c" alt="" coords="5,83,67,112"/><area shape="rect" id="node5" href="_s_d_l_8c.html" title="SDL.c" alt="" coords="91,83,149,112"/></map>
+</div>
+</div>
+<p><a href="_s_d_l_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l.html">SDL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aa7223cb3ce4fe6f4c83d6a01adc66cbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_jeu.html">Jeu</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#aa7223cb3ce4fe6f4c83d6a01adc66cbd">SDLGetJeu</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:aa7223cb3ce4fe6f4c83d6a01adc66cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acca01b95fb78179e3051d8d411b8a9cd"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#acca01b95fb78179e3051d8d411b8a9cd">SDLGetIemeTexture</a> (const <a class="el" href="struct_s_d_l.html">SDL</a> *sdl, unsigned int i)</td></tr>
+<tr class="separator:acca01b95fb78179e3051d8d411b8a9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0739253f7d24014416204f6d64c565b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_manette.html">Manette</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a0739253f7d24014416204f6d64c565b6">SDLGetIemeManette</a> (const <a class="el" href="struct_s_d_l.html">SDL</a> *sdl, unsigned int i)</td></tr>
+<tr class="separator:a0739253f7d24014416204f6d64c565b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7596bb1c6890b99a64e59f6b732a2fe1"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a7596bb1c6890b99a64e59f6b732a2fe1">SDLGetTextures</a> (const <a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a7596bb1c6890b99a64e59f6b732a2fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29faea1dc4bb87f4538e14d944b55a5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a29faea1dc4bb87f4538e14d944b55a5e">SDLSetJeu</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, <a class="el" href="struct_jeu.html">Jeu</a> *jeu)</td></tr>
+<tr class="separator:a29faea1dc4bb87f4538e14d944b55a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7897b59aff5363840beb85766e25e47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#ad7897b59aff5363840beb85766e25e47">SDLSetIemeTexture</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, unsigned int i, SDL_Surface *texture)</td></tr>
+<tr class="separator:ad7897b59aff5363840beb85766e25e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7167f5c196fc5e167bfabde1a730e81d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a7167f5c196fc5e167bfabde1a730e81d">pause</a> ()</td></tr>
+<tr class="separator:a7167f5c196fc5e167bfabde1a730e81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ab37e752c937a11356bbe991509786"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#ab3ab37e752c937a11356bbe991509786">SDLConstructeur</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, <a class="el" href="struct_jeu.html">Jeu</a> *jeu, <a class="el" href="struct_manette.html">Manette</a> *mesManettes)</td></tr>
+<tr class="separator:ab3ab37e752c937a11356bbe991509786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f1617d8034417cd2f06cc9c4dbedf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a18f1617d8034417cd2f06cc9c4dbedf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a894918515b5365e162d1c5e1214f97eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a894918515b5365e162d1c5e1214f97eb">SDLAppliqueSurface</a> (SDL_Surface *surfaceA, SDL_Surface *surfaceB, int positionX, int positionY)</td></tr>
+<tr class="separator:a894918515b5365e162d1c5e1214f97eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942e816249ca9bef39f4bbaada8d3daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a942e816249ca9bef39f4bbaada8d3daf">SDLAfficheJeu</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, int *scores)</td></tr>
+<tr class="separator:a942e816249ca9bef39f4bbaada8d3daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a164a520a75c594cf10cd3cfdca3814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a0a164a520a75c594cf10cd3cfdca3814">SDLAfficheMotos</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a0a164a520a75c594cf10cd3cfdca3814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a511761d608b92801c934aad221f762ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a511761d608b92801c934aad221f762ce">SDLAfficheMurs</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a511761d608b92801c934aad221f762ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87530d8f5fdcb529d517fb86bc927e63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a87530d8f5fdcb529d517fb86bc927e63">SDLAfficheInterface</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a87530d8f5fdcb529d517fb86bc927e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27595c16fe8fbd8ee635cb6c8d9ec40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#ac27595c16fe8fbd8ee635cb6c8d9ec40">SDLAfficheBonus</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:ac27595c16fe8fbd8ee635cb6c8d9ec40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a2da8e854839a096da5db6178b1356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#ad6a2da8e854839a096da5db6178b1356">SDLJeuInitN</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, int *scores)</td></tr>
+<tr class="separator:ad6a2da8e854839a096da5db6178b1356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2b2544e3bfaa5cce134a84429e8dbd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#ab2b2544e3bfaa5cce134a84429e8dbd6">SDLAfficheTextes</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, char *chaineDeCaractere, <a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> uneCouleur)</td></tr>
+<tr class="separator:ab2b2544e3bfaa5cce134a84429e8dbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d801e3ea653b113f1868b6c8b1309f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a1d801e3ea653b113f1868b6c8b1309f8">SDLAfficheScores</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, int *scores)</td></tr>
+<tr class="separator:a1d801e3ea653b113f1868b6c8b1309f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57b034bb0fbfd35900ad79a98b2be4bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a57b034bb0fbfd35900ad79a98b2be4bd">SDLBoucleJeu</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, short int *jeuReInit, int *scores)</td></tr>
+<tr class="separator:a57b034bb0fbfd35900ad79a98b2be4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36684beb5e5ec3f9397a2976415141b7"><td class="memItemLeft" align="right" valign="top">SDL_Surface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a36684beb5e5ec3f9397a2976415141b7">SDLChargeImage</a> (const char *nomfichier)</td></tr>
+<tr class="separator:a36684beb5e5ec3f9397a2976415141b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5307e0546a65557e28218096444fe16e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a5307e0546a65557e28218096444fe16e">SDLActionManette</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, <a class="el" href="struct_grid.html">Grid</a> *grille)</td></tr>
+<tr class="separator:a5307e0546a65557e28218096444fe16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0de41957ce76d79bc06145340f5d2766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8h.html#a0de41957ce76d79bc06145340f5d2766">SDLTestRegression</a> ()</td></tr>
+<tr class="separator:a0de41957ce76d79bc06145340f5d2766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>] Module qui gère les affichage du jeu,ainsi que les manettes </p>
+<dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>19 mars 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="_s_d_l_8h_source.html">SDL.h</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a7167f5c196fc5e167bfabde1a730e81d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pause </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00147">147</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5307e0546a65557e28218096444fe16e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLActionManette </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_joueur.html">Joueur</a> *&#160;</td>
+          <td class="paramname"><em>joueur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_grid.html">Grid</a> *&#160;</td>
+          <td class="paramname"><em>grille</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00565">565</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac27595c16fe8fbd8ee635cb6c8d9ec40"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheBonus </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00702">702</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87530d8f5fdcb529d517fb86bc927e63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheInterface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00718">718</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a942e816249ca9bef39f4bbaada8d3daf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>scores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00864">864</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0a164a520a75c594cf10cd3cfdca3814"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheMotos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00641">641</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a511761d608b92801c934aad221f762ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheMurs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00666">666</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d801e3ea653b113f1868b6c8b1309f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheScores </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>scores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt;affichage de la ligne supérieure</p>
+<p>&lt;affichage de la ligne inférieure </p>
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00811">811</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2b2544e3bfaa5cce134a84429e8dbd6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAfficheTextes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chaineDeCaractere</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>uneCouleur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00738">738</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a894918515b5365e162d1c5e1214f97eb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLAppliqueSurface </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>surfaceA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>surfaceB</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>positionX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>positionY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>!&lt; Make a temporary rectangle to hold the offsets</p>
+<p>!&lt; Give the offsets to the rectangle</p>
+<p>!&lt; Blit the surface </p>
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00056">56</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a57b034bb0fbfd35900ad79a98b2be4bd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLBoucleJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">short int *&#160;</td>
+          <td class="paramname"><em>jeuReInit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>scores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>!&lt;Si le jeu a renvoyé un nouveau commentaire </p>
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00388">388</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36684beb5e5ec3f9397a2976415141b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Surface* SDLChargeImage </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>nomfichier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>!&lt; Temporary storage for the image that's loaded</p>
+<p>!&lt; Load the image</p>
+<p>!&lt; If nothing went wrong in loading the image</p>
+<p>!&lt; Return the optimized image </p>
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00041">41</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3ab37e752c937a11356bbe991509786"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_jeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_manette.html">Manette</a> *&#160;</td>
+          <td class="paramname"><em>mesManettes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00070">70</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a18f1617d8034417cd2f06cc9c4dbedf2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00131">131</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0739253f7d24014416204f6d64c565b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_manette.html">Manette</a>* SDLGetIemeManette </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00024">24</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acca01b95fb78179e3051d8d411b8a9cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Surface* SDLGetIemeTexture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00021">21</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7223cb3ce4fe6f4c83d6a01adc66cbd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_jeu.html">Jeu</a>* SDLGetJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00018">18</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7596bb1c6890b99a64e59f6b732a2fe1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Surface* SDLGetTextures </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00027">27</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6a2da8e854839a096da5db6178b1356"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLJeuInitN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>scores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00163">163</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7897b59aff5363840beb85766e25e47"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLSetIemeTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&#160;</td>
+          <td class="paramname"><em>texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00034">34</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29faea1dc4bb87f4538e14d944b55a5e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLSetJeu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_jeu.html">Jeu</a> *&#160;</td>
+          <td class="paramname"><em>jeu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00031">31</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0de41957ce76d79bc06145340f5d2766"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>procédure qui teste le Module </p>
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00875">875</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_s_d_l_8h.html">SDL.h</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,452 @@
+\hypertarget{_joueur_8h}{\section{Référence du fichier Joueur.\-h}
+\label{_joueur_8h}\index{Joueur.\-h@{Joueur.\-h}}
+}
+{\ttfamily \#include \char`\"{}Controle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Moto.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Couleur.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Effet\-Bonus.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Mur.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Joueur.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_joueur_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_joueur_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_joueur}{Joueur}
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} \{ \hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba031fe5e154a96f85c034f6ba509060b4}{M\-O\-R\-T} =0, 
+\hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba1c63e61bcc802c01941537675433b8f4}{V\-I\-V\-A\-N\-T} =1, 
+\hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba9f2b9d7089244218315a3bbbb60bf656}{M\-O\-U\-R\-A\-N\-T} =2, 
+\hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3baca4e600a17ae7a7703fde47138b9eb75}{D\-O\-U\-T\-E} =3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_moto}{Moto} $\ast$ \hyperlink{_joueur_8h_a3c09cd1a406f9909b24201539e1d3d49}{Joueur\-Get\-Moto} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{struct_controle}{Controle} $\ast$ \hyperlink{_joueur_8h_afc9df65c1a7c306e987f1246a5f53b87}{Joueur\-Get\-Controle} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} \hyperlink{_joueur_8h_ab174573f7233afa24b6b2029e2427a96}{Joueur\-Get\-Couleur} (const \hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} \hyperlink{_joueur_8h_a59fc2f0e1b118c958bc22bde81fe619d}{Joueur\-Get\-En\-Jeu} (const \hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{_effet_bonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} \hyperlink{_joueur_8h_a2bd4bb37d26013b15b02012ca325da2c}{Joueur\-Get\-Effet\-Bonus} (const \hyperlink{struct_joueur}{Joueur} $\ast$\hyperlink{struct_joueur}{Joueur})
+\item 
+short int \hyperlink{_joueur_8h_a72ad3b3bcf7dcca662d019c58f983468}{Joueur\-Get\-Numero\-Manette} (const \hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+int \hyperlink{_joueur_8h_a780868d4eb761d68abce085a2b040349}{Joueur\-Get\-Temps\-Bonus} (const \hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+\hyperlink{struct_mur}{Mur} $\ast$ \hyperlink{_joueur_8h_a9df1787fbad3851b301eb03f3e5bdf48}{Joueur\-Get\-Dernier\-Mur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{_joueur_8h_a1c1f4a97676079b24229c073408d340b}{Joueur\-Get\-Booltourne} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{_joueur_8h_ae0849d40938feaf7a829289eb20971ab}{Joueur\-Get\-Numero\-Joueur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{_joueur_8h_a0b913ee2eb6d62f1c2cf10a6bb45c828}{Joueur\-Get\-Bool\-I\-A} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+short int \hyperlink{_joueur_8h_a7108e6f90ec1b61b4c62b55d234d6143}{Joueur\-Get\-Joueur\-Cible} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+void \hyperlink{_joueur_8h_a1e3513e25a86b80327d96ad2fddd160c}{Joueur\-Set\-Moto} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+void \hyperlink{_joueur_8h_a9af06734120dc02a68f4520e19473368}{Joueur\-Set\-Controle} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+void \hyperlink{_joueur_8h_a308e870320d2641a5582bb546c6d21fc}{Joueur\-Set\-Couleur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur)
+\item 
+void \hyperlink{_joueur_8h_a39b0f2a497b5ac7a2284513a9e19feaf}{Joueur\-Set\-En\-Jeu} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu)
+\item 
+void \hyperlink{_joueur_8h_ab9b0084e52b37643b7540ef384c76f22}{Joueur\-Set\-Effet\-Bonus} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{_effet_bonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet)
+\item 
+void \hyperlink{_joueur_8h_a48903f3392e108482e958c7de74ea21c}{Joueur\-Set\-Numero\-Manette} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, short int numero)
+\item 
+void \hyperlink{_joueur_8h_a867959894ba0095f6c5d3799b8fa892f}{Joueur\-Set\-Temps\-Bonus} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, int temps\-Bonus)
+\item 
+void \hyperlink{_joueur_8h_adeb829f19b298f3eec06c7b13ee0c430}{Joueur\-Set\-Dernier\-Mur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_mur}{Mur} $\ast$un\-Mur)
+\item 
+void \hyperlink{_joueur_8h_aac0438d709a0c17cf579b0f4224ebbee}{Joueur\-Set\-Booltourne} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, short int bool\-Tourne)
+\item 
+void \hyperlink{_joueur_8h_ab4930b1fbe66da4157c708b47d9a3f5b}{Joueur\-Set\-Numero\-Joueur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, short int numero)
+\item 
+void \hyperlink{_joueur_8h_aee2c26808a926100a0497f615ece9979}{Joueur\-Set\-Bool\-I\-A} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, short int bool\-I\-A)
+\item 
+void \hyperlink{_joueur_8h_a9e3ee59830e0287bd639173c344ab845}{Joueur\-Set\-Joueur\-Cible} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, short int numero)
+\item 
+void \hyperlink{_joueur_8h_a7727f84c34d3fd32cc6f9c2ed84cf0b0}{Joueur\-Constructeur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_moto}{Moto} $\ast$moto, \hyperlink{struct_controle}{Controle} $\ast$controle, \hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, \hyperlink{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{En\-Jeu} en\-Jeu, \hyperlink{_effet_bonus_8h_a5c3ffd6a343fb8d5f63c87ee1a37a7fe}{Effet\-Bonus} effet\-Actuel, short int numero\-Manette, short int numero\-Joueur, short int bool\-I\-A)
+\item 
+void \hyperlink{_joueur_8h_a535ea5e3fdedcdbcc7e9d84cb3b7b75e}{Joueur\-Destructeur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur)
+\item 
+void \hyperlink{_joueur_8h_aa34482db89da3f96c220e99d13465697}{Joueur\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\mbox{]} Module des Joueurs \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19 mars 2013 
+\end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{_joueur_8h_source}{Joueur.\-h}.
+
+
+
+\subsection{Documentation du type de l'énumération}
+\hypertarget{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}{\index{Joueur.\-h@{Joueur.\-h}!En\-Jeu@{En\-Jeu}}
+\index{En\-Jeu@{En\-Jeu}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{En\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf En\-Jeu}}}\label{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3b}
+\begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{M\-O\-R\-T@{M\-O\-R\-T}!Joueur.\-h@{Joueur.\-h}}\index{Joueur.\-h@{Joueur.\-h}!M\-O\-R\-T@{M\-O\-R\-T}}\item[{\em 
+\hypertarget{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba031fe5e154a96f85c034f6ba509060b4}{M\-O\-R\-T}\label{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba031fe5e154a96f85c034f6ba509060b4}
+}]\index{V\-I\-V\-A\-N\-T@{V\-I\-V\-A\-N\-T}!Joueur.\-h@{Joueur.\-h}}\index{Joueur.\-h@{Joueur.\-h}!V\-I\-V\-A\-N\-T@{V\-I\-V\-A\-N\-T}}\item[{\em 
+\hypertarget{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba1c63e61bcc802c01941537675433b8f4}{V\-I\-V\-A\-N\-T}\label{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba1c63e61bcc802c01941537675433b8f4}
+}]\index{M\-O\-U\-R\-A\-N\-T@{M\-O\-U\-R\-A\-N\-T}!Joueur.\-h@{Joueur.\-h}}\index{Joueur.\-h@{Joueur.\-h}!M\-O\-U\-R\-A\-N\-T@{M\-O\-U\-R\-A\-N\-T}}\item[{\em 
+\hypertarget{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba9f2b9d7089244218315a3bbbb60bf656}{M\-O\-U\-R\-A\-N\-T}\label{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3ba9f2b9d7089244218315a3bbbb60bf656}
+}]\index{D\-O\-U\-T\-E@{D\-O\-U\-T\-E}!Joueur.\-h@{Joueur.\-h}}\index{Joueur.\-h@{Joueur.\-h}!D\-O\-U\-T\-E@{D\-O\-U\-T\-E}}\item[{\em 
+\hypertarget{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3baca4e600a17ae7a7703fde47138b9eb75}{D\-O\-U\-T\-E}\label{_joueur_8h_a43a9f41708ce5d7ddf49e05d61f48c3baca4e600a17ae7a7703fde47138b9eb75}
+}]\end{description}
+\end{Desc}
+
+
+Définition à la ligne 21 du fichier Joueur.\-h.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{_joueur_8h_a7727f84c34d3fd32cc6f9c2ed84cf0b0}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Constructeur@{Joueur\-Constructeur}}
+\index{Joueur\-Constructeur@{Joueur\-Constructeur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{{\bf Couleur}}]{couleur, }
+\item[{{\bf En\-Jeu}}]{en\-Jeu, }
+\item[{{\bf Effet\-Bonus}}]{effet\-Actuel, }
+\item[{short int}]{numero\-Manette, }
+\item[{short int}]{numero\-Joueur, }
+\item[{short int}]{bool\-I\-A}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a7727f84c34d3fd32cc6f9c2ed84cf0b0}
+
+
+Définition à la ligne 94 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a535ea5e3fdedcdbcc7e9d84cb3b7b75e}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Destructeur@{Joueur\-Destructeur}}
+\index{Joueur\-Destructeur@{Joueur\-Destructeur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a535ea5e3fdedcdbcc7e9d84cb3b7b75e}
+
+
+Définition à la ligne 116 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a0b913ee2eb6d62f1c2cf10a6bb45c828}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Bool\-I\-A@{Joueur\-Get\-Bool\-I\-A}}
+\index{Joueur\-Get\-Bool\-I\-A@{Joueur\-Get\-Bool\-I\-A}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Bool\-I\-A}]{\setlength{\rightskip}{0pt plus 5cm}short int Joueur\-Get\-Bool\-I\-A (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a0b913ee2eb6d62f1c2cf10a6bb45c828}
+
+
+Définition à la ligne 47 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a1c1f4a97676079b24229c073408d340b}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Booltourne@{Joueur\-Get\-Booltourne}}
+\index{Joueur\-Get\-Booltourne@{Joueur\-Get\-Booltourne}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Booltourne}]{\setlength{\rightskip}{0pt plus 5cm}short int Joueur\-Get\-Booltourne (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a1c1f4a97676079b24229c073408d340b}
+
+
+Définition à la ligne 41 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_afc9df65c1a7c306e987f1246a5f53b87}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Controle@{Joueur\-Get\-Controle}}
+\index{Joueur\-Get\-Controle@{Joueur\-Get\-Controle}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Controle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Controle}$\ast$ Joueur\-Get\-Controle (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_afc9df65c1a7c306e987f1246a5f53b87}
+
+
+Définition à la ligne 20 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_ab174573f7233afa24b6b2029e2427a96}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Couleur@{Joueur\-Get\-Couleur}}
+\index{Joueur\-Get\-Couleur@{Joueur\-Get\-Couleur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Couleur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couleur} Joueur\-Get\-Couleur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_ab174573f7233afa24b6b2029e2427a96}
+
+
+Définition à la ligne 23 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a9df1787fbad3851b301eb03f3e5bdf48}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Dernier\-Mur@{Joueur\-Get\-Dernier\-Mur}}
+\index{Joueur\-Get\-Dernier\-Mur@{Joueur\-Get\-Dernier\-Mur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Dernier\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mur}$\ast$ Joueur\-Get\-Dernier\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a9df1787fbad3851b301eb03f3e5bdf48}
+
+
+Définition à la ligne 38 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a2bd4bb37d26013b15b02012ca325da2c}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Effet\-Bonus@{Joueur\-Get\-Effet\-Bonus}}
+\index{Joueur\-Get\-Effet\-Bonus@{Joueur\-Get\-Effet\-Bonus}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Effet\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Effet\-Bonus} Joueur\-Get\-Effet\-Bonus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Joueur} $\ast$}]{Joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a2bd4bb37d26013b15b02012ca325da2c}
+
+
+Définition à la ligne 29 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a59fc2f0e1b118c958bc22bde81fe619d}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-En\-Jeu@{Joueur\-Get\-En\-Jeu}}
+\index{Joueur\-Get\-En\-Jeu@{Joueur\-Get\-En\-Jeu}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-En\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf En\-Jeu} Joueur\-Get\-En\-Jeu (
+\begin{DoxyParamCaption}
+\item[{const {\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a59fc2f0e1b118c958bc22bde81fe619d}
+
+
+Définition à la ligne 26 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a7108e6f90ec1b61b4c62b55d234d6143}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Joueur\-Cible@{Joueur\-Get\-Joueur\-Cible}}
+\index{Joueur\-Get\-Joueur\-Cible@{Joueur\-Get\-Joueur\-Cible}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Joueur\-Cible}]{\setlength{\rightskip}{0pt plus 5cm}short int Joueur\-Get\-Joueur\-Cible (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a7108e6f90ec1b61b4c62b55d234d6143}
+
+
+Définition à la ligne 50 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a3c09cd1a406f9909b24201539e1d3d49}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Moto@{Joueur\-Get\-Moto}}
+\index{Joueur\-Get\-Moto@{Joueur\-Get\-Moto}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Moto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Moto}$\ast$ Joueur\-Get\-Moto (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a3c09cd1a406f9909b24201539e1d3d49}
+
+
+Définition à la ligne 17 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_ae0849d40938feaf7a829289eb20971ab}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Numero\-Joueur@{Joueur\-Get\-Numero\-Joueur}}
+\index{Joueur\-Get\-Numero\-Joueur@{Joueur\-Get\-Numero\-Joueur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Numero\-Joueur}]{\setlength{\rightskip}{0pt plus 5cm}short int Joueur\-Get\-Numero\-Joueur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_ae0849d40938feaf7a829289eb20971ab}
+
+
+Définition à la ligne 44 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a72ad3b3bcf7dcca662d019c58f983468}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Numero\-Manette@{Joueur\-Get\-Numero\-Manette}}
+\index{Joueur\-Get\-Numero\-Manette@{Joueur\-Get\-Numero\-Manette}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Numero\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}short int Joueur\-Get\-Numero\-Manette (
+\begin{DoxyParamCaption}
+\item[{const {\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a72ad3b3bcf7dcca662d019c58f983468}
+
+
+Définition à la ligne 32 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a780868d4eb761d68abce085a2b040349}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Get\-Temps\-Bonus@{Joueur\-Get\-Temps\-Bonus}}
+\index{Joueur\-Get\-Temps\-Bonus@{Joueur\-Get\-Temps\-Bonus}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Get\-Temps\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}int Joueur\-Get\-Temps\-Bonus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Joueur} $\ast$}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a780868d4eb761d68abce085a2b040349}
+
+
+Définition à la ligne 35 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_aee2c26808a926100a0497f615ece9979}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Bool\-I\-A@{Joueur\-Set\-Bool\-I\-A}}
+\index{Joueur\-Set\-Bool\-I\-A@{Joueur\-Set\-Bool\-I\-A}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Bool\-I\-A}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Bool\-I\-A (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{short int}]{bool\-I\-A}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_aee2c26808a926100a0497f615ece9979}
+
+
+Définition à la ligne 85 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_aac0438d709a0c17cf579b0f4224ebbee}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Booltourne@{Joueur\-Set\-Booltourne}}
+\index{Joueur\-Set\-Booltourne@{Joueur\-Set\-Booltourne}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Booltourne}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Booltourne (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{short int}]{bool\-Tourne}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_aac0438d709a0c17cf579b0f4224ebbee}
+
+
+Définition à la ligne 79 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a9af06734120dc02a68f4520e19473368}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Controle@{Joueur\-Set\-Controle}}
+\index{Joueur\-Set\-Controle@{Joueur\-Set\-Controle}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Controle}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Controle (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a9af06734120dc02a68f4520e19473368}
+
+
+Définition à la ligne 58 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a308e870320d2641a5582bb546c6d21fc}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Couleur@{Joueur\-Set\-Couleur}}
+\index{Joueur\-Set\-Couleur@{Joueur\-Set\-Couleur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Couleur}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Couleur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Couleur}}]{couleur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a308e870320d2641a5582bb546c6d21fc}
+
+
+Définition à la ligne 61 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_adeb829f19b298f3eec06c7b13ee0c430}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Dernier\-Mur@{Joueur\-Set\-Dernier\-Mur}}
+\index{Joueur\-Set\-Dernier\-Mur@{Joueur\-Set\-Dernier\-Mur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Dernier\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Dernier\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Mur} $\ast$}]{un\-Mur}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_adeb829f19b298f3eec06c7b13ee0c430}
+
+
+Définition à la ligne 76 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_ab9b0084e52b37643b7540ef384c76f22}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Effet\-Bonus@{Joueur\-Set\-Effet\-Bonus}}
+\index{Joueur\-Set\-Effet\-Bonus@{Joueur\-Set\-Effet\-Bonus}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Effet\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Effet\-Bonus (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Effet\-Bonus}}]{effet}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_ab9b0084e52b37643b7540ef384c76f22}
+
+
+Définition à la ligne 67 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a39b0f2a497b5ac7a2284513a9e19feaf}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-En\-Jeu@{Joueur\-Set\-En\-Jeu}}
+\index{Joueur\-Set\-En\-Jeu@{Joueur\-Set\-En\-Jeu}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-En\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-En\-Jeu (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf En\-Jeu}}]{en\-Jeu}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a39b0f2a497b5ac7a2284513a9e19feaf}
+
+
+Définition à la ligne 64 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a9e3ee59830e0287bd639173c344ab845}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Joueur\-Cible@{Joueur\-Set\-Joueur\-Cible}}
+\index{Joueur\-Set\-Joueur\-Cible@{Joueur\-Set\-Joueur\-Cible}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Joueur\-Cible}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Joueur\-Cible (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{short int}]{numero}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a9e3ee59830e0287bd639173c344ab845}
+
+
+Définition à la ligne 88 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a1e3513e25a86b80327d96ad2fddd160c}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Moto@{Joueur\-Set\-Moto}}
+\index{Joueur\-Set\-Moto@{Joueur\-Set\-Moto}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Moto}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Moto (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{{\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a1e3513e25a86b80327d96ad2fddd160c}
+
+
+Définition à la ligne 55 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_ab4930b1fbe66da4157c708b47d9a3f5b}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Numero\-Joueur@{Joueur\-Set\-Numero\-Joueur}}
+\index{Joueur\-Set\-Numero\-Joueur@{Joueur\-Set\-Numero\-Joueur}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Numero\-Joueur}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Numero\-Joueur (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{short int}]{numero}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_ab4930b1fbe66da4157c708b47d9a3f5b}
+
+
+Définition à la ligne 82 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a48903f3392e108482e958c7de74ea21c}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Numero\-Manette@{Joueur\-Set\-Numero\-Manette}}
+\index{Joueur\-Set\-Numero\-Manette@{Joueur\-Set\-Numero\-Manette}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Numero\-Manette}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Numero\-Manette (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{short int}]{numero}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a48903f3392e108482e958c7de74ea21c}
+
+
+Définition à la ligne 70 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_a867959894ba0095f6c5d3799b8fa892f}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Set\-Temps\-Bonus@{Joueur\-Set\-Temps\-Bonus}}
+\index{Joueur\-Set\-Temps\-Bonus@{Joueur\-Set\-Temps\-Bonus}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Set\-Temps\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Set\-Temps\-Bonus (
+\begin{DoxyParamCaption}
+\item[{{\bf Joueur} $\ast$}]{joueur, }
+\item[{int}]{temps\-Bonus}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_a867959894ba0095f6c5d3799b8fa892f}
+
+
+Définition à la ligne 73 du fichier Joueur.\-c.
+
+\hypertarget{_joueur_8h_aa34482db89da3f96c220e99d13465697}{\index{Joueur.\-h@{Joueur.\-h}!Joueur\-Test\-Regression@{Joueur\-Test\-Regression}}
+\index{Joueur\-Test\-Regression@{Joueur\-Test\-Regression}!Joueur.h@{Joueur.\-h}}
+\subsubsection[{Joueur\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Joueur\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_joueur_8h_aa34482db89da3f96c220e99d13465697}
+Procedure qui teste le module \hyperlink{struct_joueur}{Joueur} 
+
+Définition à la ligne 139 du fichier Joueur.\-c.
+

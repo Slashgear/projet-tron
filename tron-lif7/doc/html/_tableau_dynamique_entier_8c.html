@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier TableauDynamiqueEntier.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_tableau_dynamique_entier_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier TableauDynamiqueEntier.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_tableau_dynamique_entier_8h_source.html">TableauDynamiqueEntier.h</a>&quot;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de TableauDynamiqueEntier.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="_tableau_dynamique_entier_8c__incl.png" border="0" usemap="#_tableau_dynamique_entier_8c" alt=""/></div>
+<map name="_tableau_dynamique_entier_8c" id="_tableau_dynamique_entier_8c">
+<area shape="rect" id="node3" href="_tableau_dynamique_entier_8h.html" title="TableauDynamiqueEntier.h" alt="" coords="5,83,184,112"/></map>
+</div>
+</div>
+<p><a href="_tableau_dynamique_entier_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ab6a8726196a5f20917c43d82c7023b20"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#ab6a8726196a5f20917c43d82c7023b20">TabDynEntierGetCapacite</a> (const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier)</td></tr>
+<tr class="separator:ab6a8726196a5f20917c43d82c7023b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a136e17ac632e98e56b37ec94cd375eac"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#a136e17ac632e98e56b37ec94cd375eac">TabDynEntierGetTaille_utilisee</a> (const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier)</td></tr>
+<tr class="separator:a136e17ac632e98e56b37ec94cd375eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaf357a41e8d4fd4b4ea4ff62a6f6ed"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#a6eaf357a41e8d4fd4b4ea4ff62a6f6ed">TabDynEntierGetAd</a> (const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier)</td></tr>
+<tr class="separator:a6eaf357a41e8d4fd4b4ea4ff62a6f6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad954cdcf51e383884837bf7da3f46ab0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#ad954cdcf51e383884837bf7da3f46ab0">TabDynEntierSetCapacite</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier, unsigned int capacite)</td></tr>
+<tr class="separator:ad954cdcf51e383884837bf7da3f46ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72608244b7a6a4af534abe48f3b7fbe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#a72608244b7a6a4af534abe48f3b7fbe2">TabDynEntierSetTaille_utilisee</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier, unsigned int taille)</td></tr>
+<tr class="separator:a72608244b7a6a4af534abe48f3b7fbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943ad435f0921f55fad1004b7201819f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#a943ad435f0921f55fad1004b7201819f">TabDynEntierSetAd</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *TabDynEntier, int *ad)</td></tr>
+<tr class="separator:a943ad435f0921f55fad1004b7201819f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe49c3b20d8e7e9075c163b5e4c6e9dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#afe49c3b20d8e7e9075c163b5e4c6e9dc">initialiserTabDynEntier</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t)</td></tr>
+<tr class="separator:afe49c3b20d8e7e9075c163b5e4c6e9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac301681c4b3f4bce74fd9773f1da9ef6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#ac301681c4b3f4bce74fd9773f1da9ef6">testamentTabDynEntier</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t)</td></tr>
+<tr class="separator:ac301681c4b3f4bce74fd9773f1da9ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe79a1dd09df3d0119679d87f20aec6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#afe79a1dd09df3d0119679d87f20aec6f">ajouterElementTabDynEntier</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, int e)</td></tr>
+<tr class="separator:afe79a1dd09df3d0119679d87f20aec6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad273850f79af1e74ecd32971b08fe7d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#ad273850f79af1e74ecd32971b08fe7d8">valeurIemeElementTabDynEntier</a> (const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, unsigned int i)</td></tr>
+<tr class="separator:ad273850f79af1e74ecd32971b08fe7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0efdf4c23b94918071fca8711446c98"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#ad0efdf4c23b94918071fca8711446c98">adresseIemeElementTabDynEntier</a> (const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, unsigned int i)</td></tr>
+<tr class="separator:ad0efdf4c23b94918071fca8711446c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b328364f2565029828b234d44d0bd4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#a6b328364f2565029828b234d44d0bd4b">modifierValeurIemeElementTabDynEntier</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, int e, unsigned int i)</td></tr>
+<tr class="separator:a6b328364f2565029828b234d44d0bd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe791fb2f38ce5909b196ee1f1788e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tableau_dynamique_entier_8c.html#aebe791fb2f38ce5909b196ee1f1788e1">supprimerElementTabDynEntier</a> (<a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, int position)</td></tr>
+<tr class="separator:aebe791fb2f38ce5909b196ee1f1788e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>] Module qui gère les tableaux dynamiques d'entier </p>
+<dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>19 mars 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="ad0efdf4c23b94918071fca8711446c98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* adresseIemeElementTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise, 0 &lt;= i &lt; tailleUtilisee(t) Resultat : retourne l'adresse du i+1eme ElementTD de t </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00080">80</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe79a1dd09df3d0119679d87f20aec6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ajouterElementTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise Postcondition : L'element e est ajoute dans la premiere alveole inutilisee du tableau, la taille utilisee est incrementee de 1. Doublement de la capacite de t, si necessaire. </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00055">55</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe49c3b20d8e7e9075c163b5e4c6e9dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initialiserTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t non prealablement initialise Postcondition : t initialise a une alveole vide (taille utilisee nulle) </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00035">35</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b328364f2565029828b234d44d0bd4b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void modifierValeurIemeElementTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise et 0 &lt;= i &lt; tailleUtilisee(t) Postcondition : le i+1eme ElementTD de t vaut e </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00087">87</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aebe791fb2f38ce5909b196ee1f1788e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void supprimerElementTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise et non vide Postcondition : la taille utilisee du tableau est decrementee de 1. Si tailleUtilisee &lt; capacite/3, alors on divise la capacité par 2. </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00097">97</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6eaf357a41e8d4fd4b4ea4ff62a6f6ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* TabDynEntierGetAd </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de ad </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00018">18</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6a8726196a5f20917c43d82c7023b20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TabDynEntierGetCapacite </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de capacite </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00012">12</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a136e17ac632e98e56b37ec94cd375eac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int TabDynEntierGetTaille_utilisee </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>assesseur de taille_utilisee </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00015">15</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a943ad435f0921f55fad1004b7201819f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynEntierSetAd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>ad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de ad </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00028">28</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad954cdcf51e383884837bf7da3f46ab0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynEntierSetCapacite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>capacite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de capacite </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00022">22</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72608244b7a6a4af534abe48f3b7fbe2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TabDynEntierSetTaille_utilisee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>TabDynEntier</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>taille</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>mutateur de taille_utilisee </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00025">25</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac301681c4b3f4bce74fd9773f1da9ef6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testamentTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Precondition : t prealablement initialise
+</pre><p> Postcondition : t pret a disparaitre. La memoire allouee dynamiquement est liberee. On ne pourra plus appeler les sous-programmes qui necessitent que t soit initialise. </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00043">43</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad273850f79af1e74ecd32971b08fe7d8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int valeurIemeElementTabDynEntier </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Precondition : t prealablement initialise, 0 &lt;= i &lt; tailleUtilisee(t) Resultat : retourne le i+1eme ElementTD de t </p>
+
+<p>Définition à la ligne <a class="el" href="_tableau_dynamique_entier_8c_source.html#l00075">75</a> du fichier <a class="el" href="_tableau_dynamique_entier_8c_source.html">TableauDynamiqueEntier.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_tableau_dynamique_entier_8c.html">TableauDynamiqueEntier.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

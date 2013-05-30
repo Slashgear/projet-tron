@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier Mur.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_mur_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Mur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_couleur_8h_source.html">Couleur.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Mur.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_mur_8h__incl.png" border="0" usemap="#_mur_8h" alt=""/></div>
+<map name="_mur_8h" id="_mur_8h">
+<area shape="rect" id="node7" href="_couleur_8h.html" title="Couleur.h" alt="" coords="179,83,256,112"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="_mur_8h__dep__incl.png" border="0" usemap="#_mur_8hdep" alt=""/></div>
+<map name="_mur_8hdep" id="_mur_8hdep">
+<area shape="rect" id="node3" href="_joueur_8h.html" title="Joueur.h" alt="" coords="204,160,276,189"/><area shape="rect" id="node11" href="main_8c.html" title="main.c" alt="" coords="172,392,233,421"/><area shape="rect" id="node23" href="_grid_8h.html" title="Grid.h" alt="" coords="300,160,356,189"/><area shape="rect" id="node26" href="_grid_8c.html" title="Grid.c" alt="" coords="477,237,533,267"/><area shape="rect" id="node30" href="_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="423,83,588,112"/><area shape="rect" id="node34" href="_tableau_dynamique_mur_8c.html" title="TableauDynamiqueMur.c" alt="" coords="543,160,708,189"/><area shape="rect" id="node38" href="_mur_8c.html" title="Mur.c" alt="" coords="663,83,716,112"/><area shape="rect" id="node5" href="_jeu_8h.html" title="Jeu.h" alt="" coords="299,237,352,267"/><area shape="rect" id="node9" href="_jeu_8c.html" title="Jeu.c" alt="" coords="517,315,571,344"/><area shape="rect" id="node20" href="_joueur_8c.html" title="Joueur.c" alt="" coords="43,237,115,267"/><area shape="rect" id="node7" href="_bonus_8c.html" title="Bonus.c" alt="" coords="291,315,360,344"/><area shape="rect" id="node13" href="_s_d_l_8h.html" title="SDL.h" alt="" coords="384,315,443,344"/><area shape="rect" id="node16" href="_s_d_l_8c.html" title="SDL.c" alt="" coords="417,392,476,421"/></map>
+</div>
+</div>
+<p><a href="_mur_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_mur.html">Mur</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a242796bbf2bac8399f38a190f18edfbc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a242796bbf2bac8399f38a190f18edfbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97acc9d9bb325986a464ee05db5e6fbe"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a97acc9d9bb325986a464ee05db5e6fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeddf3763bcdb728a7e3bac665a64552"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:abeddf3763bcdb728a7e3bac665a64552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f66438f4a38b71a243bad168ee0178"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#ab0f66438f4a38b71a243bad168ee0178">MurGetTailleY</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:ab0f66438f4a38b71a243bad168ee0178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9c7924d6ba7afb0fe4daef7cf58d8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a9b9c7924d6ba7afb0fe4daef7cf58d8d">MurGetCouleur</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a9b9c7924d6ba7afb0fe4daef7cf58d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0150e2edbf0f0c8a60df0b8c261835e2"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a> (const <a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a0150e2edbf0f0c8a60df0b8c261835e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef090d8aa04a7f2c059113ef5fff387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, float posX)</td></tr>
+<tr class="separator:acef090d8aa04a7f2c059113ef5fff387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e4ebc64953687f4887b95204db41e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, float posY)</td></tr>
+<tr class="separator:a09e4ebc64953687f4887b95204db41e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12cb4b9c7117a03037cb836ce53864dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, unsigned int tailleX)</td></tr>
+<tr class="separator:a12cb4b9c7117a03037cb836ce53864dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0749cb2928457b9738b542c3e83f3176"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, unsigned int tailleY)</td></tr>
+<tr class="separator:a0749cb2928457b9738b542c3e83f3176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363d065942b92543a4cd0324531a7aa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, <a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur)</td></tr>
+<tr class="separator:a363d065942b92543a4cd0324531a7aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8ffaab1a81e082767ee865573f6813"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a7c8ffaab1a81e082767ee865573f6813">MurSetDureeVie</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, float dureeVie)</td></tr>
+<tr class="separator:a7c8ffaab1a81e082767ee865573f6813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1e2027147808ddbccc9c211f929f9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a5b1e2027147808ddbccc9c211f929f9e">AfficheStatsMur</a> (<a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a5b1e2027147808ddbccc9c211f929f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48159b7842108cf44f51dfba06fae844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a48159b7842108cf44f51dfba06fae844">MurConstructeur</a> (<a class="el" href="struct_mur.html">Mur</a> *mur, float posX, float posY, unsigned int tailleX, unsigned int tailleY, <a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur, float dureeVie)</td></tr>
+<tr class="separator:a48159b7842108cf44f51dfba06fae844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1661630a97686483f104c48fd06dec8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#a1661630a97686483f104c48fd06dec8e">MurDestructeur</a> (<a class="el" href="struct_mur.html">Mur</a> *mur)</td></tr>
+<tr class="separator:a1661630a97686483f104c48fd06dec8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8810857667a124157a1143ad96c2435"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_mur_8h.html#ac8810857667a124157a1143ad96c2435">MurTestRegression</a> ()</td></tr>
+<tr class="separator:ac8810857667a124157a1143ad96c2435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>] Module des Murs du <a class="el" href="struct_jeu.html">Jeu</a> </p>
+<dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>13 mars 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="_mur_8h_source.html">Mur.h</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a5b1e2027147808ddbccc9c211f929f9e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AfficheStatsMur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00068">68</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a48159b7842108cf44f51dfba06fae844"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dureeVie</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00052">52</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1661630a97686483f104c48fd06dec8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00060">60</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b9c7924d6ba7afb0fe4daef7cf58d8d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> MurGetCouleur </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00025">25</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0150e2edbf0f0c8a60df0b8c261835e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MurGetDureeVie </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00028">28</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a242796bbf2bac8399f38a190f18edfbc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MurGetPositionX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00013">13</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97acc9d9bb325986a464ee05db5e6fbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MurGetPositionY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00016">16</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abeddf3763bcdb728a7e3bac665a64552"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MurGetTailleX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00019">19</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab0f66438f4a38b71a243bad168ee0178"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MurGetTailleY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00022">22</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a363d065942b92543a4cd0324531a7aa6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetCouleur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td>
+          <td class="paramname"><em>couleur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00044">44</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c8ffaab1a81e082767ee865573f6813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetDureeVie </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>dureeVie</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00047">47</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acef090d8aa04a7f2c059113ef5fff387"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetPositionX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00032">32</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09e4ebc64953687f4887b95204db41e2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetPositionY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00035">35</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a12cb4b9c7117a03037cb836ce53864dc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetTailleX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00038">38</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0749cb2928457b9738b542c3e83f3176"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurSetTailleY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_mur.html">Mur</a> *&#160;</td>
+          <td class="paramname"><em>mur</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00041">41</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8810857667a124157a1143ad96c2435"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MurTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Procédure qui teste le Module </p>
+
+<p>Définition à la ligne <a class="el" href="_mur_8c_source.html#l00076">76</a> du fichier <a class="el" href="_mur_8c_source.html">Mur.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_mur_8h.html">Mur.h</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

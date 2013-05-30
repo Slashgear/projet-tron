@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid: Référence du fichier Moto.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_moto_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier Moto.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_moto_8h_source.html">Moto.h</a>&quot;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Moto.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="_moto_8c__incl.png" border="0" usemap="#_moto_8c" alt=""/></div>
+<map name="_moto_8c" id="_moto_8c">
+<area shape="rect" id="node7" href="_moto_8h.html" title="Moto.h" alt="" coords="106,83,167,112"/></map>
+</div>
+</div>
+<p><a href="_moto_8c_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a4156c04a753d20234c7882f960830e72"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a4156c04a753d20234c7882f960830e72">MotoGetPositionX</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a4156c04a753d20234c7882f960830e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ff0acafab13335eb75daddd0f1b842"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a62ff0acafab13335eb75daddd0f1b842">MotoGetPositionY</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a62ff0acafab13335eb75daddd0f1b842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4edf672fcff5483b3805ea4850b0bf"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a3c4edf672fcff5483b3805ea4850b0bf">MotoGetTailleX</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a3c4edf672fcff5483b3805ea4850b0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e2c249d5453b97bbe5a0a3dcfec6c0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#aa2e2c249d5453b97bbe5a0a3dcfec6c0">MotoGetTailleY</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:aa2e2c249d5453b97bbe5a0a3dcfec6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a211ad1ea110f768b154253e64386c999"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a211ad1ea110f768b154253e64386c999">MotoGetVitesse</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a211ad1ea110f768b154253e64386c999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b507a0e47b0c30898ff385292ad44ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a3b507a0e47b0c30898ff385292ad44ba">MotoGetDirection</a> (const <a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a3b507a0e47b0c30898ff385292ad44ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc3d835e1a44c42e70b20288c4094696"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#afc3d835e1a44c42e70b20288c4094696">MotoSetPositionX</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, float posX)</td></tr>
+<tr class="separator:afc3d835e1a44c42e70b20288c4094696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a933ac221bf445ac7ba78ec4d68718c11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a933ac221bf445ac7ba78ec4d68718c11">MotoSetPositionY</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, float posY)</td></tr>
+<tr class="separator:a933ac221bf445ac7ba78ec4d68718c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf496889057950aa5b2c9d61e83870ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#adf496889057950aa5b2c9d61e83870ff">MotoSetTailleX</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, unsigned int tailleX)</td></tr>
+<tr class="separator:adf496889057950aa5b2c9d61e83870ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa457e0e893057e65dd374802bc3144cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#aa457e0e893057e65dd374802bc3144cd">MotoSetTailleY</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, unsigned int tailleY)</td></tr>
+<tr class="separator:aa457e0e893057e65dd374802bc3144cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62e1b43e1a546b1552db8dde7a692b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#ab62e1b43e1a546b1552db8dde7a692b6">MotoSetVitesse</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, float vitesse)</td></tr>
+<tr class="separator:ab62e1b43e1a546b1552db8dde7a692b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e01d8daba6d2035d6a54f28a193ce35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a5e01d8daba6d2035d6a54f28a193ce35">MotoSetDirection</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, <a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="separator:a5e01d8daba6d2035d6a54f28a193ce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaa34f67eeb029811b895f62c48e1e37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#adaa34f67eeb029811b895f62c48e1e37">MotoConstructeur</a> (<a class="el" href="struct_moto.html">Moto</a> *moto, float posX, float posY, unsigned int tailleX, unsigned int tailleY, float vitesse, <a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction)</td></tr>
+<tr class="separator:adaa34f67eeb029811b895f62c48e1e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1f41e71c00d38b29d1b8ab0e93d542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#a8c1f41e71c00d38b29d1b8ab0e93d542">MotoDestructeur</a> (<a class="el" href="struct_moto.html">Moto</a> *moto)</td></tr>
+<tr class="separator:a8c1f41e71c00d38b29d1b8ab0e93d542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee18c911ddc26580170985f506538dcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_moto_8c.html#aee18c911ddc26580170985f506538dcb">MotoTestRegression</a> ()</td></tr>
+<tr class="separator:aee18c911ddc26580170985f506538dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>] Module des Motos du jeu </p>
+<dl class="section author"><dt>Auteur</dt><dd>{Antoine.C,Matthieu.B} </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>13 mars 2013 </dd></dl>
+
+<p>Définition dans le fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="adaa34f67eeb029811b895f62c48e1e37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoConstructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vitesse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00051">51</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c1f41e71c00d38b29d1b8ab0e93d542"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoDestructeur </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00059">59</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b507a0e47b0c30898ff385292ad44ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> MotoGetDirection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00028">28</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4156c04a753d20234c7882f960830e72"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetPositionX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00013">13</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a62ff0acafab13335eb75daddd0f1b842"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetPositionY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00016">16</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c4edf672fcff5483b3805ea4850b0bf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MotoGetTailleX </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00019">19</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2e2c249d5453b97bbe5a0a3dcfec6c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int MotoGetTailleY </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00022">22</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a211ad1ea110f768b154253e64386c999"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MotoGetVitesse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00025">25</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e01d8daba6d2035d6a54f28a193ce35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetDirection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00047">47</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc3d835e1a44c42e70b20288c4094696"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetPositionX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00032">32</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a933ac221bf445ac7ba78ec4d68718c11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetPositionY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>posY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00035">35</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf496889057950aa5b2c9d61e83870ff"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetTailleX </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleX</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00038">38</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa457e0e893057e65dd374802bc3144cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetTailleY </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>tailleY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00041">41</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab62e1b43e1a546b1552db8dde7a692b6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoSetVitesse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_moto.html">Moto</a> *&#160;</td>
+          <td class="paramname"><em>moto</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>vitesse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00044">44</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aee18c911ddc26580170985f506538dcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MotoTestRegression </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_moto_8c_source.html#l00068">68</a> du fichier <a class="el" href="_moto_8c_source.html">Moto.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_moto_8c.html">Moto.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

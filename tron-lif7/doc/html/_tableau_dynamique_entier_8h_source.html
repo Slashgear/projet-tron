@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid:  Fichier source de TableauDynamiqueEntier.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_tableau_dynamique_entier_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">TableauDynamiqueEntier.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_tableau_dynamique_entier_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TABLEAUDYNAMIQUEENTIER_H_INCLUDED</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TABLEAUDYNAMIQUEENTIER_H_INCLUDED</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="struct_tableau_dynamique_entier.html">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="struct_tableau_dynamique_entier.html#ac3e3c7196292bbc416a904d29ee638c8">   15</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_tableau_dynamique_entier.html#ac3e3c7196292bbc416a904d29ee638c8">capacite</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="struct_tableau_dynamique_entier.html#aaf681889cbd00b7c45951f63b10f969a">   16</a></span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_tableau_dynamique_entier.html#aaf681889cbd00b7c45951f63b10f969a">taille_utilisee</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="struct_tableau_dynamique_entier.html#a7c21ee6003331d0316829f52011252d4">   17</a></span>&#160;  <span class="keywordtype">int</span>* <a class="code" href="struct_tableau_dynamique_entier.html#a7c21ee6003331d0316829f52011252d4">ad</a>;}<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_tableau_dynamique_entier_8c.html#ab6a8726196a5f20917c43d82c7023b20">TabDynEntierGetCapacite</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_tableau_dynamique_entier_8c.html#a136e17ac632e98e56b37ec94cd375eac">TabDynEntierGetTaille_utilisee</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">int</span>* <a class="code" href="_tableau_dynamique_entier_8c.html#a6eaf357a41e8d4fd4b4ea4ff62a6f6ed">TabDynEntierGetAd</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#ad954cdcf51e383884837bf7da3f46ab0">TabDynEntierSetCapacite</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> capacite);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#a72608244b7a6a4af534abe48f3b7fbe2">TabDynEntierSetTaille_utilisee</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> taille);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#a943ad435f0921f55fad1004b7201819f">TabDynEntierSetAd</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a>* TabDynEntier,<span class="keywordtype">int</span>* ad);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#afe49c3b20d8e7e9075c163b5e4c6e9dc">initialiserTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> * t);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#ac301681c4b3f4bce74fd9773f1da9ef6">testamentTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8h.html#a0a78d0baec0923c18bd3bf611d1a0245">affecterTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t1, <span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t2);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_tableau_dynamique_entier_8h.html#aff49101aadb3645be3a8abb5bfa2829c">tailleUtiliseeTabDynEntier</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">int</span> <a class="code" href="_tableau_dynamique_entier_8c.html#ad273850f79af1e74ecd32971b08fe7d8">valeurIemeElementTabDynEntier</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keywordtype">int</span>* <a class="code" href="_tableau_dynamique_entier_8c.html#ad0efdf4c23b94918071fca8711446c98">adresseIemeElementTabDynEntier</a>(<span class="keyword">const</span> <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#afe79a1dd09df3d0119679d87f20aec6f">ajouterElementTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, <span class="keywordtype">int</span> e);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#aebe791fb2f38ce5909b196ee1f1788e1">supprimerElementTabDynEntier</a>( <a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, <span class="keywordtype">int</span> position );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8c.html#a6b328364f2565029828b234d44d0bd4b">modifierValeurIemeElementTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t,<span class="keywordtype">int</span> e, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tableau_dynamique_entier_8h.html#a7b813a25b809973abd95284b935b5553">insererElementTabDynEntier</a>(<a class="code" href="struct_tableau_dynamique_entier.html">TableauDynamiqueEntier</a> *t, <span class="keywordtype">int</span> e, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_tableau_dynamique_entier_8h.html">TableauDynamiqueEntier.h</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

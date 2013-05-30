@@ -1,0 +1,12 @@
+<map id="SDL" name="SDL">
+<area shape="rect" id="node2" href="$struct_manette.html" title="Manette" alt="" coords="25,293,95,323"/>
+<area shape="rect" id="node4" href="$struct_jeu.html" title="Jeu" alt="" coords="153,293,196,323"/>
+<area shape="rect" id="node6" href="$struct_musique.html" title="Musique" alt="" coords="16,197,85,227"/>
+<area shape="rect" id="node8" href="$struct_joueur.html" title="Joueur" alt="" coords="100,101,161,131"/>
+<area shape="rect" id="node10" href="$struct_controle.html" title="Controle" alt="" coords="5,5,75,35"/>
+<area shape="rect" id="node12" href="$struct_mur.html" title="Mur" alt="" coords="217,5,260,35"/>
+<area shape="rect" id="node18" href="$struct_tableau_dynamique_mur.html" title="TableauDynamiqueMur" alt="" coords="199,101,353,131"/>
+<area shape="rect" id="node14" href="$struct_moto.html" title="Moto" alt="" coords="99,5,149,35"/>
+<area shape="rect" id="node16" href="$struct_grid.html" title="Grid" alt="" coords="233,197,279,227"/>
+<area shape="rect" id="node21" href="$struct_bonus.html" title="Bonus" alt="" coords="303,197,361,227"/>
+</map>

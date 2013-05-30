@@ -1,0 +1,267 @@
+\hypertarget{_mur_8h}{\section{Référence du fichier Mur.\-h}
+\label{_mur_8h}\index{Mur.\-h@{Mur.\-h}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Couleur.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Mur.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_mur_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mur_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_mur}{Mur}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{_mur_8h_a242796bbf2bac8399f38a190f18edfbc}{Mur\-Get\-Position\-X} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+float \hyperlink{_mur_8h_a97acc9d9bb325986a464ee05db5e6fbe}{Mur\-Get\-Position\-Y} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+unsigned int \hyperlink{_mur_8h_abeddf3763bcdb728a7e3bac665a64552}{Mur\-Get\-Taille\-X} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+unsigned int \hyperlink{_mur_8h_ab0f66438f4a38b71a243bad168ee0178}{Mur\-Get\-Taille\-Y} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+\hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} \hyperlink{_mur_8h_a9b9c7924d6ba7afb0fe4daef7cf58d8d}{Mur\-Get\-Couleur} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+float \hyperlink{_mur_8h_a0150e2edbf0f0c8a60df0b8c261835e2}{Mur\-Get\-Duree\-Vie} (const \hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+void \hyperlink{_mur_8h_acef090d8aa04a7f2c059113ef5fff387}{Mur\-Set\-Position\-X} (\hyperlink{struct_mur}{Mur} $\ast$mur, float pos\-X)
+\item 
+void \hyperlink{_mur_8h_a09e4ebc64953687f4887b95204db41e2}{Mur\-Set\-Position\-Y} (\hyperlink{struct_mur}{Mur} $\ast$mur, float pos\-Y)
+\item 
+void \hyperlink{_mur_8h_a12cb4b9c7117a03037cb836ce53864dc}{Mur\-Set\-Taille\-X} (\hyperlink{struct_mur}{Mur} $\ast$mur, unsigned int taille\-X)
+\item 
+void \hyperlink{_mur_8h_a0749cb2928457b9738b542c3e83f3176}{Mur\-Set\-Taille\-Y} (\hyperlink{struct_mur}{Mur} $\ast$mur, unsigned int taille\-Y)
+\item 
+void \hyperlink{_mur_8h_a363d065942b92543a4cd0324531a7aa6}{Mur\-Set\-Couleur} (\hyperlink{struct_mur}{Mur} $\ast$mur, \hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur)
+\item 
+void \hyperlink{_mur_8h_a7c8ffaab1a81e082767ee865573f6813}{Mur\-Set\-Duree\-Vie} (\hyperlink{struct_mur}{Mur} $\ast$mur, float duree\-Vie)
+\item 
+void \hyperlink{_mur_8h_a5b1e2027147808ddbccc9c211f929f9e}{Affiche\-Stats\-Mur} (\hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+void \hyperlink{_mur_8h_a48159b7842108cf44f51dfba06fae844}{Mur\-Constructeur} (\hyperlink{struct_mur}{Mur} $\ast$mur, float pos\-X, float pos\-Y, unsigned int taille\-X, unsigned int taille\-Y, \hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} couleur, float duree\-Vie)
+\item 
+void \hyperlink{_mur_8h_a1661630a97686483f104c48fd06dec8e}{Mur\-Destructeur} (\hyperlink{struct_mur}{Mur} $\ast$mur)
+\item 
+void \hyperlink{_mur_8h_ac8810857667a124157a1143ad96c2435}{Mur\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\mbox{]} Module des Murs du \hyperlink{struct_jeu}{Jeu} \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13 mars 2013 
+\end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{_mur_8h_source}{Mur.\-h}.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{_mur_8h_a5b1e2027147808ddbccc9c211f929f9e}{\index{Mur.\-h@{Mur.\-h}!Affiche\-Stats\-Mur@{Affiche\-Stats\-Mur}}
+\index{Affiche\-Stats\-Mur@{Affiche\-Stats\-Mur}!Mur.h@{Mur.\-h}}
+\subsubsection[{Affiche\-Stats\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void Affiche\-Stats\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a5b1e2027147808ddbccc9c211f929f9e}
+
+
+Définition à la ligne 68 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a48159b7842108cf44f51dfba06fae844}{\index{Mur.\-h@{Mur.\-h}!Mur\-Constructeur@{Mur\-Constructeur}}
+\index{Mur\-Constructeur@{Mur\-Constructeur}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{float}]{pos\-X, }
+\item[{float}]{pos\-Y, }
+\item[{unsigned int}]{taille\-X, }
+\item[{unsigned int}]{taille\-Y, }
+\item[{{\bf Couleur}}]{couleur, }
+\item[{float}]{duree\-Vie}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a48159b7842108cf44f51dfba06fae844}
+
+
+Définition à la ligne 52 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a1661630a97686483f104c48fd06dec8e}{\index{Mur.\-h@{Mur.\-h}!Mur\-Destructeur@{Mur\-Destructeur}}
+\index{Mur\-Destructeur@{Mur\-Destructeur}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a1661630a97686483f104c48fd06dec8e}
+
+
+Définition à la ligne 60 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a9b9c7924d6ba7afb0fe4daef7cf58d8d}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Couleur@{Mur\-Get\-Couleur}}
+\index{Mur\-Get\-Couleur@{Mur\-Get\-Couleur}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Couleur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Couleur} Mur\-Get\-Couleur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a9b9c7924d6ba7afb0fe4daef7cf58d8d}
+
+
+Définition à la ligne 25 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a0150e2edbf0f0c8a60df0b8c261835e2}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Duree\-Vie@{Mur\-Get\-Duree\-Vie}}
+\index{Mur\-Get\-Duree\-Vie@{Mur\-Get\-Duree\-Vie}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Duree\-Vie}]{\setlength{\rightskip}{0pt plus 5cm}float Mur\-Get\-Duree\-Vie (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a0150e2edbf0f0c8a60df0b8c261835e2}
+
+
+Définition à la ligne 28 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a242796bbf2bac8399f38a190f18edfbc}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Position\-X@{Mur\-Get\-Position\-X}}
+\index{Mur\-Get\-Position\-X@{Mur\-Get\-Position\-X}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}float Mur\-Get\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a242796bbf2bac8399f38a190f18edfbc}
+
+
+Définition à la ligne 13 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a97acc9d9bb325986a464ee05db5e6fbe}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Position\-Y@{Mur\-Get\-Position\-Y}}
+\index{Mur\-Get\-Position\-Y@{Mur\-Get\-Position\-Y}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}float Mur\-Get\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a97acc9d9bb325986a464ee05db5e6fbe}
+
+
+Définition à la ligne 16 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_abeddf3763bcdb728a7e3bac665a64552}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Taille\-X@{Mur\-Get\-Taille\-X}}
+\index{Mur\-Get\-Taille\-X@{Mur\-Get\-Taille\-X}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mur\-Get\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_abeddf3763bcdb728a7e3bac665a64552}
+
+
+Définition à la ligne 19 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_ab0f66438f4a38b71a243bad168ee0178}{\index{Mur.\-h@{Mur.\-h}!Mur\-Get\-Taille\-Y@{Mur\-Get\-Taille\-Y}}
+\index{Mur\-Get\-Taille\-Y@{Mur\-Get\-Taille\-Y}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Get\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Mur\-Get\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Mur} $\ast$}]{mur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_ab0f66438f4a38b71a243bad168ee0178}
+
+
+Définition à la ligne 22 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a363d065942b92543a4cd0324531a7aa6}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Couleur@{Mur\-Set\-Couleur}}
+\index{Mur\-Set\-Couleur@{Mur\-Set\-Couleur}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Couleur}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Couleur (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{{\bf Couleur}}]{couleur}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a363d065942b92543a4cd0324531a7aa6}
+
+
+Définition à la ligne 44 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a7c8ffaab1a81e082767ee865573f6813}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Duree\-Vie@{Mur\-Set\-Duree\-Vie}}
+\index{Mur\-Set\-Duree\-Vie@{Mur\-Set\-Duree\-Vie}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Duree\-Vie}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Duree\-Vie (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{float}]{duree\-Vie}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a7c8ffaab1a81e082767ee865573f6813}
+
+
+Définition à la ligne 47 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_acef090d8aa04a7f2c059113ef5fff387}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Position\-X@{Mur\-Set\-Position\-X}}
+\index{Mur\-Set\-Position\-X@{Mur\-Set\-Position\-X}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{float}]{pos\-X}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_acef090d8aa04a7f2c059113ef5fff387}
+
+
+Définition à la ligne 32 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a09e4ebc64953687f4887b95204db41e2}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Position\-Y@{Mur\-Set\-Position\-Y}}
+\index{Mur\-Set\-Position\-Y@{Mur\-Set\-Position\-Y}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{float}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a09e4ebc64953687f4887b95204db41e2}
+
+
+Définition à la ligne 35 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a12cb4b9c7117a03037cb836ce53864dc}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Taille\-X@{Mur\-Set\-Taille\-X}}
+\index{Mur\-Set\-Taille\-X@{Mur\-Set\-Taille\-X}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{unsigned int}]{taille\-X}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a12cb4b9c7117a03037cb836ce53864dc}
+
+
+Définition à la ligne 38 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_a0749cb2928457b9738b542c3e83f3176}{\index{Mur.\-h@{Mur.\-h}!Mur\-Set\-Taille\-Y@{Mur\-Set\-Taille\-Y}}
+\index{Mur\-Set\-Taille\-Y@{Mur\-Set\-Taille\-Y}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Set\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Set\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Mur} $\ast$}]{mur, }
+\item[{unsigned int}]{taille\-Y}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_a0749cb2928457b9738b542c3e83f3176}
+
+
+Définition à la ligne 41 du fichier Mur.\-c.
+
+\hypertarget{_mur_8h_ac8810857667a124157a1143ad96c2435}{\index{Mur.\-h@{Mur.\-h}!Mur\-Test\-Regression@{Mur\-Test\-Regression}}
+\index{Mur\-Test\-Regression@{Mur\-Test\-Regression}!Mur.h@{Mur.\-h}}
+\subsubsection[{Mur\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Mur\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_mur_8h_ac8810857667a124157a1143ad96c2435}
+Procédure qui teste le Module 
+
+Définition à la ligne 76 du fichier Mur.\-c.
+

@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid:  Fichier source de Joueur.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_joueur_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Joueur.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_joueur_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_joueur_8h.html">Joueur.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_moto_8h.html">Moto.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controle_8h.html">Controle.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_couleur_8h.html">Couleur.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a3c09cd1a406f9909b24201539e1d3d49">   17</a></span>&#160;<a class="code" href="struct_moto.html">Moto</a>* <a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> &amp;(joueur-&gt;<a class="code" href="struct_joueur.html#af591d7daa785db91725b80343fc38fed">moto</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="_joueur_8h.html#afc9df65c1a7c306e987f1246a5f53b87">   20</a></span>&#160;<a class="code" href="struct_controle.html">Controle</a>* <a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> &amp;(joueur-&gt;<a class="code" href="struct_joueur.html#a4b5b0893ad6bb731d2697ac3734d804e">controle</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_joueur_8h.html#ab174573f7233afa24b6b2029e2427a96">   23</a></span>&#160;<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="_joueur_8c.html#ab174573f7233afa24b6b2029e2427a96">JoueurGetCouleur</a>(<span class="keyword">const</span> <a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#af0e152d09c13944935e00bef7a3c5111">couleur</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a59fc2f0e1b118c958bc22bde81fe619d">   26</a></span>&#160;<a class="code" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> <a class="code" href="_joueur_8c.html#a59fc2f0e1b118c958bc22bde81fe619d">JoueurGetEnJeu</a>(<span class="keyword">const</span> <a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#af68c300bda7f71d66df972be408b8ec9">enJeu</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a2bd4bb37d26013b15b02012ca325da2c">   29</a></span>&#160;<a class="code" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> <a class="code" href="_joueur_8c.html#afe1d98d25a2a9915a619095e63a37d28">JoueurGetEffetBonus</a>(<span class="keyword">const</span> <a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#a68df5c8befc6f20c5ff23f430e44bd9b">effetActuel</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a72ad3b3bcf7dcca662d019c58f983468">   32</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#a72ad3b3bcf7dcca662d019c58f983468">JoueurGetNumeroManette</a>(<span class="keyword">const</span> <a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#aeb402ac96372bb55a275a4166a0eb2bc">numeroManette</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a780868d4eb761d68abce085a2b040349">   35</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#a780868d4eb761d68abce085a2b040349">JoueurGetTempsBonus</a>(<span class="keyword">const</span> <a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#a679330528c11db8bed0a19f30fe323e5">tempsBonus</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a9df1787fbad3851b301eb03f3e5bdf48">   38</a></span>&#160;<a class="code" href="struct_mur.html">Mur</a>* <a class="code" href="_joueur_8c.html#a9df1787fbad3851b301eb03f3e5bdf48">JoueurGetDernierMur</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> &amp;(joueur-&gt;<a class="code" href="struct_joueur.html#aa553baa99ef59f8f7eb2faed9255e488">dernierMur</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a1c1f4a97676079b24229c073408d340b">   41</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#a1c1f4a97676079b24229c073408d340b">JoueurGetBooltourne</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#a92bcbcbba7d261bcc12d14ee759c4ca1">boolTourne</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="_joueur_8h.html#ae0849d40938feaf7a829289eb20971ab">   44</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#ae0849d40938feaf7a829289eb20971ab">JoueurGetNumeroJoueur</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#a63ba7cc1f1d9cf8e7a5b77d508d833c4">numeroJoueur</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a0b913ee2eb6d62f1c2cf10a6bb45c828">   47</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#a0b913ee2eb6d62f1c2cf10a6bb45c828">JoueurGetBoolIA</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#ad27c2d8e0b25d849fbb931f8d01b317d">boolIA</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a7108e6f90ec1b61b4c62b55d234d6143">   50</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="_joueur_8c.html#a7108e6f90ec1b61b4c62b55d234d6143">JoueurGetJoueurCible</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> joueur-&gt;<a class="code" href="struct_joueur.html#a92b55b201709dd3df1e01da0264d4b35">joueurCible</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a1e3513e25a86b80327d96ad2fddd160c">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a1e3513e25a86b80327d96ad2fddd160c">JoueurSetMoto</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <a class="code" href="struct_moto.html">Moto</a>* moto){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#af591d7daa785db91725b80343fc38fed">moto</a>= *moto;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a9af06734120dc02a68f4520e19473368">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a9af06734120dc02a68f4520e19473368">JoueurSetControle</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <a class="code" href="struct_controle.html">Controle</a>* controle){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a4b5b0893ad6bb731d2697ac3734d804e">controle</a>= *controle;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a308e870320d2641a5582bb546c6d21fc">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a308e870320d2641a5582bb546c6d21fc">JoueurSetCouleur</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#af0e152d09c13944935e00bef7a3c5111">couleur</a>=couleur;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a39b0f2a497b5ac7a2284513a9e19feaf">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a39b0f2a497b5ac7a2284513a9e19feaf">JoueurSetEnJeu</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <a class="code" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> enJeu){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#af68c300bda7f71d66df972be408b8ec9">enJeu</a>=enJeu;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="_joueur_8h.html#ab9b0084e52b37643b7540ef384c76f22">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#ab9b0084e52b37643b7540ef384c76f22">JoueurSetEffetBonus</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur,<a class="code" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> effet){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a68df5c8befc6f20c5ff23f430e44bd9b">effetActuel</a>=effet;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a48903f3392e108482e958c7de74ea21c">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a48903f3392e108482e958c7de74ea21c">JoueurSetNumeroManette</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> numero){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#aeb402ac96372bb55a275a4166a0eb2bc">numeroManette</a>=numero;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a867959894ba0095f6c5d3799b8fa892f">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a867959894ba0095f6c5d3799b8fa892f">JoueurSetTempsBonus</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <span class="keywordtype">int</span> tempsBonus){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a679330528c11db8bed0a19f30fe323e5">tempsBonus</a>=tempsBonus;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="_joueur_8h.html#adeb829f19b298f3eec06c7b13ee0c430">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#adeb829f19b298f3eec06c7b13ee0c430">JoueurSetDernierMur</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur,<a class="code" href="struct_mur.html">Mur</a>* unMur){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#aa553baa99ef59f8f7eb2faed9255e488">dernierMur</a>=*unMur;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="_joueur_8h.html#aac0438d709a0c17cf579b0f4224ebbee">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#aac0438d709a0c17cf579b0f4224ebbee">JoueurSetBooltourne</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> boolTourne){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a92bcbcbba7d261bcc12d14ee759c4ca1">boolTourne</a>=boolTourne;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="_joueur_8h.html#ab4930b1fbe66da4157c708b47d9a3f5b">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#ab4930b1fbe66da4157c708b47d9a3f5b">JoueurSetNumeroJoueur</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> numero){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a63ba7cc1f1d9cf8e7a5b77d508d833c4">numeroJoueur</a>=numero;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="_joueur_8h.html#aee2c26808a926100a0497f615ece9979">   85</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#aee2c26808a926100a0497f615ece9979">JoueurSetBoolIA</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> boolIA){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#ad27c2d8e0b25d849fbb931f8d01b317d">boolIA</a>=boolIA;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a9e3ee59830e0287bd639173c344ab845">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a9e3ee59830e0287bd639173c344ab845">JoueurSetJoueurCible</a>(<a class="code" href="struct_joueur.html">Joueur</a> *joueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> numero){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    joueur-&gt;<a class="code" href="struct_joueur.html#a92b55b201709dd3df1e01da0264d4b35">joueurCible</a>=numero;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a7727f84c34d3fd32cc6f9c2ed84cf0b0">   94</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a7727f84c34d3fd32cc6f9c2ed84cf0b0">JoueurConstructeur</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur, <a class="code" href="struct_moto.html">Moto</a>* moto, <a class="code" href="struct_controle.html">Controle</a>* controle, <a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur, <a class="code" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3b">EnJeu</a> enJeu,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <a class="code" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe">EffetBonus</a> effetActuel,<span class="keywordtype">short</span> <span class="keywordtype">int</span> numeroManette,<span class="keywordtype">short</span> <span class="keywordtype">int</span> numeroJoueur,<span class="keywordtype">short</span> <span class="keywordtype">int</span> boolIA){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="struct_mur.html">Mur</a> mur;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="_mur_8c.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a>(&amp;mur,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7a59e3323a198f0162330111165caaf367">NOIR</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="_mur_8c.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="_mur_8c.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="_mur_8c.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="_joueur_8c.html#a1e3513e25a86b80327d96ad2fddd160c">JoueurSetMoto</a>(joueur,moto);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="_joueur_8c.html#a9af06734120dc02a68f4520e19473368">JoueurSetControle</a>(joueur,controle);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="_joueur_8c.html#a308e870320d2641a5582bb546c6d21fc">JoueurSetCouleur</a>(joueur,couleur);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="_joueur_8c.html#a39b0f2a497b5ac7a2284513a9e19feaf">JoueurSetEnJeu</a>(joueur,enJeu);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="_joueur_8c.html#ab9b0084e52b37643b7540ef384c76f22">JoueurSetEffetBonus</a>(joueur,effetActuel);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="_joueur_8c.html#a48903f3392e108482e958c7de74ea21c">JoueurSetNumeroManette</a>(joueur,numeroManette);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="_joueur_8c.html#a867959894ba0095f6c5d3799b8fa892f">JoueurSetTempsBonus</a>(joueur,0);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="_joueur_8c.html#adeb829f19b298f3eec06c7b13ee0c430">JoueurSetDernierMur</a>(joueur,&amp;mur);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_joueur_8c.html#aac0438d709a0c17cf579b0f4224ebbee">JoueurSetBooltourne</a>(joueur,0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="_joueur_8c.html#ab4930b1fbe66da4157c708b47d9a3f5b">JoueurSetNumeroJoueur</a>(joueur,numeroJoueur);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="_joueur_8c.html#aee2c26808a926100a0497f615ece9979">JoueurSetBoolIA</a>(joueur,boolIA);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="_joueur_8c.html#a9e3ee59830e0287bd639173c344ab845">JoueurSetJoueurCible</a>(joueur,0);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="_joueur_8h.html#a535ea5e3fdedcdbcc7e9d84cb3b7b75e">  116</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#a535ea5e3fdedcdbcc7e9d84cb3b7b75e">JoueurDestructeur</a>(<a class="code" href="struct_joueur.html">Joueur</a>* joueur){</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="struct_mur.html">Mur</a> mur;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="_mur_8c.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a>(&amp;mur,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7a59e3323a198f0162330111165caaf367">NOIR</a>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="_mur_8c.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="_mur_8c.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="_mur_8c.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a>(&amp;mur,0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="_moto_8c.html#a8c1f41e71c00d38b29d1b8ab0e93d542">MotoDestructeur</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(joueur));</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="_controle_8c.html#af1bb24fb9790dc018f7396c15e7b47a0">ControleDestructeur</a>(<a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(joueur));</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="_joueur_8c.html#a308e870320d2641a5582bb546c6d21fc">JoueurSetCouleur</a>(joueur,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7a59e3323a198f0162330111165caaf367">NOIR</a>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="_joueur_8c.html#a39b0f2a497b5ac7a2284513a9e19feaf">JoueurSetEnJeu</a>(joueur,<a class="code" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3ba031fe5e154a96f85c034f6ba509060b4">MORT</a>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="_joueur_8c.html#ab9b0084e52b37643b7540ef384c76f22">JoueurSetEffetBonus</a>(joueur,<a class="code" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fea87797e00a316143a6c49ad311b240a2b">AUCUN</a>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="_joueur_8c.html#a48903f3392e108482e958c7de74ea21c">JoueurSetNumeroManette</a>(joueur,-1);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="_joueur_8c.html#a867959894ba0095f6c5d3799b8fa892f">JoueurSetTempsBonus</a>(joueur,0);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="_joueur_8c.html#adeb829f19b298f3eec06c7b13ee0c430">JoueurSetDernierMur</a>(joueur,&amp;mur);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="_joueur_8c.html#aac0438d709a0c17cf579b0f4224ebbee">JoueurSetBooltourne</a>(joueur,0);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="_joueur_8c.html#ab4930b1fbe66da4157c708b47d9a3f5b">JoueurSetNumeroJoueur</a>(joueur,0);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="_joueur_8c.html#aee2c26808a926100a0497f615ece9979">JoueurSetBoolIA</a>(joueur,0);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="_joueur_8c.html#a9e3ee59830e0287bd639173c344ab845">JoueurSetJoueurCible</a>(joueur,0);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="code" href="_joueur_8h.html#aa34482db89da3f96c220e99d13465697">  139</a></span>&#160; <span class="keywordtype">void</span> <a class="code" href="_joueur_8c.html#ad628d18447d13fd4d2782e1a556c9cc3">JoueurTestRegression</a>(){</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="struct_joueur.html">Joueur</a> joueur;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="struct_moto.html">Moto</a> moto;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="struct_controle.html">Controle</a> controle;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur=<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7ace9ee4c1a6b777940c7f3a766a9a88d4">ORANGE</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">float</span> posX=1;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">float</span> posY=1;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX=10;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY=10;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">float</span> vitesse=20;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction=<a class="code" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aaa5c97701a87d36c8f2c0de80c5865b8e2">HAUT</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">char</span> touchedroite=<span class="charliteral">&#39;d&#39;</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">char</span> touchegauche=<span class="charliteral">&#39;g&#39;</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">char</span> touchehaut=<span class="charliteral">&#39;h&#39;</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">char</span> touchebas=<span class="charliteral">&#39;b&#39;</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">char</span> touchebonus=<span class="charliteral">&#39;a&#39;</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="_moto_8c.html#adaa34f67eeb029811b895f62c48e1e37">MotoConstructeur</a>(&amp;moto,posX,posY,tailleX,tailleY,vitesse,direction);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="_controle_8c.html#a3097aea62abd4e67f4c319756ad88a0e">ControleConstructeur</a>(&amp;controle,touchehaut,touchebas,touchegauche,touchedroite,touchebonus);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="_joueur_8c.html#a7727f84c34d3fd32cc6f9c2ed84cf0b0">JoueurConstructeur</a>(&amp;joueur,&amp;moto,&amp;controle,couleur,<a class="code" href="_joueur_8h.html#a43a9f41708ce5d7ddf49e05d61f48c3ba1c63e61bcc802c01941537675433b8f4">VIVANT</a>,<a class="code" href="_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fea87797e00a316143a6c49ad311b240a2b">AUCUN</a>,-1,1,0);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    printf(<span class="stringliteral">&quot;La valeur posX est %f et dans la Moto du joueur est de %f \n&quot;</span>,posX,<a class="code" href="_moto_8c.html#a4156c04a753d20234c7882f960830e72">MotoGetPositionX</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    printf(<span class="stringliteral">&quot;La valeur posY est %f et dans la Moto du joueur est de %f \n&quot;</span>,posY,<a class="code" href="_moto_8c.html#a62ff0acafab13335eb75daddd0f1b842">MotoGetPositionY</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    printf(<span class="stringliteral">&quot;La valeur tailleX est %u et dans la Moto du joueur est de %u \n&quot;</span>,tailleX,<a class="code" href="_moto_8c.html#a3c4edf672fcff5483b3805ea4850b0bf">MotoGetTailleX</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    printf(<span class="stringliteral">&quot;La valeur tailleY est %u et dans la Moto du joueur est de %u \n&quot;</span>,tailleY,<a class="code" href="_moto_8c.html#aa2e2c249d5453b97bbe5a0a3dcfec6c0">MotoGetTailleY</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    printf(<span class="stringliteral">&quot;La valeur vitesse est %f et dans la Moto du joueur est de %f \n&quot;</span>,vitesse,<a class="code" href="_moto_8c.html#a211ad1ea110f768b154253e64386c999">MotoGetVitesse</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de direction est de %d et dans la Moto du joueur est de %d \n&quot;</span>,direction,<a class="code" href="_moto_8c.html#a3b507a0e47b0c30898ff385292ad44ba">MotoGetDirection</a>(<a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    printf(<span class="stringliteral">&quot;Le caractere de la touche droite est %c ,et dans le Controle du joueur est %c\n&quot;</span>,touchedroite,<a class="code" href="_controle_8c.html#aceb59e2dc81ee481b6f4e4512451ca2c">ControleGetDroite</a>(<a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    printf(<span class="stringliteral">&quot;Le caractere de la touche gauche est %c ,et dans le Controle du joueur est %c\n&quot;</span>,touchegauche,<a class="code" href="_controle_8c.html#a2e052af3b9995a418ffae3f816068c40">ControleGetGauche</a>(<a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    printf(<span class="stringliteral">&quot;Le caractere de la touche haut est %c ,et dans le Controle du joueur est %c\n&quot;</span>,touchehaut,<a class="code" href="_controle_8c.html#a58b4a2d8f6f6248519b47d045d205144">ControleGetHaut</a>(<a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    printf(<span class="stringliteral">&quot;Le caractere de la touche bas est %c ,et dans le Controle du joueur est %c\n&quot;</span>,touchebas,<a class="code" href="_controle_8c.html#afbc4a836ab3364317147c49c68071191">ControleGetBas</a>(<a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(&amp;joueur)));</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="_joueur_8c.html#a535ea5e3fdedcdbcc7e9d84cb3b7b75e">JoueurDestructeur</a>(&amp;joueur);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction le pointeur de moto du joueur est %p \n&quot;</span>, <a class="code" href="_joueur_8c.html#a3c09cd1a406f9909b24201539e1d3d49">JoueurGetMoto</a>(&amp;joueur));</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction le pointeur de controle du joueur est %p \n \n&quot;</span>, <a class="code" href="_joueur_8c.html#afc9df65c1a7c306e987f1246a5f53b87">JoueurGetControle</a>(&amp;joueur));</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; }</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_joueur_8c.html">Joueur.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

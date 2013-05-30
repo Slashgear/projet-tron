@@ -1,0 +1,257 @@
+\hypertarget{_tableau_dynamique_mur_8h}{\section{Référence du fichier Tableau\-Dynamique\-Mur.\-h}
+\label{_tableau_dynamique_mur_8h}\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}}
+}
+{\ttfamily \#include \char`\"{}Mur.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+Graphe des dépendances par inclusion de Tableau\-Dynamique\-Mur.\-h\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_tableau_dynamique_mur_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_tableau_dynamique_mur_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{_tableau_dynamique_mur_8h_a9d8993673abb44cb220526fc555b97e6}{Tab\-Dyn\-Mur\-Get\-Capacite} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur)
+\item 
+unsigned int \hyperlink{_tableau_dynamique_mur_8h_aa4cccc53a5d36a7df78f86d878a89d96}{Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur)
+\item 
+\hyperlink{struct_mur}{Mur} $\ast$ \hyperlink{_tableau_dynamique_mur_8h_adcadf52764b8e0f32e4844495e3a6724}{Tab\-Dyn\-Mur\-Get\-Ad} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_ac0e544e5c2190470f1c888403dd5e75b}{Tab\-Dyn\-Mur\-Set\-Capacite} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur, unsigned int capacite)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a8cab81dcce42531992bc233a0a0c91d1}{Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur, unsigned int taille)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a247f1e88f472662f5a794384760ca2bc}{Tab\-Dyn\-Mur\-Set\-Ad} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$Tab\-Dyn\-Mur, \hyperlink{struct_mur}{Mur} $\ast$ad)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a677de455353d6c7d8e49e9d8b765f085}{initialiser\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_ad33a7af085e713d488c62e232464c025}{testament\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a31473231236cf3230f7d6f23dedf2ae9}{affecter\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t1, const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t2)
+\item 
+unsigned int \hyperlink{_tableau_dynamique_mur_8h_a4385563f59ebc05529139926b3cb642b}{taille\-Utilisee\-Tab\-Dyn\-Mur} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t)
+\item 
+\hyperlink{struct_mur}{Mur} \hyperlink{_tableau_dynamique_mur_8h_a4b1cf99f3ab429c58cc4f87134dfb146}{valeur\-Ieme\-Element\-Tab\-Dyn\-Mur} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, unsigned int i)
+\item 
+\hyperlink{struct_mur}{Mur} $\ast$ \hyperlink{_tableau_dynamique_mur_8h_a91faee7eb572734cef6f3b81b9793352}{adresse\-Ieme\-Element\-Tab\-Dyn\-Mur} (const \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, unsigned int i)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a76e95156313a16c5956402a00faac297}{ajouter\-Element\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, \hyperlink{struct_mur}{Mur} e)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_ac1f6eb509e569f5887171ec6add66d30}{supprimer\-Element\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, int position)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_ac9e49d24407d337a101c5186534ab0d0}{modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, \hyperlink{struct_mur}{Mur} e, unsigned int i)
+\item 
+void \hyperlink{_tableau_dynamique_mur_8h_a3fcc63bda1a34e187a7a3f3acd420fb2}{inserer\-Element\-Tab\-Dyn\-Mur} (\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$t, \hyperlink{struct_mur}{Mur} e, unsigned int i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\mbox{]} Module qui gère les tableaux dynamiques des Murs \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19 mars 2013 
+\end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{_tableau_dynamique_mur_8h_source}{Tableau\-Dynamique\-Mur.\-h}.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{_tableau_dynamique_mur_8h_a91faee7eb572734cef6f3b81b9793352}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!adresse\-Ieme\-Element\-Tab\-Dyn\-Mur@{adresse\-Ieme\-Element\-Tab\-Dyn\-Mur}}
+\index{adresse\-Ieme\-Element\-Tab\-Dyn\-Mur@{adresse\-Ieme\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{adresse\-Ieme\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mur}$\ast$ adresse\-Ieme\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a91faee7eb572734cef6f3b81b9793352}
+Precondition \-: t prealablement initialise, 0 $<$= i $<$ taille\-Utilisee(t) Resultat \-: retourne l'adresse du i+1eme Element\-T\-D de t 
+
+Définition à la ligne 82 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a31473231236cf3230f7d6f23dedf2ae9}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!affecter\-Tab\-Dyn\-Mur@{affecter\-Tab\-Dyn\-Mur}}
+\index{affecter\-Tab\-Dyn\-Mur@{affecter\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{affecter\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void affecter\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t1, }
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{t2}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a31473231236cf3230f7d6f23dedf2ae9}
+Precondition \-: t1 et t2 initialises Postcondition \-: l'ancien contenu de t1 est perdu. t1 et t2 contiennent des sequences d'Element\-T\-D identiques t1 correspond a une copie de t2, les 2 tableaux ont meme capacite, meme taille utilisee, mais sont independants) \hypertarget{_tableau_dynamique_mur_8h_a76e95156313a16c5956402a00faac297}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!ajouter\-Element\-Tab\-Dyn\-Mur@{ajouter\-Element\-Tab\-Dyn\-Mur}}
+\index{ajouter\-Element\-Tab\-Dyn\-Mur@{ajouter\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{ajouter\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void ajouter\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{{\bf Mur}}]{e}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a76e95156313a16c5956402a00faac297}
+Precondition \-: t prealablement initialise Postcondition \-: L'element e est ajoute dans la premiere alveole inutilisee du tableau, la taille utilisee est incrementee de 1. Doublement de la capacite de t, si necessaire. 
+
+Définition à la ligne 57 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a677de455353d6c7d8e49e9d8b765f085}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!initialiser\-Tab\-Dyn\-Mur@{initialiser\-Tab\-Dyn\-Mur}}
+\index{initialiser\-Tab\-Dyn\-Mur@{initialiser\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{initialiser\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void initialiser\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a677de455353d6c7d8e49e9d8b765f085}
+Precondition \-: t non prealablement initialise Postcondition \-: t initialise a une alveole vide (taille utilisee nulle) 
+
+Définition à la ligne 37 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a3fcc63bda1a34e187a7a3f3acd420fb2}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!inserer\-Element\-Tab\-Dyn\-Mur@{inserer\-Element\-Tab\-Dyn\-Mur}}
+\index{inserer\-Element\-Tab\-Dyn\-Mur@{inserer\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{inserer\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void inserer\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{{\bf Mur}}]{e, }
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a3fcc63bda1a34e187a7a3f3acd420fb2}
+Precondition \-: t prealablement initialise et 0 $<$= i $<$ taille\-Utilisee(t) Postcondition \-: e est insere en i+1eme position et taille\-Utilisee est incrementee de 1 \hypertarget{_tableau_dynamique_mur_8h_ac9e49d24407d337a101c5186534ab0d0}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur@{modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}}
+\index{modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur@{modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void modifier\-Valeur\-Ieme\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{{\bf Mur}}]{e, }
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_ac9e49d24407d337a101c5186534ab0d0}
+Precondition \-: t prealablement initialise et 0 $<$= i $<$ taille\-Utilisee(t) Postcondition \-: le i+1eme Element\-T\-D de t vaut e 
+
+Définition à la ligne 89 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_ac1f6eb509e569f5887171ec6add66d30}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!supprimer\-Element\-Tab\-Dyn\-Mur@{supprimer\-Element\-Tab\-Dyn\-Mur}}
+\index{supprimer\-Element\-Tab\-Dyn\-Mur@{supprimer\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{supprimer\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void supprimer\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{int}]{position}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_ac1f6eb509e569f5887171ec6add66d30}
+Precondition \-: t prealablement initialise et non vide Postcondition \-: la taille utilisee du tableau est decrementee de 1. Si taille\-Utilisee $<$ capacite/3, alors on divise la capacité par 2. 
+
+Définition à la ligne 99 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_adcadf52764b8e0f32e4844495e3a6724}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Get\-Ad@{Tab\-Dyn\-Mur\-Get\-Ad}}
+\index{Tab\-Dyn\-Mur\-Get\-Ad@{Tab\-Dyn\-Mur\-Get\-Ad}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Get\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mur}$\ast$ Tab\-Dyn\-Mur\-Get\-Ad (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_adcadf52764b8e0f32e4844495e3a6724}
+assesseur de ad 
+
+Définition à la ligne 20 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a9d8993673abb44cb220526fc555b97e6}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Get\-Capacite@{Tab\-Dyn\-Mur\-Get\-Capacite}}
+\index{Tab\-Dyn\-Mur\-Get\-Capacite@{Tab\-Dyn\-Mur\-Get\-Capacite}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Get\-Capacite}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tab\-Dyn\-Mur\-Get\-Capacite (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a9d8993673abb44cb220526fc555b97e6}
+assesseur de capacite 
+
+Définition à la ligne 14 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_aa4cccc53a5d36a7df78f86d878a89d96}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee@{Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee}}
+\index{Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee@{Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Tab\-Dyn\-Mur\-Get\-Taille\-\_\-utilisee (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_aa4cccc53a5d36a7df78f86d878a89d96}
+assesseur de taille\-\_\-utilisee 
+
+Définition à la ligne 17 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a247f1e88f472662f5a794384760ca2bc}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Set\-Ad@{Tab\-Dyn\-Mur\-Set\-Ad}}
+\index{Tab\-Dyn\-Mur\-Set\-Ad@{Tab\-Dyn\-Mur\-Set\-Ad}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Set\-Ad}]{\setlength{\rightskip}{0pt plus 5cm}void Tab\-Dyn\-Mur\-Set\-Ad (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur, }
+\item[{{\bf Mur} $\ast$}]{ad}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a247f1e88f472662f5a794384760ca2bc}
+mutateur de ad 
+
+Définition à la ligne 30 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_ac0e544e5c2190470f1c888403dd5e75b}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Set\-Capacite@{Tab\-Dyn\-Mur\-Set\-Capacite}}
+\index{Tab\-Dyn\-Mur\-Set\-Capacite@{Tab\-Dyn\-Mur\-Set\-Capacite}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Set\-Capacite}]{\setlength{\rightskip}{0pt plus 5cm}void Tab\-Dyn\-Mur\-Set\-Capacite (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur, }
+\item[{unsigned int}]{capacite}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_ac0e544e5c2190470f1c888403dd5e75b}
+mutateur de capacite 
+
+Définition à la ligne 24 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a8cab81dcce42531992bc233a0a0c91d1}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee@{Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee}}
+\index{Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee@{Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee}]{\setlength{\rightskip}{0pt plus 5cm}void Tab\-Dyn\-Mur\-Set\-Taille\-\_\-utilisee (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{Tab\-Dyn\-Mur, }
+\item[{unsigned int}]{taille}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a8cab81dcce42531992bc233a0a0c91d1}
+mutateur de taille\-\_\-utilisee 
+
+Définition à la ligne 27 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a4385563f59ebc05529139926b3cb642b}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!taille\-Utilisee\-Tab\-Dyn\-Mur@{taille\-Utilisee\-Tab\-Dyn\-Mur}}
+\index{taille\-Utilisee\-Tab\-Dyn\-Mur@{taille\-Utilisee\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{taille\-Utilisee\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int taille\-Utilisee\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a4385563f59ebc05529139926b3cb642b}
+Precondition \-: t prealablement initialise Resultat \-: nombre d'Element\-T\-Ds stockes dans t \hypertarget{_tableau_dynamique_mur_8h_ad33a7af085e713d488c62e232464c025}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!testament\-Tab\-Dyn\-Mur@{testament\-Tab\-Dyn\-Mur}}
+\index{testament\-Tab\-Dyn\-Mur@{testament\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{testament\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}void testament\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_ad33a7af085e713d488c62e232464c025}
+\begin{DoxyVerb}Precondition : t prealablement initialise
+\end{DoxyVerb}
+ Postcondition \-: t pret a disparaitre. La memoire allouee dynamiquement est liberee. On ne pourra plus appeler les sous-\/programmes qui necessitent que t soit initialise. 
+
+Définition à la ligne 45 du fichier Tableau\-Dynamique\-Mur.\-c.
+
+\hypertarget{_tableau_dynamique_mur_8h_a4b1cf99f3ab429c58cc4f87134dfb146}{\index{Tableau\-Dynamique\-Mur.\-h@{Tableau\-Dynamique\-Mur.\-h}!valeur\-Ieme\-Element\-Tab\-Dyn\-Mur@{valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}}
+\index{valeur\-Ieme\-Element\-Tab\-Dyn\-Mur@{valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}!TableauDynamiqueMur.h@{Tableau\-Dynamique\-Mur.\-h}}
+\subsubsection[{valeur\-Ieme\-Element\-Tab\-Dyn\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mur} valeur\-Ieme\-Element\-Tab\-Dyn\-Mur (
+\begin{DoxyParamCaption}
+\item[{const {\bf Tableau\-Dynamique\-Mur} $\ast$}]{t, }
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}\label{_tableau_dynamique_mur_8h_a4b1cf99f3ab429c58cc4f87134dfb146}
+Precondition \-: t prealablement initialise, 0 $<$= i $<$ taille\-Utilisee(t) Resultat \-: retourne le i+1eme Element\-T\-D de t 
+
+Définition à la ligne 77 du fichier Tableau\-Dynamique\-Mur.\-c.
+
