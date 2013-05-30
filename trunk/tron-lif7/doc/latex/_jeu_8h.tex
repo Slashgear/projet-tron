@@ -17,7 +17,7 @@ Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=330pt]{_jeu_8h__dep__incl}
+\includegraphics[width=307pt]{_jeu_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Structures de données}
@@ -60,7 +60,7 @@ void \hyperlink{_jeu_8h_a71bdcf7116b2f14b792d222c49ff74de}{Jeu\-Evolue} (\hyperl
 \item 
 void \hyperlink{_jeu_8h_ac2310df2f749aa58dc111b1bf906f2a8}{bouge\-Moto} (\hyperlink{struct_jeu}{Jeu} $\ast$jeu)
 \item 
-char \hyperlink{_jeu_8h_af340da255b9d4e0b94c590aba6286148}{test\-Collision\-Mur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_grid}{Grid} $\ast$grille)
+char \hyperlink{_jeu_8h_afc626a510d785dbffc9a7881229f0203}{test\-Collision\-Mur} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{struct_grid}{Grid} $\ast$grille, char bool\-Saut)
 \item 
 char \hyperlink{_jeu_8h_a89c1e81df1d6a601b6683a40904d8649}{test\-Collision\-Moto} (\hyperlink{struct_moto}{Moto} $\ast$moto, \hyperlink{struct_moto}{Moto} $\ast$moto2)
 \item 
@@ -122,7 +122,7 @@ Définition dans le fichier \hyperlink{_jeu_8h_source}{Jeu.\-h}.
 )}}\label{_jeu_8h_aaa794bc48d4a68c8f3a3ffdb881f8eb3}
 
 
-Définition à la ligne 485 du fichier Jeu.\-c.
+Définition à la ligne 514 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a057ccaa58f66d1839542ce3ed73bd0d5}{\index{Jeu.\-h@{Jeu.\-h}!affiche\-Grille\-Distances@{affiche\-Grille\-Distances}}
 \index{affiche\-Grille\-Distances@{affiche\-Grille\-Distances}!Jeu.h@{Jeu.\-h}}
@@ -133,7 +133,7 @@ Définition à la ligne 485 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a057ccaa58f66d1839542ce3ed73bd0d5}
 
 
-Définition à la ligne 498 du fichier Jeu.\-c.
+Définition à la ligne 527 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_ac2310df2f749aa58dc111b1bf906f2a8}{\index{Jeu.\-h@{Jeu.\-h}!bouge\-Moto@{bouge\-Moto}}
 \index{bouge\-Moto@{bouge\-Moto}!Jeu.h@{Jeu.\-h}}
@@ -144,7 +144,7 @@ Définition à la ligne 498 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_ac2310df2f749aa58dc111b1bf906f2a8}
 
 
-Définition à la ligne 230 du fichier Jeu.\-c.
+Définition à la ligne 232 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a8f806829e6634cfacfd7c54648baf3c6}{\index{Jeu.\-h@{Jeu.\-h}!choisie\-Cible\-I\-A@{choisie\-Cible\-I\-A}}
 \index{choisie\-Cible\-I\-A@{choisie\-Cible\-I\-A}!Jeu.h@{Jeu.\-h}}
@@ -157,7 +157,7 @@ Définition à la ligne 230 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a8f806829e6634cfacfd7c54648baf3c6}
 !$<$On prend pour position du joueur le devant de sa moto Si cette case est inaccessible on prend une case plus loin 
 
-Définition à la ligne 688 du fichier Jeu.\-c.
+Définition à la ligne 717 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a234255b8c79dacdf45153d250a32cee5}{\index{Jeu.\-h@{Jeu.\-h}!choisie\-Direction@{choisie\-Direction}}
 \index{choisie\-Direction@{choisie\-Direction}!Jeu.h@{Jeu.\-h}}
@@ -203,7 +203,7 @@ Définition à la ligne 688 du fichier Jeu.\-c.
 
 !$<$Fin de l'algo de survie, ci-\/dessous l'I\-A essaie de suivre l'adversaire pour le bloquer 
 
-Définition à la ligne 745 du fichier Jeu.\-c.
+Définition à la ligne 774 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a3b3af5966cdc7cbf24276b5e80bdc032}{\index{Jeu.\-h@{Jeu.\-h}!creer\-Grille\-Analyse@{creer\-Grille\-Analyse}}
 \index{creer\-Grille\-Analyse@{creer\-Grille\-Analyse}!Jeu.h@{Jeu.\-h}}
@@ -242,7 +242,7 @@ Définition à la ligne 745 du fichier Jeu.\-c.
 
 !$<$Enfin on crée la zone de danger au début du mur au bord haut puis au bord bas 
 
-Définition à la ligne 613 du fichier Jeu.\-c.
+Définition à la ligne 642 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a935de1505ff299257332d32d9b450aaa}{\index{Jeu.\-h@{Jeu.\-h}!creer\-Grille\-Distances@{creer\-Grille\-Distances}}
 \index{creer\-Grille\-Distances@{creer\-Grille\-Distances}!Jeu.h@{Jeu.\-h}}
@@ -256,7 +256,7 @@ Définition à la ligne 613 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a935de1505ff299257332d32d9b450aaa}
 
 
-Définition à la ligne 563 du fichier Jeu.\-c.
+Définition à la ligne 592 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_acdb1470c32818255dca985898836aafa}{\index{Jeu.\-h@{Jeu.\-h}!decremente\-Temps\-Bonus@{decremente\-Temps\-Bonus}}
 \index{decremente\-Temps\-Bonus@{decremente\-Temps\-Bonus}!Jeu.h@{Jeu.\-h}}
@@ -267,7 +267,7 @@ Définition à la ligne 563 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_acdb1470c32818255dca985898836aafa}
 
 
-Définition à la ligne 424 du fichier Jeu.\-c.
+Définition à la ligne 444 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_ae21534d3ce5552805c5c19c91835d45a}{\index{Jeu.\-h@{Jeu.\-h}!indices\-Grille\-Joueur@{indices\-Grille\-Joueur}}
 \index{indices\-Grille\-Joueur@{indices\-Grille\-Joueur}!Jeu.h@{Jeu.\-h}}
@@ -280,7 +280,7 @@ Définition à la ligne 424 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_ae21534d3ce5552805c5c19c91835d45a}
 
 
-Définition à la ligne 540 du fichier Jeu.\-c.
+Définition à la ligne 569 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a43389b43f891711881d87d46c92a53a0}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Action\-Clavier@{Jeu\-Action\-Clavier}}
 \index{Jeu\-Action\-Clavier@{Jeu\-Action\-Clavier}!Jeu.h@{Jeu.\-h}}
@@ -293,7 +293,7 @@ Définition à la ligne 540 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a43389b43f891711881d87d46c92a53a0}
 
 
-Définition à la ligne 155 du fichier Jeu.\-c.
+Définition à la ligne 157 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a4ba757faa17a6b0a476e485db82d0f54}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Actionne\-Bonus@{Jeu\-Actionne\-Bonus}}
 \index{Jeu\-Actionne\-Bonus@{Jeu\-Actionne\-Bonus}!Jeu.h@{Jeu.\-h}}
@@ -304,7 +304,7 @@ Définition à la ligne 155 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a4ba757faa17a6b0a476e485db82d0f54}
 
 
-Définition à la ligne 439 du fichier Jeu.\-c.
+Définition à la ligne 465 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a21f6877d6b5377c9df2a8321313437f4}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Constructeur@{Jeu\-Constructeur}}
 \index{Jeu\-Constructeur@{Jeu\-Constructeur}!Jeu.h@{Jeu.\-h}}
@@ -343,7 +343,7 @@ Définition à la ligne 74 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a71bdcf7116b2f14b792d222c49ff74de}
 
 
-Définition à la ligne 265 du fichier Jeu.\-c.
+Définition à la ligne 267 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a5f001c65f81c3dde6d0ab2a0197558af}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Gere\-I\-A@{Jeu\-Gere\-I\-A}}
 \index{Jeu\-Gere\-I\-A@{Jeu\-Gere\-I\-A}!Jeu.h@{Jeu.\-h}}
@@ -357,7 +357,7 @@ Définition à la ligne 265 du fichier Jeu.\-c.
 
 !$<$ On initialise la position du joueur\-I\-A au devant de sa moto 
 
-Définition à la ligne 510 du fichier Jeu.\-c.
+Définition à la ligne 539 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a9cd710c657af64a74c7cc26a4e726d14}{\index{Jeu.\-h@{Jeu.\-h}!Jeu\-Get\-Grille@{Jeu\-Get\-Grille}}
 \index{Jeu\-Get\-Grille@{Jeu\-Get\-Grille}!Jeu.h@{Jeu.\-h}}
@@ -508,7 +508,7 @@ Définition à la ligne 51 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a9ab460d3c45562a77699da8015b3039c}
 procédure de test 
 
-Définition à la ligne 1055 du fichier Jeu.\-c.
+Définition à la ligne 1084 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_a680716484ae925b266b97ed9cf1ca3be}{\index{Jeu.\-h@{Jeu.\-h}!Place\-Bonus@{Place\-Bonus}}
 \index{Place\-Bonus@{Place\-Bonus}!Jeu.h@{Jeu.\-h}}
@@ -520,7 +520,7 @@ Définition à la ligne 1055 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a680716484ae925b266b97ed9cf1ca3be}
 
 
-Définition à la ligne 469 du fichier Jeu.\-c.
+Définition à la ligne 498 du fichier Jeu.\-c.
 
 \hypertarget{_jeu_8h_ac2f5807a1e5457c87bad141d69a644ad}{\index{Jeu.\-h@{Jeu.\-h}!test\-Collision\-Generique@{test\-Collision\-Generique}}
 \index{test\-Collision\-Generique@{test\-Collision\-Generique}!Jeu.h@{Jeu.\-h}}
@@ -556,16 +556,17 @@ Définition à la ligne 143 du fichier Jeu.\-c.
 )}}\label{_jeu_8h_a9045e76f8f81369ba40d35e5ca9b55ec}
 
 
-Définition à la ligne 446 du fichier Jeu.\-c.
+Définition à la ligne 475 du fichier Jeu.\-c.
 
-\hypertarget{_jeu_8h_af340da255b9d4e0b94c590aba6286148}{\index{Jeu.\-h@{Jeu.\-h}!test\-Collision\-Mur@{test\-Collision\-Mur}}
+\hypertarget{_jeu_8h_afc626a510d785dbffc9a7881229f0203}{\index{Jeu.\-h@{Jeu.\-h}!test\-Collision\-Mur@{test\-Collision\-Mur}}
 \index{test\-Collision\-Mur@{test\-Collision\-Mur}!Jeu.h@{Jeu.\-h}}
 \subsubsection[{test\-Collision\-Mur}]{\setlength{\rightskip}{0pt plus 5cm}char test\-Collision\-Mur (
 \begin{DoxyParamCaption}
 \item[{{\bf Joueur} $\ast$}]{joueur, }
-\item[{{\bf Grid} $\ast$}]{grille}
+\item[{{\bf Grid} $\ast$}]{grille, }
+\item[{char}]{bool\-Saut}
 \end{DoxyParamCaption}
-)}}\label{_jeu_8h_af340da255b9d4e0b94c590aba6286148}
+)}}\label{_jeu_8h_afc626a510d785dbffc9a7881229f0203}
 
 
 Définition à la ligne 97 du fichier Jeu.\-c.

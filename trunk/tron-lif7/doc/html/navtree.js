@@ -25,8 +25,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_bonus_8c.html",
-"_joueur_8h.html#a7108e6f90ec1b61b4c62b55d234d6143",
-"_tableau_dynamique_mur_8h.html#adcadf52764b8e0f32e4844495e3a6724"
+"_joueur_8h.html#a535ea5e3fdedcdbcc7e9d84cb3b7b75e",
+"_tableau_dynamique_mur_8h.html#ac9e49d24407d337a101c5186534ab0d0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,88 +1,144 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="src/Bonus.c" open="1" top="0" tabpos="16">
-		<Cursor position="20" topLine="0" />
+	<File name="src/Joueur.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Bonus.h" open="1" top="0" tabpos="21">
-		<Cursor position="2439" topLine="0" />
+	<File name="src/SDL.h" open="1" top="1" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="601" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Constantes.h" open="1" top="0" tabpos="15">
-		<Cursor position="223" topLine="15" />
+	<File name="src/Bonus.h" open="1" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Controle.c" open="1" top="0" tabpos="4">
-		<Cursor position="27" topLine="0" />
+	<File name="src/Joueur.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Controle.h" open="1" top="0" tabpos="9">
-		<Cursor position="2502" topLine="82" />
+	<File name="src/TableauDynamiqueMur.h" open="1" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Couleur.h" open="1" top="0" tabpos="19">
-		<Cursor position="83" topLine="0" />
+	<File name="src/Moto.h" open="1" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/EffetBonus.h" open="1" top="0" tabpos="17">
-		<Cursor position="253" topLine="0" />
+	<File name="src/SDL.c" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Grid.c" open="1" top="0" tabpos="8">
-		<Cursor position="23" topLine="98" />
+	<File name="src/Musique.c" open="1" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Grid.h" open="1" top="0" tabpos="7">
-		<Cursor position="2980" topLine="106" />
+	<File name="src/Couleur.h" open="1" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Jeu.c" open="1" top="1" tabpos="12">
-		<Cursor position="17184" topLine="158" />
+	<File name="src/Controle.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Jeu.h" open="1" top="0" tabpos="11">
-		<Cursor position="3416" topLine="132" />
+	<File name="src/Jeu.c" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Joueur.c" open="1" top="0" tabpos="6">
-		<Cursor position="21" topLine="0" />
+	<File name="src/Mur.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Joueur.h" open="1" top="0" tabpos="5">
-		<Cursor position="5048" topLine="192" />
+	<File name="src/Grid.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Joystick.c" open="1" top="0" tabpos="25">
-		<Cursor position="27" topLine="0" />
+	<File name="src/TableauDynamiqueEntier.h" open="1" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Joystick.h" open="1" top="0" tabpos="22">
-		<Cursor position="920" topLine="21" />
+	<File name="src/Musique.h" open="1" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Moto.c" open="1" top="0" tabpos="10">
-		<Cursor position="19" topLine="0" />
+	<File name="src/TableauDynamiqueEntier.c" open="1" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Moto.h" open="1" top="0" tabpos="18">
-		<Cursor position="2637" topLine="98" />
+	<File name="src/main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Mur.c" open="1" top="0" tabpos="2">
-		<Cursor position="20" topLine="0" />
+	<File name="src/Jeu.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Mur.h" open="1" top="0" tabpos="1">
-		<Cursor position="2559" topLine="103" />
+	<File name="src/EffetBonus.h" open="1" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Musique.c" open="1" top="0" tabpos="26">
-		<Cursor position="22" topLine="0" />
+	<File name="src/Moto.c" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/Musique.h" open="1" top="0" tabpos="20">
-		<Cursor position="2601" topLine="77" />
+	<File name="src/Mur.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/SDL.c" open="1" top="0" tabpos="14">
-		<Cursor position="34173" topLine="658" />
+	<File name="src/Constantes.h" open="1" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="274" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/SDL.h" open="1" top="0" tabpos="13">
-		<Cursor position="4233" topLine="15" />
+	<File name="src/Bonus.c" open="1" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/TableauDynamiqueEntier.c" open="1" top="0" tabpos="27">
-		<Cursor position="41" topLine="0" />
+	<File name="src/Joystick.c" open="1" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/TableauDynamiqueEntier.h" open="1" top="0" tabpos="23">
-		<Cursor position="287" topLine="0" />
+	<File name="src/Controle.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/TableauDynamiqueMur.c" open="1" top="0" tabpos="28">
-		<Cursor position="38" topLine="1" />
+	<File name="src/TableauDynamiqueMur.c" open="1" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/TableauDynamiqueMur.h" open="1" top="0" tabpos="24">
-		<Cursor position="287" topLine="0" />
+	<File name="src/Joystick.h" open="1" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
-	<File name="src/main.c" open="1" top="0" tabpos="3">
-		<Cursor position="26" topLine="25" />
+	<File name="src/Grid.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

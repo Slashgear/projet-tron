@@ -1,11 +1,5 @@
 <map id="TableauDynamiqueMur.h" name="TableauDynamiqueMur.h">
-<area shape="rect" id="node3" href="$_grid_8h.html" title="Grid.h" alt="" coords="227,83,283,112"/>
-<area shape="rect" id="node19" href="$_grid_8c.html" title="Grid.c" alt="" coords="292,160,348,189"/>
-<area shape="rect" id="node24" href="$_tableau_dynamique_mur_8c.html" title="TableauDynamiqueMur.c" alt="" coords="357,83,523,112"/>
-<area shape="rect" id="node5" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="164,160,217,189"/>
-<area shape="rect" id="node9" href="$_jeu_8c.html" title="Jeu.c" alt="" coords="300,237,353,267"/>
-<area shape="rect" id="node11" href="$main_8c.html" title="main.c" alt="" coords="5,315,67,344"/>
-<area shape="rect" id="node7" href="$_bonus_8c.html" title="Bonus.c" alt="" coords="156,237,225,267"/>
-<area shape="rect" id="node13" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="73,237,132,267"/>
-<area shape="rect" id="node16" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="161,315,220,344"/>
+<area shape="rect" id="node3" href="$_grid_8h.html" title="Grid.h" alt="" coords="5,83,56,111"/>
+<area shape="rect" id="node5" href="$_grid_8c.html" title="Grid.c" alt="" coords="36,161,87,189"/>
+<area shape="rect" id="node8" href="$_tableau_dynamique_mur_8c.html" title="TableauDynamiqueMur.c" alt="" coords="131,83,272,111"/>
 </map>
