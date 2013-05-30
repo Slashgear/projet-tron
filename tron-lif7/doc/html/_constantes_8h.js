@@ -15,6 +15,7 @@ var _constantes_8h =
     [ "_Taille_X_Grille", "_constantes_8h.html#a22ca4a20964744e6df65d2c81d5b41ff", null ],
     [ "_Taille_Y_Grille", "_constantes_8h.html#abf68bdf8402080e47166e730e6fa7839", null ],
     [ "_Temps_Bonus_Boost", "_constantes_8h.html#aa8107d46dd4716d82da9d2a2c236784b", null ],
+    [ "_Temps_Bonus_Saut", "_constantes_8h.html#a296e74aa0c165600fc9911ac06edd2bc", null ],
     [ "_Vitesse_Boost", "_constantes_8h.html#a8e9754a93f3dc0c1263aa8ee9bdcda97", null ],
     [ "_Vitesse_Initiale", "_constantes_8h.html#a612d10894e13a2f3a1784441ed77abd0", null ]
 ];

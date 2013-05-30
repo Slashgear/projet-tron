@@ -1,9 +1,6 @@
 <map id="Joueur.h" name="Joueur.h">
-<area shape="rect" id="node3" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="180,83,233,112"/>
-<area shape="rect" id="node7" href="$_jeu_8c.html" title="Jeu.c" alt="" coords="5,160,59,189"/>
-<area shape="rect" id="node9" href="$main_8c.html" title="main.c" alt="" coords="292,237,353,267"/>
-<area shape="rect" id="node18" href="$_joueur_8c.html" title="Joueur.c" alt="" coords="411,83,483,112"/>
-<area shape="rect" id="node5" href="$_bonus_8c.html" title="Bonus.c" alt="" coords="216,160,285,189"/>
-<area shape="rect" id="node11" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="133,160,192,189"/>
-<area shape="rect" id="node14" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="100,237,159,267"/>
+<area shape="rect" id="node3" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="53,83,101,111"/>
+<area shape="rect" id="node5" href="$_jeu_8c.html" title="Jeu.c" alt="" coords="5,161,51,189"/>
+<area shape="rect" id="node7" href="$main_8c.html" title="main.c" alt="" coords="99,161,152,189"/>
+<area shape="rect" id="node10" href="$_joueur_8c.html" title="Joueur.c" alt="" coords="176,83,237,111"/>
 </map>

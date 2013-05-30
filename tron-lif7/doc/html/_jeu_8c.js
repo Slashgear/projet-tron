@@ -31,5 +31,5 @@ var _jeu_8c =
     [ "testCollisionGenerique", "_jeu_8c.html#ac2f5807a1e5457c87bad141d69a644ad", null ],
     [ "testCollisionMoto", "_jeu_8c.html#a1d6d77911c3af96664c509572d7c9abe", null ],
     [ "testCollisionMotoBonus", "_jeu_8c.html#a9045e76f8f81369ba40d35e5ca9b55ec", null ],
-    [ "testCollisionMur", "_jeu_8c.html#af340da255b9d4e0b94c590aba6286148", null ]
+    [ "testCollisionMur", "_jeu_8c.html#afc626a510d785dbffc9a7881229f0203", null ]
 ];

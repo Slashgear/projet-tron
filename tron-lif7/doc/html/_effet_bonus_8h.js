@@ -4,6 +4,7 @@ var _effet_bonus_8h =
     [ "EffetBonus", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fe", [
       [ "AUCUN", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fea87797e00a316143a6c49ad311b240a2b", null ],
       [ "NETTOYAGE", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7feac896e25bae3bb3d64b0200ec45e47ac5", null ],
-      [ "BOOST", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fea64fe15abfce0f5a1467d75dd876875ba", null ]
+      [ "BOOST", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7fea64fe15abfce0f5a1467d75dd876875ba", null ],
+      [ "SAUT", "_effet_bonus_8h.html#a5c3ffd6a343fb8d5f63c87ee1a37a7feabb3b4684c014837eac1f0b6b7fb9fded", null ]
     ] ]
 ];
