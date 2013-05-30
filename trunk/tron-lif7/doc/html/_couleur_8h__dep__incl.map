@@ -1,0 +1,16 @@
+<map id="Couleur.h" name="Couleur.h">
+<area shape="rect" id="node3" href="$_joueur_8h.html" title="Joueur.h" alt="" coords="295,160,367,189"/>
+<area shape="rect" id="node20" href="$_joueur_8c.html" title="Joueur.c" alt="" coords="365,237,437,267"/>
+<area shape="rect" id="node23" href="$_mur_8h.html" title="Mur.h" alt="" coords="623,83,677,112"/>
+<area shape="rect" id="node41" href="$_mur_8c.html" title="Mur.c" alt="" coords="882,160,935,189"/>
+<area shape="rect" id="node5" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="186,315,239,344"/>
+<area shape="rect" id="node9" href="$_jeu_8c.html" title="Jeu.c" alt="" coords="250,392,303,421"/>
+<area shape="rect" id="node11" href="$main_8c.html" title="main.c" alt="" coords="310,469,371,499"/>
+<area shape="rect" id="node7" href="$_bonus_8c.html" title="Bonus.c" alt="" coords="23,392,93,421"/>
+<area shape="rect" id="node13" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="117,392,175,421"/>
+<area shape="rect" id="node16" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="37,469,95,499"/>
+<area shape="rect" id="node26" href="$_grid_8h.html" title="Grid.h" alt="" coords="461,237,517,267"/>
+<area shape="rect" id="node29" href="$_grid_8c.html" title="Grid.c" alt="" coords="526,315,582,344"/>
+<area shape="rect" id="node33" href="$_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="507,160,673,189"/>
+<area shape="rect" id="node37" href="$_tableau_dynamique_mur_8c.html" title="TableauDynamiqueMur.c" alt="" coords="591,237,757,267"/>
+</map>

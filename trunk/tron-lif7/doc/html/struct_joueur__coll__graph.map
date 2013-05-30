@@ -1,0 +1,5 @@
+<map id="Joueur" name="Joueur">
+<area shape="rect" id="node2" href="$struct_controle.html" title="Controle" alt="" coords="5,5,75,35"/>
+<area shape="rect" id="node4" href="$struct_mur.html" title="Mur" alt="" coords="100,5,143,35"/>
+<area shape="rect" id="node6" href="$struct_moto.html" title="Moto" alt="" coords="192,5,243,35"/>
+</map>

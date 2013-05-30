@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid:  Fichier source de Grid.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_grid_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Grid.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_grid_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_grid_8h.html">Grid.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_mur_8h.html">Mur.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_tableau_dynamique_mur_8h.html">TableauDynamiqueMur.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="_grid_8h.html#af3c58e084a35908474f7148cf177e717">   17</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="_grid_8c.html#ad6474a4bd1b2abc33aed83f04ed4f0de">GridGetPositionX</a>(<span class="keyword">const</span> <a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> grille-&gt;<a class="code" href="struct_grid.html#a79a982036e5591bf27af7cc2edcd6f4c">positionX</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="_grid_8h.html#a1763976e87177bc68c05b09e5efc0534">   20</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="_grid_8c.html#a7d16dec935d3ea2ea49a5ad80139ad63">GridGetPositionY</a>(<span class="keyword">const</span> <a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> grille-&gt;<a class="code" href="struct_grid.html#ad17be35b83017d6dc83074e6b8d21207">positionY</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="_grid_8h.html#ae4c0acd7634c52be99782403daf71f8e">   23</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_grid_8c.html#a402ec8dcb2070fdc1ca02d9f68b0d61f">GridGetTailleX</a>(<span class="keyword">const</span> <a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> grille-&gt;<a class="code" href="struct_grid.html#a14a7f2008ff990cae95babeb28176bad">tailleX</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="_grid_8h.html#ab1b8157d42bd3763ead211ede9c667cc">   26</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_grid_8c.html#a6b28340c1a4dd9456ba5853963986cd2">GridGetTailleY</a>(<span class="keyword">const</span> <a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> grille-&gt;<a class="code" href="struct_grid.html#ab277c464cec35f230262c48fec89a566">tailleY</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="_grid_8h.html#a90571a2b8569148c5adb00a0d1c8f78e">   29</a></span>&#160;<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* <a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(<a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> &amp;(grille-&gt;<a class="code" href="struct_grid.html#a65b5696754edc0293cfd018ed2f2c2a2">mesMurs</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="_grid_8h.html#a55dea47bf264d8c4c5f7ddf2584b3ec8">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a55dea47bf264d8c4c5f7ddf2584b3ec8">GridSetPositionX</a>(<a class="code" href="struct_grid.html">Grid</a>* grille,<span class="keywordtype">float</span> posX){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    grille-&gt;<a class="code" href="struct_grid.html#a79a982036e5591bf27af7cc2edcd6f4c">positionX</a>=posX;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="_grid_8h.html#a1cdd44b889afbe59b178f6f256c4b32b">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a1cdd44b889afbe59b178f6f256c4b32b">GridSetPositionY</a>(<a class="code" href="struct_grid.html">Grid</a>* grille,<span class="keywordtype">float</span> posY){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    grille-&gt;<a class="code" href="struct_grid.html#ad17be35b83017d6dc83074e6b8d21207">positionY</a>=posY;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="_grid_8h.html#a2f666baeec2f8712d60670e2ea196257">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#aa2af4ce645afe349bc5f7d448fa8d488">GridSetTailleX</a>(<a class="code" href="struct_grid.html">Grid</a>* grille,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    grille-&gt;<a class="code" href="struct_grid.html#a14a7f2008ff990cae95babeb28176bad">tailleX</a>=tailleX;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="_grid_8h.html#a7a7251a47cde9f4a26fd33145dab565f">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a9778c91a23c761a7b0872611e24efc30">GridSetTailleY</a>(<a class="code" href="struct_grid.html">Grid</a>* grille,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    grille-&gt;<a class="code" href="struct_grid.html#ab277c464cec35f230262c48fec89a566">tailleY</a>=tailleY;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="_grid_8h.html#a707a4949087945113f1105e38449eaff">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#ae58cdfa605fc9a0af1d8fa1461277bff">GridSetMesMurs</a>(<a class="code" href="struct_grid.html">Grid</a>* grille,<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* mesMurs){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    grille-&gt;<a class="code" href="struct_grid.html#a65b5696754edc0293cfd018ed2f2c2a2">mesMurs</a> = *mesMurs;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="_grid_8h.html#a214707008d196d1e43ba28528bfe7f95">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a2cc97be9c7e6fc3a0fffa106c3cf8954">GridConstructeur</a>(<a class="code" href="struct_grid.html">Grid</a>* grille, <span class="keywordtype">float</span> posX, <span class="keywordtype">float</span> posY, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> TailleX, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> TailleY,<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* mesMurs){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="_grid_8c.html#a55dea47bf264d8c4c5f7ddf2584b3ec8">GridSetPositionX</a>(grille,posX);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="_grid_8c.html#a1cdd44b889afbe59b178f6f256c4b32b">GridSetPositionY</a>(grille,posY);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="_grid_8c.html#aa2af4ce645afe349bc5f7d448fa8d488">GridSetTailleX</a>(grille,TailleX);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="_grid_8c.html#a9778c91a23c761a7b0872611e24efc30">GridSetTailleY</a>(grille,TailleY);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="_tableau_dynamique_mur_8c.html#a677de455353d6c7d8e49e9d8b765f085">initialiserTabDynMur</a>(mesMurs);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="_grid_8c.html#ae58cdfa605fc9a0af1d8fa1461277bff">GridSetMesMurs</a>(grille,mesMurs);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="_grid_8h.html#a5055e1bc05a5a03b8974301f64541ce5">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a5055e1bc05a5a03b8974301f64541ce5">GridDestructeur</a>(<a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="_grid_8c.html#a55dea47bf264d8c4c5f7ddf2584b3ec8">GridSetPositionX</a>(grille,0);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_grid_8c.html#a1cdd44b889afbe59b178f6f256c4b32b">GridSetPositionY</a>(grille,0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_grid_8c.html#aa2af4ce645afe349bc5f7d448fa8d488">GridSetTailleX</a>(grille,0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="_grid_8c.html#a9778c91a23c761a7b0872611e24efc30">GridSetTailleY</a>(grille,0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="_tableau_dynamique_mur_8c.html#ad33a7af085e713d488c62e232464c025">testamentTabDynMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(grille));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="_grid_8h.html#a7c5242962aa4ad47998bb4d04c4a3738">   63</a></span>&#160; <span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a7c5242962aa4ad47998bb4d04c4a3738">ajouteMur</a>(<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* mesMurs, <a class="code" href="struct_mur.html">Mur</a> mur){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="_tableau_dynamique_mur_8c.html#a76e95156313a16c5956402a00faac297">ajouterElementTabDynMur</a>(mesMurs,mur);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="_grid_8h.html#aa92f26b6a71343e3c05d7bf8fc218bb2">   67</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#aa92f26b6a71343e3c05d7bf8fc218bb2">effaceMur</a>(<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* mesMurs){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(mesMurs);i++){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="_mur_8c.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a>(<a class="code" href="_tableau_dynamique_mur_8c.html#a91faee7eb572734cef6f3b81b9793352">adresseIemeElementTabDynMur</a>(mesMurs,i))&lt;1)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="_tableau_dynamique_mur_8c.html#ac1f6eb509e569f5887171ec6add66d30">supprimerElementTabDynMur</a>(mesMurs,i);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="_grid_8h.html#a0e28e84d588ce2e55bbc743bb21c8731">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a0e28e84d588ce2e55bbc743bb21c8731">nettoieGrid</a>(<a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a>* mesMurs){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="_tableau_dynamique_mur_8c.html#ad33a7af085e713d488c62e232464c025">testamentTabDynMur</a>(mesMurs);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="_tableau_dynamique_mur_8c.html#a677de455353d6c7d8e49e9d8b765f085">initialiserTabDynMur</a>(mesMurs);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="_grid_8h.html#a84ff8aa0929298d2570fd909d90c7a17">   80</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#a84ff8aa0929298d2570fd909d90c7a17">decrementeVieMur</a>(<a class="code" href="struct_grid.html">Grid</a>* grille){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="struct_mur.html">Mur</a>* unMur;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span>(i=0;i&lt;<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(grille));i++){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        unMur=<a class="code" href="_tableau_dynamique_mur_8c.html#a91faee7eb572734cef6f3b81b9793352">adresseIemeElementTabDynMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(grille),i);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(unMur,<a class="code" href="_mur_8c.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a>(unMur)-1);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="code" href="_grid_8h.html#a0c7fd37261e2118a2233698fb898f52a">   94</a></span>&#160; <span class="keywordtype">void</span> <a class="code" href="_grid_8c.html#aa9603343771db4d470b04bf9c3cf3fa4">GridTestRegression</a>(){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="struct_grid.html">Grid</a> grille;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">float</span> posX=10;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">float</span> posY=5;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX=3;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY=4;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="struct_mur.html">Mur</a> unMur;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="struct_tableau_dynamique_mur.html">TableauDynamiqueMur</a> mesMurs;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="_mur_8c.html#a48159b7842108cf44f51dfba06fae844">MurConstructeur</a>(&amp;unMur,31,32,33,34,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7ace9ee4c1a6b777940c7f3a766a9a88d4">ORANGE</a>,0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="_grid_8c.html#a2cc97be9c7e6fc3a0fffa106c3cf8954">GridConstructeur</a>(&amp;grille,posX,posY,tailleX,tailleY,&amp;mesMurs);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de PosX saisie est %f et dans Grid est %f\n&quot;</span>,posX,<a class="code" href="_grid_8c.html#ad6474a4bd1b2abc33aed83f04ed4f0de">GridGetPositionX</a>(&amp;grille));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de PosY saisie est %f et dans Grid est %f\n&quot;</span>,posY,<a class="code" href="_grid_8c.html#a7d16dec935d3ea2ea49a5ad80139ad63">GridGetPositionY</a>(&amp;grille));</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de tailleX saisie est %u et dans Grid est %u\n&quot;</span>,tailleX,<a class="code" href="_grid_8c.html#a402ec8dcb2070fdc1ca02d9f68b0d61f">GridGetTailleX</a>(&amp;grille));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de tailleY saisie est %u et dans Grid est %u\n&quot;</span>,tailleY,<a class="code" href="_grid_8c.html#a6b28340c1a4dd9456ba5853963986cd2">GridGetTailleY</a>(&amp;grille));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="_grid_8c.html#a7c5242962aa4ad47998bb4d04c4a3738">ajouteMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille),unMur);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    printf(<span class="stringliteral">&quot;La valeur de PosX du mur ajouté saisie est 31 et dans Grid est %f\n&quot;</span>,<a class="code" href="_mur_8c.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a>(<a class="code" href="_tableau_dynamique_mur_8c.html#a91faee7eb572734cef6f3b81b9793352">adresseIemeElementTabDynMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille),0)));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    assert(<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille))==1);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_grid_8c.html#aa92f26b6a71343e3c05d7bf8fc218bb2">effaceMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille));</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    assert(<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille))==0);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="_grid_8c.html#a7c5242962aa4ad47998bb4d04c4a3738">ajouteMur</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille),unMur);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="_grid_8c.html#a0e28e84d588ce2e55bbc743bb21c8731">nettoieGrid</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    assert(<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille))==0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="_grid_8c.html#a5055e1bc05a5a03b8974301f64541ce5">GridDestructeur</a>(&amp;grille);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction la valeur de PosX dans Grid est %f\n&quot;</span>,<a class="code" href="_grid_8c.html#ad6474a4bd1b2abc33aed83f04ed4f0de">GridGetPositionX</a>(&amp;grille));</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction la valeur de PosY dans Grid est %f\n&quot;</span>,<a class="code" href="_grid_8c.html#a7d16dec935d3ea2ea49a5ad80139ad63">GridGetPositionY</a>(&amp;grille));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction la valeur de tailleX dans Grid  est %u\n&quot;</span>,<a class="code" href="_grid_8c.html#a402ec8dcb2070fdc1ca02d9f68b0d61f">GridGetTailleX</a>(&amp;grille));</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction la valeur de tailleY dans Grid est %u\n&quot;</span>,<a class="code" href="_grid_8c.html#a6b28340c1a4dd9456ba5853963986cd2">GridGetTailleY</a>(&amp;grille));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction la taille utilisée par mesMurs est %u \n \n&quot;</span>,<a class="code" href="_tableau_dynamique_mur_8c.html#aa4cccc53a5d36a7df78f86d878a89d96">TabDynMurGetTaille_utilisee</a>(<a class="code" href="_grid_8c.html#a1125c51c7a75905e5cf9322ac9b18bf0">GridGetMesMurs</a>(&amp;grille)));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_grid_8c.html">Grid.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

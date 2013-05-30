@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
+<title>Tron -The Grid:  Fichier source de Mur.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Tron.bmp"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Tron -The Grid
+   </div>
+   <div id="projectbrief">Création d&#39;un jeu multi joueur dans l&#39;univers de Tron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.3.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Structures&#160;de&#160;données</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Variables&#160;globale</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_mur_8c_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Structures de données</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Mur.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mur_8c.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="_couleur_8h.html">Couleur.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include&quot;<a class="code" href="_mur_8h.html">Mur.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="_mur_8h.html#a242796bbf2bac8399f38a190f18edfbc">   13</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="_mur_8c.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#a79a982036e5591bf27af7cc2edcd6f4c">positionX</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="_mur_8h.html#a97acc9d9bb325986a464ee05db5e6fbe">   16</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="_mur_8c.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#ad17be35b83017d6dc83074e6b8d21207">positionY</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="_mur_8h.html#abeddf3763bcdb728a7e3bac665a64552">   19</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_mur_8c.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#a14a7f2008ff990cae95babeb28176bad">tailleX</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="_mur_8h.html#ab0f66438f4a38b71a243bad168ee0178">   22</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="_mur_8c.html#ab0f66438f4a38b71a243bad168ee0178">MurGetTailleY</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#ab277c464cec35f230262c48fec89a566">tailleY</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="_mur_8h.html#a9b9c7924d6ba7afb0fe4daef7cf58d8d">   25</a></span>&#160;<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="_mur_8c.html#a9b9c7924d6ba7afb0fe4daef7cf58d8d">MurGetCouleur</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#af0e152d09c13944935e00bef7a3c5111">couleur</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="_mur_8h.html#a0150e2edbf0f0c8a60df0b8c261835e2">   28</a></span>&#160;<span class="keywordtype">float</span> <a class="code" href="_mur_8c.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a>(<span class="keyword">const</span> <a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> mur-&gt;<a class="code" href="struct_mur.html#a70238edfbee0de43d594921f108c7ad3">dureeVie</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="code" href="_mur_8h.html#acef090d8aa04a7f2c059113ef5fff387">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">float</span> posX){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#a79a982036e5591bf27af7cc2edcd6f4c">positionX</a>=posX;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="_mur_8h.html#a09e4ebc64953687f4887b95204db41e2">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">float</span> posY){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#ad17be35b83017d6dc83074e6b8d21207">positionY</a>=posY;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="_mur_8h.html#a12cb4b9c7117a03037cb836ce53864dc">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#a14a7f2008ff990cae95babeb28176bad">tailleX</a>=tailleX;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="code" href="_mur_8h.html#a0749cb2928457b9738b542c3e83f3176">   41</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#ab277c464cec35f230262c48fec89a566">tailleY</a>=tailleY;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="_mur_8h.html#a363d065942b92543a4cd0324531a7aa6">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#af0e152d09c13944935e00bef7a3c5111">couleur</a>=couleur;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="_mur_8h.html#a7c8ffaab1a81e082767ee865573f6813">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">float</span> duree){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    mur-&gt;<a class="code" href="struct_mur.html#a70238edfbee0de43d594921f108c7ad3">dureeVie</a>=duree;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="_mur_8h.html#a48159b7842108cf44f51dfba06fae844">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a48159b7842108cf44f51dfba06fae844">MurConstructeur</a>(<a class="code" href="struct_mur.html">Mur</a>* mur,<span class="keywordtype">float</span> posX, <span class="keywordtype">float</span> posY, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur, <span class="keywordtype">float</span> dureeVie){</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="_mur_8c.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a>(mur,posX);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="_mur_8c.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a>(mur,posY);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a>(mur,tailleX);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="_mur_8c.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a>(mur,tailleY);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="_mur_8c.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a>(mur,couleur);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(mur,dureeVie);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="code" href="_mur_8h.html#a1661630a97686483f104c48fd06dec8e">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a1661630a97686483f104c48fd06dec8e">MurDestructeur</a>(<a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="_mur_8c.html#acef090d8aa04a7f2c059113ef5fff387">MurSetPositionX</a>(mur,0);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="_mur_8c.html#a09e4ebc64953687f4887b95204db41e2">MurSetPositionY</a>(mur,0);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc">MurSetTailleX</a>(mur,0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="_mur_8c.html#a0749cb2928457b9738b542c3e83f3176">MurSetTailleY</a>(mur,0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="_mur_8c.html#a363d065942b92543a4cd0324531a7aa6">MurSetCouleur</a>(mur,<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7a59e3323a198f0162330111165caaf367">NOIR</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="_mur_8c.html#aec089b77b6955d33c9ce127727593458">MurSetDureeVie</a>(mur,0);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="_mur_8h.html#a5b1e2027147808ddbccc9c211f929f9e">   68</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#a5b1e2027147808ddbccc9c211f929f9e">AfficheStatsMur</a>(<a class="code" href="struct_mur.html">Mur</a>* mur){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    printf(<span class="stringliteral">&quot;PositionX du Mur:%f\n&quot;</span>,<a class="code" href="_mur_8c.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a>(mur));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    printf(<span class="stringliteral">&quot;PositionY du Mur:%f\n&quot;</span>,<a class="code" href="_mur_8c.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a>(mur));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    printf(<span class="stringliteral">&quot;TailleX du Mur:%u\n&quot;</span>,<a class="code" href="_mur_8c.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a>(mur));</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    printf(<span class="stringliteral">&quot;TailleY du Mur:%u\n\n&quot;</span>,<a class="code" href="_mur_8c.html#ab0f66438f4a38b71a243bad168ee0178">MurGetTailleY</a>(mur));</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="_mur_8h.html#ac8810857667a124157a1143ad96c2435">   76</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_mur_8c.html#af409c42d1dd41eae59e90b0f2c6dae06">MurTestRegression</a>(){</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="struct_mur.html">Mur</a> mur;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">float</span> posX=1;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">float</span> posY=1;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleX=10;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> tailleY=10;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> couleur=<a class="code" href="_couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7ace9ee4c1a6b777940c7f3a766a9a88d4">ORANGE</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">float</span> dureeVie=10;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="_mur_8c.html#a48159b7842108cf44f51dfba06fae844">MurConstructeur</a>(&amp;mur,posX,posY,tailleX,tailleY,couleur,dureeVie);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    printf(<span class="stringliteral">&quot;La valeur posX est %f et dans Mur est de %f \n&quot;</span>,posX,<a class="code" href="_mur_8c.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a>(&amp;mur));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    printf(<span class="stringliteral">&quot;La valeur posY est %f et dans Mur est de %f \n&quot;</span>,posY,<a class="code" href="_mur_8c.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a>(&amp;mur));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    printf(<span class="stringliteral">&quot;La valeur tailleX est %u et dans Mur est de %u \n&quot;</span>,tailleX,<a class="code" href="_mur_8c.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a>(&amp;mur));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    printf(<span class="stringliteral">&quot;La valeur tailleY est %u et dans Mur est de %u \n&quot;</span>,tailleY,<a class="code" href="_mur_8c.html#ab0f66438f4a38b71a243bad168ee0178">MurGetTailleY</a>(&amp;mur));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    printf(<span class="stringliteral">&quot;La valeur couleur est %d et dans Mur est de %d \n&quot;</span>,couleur,<a class="code" href="_mur_8c.html#a9b9c7924d6ba7afb0fe4daef7cf58d8d">MurGetCouleur</a>(&amp;mur));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    printf(<span class="stringliteral">&quot;La durée de vie est de %f et dans Mur est de %f \n&quot;</span>,dureeVie,<a class="code" href="_mur_8c.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a>(&amp;mur));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="_mur_8c.html#a1661630a97686483f104c48fd06dec8e">MurDestructeur</a>(&amp;mur);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction posX Mur est de %f \n&quot;</span>,<a class="code" href="_mur_8c.html#a242796bbf2bac8399f38a190f18edfbc">MurGetPositionX</a>(&amp;mur));</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction posY Mur est de %f \n&quot;</span>,<a class="code" href="_mur_8c.html#a97acc9d9bb325986a464ee05db5e6fbe">MurGetPositionY</a>(&amp;mur));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction tailleX Mur est de %u \n&quot;</span>,<a class="code" href="_mur_8c.html#abeddf3763bcdb728a7e3bac665a64552">MurGetTailleX</a>(&amp;mur));</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction tailleY Mur est de %u \n&quot;</span>,<a class="code" href="_mur_8c.html#ab0f66438f4a38b71a243bad168ee0178">MurGetTailleY</a>(&amp;mur));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction couleur Mur est de %d \n&quot;</span>,<a class="code" href="_mur_8c.html#a9b9c7924d6ba7afb0fe4daef7cf58d8d">MurGetCouleur</a>(&amp;mur));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    printf(<span class="stringliteral">&quot;Après destruction durée de vie  Mur est de %f \n\n&quot;</span>,<a class="code" href="_mur_8c.html#a0150e2edbf0f0c8a60df0b8c261835e2">MurGetDureeVie</a>(&amp;mur));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_mur_8c.html">Mur.c</a></li>
+    <li class="footer">Généré le Jeudi Mai 30 2013 09:48:03 pour Tron -The Grid par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
+  </ul>
+</div>
+</body>
+</html>

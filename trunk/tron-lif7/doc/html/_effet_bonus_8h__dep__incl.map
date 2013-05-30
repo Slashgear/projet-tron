@@ -1,0 +1,11 @@
+<map id="EffetBonus.h" name="EffetBonus.h">
+<area shape="rect" id="node3" href="$_bonus_8c.html" title="Bonus.c" alt="" coords="5,237,75,267"/>
+<area shape="rect" id="node5" href="$_bonus_8h.html" title="Bonus.h" alt="" coords="200,83,269,112"/>
+<area shape="rect" id="node22" href="$_joueur_8h.html" title="Joueur.h" alt="" coords="337,83,409,112"/>
+<area shape="rect" id="node8" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="208,160,261,189"/>
+<area shape="rect" id="node13" href="$main_8c.html" title="main.c" alt="" coords="235,315,296,344"/>
+<area shape="rect" id="node11" href="$_jeu_8c.html" title="Jeu.c" alt="" coords="283,237,336,267"/>
+<area shape="rect" id="node15" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="149,237,208,267"/>
+<area shape="rect" id="node18" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="128,315,187,344"/>
+<area shape="rect" id="node26" href="$_joueur_8c.html" title="Joueur.c" alt="" coords="461,160,533,189"/>
+</map>

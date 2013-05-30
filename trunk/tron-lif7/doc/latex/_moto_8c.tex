@@ -1,0 +1,242 @@
+\hypertarget{_moto_8c}{\section{Référence du fichier Moto.\-c}
+\label{_moto_8c}\index{Moto.\-c@{Moto.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Moto.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de Moto.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{_moto_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{_moto_8c_a4156c04a753d20234c7882f960830e72}{Moto\-Get\-Position\-X} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+float \hyperlink{_moto_8c_a62ff0acafab13335eb75daddd0f1b842}{Moto\-Get\-Position\-Y} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+unsigned int \hyperlink{_moto_8c_a3c4edf672fcff5483b3805ea4850b0bf}{Moto\-Get\-Taille\-X} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+unsigned int \hyperlink{_moto_8c_aa2e2c249d5453b97bbe5a0a3dcfec6c0}{Moto\-Get\-Taille\-Y} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+float \hyperlink{_moto_8c_a211ad1ea110f768b154253e64386c999}{Moto\-Get\-Vitesse} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+\hyperlink{_moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{_moto_8c_a3b507a0e47b0c30898ff385292ad44ba}{Moto\-Get\-Direction} (const \hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+void \hyperlink{_moto_8c_afc3d835e1a44c42e70b20288c4094696}{Moto\-Set\-Position\-X} (\hyperlink{struct_moto}{Moto} $\ast$moto, float pos\-X)
+\item 
+void \hyperlink{_moto_8c_a933ac221bf445ac7ba78ec4d68718c11}{Moto\-Set\-Position\-Y} (\hyperlink{struct_moto}{Moto} $\ast$moto, float pos\-Y)
+\item 
+void \hyperlink{_moto_8c_adf496889057950aa5b2c9d61e83870ff}{Moto\-Set\-Taille\-X} (\hyperlink{struct_moto}{Moto} $\ast$moto, unsigned int taille\-X)
+\item 
+void \hyperlink{_moto_8c_aa457e0e893057e65dd374802bc3144cd}{Moto\-Set\-Taille\-Y} (\hyperlink{struct_moto}{Moto} $\ast$moto, unsigned int taille\-Y)
+\item 
+void \hyperlink{_moto_8c_ab62e1b43e1a546b1552db8dde7a692b6}{Moto\-Set\-Vitesse} (\hyperlink{struct_moto}{Moto} $\ast$moto, float vitesse)
+\item 
+void \hyperlink{_moto_8c_a5e01d8daba6d2035d6a54f28a193ce35}{Moto\-Set\-Direction} (\hyperlink{struct_moto}{Moto} $\ast$moto, \hyperlink{_moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\item 
+void \hyperlink{_moto_8c_adaa34f67eeb029811b895f62c48e1e37}{Moto\-Constructeur} (\hyperlink{struct_moto}{Moto} $\ast$moto, float pos\-X, float pos\-Y, unsigned int taille\-X, unsigned int taille\-Y, float vitesse, \hyperlink{_moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction)
+\item 
+void \hyperlink{_moto_8c_a8c1f41e71c00d38b29d1b8ab0e93d542}{Moto\-Destructeur} (\hyperlink{struct_moto}{Moto} $\ast$moto)
+\item 
+void \hyperlink{_moto_8c_aee18c911ddc26580170985f506538dcb}{Moto\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\mbox{]} Module des Motos du jeu \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13 mars 2013 
+\end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{_moto_8c_source}{Moto.\-c}.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{_moto_8c_adaa34f67eeb029811b895f62c48e1e37}{\index{Moto.\-c@{Moto.\-c}!Moto\-Constructeur@{Moto\-Constructeur}}
+\index{Moto\-Constructeur@{Moto\-Constructeur}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{float}]{pos\-X, }
+\item[{float}]{pos\-Y, }
+\item[{unsigned int}]{taille\-X, }
+\item[{unsigned int}]{taille\-Y, }
+\item[{float}]{vitesse, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_adaa34f67eeb029811b895f62c48e1e37}
+
+
+Définition à la ligne 51 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a8c1f41e71c00d38b29d1b8ab0e93d542}{\index{Moto.\-c@{Moto.\-c}!Moto\-Destructeur@{Moto\-Destructeur}}
+\index{Moto\-Destructeur@{Moto\-Destructeur}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a8c1f41e71c00d38b29d1b8ab0e93d542}
+
+
+Définition à la ligne 59 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a3b507a0e47b0c30898ff385292ad44ba}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Direction@{Moto\-Get\-Direction}}
+\index{Moto\-Get\-Direction@{Moto\-Get\-Direction}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Direction} Moto\-Get\-Direction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a3b507a0e47b0c30898ff385292ad44ba}
+
+
+Définition à la ligne 28 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a4156c04a753d20234c7882f960830e72}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Position\-X@{Moto\-Get\-Position\-X}}
+\index{Moto\-Get\-Position\-X@{Moto\-Get\-Position\-X}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a4156c04a753d20234c7882f960830e72}
+
+
+Définition à la ligne 13 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a62ff0acafab13335eb75daddd0f1b842}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Position\-Y@{Moto\-Get\-Position\-Y}}
+\index{Moto\-Get\-Position\-Y@{Moto\-Get\-Position\-Y}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a62ff0acafab13335eb75daddd0f1b842}
+
+
+Définition à la ligne 16 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a3c4edf672fcff5483b3805ea4850b0bf}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Taille\-X@{Moto\-Get\-Taille\-X}}
+\index{Moto\-Get\-Taille\-X@{Moto\-Get\-Taille\-X}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Moto\-Get\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a3c4edf672fcff5483b3805ea4850b0bf}
+
+
+Définition à la ligne 19 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_aa2e2c249d5453b97bbe5a0a3dcfec6c0}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Taille\-Y@{Moto\-Get\-Taille\-Y}}
+\index{Moto\-Get\-Taille\-Y@{Moto\-Get\-Taille\-Y}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Moto\-Get\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_aa2e2c249d5453b97bbe5a0a3dcfec6c0}
+
+
+Définition à la ligne 22 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a211ad1ea110f768b154253e64386c999}{\index{Moto.\-c@{Moto.\-c}!Moto\-Get\-Vitesse@{Moto\-Get\-Vitesse}}
+\index{Moto\-Get\-Vitesse@{Moto\-Get\-Vitesse}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Get\-Vitesse}]{\setlength{\rightskip}{0pt plus 5cm}float Moto\-Get\-Vitesse (
+\begin{DoxyParamCaption}
+\item[{const {\bf Moto} $\ast$}]{moto}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a211ad1ea110f768b154253e64386c999}
+
+
+Définition à la ligne 25 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a5e01d8daba6d2035d6a54f28a193ce35}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Direction@{Moto\-Set\-Direction}}
+\index{Moto\-Set\-Direction@{Moto\-Set\-Direction}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{{\bf Direction}}]{direction}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a5e01d8daba6d2035d6a54f28a193ce35}
+
+
+Définition à la ligne 47 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_afc3d835e1a44c42e70b20288c4094696}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Position\-X@{Moto\-Set\-Position\-X}}
+\index{Moto\-Set\-Position\-X@{Moto\-Set\-Position\-X}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Position\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{float}]{pos\-X}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_afc3d835e1a44c42e70b20288c4094696}
+
+
+Définition à la ligne 32 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_a933ac221bf445ac7ba78ec4d68718c11}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Position\-Y@{Moto\-Set\-Position\-Y}}
+\index{Moto\-Set\-Position\-Y@{Moto\-Set\-Position\-Y}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Position\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{float}]{pos\-Y}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_a933ac221bf445ac7ba78ec4d68718c11}
+
+
+Définition à la ligne 35 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_adf496889057950aa5b2c9d61e83870ff}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Taille\-X@{Moto\-Set\-Taille\-X}}
+\index{Moto\-Set\-Taille\-X@{Moto\-Set\-Taille\-X}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Taille\-X (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{unsigned int}]{taille\-X}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_adf496889057950aa5b2c9d61e83870ff}
+
+
+Définition à la ligne 38 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_aa457e0e893057e65dd374802bc3144cd}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Taille\-Y@{Moto\-Set\-Taille\-Y}}
+\index{Moto\-Set\-Taille\-Y@{Moto\-Set\-Taille\-Y}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Taille\-Y (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{unsigned int}]{taille\-Y}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_aa457e0e893057e65dd374802bc3144cd}
+
+
+Définition à la ligne 41 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_ab62e1b43e1a546b1552db8dde7a692b6}{\index{Moto.\-c@{Moto.\-c}!Moto\-Set\-Vitesse@{Moto\-Set\-Vitesse}}
+\index{Moto\-Set\-Vitesse@{Moto\-Set\-Vitesse}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Set\-Vitesse}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Set\-Vitesse (
+\begin{DoxyParamCaption}
+\item[{{\bf Moto} $\ast$}]{moto, }
+\item[{float}]{vitesse}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_ab62e1b43e1a546b1552db8dde7a692b6}
+
+
+Définition à la ligne 44 du fichier Moto.\-c.
+
+\hypertarget{_moto_8c_aee18c911ddc26580170985f506538dcb}{\index{Moto.\-c@{Moto.\-c}!Moto\-Test\-Regression@{Moto\-Test\-Regression}}
+\index{Moto\-Test\-Regression@{Moto\-Test\-Regression}!Moto.c@{Moto.\-c}}
+\subsubsection[{Moto\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Moto\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_moto_8c_aee18c911ddc26580170985f506538dcb}
+
+
+Définition à la ligne 68 du fichier Moto.\-c.
+

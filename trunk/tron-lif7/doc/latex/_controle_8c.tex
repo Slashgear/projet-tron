@@ -1,0 +1,216 @@
+\hypertarget{_controle_8c}{\section{Référence du fichier Controle.\-c}
+\label{_controle_8c}\index{Controle.\-c@{Controle.\-c}}
+}
+{\ttfamily \#include \char`\"{}Controle.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$S\-D\-L/\-S\-D\-L.\-h$>$}\\*
+Graphe des dépendances par inclusion de Controle.\-c\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_controle_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+S\-D\-L\-Key \hyperlink{_controle_8c_aceb59e2dc81ee481b6f4e4512451ca2c}{Controle\-Get\-Droite} (const \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+S\-D\-L\-Key \hyperlink{_controle_8c_a58b4a2d8f6f6248519b47d045d205144}{Controle\-Get\-Haut} (const \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+S\-D\-L\-Key \hyperlink{_controle_8c_a2e052af3b9995a418ffae3f816068c40}{Controle\-Get\-Gauche} (const \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+S\-D\-L\-Key \hyperlink{_controle_8c_afbc4a836ab3364317147c49c68071191}{Controle\-Get\-Bas} (const \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+S\-D\-L\-Key \hyperlink{_controle_8c_a777b3cf5baab32a2048abd6c334ee1cf}{Controle\-Get\-Bonus} (const \hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+void \hyperlink{_controle_8c_ac551619cdc29f2173ec6a2b528793f20}{Controle\-Set\-Droite} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key x)
+\item 
+void \hyperlink{_controle_8c_afdede420fafbf282b46f799ae0bfcb4b}{Controle\-Set\-Haut} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key x)
+\item 
+void \hyperlink{_controle_8c_a8d64b2f88ae1accc2fb58a7a394fe904}{Controle\-Set\-Gauche} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key x)
+\item 
+void \hyperlink{_controle_8c_a9d8236e4578c1941fa13c7713bc1b9c2}{Controle\-Set\-Bas} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key x)
+\item 
+void \hyperlink{_controle_8c_a53dc76310eaee419e4d0d1b3d5e39003}{Controle\-Set\-Bonus} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key x)
+\item 
+void \hyperlink{_controle_8c_a3097aea62abd4e67f4c319756ad88a0e}{Controle\-Constructeur} (\hyperlink{struct_controle}{Controle} $\ast$controle, S\-D\-L\-Key haut, S\-D\-L\-Key bas, S\-D\-L\-Key gauche, S\-D\-L\-Key droite, S\-D\-L\-Key bonus)
+\item 
+void \hyperlink{_controle_8c_af1bb24fb9790dc018f7396c15e7b47a0}{Controle\-Destructeur} (\hyperlink{struct_controle}{Controle} $\ast$controle)
+\item 
+void \hyperlink{_controle_8c_a49d6667e80a116e40db1741c08616600}{Controle\-Test\-Regression} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+\mbox{]} Module qui défini les Controles \begin{DoxyAuthor}{Auteur}
+\{Antoine.\-C,Matthieu.\-B\} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13 mars 2013 
+\end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{_controle_8c_source}{Controle.\-c}.
+
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{_controle_8c_a3097aea62abd4e67f4c319756ad88a0e}{\index{Controle.\-c@{Controle.\-c}!Controle\-Constructeur@{Controle\-Constructeur}}
+\index{Controle\-Constructeur@{Controle\-Constructeur}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Constructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{haut, }
+\item[{S\-D\-L\-Key}]{bas, }
+\item[{S\-D\-L\-Key}]{gauche, }
+\item[{S\-D\-L\-Key}]{droite, }
+\item[{S\-D\-L\-Key}]{bonus}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a3097aea62abd4e67f4c319756ad88a0e}
+
+
+Définition à la ligne 49 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_af1bb24fb9790dc018f7396c15e7b47a0}{\index{Controle.\-c@{Controle.\-c}!Controle\-Destructeur@{Controle\-Destructeur}}
+\index{Controle\-Destructeur@{Controle\-Destructeur}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Destructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Destructeur (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_af1bb24fb9790dc018f7396c15e7b47a0}
+
+
+Définition à la ligne 57 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_afbc4a836ab3364317147c49c68071191}{\index{Controle.\-c@{Controle.\-c}!Controle\-Get\-Bas@{Controle\-Get\-Bas}}
+\index{Controle\-Get\-Bas@{Controle\-Get\-Bas}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Get\-Bas}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-Key Controle\-Get\-Bas (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_afbc4a836ab3364317147c49c68071191}
+
+
+Définition à la ligne 24 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a777b3cf5baab32a2048abd6c334ee1cf}{\index{Controle.\-c@{Controle.\-c}!Controle\-Get\-Bonus@{Controle\-Get\-Bonus}}
+\index{Controle\-Get\-Bonus@{Controle\-Get\-Bonus}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Get\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-Key Controle\-Get\-Bonus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a777b3cf5baab32a2048abd6c334ee1cf}
+
+
+Définition à la ligne 28 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_aceb59e2dc81ee481b6f4e4512451ca2c}{\index{Controle.\-c@{Controle.\-c}!Controle\-Get\-Droite@{Controle\-Get\-Droite}}
+\index{Controle\-Get\-Droite@{Controle\-Get\-Droite}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Get\-Droite}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-Key Controle\-Get\-Droite (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_aceb59e2dc81ee481b6f4e4512451ca2c}
+
+
+Définition à la ligne 15 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a2e052af3b9995a418ffae3f816068c40}{\index{Controle.\-c@{Controle.\-c}!Controle\-Get\-Gauche@{Controle\-Get\-Gauche}}
+\index{Controle\-Get\-Gauche@{Controle\-Get\-Gauche}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Get\-Gauche}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-Key Controle\-Get\-Gauche (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a2e052af3b9995a418ffae3f816068c40}
+
+
+Définition à la ligne 21 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a58b4a2d8f6f6248519b47d045d205144}{\index{Controle.\-c@{Controle.\-c}!Controle\-Get\-Haut@{Controle\-Get\-Haut}}
+\index{Controle\-Get\-Haut@{Controle\-Get\-Haut}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Get\-Haut}]{\setlength{\rightskip}{0pt plus 5cm}S\-D\-L\-Key Controle\-Get\-Haut (
+\begin{DoxyParamCaption}
+\item[{const {\bf Controle} $\ast$}]{controle}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a58b4a2d8f6f6248519b47d045d205144}
+
+
+Définition à la ligne 18 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a9d8236e4578c1941fa13c7713bc1b9c2}{\index{Controle.\-c@{Controle.\-c}!Controle\-Set\-Bas@{Controle\-Set\-Bas}}
+\index{Controle\-Set\-Bas@{Controle\-Set\-Bas}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Set\-Bas}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Bas (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{x}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a9d8236e4578c1941fa13c7713bc1b9c2}
+
+
+Définition à la ligne 42 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a53dc76310eaee419e4d0d1b3d5e39003}{\index{Controle.\-c@{Controle.\-c}!Controle\-Set\-Bonus@{Controle\-Set\-Bonus}}
+\index{Controle\-Set\-Bonus@{Controle\-Set\-Bonus}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Set\-Bonus}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Bonus (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{x}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a53dc76310eaee419e4d0d1b3d5e39003}
+
+
+Définition à la ligne 45 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_ac551619cdc29f2173ec6a2b528793f20}{\index{Controle.\-c@{Controle.\-c}!Controle\-Set\-Droite@{Controle\-Set\-Droite}}
+\index{Controle\-Set\-Droite@{Controle\-Set\-Droite}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Set\-Droite}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Droite (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{x}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_ac551619cdc29f2173ec6a2b528793f20}
+
+
+Définition à la ligne 32 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a8d64b2f88ae1accc2fb58a7a394fe904}{\index{Controle.\-c@{Controle.\-c}!Controle\-Set\-Gauche@{Controle\-Set\-Gauche}}
+\index{Controle\-Set\-Gauche@{Controle\-Set\-Gauche}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Set\-Gauche}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Gauche (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{x}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a8d64b2f88ae1accc2fb58a7a394fe904}
+
+
+Définition à la ligne 39 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_afdede420fafbf282b46f799ae0bfcb4b}{\index{Controle.\-c@{Controle.\-c}!Controle\-Set\-Haut@{Controle\-Set\-Haut}}
+\index{Controle\-Set\-Haut@{Controle\-Set\-Haut}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Set\-Haut}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Set\-Haut (
+\begin{DoxyParamCaption}
+\item[{{\bf Controle} $\ast$}]{controle, }
+\item[{S\-D\-L\-Key}]{x}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_afdede420fafbf282b46f799ae0bfcb4b}
+
+
+Définition à la ligne 35 du fichier Controle.\-c.
+
+\hypertarget{_controle_8c_a49d6667e80a116e40db1741c08616600}{\index{Controle.\-c@{Controle.\-c}!Controle\-Test\-Regression@{Controle\-Test\-Regression}}
+\index{Controle\-Test\-Regression@{Controle\-Test\-Regression}!Controle.c@{Controle.\-c}}
+\subsubsection[{Controle\-Test\-Regression}]{\setlength{\rightskip}{0pt plus 5cm}void Controle\-Test\-Regression (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{_controle_8c_a49d6667e80a116e40db1741c08616600}
+
+
+Définition à la ligne 66 du fichier Controle.\-c.
+

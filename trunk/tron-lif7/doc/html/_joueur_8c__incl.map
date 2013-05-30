@@ -1,0 +1,8 @@
+<map id="Joueur.c" name="Joueur.c">
+<area shape="rect" id="node7" href="$_joueur_8h.html" title="Joueur.h" alt="" coords="200,83,272,112"/>
+<area shape="rect" id="node9" href="$_controle_8h.html" title="Controle.h" alt="" coords="107,160,189,189"/>
+<area shape="rect" id="node15" href="$_moto_8h.html" title="Moto.h" alt="" coords="21,160,83,189"/>
+<area shape="rect" id="node18" href="$_couleur_8h.html" title="Couleur.h" alt="" coords="301,237,379,267"/>
+<area shape="rect" id="node20" href="$_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="341,160,440,189"/>
+<area shape="rect" id="node22" href="$_mur_8h.html" title="Mur.h" alt="" coords="213,160,267,189"/>
+</map>
