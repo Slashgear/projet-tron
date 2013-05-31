@@ -67,9 +67,9 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,const int
 
 
 
-void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *manettes){
+void SDLConstructeur(SDL *sdl,SDL_Surface* ecran,Jeu* jeu,Manette *manettes){
     SDLSetJeu(sdl,jeu);
-    SDLSetIemeTexture(sdl,0,SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE));
+    SDLSetIemeTexture(sdl,0,ecran);
     SDLSetIemeTexture(sdl,1,SDLChargeImage("data/images/grid.bmp"));
     SDLSetIemeTexture(sdl,2,SDLChargeImage("data/images/moto1H.bmp"));
     SDLSetIemeTexture(sdl,3,SDLChargeImage("data/images/moto1B.bmp"));
@@ -161,7 +161,26 @@ void pause()
     }
 }
 
-void SDLJeuInitN(SDL *sdl, int* scores){
+void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
+    SDL_Event evenement;
+    SDL_Surface* pageAccueil=SDLChargeImage("data/images/TitreAcceuilTron.bmp");
+    SDLAppliqueSurface(pageAccueil,ecran,0,0);
+    SDL_free(pageAccueil);
+    SDL_Flip(ecran);
+    do{
+        SDL_WaitEvent(&evenement);
+    }while(!((evenement.type==SDL_MOUSEBUTTONDOWN)&&(evenement.button.button==SDL_BUTTON_LEFT)&&
+           (((evenement.button.x>=447)&&(evenement.button.x<=447+360)&&
+             (evenement.button.y>=341)&&(evenement.button.y<=341+90))||
+            ((evenement.button.x>=449)&&(evenement.button.x<=449+360)&&
+             (evenement.button.y>=461)&&(evenement.button.y<=461+90)))));
+    if((evenement.button.x>=449)&&(evenement.button.x<=449+360)&&
+             (evenement.button.y>=461)&&(evenement.button.y<=461+90)){
+        *jeuReInit=0;
+    }
+}
+
+void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran){
     int i;
     short int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
     Jeu jeu;
@@ -169,7 +188,6 @@ void SDLJeuInitN(SDL *sdl, int* scores){
     TableauDynamiqueMur TabDynMurMurs;
     Controle unControle;
     Moto uneMoto;
-    SDL_Surface *ecran;
     Joueur unJoueur;
     Manette uneManette;
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
@@ -379,8 +397,7 @@ void SDLJeuInitN(SDL *sdl, int* scores){
 
     GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
     JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
-    SDL_WM_SetCaption( "TRON-The Grid v2.6", NULL );
-    SDLConstructeur(sdl,&jeu,mesManettes);
+    SDLConstructeur(sdl,ecran,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,0,0,0));
     SDLSetIemeTexture(sdl,0,ecran);
