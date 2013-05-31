@@ -386,7 +386,7 @@ void SDLJeuInitN(SDL *sdl, int* scores){
     SDLSetIemeTexture(sdl,0,ecran);
 }
 
-void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
+void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     short int jeuFini = 0;
     int i;
     SDL_Event evenement;
@@ -399,6 +399,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     int indiceGagnant=-1;
     int scoreGagnant=0;
     short int boolGagnant=0;
+    int *scores=JeuGetScores(SDLGetJeu(sdl));
 
     char commentaire[50]={0};
     char commentaireNull[50]={0};
@@ -408,7 +409,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
     couleur.r=255;
     couleur.g=255;
     couleur.b=255;
-    SDLAfficheJeu(sdl,scores);
+    SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
 
@@ -491,7 +492,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int *scores){
             }
         }
         if(!affAJour){
-            SDLAfficheJeu(sdl,scores);
+            SDLAfficheJeu(sdl);
         }
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
@@ -813,11 +814,12 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur){
             }
 }
 
-void SDLAfficheScores(SDL *sdl,int *scores){
+void SDLAfficheScores(SDL *sdl){
     SDL_Surface * uneSurface;
     short int i,largeurBarre,positionXBarre;
     float pourcentage,positionYBarre,hauteur;
     Couleur uneCouleur;
+    int *scores=JeuGetScores(SDLGetJeu(sdl));
     uneSurface=SDL_CreateRGBSurface(SDL_HWSURFACE,270,3,32,0,0,0,0);
     SDL_FillRect(uneSurface,NULL,SDL_MapRGB(uneSurface->format,255,255,255));
     /**<affichage de la ligne supérieure*/
@@ -866,12 +868,12 @@ void SDLAfficheScores(SDL *sdl,int *scores){
 }
 
 
-void SDLAfficheJeu(SDL *sdl,int *scores){
+void SDLAfficheJeu(SDL *sdl){
     SDLAfficheMurs(sdl);
     SDLAfficheMotos(sdl);
     SDLAfficheBonus(sdl);
     SDLAfficheInterface(sdl);
-    SDLAfficheScores(sdl,scores);
+    SDLAfficheScores(sdl);
     SDL_Flip(SDLGetIemeTexture(sdl,0));
 }
 

@@ -98,9 +98,9 @@ void SDLAppliqueSurface(SDL_Surface * surfaceA, SDL_Surface * surfaceB,int posit
 /**
  	\fn SDLAfficheJeu
  Procédure d'affichage du jeu
- 	\param SDL *sdl,int *scores
+ 	\param SDL *sdl
  */
-void SDLAfficheJeu(SDL *sdl,int *scores);
+void SDLAfficheJeu(SDL *sdl);
 /**
  	\fn SDLAfficheMotos
  Procédure d'affichage des Motos
@@ -140,16 +140,16 @@ void SDLAfficheTextes(SDL *sdl,char *chaineDeCaractere,Couleur uneCouleur);
 /**
  	\fn SDLAfficheScores
  procédure que affiche les scores, sous forme de graphique en barres
- 	\param SDL *sdl,int *scores
+ 	\param SDL *sdl
  */
-void SDLAfficheScores(SDL *sdl,int *scores);
+void SDLAfficheScores(SDL *sdl);
 
 /**
  	\fn SDLBoucleJeu
   Boucle principale du Jeu
- 	\param SDL* sdl, short int *jeuReInit, int* scores
+ 	\param SDL* sdl, short int *jeuReInit
  */
-void SDLBoucleJeu(SDL* sdl, short int *jeuReInit, int* scores);
+void SDLBoucleJeu(SDL* sdl, short int *jeuReInit);
 /**
  	\fn SDLChargeImage
   Procédure de chargement des images

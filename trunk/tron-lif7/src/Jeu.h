@@ -61,6 +61,13 @@ Bonus* JeuGetIemeBonus(Jeu* jeu,int i);
  	\param Jeu* jeu
  	\return temps avant prochain Bonus
  */
+int* JeuGetScores(Jeu* jeu);
+/**
+ 	\fn JeuGetScores
+ assesseur des Scores
+ 	\param Jeu* jeu
+ 	\return tableau des scores
+ */
 int JeuGetTempsProchainBonus(Jeu* jeu);
 /**
  	\fn JeuGetMusique
