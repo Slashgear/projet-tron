@@ -80,9 +80,9 @@ void pause();
 /**
  	\fn SDLConstructeur
  Constructeur de SDL, initialise les différents champs
- 	\param SDL *sdl,Jeu* jeu,Manette *mesManettes
+ 	\param SDL *sdl,SDL_Surface* ecran,Jeu* jeu,Manette *mesManettes
  */
-void SDLConstructeur(SDL *sdl,Jeu* jeu,Manette *mesManettes);
+void SDLConstructeur(SDL *sdl,SDL_Surface* ecran,Jeu* jeu,Manette *mesManettes);
 /**
  	\fn SDLDestructeur
  Destructeur de SDl,remise à zero des champs de SDL et free des allocations
@@ -126,11 +126,17 @@ void SDLAfficheInterface(SDL *sdl);
  */
 void SDLAfficheBonus(SDL*sdl);
 /**
+ 	\fn SDLIntro
+ Procédure qui affiche l'écran d'accueil
+ 	\param short int *jeuReInit,SDL_Surface* ecran
+ */
+void SDLIntro(short int *jeuReInit,SDL_Surface* ecran);
+/**
  	\fn SDLJeuInitN
  Procédure Init à N=_Nombre_De_Joueur joueurs
- 	\param SDL *sdl, int *scores
+ 	\param SDL *sdl, int *scores,SDL_Surface* ecran
  */
-void SDLJeuInitN(SDL *sdl, int *scores);
+void SDLJeuInitN(SDL *sdl, int *scores,SDL_Surface* ecran);
 /**
  	\fn SDLAfficheTextes
  procédure qui affiche les textes de l'actualité du jeu

@@ -38,8 +38,11 @@ int main(){
     int scores[_Nombre_de_Joueur]={0};
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );
     TTF_Init();
+    SDL_WM_SetCaption( "TRON-The Grid v2.6", NULL );
+    SDL_Surface* ecran=SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE);
+    SDLIntro(&jeuReInit,ecran);
     while(jeuReInit==1){
-        SDLJeuInitN(&sdl,scores);
+        SDLJeuInitN(&sdl,scores,ecran);
         SDLBoucleJeu(&sdl,&jeuReInit);
         SDLDestructeur(&sdl);
     }
