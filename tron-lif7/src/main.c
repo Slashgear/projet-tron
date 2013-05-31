@@ -40,7 +40,7 @@ int main(){
     TTF_Init();
     while(jeuReInit==1){
         SDLJeuInitN(&sdl,scores);
-        SDLBoucleJeu(&sdl,&jeuReInit,scores);
+        SDLBoucleJeu(&sdl,&jeuReInit);
         SDLDestructeur(&sdl);
     }
     TTF_Quit();

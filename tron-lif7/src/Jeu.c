@@ -29,6 +29,9 @@ int JeuGetIemeScore(Jeu* jeu,int i){
 Bonus* JeuGetIemeBonus(Jeu* jeu,int i){
     return (jeu->mesBonus)+i;
 }
+int* JeuGetScores(Jeu* jeu){
+    return jeu->scores;
+}
 int JeuGetTempsProchainBonus(Jeu* jeu){
     return jeu->tempsProchainBonus;
 }
