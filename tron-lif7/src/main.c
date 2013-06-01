@@ -43,6 +43,7 @@ int main(){
     SDLIntro(&jeuReInit,ecran);
     while(jeuReInit==1){
         SDLJeuInitN(&sdl,scores,ecran);
+        SDLDecompte(&sdl);
         SDLBoucleJeu(&sdl,&jeuReInit);
         SDLDestructeur(&sdl);
     }

@@ -125,6 +125,13 @@ void SDLAfficheInterface(SDL *sdl);
  	\param SDL *sdl
  */
 void SDLAfficheBonus(SDL*sdl);
+
+/**
+ 	\fn SDLDecompte
+ Procédure qui affiche un décompte au lancement d'une manche
+ 	\param SDL *sdl
+ */
+void SDLDecompte(SDL *sdl);
 /**
  	\fn SDLIntro
  Procédure qui affiche l'écran d'accueil

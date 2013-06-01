@@ -180,6 +180,30 @@ void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
     }
 }
 
+void SDLDecompte(SDL *sdl){
+	int i=5;
+	char decompte[10];
+	SDL_Color couleur;
+    couleur.r=255;
+    couleur.g=255;
+    couleur.b=255;
+    Uint32 uneSeconde=1000;
+    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3,NULL);
+	while(i>0){
+        SDLAfficheJeu(sdl);
+		sprintf(decompte,"%d",i);
+		SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3,
+                        TTF_RenderText_Blended(sdl->policeGrandsMessages,decompte
+                        ,couleur));
+        SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3),
+                            SDLGetIemeTexture(sdl,0),
+                            500,350);
+        SDL_Flip(SDLGetIemeTexture(sdl,0));
+        SDL_Delay(uneSeconde);
+        i--;
+	}
+}
+
 void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran){
     int i;
     short int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
