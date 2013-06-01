@@ -62,7 +62,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
 
     srand(time(NULL));
     JeuSetTempsProchainBonus(jeu,rand()%150);
-    BonusConstructeur(&bonus,0,0,10,10,AUCUN);
+    BonusConstructeur(&bonus,0,0,20,20,AUCUN);
     JeuSetGrille(jeu,grille);
     jeu->mesJoueurs=mesJoueurs;
     for(i=0;i<_Nombre_de_Bonus;i++){
