@@ -197,7 +197,7 @@ void SDLDecompte(SDL *sdl){
                         ,couleur));
         SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3),
                             SDLGetIemeTexture(sdl,0),
-                            500,300);
+                            480,300);
         SDL_Flip(SDLGetIemeTexture(sdl,0));
         SDL_Delay(uneSeconde);
         i--;
