@@ -1,4 +1,15 @@
 <map id="SDL.h" name="SDL.h">
-<area shape="rect" id="node3" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="5,83,53,111"/>
-<area shape="rect" id="node7" href="$_joystick_8h.html" title="Joystick.h" alt="" coords="128,83,195,111"/>
+<area shape="rect" id="node3" href="$_jeu_8h.html" title="Jeu.h" alt="" coords="276,83,329,112"/>
+<area shape="rect" id="node47" href="$_joystick_8h.html" title="Joystick.h" alt="" coords="751,83,833,112"/>
+<area shape="rect" id="node5" href="$_joueur_8h.html" title="Joueur.h" alt="" coords="305,237,377,267"/>
+<area shape="rect" id="node27" href="$_grid_8h.html" title="Grid.h" alt="" coords="507,160,563,189"/>
+<area shape="rect" id="node37" href="$_constantes_8h.html" title="Constantes.h" alt="" coords="5,160,104,189"/>
+<area shape="rect" id="node39" href="$_bonus_8h.html" title="Bonus.h" alt="" coords="128,160,197,189"/>
+<area shape="rect" id="node42" href="$_musique_8h.html" title="Musique.h" alt="" coords="221,160,304,189"/>
+<area shape="rect" id="node7" href="$_controle_8h.html" title="Controle.h" alt="" coords="599,315,681,344"/>
+<area shape="rect" id="node15" href="$_moto_8h.html" title="Moto.h" alt="" coords="335,315,396,344"/>
+<area shape="rect" id="node18" href="$_couleur_8h.html" title="Couleur.h" alt="" coords="317,392,395,421"/>
+<area shape="rect" id="node20" href="$_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="113,315,212,344"/>
+<area shape="rect" id="node22" href="$_mur_8h.html" title="Mur.h" alt="" coords="420,315,473,344"/>
+<area shape="rect" id="node32" href="$_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="452,237,617,267"/>
 </map>

@@ -140,23 +140,26 @@ $(document).ready(function(){initNavTree('main_8c_source.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> scores[<a class="code" href="_constantes_8h.html#a505b3b803482fbd73a5eafac78db730f">_Nombre_de_Joueur</a>]={0};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    TTF_Init();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">while</span>(jeuReInit==1){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="_s_d_l_8c.html#ad6a2da8e854839a096da5db6178b1356">SDLJeuInitN</a>(&amp;sdl,scores);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="_s_d_l_8c.html#a57b034bb0fbfd35900ad79a98b2be4bd">SDLBoucleJeu</a>(&amp;sdl,&amp;jeuReInit,scores);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="_s_d_l_8c.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a>(&amp;sdl);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    TTF_Quit();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    SDL_Quit();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor"></span><span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    SDL_WM_SetCaption( <span class="stringliteral">&quot;TRON-The Grid v2.6&quot;</span>, NULL );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    SDL_Surface* ecran=SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="_s_d_l_8c.html#acee5e34159940dd36ec30124193530df">SDLIntro</a>(&amp;jeuReInit,ecran);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span>(jeuReInit==1){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="_s_d_l_8c.html#aa01afa367fb926561efefd9ee28941c5">SDLJeuInitN</a>(&amp;sdl,scores,ecran);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="_s_d_l_8c.html#ae4216fdeea2ef708146cfba234e0a0ff">SDLBoucleJeu</a>(&amp;sdl,&amp;jeuReInit);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="_s_d_l_8c.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a>(&amp;sdl);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    TTF_Quit();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    SDL_Quit();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8c.html">main.c</a></li>
-    <li class="footer">Généré le Jeudi Mai 30 2013 10:29:30 pour Tron -The Grid par
+    <li class="footer">Généré le Samedi Juin 1 2013 11:51:32 pour Tron -The Grid par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
