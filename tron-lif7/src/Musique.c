@@ -57,8 +57,8 @@ void MusiqueConstructeur(Musique*musique){
                              0, musiqueDuJeu+1);
     FMOD_System_CreateSound(baseDuSon, "data/Sons/Derezzed.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
                              0, musiqueDuJeu+2);
-
-
+    FMOD_System_CreateSound(baseDuSon, "data/Sons/EndTitles.mp3", FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,
+                             0, musiqueDuJeu+3);
     MusiqueSetBaseDuSon(musique,baseDuSon);
     MusiqueSetSonCourt(musique,sonCourt);
     MusiqueSetMusiqueDuJeu(musique,musiqueDuJeu);

@@ -8,9 +8,9 @@
 	\date 2 avril 2013
 */
 
-#define _Nombre_de_Joueur 4
+#define _Nombre_de_Joueur 2
 #define _Nombre_de_Manette 0
-#define _Nombre_IA 0
+#define _Nombre_IA 1
 
 #define _Score_de_Victoire 14
 
