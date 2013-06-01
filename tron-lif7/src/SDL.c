@@ -181,7 +181,7 @@ void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
 }
 
 void SDLDecompte(SDL *sdl){
-	int i=5;
+	int i=3;
 	char decompte[10];
 	SDL_Color couleur;
     couleur.r=255;
@@ -470,6 +470,10 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
 				affAJour = 0;
             }
             if (evenement.type == SDL_KEYDOWN){
+                if(evenement.key.keysym.sym==SDLK_ESCAPE){
+                    jeuFini=1;
+                    *jeuReInit=0;
+                }
                 for(i=0;(i<nbJoueurClavier);i++){
                     if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==1){
                         unControle=JoueurGetControle(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
