@@ -167,7 +167,7 @@ void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
     Musique uneMusique;
     MusiqueConstructeur(&uneMusique);
     SDLAppliqueSurface(pageAccueil,ecran,0,0);
-    SDL_free(pageAccueil);
+    SDL_FreeSurface(pageAccueil);
     SDL_Flip(ecran);
     JouerIemeMusique(&uneMusique,3,-1);
     do{
@@ -192,7 +192,6 @@ void SDLDecompte(SDL *sdl){
     couleur.g=255;
     couleur.b=255;
     Uint32 uneSeconde=1000;
-    SDLSetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3,NULL);
 	while(i>0){
         SDLAfficheJeu(sdl);
 		sprintf(decompte,"%d",i);
@@ -202,6 +201,7 @@ void SDLDecompte(SDL *sdl){
         SDLAppliqueSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3),
                             SDLGetIemeTexture(sdl,0),
                             480,300);
+        SDL_FreeSurface(SDLGetIemeTexture(sdl,2+_Nombre_de_Joueur*4+_Nombre_Type_Bonus+_Nombre_Images_Interface+3));
         SDL_Flip(SDLGetIemeTexture(sdl,0));
         SDL_Delay(uneSeconde);
         i--;
