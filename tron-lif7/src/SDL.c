@@ -453,6 +453,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
+    while ( SDL_PollEvent( &evenement ) ){} /*On vide la liste d'événement*/
 
     while(jeuFini==0){
         affAJour = 1;
@@ -514,21 +515,41 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
                     uneManette->boutons[3]=0;
                     affAJour = 0;
                 }
+                else if(uneManette->boutons[13]){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),HAUT,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[13]=0;
+                        affAJour = 0;
+                    }
                 if(uneManette->boutons[0]){
                     SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
                     uneManette->boutons[0]=0;
                     affAJour = 0;
                 }
+                else if(uneManette->boutons[14]){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),BAS,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[14]=0;
+                        affAJour = 0;
+                    }
                 if((uneManette->boutons[2])){
                     SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
                     uneManette->boutons[2]=0;
                     affAJour = 0;
                 }
+                else if((uneManette->boutons[11])){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),GAUCHE,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[11]=0;
+                        affAJour = 0;
+                    }
                 if(uneManette->boutons[1]){
                     SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
                     uneManette->boutons[1]=0;
                     affAJour = 0;
                 }
+                else if(uneManette->boutons[12]){
+                        SDLActionManette(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i),DROITE,JeuGetGrille(SDLGetJeu(sdl)));
+                        uneManette->boutons[12]=0;
+                        affAJour = 0;
+                    }
                 if(uneManette->boutons[5]){
                     JeuActionneBonus(JeuGetIemeJoueurs(SDLGetJeu(sdl),nbJoueurClavier+i));
                     uneManette->boutons[5]=0;
