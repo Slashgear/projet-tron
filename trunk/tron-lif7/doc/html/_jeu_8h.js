@@ -21,6 +21,7 @@ var _jeu_8h =
     [ "JeuGetIemeJoueurs", "_jeu_8h.html#a00cab8b79f7ac548749dd29b6a3dcefd", null ],
     [ "JeuGetIemeScore", "_jeu_8h.html#a570c1b49959c5727b784ff980a9ca5ba", null ],
     [ "JeuGetMusique", "_jeu_8h.html#a960195d08a333a161de438fde3f0ce9c", null ],
+    [ "JeuGetScores", "_jeu_8h.html#a386693c93ff9d101058615308de79cf9", null ],
     [ "JeuGetTempsProchainBonus", "_jeu_8h.html#ae4c5515bf7a3dc1b8c55dd193559cc59", null ],
     [ "JeuSetGrille", "_jeu_8h.html#a76c474e2d5c7de3fc3f4878346c33f6d", null ],
     [ "JeuSetIemeBonus", "_jeu_8h.html#acd42a024bebfff90910b9694e6958531", null ],

@@ -1,5 +1,6 @@
 <map id="Joystick.h" name="Joystick.h">
-<area shape="rect" id="node3" href="$_joystick_8c.html" title="Joystick.c" alt="" coords="5,83,72,111"/>
-<area shape="rect" id="node5" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="96,83,147,111"/>
-<area shape="rect" id="node7" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="127,161,177,189"/>
+<area shape="rect" id="node3" href="$_joystick_8c.html" title="Joystick.c" alt="" coords="5,83,88,112"/>
+<area shape="rect" id="node5" href="$_s_d_l_8h.html" title="SDL.h" alt="" coords="112,83,171,112"/>
+<area shape="rect" id="node9" href="$_s_d_l_8c.html" title="SDL.c" alt="" coords="179,160,237,189"/>
+<area shape="rect" id="node7" href="$main_8c.html" title="main.c" alt="" coords="93,160,155,189"/>
 </map>

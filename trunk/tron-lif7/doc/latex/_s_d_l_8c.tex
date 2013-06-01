@@ -35,15 +35,17 @@ S\-D\-L\-\_\-\-Surface $\ast$ \hyperlink{_s_d_l_8c_a36684beb5e5ec3f9397a29764151
 \item 
 void \hyperlink{_s_d_l_8c_a99f60fc0c0adee46a2703d3829ecb472}{S\-D\-L\-Applique\-Surface} (S\-D\-L\-\_\-\-Surface $\ast$surface\-A, S\-D\-L\-\_\-\-Surface $\ast$surface\-B, const int position\-X, const int position\-Y)
 \item 
-void \hyperlink{_s_d_l_8c_a85dc862c078c17f150021e434fc8e839}{S\-D\-L\-Constructeur} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, \hyperlink{struct_jeu}{Jeu} $\ast$jeu, \hyperlink{struct_manette}{Manette} $\ast$manettes)
+void \hyperlink{_s_d_l_8c_a2a26b97bd3b8195da9e8ac79bad18896}{S\-D\-L\-Constructeur} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, S\-D\-L\-\_\-\-Surface $\ast$ecran, \hyperlink{struct_jeu}{Jeu} $\ast$jeu, \hyperlink{struct_manette}{Manette} $\ast$manettes)
 \item 
 void \hyperlink{_s_d_l_8c_a18f1617d8034417cd2f06cc9c4dbedf2}{S\-D\-L\-Destructeur} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl)
 \item 
 void \hyperlink{_s_d_l_8c_a7167f5c196fc5e167bfabde1a730e81d}{pause} ()
 \item 
-void \hyperlink{_s_d_l_8c_ad6a2da8e854839a096da5db6178b1356}{S\-D\-L\-Jeu\-Init\-N} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores)
+void \hyperlink{_s_d_l_8c_acee5e34159940dd36ec30124193530df}{S\-D\-L\-Intro} (short int $\ast$jeu\-Re\-Init, S\-D\-L\-\_\-\-Surface $\ast$ecran)
 \item 
-void \hyperlink{_s_d_l_8c_a57b034bb0fbfd35900ad79a98b2be4bd}{S\-D\-L\-Boucle\-Jeu} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, short int $\ast$jeu\-Re\-Init, int $\ast$scores)
+void \hyperlink{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}{S\-D\-L\-Jeu\-Init\-N} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores, S\-D\-L\-\_\-\-Surface $\ast$ecran)
+\item 
+void \hyperlink{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}{S\-D\-L\-Boucle\-Jeu} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, short int $\ast$jeu\-Re\-Init)
 \item 
 void \hyperlink{_s_d_l_8c_a5307e0546a65557e28218096444fe16e}{S\-D\-L\-Action\-Manette} (\hyperlink{struct_joueur}{Joueur} $\ast$joueur, \hyperlink{_moto_8h_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} direction, \hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
@@ -57,9 +59,9 @@ void \hyperlink{_s_d_l_8c_a87530d8f5fdcb529d517fb86bc927e63}{S\-D\-L\-Affiche\-I
 \item 
 void \hyperlink{_s_d_l_8c_ab2b2544e3bfaa5cce134a84429e8dbd6}{S\-D\-L\-Affiche\-Textes} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, char $\ast$chaine\-De\-Caractere, \hyperlink{_couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{Couleur} une\-Couleur)
 \item 
-void \hyperlink{_s_d_l_8c_a1d801e3ea653b113f1868b6c8b1309f8}{S\-D\-L\-Affiche\-Scores} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores)
+void \hyperlink{_s_d_l_8c_a0583e9dfa2d7caa1c39a34b2adf6e9e5}{S\-D\-L\-Affiche\-Scores} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl)
 \item 
-void \hyperlink{_s_d_l_8c_a942e816249ca9bef39f4bbaada8d3daf}{S\-D\-L\-Affiche\-Jeu} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores)
+void \hyperlink{_s_d_l_8c_abcc23c44c3c837b312d055a71e1c93d5}{S\-D\-L\-Affiche\-Jeu} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl)
 \item 
 void \hyperlink{_s_d_l_8c_a240e53a13bc5d885bfd85530fa798e4a}{S\-D\-L\-Test\-Regression} ()
 \end{DoxyCompactItemize}
@@ -104,7 +106,7 @@ Définition à la ligne 148 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a5307e0546a65557e28218096444fe16e}
 
 
-Définition à la ligne 566 du fichier S\-D\-L.\-c.
+Définition à la ligne 584 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ac27595c16fe8fbd8ee635cb6c8d9ec40}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}}
 \index{S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}!SDL.c@{S\-D\-L.\-c}}
@@ -115,7 +117,7 @@ Définition à la ligne 566 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_ac27595c16fe8fbd8ee635cb6c8d9ec40}
 
 
-Définition à la ligne 703 du fichier S\-D\-L.\-c.
+Définition à la ligne 721 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a87530d8f5fdcb529d517fb86bc927e63}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}}
 \index{S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}!SDL.c@{S\-D\-L.\-c}}
@@ -126,19 +128,18 @@ Définition à la ligne 703 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a87530d8f5fdcb529d517fb86bc927e63}
 
 
-Définition à la ligne 723 du fichier S\-D\-L.\-c.
+Définition à la ligne 741 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_a942e816249ca9bef39f4bbaada8d3daf}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}}
+\hypertarget{_s_d_l_8c_abcc23c44c3c837b312d055a71e1c93d5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}}
 \index{S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Affiche\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Jeu (
 \begin{DoxyParamCaption}
-\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
-\item[{int $\ast$}]{scores}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_a942e816249ca9bef39f4bbaada8d3daf}
+)}}\label{_s_d_l_8c_abcc23c44c3c837b312d055a71e1c93d5}
 
 
-Définition à la ligne 869 du fichier S\-D\-L.\-c.
+Définition à la ligne 888 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a0a164a520a75c594cf10cd3cfdca3814}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}}
 \index{S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}!SDL.c@{S\-D\-L.\-c}}
@@ -149,7 +150,7 @@ Définition à la ligne 869 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a0a164a520a75c594cf10cd3cfdca3814}
 
 
-Définition à la ligne 642 du fichier S\-D\-L.\-c.
+Définition à la ligne 660 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a511761d608b92801c934aad221f762ce}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}}
 \index{S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}!SDL.c@{S\-D\-L.\-c}}
@@ -160,21 +161,20 @@ Définition à la ligne 642 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a511761d608b92801c934aad221f762ce}
 
 
-Définition à la ligne 667 du fichier S\-D\-L.\-c.
+Définition à la ligne 685 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_a1d801e3ea653b113f1868b6c8b1309f8}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}}
+\hypertarget{_s_d_l_8c_a0583e9dfa2d7caa1c39a34b2adf6e9e5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}}
 \index{S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Affiche\-Scores}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Affiche\-Scores (
 \begin{DoxyParamCaption}
-\item[{{\bf S\-D\-L} $\ast$}]{sdl, }
-\item[{int $\ast$}]{scores}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_a1d801e3ea653b113f1868b6c8b1309f8}
+)}}\label{_s_d_l_8c_a0583e9dfa2d7caa1c39a34b2adf6e9e5}
 $<$affichage de la ligne supérieure
 
 $<$affichage de la ligne inférieure 
 
-Définition à la ligne 816 du fichier S\-D\-L.\-c.
+Définition à la ligne 834 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ab2b2544e3bfaa5cce134a84429e8dbd6}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}}
 \index{S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}!SDL.c@{S\-D\-L.\-c}}
@@ -187,7 +187,7 @@ Définition à la ligne 816 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_ab2b2544e3bfaa5cce134a84429e8dbd6}
 
 
-Définition à la ligne 743 du fichier S\-D\-L.\-c.
+Définition à la ligne 761 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a99f60fc0c0adee46a2703d3829ecb472}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}}
 \index{S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}!SDL.c@{S\-D\-L.\-c}}
@@ -207,18 +207,17 @@ Définition à la ligne 743 du fichier S\-D\-L.\-c.
 
 Définition à la ligne 56 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_a57b034bb0fbfd35900ad79a98b2be4bd}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}}
+\hypertarget{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}}
 \index{S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Boucle\-Jeu}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Boucle\-Jeu (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl, }
-\item[{short int $\ast$}]{jeu\-Re\-Init, }
-\item[{int $\ast$}]{scores}
+\item[{short int $\ast$}]{jeu\-Re\-Init}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_a57b034bb0fbfd35900ad79a98b2be4bd}
+)}}\label{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}
 !$<$Si le jeu a renvoyé un nouveau commentaire 
 
-Définition à la ligne 389 du fichier S\-D\-L.\-c.
+Définition à la ligne 406 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a36684beb5e5ec3f9397a2976415141b7}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}}
 \index{S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}!SDL.c@{S\-D\-L.\-c}}
@@ -237,15 +236,16 @@ Définition à la ligne 389 du fichier S\-D\-L.\-c.
 
 Définition à la ligne 41 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_a85dc862c078c17f150021e434fc8e839}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}}
+\hypertarget{_s_d_l_8c_a2a26b97bd3b8195da9e8ac79bad18896}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}}
 \index{S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Constructeur (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{ecran, }
 \item[{{\bf Jeu} $\ast$}]{jeu, }
 \item[{{\bf Manette} $\ast$}]{manettes}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_a85dc862c078c17f150021e434fc8e839}
+)}}\label{_s_d_l_8c_a2a26b97bd3b8195da9e8ac79bad18896}
 
 
 Définition à la ligne 70 du fichier S\-D\-L.\-c.
@@ -307,17 +307,30 @@ Définition à la ligne 18 du fichier S\-D\-L.\-c.
 
 Définition à la ligne 27 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_ad6a2da8e854839a096da5db6178b1356}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}}
+\hypertarget{_s_d_l_8c_acee5e34159940dd36ec30124193530df}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Intro@{S\-D\-L\-Intro}}
+\index{S\-D\-L\-Intro@{S\-D\-L\-Intro}!SDL.c@{S\-D\-L.\-c}}
+\subsubsection[{S\-D\-L\-Intro}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Intro (
+\begin{DoxyParamCaption}
+\item[{short int $\ast$}]{jeu\-Re\-Init, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{ecran}
+\end{DoxyParamCaption}
+)}}\label{_s_d_l_8c_acee5e34159940dd36ec30124193530df}
+
+
+Définition à la ligne 164 du fichier S\-D\-L.\-c.
+
+\hypertarget{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}}
 \index{S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Jeu\-Init\-N}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Jeu\-Init\-N (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl, }
-\item[{int $\ast$}]{scores}
+\item[{int $\ast$}]{scores, }
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{ecran}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_ad6a2da8e854839a096da5db6178b1356}
+)}}\label{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}
 
 
-Définition à la ligne 164 du fichier S\-D\-L.\-c.
+Définition à la ligne 183 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ad7897b59aff5363840beb85766e25e47}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}}
 \index{S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}!SDL.c@{S\-D\-L.\-c}}
@@ -353,5 +366,5 @@ Définition à la ligne 31 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a240e53a13bc5d885bfd85530fa798e4a}
 procédure qui teste le Module 
 
-Définition à la ligne 880 du fichier S\-D\-L.\-c.
+Définition à la ligne 899 du fichier S\-D\-L.\-c.
 

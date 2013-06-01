@@ -61,7 +61,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
     Musique musique;
 
     srand(time(NULL));
-    JeuSetTempsProchainBonus(jeu,rand()%350);
+    JeuSetTempsProchainBonus(jeu,rand()%150);
     BonusConstructeur(&bonus,0,0,10,10,AUCUN);
     JeuSetGrille(jeu,grille);
     jeu->mesJoueurs=mesJoueurs;
@@ -395,7 +395,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         if(BonusGetEffetBonus(unBonus)==AUCUN){
             PlaceBonus(jeu,unBonus);
         }
-        JeuSetTempsProchainBonus(jeu,(rand()%330)+20);
+        JeuSetTempsProchainBonus(jeu,(rand()%230)+20);
     }
     else {(jeu->tempsProchainBonus)-- ;}
     for(i=0;i<_Nombre_de_Bonus;i++){
