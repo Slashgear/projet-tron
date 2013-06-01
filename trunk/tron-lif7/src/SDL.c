@@ -164,9 +164,12 @@ void pause()
 void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
     SDL_Event evenement;
     SDL_Surface* pageAccueil=SDLChargeImage("data/images/TitreAcceuilTron.bmp");
+    Musique uneMusique;
+    MusiqueConstructeur(&uneMusique);
     SDLAppliqueSurface(pageAccueil,ecran,0,0);
     SDL_free(pageAccueil);
     SDL_Flip(ecran);
+    JouerIemeMusique(&uneMusique,3,-1);
     do{
         SDL_WaitEvent(&evenement);
     }while(!((evenement.type==SDL_MOUSEBUTTONDOWN)&&(evenement.button.button==SDL_BUTTON_LEFT)&&
@@ -178,6 +181,7 @@ void SDLIntro(short int *jeuReInit,SDL_Surface* ecran){
              (evenement.button.y>=461)&&(evenement.button.y<=461+90)){
         *jeuReInit=0;
     }
+    MusiqueDestructeur(&uneMusique);
 }
 
 void SDLDecompte(SDL *sdl){

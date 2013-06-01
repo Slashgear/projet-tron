@@ -9,7 +9,7 @@
 #define MUSIQUE_H_INCLUDED
 #include "../lib/FMOD/inc/fmod.h"
 
-#define _Nombre_De_Musique 3
+#define _Nombre_De_Musique 4
 #define _Nombre_De_Bruitages 2
 /**
  	\struct Musique
