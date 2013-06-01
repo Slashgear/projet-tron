@@ -659,27 +659,41 @@ void SDLActionManette(Joueur* joueur, Direction direction,Grid* grille){
 
 void SDLAfficheMotos(SDL* sdl){
     Moto *moto;
-    SDL_Surface * surfaceMoto;
+    Joueur *joueur;
+    SDL_Surface * surface;
     int i;
     for(i=0;(i<_Nombre_de_Joueur);i++){
-            if(JoueurGetEnJeu(JeuGetIemeJoueurs(SDLGetJeu(sdl),i))==VIVANT){
-                moto=JoueurGetMoto(JeuGetIemeJoueurs(SDLGetJeu(sdl),i));
-                if(MotoGetDirection(moto)==HAUT){
-                    surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4));
-                }
-                else if(MotoGetDirection(moto)==BAS){
-                        surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+1);
-                    }
-                    else if(MotoGetDirection(moto)==GAUCHE){
-                            surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+2);
-                        }
-                        else if(MotoGetDirection(moto)==DROITE){
-                                surfaceMoto=SDLGetIemeTexture(sdl,2+(i*4)+3);
-                            }
-
-                SDLAppliqueSurface(surfaceMoto,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
+        joueur=JeuGetIemeJoueurs(SDLGetJeu(sdl),i);
+        if(JoueurGetEnJeu(joueur)==VIVANT){
+            moto=JoueurGetMoto(joueur);
+            if((JoueurGetEffetBonus(joueur)==SAUT)&&(JoueurGetTempsBonus(joueur)<_Temps_Bonus_Saut)){
+                surface=SDL_CreateRGBSurface(SDL_HWSURFACE,MotoGetTailleX(moto)+2,MotoGetTailleY(moto)+2,32,0,0,0,0);
+                SDL_FillRect(surface,NULL,SDL_MapRGB(surface->format,255,255,255));
+                SDLAppliqueSurface(surface,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto)-1,MotoGetPositionY(moto)-1);
+                SDL_FreeSurface(surface);
             }
+            else if((JoueurGetEffetBonus(joueur)==BOOST)&&(JoueurGetTempsBonus(joueur)<_Temps_Bonus_Boost)){
+                    surface=SDL_CreateRGBSurface(SDL_HWSURFACE,MotoGetTailleX(moto)+2,MotoGetTailleY(moto)+2,32,0,0,0,0);
+                    SDL_FillRect(surface,NULL,SDL_MapRGB(surface->format,51,204,255));
+                    SDLAppliqueSurface(surface,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto)-1,MotoGetPositionY(moto)-1);
+                    SDL_FreeSurface(surface);
+                }
+            if(MotoGetDirection(moto)==HAUT){
+                surface=SDLGetIemeTexture(sdl,2+(i*4));
+            }
+            else if(MotoGetDirection(moto)==BAS){
+                    surface=SDLGetIemeTexture(sdl,2+(i*4)+1);
+                }
+                else if(MotoGetDirection(moto)==GAUCHE){
+                        surface=SDLGetIemeTexture(sdl,2+(i*4)+2);
+                    }
+                    else if(MotoGetDirection(moto)==DROITE){
+                            surface=SDLGetIemeTexture(sdl,2+(i*4)+3);
+                        }
+
+            SDLAppliqueSurface(surface,SDLGetIemeTexture(sdl,0),MotoGetPositionX(moto),MotoGetPositionY(moto));
         }
+    }
 
 }
 void SDLAfficheMurs(SDL *sdl){

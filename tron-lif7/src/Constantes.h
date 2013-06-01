@@ -8,9 +8,9 @@
 	\date 2 avril 2013
 */
 
-#define _Nombre_de_Joueur 4
+#define _Nombre_de_Joueur 2
 #define _Nombre_de_Manette 0
-#define _Nombre_IA 3
+#define _Nombre_IA 0
 
 #define _Score_de_Victoire 14
 
@@ -30,7 +30,7 @@
 
 #define _Nombre_de_Bonus 12
 #define _Temps_Bonus_Boost 25
-#define _Temps_Bonus_Saut 5
+#define _Temps_Bonus_Saut 10
 #define _Vitesse_Boost 15
 
 
