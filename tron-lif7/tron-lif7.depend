@@ -1133,7 +1133,7 @@
 1369733252 /home/antoine/projet-tron/tron-lif7/src/Joystick.h
 	<SDL/SDL.h>
 
-1370183291 source:/home/antoine/projet-tron/tron-lif7/src/main.c
+1370185381 source:/home/antoine/projet-tron/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -1147,6 +1147,7 @@
 	"Bonus.h"
 	"Constantes.h"
 	"Musique.h"
+	<time.h>
 
 1370183114 /home/antoine/projet-tron/tron-lif7/src/SDL.h
 	"Jeu.h"
@@ -1165,7 +1166,7 @@
 	"Couleur.h"
 	"Mur.h"
 
-1370178914 source:/home/antoine/projet-tron/tron-lif7/src/Musique.c
+1370185644 source:/home/antoine/projet-tron/tron-lif7/src/Musique.c
 	<stdio.h>
 	<stdlib.h>
 	"Musique.h"

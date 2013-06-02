@@ -922,7 +922,7 @@ void SDLAfficheScores(SDL *sdl){
     /**<affichage de la ligne supérieure*/
     SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,367);
     /**<affichage de la ligne inférieure*/
-    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,670);
+    SDLAppliqueSurface(uneSurface,SDLGetIemeTexture(sdl,0),1015,669);
     largeurBarre=(270-20-((_Nombre_de_Joueur-1)*5))/_Nombre_de_Joueur;
     positionXBarre=1025;
     SDL_FreeSurface(uneSurface);

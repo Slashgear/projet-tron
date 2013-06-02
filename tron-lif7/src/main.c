@@ -18,6 +18,7 @@
 #include "Bonus.h"
 #include "Constantes.h"
 #include "Musique.h"
+#include <time.h>
 
 
 int main(){
