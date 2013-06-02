@@ -25,7 +25,7 @@ typedef struct
 	int *scores;
 	Bonus mesBonus[_Nombre_de_Bonus];
 	int tempsProchainBonus;
-	Musique musique;
+	Musique *musique;
 } Jeu;
 /**
  	\fn JeuGetGrille

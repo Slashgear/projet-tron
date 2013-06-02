@@ -36,7 +36,7 @@ int JeuGetTempsProchainBonus(Jeu* jeu){
     return jeu->tempsProchainBonus;
 }
 Musique* JeuGetMusique(Jeu* jeu){
-    return &(jeu->musique);
+    return (jeu->musique);
 }
 
 void JeuSetGrille(Jeu* jeu,Grid* grille){
@@ -54,6 +54,9 @@ void JeuSetIemeBonus(Jeu* jeu,const Bonus* bonus,int i){
 void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
     jeu->tempsProchainBonus=tempsProchainBonus;
 }
+void JeuSetMusique(Jeu *jeu,Musique *musique){
+    jeu->musique=musique;
+}
 
 void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores,Musique *musique){
     int i;
@@ -67,7 +70,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores,Mus
     for(i=0;i<_Nombre_de_Bonus;i++){
         JeuSetIemeBonus(jeu,&bonus,i);
     }
-    jeu->musique=*musique;
+    JeuSetMusique(jeu,musique);
     jeu->scores=scores;
 }
 
@@ -285,7 +288,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             else boolSaut=0;
             collisionMur=testCollisionMur(joueur,grille,boolSaut);
             if(collisionMur==1){
-                JouerIemeSonCourt(&(jeu->musique),0);
+                JouerIemeSonCourt(JeuGetMusique(jeu),0);
                 sprintf(nouveauMessage,"Le joueur %d a perdu ! ",i+1);
                 JoueurSetEnJeu(joueur,MOURANT);
                 *couleurMessage=JoueurGetCouleur(joueur);
@@ -300,7 +303,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
                                             JoueurGetMoto(JeuGetIemeJoueurs(jeu,j))))
                        &&(boolSaut==0)
                        &&((JoueurGetEffetBonus(joueur)!=SAUT)||(JoueurGetTempsBonus(joueur)==_Temps_Bonus_Saut))){
-                        JouerIemeSonCourt(&(jeu->musique),0);
+                        JouerIemeSonCourt(JeuGetMusique(jeu),0);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,j),MOURANT);
                         JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MOURANT);
                         sprintf(nouveauMessage,"Mort des joueurs %d et %d !",i+1,j+1);
@@ -324,7 +327,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         for(i=0;i<_Nombre_de_Joueur;i++){
             joueur=JeuGetIemeJoueurs(jeu,i);
             if(JoueurGetEnJeu(joueur)==DOUTE){
-                JouerIemeSonCourt(&(jeu->musique),0);
+                JouerIemeSonCourt(JeuGetMusique(jeu),0);
                 sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
                 JoueurSetEnJeu(joueur,MOURANT);
                 *couleurMessage=JoueurGetCouleur(joueur);
@@ -337,7 +340,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
             joueur=JeuGetIemeJoueurs(jeu,i);
             if(JoueurGetEnJeu(joueur)==DOUTE){
                 if(JoueurGetBooltourne(joueur)==1){
-                    JouerIemeSonCourt(&(jeu->musique),0);
+                    JouerIemeSonCourt(JeuGetMusique(jeu),0);
                     sprintf(nouveauMessage,"Le joueur %d a perdu !",i+1);
                     *couleurMessage=JoueurGetCouleur(joueur);
                     JoueurSetEnJeu(joueur,MOURANT);
