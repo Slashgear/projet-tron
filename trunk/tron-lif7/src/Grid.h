@@ -29,35 +29,35 @@ typedef struct {
  	\param const Grid*
  	\return positionX
  */
-float GridGetPositionX(const Grid* );
+float GridGetPositionX(const Grid* grille);
 /**
  	\fn GridGetPositionY
  assesseur de positionY
  	\param const Grid*
  	\return positionY
  */
-float GridGetPositionY(const Grid* );
+float GridGetPositionY(const Grid* grille);
 /**
  	\fn GridGetTailleX
  assesseur de tailleX
  	\param const Grid*
  	\return tailleX
  */
-unsigned int GridGetTailleX(const Grid* );
+unsigned int GridGetTailleX(const Grid* grille);
 /**
  	\fn GridGetTailleY
  assesseur de tailleY
  	\param const Grid*
  	\return tailleY
  */
-unsigned int GridGetTailleY(const Grid*);
+unsigned int GridGetTailleY(const Grid* grille);
 /**
  	\fn GridGetTailleY
  assesseur de mesMurs
  	\param const Grid*
  	\return pointeur de tableau Dynamique
  */
-TableauDynamiqueMur* GridGetMesMurs(Grid*);
+TableauDynamiqueMur* GridGetMesMurs(Grid* grille);
 
 /**
  	\fn GridSetPositionX
@@ -76,25 +76,25 @@ void GridSetPositionY(Grid* grille,float posY);
  mutateur de tailleX
  	\param Grid* ,unsigned int tailleX
  */
-void GridSetTailleX(Grid* ,unsigned int );
+void GridSetTailleX(Grid* ,unsigned int tailleX);
 /**
  	\fn GridSetTailleY
  mutateur de tailleY
  	\param Grid* ,unsigned int tailleY
  */
-void GridSetTailleY(Grid* ,unsigned int );
+void GridSetTailleY(Grid* ,unsigned int tailleY);
 /**
  	\fn GridSetMesMurs
  mutateur de mesMurs
  	\param Grid* ,TableauDynamiqueMur*
  */
-void GridSetMesMurs(Grid* ,TableauDynamiqueMur* );
+void GridSetMesMurs(Grid* grille,TableauDynamiqueMur* mesMurs);
 /**
  	\fn GridConstructeur
  Constructeur de Grid
  	\param Grid* , float , float , unsigned int , unsigned int ,TableauDynamiqueMur*
  */
- void GridConstructeur(Grid* , float , float , unsigned int , unsigned int ,TableauDynamiqueMur* );
+ void GridConstructeur(Grid* grille, float posX, float posY, unsigned int TailleX, unsigned int TailleY,TableauDynamiqueMur* mesMurs);
  /**
  	\fn GridDestructeur
  Destructeur de Grid
