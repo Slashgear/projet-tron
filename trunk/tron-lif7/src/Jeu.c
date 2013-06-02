@@ -824,7 +824,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                     JeuActionClavier(joueurIA,GAUCHE,JeuGetGrille(jeu));        /**!<On tourne à gauche*/
                 }
                 else{
-                    if(ligne1<distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
+                    if(ligne1<=distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
                         JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                     }
                     else{
@@ -841,7 +841,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                 }
             }
             else{
-                if(ligne1<distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
+                if(ligne1<=distanceSecurite){/**!<Si la position devant la moto est bloquée,*/
                     JeuActionClavier(joueurIA,DROITE,JeuGetGrille(jeu));/**!<alors on tourne à droite*/
                 }
                 else{
@@ -859,7 +859,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
         }
         else{
             if(directionCourante==BAS){ /**!<Si la moto va vers le bas, elle essaie de continuer à descendre,*/
-                if(ligne2>(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){ /**!<jusqu'à ce que le bas soit bloqué*/
+                if(ligne2>=(_Taille_Y_Grille/_Precision_Analyse_IA)-1-distanceSecurite){ /**!<jusqu'à ce que le bas soit bloqué*/
                    if(colonne1>=distanceSecurite){
                        boolDistanceValide=1;
                        for(i=1;i<=distanceSecurite;i++){
@@ -919,7 +919,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
                             JeuActionClavier(joueurIA,BAS,JeuGetGrille(jeu));
                         }
                         else{
-                            if(colonne1<distanceSecurite){
+                            if(colonne1<=distanceSecurite){
                                 JeuActionClavier(joueurIA,HAUT,JeuGetGrille(jeu));
                             }
                             else{
