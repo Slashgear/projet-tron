@@ -55,10 +55,9 @@ void JeuSetTempsProchainBonus(Jeu* jeu,int tempsProchainBonus){
     jeu->tempsProchainBonus=tempsProchainBonus;
 }
 
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores,Musique *musique){
     int i;
     Bonus bonus;
-    Musique musique;
 
     srand(time(NULL));
     JeuSetTempsProchainBonus(jeu,rand()%150);
@@ -68,8 +67,7 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
     for(i=0;i<_Nombre_de_Bonus;i++){
         JeuSetIemeBonus(jeu,&bonus,i);
     }
-    MusiqueConstructeur(&musique);
-    jeu->musique=musique;
+    jeu->musique=*musique;
     jeu->scores=scores;
 }
 
@@ -81,7 +79,6 @@ void JeuDestructeur(Jeu* jeu){
     for(i=0;i<_Nombre_de_Bonus;i++){
         BonusDestructeur(JeuGetIemeBonus(jeu,i));
     }
-    MusiqueDestructeur(&(jeu->musique));
     jeu->scores=NULL;
 }
 
@@ -1134,7 +1131,9 @@ void JeuTestRegression(){
     int scores[2]={0};
     Jeu jeu;
     Joueur *mesJoueurs=(Joueur*)malloc(_Nombre_de_Joueur*sizeof(Joueur));
+    Musique uneMusique;
 
+    MusiqueConstructeur(&uneMusique);
     MurConstructeur(&unMur,posXm,posYm,tailleXm,tailleYm,couleur2,dureeVie);
 
     GridConstructeur(&grille,posXg,posYg,tailleXg,tailleYg,&mesMurs);
@@ -1155,7 +1154,7 @@ void JeuTestRegression(){
     printf("La valeur posX2 est %f et dans la Moto2 du joueur2 est de %f \n",
            posX2,MotoGetPositionX(JoueurGetMoto(&joueur2)));
 
-    JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
+    JeuConstructeur(&jeu,&grille,mesJoueurs,scores,&uneMusique);
 
 
     printf("La valeur vitesse2 est %f et dans la vitesse de la moto2 du joueur2 du jeu est de %f \n",
@@ -1181,7 +1180,7 @@ void JeuTestRegression(){
     nettoieGrid(GridGetMesMurs(JeuGetGrille(&jeu)));
 
     JeuEvolue(&jeu,&jeuContinue,NULL,NOIR);
-
+    MusiqueDestructeur(&uneMusique);
     JeuDestructeur(&jeu);
     printf("Après destruction, la position de la grille du jeu est %f \n",GridGetPositionX(JeuGetGrille(&jeu)));
     printf("Après destruction, le pointeur de mesJoueurs est %p \n \n",jeu.mesJoueurs);

@@ -143,7 +143,7 @@ void SDLIntro(short int *jeuReInit,SDL_Surface* ecran);
  Procédure Init à N=_Nombre_De_Joueur joueurs
  	\param SDL *sdl, int *scores,SDL_Surface* ecran
  */
-void SDLJeuInitN(SDL *sdl, int *scores,SDL_Surface* ecran);
+void SDLJeuInitN(SDL *sdl, int *scores,SDL_Surface* ecran,Musique *musique);
 /**
  	\fn SDLAfficheTextes
  procédure qui affiche les textes de l'actualité du jeu

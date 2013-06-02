@@ -1,3 +1,4 @@
+
 /**
 	\file [SDL.c]
 	 Module qui gère les affichage du jeu,ainsi que les manettes
@@ -13,6 +14,7 @@
 #include "Joystick.h"
 #include <SDL/SDL_ttf.h>
 #include <string.h>
+#include "../lib/FMOD/inc/fmod.h"
 
 
 Jeu* SDLGetJeu(SDL* sdl){
@@ -208,7 +210,7 @@ void SDLDecompte(SDL *sdl){
 	}
 }
 
-void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran){
+void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran,Musique *musique){
     int i;
     short int nbJoueurClavier=_Nombre_de_Joueur-_Nombre_de_Manette-_Nombre_IA;
     Jeu jeu;
@@ -424,7 +426,7 @@ void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran){
     }
 
     GridConstructeur(&grille,5,5,1000,700,&TabDynMurMurs);
-    JeuConstructeur(&jeu,&grille,mesJoueurs,scores);
+    JeuConstructeur(&jeu,&grille,mesJoueurs,scores,musique);
     SDLConstructeur(sdl,ecran,&jeu,mesManettes);
     ecran=SDLGetIemeTexture(sdl,0);
     SDL_FillRect(ecran,NULL,SDL_MapRGB(ecran->format,0,0,0));
@@ -457,6 +459,11 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     SDLAfficheJeu(sdl);
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
+
+    FMOD_CHANNEL *canal;
+    FMOD_BOOL enJeu=0;
+    Musique *pointeurSurMusique=MusiqueGetBaseDuSon(JeuGetMusique(SDLGetJeu(sdl)));
+
     while ( SDL_PollEvent( &evenement ) ){} /*On vide la liste d'événement*/
 
     while(jeuFini==0){
@@ -465,7 +472,13 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
         if(horloge_courante-horloge_precedente >= intervalle_horloge){
             strcpy(commentaire,commentaireNull);
             JeuEvolue(SDLGetJeu(sdl),&jeuFini,commentaire,&uneCouleur);
-            if(strcmp(commentaire,commentaireNull)!=0)/**!<Si le jeu a renvoyé un nouveau commentaire*/
+                /*On joue la musique aléatoirement*/
+            FMOD_System_GetChannel(pointeurSurMusique,1,&canal);
+            FMOD_Channel_IsPlaying(canal,&enJeu);
+            /* Si la musique est finie, au début de la manche suivante on en lance une autre*/
+            if(!enJeu){JouerIemeMusique(pointeurSurMusique,rand()%4,1);}
+
+            if(strcmp(commentaire,commentaireNull)!=0)/*Si le jeu a renvoyé un nouveau commentaire*/
             {SDLAfficheTextes(sdl,commentaire,uneCouleur);}
             affAJour = 0;
             horloge_precedente = horloge_courante;
