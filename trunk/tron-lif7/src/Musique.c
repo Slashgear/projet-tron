@@ -79,7 +79,7 @@ void MusiqueDestructeur(Musique *musique){
 }
 
 void JouerIemeSonCourt(Musique *musique,int i){
-    FMOD_System_PlaySound(MusiqueGetBaseDuSon(musique), FMOD_CHANNEL_FREE,MusiqueGetIemeSonCourt(musique,i), 0, NULL);
+    FMOD_System_PlaySound(MusiqueGetBaseDuSon(musique), 0,MusiqueGetIemeSonCourt(musique,i), 0, NULL);
 }
 void JouerIemeMusique(Musique *musique,int i,int repetition){
     FMOD_System_PlaySound(MusiqueGetBaseDuSon(musique),1,MusiqueGetIemeMusiqueDuJeu(musique,i), 0, NULL);
