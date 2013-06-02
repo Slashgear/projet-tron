@@ -71,7 +71,6 @@ void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur *mesJoueurs, int* scores){
     MusiqueConstructeur(&musique);
     jeu->musique=musique;
     jeu->scores=scores;
-    JouerIemeMusique(&musique,rand()%4,-1);
 }
 
 void JeuDestructeur(Jeu* jeu){
