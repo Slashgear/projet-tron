@@ -18,8 +18,7 @@
 #include "Bonus.h"
 #include "Constantes.h"
 #include "Musique.h"
-#include "../lib/FMOD/inc/fmod.h"
-#include <time.h>
+
 
 int main(){
 #if 0
@@ -39,9 +38,6 @@ int main(){
     int scores[_Nombre_de_Joueur]={0};
 
     Musique uneMusique;
-    FMOD_CHANNEL *canal;
-    FMOD_BOOL enJeu=0;
-
     assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );
     srand(time(NULL));
     TTF_Init();
@@ -50,13 +46,7 @@ int main(){
     SDLIntro(&jeuReInit,ecran);
     MusiqueConstructeur(&uneMusique);
     while(jeuReInit==1){
-        /*On joue la musique aléatoirement*/
-        FMOD_System_GetChannel(MusiqueGetBaseDuSon(&uneMusique),1,&canal);
-        FMOD_Channel_IsPlaying(canal,&enJeu);
-        /* Si la musique est finie, au début de la manche suivante on en lance une autre*/
-        if(!enJeu){JouerIemeMusique(&uneMusique,rand()%4,1);}
-
-        SDLJeuInitN(&sdl,scores,ecran);
+        SDLJeuInitN(&sdl,scores,ecran,&uneMusique);
         SDLDecompte(&sdl);
         SDLBoucleJeu(&sdl,&jeuReInit);
         SDLDestructeur(&sdl);

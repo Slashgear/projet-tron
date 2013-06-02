@@ -117,9 +117,9 @@ void JeuSetMusique(Jeu* jeu,Musique* musique);
 /**
  	\fn  JeuConstructeur
  Constructeur de Jeu
- 	\param Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores
+ 	\param Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores, Musique *musique
  */
-void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores);
+void JeuConstructeur(Jeu* jeu, Grid* grille, Joueur * mesJoueurs, int* scores,Musique *musique);
 /**
  	\fn  JeuDestructeur
  Destructeur de Jeu
