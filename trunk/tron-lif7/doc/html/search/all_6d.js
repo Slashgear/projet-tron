@@ -47,7 +47,7 @@ var searchData=
   ['mursettaillex',['MurSetTailleX',['../_mur_8c.html#a12cb4b9c7117a03037cb836ce53864dc',1,'MurSetTailleX(Mur *mur, unsigned int tailleX):&#160;Mur.c'],['../_mur_8h.html#a12cb4b9c7117a03037cb836ce53864dc',1,'MurSetTailleX(Mur *mur, unsigned int tailleX):&#160;Mur.c']]],
   ['mursettailley',['MurSetTailleY',['../_mur_8c.html#a0749cb2928457b9738b542c3e83f3176',1,'MurSetTailleY(Mur *mur, unsigned int tailleY):&#160;Mur.c'],['../_mur_8h.html#a0749cb2928457b9738b542c3e83f3176',1,'MurSetTailleY(Mur *mur, unsigned int tailleY):&#160;Mur.c']]],
   ['murtestregression',['MurTestRegression',['../_mur_8c.html#af409c42d1dd41eae59e90b0f2c6dae06',1,'MurTestRegression():&#160;Mur.c'],['../_mur_8h.html#ac8810857667a124157a1143ad96c2435',1,'MurTestRegression():&#160;Mur.c']]],
-  ['musique',['Musique',['../struct_musique.html',1,'Musique'],['../struct_jeu.html#aa0f1b7578210c2739aee880842d2fa27',1,'Jeu::musique()']]],
+  ['musique',['Musique',['../struct_musique.html',1,'Musique'],['../struct_jeu.html#a59b3353d7adab6e96e762c4f8aee2d87',1,'Jeu::musique()']]],
   ['musique_2ec',['Musique.c',['../_musique_8c.html',1,'']]],
   ['musique_2eh',['Musique.h',['../_musique_8h.html',1,'']]],
   ['musiqueconstructeur',['MusiqueConstructeur',['../_musique_8c.html#a43c750ce46e1cebd1d15d08216546b41',1,'MusiqueConstructeur(Musique *musique):&#160;Musique.c'],['../_musique_8h.html#a43c750ce46e1cebd1d15d08216546b41',1,'MusiqueConstructeur(Musique *musique):&#160;Musique.c']]],

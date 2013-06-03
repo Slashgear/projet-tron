@@ -12,7 +12,7 @@ var _jeu_8h =
     [ "indicesGrilleJoueur", "_jeu_8h.html#ae21534d3ce5552805c5c19c91835d45a", null ],
     [ "JeuActionClavier", "_jeu_8h.html#a43389b43f891711881d87d46c92a53a0", null ],
     [ "JeuActionneBonus", "_jeu_8h.html#a4ba757faa17a6b0a476e485db82d0f54", null ],
-    [ "JeuConstructeur", "_jeu_8h.html#a21f6877d6b5377c9df2a8321313437f4", null ],
+    [ "JeuConstructeur", "_jeu_8h.html#ab77436c860314786568df25bd0c2b856", null ],
     [ "JeuDestructeur", "_jeu_8h.html#a8bcba1ef69f19fb2db2610e0391cfd51", null ],
     [ "JeuEvolue", "_jeu_8h.html#a71bdcf7116b2f14b792d222c49ff74de", null ],
     [ "JeuGereIA", "_jeu_8h.html#a5f001c65f81c3dde6d0ab2a0197558af", null ],

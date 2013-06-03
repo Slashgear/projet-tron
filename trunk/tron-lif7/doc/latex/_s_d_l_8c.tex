@@ -9,7 +9,9 @@
 {\ttfamily \#include \char`\"{}Joystick.\-h\char`\"{}}\\*
 {\ttfamily \#include $<$S\-D\-L/\-S\-D\-L\-\_\-ttf.\-h$>$}\\*
 {\ttfamily \#include $<$string.\-h$>$}\\*
-Graphe des dépendances par inclusion de S\-D\-L.\-c\-:\nopagebreak
+{\ttfamily \#include \char`\"{}../lib/\-F\-M\-O\-D/inc/fmod.\-h\char`\"{}}\\*
+Graphe des dépendances par inclusion de S\-D\-L.\-c\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,7 +45,9 @@ void \hyperlink{_s_d_l_8c_a7167f5c196fc5e167bfabde1a730e81d}{pause} ()
 \item 
 void \hyperlink{_s_d_l_8c_acee5e34159940dd36ec30124193530df}{S\-D\-L\-Intro} (short int $\ast$jeu\-Re\-Init, S\-D\-L\-\_\-\-Surface $\ast$ecran)
 \item 
-void \hyperlink{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}{S\-D\-L\-Jeu\-Init\-N} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores, S\-D\-L\-\_\-\-Surface $\ast$ecran)
+void \hyperlink{_s_d_l_8c_a88f176d75b32240dd07a21362b256a92}{S\-D\-L\-Decompte} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl)
+\item 
+void \hyperlink{_s_d_l_8c_ad71b234025cda99e30afcb285afaebca}{S\-D\-L\-Jeu\-Init\-N} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, int $\ast$scores, S\-D\-L\-\_\-\-Surface $\ast$ecran, \hyperlink{struct_musique}{Musique} $\ast$musique)
 \item 
 void \hyperlink{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}{S\-D\-L\-Boucle\-Jeu} (\hyperlink{struct_s_d_l}{S\-D\-L} $\ast$sdl, short int $\ast$jeu\-Re\-Init)
 \item 
@@ -93,7 +97,7 @@ Définition dans le fichier \hyperlink{_s_d_l_8c_source}{S\-D\-L.\-c}.
 )}}\label{_s_d_l_8c_a7167f5c196fc5e167bfabde1a730e81d}
 
 
-Définition à la ligne 148 du fichier S\-D\-L.\-c.
+Définition à la ligne 150 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a5307e0546a65557e28218096444fe16e}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Action\-Manette@{S\-D\-L\-Action\-Manette}}
 \index{S\-D\-L\-Action\-Manette@{S\-D\-L\-Action\-Manette}!SDL.c@{S\-D\-L.\-c}}
@@ -106,7 +110,7 @@ Définition à la ligne 148 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a5307e0546a65557e28218096444fe16e}
 
 
-Définition à la ligne 584 du fichier S\-D\-L.\-c.
+Définition à la ligne 651 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ac27595c16fe8fbd8ee635cb6c8d9ec40}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}}
 \index{S\-D\-L\-Affiche\-Bonus@{S\-D\-L\-Affiche\-Bonus}!SDL.c@{S\-D\-L.\-c}}
@@ -117,7 +121,7 @@ Définition à la ligne 584 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_ac27595c16fe8fbd8ee635cb6c8d9ec40}
 
 
-Définition à la ligne 721 du fichier S\-D\-L.\-c.
+Définition à la ligne 802 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a87530d8f5fdcb529d517fb86bc927e63}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}}
 \index{S\-D\-L\-Affiche\-Interface@{S\-D\-L\-Affiche\-Interface}!SDL.c@{S\-D\-L.\-c}}
@@ -128,7 +132,7 @@ Définition à la ligne 721 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a87530d8f5fdcb529d517fb86bc927e63}
 
 
-Définition à la ligne 741 du fichier S\-D\-L.\-c.
+Définition à la ligne 822 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_abcc23c44c3c837b312d055a71e1c93d5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}}
 \index{S\-D\-L\-Affiche\-Jeu@{S\-D\-L\-Affiche\-Jeu}!SDL.c@{S\-D\-L.\-c}}
@@ -139,7 +143,7 @@ Définition à la ligne 741 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_abcc23c44c3c837b312d055a71e1c93d5}
 
 
-Définition à la ligne 888 du fichier S\-D\-L.\-c.
+Définition à la ligne 969 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a0a164a520a75c594cf10cd3cfdca3814}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}}
 \index{S\-D\-L\-Affiche\-Motos@{S\-D\-L\-Affiche\-Motos}!SDL.c@{S\-D\-L.\-c}}
@@ -150,7 +154,7 @@ Définition à la ligne 888 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a0a164a520a75c594cf10cd3cfdca3814}
 
 
-Définition à la ligne 660 du fichier S\-D\-L.\-c.
+Définition à la ligne 727 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a511761d608b92801c934aad221f762ce}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}}
 \index{S\-D\-L\-Affiche\-Murs@{S\-D\-L\-Affiche\-Murs}!SDL.c@{S\-D\-L.\-c}}
@@ -161,7 +165,7 @@ Définition à la ligne 660 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a511761d608b92801c934aad221f762ce}
 
 
-Définition à la ligne 685 du fichier S\-D\-L.\-c.
+Définition à la ligne 766 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a0583e9dfa2d7caa1c39a34b2adf6e9e5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}}
 \index{S\-D\-L\-Affiche\-Scores@{S\-D\-L\-Affiche\-Scores}!SDL.c@{S\-D\-L.\-c}}
@@ -174,7 +178,7 @@ $<$affichage de la ligne supérieure
 
 $<$affichage de la ligne inférieure 
 
-Définition à la ligne 834 du fichier S\-D\-L.\-c.
+Définition à la ligne 915 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ab2b2544e3bfaa5cce134a84429e8dbd6}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}}
 \index{S\-D\-L\-Affiche\-Textes@{S\-D\-L\-Affiche\-Textes}!SDL.c@{S\-D\-L.\-c}}
@@ -187,7 +191,7 @@ Définition à la ligne 834 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_ab2b2544e3bfaa5cce134a84429e8dbd6}
 
 
-Définition à la ligne 761 du fichier S\-D\-L.\-c.
+Définition à la ligne 842 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a99f60fc0c0adee46a2703d3829ecb472}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}}
 \index{S\-D\-L\-Applique\-Surface@{S\-D\-L\-Applique\-Surface}!SDL.c@{S\-D\-L.\-c}}
@@ -205,7 +209,7 @@ Définition à la ligne 761 du fichier S\-D\-L.\-c.
 
 !$<$ Blit the surface 
 
-Définition à la ligne 56 du fichier S\-D\-L.\-c.
+Définition à la ligne 58 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}}
 \index{S\-D\-L\-Boucle\-Jeu@{S\-D\-L\-Boucle\-Jeu}!SDL.c@{S\-D\-L.\-c}}
@@ -215,9 +219,9 @@ Définition à la ligne 56 du fichier S\-D\-L.\-c.
 \item[{short int $\ast$}]{jeu\-Re\-Init}
 \end{DoxyParamCaption}
 )}}\label{_s_d_l_8c_ae4216fdeea2ef708146cfba234e0a0ff}
-!$<$Si le jeu a renvoyé un nouveau commentaire 
 
-Définition à la ligne 406 du fichier S\-D\-L.\-c.
+
+Définition à la ligne 437 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a36684beb5e5ec3f9397a2976415141b7}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}}
 \index{S\-D\-L\-Charge\-Image@{S\-D\-L\-Charge\-Image}!SDL.c@{S\-D\-L.\-c}}
@@ -234,7 +238,7 @@ Définition à la ligne 406 du fichier S\-D\-L.\-c.
 
 !$<$ Return the optimized image 
 
-Définition à la ligne 41 du fichier S\-D\-L.\-c.
+Définition à la ligne 43 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a2a26b97bd3b8195da9e8ac79bad18896}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}}
 \index{S\-D\-L\-Constructeur@{S\-D\-L\-Constructeur}!SDL.c@{S\-D\-L.\-c}}
@@ -248,7 +252,18 @@ Définition à la ligne 41 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a2a26b97bd3b8195da9e8ac79bad18896}
 
 
-Définition à la ligne 70 du fichier S\-D\-L.\-c.
+Définition à la ligne 72 du fichier S\-D\-L.\-c.
+
+\hypertarget{_s_d_l_8c_a88f176d75b32240dd07a21362b256a92}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Decompte@{S\-D\-L\-Decompte}}
+\index{S\-D\-L\-Decompte@{S\-D\-L\-Decompte}!SDL.c@{S\-D\-L.\-c}}
+\subsubsection[{S\-D\-L\-Decompte}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Decompte (
+\begin{DoxyParamCaption}
+\item[{{\bf S\-D\-L} $\ast$}]{sdl}
+\end{DoxyParamCaption}
+)}}\label{_s_d_l_8c_a88f176d75b32240dd07a21362b256a92}
+
+
+Définition à la ligne 189 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a18f1617d8034417cd2f06cc9c4dbedf2}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Destructeur@{S\-D\-L\-Destructeur}}
 \index{S\-D\-L\-Destructeur@{S\-D\-L\-Destructeur}!SDL.c@{S\-D\-L.\-c}}
@@ -259,7 +274,7 @@ Définition à la ligne 70 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a18f1617d8034417cd2f06cc9c4dbedf2}
 
 
-Définition à la ligne 132 du fichier S\-D\-L.\-c.
+Définition à la ligne 134 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a0739253f7d24014416204f6d64c565b6}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Get\-Ieme\-Manette@{S\-D\-L\-Get\-Ieme\-Manette}}
 \index{S\-D\-L\-Get\-Ieme\-Manette@{S\-D\-L\-Get\-Ieme\-Manette}!SDL.c@{S\-D\-L.\-c}}
@@ -271,7 +286,7 @@ Définition à la ligne 132 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a0739253f7d24014416204f6d64c565b6}
 
 
-Définition à la ligne 24 du fichier S\-D\-L.\-c.
+Définition à la ligne 26 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_acca01b95fb78179e3051d8d411b8a9cd}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Get\-Ieme\-Texture@{S\-D\-L\-Get\-Ieme\-Texture}}
 \index{S\-D\-L\-Get\-Ieme\-Texture@{S\-D\-L\-Get\-Ieme\-Texture}!SDL.c@{S\-D\-L.\-c}}
@@ -283,7 +298,7 @@ Définition à la ligne 24 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_acca01b95fb78179e3051d8d411b8a9cd}
 
 
-Définition à la ligne 21 du fichier S\-D\-L.\-c.
+Définition à la ligne 23 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_aa7223cb3ce4fe6f4c83d6a01adc66cbd}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Get\-Jeu@{S\-D\-L\-Get\-Jeu}}
 \index{S\-D\-L\-Get\-Jeu@{S\-D\-L\-Get\-Jeu}!SDL.c@{S\-D\-L.\-c}}
@@ -294,7 +309,7 @@ Définition à la ligne 21 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_aa7223cb3ce4fe6f4c83d6a01adc66cbd}
 
 
-Définition à la ligne 18 du fichier S\-D\-L.\-c.
+Définition à la ligne 20 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a7596bb1c6890b99a64e59f6b732a2fe1}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Get\-Textures@{S\-D\-L\-Get\-Textures}}
 \index{S\-D\-L\-Get\-Textures@{S\-D\-L\-Get\-Textures}!SDL.c@{S\-D\-L.\-c}}
@@ -305,7 +320,7 @@ Définition à la ligne 18 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a7596bb1c6890b99a64e59f6b732a2fe1}
 
 
-Définition à la ligne 27 du fichier S\-D\-L.\-c.
+Définition à la ligne 29 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_acee5e34159940dd36ec30124193530df}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Intro@{S\-D\-L\-Intro}}
 \index{S\-D\-L\-Intro@{S\-D\-L\-Intro}!SDL.c@{S\-D\-L.\-c}}
@@ -317,20 +332,21 @@ Définition à la ligne 27 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_acee5e34159940dd36ec30124193530df}
 
 
-Définition à la ligne 164 du fichier S\-D\-L.\-c.
+Définition à la ligne 166 du fichier S\-D\-L.\-c.
 
-\hypertarget{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}}
+\hypertarget{_s_d_l_8c_ad71b234025cda99e30afcb285afaebca}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}}
 \index{S\-D\-L\-Jeu\-Init\-N@{S\-D\-L\-Jeu\-Init\-N}!SDL.c@{S\-D\-L.\-c}}
 \subsubsection[{S\-D\-L\-Jeu\-Init\-N}]{\setlength{\rightskip}{0pt plus 5cm}void S\-D\-L\-Jeu\-Init\-N (
 \begin{DoxyParamCaption}
 \item[{{\bf S\-D\-L} $\ast$}]{sdl, }
 \item[{int $\ast$}]{scores, }
-\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{ecran}
+\item[{S\-D\-L\-\_\-\-Surface $\ast$}]{ecran, }
+\item[{{\bf Musique} $\ast$}]{musique}
 \end{DoxyParamCaption}
-)}}\label{_s_d_l_8c_aa01afa367fb926561efefd9ee28941c5}
+)}}\label{_s_d_l_8c_ad71b234025cda99e30afcb285afaebca}
 
 
-Définition à la ligne 183 du fichier S\-D\-L.\-c.
+Définition à la ligne 213 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_ad7897b59aff5363840beb85766e25e47}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}}
 \index{S\-D\-L\-Set\-Ieme\-Texture@{S\-D\-L\-Set\-Ieme\-Texture}!SDL.c@{S\-D\-L.\-c}}
@@ -343,7 +359,7 @@ Définition à la ligne 183 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_ad7897b59aff5363840beb85766e25e47}
 
 
-Définition à la ligne 34 du fichier S\-D\-L.\-c.
+Définition à la ligne 36 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a29faea1dc4bb87f4538e14d944b55a5e}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Set\-Jeu@{S\-D\-L\-Set\-Jeu}}
 \index{S\-D\-L\-Set\-Jeu@{S\-D\-L\-Set\-Jeu}!SDL.c@{S\-D\-L.\-c}}
@@ -355,7 +371,7 @@ Définition à la ligne 34 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a29faea1dc4bb87f4538e14d944b55a5e}
 
 
-Définition à la ligne 31 du fichier S\-D\-L.\-c.
+Définition à la ligne 33 du fichier S\-D\-L.\-c.
 
 \hypertarget{_s_d_l_8c_a240e53a13bc5d885bfd85530fa798e4a}{\index{S\-D\-L.\-c@{S\-D\-L.\-c}!S\-D\-L\-Test\-Regression@{S\-D\-L\-Test\-Regression}}
 \index{S\-D\-L\-Test\-Regression@{S\-D\-L\-Test\-Regression}!SDL.c@{S\-D\-L.\-c}}
@@ -366,5 +382,5 @@ Définition à la ligne 31 du fichier S\-D\-L.\-c.
 )}}\label{_s_d_l_8c_a240e53a13bc5d885bfd85530fa798e4a}
 procédure qui teste le Module 
 
-Définition à la ligne 899 du fichier S\-D\-L.\-c.
+Définition à la ligne 980 du fichier S\-D\-L.\-c.
 

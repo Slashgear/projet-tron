@@ -116,12 +116,13 @@ $(document).ready(function(){initNavTree('_s_d_l_8c.html','');});
 <code>#include &quot;<a class="el" href="_joystick_8h_source.html">Joystick.h</a>&quot;</code><br/>
 <code>#include &lt;SDL/SDL_ttf.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
+<code>#include &quot;../lib/FMOD/inc/fmod.h&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de SDL.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="_s_d_l_8c__incl.png" border="0" usemap="#_s_d_l_8c" alt=""/></div>
 <map name="_s_d_l_8c" id="_s_d_l_8c">
-<area shape="rect" id="node3" href="_jeu_8h.html" title="Jeu.h" alt="" coords="496,160,549,189"/><area shape="rect" id="node46" href="_s_d_l_8h.html" title="SDL.h" alt="" coords="959,83,1017,112"/><area shape="rect" id="node50" href="_joystick_8h.html" title="Joystick.h" alt="" coords="947,160,1029,189"/><area shape="rect" id="node5" href="_joueur_8h.html" title="Joueur.h" alt="" coords="379,237,451,267"/><area shape="rect" id="node27" href="_grid_8h.html" title="Grid.h" alt="" coords="495,237,551,267"/><area shape="rect" id="node37" href="_constantes_8h.html" title="Constantes.h" alt="" coords="575,237,673,267"/><area shape="rect" id="node39" href="_bonus_8h.html" title="Bonus.h" alt="" coords="247,237,316,267"/><area shape="rect" id="node42" href="_musique_8h.html" title="Musique.h" alt="" coords="61,237,144,267"/><area shape="rect" id="node7" href="_controle_8h.html" title="Controle.h" alt="" coords="749,315,832,344"/><area shape="rect" id="node15" href="_moto_8h.html" title="Moto.h" alt="" coords="357,392,419,421"/><area shape="rect" id="node18" href="_couleur_8h.html" title="Couleur.h" alt="" coords="336,469,413,499"/><area shape="rect" id="node20" href="_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="184,315,283,344"/><area shape="rect" id="node22" href="_mur_8h.html" title="Mur.h" alt="" coords="496,392,549,421"/><area shape="rect" id="node32" href="_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="560,315,725,344"/></map>
+<area shape="rect" id="node3" href="_jeu_8h.html" title="Jeu.h" alt="" coords="487,160,541,189"/><area shape="rect" id="node46" href="_s_d_l_8h.html" title="SDL.h" alt="" coords="861,83,919,112"/><area shape="rect" id="node50" href="_joystick_8h.html" title="Joystick.h" alt="" coords="849,160,931,189"/><area shape="rect" id="node5" href="_joueur_8h.html" title="Joueur.h" alt="" coords="43,237,115,267"/><area shape="rect" id="node27" href="_grid_8h.html" title="Grid.h" alt="" coords="355,237,411,267"/><area shape="rect" id="node37" href="_constantes_8h.html" title="Constantes.h" alt="" coords="465,237,563,267"/><area shape="rect" id="node39" href="_bonus_8h.html" title="Bonus.h" alt="" coords="181,237,250,267"/><area shape="rect" id="node42" href="_musique_8h.html" title="Musique.h" alt="" coords="610,237,693,267"/><area shape="rect" id="node7" href="_controle_8h.html" title="Controle.h" alt="" coords="490,315,573,344"/><area shape="rect" id="node15" href="_moto_8h.html" title="Moto.h" alt="" coords="45,392,106,421"/><area shape="rect" id="node18" href="_couleur_8h.html" title="Couleur.h" alt="" coords="22,469,99,499"/><area shape="rect" id="node20" href="_effet_bonus_8h.html" title="EffetBonus.h" alt="" coords="77,315,175,344"/><area shape="rect" id="node22" href="_mur_8h.html" title="Mur.h" alt="" coords="250,392,303,421"/><area shape="rect" id="node32" href="_tableau_dynamique_mur_8h.html" title="TableauDynamiqueMur.h" alt="" coords="301,315,466,344"/></map>
 </div>
 </div>
 <p><a href="_s_d_l_8c_source.html">Aller au code source de ce fichier.</a></p>
@@ -152,8 +153,10 @@ Fonctions</h2></td></tr>
 <tr class="separator:a7167f5c196fc5e167bfabde1a730e81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acee5e34159940dd36ec30124193530df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#acee5e34159940dd36ec30124193530df">SDLIntro</a> (short int *jeuReInit, SDL_Surface *ecran)</td></tr>
 <tr class="separator:acee5e34159940dd36ec30124193530df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa01afa367fb926561efefd9ee28941c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#aa01afa367fb926561efefd9ee28941c5">SDLJeuInitN</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, int *scores, SDL_Surface *ecran)</td></tr>
-<tr class="separator:aa01afa367fb926561efefd9ee28941c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f176d75b32240dd07a21362b256a92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#a88f176d75b32240dd07a21362b256a92">SDLDecompte</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl)</td></tr>
+<tr class="separator:a88f176d75b32240dd07a21362b256a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71b234025cda99e30afcb285afaebca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#ad71b234025cda99e30afcb285afaebca">SDLJeuInitN</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, int *scores, SDL_Surface *ecran, <a class="el" href="struct_musique.html">Musique</a> *musique)</td></tr>
+<tr class="separator:ad71b234025cda99e30afcb285afaebca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4216fdeea2ef708146cfba234e0a0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#ae4216fdeea2ef708146cfba234e0a0ff">SDLBoucleJeu</a> (<a class="el" href="struct_s_d_l.html">SDL</a> *sdl, short int *jeuReInit)</td></tr>
 <tr class="separator:ae4216fdeea2ef708146cfba234e0a0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5307e0546a65557e28218096444fe16e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_d_l_8c.html#a5307e0546a65557e28218096444fe16e">SDLActionManette</a> (<a class="el" href="struct_joueur.html">Joueur</a> *joueur, <a class="el" href="_moto_8h.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> direction, <a class="el" href="struct_grid.html">Grid</a> *grille)</td></tr>
@@ -196,7 +199,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00148">148</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00150">150</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -230,7 +233,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00584">584</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00651">651</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -248,7 +251,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00721">721</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00802">802</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -266,7 +269,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00741">741</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00822">822</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -284,7 +287,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00888">888</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00969">969</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -302,7 +305,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00660">660</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00727">727</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -320,7 +323,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00685">685</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00766">766</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -340,7 +343,7 @@ Fonctions</h2></td></tr>
 <p>&lt;affichage de la ligne supérieure</p>
 <p>&lt;affichage de la ligne inférieure </p>
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00834">834</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00915">915</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -374,7 +377,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00761">761</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00842">842</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -417,7 +420,7 @@ Fonctions</h2></td></tr>
 <p>!&lt; Give the offsets to the rectangle</p>
 <p>!&lt; Blit the surface </p>
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00056">56</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00058">58</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -444,9 +447,8 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>!&lt;Si le jeu a renvoyé un nouveau commentaire </p>
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00406">406</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00437">437</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -468,7 +470,7 @@ Fonctions</h2></td></tr>
 <p>!&lt; If nothing went wrong in loading the image</p>
 <p>!&lt; Return the optimized image </p>
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00041">41</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00043">43</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -508,7 +510,25 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00070">70</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00072">72</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88f176d75b32240dd07a21362b256a92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SDLDecompte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_s_d_l.html">SDL</a> *&#160;</td>
+          <td class="paramname"><em>sdl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00189">189</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -526,7 +546,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00132">132</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00134">134</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -554,7 +574,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00024">24</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00026">26</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -582,7 +602,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00021">21</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00023">23</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -600,7 +620,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00018">18</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00020">20</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -618,7 +638,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00027">27</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00029">29</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -646,11 +666,11 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00164">164</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00166">166</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa01afa367fb926561efefd9ee28941c5"></a>
+<a class="anchor" id="ad71b234025cda99e30afcb285afaebca"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -670,7 +690,13 @@ Fonctions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SDL_Surface *&#160;</td>
-          <td class="paramname"><em>ecran</em>&#160;</td>
+          <td class="paramname"><em>ecran</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_musique.html">Musique</a> *&#160;</td>
+          <td class="paramname"><em>musique</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -680,7 +706,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00183">183</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00213">213</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -714,7 +740,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00034">34</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00036">36</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -742,7 +768,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00031">31</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00033">33</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -760,7 +786,7 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 <p>procédure qui teste le Module </p>
 
-<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00899">899</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="_s_d_l_8c_source.html#l00980">980</a> du fichier <a class="el" href="_s_d_l_8c_source.html">SDL.c</a>.</p>
 
 </div>
 </div>
@@ -770,7 +796,7 @@ Fonctions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_s_d_l_8c.html">SDL.c</a></li>
-    <li class="footer">Généré le Samedi Juin 1 2013 11:51:32 pour Tron -The Grid par
+    <li class="footer">Généré le Lundi Juin 3 2013 15:25:49 pour Tron -The Grid par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
