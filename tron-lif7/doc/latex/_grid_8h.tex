@@ -27,27 +27,27 @@ struct \hyperlink{struct_grid}{Grid}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-float \hyperlink{_grid_8h_af3c58e084a35908474f7148cf177e717}{Grid\-Get\-Position\-X} (const \hyperlink{struct_grid}{Grid} $\ast$)
+float \hyperlink{_grid_8h_ad6474a4bd1b2abc33aed83f04ed4f0de}{Grid\-Get\-Position\-X} (const \hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
-float \hyperlink{_grid_8h_a1763976e87177bc68c05b09e5efc0534}{Grid\-Get\-Position\-Y} (const \hyperlink{struct_grid}{Grid} $\ast$)
+float \hyperlink{_grid_8h_a7d16dec935d3ea2ea49a5ad80139ad63}{Grid\-Get\-Position\-Y} (const \hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
-unsigned int \hyperlink{_grid_8h_ae4c0acd7634c52be99782403daf71f8e}{Grid\-Get\-Taille\-X} (const \hyperlink{struct_grid}{Grid} $\ast$)
+unsigned int \hyperlink{_grid_8h_a402ec8dcb2070fdc1ca02d9f68b0d61f}{Grid\-Get\-Taille\-X} (const \hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
-unsigned int \hyperlink{_grid_8h_ab1b8157d42bd3763ead211ede9c667cc}{Grid\-Get\-Taille\-Y} (const \hyperlink{struct_grid}{Grid} $\ast$)
+unsigned int \hyperlink{_grid_8h_a6b28340c1a4dd9456ba5853963986cd2}{Grid\-Get\-Taille\-Y} (const \hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
-\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$ \hyperlink{_grid_8h_a90571a2b8569148c5adb00a0d1c8f78e}{Grid\-Get\-Mes\-Murs} (\hyperlink{struct_grid}{Grid} $\ast$)
+\hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$ \hyperlink{_grid_8h_a1125c51c7a75905e5cf9322ac9b18bf0}{Grid\-Get\-Mes\-Murs} (\hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
 void \hyperlink{_grid_8h_a55dea47bf264d8c4c5f7ddf2584b3ec8}{Grid\-Set\-Position\-X} (\hyperlink{struct_grid}{Grid} $\ast$grille, float pos\-X)
 \item 
 void \hyperlink{_grid_8h_a1cdd44b889afbe59b178f6f256c4b32b}{Grid\-Set\-Position\-Y} (\hyperlink{struct_grid}{Grid} $\ast$grille, float pos\-Y)
 \item 
-void \hyperlink{_grid_8h_a2f666baeec2f8712d60670e2ea196257}{Grid\-Set\-Taille\-X} (\hyperlink{struct_grid}{Grid} $\ast$, unsigned int)
+void \hyperlink{_grid_8h_a472cf7585110f2a016d8cd5bc57e7ee4}{Grid\-Set\-Taille\-X} (\hyperlink{struct_grid}{Grid} $\ast$, unsigned int taille\-X)
 \item 
-void \hyperlink{_grid_8h_a7a7251a47cde9f4a26fd33145dab565f}{Grid\-Set\-Taille\-Y} (\hyperlink{struct_grid}{Grid} $\ast$, unsigned int)
+void \hyperlink{_grid_8h_a941aa98411de7312f18e7211c5ed24b8}{Grid\-Set\-Taille\-Y} (\hyperlink{struct_grid}{Grid} $\ast$, unsigned int taille\-Y)
 \item 
-void \hyperlink{_grid_8h_a707a4949087945113f1105e38449eaff}{Grid\-Set\-Mes\-Murs} (\hyperlink{struct_grid}{Grid} $\ast$, \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$)
+void \hyperlink{_grid_8h_ae58cdfa605fc9a0af1d8fa1461277bff}{Grid\-Set\-Mes\-Murs} (\hyperlink{struct_grid}{Grid} $\ast$grille, \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
 \item 
-void \hyperlink{_grid_8h_a214707008d196d1e43ba28528bfe7f95}{Grid\-Constructeur} (\hyperlink{struct_grid}{Grid} $\ast$, float, float, unsigned int, unsigned int, \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$)
+void \hyperlink{_grid_8h_a2cc97be9c7e6fc3a0fffa106c3cf8954}{Grid\-Constructeur} (\hyperlink{struct_grid}{Grid} $\ast$grille, float pos\-X, float pos\-Y, unsigned int Taille\-X, unsigned int Taille\-Y, \hyperlink{struct_tableau_dynamique_mur}{Tableau\-Dynamique\-Mur} $\ast$mes\-Murs)
 \item 
 void \hyperlink{_grid_8h_a5055e1bc05a5a03b8974301f64541ce5}{Grid\-Destructeur} (\hyperlink{struct_grid}{Grid} $\ast$grille)
 \item 
@@ -114,18 +114,18 @@ Définition à la ligne 80 du fichier Grid.\-c.
 
 Définition à la ligne 67 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a214707008d196d1e43ba28528bfe7f95}{\index{Grid.\-h@{Grid.\-h}!Grid\-Constructeur@{Grid\-Constructeur}}
+\hypertarget{_grid_8h_a2cc97be9c7e6fc3a0fffa106c3cf8954}{\index{Grid.\-h@{Grid.\-h}!Grid\-Constructeur@{Grid\-Constructeur}}
 \index{Grid\-Constructeur@{Grid\-Constructeur}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Constructeur}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\-Constructeur (
 \begin{DoxyParamCaption}
-\item[{{\bf Grid} $\ast$}]{, }
-\item[{float}]{, }
-\item[{float}]{, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{}
+\item[{{\bf Grid} $\ast$}]{grille, }
+\item[{float}]{pos\-X, }
+\item[{float}]{pos\-Y, }
+\item[{unsigned int}]{Taille\-X, }
+\item[{unsigned int}]{Taille\-Y, }
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{mes\-Murs}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a214707008d196d1e43ba28528bfe7f95}
+)}}\label{_grid_8h_a2cc97be9c7e6fc3a0fffa106c3cf8954}
 
 
 Définition à la ligne 47 du fichier Grid.\-c.
@@ -141,69 +141,69 @@ Définition à la ligne 47 du fichier Grid.\-c.
 
 Définition à la ligne 55 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a90571a2b8569148c5adb00a0d1c8f78e}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Mes\-Murs@{Grid\-Get\-Mes\-Murs}}
+\hypertarget{_grid_8h_a1125c51c7a75905e5cf9322ac9b18bf0}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Mes\-Murs@{Grid\-Get\-Mes\-Murs}}
 \index{Grid\-Get\-Mes\-Murs@{Grid\-Get\-Mes\-Murs}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Get\-Mes\-Murs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tableau\-Dynamique\-Mur}$\ast$ Grid\-Get\-Mes\-Murs (
 \begin{DoxyParamCaption}
-\item[{{\bf Grid} $\ast$}]{}
+\item[{{\bf Grid} $\ast$}]{grille}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a90571a2b8569148c5adb00a0d1c8f78e}
+)}}\label{_grid_8h_a1125c51c7a75905e5cf9322ac9b18bf0}
 
 
 Définition à la ligne 29 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_af3c58e084a35908474f7148cf177e717}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Position\-X@{Grid\-Get\-Position\-X}}
+\hypertarget{_grid_8h_ad6474a4bd1b2abc33aed83f04ed4f0de}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Position\-X@{Grid\-Get\-Position\-X}}
 \index{Grid\-Get\-Position\-X@{Grid\-Get\-Position\-X}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Get\-Position\-X}]{\setlength{\rightskip}{0pt plus 5cm}float Grid\-Get\-Position\-X (
 \begin{DoxyParamCaption}
-\item[{const {\bf Grid} $\ast$}]{}
+\item[{const {\bf Grid} $\ast$}]{grille}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_af3c58e084a35908474f7148cf177e717}
+)}}\label{_grid_8h_ad6474a4bd1b2abc33aed83f04ed4f0de}
 
 
 Définition à la ligne 17 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a1763976e87177bc68c05b09e5efc0534}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Position\-Y@{Grid\-Get\-Position\-Y}}
+\hypertarget{_grid_8h_a7d16dec935d3ea2ea49a5ad80139ad63}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Position\-Y@{Grid\-Get\-Position\-Y}}
 \index{Grid\-Get\-Position\-Y@{Grid\-Get\-Position\-Y}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Get\-Position\-Y}]{\setlength{\rightskip}{0pt plus 5cm}float Grid\-Get\-Position\-Y (
 \begin{DoxyParamCaption}
-\item[{const {\bf Grid} $\ast$}]{}
+\item[{const {\bf Grid} $\ast$}]{grille}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a1763976e87177bc68c05b09e5efc0534}
+)}}\label{_grid_8h_a7d16dec935d3ea2ea49a5ad80139ad63}
 
 
 Définition à la ligne 20 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_ae4c0acd7634c52be99782403daf71f8e}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Taille\-X@{Grid\-Get\-Taille\-X}}
+\hypertarget{_grid_8h_a402ec8dcb2070fdc1ca02d9f68b0d61f}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Taille\-X@{Grid\-Get\-Taille\-X}}
 \index{Grid\-Get\-Taille\-X@{Grid\-Get\-Taille\-X}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Get\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Grid\-Get\-Taille\-X (
 \begin{DoxyParamCaption}
-\item[{const {\bf Grid} $\ast$}]{}
+\item[{const {\bf Grid} $\ast$}]{grille}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_ae4c0acd7634c52be99782403daf71f8e}
+)}}\label{_grid_8h_a402ec8dcb2070fdc1ca02d9f68b0d61f}
 
 
 Définition à la ligne 23 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_ab1b8157d42bd3763ead211ede9c667cc}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Taille\-Y@{Grid\-Get\-Taille\-Y}}
+\hypertarget{_grid_8h_a6b28340c1a4dd9456ba5853963986cd2}{\index{Grid.\-h@{Grid.\-h}!Grid\-Get\-Taille\-Y@{Grid\-Get\-Taille\-Y}}
 \index{Grid\-Get\-Taille\-Y@{Grid\-Get\-Taille\-Y}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Get\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Grid\-Get\-Taille\-Y (
 \begin{DoxyParamCaption}
-\item[{const {\bf Grid} $\ast$}]{}
+\item[{const {\bf Grid} $\ast$}]{grille}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_ab1b8157d42bd3763ead211ede9c667cc}
+)}}\label{_grid_8h_a6b28340c1a4dd9456ba5853963986cd2}
 
 
 Définition à la ligne 26 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a707a4949087945113f1105e38449eaff}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Mes\-Murs@{Grid\-Set\-Mes\-Murs}}
+\hypertarget{_grid_8h_ae58cdfa605fc9a0af1d8fa1461277bff}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Mes\-Murs@{Grid\-Set\-Mes\-Murs}}
 \index{Grid\-Set\-Mes\-Murs@{Grid\-Set\-Mes\-Murs}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Set\-Mes\-Murs}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\-Set\-Mes\-Murs (
 \begin{DoxyParamCaption}
-\item[{{\bf Grid} $\ast$}]{, }
-\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{}
+\item[{{\bf Grid} $\ast$}]{grille, }
+\item[{{\bf Tableau\-Dynamique\-Mur} $\ast$}]{mes\-Murs}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a707a4949087945113f1105e38449eaff}
+)}}\label{_grid_8h_ae58cdfa605fc9a0af1d8fa1461277bff}
 
 
 Définition à la ligne 44 du fichier Grid.\-c.
@@ -232,26 +232,26 @@ Définition à la ligne 32 du fichier Grid.\-c.
 
 Définition à la ligne 35 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a2f666baeec2f8712d60670e2ea196257}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Taille\-X@{Grid\-Set\-Taille\-X}}
+\hypertarget{_grid_8h_a472cf7585110f2a016d8cd5bc57e7ee4}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Taille\-X@{Grid\-Set\-Taille\-X}}
 \index{Grid\-Set\-Taille\-X@{Grid\-Set\-Taille\-X}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Set\-Taille\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\-Set\-Taille\-X (
 \begin{DoxyParamCaption}
 \item[{{\bf Grid} $\ast$}]{, }
-\item[{unsigned}]{int}
+\item[{unsigned int}]{taille\-X}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a2f666baeec2f8712d60670e2ea196257}
+)}}\label{_grid_8h_a472cf7585110f2a016d8cd5bc57e7ee4}
 
 
 Définition à la ligne 38 du fichier Grid.\-c.
 
-\hypertarget{_grid_8h_a7a7251a47cde9f4a26fd33145dab565f}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Taille\-Y@{Grid\-Set\-Taille\-Y}}
+\hypertarget{_grid_8h_a941aa98411de7312f18e7211c5ed24b8}{\index{Grid.\-h@{Grid.\-h}!Grid\-Set\-Taille\-Y@{Grid\-Set\-Taille\-Y}}
 \index{Grid\-Set\-Taille\-Y@{Grid\-Set\-Taille\-Y}!Grid.h@{Grid.\-h}}
 \subsubsection[{Grid\-Set\-Taille\-Y}]{\setlength{\rightskip}{0pt plus 5cm}void Grid\-Set\-Taille\-Y (
 \begin{DoxyParamCaption}
 \item[{{\bf Grid} $\ast$}]{, }
-\item[{unsigned}]{int}
+\item[{unsigned int}]{taille\-Y}
 \end{DoxyParamCaption}
-)}}\label{_grid_8h_a7a7251a47cde9f4a26fd33145dab565f}
+)}}\label{_grid_8h_a941aa98411de7312f18e7211c5ed24b8}
 
 
 Définition à la ligne 41 du fichier Grid.\-c.

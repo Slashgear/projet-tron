@@ -120,46 +120,53 @@ $(document).ready(function(){initNavTree('main_8c_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_bonus_8h.html">Bonus.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_constantes_8h.html">Constantes.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_musique_8h.html">Musique.h</a>&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span>    <span class="comment">/*MurTestRegression();</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">    ControleTestRegression();</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    MotoTestRegression();</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    JoueurTestRegression();</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    GridTestRegression();*/</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="_jeu_8c.html#ab00a82316a8da0ba7425cb30e7b34b9f">JeuTestRegression</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/*SDLTestRegression();</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">    BonusTestRegression();</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   JoystickTestRegression();</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   MusiqueTestRegression();*/</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span>    <a class="code" href="struct_s_d_l.html">SDL</a> sdl;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">short</span> <span class="keywordtype">int</span> jeuReInit=1;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> scores[<a class="code" href="_constantes_8h.html#a505b3b803482fbd73a5eafac78db730f">_Nombre_de_Joueur</a>]={0};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    TTF_Init();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    SDL_WM_SetCaption( <span class="stringliteral">&quot;TRON-The Grid v2.6&quot;</span>, NULL );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    SDL_Surface* ecran=SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="_s_d_l_8c.html#acee5e34159940dd36ec30124193530df">SDLIntro</a>(&amp;jeuReInit,ecran);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span>(jeuReInit==1){</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="_s_d_l_8c.html#aa01afa367fb926561efefd9ee28941c5">SDLJeuInitN</a>(&amp;sdl,scores,ecran);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="_s_d_l_8c.html#ae4216fdeea2ef708146cfba234e0a0ff">SDLBoucleJeu</a>(&amp;sdl,&amp;jeuReInit);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="_s_d_l_8c.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a>(&amp;sdl);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    TTF_Quit();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    SDL_Quit();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   24</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span>    <span class="comment">/*MurTestRegression();</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">    ControleTestRegression();</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">    MotoTestRegression();</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    JoueurTestRegression();</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    GridTestRegression();*/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="_jeu_8c.html#ab00a82316a8da0ba7425cb30e7b34b9f">JeuTestRegression</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/*SDLTestRegression();</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    BonusTestRegression();</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   JoystickTestRegression();</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">   MusiqueTestRegression();*/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor"></span>    <a class="code" href="struct_s_d_l.html">SDL</a> sdl;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">short</span> <span class="keywordtype">int</span> jeuReInit=1;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> scores[<a class="code" href="_constantes_8h.html#a505b3b803482fbd73a5eafac78db730f">_Nombre_de_Joueur</a>]={0};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="struct_musique.html">Musique</a> uneMusique;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    assert(   SDL_Init( SDL_INIT_VIDEO | SDL_INIT_JOYSTICK )!= -1 );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    srand(time(NULL));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    TTF_Init();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SDL_WM_SetCaption( <span class="stringliteral">&quot;TRON-The Grid v2.6&quot;</span>, NULL );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    SDL_Surface* ecran=SDL_SetVideoMode(1295,710,32,SDL_HWSURFACE);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="_s_d_l_8c.html#acee5e34159940dd36ec30124193530df">SDLIntro</a>(&amp;jeuReInit,ecran);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="_musique_8c.html#a43c750ce46e1cebd1d15d08216546b41">MusiqueConstructeur</a>(&amp;uneMusique);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">while</span>(jeuReInit==1){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="_s_d_l_8c.html#ad71b234025cda99e30afcb285afaebca">SDLJeuInitN</a>(&amp;sdl,scores,ecran,&amp;uneMusique);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="_s_d_l_8c.html#a88f176d75b32240dd07a21362b256a92">SDLDecompte</a>(&amp;sdl);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="_s_d_l_8c.html#ae4216fdeea2ef708146cfba234e0a0ff">SDLBoucleJeu</a>(&amp;sdl,&amp;jeuReInit);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="_s_d_l_8c.html#a18f1617d8034417cd2f06cc9c4dbedf2">SDLDestructeur</a>(&amp;sdl);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="_musique_8c.html#a968015ab08fbe91eb20129567bb467bc">MusiqueDestructeur</a>(&amp;uneMusique);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    TTF_Quit();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SDL_Quit();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor"></span><span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8c.html">main.c</a></li>
-    <li class="footer">Généré le Samedi Juin 1 2013 11:51:32 pour Tron -The Grid par
+    <li class="footer">Généré le Lundi Juin 3 2013 15:25:49 pour Tron -The Grid par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('_musique_8c_source.html','');});
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    FMOD_SOUND** musiqueDuJeu=(FMOD_SOUND**)malloc(<a class="code" href="_musique_8h.html#abcf2e20896fd8bfc6aa91cc598e6e218">_Nombre_De_Musique</a>*<span class="keyword">sizeof</span>(FMOD_SOUND *));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    FMOD_System_Create(&amp;baseDuSon);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    FMOD_System_Init(baseDuSon, 5, FMOD_INIT_NORMAL, NULL);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    FMOD_System_Init(baseDuSon, 2, FMOD_INIT_NORMAL, NULL);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    FMOD_System_CreateSound(baseDuSon, <span class="stringliteral">&quot;data/Sons/sonDestruction.wav&quot;</span>, FMOD_CREATESAMPLE, 0,sonCourt+0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    FMOD_System_CreateSound(baseDuSon, <span class="stringliteral">&quot;data/Sons/SonAttrapeBonus.mp3&quot;</span>, FMOD_CREATESAMPLE, 0,sonCourt+1);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
@@ -159,8 +159,8 @@ $(document).ready(function(){initNavTree('_musique_8c_source.html','');});
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                             0, musiqueDuJeu+1);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    FMOD_System_CreateSound(baseDuSon, <span class="stringliteral">&quot;data/Sons/Derezzed.mp3&quot;</span>, FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                             0, musiqueDuJeu+2);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    FMOD_System_CreateSound(baseDuSon, <span class="stringliteral">&quot;data/Sons/EndTitles.mp3&quot;</span>, FMOD_SOFTWARE | FMOD_2D | FMOD_CREATESTREAM,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                             0, musiqueDuJeu+3);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="_musique_8c.html#a992e9a70c659319a675744a0bca3799d">MusiqueSetBaseDuSon</a>(musique,baseDuSon);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="_musique_8c.html#adf596c7e8e14980256f0fc5c4cd23a73">MusiqueSetSonCourt</a>(musique,sonCourt);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="_musique_8c.html#aeec5162b4d8bc7da44ce55cfc364015e">MusiqueSetMusiqueDuJeu</a>(musique,musiqueDuJeu);</div>
@@ -181,10 +181,10 @@ $(document).ready(function(){initNavTree('_musique_8c_source.html','');});
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="_musique_8h.html#a4ccf3ce1bf3c2fb7ee0ed6352e24fdf4">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_musique_8c.html#a4ccf3ce1bf3c2fb7ee0ed6352e24fdf4">JouerIemeSonCourt</a>(<a class="code" href="struct_musique.html">Musique</a> *musique,<span class="keywordtype">int</span> i){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    FMOD_System_PlaySound(<a class="code" href="_musique_8c.html#a6eaeb9c1618c807754684d59992d6507">MusiqueGetBaseDuSon</a>(musique), FMOD_CHANNEL_FREE,<a class="code" href="_musique_8c.html#af2564aa22a9d674e780a820a9cf2b328">MusiqueGetIemeSonCourt</a>(musique,i), 0, NULL);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    FMOD_System_PlaySound(<a class="code" href="_musique_8c.html#a6eaeb9c1618c807754684d59992d6507">MusiqueGetBaseDuSon</a>(musique), 0,<a class="code" href="_musique_8c.html#af2564aa22a9d674e780a820a9cf2b328">MusiqueGetIemeSonCourt</a>(musique,i), 0, NULL);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="_musique_8h.html#a83de1e788ada978f55d7d8442a3beaa8">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_musique_8c.html#a83de1e788ada978f55d7d8442a3beaa8">JouerIemeMusique</a>(<a class="code" href="struct_musique.html">Musique</a> *musique,<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> repetition){</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    FMOD_System_PlaySound(<a class="code" href="_musique_8c.html#a6eaeb9c1618c807754684d59992d6507">MusiqueGetBaseDuSon</a>(musique), FMOD_CHANNEL_FREE,<a class="code" href="_musique_8c.html#ada630365fea1e238fbf95631dd56ee49">MusiqueGetIemeMusiqueDuJeu</a>(musique,i), 0, NULL);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    FMOD_System_PlaySound(<a class="code" href="_musique_8c.html#a6eaeb9c1618c807754684d59992d6507">MusiqueGetBaseDuSon</a>(musique),1,<a class="code" href="_musique_8c.html#ada630365fea1e238fbf95631dd56ee49">MusiqueGetIemeMusiqueDuJeu</a>(musique,i), 0, NULL);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    FMOD_Sound_SetLoopCount(<a class="code" href="_musique_8c.html#ada630365fea1e238fbf95631dd56ee49">MusiqueGetIemeMusiqueDuJeu</a>(musique,i), repetition);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('_musique_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_musique_8c.html">Musique.c</a></li>
-    <li class="footer">Généré le Samedi Juin 1 2013 11:51:32 pour Tron -The Grid par
+    <li class="footer">Généré le Lundi Juin 3 2013 15:25:49 pour Tron -The Grid par
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
