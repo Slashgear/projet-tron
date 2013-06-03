@@ -1004,7 +1004,7 @@ void choisieDirection(Joueur* joueurIA,Jeu *jeu,short int distanceJoueurCible,
     else{
         if(JoueurGetNumeroJoueur(joueurIA)==JoueurGetJoueurCible(joueurIA)){
         }
-        if(distanceJoueurCible>=distanceSecurite*2){
+        if(distanceJoueurCible>=distanceSecurite){
             boolDistanceValide=1;
             if(ligne1>=distanceSecurite){
                 for(i=1;i<=distanceSecurite;i++){
