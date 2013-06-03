@@ -264,7 +264,7 @@
 	"Mur.h"
 	"TableauDynamiqueMur.h"
 
-1369732934 /home/matthieu/Projet/tron-lif7/src/Grid.h
+1370190622 /home/matthieu/Projet/tron-lif7/src/Grid.h
 	"Mur.h"
 	<stdlib.h>
 	<stdio.h>
@@ -326,7 +326,7 @@
 	"Mur.h"
 	<stdlib.h>
 
-1370184256 source:/home/matthieu/Projet/tron-lif7/src/main.c
+1370190622 source:/home/matthieu/Projet/tron-lif7/src/main.c
 	<stdlib.h>
 	<stdio.h>
 	<assert.h>
@@ -340,6 +340,7 @@
 	"Bonus.h"
 	"Constantes.h"
 	"Musique.h"
+	<time.h>
 
 1369732934 source:/home/matthieu/Projet/tron-lif7/src/Mur.c
 	<stdlib.h>
@@ -362,7 +363,7 @@
 	"Controle.h"
 	"Couleur.h"
 
-1370184256 source:/home/matthieu/Projet/tron-lif7/src/Jeu.c
+1370260117 source:/home/matthieu/Projet/tron-lif7/src/Jeu.c
 	"Jeu.h"
 	"Joueur.h"
 	"Grid.h"
@@ -380,7 +381,7 @@
 	"Bonus.h"
 	"Musique.h"
 
-1370185335 source:/home/matthieu/Projet/tron-lif7/src/SDL.c
+1370190622 source:/home/matthieu/Projet/tron-lif7/src/SDL.c
 	"Jeu.h"
 	"SDL.h"
 	<assert.h>
@@ -940,7 +941,7 @@
 1369732934 /home/matthieu/Projet/tron-lif7/src/Bonus.h
 	"EffetBonus.h"
 
-1370181142 /home/matthieu/Projet/tron-lif7/src/Constantes.h
+1370260201 /home/matthieu/Projet/tron-lif7/src/Constantes.h
 
 1370099302 /home/matthieu/Projet/tron-lif7/src/Musique.h
 	"../lib/FMOD/inc/fmod.h"
@@ -964,7 +965,7 @@
 1369732934 /home/matthieu/Projet/tron-lif7/src/Joystick.h
 	<SDL/SDL.h>
 
-1370181142 source:/home/matthieu/Projet/tron-lif7/src/Musique.c
+1370190622 source:/home/matthieu/Projet/tron-lif7/src/Musique.c
 	<stdio.h>
 	<stdlib.h>
 	"Musique.h"
