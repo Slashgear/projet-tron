@@ -224,53 +224,54 @@ void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran,Musique *musique){
     Manette *mesManettes=(Manette*)malloc(_Nombre_de_Manette*sizeof(Manette));
 
     SDL_JoystickEventState(SDL_ENABLE);
-    assert((_Nombre_de_Joueur<=8)&&(_Nombre_de_Joueur>0)&&(_Nombre_de_Manette<=4)&&(_Nombre_de_Manette>=0)&&
+    assert((_Nombre_de_Joueur<=8)&&(_Nombre_de_Joueur>1)&&(_Nombre_de_Manette<=4)&&(_Nombre_de_Manette>=0)&&
            (nbJoueurClavier<=4)&&(nbJoueurClavier>=0)&&(SDL_NumJoysticks()>=_Nombre_de_Manette)&&
            (_Duree_Vie_Mur>=0)&&(_Acceleration>=0)&&(_Vitesse_Initiale>=0)&&(_Nombre_de_Bonus>=0)&&
-           (_Nombre_IA>=0)&&(_Nombre_IA<_Nombre_de_Joueur));
+           (_Nombre_IA>=0)&&(_Nombre_IA+nbJoueurClavier+_Nombre_de_Manette<=_Nombre_de_Joueur)&&
+           (_Score_de_Victoire>=1));
 
     for(i=0;i<nbJoueurClavier;i++){
         if(_Nombre_de_Joueur<=4){
             if(i==0){
                 ControleConstructeur(&unControle,'z','s','q','d','a');
-                MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
+                MotoConstructeur(&uneMoto,499.5,51.5,5,10,_Vitesse_Initiale,BAS);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,-1,i+1,0);
             }
             else if(i==1){
                     ControleConstructeur(&unControle,'o','l','k','m','i');
-                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
+                    MotoConstructeur(&uneMoto,504.5,651.5,5,10,_Vitesse_Initiale,HAUT);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1,i+1,0);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
-                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
+                        MotoConstructeur(&uneMoto,201.5,356.5,10,5,_Vitesse_Initiale,DROITE);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1,i+1,0);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
-                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
+                            MotoConstructeur(&uneMoto,801.5,351.5,10,5,_Vitesse_Initiale,GAUCHE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1,i+1,0);
                         }
         }
         else{
             if(i==0){
                 ControleConstructeur(&unControle,'z','s','q','d','a');
-                MotoConstructeur(&uneMoto,403,50,5,10,_Vitesse_Initiale,BAS);
+                MotoConstructeur(&uneMoto,404.5,51.5,5,10,_Vitesse_Initiale,BAS);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,-1,i+1,0);
             }
             else if(i==1){
                     ControleConstructeur(&unControle,'o','l','k','m','i');
-                    MotoConstructeur(&uneMoto,809,253,10,5,_Vitesse_Initiale,GAUCHE);
+                    MotoConstructeur(&uneMoto,810.5,254.5,10,5,_Vitesse_Initiale,GAUCHE);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1,i+1,0);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_t,SDLK_g,SDLK_f,SDLK_h,SDLK_r);
-                        MotoConstructeur(&uneMoto,603,660,5,10,_Vitesse_Initiale,HAUT);
+                        MotoConstructeur(&uneMoto,604.5,661.5,5,10,_Vitesse_Initiale,HAUT);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1,i+1,0);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_UP,SDLK_DOWN,SDLK_LEFT,SDLK_RIGHT,SDLK_END);
-                            MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
+                            MotoConstructeur(&uneMoto,201.5,457.5,10,5,_Vitesse_Initiale,DROITE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1,i+1,0);
                         }
         }
@@ -280,25 +281,25 @@ void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran,Musique *musique){
         if(_Nombre_de_Joueur<=4){
             if(i==0){
                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
+                MotoConstructeur(&uneMoto,499.5,51.5,5,10,_Vitesse_Initiale,BAS);
                 initialiserManette(&uneManette,i-nbJoueurClavier);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
             }
             else if(i==1){
                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
+                    MotoConstructeur(&uneMoto,504.5,651.5,5,10,_Vitesse_Initiale,HAUT);
                     initialiserManette(&uneManette,i-nbJoueurClavier);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
+                        MotoConstructeur(&uneMoto,201.5,356.5,10,5,_Vitesse_Initiale,DROITE);
                         initialiserManette(&uneManette,i-nbJoueurClavier);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
+                            MotoConstructeur(&uneMoto,801.5,351.5,10,5,_Vitesse_Initiale,GAUCHE);
                             initialiserManette(&uneManette,i-nbJoueurClavier);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                         }
@@ -306,51 +307,51 @@ void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran,Musique *musique){
         else {
             if(i==0){
                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                MotoConstructeur(&uneMoto,403,50,5,10,_Vitesse_Initiale,BAS);
+                MotoConstructeur(&uneMoto,404.5,51.5,5,10,_Vitesse_Initiale,BAS);
                 initialiserManette(&uneManette,i-nbJoueurClavier);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
             }
             else if(i==1){
                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                    MotoConstructeur(&uneMoto,809,253,10,5,_Vitesse_Initiale,GAUCHE);
+                    MotoConstructeur(&uneMoto,810.5,254.5,10,5,_Vitesse_Initiale,GAUCHE);
                     initialiserManette(&uneManette,i-nbJoueurClavier);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                        MotoConstructeur(&uneMoto,603,660,5,10,_Vitesse_Initiale,HAUT);
+                        MotoConstructeur(&uneMoto,604.5,661.5,5,10,_Vitesse_Initiale,HAUT);
                         initialiserManette(&uneManette,i-nbJoueurClavier);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                            MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
+                            MotoConstructeur(&uneMoto,201.5,457.5,10,5,_Vitesse_Initiale,DROITE);
                             initialiserManette(&uneManette,i-nbJoueurClavier);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                         }
                         else if(i==4){
                                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                MotoConstructeur(&uneMoto,606,50,5,10,_Vitesse_Initiale,BAS);
+                                MotoConstructeur(&uneMoto,607.5,51.5,5,10,_Vitesse_Initiale,BAS);
                                 initialiserManette(&uneManette,i-nbJoueurClavier);
                                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VIOLET,VIVANT,AUCUN,i-nbJoueurClavier,i+1,0);
                             }
                             else if(i==5){
                                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                    MotoConstructeur(&uneMoto,403,660,5,10,_Vitesse_Initiale,HAUT);
+                                    MotoConstructeur(&uneMoto,404.5,661.5,5,10,_Vitesse_Initiale,HAUT);
                                     initialiserManette(&uneManette,i-nbJoueurClavier);
                                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEUF,VIVANT,AUCUN,
                                                        i-nbJoueurClavier,i+1,0);
                                 }
                                 else if(i==6){
                                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                        MotoConstructeur(&uneMoto,200,253,10,5,_Vitesse_Initiale,DROITE);
+                                        MotoConstructeur(&uneMoto,201.5,254.5,10,5,_Vitesse_Initiale,DROITE);
                                         initialiserManette(&uneManette,i-nbJoueurClavier);
                                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,JAUNE,VIVANT,AUCUN,
                                                            i-nbJoueurClavier,i+1,0);
                                     }
                                     else if(i==7){
                                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                            MotoConstructeur(&uneMoto,809,456,10,5,_Vitesse_Initiale,GAUCHE);
+                                            MotoConstructeur(&uneMoto,810.5,457.5,10,5,_Vitesse_Initiale,GAUCHE);
                                             initialiserManette(&uneManette,i-nbJoueurClavier);
                                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLANC,VIVANT,AUCUN,
                                                                i-nbJoueurClavier,i+1,0);
@@ -363,61 +364,61 @@ void SDLJeuInitN(SDL *sdl, int* scores,SDL_Surface* ecran,Musique *musique){
         if(_Nombre_de_Joueur<=4){
             if(i==0){
                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                MotoConstructeur(&uneMoto,498,50,5,10,_Vitesse_Initiale,BAS);
+                MotoConstructeur(&uneMoto,499.5,51.5,5,10,_Vitesse_Initiale,BAS);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ORANGE,VIVANT,AUCUN,-1,i+1,1);
             }
             else if(i==1){
                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                    MotoConstructeur(&uneMoto,503,650,5,10,_Vitesse_Initiale,HAUT);
+                    MotoConstructeur(&uneMoto,504.5,651.5,5,10,_Vitesse_Initiale,HAUT);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1,i+1,1);
                 }
                 else if(i==2){
                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                        MotoConstructeur(&uneMoto,200,355,10,5,_Vitesse_Initiale,DROITE);
+                        MotoConstructeur(&uneMoto,201.5,355.5,10,5,_Vitesse_Initiale,DROITE);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1,i+1,1);
                     }
                     else if(i==3){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                            MotoConstructeur(&uneMoto,800,350,10,5,_Vitesse_Initiale,GAUCHE);
+                            MotoConstructeur(&uneMoto,801.5,351.5,10,5,_Vitesse_Initiale,GAUCHE);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1,i+1,1);
                         }
         }
         else{
             if(i==1){
                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                MotoConstructeur(&uneMoto,809,253,10,5,_Vitesse_Initiale,GAUCHE);
+                MotoConstructeur(&uneMoto,810.5,254.5,10,5,_Vitesse_Initiale,GAUCHE);
                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEU,VIVANT,AUCUN,-1,i+1,1);
             }
             else if(i==2){
                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                    MotoConstructeur(&uneMoto,603,660,5,10,_Vitesse_Initiale,HAUT);
+                    MotoConstructeur(&uneMoto,604.5,661.5,5,10,_Vitesse_Initiale,HAUT);
                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,ROUGE,VIVANT,AUCUN,-1,i+1,1);
                 }
                 else if(i==3){
                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                        MotoConstructeur(&uneMoto,200,456,10,5,_Vitesse_Initiale,DROITE);
+                        MotoConstructeur(&uneMoto,201.5,457.5,10,5,_Vitesse_Initiale,DROITE);
                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VERT,VIVANT,AUCUN,-1,i+1,1);
                     }
                     else if(i==4){
                             ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                            MotoConstructeur(&uneMoto,606,50,5,10,_Vitesse_Initiale,BAS);
+                            MotoConstructeur(&uneMoto,607.5,51.5,5,10,_Vitesse_Initiale,BAS);
                             JoueurConstructeur(&unJoueur,&uneMoto,&unControle,VIOLET,VIVANT,AUCUN,-1,i+1,1);
                         }
                         else if(i==5){
                                 ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                MotoConstructeur(&uneMoto,403,660,5,10,_Vitesse_Initiale,HAUT);
+                                MotoConstructeur(&uneMoto,404.5,661.5,5,10,_Vitesse_Initiale,HAUT);
                                 JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLEUF,VIVANT,AUCUN,
                                                    -1,i+1,1);
                             }
                             else if(i==6){
                                     ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                    MotoConstructeur(&uneMoto,200,253,10,5,_Vitesse_Initiale,DROITE);
+                                    MotoConstructeur(&uneMoto,201.5,254.5,10,5,_Vitesse_Initiale,DROITE);
                                     JoueurConstructeur(&unJoueur,&uneMoto,&unControle,JAUNE,VIVANT,AUCUN,
                                                        -1,i+1,1);
                                 }
                                 else if(i==7){
                                         ControleConstructeur(&unControle,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7,SDLK_F7);
-                                        MotoConstructeur(&uneMoto,809,456,10,5,_Vitesse_Initiale,GAUCHE);
+                                        MotoConstructeur(&uneMoto,810.5,457.5,10,5,_Vitesse_Initiale,GAUCHE);
                                         JoueurConstructeur(&unJoueur,&uneMoto,&unControle,BLANC,VIVANT,AUCUN,
                                                            -1,i+1,1);
                                     }

@@ -380,9 +380,11 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         *couleurMessage=NOIR;
     }
     for(i=0;i<_Nombre_de_Joueur;i++){
-        if(JoueurGetEnJeu(JeuGetIemeJoueurs(jeu,i))==MOURANT){
-            JoueurSetEnJeu(JeuGetIemeJoueurs(jeu,i),MORT);
+        joueur=JeuGetIemeJoueurs(jeu,i);
+        if(JoueurGetEnJeu(joueur)==MOURANT){
+            JoueurSetEnJeu(joueur,MORT);
         }
+        else JoueurSetBooltourne(joueur,0);
     }
     if(JeuGetTempsProchainBonus(jeu)==0){
         i=0;
@@ -440,6 +442,7 @@ void JeuEvolue(Jeu* jeu,short int* jeuFini,char *nouveauMessage,Couleur *couleur
         if((JoueurGetBoolIA(joueur)==1)&&(JoueurGetEnJeu(joueur)==VIVANT))
             JeuGereIA(joueur,jeu);
     }
+
     effaceMur(GridGetMesMurs(grille));
 }
 
