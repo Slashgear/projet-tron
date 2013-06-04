@@ -8,7 +8,7 @@
 	\date 2 avril 2013
 */
 
-#define _Nombre_de_Joueur 2
+#define _Nombre_de_Joueur 3
 #define _Nombre_de_Manette 0
 #define _Nombre_IA 0
 
