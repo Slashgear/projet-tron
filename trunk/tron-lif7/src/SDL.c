@@ -190,10 +190,10 @@ void SDLDecompte(SDL *sdl){
 	int i=3;
 	char decompte[10];
 	SDL_Color couleur;
+    Uint32 uneSeconde=1000;
     couleur.r=255;
     couleur.g=255;
     couleur.b=255;
-    Uint32 uneSeconde=1000;
 	while(i>0){
         SDLAfficheJeu(sdl);
 		sprintf(decompte,"%d",i);
@@ -453,6 +453,9 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     char commentaireNull[50]={0};
     Couleur uneCouleur=NOIR;
     SDL_Color couleur;
+    FMOD_CHANNEL *canal;
+    FMOD_BOOL enJeu=0;
+    Musique *pointeurSurMusique=JeuGetMusique(SDLGetJeu(sdl));
 
     couleur.r=255;
     couleur.g=255;
@@ -461,9 +464,7 @@ void SDLBoucleJeu(SDL* sdl, short int *jeuReInit){
     assert(SDL_Flip(SDLGetIemeTexture(sdl,0)) != -1);
     horloge_precedente = (float)clock()/(float) CLOCKS_PER_SEC;
 
-    FMOD_CHANNEL *canal;
-    FMOD_BOOL enJeu=0;
-    Musique *pointeurSurMusique=JeuGetMusique(SDLGetJeu(sdl));
+
 
     while ( SDL_PollEvent( &evenement ) ){} /*On vide la liste d'événement*/
 
