@@ -9,8 +9,8 @@
 */
 
 #define _Nombre_de_Joueur 4
-#define _Nombre_de_Manette 2
-#define _Nombre_IA 1
+#define _Nombre_de_Manette 0
+#define _Nombre_IA 3
 
 #define _Score_de_Victoire 14
 

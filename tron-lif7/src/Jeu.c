@@ -667,7 +667,7 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
                     indiceColonne=floor((MurGetPositionX(unMur)+decalageXMur)/_Precision_Analyse_IA);
                     pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                     if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                        *pValeurCase=ceil(MurGetDureeVie(unMur));
+                        *pValeurCase=ceil(MurGetDureeVie(unMur))+1;
                     decalageYMur-=_Precision_Analyse_IA;
                     if((decalageYMur<=0)&&(decalageXMur==0)){/**!<A la fin du parcours on se replace au */
                         decalageXMur=5;                      /**!<bord droit du mur et on recommence*/
@@ -679,12 +679,12 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
                 indiceColonne=floor((MurGetPositionX(unMur)+0)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                 if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                    *pValeurCase =ceil(MurGetDureeVie(unMur));
+                    *pValeurCase =ceil(MurGetDureeVie(unMur))+1;
                 indiceLigne=floor((MurGetPositionY(unMur)+0)/_Precision_Analyse_IA);
                 indiceColonne=floor((MurGetPositionX(unMur)+5)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                 if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                    *pValeurCase =ceil(MurGetDureeVie(unMur));
+                    *pValeurCase =ceil(MurGetDureeVie(unMur))+1;
             }
             else{ /**!<Si la largeur est selon y on se place au bord haut du mur*/
                 decalageYMur=0;
@@ -696,7 +696,7 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
                     indiceColonne=floor((MurGetPositionX(unMur)+decalageXMur)/_Precision_Analyse_IA);
                     pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                     if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                        *pValeurCase =ceil(MurGetDureeVie(unMur));
+                        *pValeurCase =ceil(MurGetDureeVie(unMur))+1;
                     decalageXMur-=_Precision_Analyse_IA;
                     if((decalageXMur<=0)&&(decalageYMur==0)){/**!<A la fin du parcours on se replace au */
                         decalageYMur=5;                      /**!<bord bas du mur et on recommence*/
@@ -708,12 +708,12 @@ void creerGrilleAnalyse(short int (*grilleAnalyse)[_Taille_Y_Grille/_Precision_A
                 indiceColonne=floor((MurGetPositionX(unMur)+0)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                 if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                    *pValeurCase =ceil(MurGetDureeVie(unMur));
+                    *pValeurCase =ceil(MurGetDureeVie(unMur))+1;
                 indiceLigne=floor((MurGetPositionY(unMur)+5)/_Precision_Analyse_IA);
                 indiceColonne=floor((MurGetPositionX(unMur)+0)/_Precision_Analyse_IA);
                 pValeurCase=&((*grilleAnalyse)[indiceLigne][indiceColonne]);
                 if(*pValeurCase<ceil(MurGetDureeVie(unMur)))
-                    *pValeurCase =ceil(MurGetDureeVie(unMur));
+                    *pValeurCase =ceil(MurGetDureeVie(unMur))+1;
             }
         }
     }
